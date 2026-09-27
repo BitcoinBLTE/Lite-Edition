@@ -30,15 +30,15 @@ export const en: TranslationSchema = {
     transparency: 'Transparency',
     faq: 'FAQ',
     buy_trade: 'BUY / TRADE',
-    brand_title: 'BITCOIN LIGHT EDITION',
+    brand_title: 'BITCOIN LITE EDITION',
     language_selector: 'Select Language',
   },
   hero: {
     independent_asset: 'Independent Solana Asset',
     fixed_scarcity: 'Fixed Scarcity: 420,000 BLTE',
-    title: 'BITCOIN LIGHT EDITION',
+    title: 'BITCOIN LITE EDITION',
     subtitle: 'A New Chapter in the Digital Asset Landscape',
-    description: '«Bitcoin Light Edition is a Solana-based digital asset inspired by the principles that helped make Bitcoin a defining innovation in digital finance—scarcity, transparency, decentralization, and borderless digital value.»',
+    description: '«Bitcoin Lite Edition is a Solana-based digital asset inspired by the principles that helped make Bitcoin a defining innovation in digital finance—scarcity, transparency, decentralization, and borderless digital value.»',
     btn_explore: 'Explore Token Architecture',
     btn_whitepaper: 'Read White Paper',
     btn_buy_trade: 'BUY / TRADE',
@@ -51,7 +51,7 @@ export const en: TranslationSchema = {
     title: 'A New Chapter in the Digital Asset Landscape',
     p1: 'Bitcoin introduced the world to the idea that value could exist purely in digital form—secured not by institutions or intermediaries, but by mathematics, open networks, and cryptographic consensus. It demonstrated that borderless, peer-to-peer transfer of value was possible and laid the groundwork for an entire financial frontier.',
     p2: 'That fundamental breakthrough sparked the rise of cryptocurrency, decentralized finance, and the broader Web3 ecosystem. Over time, that foundation inspired ongoing experimentation across the digital asset space—including projects exploring alternative execution environments, faster transaction speeds, and new community-driven models.',
-    p3: 'Bitcoin Light Edition is part of that evolving landscape. Inspired by the principles that helped make Bitcoin a defining innovation in digital finance—scarcity, transparency, and decentralization—it represents a distinct digital asset designed to explore those same ideas within the modern Solana ecosystem.',
+    p3: 'Bitcoin Lite Edition is part of that evolving landscape. Inspired by the principles that helped make Bitcoin a defining innovation in digital finance—scarcity, transparency, and decentralization—it represents a distinct digital asset designed to explore those same ideas within the modern Solana ecosystem.',
     learn_more: 'Learn More About Bitcoin',
     explore_genesis: 'Genesis & Technical Architecture',
     tag_independent: 'Independent Solana Asset',
@@ -60,8 +60,8 @@ export const en: TranslationSchema = {
   },
   about: {
     kicker: 'Project Architecture · Core Principles',
-    title: 'WHAT IS BITCOIN LIGHT EDITION?',
-    description: 'Bitcoin introduced a revolutionary way of thinking about digital scarcity, decentralization, and open peer-to-peer settlement. Bitcoin Light Edition explores that defining concept through an ultra-scarce, mathematically capped supply of 420,000 tokens combined with the sub-second speed, negligible fees, and radical transparency of the Solana blockchain.',
+    title: 'WHAT IS BITCOIN LITE EDITION?',
+    description: 'Bitcoin introduced a revolutionary way of thinking about digital scarcity, decentralization, and open peer-to-peer settlement. Bitcoin Lite Edition explores that defining concept through an ultra-scarce, mathematically capped supply of 420,000 tokens combined with the sub-second speed, negligible fees, and radical transparency of the Solana blockchain.',
     pillars: [
       {
         kicker: '01 · Scarcity',
@@ -121,24 +121,24 @@ export const en: TranslationSchema = {
         kicker: '07 · Distinction',
         title: 'Independent Conceptual Asset',
         summary: 'Inspired by Bitcoin, built natively on Solana.',
-        description: 'While inspired by the mathematical scarcity and open-ledger philosophy introduced by Bitcoin, Bitcoin Light Edition is an entirely separate, independent SPL digital asset and is not affiliated with Bitcoin or Bitcoin Core developers.',
+        description: 'While inspired by the mathematical scarcity and open-ledger philosophy introduced by Bitcoin, Bitcoin Lite Edition is an entirely separate, independent SPL digital asset and is not affiliated with Bitcoin or Bitcoin Core developers.',
         highlight: 'Independent',
         verified: 'Verified',
         network: 'Solana L1',
       },
     ],
     distinction_title: 'Clear Conceptual Distinction & Non-Affiliation Statement',
-    distinction_desc: 'Bitcoin Light Edition is an independent project and is not Bitcoin, an official Bitcoin product, or a hard fork of the Bitcoin blockchain. It does not share a codebase, consensus ledger, or mining network with Bitcoin, and is not affiliated with or endorsed by Bitcoin Core, Satoshi Nakamoto, or any Bitcoin developer organizations. It exists natively on Solana to explore digital scarcity within a modern distributed architecture.',
+    distinction_desc: 'Bitcoin Lite Edition is an independent project and is not Bitcoin, an official Bitcoin product, or a hard fork of the Bitcoin blockchain. It does not share a codebase, consensus ledger, or mining network with Bitcoin, and is not affiliated with or endorsed by Bitcoin Core, Satoshi Nakamoto, or any Bitcoin developer organizations. It exists natively on Solana to explore digital scarcity within a modern distributed architecture.',
   },
   education: {
     badge: 'EDUCATIONAL RESOURCE & GENESIS ARCHIVE',
-    title: 'Learn More About Bitcoin & The Genesis of Light Edition',
-    description: 'An authoritative, neutral educational guide explaining Bitcoin, how distributed ledgers work, its historical influence on digital finance, and how the conceptual genesis of Bitcoin Light Edition emerged on the Solana blockchain.',
+    title: 'Learn More About Bitcoin & The Genesis of Lite Edition',
+    description: 'An authoritative, neutral educational guide explaining Bitcoin, how distributed ledgers work, its historical influence on digital finance, and how the conceptual genesis of Bitcoin Lite Edition emerged on the Solana blockchain.',
     tabs: {
       overview: '1. What Is Bitcoin?',
       how_it_works: '2. How Bitcoin Works',
       supply: '3. Supply & Decentralization',
-      genesis: '4. Genesis of Bitcoin Light Edition',
+      genesis: '4. Genesis of Bitcoin Lite Edition',
     },
     tab1: {
       def_kicker: 'Foundational Definition',
@@ -166,8 +166,8 @@ export const en: TranslationSchema = {
           desc: 'Empowered individuals globally to custody their wealth using cryptographic private keys rather than third-party custodians.',
         },
       ],
-      boundary_title: 'From Bitcoin to Bitcoin Light Edition: Clear Boundary',
-      boundary_desc: 'Bitcoin Light Edition is a separate digital asset built on Solana, inspired by concepts associated with Bitcoin. Bitcoin Light Edition is not Bitcoin, is not an official Bitcoin product, is not a Bitcoin fork, is not part of the Bitcoin network, and is not an official Bitcoin-affiliated project.',
+      boundary_title: 'From Bitcoin to Bitcoin Lite Edition: Clear Boundary',
+      boundary_desc: 'Bitcoin Lite Edition is a separate digital asset built on Solana, inspired by concepts associated with Bitcoin. Bitcoin Lite Edition is not Bitcoin, is not an official Bitcoin product, is not a Bitcoin fork, is not part of the Bitcoin network, and is not an official Bitcoin-affiliated project.',
     },
     tab2: {
       intro: "Understanding the foundational mechanics of blockchain technology helps clarify both Bitcoin's original design and how modern Layer 1 protocols like Solana differ.",
@@ -206,14 +206,14 @@ export const en: TranslationSchema = {
     },
     tab3: {
       supply_kicker: 'Supply Dynamics Compared',
-      supply_title: "Bitcoin's Supply vs Bitcoin Light Edition",
+      supply_title: "Bitcoin's Supply vs Bitcoin Lite Edition",
       supply_p1: 'Bitcoin was designed with an absolute, hard-coded maximum supply of 21,000,000 BTC, released gradually over ~130 years via periodic "halving" events every 210,000 blocks (~4 years).',
-      supply_p2: 'By contrast, Bitcoin Light Edition (BLTE) establishes an even stricter numerical limit:',
+      supply_p2: 'By contrast, Bitcoin Lite Edition (BLTE) establishes an even stricter numerical limit:',
       btc_supply_label: 'Bitcoin Maximum Supply:',
-      ble_supply_label: 'Bitcoin Light Edition Supply:',
+      ble_supply_label: 'Bitcoin Lite Edition Supply:',
       ratio_label: 'Numerical Ratio:',
       ratio_val: 'BLTE is 50x scarcer numerically than BTC',
-      supply_footer: 'Total supply for Bitcoin Light Edition is fully minted and capped at 420,000 with mint authority permanently revoked upon creation.',
+      supply_footer: 'Total supply for Bitcoin Lite Edition is fully minted and capped at 420,000 with mint authority permanently revoked upon creation.',
       decent_kicker: 'Decentralization Principle',
       decent_title: 'Distributed Networks vs Central Authorities',
       decent_desc: 'Decentralization means that no single company, government, server, or executive has the power to reverse transactions, alter the historical ledger, freeze individual accounts, or arbitrarily inflate the money supply.',
@@ -224,13 +224,13 @@ export const en: TranslationSchema = {
     },
     tab4: {
       archive_kicker: 'ORIGIN ARCHIVE · GENESIS SPECIFICATION',
-      title: 'The Genesis of Bitcoin Light Edition',
+      title: 'The Genesis of Bitcoin Lite Edition',
       p1: 'On January 3, 2009, Satoshi Nakamoto mined the Bitcoin Genesis Block (Block 0), permanently inscribing into the ledger:',
       quote: '"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."',
       p2: "Over the subsequent fifteen years, however, the practical realities of Bitcoin's original architecture became apparent. While exceptional as an immovable, sovereign store of value, its proof-of-work mechanics introduced structural frictions for interactive Web3 applications: 10-minute probabilistic block confirmations, network mempool congestion leading to fees of $5 to $50+ during periods of high demand, and heavy energy overhead.",
       question_label: 'The Genesis Question:',
       question_body: 'What if the timeless, uncompromising scarcity principles established by Satoshi Nakamoto were translated into a high-performance Layer 1 environment capable of sub-second settlement and fractions-of-a-cent fees?',
-      conclusion: 'This fundamental inquiry gave birth to Bitcoin Light Edition (BLTE).',
+      conclusion: 'This fundamental inquiry gave birth to Bitcoin Lite Edition (BLTE).',
       invariants: [
         {
           tag: 'Genesis Invariant 01',
@@ -264,7 +264,7 @@ export const en: TranslationSchema = {
     step1_desc: 'Pioneered cryptographic scarcity and decentralized peer-to-peer settlement.',
     step1_stat_label: 'Maximum Supply',
     step2_kicker: 'Independent Digital Asset',
-    step2_title: 'BITCOIN LIGHT EDITION',
+    step2_title: 'BITCOIN LITE EDITION',
     step2_desc: 'A modern, ultra-scarce fixed supply experiment implemented natively as a high-speed token on Solana.',
     step2_stat_label: 'Total Supply (Fixed)',
     step3_kicker: 'Execution Infrastructure',
@@ -277,7 +277,7 @@ export const en: TranslationSchema = {
     matrix_title: 'Architectural Invariants Compared',
     col_parameter: 'Parameter',
     col_btc: 'Bitcoin (BTC)',
-    col_ble: 'Bitcoin Light Edition (BLTE)',
+    col_ble: 'Bitcoin Lite Edition (BLTE)',
     rows: [
       {
         metric: 'Blockchain Network',
@@ -321,7 +321,7 @@ export const en: TranslationSchema = {
       },
     ],
     distinction_title: 'Important Technical & Conceptual Distinction:',
-    distinction_desc: 'Bitcoin Light Edition is not Bitcoin and is not a fork, replacement, or branch of Bitcoin. It does not share a codebase, consensus mechanism, or ledger with the Bitcoin network, and is not affiliated with or endorsed by Bitcoin Core developers. The project is an independent Solana SPL token exploring digital scarcity parameters.',
+    distinction_desc: 'Bitcoin Lite Edition is not Bitcoin and is not a fork, replacement, or branch of Bitcoin. It does not share a codebase, consensus mechanism, or ledger with the Bitcoin network, and is not affiliated with or endorsed by Bitcoin Core developers. The project is an independent Solana SPL token exploring digital scarcity parameters.',
   },
   token_overview: {
     kicker: 'Verified Specifications · SPL Architecture',
@@ -377,7 +377,7 @@ export const en: TranslationSchema = {
   },
   how_to_buy: {
     kicker: 'Acquisition Guide · Step-by-Step Procedure',
-    title: 'HOW TO ACQUIRE BITCOIN LIGHT EDITION',
+    title: 'HOW TO ACQUIRE BITCOIN LITE EDITION',
     subtitle: 'A transparent, security-first guide for acquiring BLTE directly on Solana through non-custodial decentralized exchanges.',
     steps: [
       {
@@ -408,8 +408,8 @@ export const en: TranslationSchema = {
       {
         step: '05',
         title: 'Input Official Token Mint Address',
-        summary: 'Verify and paste the authentic Bitcoin Light Edition contract ID.',
-        description: 'In the swap token selector, paste the verified Bitcoin Light Edition mint address published on this official portal. Always double-check that the token symbol reads BLTE and the total supply reads strictly 420,000.',
+        summary: 'Verify and paste the authentic Bitcoin Lite Edition contract ID.',
+        description: 'In the swap token selector, paste the verified Bitcoin Lite Edition mint address published on this official portal. Always double-check that the token symbol reads BLTE and the total supply reads strictly 420,000.',
         action_label: 'Copy Address',
       },
       {
@@ -423,12 +423,12 @@ export const en: TranslationSchema = {
         step: '07',
         title: 'Confirm On-Chain & Retain Custody',
         summary: 'Transactions settle in ~400ms directly to your wallet.',
-        description: 'Once confirmed on the Solana ledger, your Bitcoin Light Edition tokens will reflect immediately in your wallet balance. You can verify the transaction signature independently on Solscan.',
+        description: 'Once confirmed on the Solana ledger, your Bitcoin Lite Edition tokens will reflect immediately in your wallet balance. You can verify the transaction signature independently on Solscan.',
       },
     ],
     advisory_kicker: 'Security & Anti-Scam Advisory · Zero-Trust Protocol',
     advisory_title: 'Protect Your Capital Against Fake Tokens & Impersonators',
-    advisory_desc: 'Decentralized exchanges permit anyone to create a token with the name "Bitcoin Light" or ticker "BLTE". Always verify that the contract mint address matches the authentic ID displayed on this official website, and verify that the total supply reads exactly 420,000 tokens with mint authority permanently revoked.',
+    advisory_desc: 'Decentralized exchanges permit anyone to create a token with the name "Bitcoin Lite" or ticker "BLTE". Always verify that the contract mint address matches the authentic ID displayed on this official website, and verify that the total supply reads exactly 420,000 tokens with mint authority permanently revoked.',
     security_items: [
       'Fixed 420,000 supply cap',
       'Mint authority revoked',
@@ -468,7 +468,7 @@ export const en: TranslationSchema = {
   transparency: {
     kicker: 'Blockchain Integrity · Open Verifiable Architecture',
     title: 'VERIFY EVERYTHING',
-    subtitle: 'Every critical parameter of Bitcoin Light Edition—from supply limits to authority configuration—is engineered to be independently audited directly on the Solana ledger.',
+    subtitle: 'Every critical parameter of Bitcoin Lite Edition—from supply limits to authority configuration—is engineered to be independently audited directly on the Solana ledger.',
     cards: [
       {
         title: 'Token Supply',
@@ -608,7 +608,7 @@ export const en: TranslationSchema = {
     subtitle: 'Connect with the independent digital scarcity movement across verified public coordination channels.',
     twitter_desc: 'Official announcements, protocol development notes, and launch verification updates.',
     github_desc: 'Open-source token specifications, distribution verification scripts, and community tools.',
-    instagram_desc: 'Official media, infographics, and visual updates from the Bitcoin Light Edition community.',
+    instagram_desc: 'Official media, infographics, and visual updates from the Bitcoin Lite Edition community.',
     youtube_desc: 'Official YouTube channel for architectural briefings, video guides, and project updates.',
     email_desc: 'Direct project communications, technical inquiries, and verified ecosystem correspondence.',
     generic_desc: 'Community coordination and verified discussion updates.',
@@ -625,8 +625,8 @@ export const en: TranslationSchema = {
     notice_text: 'Notice: Always verify contract addresses independently on Solscan and avoid counterfeit tokens using the Bitcoin name.',
     items: [
       {
-        question: 'What is Bitcoin Light Edition?',
-        answer: "Bitcoin Light Edition is an independent digital asset built natively on the Solana blockchain. Inspired by the foundational paradigm of digital scarcity established by Bitcoin, it introduces a fixed, hard-capped supply of 420,000 tokens designed to operate with Solana's high-speed, cost-effective, and transparent distributed ledger architecture.",
+        question: 'What is Bitcoin Lite Edition?',
+        answer: "Bitcoin Lite Edition is an independent digital asset built natively on the Solana blockchain. Inspired by the foundational paradigm of digital scarcity established by Bitcoin, it introduces a fixed, hard-capped supply of 420,000 tokens designed to operate with Solana's high-speed, cost-effective, and transparent distributed ledger architecture.",
       },
       {
         question: 'What is the total supply?',
@@ -634,20 +634,20 @@ export const en: TranslationSchema = {
       },
       {
         question: 'Which blockchain is it built on?',
-        answer: "Bitcoin Light Edition is built natively on the Solana blockchain using standard SPL / Token-2022 program standards. This architecture leverages Solana's Proof-of-History consensus for sub-second settlement (~400ms) and negligible transaction fees (<$0.001).",
+        answer: "Bitcoin Lite Edition is built natively on the Solana blockchain using standard SPL / Token-2022 program standards. This architecture leverages Solana's Proof-of-History consensus for sub-second settlement (~400ms) and negligible transaction fees (<$0.001).",
       },
       {
-        question: 'Is Bitcoin Light Edition Bitcoin?',
-        answer: 'No. Bitcoin Light Edition is an independent project and is not Bitcoin, an official Bitcoin product, a fork of Bitcoin, or affiliated with Bitcoin Core, Satoshi Nakamoto, or any Bitcoin developer organizations. It operates exclusively on Solana and explores digital scarcity from an independent technological standpoint.',
+        question: 'Is Bitcoin Lite Edition Bitcoin?',
+        answer: 'No. Bitcoin Lite Edition is an independent project and is not Bitcoin, an official Bitcoin product, a fork of Bitcoin, or affiliated with Bitcoin Core, Satoshi Nakamoto, or any Bitcoin developer organizations. It operates exclusively on Solana and explores digital scarcity from an independent technological standpoint.',
         isDisclaimer: true,
       },
       {
         question: 'How does the scarcity compare to Bitcoin?',
-        answer: 'Bitcoin pioneered digital scarcity with a maximum hard cap of 21,000,000 coins. Bitcoin Light Edition features a hard cap of strictly 420,000 tokens—which is 50 times lower in numerical supply. Furthermore, BLTE executes on Solana Layer 1 with sub-second finality rather than 10-minute proof-of-work blocks.',
+        answer: 'Bitcoin pioneered digital scarcity with a maximum hard cap of 21,000,000 coins. Bitcoin Lite Edition features a hard cap of strictly 420,000 tokens—which is 50 times lower in numerical supply. Furthermore, BLTE executes on Solana Layer 1 with sub-second finality rather than 10-minute proof-of-work blocks.',
       },
       {
-        question: 'How and where can I buy or acquire Bitcoin Light Edition?',
-        answer: "Bitcoin Light Edition is acquired through verified decentralized exchanges (DEXes) on Solana, such as Jupiter Aggregator and Raydium. You will need a non-custodial Solana wallet (e.g., Phantom or Solflare) funded with SOL. In the DEX interface, enter the official verified BLTE mint address to execute the swap. Follow the 7-step guide in the 'How to Acquire' section on this website.",
+        question: 'How and where can I buy or acquire Bitcoin Lite Edition?',
+        answer: "Bitcoin Lite Edition is acquired through verified decentralized exchanges (DEXes) on Solana, such as Jupiter Aggregator and Raydium. You will need a non-custodial Solana wallet (e.g., Phantom or Solflare) funded with SOL. In the DEX interface, enter the official verified BLTE mint address to execute the swap. Follow the 7-step guide in the 'How to Acquire' section on this website.",
       },
       {
         question: 'Where can I verify the token and its parameters?',
@@ -659,7 +659,7 @@ export const en: TranslationSchema = {
       },
       {
         question: 'Which crypto wallets can hold BLTE tokens?',
-        answer: 'Any non-custodial wallet supporting the Solana SPL / Token-2022 standard can hold Bitcoin Light Edition. Recommended wallets include Phantom, Solflare, and Backpack. Always ensure you control your private seed phrase and never share it.',
+        answer: 'Any non-custodial wallet supporting the Solana SPL / Token-2022 standard can hold Bitcoin Lite Edition. Recommended wallets include Phantom, Solflare, and Backpack. Always ensure you control your private seed phrase and never share it.',
       },
       {
         question: 'How do I protect myself against counterfeit tokens and scams?',
@@ -684,17 +684,17 @@ export const en: TranslationSchema = {
     copied: 'Copied to clipboard',
     btn_buy_trade: 'BUY / TRADE INFORMATION',
     disclaimer_heading: 'Legal Disclaimer & Non-Affiliation Disclosure',
-    disclaimer_text: 'Bitcoin Light Edition is an independent Solana cryptographic token and is NOT affiliated with, endorsed by, or a fork of Bitcoin Core or Satoshi Nakamoto.',
+    disclaimer_text: 'Bitcoin Lite Edition is an independent Solana cryptographic token and is NOT affiliated with, endorsed by, or a fork of Bitcoin Core or Satoshi Nakamoto.',
     disclaimer_risk: 'Digital assets involve substantial economic risk and network volatility. No statements made herein guarantee performance, appreciation, or liquidity. Verify all on-chain information independently.',
     rights: 'All rights reserved.',
     mainnet_pending: 'Solana Mainnet Genesis Pending',
   },
   modals: {
     buy_trade: {
-      title: 'BUY / TRADE — BITCOIN LIGHT EDITION',
+      title: 'BUY / TRADE — BITCOIN LITE EDITION',
       subtitle: 'Decentralized Venues · Movable Panel',
       alert_title: 'Pre-Launch / Initial Liquidity Pending',
-      alert_desc: 'Official trading venues on Solana decentralized exchanges (Raydium and Jupiter) will activate upon verified liquidity pool deployment. Do not attempt to purchase from unverified token mints claiming to be Bitcoin Light Edition.',
+      alert_desc: 'Official trading venues on Solana decentralized exchanges (Raydium and Jupiter) will activate upon verified liquidity pool deployment. Do not attempt to purchase from unverified token mints claiming to be Bitcoin Lite Edition.',
       venues_heading: 'Official Decentralized Venues',
       pending_status: 'Awaiting Deployment',
       footer_note: 'Solana DEX Aggregators',
@@ -707,7 +707,7 @@ export const en: TranslationSchema = {
       terms_sections: [
         {
           title: '1. Nature of the Project & Non-Affiliation',
-          body: 'Bitcoin Light Edition is an independent digital asset project built on the Solana blockchain. It is not Bitcoin and is not affiliated with, endorsed by, or issued by Bitcoin, Bitcoin Core developers, or any organization associated with Bitcoin. All materials published on this portal and in the White Paper are strictly for educational and informational purposes.',
+          body: 'Bitcoin Lite Edition is an independent digital asset project built on the Solana blockchain. It is not Bitcoin and is not affiliated with, endorsed by, or issued by Bitcoin, Bitcoin Core developers, or any organization associated with Bitcoin. All materials published on this portal and in the White Paper are strictly for educational and informational purposes.',
         },
         {
           title: '2. No Investment Advice or Profit Guarantee',
@@ -719,7 +719,7 @@ export const en: TranslationSchema = {
         },
         {
           title: '4. Absolute Limitation of Liability',
-          body: 'Under no circumstances shall the contributors, community coordinators, or developers of Bitcoin Light Edition be liable for any direct, indirect, incidental, or consequential losses resulting from software bugs, network outages, wallet misconfigurations, or user transactions.',
+          body: 'Under no circumstances shall the contributors, community coordinators, or developers of Bitcoin Lite Edition be liable for any direct, indirect, incidental, or consequential losses resulting from software bugs, network outages, wallet misconfigurations, or user transactions.',
         },
       ],
       privacy_sections: [
@@ -742,9 +742,9 @@ export const en: TranslationSchema = {
       ],
     },
     whitepaper: {
-      title: 'BITCOIN LIGHT EDITION WHITE PAPER',
+      title: 'BITCOIN LITE EDITION WHITE PAPER',
       subtitle: 'Solana Mainnet Specification · Movable Panel',
-      doc_title: 'BITCOIN LIGHT EDITION',
+      doc_title: 'BITCOIN LITE EDITION',
       doc_sub: 'ARCHITECTURAL WHITE PAPER (SOLANA MAINNET SPECIFICATION)',
       toc_title: 'Table of Contents',
       copied_toast: 'Full text copied to clipboard',
@@ -754,8 +754,8 @@ export const en: TranslationSchema = {
           num: '1',
           title: 'Executive Summary & Abstract',
           content: [
-            'Bitcoin Light Edition is an independent digital asset built natively on the Solana blockchain. Inspired by the foundational paradigm of digital scarcity established by Bitcoin in 2008, Bitcoin Light Edition explores the application of an ultra-scarce, mathematically capped asset (420,000 tokens) within a modern, high-throughput, low-latency execution environment.',
-            'IMPORTANT LEGAL & CONCEPTUAL DISTINCTION: Bitcoin Light Edition is not Bitcoin, is not an official Bitcoin product, and is not affiliated with, endorsed by, or issued by Bitcoin Core, Satoshi Nakamoto, or any Bitcoin developer organizations. It operates exclusively on Solana as an SPL token.',
+            'Bitcoin Lite Edition is an independent digital asset built natively on the Solana blockchain. Inspired by the foundational paradigm of digital scarcity established by Bitcoin in 2008, Bitcoin Lite Edition explores the application of an ultra-scarce, mathematically capped asset (420,000 tokens) within a modern, high-throughput, low-latency execution environment.',
+            'IMPORTANT LEGAL & CONCEPTUAL DISTINCTION: Bitcoin Lite Edition is not Bitcoin, is not an official Bitcoin product, and is not affiliated with, endorsed by, or issued by Bitcoin Core, Satoshi Nakamoto, or any Bitcoin developer organizations. It operates exclusively on Solana as an SPL token.',
           ],
         },
         {
@@ -763,14 +763,14 @@ export const en: TranslationSchema = {
           num: '2',
           title: 'Foundational Philosophy: Digital Scarcity',
           content: [
-            "While Bitcoin proved that mathematical scarcity can form the basis of decentralized value, historical proof-of-work architectures face structural challenges with transaction latency, variable mempool fees, and environmental overhead. Bitcoin Light Edition adopts the principle of absolute digital scarcity—enforcing a fixed cap of 420,000 tokens with permanently revoked mint authority—while leveraging Solana's Proof-of-History (PoH) consensus for sub-second block finality.",
-            'Scarcity in Bitcoin Light Edition is not dynamic or inflationary. There are no secondary mints, dynamic emission schedules, or validator staking rewards paid through token inflation.',
+            "While Bitcoin proved that mathematical scarcity can form the basis of decentralized value, historical proof-of-work architectures face structural challenges with transaction latency, variable mempool fees, and environmental overhead. Bitcoin Lite Edition adopts the principle of absolute digital scarcity—enforcing a fixed cap of 420,000 tokens with permanently revoked mint authority—while leveraging Solana's Proof-of-History (PoH) consensus for sub-second block finality.",
+            'Scarcity in Bitcoin Lite Edition is not dynamic or inflationary. There are no secondary mints, dynamic emission schedules, or validator staking rewards paid through token inflation.',
           ],
         },
         {
           id: 'genesis',
           num: '3',
-          title: 'The Genesis of Bitcoin Light Edition',
+          title: 'The Genesis of Bitcoin Lite Edition',
           content: [
             'Conceived as a modern realization of digital scarcity, BLTE was created with exactly 420,000 tokens (50x numerically scarcer than Bitcoin). At block zero, both Mint Authority and Freeze Authority were irrevocably revoked (set to null).',
             'The "Light" paradigm stands for sub-second ~400ms finality, sub-penny fees (<$0.001), and eco-friendly Proof-of-Stake consensus.',
@@ -782,7 +782,7 @@ export const en: TranslationSchema = {
           title: 'Technical Distinction from Bitcoin',
           content: [
             'Bitcoin operates on its own dedicated Layer 1 network utilizing Proof-of-Work (PoW) mining, SHA-256 hashing, UTXO transaction accounting, and 10-minute block times with a 21,000,000 coin cap.',
-            'Bitcoin Light Edition is an SPL token on the Solana Layer 1, utilizing Proof-of-History (PoH) and Tower BFT consensus, account-based state transitions, ~400 millisecond blocks, and a fixed cap of 420,000 BLTE. It is completely independent in governance, codebase, and infrastructure.',
+            'Bitcoin Lite Edition is an SPL token on the Solana Layer 1, utilizing Proof-of-History (PoH) and Tower BFT consensus, account-based state transitions, ~400 millisecond blocks, and a fixed cap of 420,000 BLTE. It is completely independent in governance, codebase, and infrastructure.',
           ],
         },
         {
@@ -791,7 +791,7 @@ export const en: TranslationSchema = {
           title: 'Solana Execution Layer & Consensus',
           content: [
             'Solana utilizes Proof-of-History (PoH) as a cryptographically verifiable clock before consensus. Combined with Tower BFT, this allows the network to process transactions without waiting for global block broadcast consensus before sequencing.',
-            'This architecture ensures that Bitcoin Light Edition transactions confirm within ~400ms with negligible fees (<$0.001), making micro-transfers and interactive DeFi integrations feasible.',
+            'This architecture ensures that Bitcoin Lite Edition transactions confirm within ~400ms with negligible fees (<$0.001), making micro-transfers and interactive DeFi integrations feasible.',
           ],
         },
         {
@@ -799,7 +799,7 @@ export const en: TranslationSchema = {
           num: '6',
           title: 'Technical Token Specifications',
           content: [
-            '• Token Name: Bitcoin Light Edition\n• Symbol: BLTE\n• Network: Solana\n• Standard: SPL / Token-2022\n• Total Supply: 420,000 (Fixed)\n• Decimals: 9 (0.000000001 BLTE base resolution)\n• Mint Authority: Permanently Revoked upon Genesis\n• Freeze Authority: Permanently Revoked / None',
+            '• Token Name: Bitcoin Lite Edition\n• Symbol: BLTE\n• Network: Solana\n• Standard: SPL / Token-2022\n• Total Supply: 420,000 (Fixed)\n• Decimals: 9 (0.000000001 BLTE base resolution)\n• Mint Authority: Permanently Revoked upon Genesis\n• Freeze Authority: Permanently Revoked / None',
           ],
         },
         {
@@ -894,16 +894,16 @@ export const en: TranslationSchema = {
         scarcity: {
           title: 'Chapter 03: Comparative Scarcity Analysis',
           p1: 'Scarcity is the economic foundation of durable value. Bitcoin capped its total issuance at 21,000,000 BTC, distributed across 130+ years via halving epochs.',
-          p2: 'Bitcoin Light Edition (BLTE) implements an even more aggressive scarcity profile: a strict hard cap of exactly 420,000 tokens.',
+          p2: 'Bitcoin Lite Edition (BLTE) implements an even more aggressive scarcity profile: a strict hard cap of exactly 420,000 tokens.',
           stat_btc: '21,000,000 BTC',
           stat_ble: '420,000 BLTE',
           ratio: '50x Higher Numerical Scarcity than Bitcoin',
         },
         genesis: {
-          title: 'Chapter 04: The Genesis of Bitcoin Light Edition',
+          title: 'Chapter 04: The Genesis of Bitcoin Lite Edition',
           p1: 'On January 3, 2009, the Bitcoin Genesis Block established that decentralized mathematics could replace centralized trust.',
           quote: '"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."',
-          p2: 'Fifteen years later, Bitcoin Light Edition was created to bring that timeless ethos to the Solana ecosystem—providing ~400ms finality, fractions-of-a-cent fees, and 100% on-chain immutability.',
+          p2: 'Fifteen years later, Bitcoin Lite Edition was created to bring that timeless ethos to the Solana ecosystem—providing ~400ms finality, fractions-of-a-cent fees, and 100% on-chain immutability.',
           invariants: [
             {
               title: 'Fixed 420,000 Token Cap',
@@ -921,7 +921,7 @@ export const en: TranslationSchema = {
         },
         distinction: {
           title: 'Chapter 05: Clear Technical Distinction',
-          p1: 'Bitcoin Light Edition is NOT Bitcoin and is not a fork of the Bitcoin blockchain.',
+          p1: 'Bitcoin Lite Edition is NOT Bitcoin and is not a fork of the Bitcoin blockchain.',
           p2: 'It shares no code, ledger, mining hardware, or consensus rules with Bitcoin. It is an independent SPL token deployed on Solana.',
           p3: 'It exists to independently explore algorithmic scarcity within high-performance decentralized architectures.',
         },

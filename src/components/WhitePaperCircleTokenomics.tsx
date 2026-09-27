@@ -43,7 +43,7 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
     <div className="space-y-6 pt-2">
       {/* Intro Editorial Note */}
       <p className="text-sm sm:text-base text-[#4A4A4A] font-[450] leading-[1.8]">
-        Bitcoin Light Edition enforces an inviolable mathematical cap of 420,000 tokens on Solana Layer 1.
+        Bitcoin Lite Edition enforces an inviolable mathematical cap of 420,000 tokens on Solana Layer 1.
         The allocation is structured to ensure maximum community distribution, sustained liquidity, and verifiable long-term stability.
       </p>
 

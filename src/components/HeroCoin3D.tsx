@@ -290,8 +290,8 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
       }
       ctx.restore();
 
-      // --- Bottom Curved Text: "BITCOIN LIGHT EDITION" ---
-      const bottomText = 'BITCOIN LIGHT EDITION';
+      // --- Bottom Curved Text: "BITCOIN LITE EDITION" ---
+      const bottomText = 'BITCOIN LITE EDITION';
       const textRadius = 880;
       const charCount = bottomText.length;
       const startAngle = Math.PI * 0.81;
@@ -861,7 +861,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
         ref={containerRef}
         className="w-full h-full cursor-grab active:cursor-grabbing touch-none flex items-center justify-center"
         role="img"
-        aria-label="Interactive 3D minted coin of Bitcoin Light Edition with continuous rotation around vertical Y axis, showing 420,000 fixed supply on reverse"
+        aria-label="Interactive 3D minted coin of Bitcoin Lite Edition with continuous rotation around vertical Y axis, showing 420,000 fixed supply on reverse"
       />
     </div>
   );

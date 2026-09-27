@@ -262,7 +262,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
           </div>
         )}
 
-        {/* TAB 4: THE GENESIS OF BITCOIN LIGHT EDITION */}
+        {/* TAB 4: THE GENESIS OF BITCOIN LITE EDITION */}
         {activeTab === 'genesis' && (
           <div className="space-y-8 animate-in fade-in duration-200">
             {/* Main Genesis Narrative */}

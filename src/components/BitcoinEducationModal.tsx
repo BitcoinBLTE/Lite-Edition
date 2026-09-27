@@ -228,7 +228,7 @@ export const BitcoinEducationModal: React.FC<BitcoinEducationModalProps> = ({
               </div>
 
               <div className="p-5 rounded-[20px] bg-[#FAF5EF] border border-[#E9C9A5] space-y-2">
-                <span className="text-xs font-mono text-[#B8661B] uppercase block font-bold">Bitcoin Light Edition (BLTE)</span>
+                <span className="text-xs font-mono text-[#B8661B] uppercase block font-bold">Bitcoin Lite Edition (BLTE)</span>
                 <div className="text-xl font-mono font-[900] text-[#B8661B]">{edu.chapters.scarcity.stat_ble}</div>
               </div>
             </div>
@@ -242,7 +242,7 @@ export const BitcoinEducationModal: React.FC<BitcoinEducationModalProps> = ({
           </div>
         )}
 
-        {/* CHAPTER: GENESIS OF BITCOIN LIGHT EDITION */}
+        {/* CHAPTER: GENESIS OF BITCOIN LITE EDITION */}
         {activeChapter === 'genesis' && (
           <div className="space-y-5 animate-in fade-in duration-150">
             <div className="border-b border-[#E5E5E5] pb-3">

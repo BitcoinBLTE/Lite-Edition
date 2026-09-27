@@ -21,7 +21,7 @@ export const ScarcityComparison: React.FC = () => {
           </p>
         </div>
 
-        {/* Visual Flow: Bitcoin -> Bitcoin Light Edition -> Solana */}
+        {/* Visual Flow: Bitcoin -> Bitcoin Lite Edition -> Solana */}
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center space-y-4">
             {/* Step 1: Bitcoin */}
@@ -53,7 +53,7 @@ export const ScarcityComparison: React.FC = () => {
               <ArrowDown className="w-5 h-5 text-[#B8661B] stroke-[2] -mt-1" />
             </div>
 
-            {/* Step 2: Bitcoin Light Edition (Marquee Hero Box in Burnt Copper) */}
+            {/* Step 2: Bitcoin Lite Edition (Marquee Hero Box in Burnt Copper) */}
             <div className="w-full bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border-2 border-[#B8661B] shadow-[0_6px_30px_rgba(184,102,27,0.08)] flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative overflow-hidden">
               <div className="space-y-1.5 relative z-10">
                 <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#B8661B] uppercase flex items-center gap-2">

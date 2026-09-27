@@ -85,16 +85,16 @@ export default function App() {
               onOpenEducationModal={() => setEducationModalOpen(true)}
             />
 
-            {/* About Section: What Is Bitcoin Light Edition */}
+            {/* About Section: What Is Bitcoin Lite Edition */}
             <AboutSection />
 
-          {/* Comprehensive Bitcoin Education & Genesis of Bitcoin Light Edition */}
+          {/* Comprehensive Bitcoin Education & Genesis of Bitcoin Lite Edition */}
           <BitcoinEducationSection
             onOpenWhitePaper={() => setWhitePaperOpen(true)}
             onOpenEducationModal={() => setEducationModalOpen(true)}
           />
 
-          {/* Scarcity Matrix: Bitcoin -> Bitcoin Light Edition -> Solana */}
+          {/* Scarcity Matrix: Bitcoin -> Bitcoin Lite Edition -> Solana */}
           <ScarcityComparison />
 
           {/* Token Overview Dashboard */}

@@ -30,15 +30,15 @@ export const no: TranslationSchema = {
     transparency: 'Åpenhet',
     faq: 'FAQ',
     buy_trade: 'KJØP / HANDEL',
-    brand_title: 'BITCOIN LIGHT EDITION',
+    brand_title: 'BITCOIN LITE EDITION',
     language_selector: 'Velg språk',
   },
   hero: {
     independent_asset: 'Uavhengig Solana-ressurs',
     fixed_scarcity: 'Fast knapphet: 420 000 BLTE',
-    title: 'BITCOIN LIGHT EDITION',
+    title: 'BITCOIN LITE EDITION',
     subtitle: 'Et nytt kapittel i det digitale ressurslandskapet',
-    description: '«Bitcoin Light Edition er en Solana-basert digital ressurs inspirert av prinsippene som gjorde Bitcoin til en banebrytende innovasjon innen digital finans: knapphet, åpenhet, desentralisering og grenseløs digital verdi.»',
+    description: '«Bitcoin Lite Edition er en Solana-basert digital ressurs inspirert av prinsippene som gjorde Bitcoin til en banebrytende innovasjon innen digital finans: knapphet, åpenhet, desentralisering og grenseløs digital verdi.»',
     btn_explore: 'Utforsk tokenarkitektur',
     btn_whitepaper: 'Les hvitbok',
     btn_buy_trade: 'KJØP / HANDEL',
@@ -51,7 +51,7 @@ export const no: TranslationSchema = {
     title: 'Et nytt kapittel i det digitale ressurslandskapet',
     p1: 'Bitcoin introduserte verden for ideen om at verdi kunne eksistere rent digitalt – sikret ikke av institusjoner eller mellommenn, men av matematikk, åpne nettverk og kryptografisk konsensus. Det beviste at grenseløs verdioverføring mellom likeverdige parter var mulig og la grunnlaget for en helt ny finansiell tidsalder.',
     p2: 'Dette grunnleggende gjennombruddet utløste fremveksten av kryptovaluta, desentralisert finans (DeFi) og det bredere Web3-økosystemet. Over tid inspirerte dette fundamentet kontinuerlig eksperimentering i det digitale ressursrommet – inkludert prosjekter som utforsker alternative utførelsesmiljøer, høyere transaksjonshastigheter og nye fellesskapsdrevne modeller.',
-    p3: 'Bitcoin Light Edition er en del av dette utviklende landskapet. Inspirert av prinsippene som bidro til å gjøre Bitcoin til en definerende innovasjon innen digital finans – knapphet, åpenhet og desentralisering – representerer det en distinkt digital ressurs utviklet for å utforske disse ideene innenfor det moderne Solana-økosystemet.',
+    p3: 'Bitcoin Lite Edition er en del av dette utviklende landskapet. Inspirert av prinsippene som bidro til å gjøre Bitcoin til en definerende innovasjon innen digital finans – knapphet, åpenhet og desentralisering – representerer det en distinkt digital ressurs utviklet for å utforske disse ideene innenfor det moderne Solana-økosystemet.',
     learn_more: 'Lær mer om Bitcoin',
     explore_genesis: 'Opprinnelse og teknisk arkitektur',
     tag_independent: 'Uavhengig Solana-ressurs',
@@ -60,8 +60,8 @@ export const no: TranslationSchema = {
   },
   about: {
     kicker: 'Prosjektarkitektur · Kjerneprinsipper',
-    title: 'HVA ER BITCOIN LIGHT EDITION?',
-    description: 'Bitcoin introduserte en revolusjonerende måte å tenke på digital knapphet, desentralisering og åpne oppgjør mellom parter. Bitcoin Light Edition utforsker dette definerende konseptet gjennom et ekstremt knapt, matematisk begrenset tilbud på 420 000 tokens kombinert med lynrask hastighet, minimale gebyrer og radikal åpenhet på Solana-blokkjeden.',
+    title: 'HVA ER BITCOIN LITE EDITION?',
+    description: 'Bitcoin introduserte en revolusjonerende måte å tenke på digital knapphet, desentralisering og åpne oppgjør mellom parter. Bitcoin Lite Edition utforsker dette definerende konseptet gjennom et ekstremt knapt, matematisk begrenset tilbud på 420 000 tokens kombinert med lynrask hastighet, minimale gebyrer og radikal åpenhet på Solana-blokkjeden.',
     pillars: [
       {
         kicker: '01 · Knapphet',
@@ -121,24 +121,24 @@ export const no: TranslationSchema = {
         kicker: '07 · Skille',
         title: 'Uavhengig konseptuell ressurs',
         summary: 'Inspirert av Bitcoin, bygget nativt på Solana.',
-        description: 'Selv om den er inspirert av den matematiske knappheten og den åpne filosofien introdusert av Bitcoin, er Bitcoin Light Edition en helt separat, uavhengig digital SPL-ressurs og er ikke tilknyttet Bitcoin eller Bitcoin Core-utviklere.',
+        description: 'Selv om den er inspirert av den matematiske knappheten og den åpne filosofien introdusert av Bitcoin, er Bitcoin Lite Edition en helt separat, uavhengig digital SPL-ressurs og er ikke tilknyttet Bitcoin eller Bitcoin Core-utviklere.',
         highlight: 'Uavhengig',
         verified: 'Verifisert',
         network: 'Solana L1',
       },
     ],
     distinction_title: 'Tydelig konseptuelt skille og erklæring om uavhengighet',
-    distinction_desc: 'Bitcoin Light Edition er et uavhengig prosjekt og er ikke Bitcoin, et offisielt Bitcoin-produkt eller en forgrening av Bitcoin-blokkjeden. Det deler ingen kodebase, konsensusbok eller utvinningsnettverk med Bitcoin, og er verken godkjent eller støttet av Bitcoin Core, Satoshi Nakamoto eller noen Bitcoin-utviklerorganisasjoner. Det eksisterer nativt på Solana for å utforske digital knapphet innenfor en moderne distribuert arkitektur.',
+    distinction_desc: 'Bitcoin Lite Edition er et uavhengig prosjekt og er ikke Bitcoin, et offisielt Bitcoin-produkt eller en forgrening av Bitcoin-blokkjeden. Det deler ingen kodebase, konsensusbok eller utvinningsnettverk med Bitcoin, og er verken godkjent eller støttet av Bitcoin Core, Satoshi Nakamoto eller noen Bitcoin-utviklerorganisasjoner. Det eksisterer nativt på Solana for å utforske digital knapphet innenfor en moderne distribuert arkitektur.',
   },
   education: {
     badge: 'UTDANNINGSRESSURS OG GENESIS-ARKIV',
-    title: 'Lær mer om Bitcoin og opprinnelsen til Light Edition',
-    description: 'En autoritativ, nøytral veiledning som forklarer Bitcoin, hvordan distribuerte hovedbøker fungerer, den historiske innflytelsen på digital finans og hvordan opprinnelsen til Bitcoin Light Edition oppsto på Solana-blokkjeden.',
+    title: 'Lær mer om Bitcoin og opprinnelsen til Lite Edition',
+    description: 'En autoritativ, nøytral veiledning som forklarer Bitcoin, hvordan distribuerte hovedbøker fungerer, den historiske innflytelsen på digital finans og hvordan opprinnelsen til Bitcoin Lite Edition oppsto på Solana-blokkjeden.',
     tabs: {
       overview: '1. Hva er Bitcoin?',
       how_it_works: '2. Hvordan Bitcoin fungerer',
       supply: '3. Tilbud og desentralisering',
-      genesis: '4. Opprinnelsen til Bitcoin Light Edition',
+      genesis: '4. Opprinnelsen til Bitcoin Lite Edition',
     },
     tab1: {
       def_kicker: 'Grunnleggende definisjon',
@@ -166,8 +166,8 @@ export const no: TranslationSchema = {
           desc: 'Ga enkeltpersoner over hele verden mulighet til å sikre formuen sin med private kryptografiske nøkler i stedet for tredjeparts forvaltere.',
         },
       ],
-      boundary_title: 'Fra Bitcoin til Bitcoin Light Edition: Tydelig skillelinje',
-      boundary_desc: 'Bitcoin Light Edition er en egen digital ressurs bygget på Solana, inspirert av konsepter forbundet med Bitcoin. Bitcoin Light Edition er ikke Bitcoin, er ikke et offisielt Bitcoin-produkt, er ikke en forgrening av Bitcoin og er ikke tilknyttet Bitcoin-nettverket.',
+      boundary_title: 'Fra Bitcoin til Bitcoin Lite Edition: Tydelig skillelinje',
+      boundary_desc: 'Bitcoin Lite Edition er en egen digital ressurs bygget på Solana, inspirert av konsepter forbundet med Bitcoin. Bitcoin Lite Edition er ikke Bitcoin, er ikke et offisielt Bitcoin-produkt, er ikke en forgrening av Bitcoin og er ikke tilknyttet Bitcoin-nettverket.',
     },
     tab2: {
       intro: 'Å forstå de grunnleggende mekanismene i blokkjedeteknologi bidrar til å belyse både Bitcoins opprinnelige design og hvordan moderne lag 1-protokoller som Solana skiller seg ut.',
@@ -208,9 +208,9 @@ export const no: TranslationSchema = {
       supply_kicker: 'Økonomisk sammenligning',
       supply_title: 'Fast tilbud og knapphetsprofiler',
       supply_p1: 'Knapphet er det grunnleggende økonomiske prinsippet som gjør det mulig for digitale ressurser å fungere som pålitelige verdioppbevaringsmidler. Ved å håndheve et uforanderlig utslippstak kodet inn i protokollen, eliminerte Bitcoin risikoen for vilkårlig devaluering fra sentralbanker.',
-      supply_p2: 'Bitcoin Light Edition viderefører denne modellen med streng numerisk knapphet i Solana-miljøet, og begrenser det totale tilbudet til nøyaktig 420 000 tokens.',
+      supply_p2: 'Bitcoin Lite Edition viderefører denne modellen med streng numerisk knapphet i Solana-miljøet, og begrenser det totale tilbudet til nøyaktig 420 000 tokens.',
       btc_supply_label: 'Totalt tilbud av Bitcoin',
-      ble_supply_label: 'Totalt tilbud av Bitcoin Light Edition',
+      ble_supply_label: 'Totalt tilbud av Bitcoin Lite Edition',
       ratio_label: 'Numerisk knapphetsfaktor',
       ratio_val: '50 ganger lavere tilbud enn Bitcoin',
       supply_footer: 'Begge modeller deler det ufravikelige prinsippet om null tilbudsvekst utover den hardkodede grensen.',
@@ -224,13 +224,13 @@ export const no: TranslationSchema = {
     },
     tab4: {
       archive_kicker: 'Konseptuell opprinnelse',
-      title: 'Opprinnelsen til Bitcoin Light Edition',
+      title: 'Opprinnelsen til Bitcoin Lite Edition',
       p1: 'Den 3. januar 2009 utvant Satoshi Nakamoto Bitcoins opprinnelsesblokk (blokk 0) og la inn et historisk budskap i coinbase-transaksjonen:',
       quote: '"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."',
       p2: 'Dette budskapet representerte en protest mot sentralisert finans og en erklæring om at matematikk, åpenhet og tillitsløse desentraliserte systemer gir et overlegent fundament for verdi.',
       question_label: 'Det tekniske spørsmålet:',
       question_body: 'Hvordan ville Satoshis ufravikelige etos om knapphet og suverenitet se ut hvis det ble bygget fra dag én på Solanas høyhastighetsnettverk?',
-      conclusion: 'Bitcoin Light Edition ble unnfanget som en uavhengig utforskning av dette spørsmålet, og kodet fire uforanderlige invariansregler inn i sitt Solana-token:',
+      conclusion: 'Bitcoin Lite Edition ble unnfanget som en uavhengig utforskning av dette spørsmålet, og kodet fire uforanderlige invariansregler inn i sitt Solana-token:',
       invariants: [
         {
           tag: 'Invarians 01',
@@ -262,14 +262,14 @@ export const no: TranslationSchema = {
   },
   scarcity: {
     kicker: 'Teknisk sammenligning · Oversikt på tvers av lag',
-    title: 'BITCOIN → BITCOIN LIGHT EDITION → SOLANA-NETTVERKET',
-    description: 'En objektiv og teknisk sammenligning som undersøker pionerressursen (Bitcoin), den uavhengige knapphetsressursen (Bitcoin Light Edition) og det underliggende oppgjørslaget (Solana).',
+    title: 'BITCOIN → BITCOIN LITE EDITION → SOLANA-NETTVERKET',
+    description: 'En objektiv og teknisk sammenligning som undersøker pionerressursen (Bitcoin), den uavhengige knapphetsressursen (Bitcoin Lite Edition) og det underliggende oppgjørslaget (Solana).',
     step1_kicker: 'Trinn 01 · Referanseressurs',
     step1_title: 'Bitcoin (BTC)',
     step1_desc: 'Den grunnleggende innovasjonen som demonstrerte levedyktigheten til desentralisert digital knapphet og tillitsløse oppgjør.',
     step1_stat_label: 'Maksimalt tilbudstak',
     step2_kicker: 'Trinn 02 · Uavhengig knapphetsressurs',
-    step2_title: 'Bitcoin Light Edition (BLTE)',
+    step2_title: 'Bitcoin Lite Edition (BLTE)',
     step2_desc: 'Et uavhengig token som implementerer et strengt tak på 420 000 tokens på Solanas utførelseslag med tilbakekalt preging.',
     step2_stat_label: '50 ganger lavere numerisk tilbud',
     step3_kicker: 'Trinn 03 · Oppgjørsarkitektur',
@@ -282,7 +282,7 @@ export const no: TranslationSchema = {
     matrix_title: 'Sammenligning av tekniske spesifikasjoner',
     col_parameter: 'Parameter / Måling',
     col_btc: 'Bitcoin (BTC)',
-    col_ble: 'Bitcoin Light Edition (BLTE)',
+    col_ble: 'Bitcoin Lite Edition (BLTE)',
     rows: [
       {
         metric: 'Blokkjednettverk',
@@ -326,7 +326,7 @@ export const no: TranslationSchema = {
       },
     ],
     distinction_title: 'Viktig merknad om teknisk uavhengighet',
-    distinction_desc: 'Bitcoin Light Edition (BLTE) er et uavhengig SPL-token som opererer autonomt på Solana-blokkjeden. Det deler ingen kodebase, utvinningsinfrastruktur eller UTXO-transaksjonsformat med Bitcoin Core eller Bitcoin-nettverket.',
+    distinction_desc: 'Bitcoin Lite Edition (BLTE) er et uavhengig SPL-token som opererer autonomt på Solana-blokkjeden. Det deler ingen kodebase, utvinningsinfrastruktur eller UTXO-transaksjonsformat med Bitcoin Core eller Bitcoin-nettverket.',
   },
   token_overview: {
     kicker: 'Verifiserte spesifikasjoner · SPL-arkitektur',
@@ -383,7 +383,7 @@ export const no: TranslationSchema = {
   how_to_buy: {
     kicker: 'Kjøpsveiledning · Sikkerhetsanbefalinger',
     title: 'SLIK KJØPER DU',
-    subtitle: 'En trinnvis veiledning for å skaffe Bitcoin Light Edition på det desentraliserte Solana-nettverket.',
+    subtitle: 'En trinnvis veiledning for å skaffe Bitcoin Lite Edition på det desentraliserte Solana-nettverket.',
     steps: [
       {
         step: '01',
@@ -413,7 +413,7 @@ export const no: TranslationSchema = {
         step: '05',
         title: 'Lim inn den offisielle pregingsadressen',
         summary: 'Verifiser tokenets ekthet via den offentlige adressen.',
-        description: 'Lim inn den offisielle kontraktadressen for Bitcoin Light Edition publisert på dette nettstedet. Sjekk alltid de første og siste tegnene i hashen.',
+        description: 'Lim inn den offisielle kontraktadressen for Bitcoin Lite Edition publisert på dette nettstedet. Sjekk alltid de første og siste tegnene i hashen.',
       },
       {
         step: '06',
@@ -433,7 +433,7 @@ export const no: TranslationSchema = {
     advisory_desc: 'Offentlige blokkjeder er åpne for alle, noe som betyr at svindlere kan opprette tokens med lignende navn. Utvis alltid streng forsiktighet:',
     security_items: [
       'Kontroller alltid kontraktadressen på Solscan før du bekrefter en handel.',
-      'Ingen legitime teammedlemmer fra Bitcoin Light Edition vil sende deg private meldinger først.',
+      'Ingen legitime teammedlemmer fra Bitcoin Lite Edition vil sende deg private meldinger først.',
       'Oppgi aldri gjenopprettingsfrasen din på noe nettsted, skjema eller meldingsapp.',
       'Sørg for at du handler via anerkjente DEX-plattformer som Jupiter eller Raydium.',
     ],
@@ -620,12 +620,12 @@ export const no: TranslationSchema = {
   faq: {
     kicker: 'Ofte stilte spørsmål · Prosjektoversikt',
     title: 'OFTE STILTE SPØRSMÅL',
-    subtitle: 'Tydelige og autoritative svar på vanlige spørsmål om Bitcoin Light Edition, parametere og drift.',
-    notice_text: 'Viktig merknad: Bitcoin Light Edition er et uavhengig prosjekt på Solana og er ikke tilknyttet Bitcoin eller Bitcoin Core.',
+    subtitle: 'Tydelige og autoritative svar på vanlige spørsmål om Bitcoin Lite Edition, parametere og drift.',
+    notice_text: 'Viktig merknad: Bitcoin Lite Edition er et uavhengig prosjekt på Solana og er ikke tilknyttet Bitcoin eller Bitcoin Core.',
     items: [
       {
-        question: 'Hva er Bitcoin Light Edition?',
-        answer: 'Bitcoin Light Edition er en uavhengig digital ressurs bygget direkte på Solana-blokkjeden. Inspirert av det grunnleggende paradigmet om digital knapphet etablert av Bitcoin, introduserer det et fast tak på 420 000 tokens designet for å fungere med Solanas høye hastighet, lave kostnader og åpne struktur.',
+        question: 'Hva er Bitcoin Lite Edition?',
+        answer: 'Bitcoin Lite Edition er en uavhengig digital ressurs bygget direkte på Solana-blokkjeden. Inspirert av det grunnleggende paradigmet om digital knapphet etablert av Bitcoin, introduserer det et fast tak på 420 000 tokens designet for å fungere med Solanas høye hastighet, lave kostnader og åpne struktur.',
       },
       {
         question: 'Hva er det totale tilbudet?',
@@ -633,20 +633,20 @@ export const no: TranslationSchema = {
       },
       {
         question: 'Hvilken blokkjede er det bygget på?',
-        answer: 'Bitcoin Light Edition er bygget nativt på Solana-blokkjeden ved bruk av SPL / Token-2022-standarder. Dette utnytter Proof-of-History-konsensus for oppgjør på under ett sekund (~400ms) og minimale gebyrer (<$0.001).',
+        answer: 'Bitcoin Lite Edition er bygget nativt på Solana-blokkjeden ved bruk av SPL / Token-2022-standarder. Dette utnytter Proof-of-History-konsensus for oppgjør på under ett sekund (~400ms) og minimale gebyrer (<$0.001).',
       },
       {
-        question: 'Er Bitcoin Light Edition det samme som Bitcoin?',
-        answer: 'Nei. Bitcoin Light Edition er et uavhengig prosjekt og er verken Bitcoin, et offisielt Bitcoin-produkt, en forgrening av Bitcoin eller tilknyttet Bitcoin Core eller Satoshi Nakamoto. Det opererer utelukkende på Solana.',
+        question: 'Er Bitcoin Lite Edition det samme som Bitcoin?',
+        answer: 'Nei. Bitcoin Lite Edition er et uavhengig prosjekt og er verken Bitcoin, et offisielt Bitcoin-produkt, en forgrening av Bitcoin eller tilknyttet Bitcoin Core eller Satoshi Nakamoto. Det opererer utelukkende på Solana.',
         isDisclaimer: true,
       },
       {
         question: 'Hvordan sammenlignes knappheten med Bitcoin?',
-        answer: 'Bitcoin var banebrytende innen digital knapphet med et tak på 21 000 000 mynter. Bitcoin Light Edition har et fast tak på nøyaktig 420 000 tokens – noe som gir et tilbud som er 50 ganger lavere i antall. I tillegg gjøres oppgjøret på sekunder på Solana.',
+        answer: 'Bitcoin var banebrytende innen digital knapphet med et tak på 21 000 000 mynter. Bitcoin Lite Edition har et fast tak på nøyaktig 420 000 tokens – noe som gir et tilbud som er 50 ganger lavere i antall. I tillegg gjøres oppgjøret på sekunder på Solana.',
       },
       {
-        question: 'Hvor og hvordan kan jeg kjøpe Bitcoin Light Edition?',
-        answer: 'Bitcoin Light Edition kjøpes via verifiserte desentraliserte børser (DEX) på Solana, som Jupiter og Raydium. Du trenger en Solana-lommebok (f.eks. Phantom eller Solflare) fylt med SOL. Lim inn den verifiserte kontraktadressen for å gjennomføre handelen.',
+        question: 'Hvor og hvordan kan jeg kjøpe Bitcoin Lite Edition?',
+        answer: 'Bitcoin Lite Edition kjøpes via verifiserte desentraliserte børser (DEX) på Solana, som Jupiter og Raydium. Du trenger en Solana-lommebok (f.eks. Phantom eller Solflare) fylt med SOL. Lim inn den verifiserte kontraktadressen for å gjennomføre handelen.',
       },
       {
         question: 'Hvor kan jeg verifisere tokenet og parameterne?',
@@ -669,7 +669,7 @@ export const no: TranslationSchema = {
   },
   footer: {
     brand_sub: 'Inspirert av digital knapphet, utført på Solanas lynraske infrastruktur.',
-    mission: 'Bitcoin Light Edition utforsker skjæringspunktet mellom streng matematisk knapphet og høy ytelse.',
+    mission: 'Bitcoin Lite Edition utforsker skjæringspunktet mellom streng matematisk knapphet og høy ytelse.',
     btn_whitepaper: 'Les hvitbok',
     nav_heading: 'Navigasjon',
     whitepaper_v1: 'Hvitbok',
@@ -683,14 +683,14 @@ export const no: TranslationSchema = {
     copied: 'Kopiert',
     btn_buy_trade: 'KJØP / HANDEL',
     disclaimer_heading: 'Juridisk ansvarsfraskrivelse og uavhengighet',
-    disclaimer_text: 'Bitcoin Light Edition er et uavhengig kryptografisk token på Solana og er IKKE tilknyttet, godkjent av eller en forgrening av Bitcoin Core eller Satoshi Nakamoto.',
+    disclaimer_text: 'Bitcoin Lite Edition er et uavhengig kryptografisk token på Solana og er IKKE tilknyttet, godkjent av eller en forgrening av Bitcoin Core eller Satoshi Nakamoto.',
     disclaimer_risk: 'Digitale eiendeler innebærer betydelig risiko. Ingenting på dette nettstedet utgjør finansiell rådgivning.',
     rights: 'Alle rettigheter forbeholdes.',
     mainnet_pending: 'Avventer Mainnet-distribusjon',
   },
   modals: {
     buy_trade: {
-      title: 'KJØP / HANDEL — BITCOIN LIGHT EDITION',
+      title: 'KJØP / HANDEL — BITCOIN LITE EDITION',
       subtitle: 'Desentraliserte markedsplasser · Flyttbart panel',
       alert_title: 'Førlansering / Innledende likviditet avventes',
       alert_desc: 'Offisielle handelsplattformer på Solana desentraliserte børser (Raydium og Jupiter) vil aktiveres ved verifisert lansering av likviditetsbassenget. Ikke forsøk å kjøpe fra uverifiserte adresser.',
@@ -706,7 +706,7 @@ export const no: TranslationSchema = {
       terms_sections: [
         {
           title: '1. Prosjektets natur og uavhengighet',
-          body: 'Bitcoin Light Edition er et uavhengig digitalt aktivaprosjekt bygget på Solana-blokkjeden. Det er ikke Bitcoin og er ikke tilknyttet, godkjent eller utstedt av Bitcoin, Bitcoin Core-utviklere eller noen organisasjon tilknyttet Bitcoin. Alt materiale publisert på denne portalen og i hvitboken er utelukkende for informasjons- og utdanningsformål.',
+          body: 'Bitcoin Lite Edition er et uavhengig digitalt aktivaprosjekt bygget på Solana-blokkjeden. Det er ikke Bitcoin og er ikke tilknyttet, godkjent eller utstedt av Bitcoin, Bitcoin Core-utviklere eller noen organisasjon tilknyttet Bitcoin. Alt materiale publisert på denne portalen og i hvitboken er utelukkende for informasjons- og utdanningsformål.',
         },
         {
           title: '2. Ingen investeringsråd eller profittgaranti',
@@ -724,7 +724,7 @@ export const no: TranslationSchema = {
       privacy_sections: [
         {
           title: '1. Ingen innsamling av personopplysninger',
-          body: 'Bitcoin Light Edition opererer etter desentraliserte prinsipper med åpen kildekode. Dette nettstedet samler ikke inn personidentifiserende informasjon (PII), krever ingen kontoregistrering og bruker ikke sporingskapsler.',
+          body: 'Bitcoin Lite Edition opererer etter desentraliserte prinsipper med åpen kildekode. Dette nettstedet samler ikke inn personidentifiserende informasjon (PII), krever ingen kontoregistrering og bruker ikke sporingskapsler.',
         },
         {
           title: '2. Offentlige blokkjedetransaksjoner',
@@ -743,7 +743,7 @@ export const no: TranslationSchema = {
     whitepaper: {
       title: 'ARKITEKTUR-HVITBOK',
       subtitle: 'Teknisk spesifikasjon · Flyttbart panel',
-      doc_title: 'BITCOIN LIGHT EDITION',
+      doc_title: 'BITCOIN LITE EDITION',
       doc_sub: 'ARKITEKTUR-HVITBOK (SOLANA MAINNET-SPESIFIKASJON)',
       toc_title: 'Kapitteloversikt',
       copied_toast: 'Hvitbokens fullstendige tekst er kopiert til utklippstavlen',
@@ -753,8 +753,8 @@ export const no: TranslationSchema = {
           num: '01',
           title: '1. Sammendrag og abstrakt',
           content: [
-            'Bitcoin Light Edition er en uavhengig digital ressurs bygget nativt på Solana-blokkjeden. Inspirert av det opprinnelige paradigmet om digital knapphet etablert av Bitcoin i 2008, utforsker prosjektet anvendelsen av et ultra-knapt, matematisk begrenset aktivum (420 000 tokens) i et moderne utførelsesmiljø med høy ytelse og lav forsinkelse.',
-            'I motsetning til tradisjonelle forgreninger som replikerer UTXO-tilstanden eller energikrevende utvinning, implementerer Bitcoin Light Edition streng knapphet via Solanas SPL-tokenstandard, og oppnår ~400ms endelighet med minimale transaksjonsgebyrer (<$0.001).',
+            'Bitcoin Lite Edition er en uavhengig digital ressurs bygget nativt på Solana-blokkjeden. Inspirert av det opprinnelige paradigmet om digital knapphet etablert av Bitcoin i 2008, utforsker prosjektet anvendelsen av et ultra-knapt, matematisk begrenset aktivum (420 000 tokens) i et moderne utførelsesmiljø med høy ytelse og lav forsinkelse.',
+            'I motsetning til tradisjonelle forgreninger som replikerer UTXO-tilstanden eller energikrevende utvinning, implementerer Bitcoin Lite Edition streng knapphet via Solanas SPL-tokenstandard, og oppnår ~400ms endelighet med minimale transaksjonsgebyrer (<$0.001).',
             'Ved å permanent tilbakekalle pregings- og frysefullmakter ved opprettelse, garanterer protokollen et matematisk maksimalt tilbud uten administrative bakdører.',
           ],
         },
@@ -764,17 +764,17 @@ export const no: TranslationSchema = {
           title: '2. Grunnleggende filosofi: Digital knapphet',
           content: [
             'I 2008 beviste publiseringen av Bitcoins hvitbok at varig verdi i den digitale sfæren krevde etterprøvbar knapphet immun mot institusjonell manipulasjon.',
-            'Bitcoins tak på 21 millioner mynter etablerte en standard om at matematisk forutsigbarhet skaper tillit. Bitcoin Light Edition viderefører denne filosofien ved å redusere tilbudstaket til 420 000 tokens – en 50 ganger høyere numerisk knapphet.',
+            'Bitcoins tak på 21 millioner mynter etablerte en standard om at matematisk forutsigbarhet skaper tillit. Bitcoin Lite Edition viderefører denne filosofien ved å redusere tilbudstaket til 420 000 tokens – en 50 ganger høyere numerisk knapphet.',
             'Denne tilnærmingen støttes av fullstendig etterprøvbarhet på en åpen og universelt tilgjengelig hovedbok.',
           ],
         },
         {
           id: 'genesis',
           num: '03',
-          title: '3. Opprinnelsen til Bitcoin Light Edition',
+          title: '3. Opprinnelsen til Bitcoin Lite Edition',
           content: [
-            'Opprinnelsen til Bitcoin Light Edition oppsto for å besvare et arkitektonisk spørsmål: Hvordan ville Satoshi Nakamotos visjon om suverenitet og knapphet se ut hvis det ble realisert på verdens raskeste L1-blokkjede?',
-            'Den 3. januar 2009 beviste Bitcoins genesis-blokk at desentralisert matematikk kunne erstatte tillit til sentraliserte institusjoner. Femten år senere bringer Bitcoin Light Edition den filosofien inn i Solana-økosystemet.',
+            'Opprinnelsen til Bitcoin Lite Edition oppsto for å besvare et arkitektonisk spørsmål: Hvordan ville Satoshi Nakamotos visjon om suverenitet og knapphet se ut hvis det ble realisert på verdens raskeste L1-blokkjede?',
+            'Den 3. januar 2009 beviste Bitcoins genesis-blokk at desentralisert matematikk kunne erstatte tillit til sentraliserte institusjoner. Femten år senere bringer Bitcoin Lite Edition den filosofien inn i Solana-økosystemet.',
             'Resultatet er et fullt reviderbart SPL-token med urokkelig tilbudstak, lynraske oppgjør og global tilgjengelighet.',
           ],
         },
@@ -783,7 +783,7 @@ export const no: TranslationSchema = {
           num: '04',
           title: '4. Teknisk skille fra Bitcoin',
           content: [
-            'Det er avgjørende å presisere at Bitcoin Light Edition IKKE er Bitcoin, og heller ikke en forgrening av Bitcoins blokkjede.',
+            'Det er avgjørende å presisere at Bitcoin Lite Edition IKKE er Bitcoin, og heller ikke en forgrening av Bitcoins blokkjede.',
             'Det deler ingen transaksjonshistorikk, SHA-256-utvinning eller kildekode med Bitcoin Core. Det opererer som en selvstendig ressurs på Solana-blokkjeden.',
             'Enhver konseptuell likhet angående knapphet fungerer som en uavhengig hyllest og teknologisk utforskning.',
           ],
@@ -804,7 +804,7 @@ export const no: TranslationSchema = {
           num: '06',
           title: '6. Tekniske tokenspesifikasjoner',
           content: [
-            'Tokennavn: Bitcoin Light Edition',
+            'Tokennavn: Bitcoin Lite Edition',
             'Ticker: BLTE',
             'Nettverk: Solana Layer 1',
             'Tokenstandard: SPL Token / Token-2022',
@@ -830,7 +830,7 @@ export const no: TranslationSchema = {
           title: '8. Uforanderlighet og tilbakekalte fullmakter',
           content: [
             'I Solanas SPL-standard beholder kontrakter visse rettigheter med mindre de eksplisitt annulleres.',
-            'I Bitcoin Light Edition er pregingsfullmakten permanent satt til null ved opprettelse, noe som garanterer at ingen nye tokens kan lages.',
+            'I Bitcoin Lite Edition er pregingsfullmakten permanent satt til null ved opprettelse, noe som garanterer at ingen nye tokens kan lages.',
             'I tillegg er frysefullmakten deaktivert, slik at ingen ekstern enhet kan fryse brukersaldoer.',
           ],
         },
@@ -850,7 +850,7 @@ export const no: TranslationSchema = {
           num: '10',
           title: '10. Verifisering på kjeden uten tillit',
           content: [
-            'I tråd med prinsippet "Ikke stol på, etterprøv", kan alle aspekter ved Bitcoin Light Edition revideres uavhengig på offentlige blokkutforskere.',
+            'I tråd med prinsippet "Ikke stol på, etterprøv", kan alle aspekter ved Bitcoin Lite Edition revideres uavhengig på offentlige blokkutforskere.',
             'Deltakere kan bekrefte totalt tilbud, sjekke at pregingsfullmakt er null og overvåke alle overføringer i sanntid.',
           ],
         },
@@ -859,7 +859,7 @@ export const no: TranslationSchema = {
           num: '11',
           title: '11. Juridisk merknad og risikovurdering',
           content: [
-            'Bitcoin Light Edition er et teknologisk eksperiment innen digital knapphet.',
+            'Bitcoin Lite Edition er et teknologisk eksperiment innen digital knapphet.',
             'Deltakelse i kryptografiske aktiva innebærer betydelig risiko knyttet til markedssvingninger og teknisk usikkerhet.',
             'Ingenting i dette dokumentet skal tolkes som finansiell eller juridisk rådgivning.',
           ],
@@ -868,13 +868,13 @@ export const no: TranslationSchema = {
     },
     education_modal: {
       title: 'UTDANNINGSVEILEDNING OG GENESIS-ARKIV',
-      subtitle: 'Forstå Bitcoin, knapphet og prinsippene bak Light Edition · Flyttbart panel',
+      subtitle: 'Forstå Bitcoin, knapphet og prinsippene bak Lite Edition · Flyttbart panel',
       search_placeholder: 'Søk i utdanningsveiledningen...',
       tabs: {
         intro: '1. Hva er Bitcoin?',
         mechanisms: '2. Hvordan Bitcoin fungerer',
         scarcity: '3. Knapphet og tilbud',
-        genesis: '4. Opprinnelsen til Light Edition',
+        genesis: '4. Opprinnelsen til Lite Edition',
         distinction: '5. Teknisk skille',
       },
       copy_guide: 'Kopier hele utdanningsveiledningen',
@@ -909,16 +909,16 @@ export const no: TranslationSchema = {
         scarcity: {
           title: 'Kapittel 03: Komparativ knapphetsanalyse',
           p1: 'Knapphet er det økonomiske fundamentet for varig verdi. Bitcoin har et fast tak på 21 000 000 BTC fordelt over et århundre.',
-          p2: 'Bitcoin Light Edition (BLTE) har en enda strengere knapphetsprofil: nøyaktig 420 000 tokens.',
+          p2: 'Bitcoin Lite Edition (BLTE) har en enda strengere knapphetsprofil: nøyaktig 420 000 tokens.',
           stat_btc: '21 000 000 BTC',
           stat_ble: '420 000 BLTE',
           ratio: '50 ganger høyere numerisk knapphet enn Bitcoin',
         },
         genesis: {
-          title: 'Kapittel 04: Opprinnelsen til Bitcoin Light Edition',
+          title: 'Kapittel 04: Opprinnelsen til Bitcoin Lite Edition',
           p1: 'Den 3. januar 2009 beviste Bitcoins genesis-blokk at desentralisert matematikk kunne erstatte sentralisert tillit.',
           quote: '"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."',
-          p2: 'Femten år senere bringer Bitcoin Light Edition denne tidløse tankegangen til Solana, med ~400ms oppgjør, minimale gebyrer og 100 % uforanderlighet.',
+          p2: 'Femten år senere bringer Bitcoin Lite Edition denne tidløse tankegangen til Solana, med ~400ms oppgjør, minimale gebyrer og 100 % uforanderlighet.',
           invariants: [
             {
               title: 'Fast tak på 420 000 tokens',
@@ -936,7 +936,7 @@ export const no: TranslationSchema = {
         },
         distinction: {
           title: 'Kapittel 05: Tydelig teknisk skille',
-          p1: 'Bitcoin Light Edition er IKKE Bitcoin og er ikke en forgrening av Bitcoin-blokkjeden.',
+          p1: 'Bitcoin Lite Edition er IKKE Bitcoin og er ikke en forgrening av Bitcoin-blokkjeden.',
           p2: 'Det deler ingen kode, hovedbok eller konsensusregler med Bitcoin. Det er et uavhengig SPL-token på Solana.',
           p3: 'Det eksisterer for selvstendig å utforske algoritmisk knapphet i moderne desentraliserte arkitekturer.',
         },

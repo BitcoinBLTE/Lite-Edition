@@ -30,15 +30,15 @@ export const zhCN: TranslationSchema = {
     transparency: '透明度',
     faq: '常见问题',
     buy_trade: '购买 / 交易',
-    brand_title: 'BITCOIN LIGHT EDITION',
+    brand_title: 'BITCOIN LITE EDITION',
     language_selector: '选择语言',
   },
   hero: {
     independent_asset: 'Solana 独立数字资产',
     fixed_scarcity: '固定稀缺性：420,000 BLTE',
-    title: 'BITCOIN LIGHT EDITION',
+    title: 'BITCOIN LITE EDITION',
     subtitle: '数字资产领域的新篇章',
-    description: '« Bitcoin Light Edition 是基于 Solana 构建的独立数字资产，其灵感源于确立比特币在数字金融中里程碑地位的核心原则——稀缺性、透明度、去中心化与无国界价值转移。 »',
+    description: '« Bitcoin Lite Edition 是基于 Solana 构建的独立数字资产，其灵感源于确立比特币在数字金融中里程碑地位的核心原则——稀缺性、透明度、去中心化与无国界价值转移。 »',
     btn_explore: '探索代币架构',
     btn_whitepaper: '阅读白皮书',
     btn_buy_trade: '购买 / 交易',
@@ -51,7 +51,7 @@ export const zhCN: TranslationSchema = {
     title: '数字资产领域的新篇章',
     p1: '比特币向世界证明了价值可以纯粹以数字化形式存在——无需依赖中介机构，而是通过数学、开放网络和密码学共识来保障安全。它证明了点对点无国界价值转移的可行性，开创了现代金融的新疆界。',
     p2: '这一划时代的突破催生了加密货币、去中心化金融（DeFi）与 Web3 生态系统。随着时间推移，这启发了在替代执行环境、更低延迟和更快确认速度方面的持续探索。',
-    p3: 'Bitcoin Light Edition 正是这一演进中的独立实践。它将稀缺性与透明度的精髓传承至高性能的 Solana 生态系统中。',
+    p3: 'Bitcoin Lite Edition 正是这一演进中的独立实践。它将稀缺性与透明度的精髓传承至高性能的 Solana 生态系统中。',
     learn_more: '深入了解比特币',
     explore_genesis: '创世与技术架构',
     tag_independent: 'Solana 独立资产',
@@ -60,8 +60,8 @@ export const zhCN: TranslationSchema = {
   },
   about: {
     kicker: '项目架构 · 核心原则',
-    title: '什么是 BITCOIN LIGHT EDITION？',
-    description: '比特币革新了关于数字稀缺性、去中心化和开放点对点结算的思考方式。Bitcoin Light Edition 通过 420,000 枚代币的绝对硬顶，结合 Solana 区块链的亚秒级速度、近乎为零的微小费用以及彻底的链上透明度，重构了这一理念。',
+    title: '什么是 BITCOIN LITE EDITION？',
+    description: '比特币革新了关于数字稀缺性、去中心化和开放点对点结算的思考方式。Bitcoin Lite Edition 通过 420,000 枚代币的绝对硬顶，结合 Solana 区块链的亚秒级速度、近乎为零的微小费用以及彻底的链上透明度，重构了这一理念。',
     pillars: [
       {
         kicker: '01 · 稀缺性',
@@ -121,24 +121,24 @@ export const zhCN: TranslationSchema = {
         kicker: '07 · 独立性',
         title: '独立的创新数字资产',
         summary: '承袭思想精髓，独立构建于 Solana。',
-        description: '虽然汲取了比特币的数学稀缺性哲学，但 Bitcoin Light Edition 是完全独立的 SPL 代币，与 Bitcoin Core 开发者无任何关联。',
+        description: '虽然汲取了比特币的数学稀缺性哲学，但 Bitcoin Lite Edition 是完全独立的 SPL 代币，与 Bitcoin Core 开发者无任何关联。',
         highlight: '独立实体',
         verified: '已验证',
         network: 'Solana L1',
       },
     ],
     distinction_title: '明确的原则界定与无关联声明',
-    distinction_desc: 'Bitcoin Light Edition 是一个独立的加密资产项目，它不是比特币，不是比特币官方产品，也不是比特币区块链的分叉。它与比特币不共享代码库、共识账本或矿工网络，与 Bitcoin Core 或中本聪无任何从属关系。该项目原生存在于 Solana 上，以在现代分布式环境中探索数字稀缺性。',
+    distinction_desc: 'Bitcoin Lite Edition 是一个独立的加密资产项目，它不是比特币，不是比特币官方产品，也不是比特币区块链的分叉。它与比特币不共享代码库、共识账本或矿工网络，与 Bitcoin Core 或中本聪无任何从属关系。该项目原生存在于 Solana 上，以在现代分布式环境中探索数字稀缺性。',
   },
   education: {
     badge: '教育资源与创世文献',
-    title: '深入了解比特币与 Light Edition 的创世历程',
-    description: '中立、权威的区块链教育指南，详解比特币原理、分布式账本机制，以及 Bitcoin Light Edition 在 Solana 上诞生的技术背景。',
+    title: '深入了解比特币与 Lite Edition 的创世历程',
+    description: '中立、权威的区块链教育指南，详解比特币原理、分布式账本机制，以及 Bitcoin Lite Edition 在 Solana 上诞生的技术背景。',
     tabs: {
       overview: '1. 什么是比特币？',
       how_it_works: '2. 运行机制详解',
       supply: '3. 供应与去中心化对比',
-      genesis: '4. Light Edition 创世始末',
+      genesis: '4. Lite Edition 创世始末',
     },
     tab1: {
       def_kicker: '基础定义',
@@ -166,8 +166,8 @@ export const zhCN: TranslationSchema = {
           desc: '赋权全球个人通过私钥直接保管个人财富，脱离第三方机构掌控。',
         },
       ],
-      boundary_title: '比特币与 Bitcoin Light Edition 的清晰界限',
-      boundary_desc: 'Bitcoin Light Edition 是构建于 Solana 上的独立资产，并非比特币本身，不是官方项目或分叉。',
+      boundary_title: '比特币与 Bitcoin Lite Edition 的清晰界限',
+      boundary_desc: 'Bitcoin Lite Edition 是构建于 Solana 上的独立资产，并非比特币本身，不是官方项目或分叉。',
     },
     tab2: {
       intro: '理解区块链底层运作机制有助于看清比特币的原始设计，以及像 Solana 这类现代 Layer 1 的演进之处。',
@@ -206,14 +206,14 @@ export const zhCN: TranslationSchema = {
     },
     tab3: {
       supply_kicker: '发行机制对比',
-      supply_title: '比特币供应量 vs Bitcoin Light Edition',
+      supply_title: '比特币供应量 vs Bitcoin Lite Edition',
       supply_p1: '比特币硬编码了 21,000,000 BTC 的总上限，通过约四年一次的减半历经约 130 年渐进产出。',
-      supply_p2: '相比之下，Bitcoin Light Edition（BLTE）确立了更为严苛的绝对数值约束：',
+      supply_p2: '相比之下，Bitcoin Lite Edition（BLTE）确立了更为严苛的绝对数值约束：',
       btc_supply_label: '比特币最大供应量：',
-      ble_supply_label: 'Bitcoin Light Edition 供应量：',
+      ble_supply_label: 'Bitcoin Lite Edition 供应量：',
       ratio_label: '稀缺比例：',
       ratio_val: 'BLTE 在绝对数值上比 BTC 稀缺 50 倍',
-      supply_footer: 'Bitcoin Light Edition 在创世之初已全额铸造并封顶为 420,000 枚，增发权限永久销毁。',
+      supply_footer: 'Bitcoin Lite Edition 在创世之初已全额铸造并封顶为 420,000 枚，增发权限永久销毁。',
       decent_kicker: '去中心化原则',
       decent_title: '分布式网络 vs 中心化集权',
       decent_desc: '去中心化意味着没有任何单个公司、政府或高管能够回滚交易、篡改历史账目或肆意超发增发。',
@@ -224,13 +224,13 @@ export const zhCN: TranslationSchema = {
     },
     tab4: {
       archive_kicker: '起源档案 · 创世规范',
-      title: 'Bitcoin Light Edition 的创世始末',
+      title: 'Bitcoin Lite Edition 的创世始末',
       p1: '2009 年 1 月 3 日，中本聪挖出比特币创世区块（Block 0），并在区块中永久写入了泰晤士报头版标题：',
       quote: '“The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.”',
       p2: '随后的十五年验证了这一理念的伟大，但也暴露出传统工作量证明机制在日常高频交互下的局限：10 分钟确认周期与拥堵时高达数十美元的 Gas 成本。',
       question_label: '创世之问：',
       question_body: '如果将中本聪坚不可摧的数学稀缺原则，迁移到能够实现亚秒级结算与极微手续费的高性能 Layer 1 网络，将会碰撞出怎样的火花？',
-      conclusion: '基于这一追问，Bitcoin Light Edition（BLTE）正式诞生。',
+      conclusion: '基于这一追问，Bitcoin Lite Edition（BLTE）正式诞生。',
       invariants: [
         {
           tag: '创世不可变项 01',
@@ -264,7 +264,7 @@ export const zhCN: TranslationSchema = {
     step1_desc: '开创了密码学数字稀缺与去中心化点对点无中介结算体系。',
     step1_stat_label: '最大理论供应量',
     step2_kicker: '独立数字资产',
-    step2_title: 'BITCOIN LIGHT EDITION',
+    step2_title: 'BITCOIN LITE EDITION',
     step2_desc: '以 Solana 高速代币原生实现的极致超稀缺固定供应量实验。',
     step2_stat_label: '总供应量（恒定固定）',
     step3_kicker: '底层执行基础设施',
@@ -277,7 +277,7 @@ export const zhCN: TranslationSchema = {
     matrix_title: '核心架构不变量深度对比',
     col_parameter: '对比维度',
     col_btc: 'Bitcoin (BTC)',
-    col_ble: 'Bitcoin Light Edition (BLTE)',
+    col_ble: 'Bitcoin Lite Edition (BLTE)',
     rows: [
       {
         metric: '底层公链网络',
@@ -321,7 +321,7 @@ export const zhCN: TranslationSchema = {
       },
     ],
     distinction_title: '重要的技术与概念区分说明：',
-    distinction_desc: 'Bitcoin Light Edition 不是比特币，也不是比特币的硬分叉、替代品或子代币。它与比特币不共享代码、算力或账本，不受 Bitcoin Core 监管或支持。它是一个独立的 Solana SPL 代币。',
+    distinction_desc: 'Bitcoin Lite Edition 不是比特币，也不是比特币的硬分叉、替代品或子代币。它与比特币不共享代码、算力或账本，不受 Bitcoin Core 监管或支持。它是一个独立的 Solana SPL 代币。',
   },
   token_overview: {
     kicker: '已验证参数 · SPL 规范',
@@ -377,7 +377,7 @@ export const zhCN: TranslationSchema = {
   },
   how_to_buy: {
     kicker: '获取全流程指引 · 步骤分解',
-    title: '如何获取 BITCOIN LIGHT EDITION',
+    title: '如何获取 BITCOIN LITE EDITION',
     subtitle: '面向去中心化爱好者的安全、非托管的 Solana DEX 交互指南。',
     steps: [
       {
@@ -468,7 +468,7 @@ export const zhCN: TranslationSchema = {
   transparency: {
     kicker: '链上可信 · 彻底开放的代码世界',
     title: '验证一切，毋须盲信',
-    subtitle: '从供应上限到权限配置，Bitcoin Light Edition 的所有核心生命线均部署在 Solana 账本上供全球检验。',
+    subtitle: '从供应上限到权限配置，Bitcoin Lite Edition 的所有核心生命线均部署在 Solana 账本上供全球检验。',
     cards: [
       {
         title: '代币总供应量',
@@ -623,8 +623,8 @@ export const zhCN: TranslationSchema = {
     notice_text: '安全警示：请务必自行在 Solscan 上核验合约地址，警惕任何使用比特币名称的假冒仿盘。',
     items: [
       {
-        question: '什么是 Bitcoin Light Edition？',
-        answer: 'Bitcoin Light Edition 是构建于 Solana 上的独立数字资产。它以比特币的数字稀缺性哲学为灵感，设定了严格的 420,000 枚固定总量，并充分利用 Solana 的高吞吐量、极低费率和链上透明性运行。',
+        question: '什么是 Bitcoin Lite Edition？',
+        answer: 'Bitcoin Lite Edition 是构建于 Solana 上的独立数字资产。它以比特币的数字稀缺性哲学为灵感，设定了严格的 420,000 枚固定总量，并充分利用 Solana 的高吞吐量、极低费率和链上透明性运行。',
       },
       {
         question: '代币的真正发行总量是多少？',
@@ -635,13 +635,13 @@ export const zhCN: TranslationSchema = {
         answer: '它原生运行于 Solana 主网，严格遵循 SPL / Token-2022 标准，享有约 400 毫秒的亚秒级出块和极微的 Gas 费（<$0.001）。',
       },
       {
-        question: 'Bitcoin Light Edition 是比特币吗？',
-        answer: '不是。Bitcoin Light Edition 是一个完全独立的实验性项目，它不是比特币，不是比特币官方产品，不是硬分叉，也与中本聪或 Bitcoin Core 团队没有任何附属关系。',
+        question: 'Bitcoin Lite Edition 是比特币吗？',
+        answer: '不是。Bitcoin Lite Edition 是一个完全独立的实验性项目，它不是比特币，不是比特币官方产品，不是硬分叉，也与中本聪或 Bitcoin Core 团队没有任何附属关系。',
         isDisclaimer: true,
       },
       {
         question: '它的稀缺性与比特币相比如何？',
-        answer: '比特币的总上限是 21,000,000 枚，而 Bitcoin Light Edition 的上限只有 420,000 枚，从数学数值来看比比特币稀缺 50 倍，且能实现即时结算。',
+        answer: '比特币的总上限是 21,000,000 枚，而 Bitcoin Lite Edition 的上限只有 420,000 枚，从数学数值来看比比特币稀缺 50 倍，且能实现即时结算。',
       },
       {
         question: '我可以在哪里安全地获取它？',
@@ -661,7 +661,7 @@ export const zhCN: TranslationSchema = {
       },
       {
         question: '如何防范假币欺诈和盗窃？',
-        answer: '因为公链没有上币准入，任何人都能起名为“Bitcoin Light”，所以请严格以本站公布的 Mint 合约地址为唯一基准，并核对总量是否为 420,000。官方人员绝不会私聊索要私钥。',
+        answer: '因为公链没有上币准入，任何人都能起名为“Bitcoin Lite”，所以请严格以本站公布的 Mint 合约地址为唯一基准，并核对总量是否为 420,000。官方人员绝不会私聊索要私钥。',
         isDisclaimer: true,
       },
     ],
@@ -682,14 +682,14 @@ export const zhCN: TranslationSchema = {
     copied: '已复制至剪贴板',
     btn_buy_trade: '交易与获取说明',
     disclaimer_heading: '法律免责声明与非关联性披露',
-    disclaimer_text: 'Bitcoin Light Edition 是 Solana 上的独立加密代币，绝非 Bitcoin Core 或中本聪的官方产物，无任何关联或许可背书。',
+    disclaimer_text: 'Bitcoin Lite Edition 是 Solana 上的独立加密代币，绝非 Bitcoin Core 或中本聪的官方产物，无任何关联或许可背书。',
     disclaimer_risk: '数字资产存在高度市场波动与本金归零风险。本站一切陈述不构成任何投资收益承诺。请自行独立核查链上信息。',
     rights: '版权所有，保留一切权利。',
     mainnet_pending: 'Solana 主网创世进行中',
   },
   modals: {
     buy_trade: {
-      title: '购买 / 交易 — BITCOIN LIGHT EDITION',
+      title: '购买 / 交易 — BITCOIN LITE EDITION',
       subtitle: '去中心化交互通道 · 可自由拖动面板',
       alert_title: '公开发行前期 / 初始流动性池部署中',
       alert_desc: 'Solana 去中心化交易所（Raydium 与 Jupiter）的正规通道将在首期流动性完成注入后即刻开启。切勿与任何声称本代币的非官方合约交互。',
@@ -705,7 +705,7 @@ export const zhCN: TranslationSchema = {
       terms_sections: [
         {
           title: '1. 项目性质与完全独立性',
-          body: 'Bitcoin Light Edition 是基于 Solana 公链的独立数字资产实验。它不是比特币，不隶属于任何比特币官方开发者组织。本站及白皮书内容仅作科普教育与技术探讨之用。',
+          body: 'Bitcoin Lite Edition 是基于 Solana 公链的独立数字资产实验。它不是比特币，不隶属于任何比特币官方开发者组织。本站及白皮书内容仅作科普教育与技术探讨之用。',
         },
         {
           title: '2. 严正声明：不构成投资建议与保本承诺',
@@ -740,9 +740,9 @@ export const zhCN: TranslationSchema = {
       ],
     },
     whitepaper: {
-      title: 'BITCOIN LIGHT EDITION 架构白皮书',
+      title: 'BITCOIN LITE EDITION 架构白皮书',
       subtitle: 'Solana 主网规范 · 可拖动浮窗',
-      doc_title: 'BITCOIN LIGHT EDITION',
+      doc_title: 'BITCOIN LITE EDITION',
       doc_sub: '技术架构白皮书（SOLANA 主网技术规范）',
       toc_title: '章节目录',
       copied_toast: '白皮书全文已成功复制至剪贴板',
@@ -752,8 +752,8 @@ export const zhCN: TranslationSchema = {
           num: '1',
           title: '执行摘要与核心引言',
           content: [
-            'Bitcoin Light Edition 是原生构建于 Solana 公链上的独立数字资产。受 2008 年比特币确立的数字稀缺性范式启发，本项目旨在现代化的高吞吐量、低延迟环境中，探索极端稀缺且具有硬性数学上限（420,000 枚）的资产应用。',
-            '关键法律与概念澄清：Bitcoin Light Edition 不是比特币，不是其官方衍生品，与中本聪或 Bitcoin Core 团队无任何雇佣或许可关系。它作为 SPL 标准代币完全独立地运行在 Solana 之上。',
+            'Bitcoin Lite Edition 是原生构建于 Solana 公链上的独立数字资产。受 2008 年比特币确立的数字稀缺性范式启发，本项目旨在现代化的高吞吐量、低延迟环境中，探索极端稀缺且具有硬性数学上限（420,000 枚）的资产应用。',
+            '关键法律与概念澄清：Bitcoin Lite Edition 不是比特币，不是其官方衍生品，与中本聪或 Bitcoin Core 团队无任何雇佣或许可关系。它作为 SPL 标准代币完全独立地运行在 Solana 之上。',
           ],
         },
         {
@@ -768,7 +768,7 @@ export const zhCN: TranslationSchema = {
         {
           id: 'genesis',
           num: '3',
-          title: 'Bitcoin Light Edition 的创世历程',
+          title: 'Bitcoin Lite Edition 的创世历程',
           content: [
             '作为对现代数字稀缺性的探求，BLTE 总量严格设置为 420,000 枚（比比特币稀缺 50 倍）。在零号区块，铸造权（Mint Authority）和冻结权（Freeze Authority）被不可逆地注销为空（null）。',
             '“Light”代表约 400 毫秒的闪电级结算、不足一美分的超轻微交互成本，以及环保高效的 PoS 链上共识。',
@@ -796,7 +796,7 @@ export const zhCN: TranslationSchema = {
           num: '6',
           title: '代币完整技术规格参数',
           content: [
-            '• 代币全称：Bitcoin Light Edition\n• 代币代号：BLTE\n• 部署公链：Solana\n• 遵循标准：SPL / Token-2022\n• 总发行量：420,000（不可更改）\n• 精度位数：9\n• 增发权限：创世即刻永久注销\n• 冻结权限：已注销 / 无',
+            '• 代币全称：Bitcoin Lite Edition\n• 代币代号：BLTE\n• 部署公链：Solana\n• 遵循标准：SPL / Token-2022\n• 总发行量：420,000（不可更改）\n• 精度位数：9\n• 增发权限：创世即刻永久注销\n• 冻结权限：已注销 / 无',
           ],
         },
         {
@@ -889,13 +889,13 @@ export const zhCN: TranslationSchema = {
         scarcity: {
           title: '第三章：稀缺性深度对比',
           p1: '稀缺性是长期经济价值的承载根基。比特币设定了 21,000,000 BTC 的总盘子，通过减半周期逐步释放。',
-          p2: 'Bitcoin Light Edition 则更进一步，执行了严苛至极的 420,000 枚固定绝对封顶。',
+          p2: 'Bitcoin Lite Edition 则更进一步，执行了严苛至极的 420,000 枚固定绝对封顶。',
           stat_btc: '21,000,000 BTC',
           stat_ble: '420,000 BLTE',
           ratio: '在绝对数值上比比特币稀缺 50 倍',
         },
         genesis: {
-          title: '第四章：Bitcoin Light Edition 创世历程',
+          title: '第四章：Bitcoin Lite Edition 创世历程',
           p1: '2009 年 1 月 3 日，创世区块确立了开源数学可以取代机构信用。',
           quote: '“The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.”',
           p2: '十五年后，为了将这一不朽信念移植至 Solana 高性能生态，BLTE 应运而生——提供约 400 毫秒终局性、微不足道的摩擦力与彻底的链上不变性。',
@@ -916,7 +916,7 @@ export const zhCN: TranslationSchema = {
         },
         distinction: {
           title: '第五章：清晰的技术边界界定',
-          p1: 'Bitcoin Light Edition 不是比特币，也不是比特币的硬分叉或衍生品。',
+          p1: 'Bitcoin Lite Edition 不是比特币，也不是比特币的硬分叉或衍生品。',
           p2: '它与比特币不共享代码、算力、矿机或账本，是 Solana 上的独立 SPL 代币。',
           p3: '它的唯一追求是在高性能环境下独立探索算法数字稀缺性。',
         },

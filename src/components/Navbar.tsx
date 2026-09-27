@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <a
           href="#"
           className="flex items-center gap-2.5 text-[#080808] hover:text-[#B8661B] transition-colors shrink min-w-0 group select-none"
-          title="Bitcoin Light Edition Home"
+          title="Bitcoin Lite Edition Home"
         >
           <RotatingCoinLogo size={26} className="shrink-0" />
           <span className="text-sm sm:text-base font-extrabold tracking-tight font-display text-[#080808] group-hover:text-[#B8661B] transition-colors truncate">

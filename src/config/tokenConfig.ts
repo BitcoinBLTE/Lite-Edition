@@ -1,5 +1,5 @@
 /**
- * Centralized Project & Token Configuration for Bitcoin Light Edition
+ * Centralized Project & Token Configuration for Bitcoin Lite Edition
  * 
  * Strict Zero-Fake-Data compliance:
  * - Mint address is dynamically configured or null prior to deployment.
@@ -55,8 +55,8 @@ export interface ProjectConfig {
 }
 
 export const TOKEN_CONFIG: ProjectConfig = {
-  name: "Bitcoin Light Edition",
-  shortName: "Bitcoin Light",
+  name: "Bitcoin Lite Edition",
+  shortName: "Bitcoin Lite",
   symbol: "BLTE",
   network: "Solana",
   totalSupply: 420000,
@@ -66,7 +66,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
   // When deployed to mainnet, populate via VITE_TOKEN_MINT_ADDRESS or set directly:
   mintAddress: (import.meta.env.VITE_TOKEN_MINT_ADDRESS as string) || null,
   tagline: "A New Chapter in the Digital Asset Landscape",
-  missionStatement: "Bitcoin Light Edition is a Solana-based digital asset inspired by the principles that helped make Bitcoin a defining innovation in digital finance—scarcity, transparency, decentralization, and borderless digital value.",
+  missionStatement: "Bitcoin Lite Edition is a Solana-based digital asset inspired by the principles that helped make Bitcoin a defining innovation in digital finance—scarcity, transparency, decentralization, and borderless digital value.",
   authorityStatus: "Mint authority permanently revoked / Immutable supply on Solana genesis",
   isMainnetLive: Boolean(import.meta.env.VITE_TOKEN_MINT_ADDRESS),
   tradingVenues: [
@@ -110,7 +110,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
     {
       id: "youtube",
       label: "YouTube",
-      url: "https://www.youtube.com/@BitcoinLightEdition"
+      url: "https://www.youtube.com/@BitcoinLiteEdition"
     },
     {
       id: "email",

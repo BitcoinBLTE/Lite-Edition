@@ -211,7 +211,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Copyright & Status */}
         <div className="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[#888888]">
           <div>
-            © {new Date().getFullYear()} Bitcoin Light Edition. {t.footer.rights}
+            © {new Date().getFullYear()} Bitcoin Lite Edition. {t.footer.rights}
           </div>
           <div className="flex items-center gap-3 font-mono text-[11px]">
             <span className="flex items-center gap-1.5 text-[#166534] font-bold">

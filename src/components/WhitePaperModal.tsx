@@ -158,7 +158,7 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
           {/* Document Signature */}
           <div className="pt-6 border-t border-[#E5E5E5] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#888888]">
             <div>
-              © {new Date().getFullYear()} Bitcoin Light Edition. {t.footer.rights}
+              © {new Date().getFullYear()} Bitcoin Lite Edition. {t.footer.rights}
             </div>
             <div className="text-[#B8661B] font-bold">
               {t.footer.brand_sub}

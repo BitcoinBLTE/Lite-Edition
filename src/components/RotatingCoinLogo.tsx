@@ -11,7 +11,7 @@ export const RotatingCoinLogo: React.FC<RotatingCoinLogoProps> = ({
   size = 28,
   className = '',
   speedSeconds = 8,
-  ariaLabel = 'Bitcoin Light Edition Rotating Logo'
+  ariaLabel = 'Bitcoin Lite Edition Rotating Logo'
 }) => {
   const thickness = Math.max(2, Math.round(size * 0.08));
 

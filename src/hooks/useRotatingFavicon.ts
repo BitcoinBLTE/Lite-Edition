@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 /**
  * useRotatingFavicon:
- * Animates the browser tab favicon with a continuously rotating 3D Bitcoin Light Edition coin.
+ * Animates the browser tab favicon with a continuously rotating 3D Bitcoin Lite Edition coin.
  * Uses an offscreen 32x32 canvas rendered at ~12fps for silky movement with negligible CPU impact.
  */
 export function useRotatingFavicon() {

@@ -30,15 +30,15 @@ export const ja: TranslationSchema = {
     transparency: '透明性',
     faq: 'よくある質問',
     buy_trade: '購入 / 取引',
-    brand_title: 'BITCOIN LIGHT EDITION',
+    brand_title: 'BITCOIN LITE EDITION',
     language_selector: '言語を選択',
   },
   hero: {
     independent_asset: 'Solana 独立型デジタル資産',
     fixed_scarcity: '固定希少性: 420,000 BLTE',
-    title: 'BITCOIN LIGHT EDITION',
+    title: 'BITCOIN LITE EDITION',
     subtitle: 'デジタル資産環境における新たな章',
-    description: '«Bitcoin Light Edition は、希少性、透明性、分散化、国境なき価値転送というビットコインの革新原則に触発された、Solana 基盤の独立系デジタル資産です。»',
+    description: '«Bitcoin Lite Edition は、希少性、透明性、分散化、国境なき価値転送というビットコインの革新原則に触発された、Solana 基盤の独立系デジタル資産です。»',
     btn_explore: 'トークン構造を探索する',
     btn_whitepaper: 'ホワイトペーパーを読む',
     btn_buy_trade: '購入 / 取引',
@@ -51,7 +51,7 @@ export const ja: TranslationSchema = {
     title: 'デジタル資産環境における新たな章',
     p1: 'ビットコインは、数学、公開ネットワーク、暗号学的合意によって保護され、国境なきピアツーピアの価値移転が可能であることを世界に証明しました。',
     p2: 'この画期的な進歩は、暗号資産、分散型金融（DeFi）、Web3エコシステムの台頭をもたらし、より高速な実行環境やコミュニティ主導モデルの実験を促しました。',
-    p3: 'Bitcoin Light Edition はこの進化の一環です。希少性・透明性・分散化という原則を継承し、現代の高速 Solana エコシステム上で体現した独立資産です。',
+    p3: 'Bitcoin Lite Edition はこの進化の一環です。希少性・透明性・分散化という原則を継承し、現代の高速 Solana エコシステム上で体現した独立資産です。',
     learn_more: 'ビットコインについて詳しく知る',
     explore_genesis: '創世記と技術的構造',
     tag_independent: 'Solana 独立型資産',
@@ -60,8 +60,8 @@ export const ja: TranslationSchema = {
   },
   about: {
     kicker: 'プロジェクト構造 · 基本原則',
-    title: 'BITCOIN LIGHT EDITION とは？',
-    description: 'ビットコインはデジタル希少性、分散化、オープンなP2P決済の概念を革新しました。Bitcoin Light Edition は、420,000トークンという極めて希少な上限と、Solanaブロックチェーンのミリ秒単位の速度、極低手数料、徹底した透明性を組み合わせた資産です。',
+    title: 'BITCOIN LITE EDITION とは？',
+    description: 'ビットコインはデジタル希少性、分散化、オープンなP2P決済の概念を革新しました。Bitcoin Lite Edition は、420,000トークンという極めて希少な上限と、Solanaブロックチェーンのミリ秒単位の速度、極低手数料、徹底した透明性を組み合わせた資産です。',
     pillars: [
       {
         kicker: '01 · 希少性',
@@ -128,17 +128,17 @@ export const ja: TranslationSchema = {
       },
     ],
     distinction_title: '明確な概念的区別および非提携に関する声明',
-    distinction_desc: 'Bitcoin Light Edition は独立したプロジェクトであり、ビットコインそのもの、公式ビットコイン製品、またはビットコインブロックチェーンのハードフォークではありません。コードベース、合意台帳、マイニングネットワークをビットコインと共有しておらず、Bitcoin Core やサトシ・ナカモト等との提携もありません。現代の分散環境下でデジタル希少性を探求するために Solana 上に存在しています。',
+    distinction_desc: 'Bitcoin Lite Edition は独立したプロジェクトであり、ビットコインそのもの、公式ビットコイン製品、またはビットコインブロックチェーンのハードフォークではありません。コードベース、合意台帳、マイニングネットワークをビットコインと共有しておらず、Bitcoin Core やサトシ・ナカモト等との提携もありません。現代の分散環境下でデジタル希少性を探求するために Solana 上に存在しています。',
   },
   education: {
     badge: '教育リソース ＆ 創世記アーカイブ',
-    title: 'ビットコインと Light Edition の創世記について',
-    description: 'ビットコインの基礎、分散台帳の仕組み、金融史における革新、そして Solana 上で Bitcoin Light Edition の概念的創世記がどのように生まれたかを解説する中立的かつ権威あるガイドです。',
+    title: 'ビットコインと Lite Edition の創世記について',
+    description: 'ビットコインの基礎、分散台帳の仕組み、金融史における革新、そして Solana 上で Bitcoin Lite Edition の概念的創世記がどのように生まれたかを解説する中立的かつ権威あるガイドです。',
     tabs: {
       overview: '1. ビットコインとは？',
       how_it_works: '2. 仕組みとメカニズム',
       supply: '3. 供給量と分散化の比較',
-      genesis: '4. Bitcoin Light Edition の創世記',
+      genesis: '4. Bitcoin Lite Edition の創世記',
     },
     tab1: {
       def_kicker: '基本的定義',
@@ -166,8 +166,8 @@ export const ja: TranslationSchema = {
           desc: '第三者のカストディアンに依存せず、秘密鍵によって個人の富を自己管理できる力を世界に与えました。',
         },
       ],
-      boundary_title: 'ビットコインと Bitcoin Light Edition の明確な境界',
-      boundary_desc: 'Bitcoin Light Edition は Solana 上に構築された独立した別個のデジタル資産であり、ビットコインに着想を得ていますが、ビットコイン公式製品やフォークではありません。',
+      boundary_title: 'ビットコインと Bitcoin Lite Edition の明確な境界',
+      boundary_desc: 'Bitcoin Lite Edition は Solana 上に構築された独立した別個のデジタル資産であり、ビットコインに着想を得ていますが、ビットコイン公式製品やフォークではありません。',
     },
     tab2: {
       intro: 'ブロックチェーン技術の基本メカニズムを理解することで、ビットコインの原点と Solana などの現代的 L1 の違いが明確になります。',
@@ -206,14 +206,14 @@ export const ja: TranslationSchema = {
     },
     tab3: {
       supply_kicker: '供給ダイナミクスの比較',
-      supply_title: 'ビットコインと Bitcoin Light Edition の供給量比較',
+      supply_title: 'ビットコインと Bitcoin Lite Edition の供給量比較',
       supply_p1: 'ビットコインは上限2,100万枚（21,000,000 BTC）で設計され、約4年ごとの半減期を経て約130年間かけて漸進的に発行されます。',
-      supply_p2: '一方、Bitcoin Light Edition（BLTE）はさらに厳格な数値制限を設けています：',
+      supply_p2: '一方、Bitcoin Lite Edition（BLTE）はさらに厳格な数値制限を設けています：',
       btc_supply_label: 'ビットコイン最大供給量:',
-      ble_supply_label: 'Bitcoin Light Edition 供給量:',
+      ble_supply_label: 'Bitcoin Lite Edition 供給量:',
       ratio_label: '数値比率:',
       ratio_val: 'BLTE は BTC より数値的に 50倍 希少です',
-      supply_footer: 'Bitcoin Light Edition の総供給量は創世時に420,000枚すべて発行済みであり、ミント権限は永久に放棄されています。',
+      supply_footer: 'Bitcoin Lite Edition の総供給量は創世時に420,000枚すべて発行済みであり、ミント権限は永久に放棄されています。',
       decent_kicker: '分散化の原則',
       decent_title: '分散型ネットワーク対中央集権',
       decent_desc: '分散化とは、いかなる単一の企業、政府、管理者も、取引の取り消し、台帳の改ざん、口座の凍結、勝手な増刷を行えないことを意味します。',
@@ -224,13 +224,13 @@ export const ja: TranslationSchema = {
     },
     tab4: {
       archive_kicker: '起源アーカイブ · 創世記仕様',
-      title: 'Bitcoin Light Edition の創世記',
+      title: 'Bitcoin Lite Edition の創世記',
       p1: '2009年1月3日、サトシ・ナカモトはビットコインのジェネシスブロック（ブロック0）を採掘し、台帳に刻みました：',
       quote: '「The Times 03/Jan/2009 Chancellor on brink of second bailout for banks」',
       p2: 'しかしその後の15年間で、従来のPoWアーキテクチャの課題（10分の承認時間、需要増大時の高額手数料など）も浮き彫りになりました。',
       question_label: '創世記の問い：',
       question_body: 'サトシ・ナカモトが確立した不変の希少性原則を、サブセコンド決済と極低手数料を実現する高速レイヤー1（Solana）上で再現したらどうなるか？',
-      conclusion: 'この根本的な探求から、Bitcoin Light Edition（BLTE）が誕生しました。',
+      conclusion: 'この根本的な探求から、Bitcoin Lite Edition（BLTE）が誕生しました。',
       invariants: [
         {
           tag: '創世記の不変則 01',
@@ -264,7 +264,7 @@ export const ja: TranslationSchema = {
     step1_desc: '暗号学的希少性と分散型 P2P 決済を開拓。',
     step1_stat_label: '最大供給量',
     step2_kicker: '独立型デジタル資産',
-    step2_title: 'BITCOIN LIGHT EDITION',
+    step2_title: 'BITCOIN LITE EDITION',
     step2_desc: 'Solana 上の高速トークンとして実装された、超希少な固定供給量の実験。',
     step2_stat_label: '総供給量（固定）',
     step3_kicker: '実行インフラ',
@@ -277,7 +277,7 @@ export const ja: TranslationSchema = {
     matrix_title: 'アーキテクチャの不変項比較',
     col_parameter: 'パラメータ',
     col_btc: 'Bitcoin (BTC)',
-    col_ble: 'Bitcoin Light Edition (BLTE)',
+    col_ble: 'Bitcoin Lite Edition (BLTE)',
     rows: [
       {
         metric: 'ブロックチェーンネットワーク',
@@ -321,7 +321,7 @@ export const ja: TranslationSchema = {
       },
     ],
     distinction_title: '重要：技術的・概念的な区別について',
-    distinction_desc: 'Bitcoin Light Edition はビットコインではなく、ビットコインのフォークや代替品でもありません。ビットコインネットワークとコードや台帳、合意を共有せず、Bitcoin Core 開発者とは一切提携していません。デジタル希少性のパラメータを探求する独立した Solana SPL トークンです。',
+    distinction_desc: 'Bitcoin Lite Edition はビットコインではなく、ビットコインのフォークや代替品でもありません。ビットコインネットワークとコードや台帳、合意を共有せず、Bitcoin Core 開発者とは一切提携していません。デジタル希少性のパラメータを探求する独立した Solana SPL トークンです。',
   },
   token_overview: {
     kicker: '検証済みスペック · SPL アーキテクチャ',
@@ -377,7 +377,7 @@ export const ja: TranslationSchema = {
   },
   how_to_buy: {
     kicker: '取得ガイド · ステップバイステップ手順',
-    title: 'BITCOIN LIGHT EDITION の購入方法',
+    title: 'BITCOIN LITE EDITION の購入方法',
     subtitle: 'Solana の非管理型分散取引所で BLTE を安全に取得するための透明なガイド。',
     steps: [
       {
@@ -468,7 +468,7 @@ export const ja: TranslationSchema = {
   transparency: {
     kicker: 'ブロックチェーンの整合性 · オープンな検証可能構造',
     title: 'すべてを検証せよ',
-    subtitle: '供給制限から権限設定に至るまで、Bitcoin Light Edition のすべての重要パラメータは Solana 台帳上で直接独立監査できるように設計されています。',
+    subtitle: '供給制限から権限設定に至るまで、Bitcoin Lite Edition のすべての重要パラメータは Solana 台帳上で直接独立監査できるように設計されています。',
     cards: [
       {
         title: 'トークン供給量',
@@ -623,8 +623,8 @@ export const ja: TranslationSchema = {
     notice_text: '注意: コントラクトアドレスは必ず Solscan で独自に確認し、ビットコインの名を騙る偽物にご注意ください。',
     items: [
       {
-        question: 'Bitcoin Light Edition とは何ですか？',
-        answer: 'Bitcoin Light Edition は、Solana ブロックチェーン上に構築された独立したデジタル資産です。ビットコインのデジタル希少性パラダイムに着想を得て、420,000トークンの固定上限を持ち、Solana の高速・低コスト・透明な台帳上で動作します。',
+        question: 'Bitcoin Lite Edition とは何ですか？',
+        answer: 'Bitcoin Lite Edition は、Solana ブロックチェーン上に構築された独立したデジタル資産です。ビットコインのデジタル希少性パラダイムに着想を得て、420,000トークンの固定上限を持ち、Solana の高速・低コスト・透明な台帳上で動作します。',
       },
       {
         question: '総供給量はいくらですか？',
@@ -636,12 +636,12 @@ export const ja: TranslationSchema = {
       },
       {
         question: 'これはビットコインですか？',
-        answer: 'いいえ。Bitcoin Light Edition は独立したプロジェクトであり、ビットコインそのものや公式製品、フォークではなく、Bitcoin Core やサトシ・ナカモトとも一切提携していません。',
+        answer: 'いいえ。Bitcoin Lite Edition は独立したプロジェクトであり、ビットコインそのものや公式製品、フォークではなく、Bitcoin Core やサトシ・ナカモトとも一切提携していません。',
         isDisclaimer: true,
       },
       {
         question: 'ビットコインと比べて希少性はどうですか？',
-        answer: 'ビットコインは最大2,100万枚ですが、Bitcoin Light Edition は厳格に420,000枚であり、数値的に50倍希少です。またSolana上でサブセコンドで決済されます。',
+        answer: 'ビットコインは最大2,100万枚ですが、Bitcoin Lite Edition は厳格に420,000枚であり、数値的に50倍希少です。またSolana上でサブセコンドで決済されます。',
       },
       {
         question: 'どこで購入・取得できますか？',
@@ -682,17 +682,17 @@ export const ja: TranslationSchema = {
     copied: 'クリップボードにコピー完了',
     btn_buy_trade: '購入 / 取引情報',
     disclaimer_heading: '法的免責事項および非提携に関する開示',
-    disclaimer_text: 'Bitcoin Light Edition は独立した Solana 暗号トークンであり、Bitcoin Core またはサトシ・ナカモトと提携、承認、フォークされたものではありません。',
+    disclaimer_text: 'Bitcoin Lite Edition は独立した Solana 暗号トークンであり、Bitcoin Core またはサトシ・ナカモトと提携、承認、フォークされたものではありません。',
     disclaimer_risk: 'デジタル資産には多大な経済的リスクとボラティリティが伴います。将来の価値を保証するものではありません。オンチェーン情報を各自で検証してください。',
     rights: '無断転載を禁じます。',
     mainnet_pending: 'Solana メインネット創世準備中',
   },
   modals: {
     buy_trade: {
-      title: '購入 / 取引 — BITCOIN LIGHT EDITION',
+      title: '購入 / 取引 — BITCOIN LITE EDITION',
       subtitle: '分散型取引所 · 移動可能パネル',
       alert_title: 'ローンチ前 / 初期流動性の展開準備中',
-      alert_desc: 'Raydium や Jupiter 等の公式取引会場は、流動性プールの展開完了時に有効化されます。Bitcoin Light Edition を騙る未検証の偽物にご注意ください。',
+      alert_desc: 'Raydium や Jupiter 等の公式取引会場は、流動性プールの展開完了時に有効化されます。Bitcoin Lite Edition を騙る未検証の偽物にご注意ください。',
       venues_heading: '公式分散型取引所（DEX）',
       pending_status: '展開待機中',
       footer_note: 'Solana DEX アグリゲーター',
@@ -705,7 +705,7 @@ export const ja: TranslationSchema = {
       terms_sections: [
         {
           title: '1. プロジェクトの性質および非提携',
-          body: 'Bitcoin Light Edition は Solana 上に構築された独立したデジタル資産です。ビットコイン公式製品ではなく、Bitcoin Core とも提携していません。掲載情報はすべて教育・情報提供を目的としています。',
+          body: 'Bitcoin Lite Edition は Solana 上に構築された独立したデジタル資産です。ビットコイン公式製品ではなく、Bitcoin Core とも提携していません。掲載情報はすべて教育・情報提供を目的としています。',
         },
         {
           title: '2. 投資助言および利益保証の不存在',
@@ -740,9 +740,9 @@ export const ja: TranslationSchema = {
       ],
     },
     whitepaper: {
-      title: 'BITCOIN LIGHT EDITION ホワイトペーパー',
+      title: 'BITCOIN LITE EDITION ホワイトペーパー',
       subtitle: 'Solana メインネット仕様 · 移動可能パネル',
-      doc_title: 'BITCOIN LIGHT EDITION',
+      doc_title: 'BITCOIN LITE EDITION',
       doc_sub: 'アーキテクチャ ホワイトペーパー (SOLANA メインネット仕様)',
       toc_title: '目次',
       copied_toast: '全文をクリップボードにコピーしました',
@@ -752,8 +752,8 @@ export const ja: TranslationSchema = {
           num: '1',
           title: '要約とアブストラクト',
           content: [
-            'Bitcoin Light Edition は、Solana ブロックチェーン上に構築された独立したデジタル資産です。2008年にビットコインが確立したデジタル希少性の原則に着想を受け、420,000トークンという超希少な固定資産を高スループット・低遅延な環境で探求します。',
-            '重要：Bitcoin Light Edition はビットコインそのものや公式製品ではなく、Bitcoin Core やサトシ・ナカモト等とは一切関係ありません。Solana 上の独立した SPL トークンです。',
+            'Bitcoin Lite Edition は、Solana ブロックチェーン上に構築された独立したデジタル資産です。2008年にビットコインが確立したデジタル希少性の原則に着想を受け、420,000トークンという超希少な固定資産を高スループット・低遅延な環境で探求します。',
+            '重要：Bitcoin Lite Edition はビットコインそのものや公式製品ではなく、Bitcoin Core やサトシ・ナカモト等とは一切関係ありません。Solana 上の独立した SPL トークンです。',
           ],
         },
         {
@@ -768,7 +768,7 @@ export const ja: TranslationSchema = {
         {
           id: 'genesis',
           num: '3',
-          title: 'Bitcoin Light Edition の創世記',
+          title: 'Bitcoin Lite Edition の創世記',
           content: [
             'ビットコインの50倍希少な厳密に420,000トークンとして設計。ブロックゼロでミント権限と凍結権限が無効化（null）されました。',
             '「Light」は、約400msの超高速確定、1セント未満の手数料、環境負荷の少ない PoS を象徴します。',
@@ -796,7 +796,7 @@ export const ja: TranslationSchema = {
           num: '6',
           title: '技術的トークン仕様',
           content: [
-            '• トークン名: Bitcoin Light Edition\n• シンボル: BLTE\n• ネットワーク: Solana\n• 規格: SPL / Token-2022\n• 総供給量: 420,000（固定）\n• 小数点桁数: 9\n• ミント権限: 創世時に永久放棄\n• 凍結権限: なし・無効化済み',
+            '• トークン名: Bitcoin Lite Edition\n• シンボル: BLTE\n• ネットワーク: Solana\n• 規格: SPL / Token-2022\n• 総供給量: 420,000（固定）\n• 小数点桁数: 9\n• ミント権限: 創世時に永久放棄\n• 凍結権限: なし・無効化済み',
           ],
         },
         {
@@ -888,13 +888,13 @@ export const ja: TranslationSchema = {
         scarcity: {
           title: '第3章: 希少性の比較分析',
           p1: '希少性は持続的価値の経済的基盤です。ビットコインは発行上限を2,100万枚に設定しました。',
-          p2: 'Bitcoin Light Edition (BLTE) はさらに徹底した希少性を実現し、厳密に420,000枚の固定上限を持ちます。',
+          p2: 'Bitcoin Lite Edition (BLTE) はさらに徹底した希少性を実現し、厳密に420,000枚の固定上限を持ちます。',
           stat_btc: '21,000,000 BTC',
           stat_ble: '420,000 BLTE',
           ratio: 'ビットコインより 50倍 高い数値的希少性',
         },
         genesis: {
-          title: '第4章: Bitcoin Light Edition の創世記',
+          title: '第4章: Bitcoin Lite Edition の創世記',
           p1: '2009年1月3日、ジェネシスブロックにより数学が信用に代わる世界が拓かれました。',
           quote: '「The Times 03/Jan/2009 Chancellor on brink of second bailout for banks」',
           p2: '15年後、その思想を Solana エコシステム上で実現するため BLTE が誕生しました。約400msの確定、極小手数料、100%の不変性を誇ります。',
@@ -915,7 +915,7 @@ export const ja: TranslationSchema = {
         },
         distinction: {
           title: '第5章: 明確な技術的区別',
-          p1: 'Bitcoin Light Edition はビットコインではなく、フォークでもありません。',
+          p1: 'Bitcoin Lite Edition はビットコインではなく、フォークでもありません。',
           p2: 'コード、台帳、マイニング、合意ルールを共有せず、Solana 上の独立した SPL トークンです。',
           p3: '高性能な分散環境下でアルゴリズムによる希少性を独自に探求するために存在します。',
         },
