@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import { Copy, Check, ExternalLink, ShieldCheck, BookOpen, Mail, Download } from 'lucide-react';
 import { TOKEN_CONFIG, getWhitepaperPdfUrl } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
-import { InstagramIcon, XTwitterIcon, GithubIcon, TelegramIcon, YouTubeIcon } from './PlatformIcons';
+import { 
+  InstagramIcon, 
+  XTwitterIcon, 
+  GithubIcon, 
+  TelegramIcon, 
+  YouTubeIcon,
+  DiscordIcon,
+  WhatsAppIcon 
+} from './PlatformIcons';
 
 interface FooterProps {
   onOpenTradeModal: () => void;
@@ -88,6 +96,8 @@ export const Footer: React.FC<FooterProps> = ({
                   >
                     {social.id === 'twitter' && <XTwitterIcon size={15} />}
                     {social.id === 'telegram' && <TelegramIcon size={16} />}
+                    {social.id === 'discord' && <DiscordIcon size={16} />}
+                    {social.id === 'whatsapp' && <WhatsAppIcon size={16} />}
                     {social.id === 'github' && <GithubIcon size={15} />}
                     {social.id === 'instagram' && <InstagramIcon size={16} />}
                     {social.id === 'youtube' && <YouTubeIcon size={16} />}

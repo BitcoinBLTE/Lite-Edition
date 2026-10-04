@@ -91,19 +91,29 @@ export const TOKEN_CONFIG: ProjectConfig = {
   ],
   socials: [
     {
-      id: "twitter",
-      label: "X (Twitter)",
-      url: "https://x.com/BitcoinBLTE"
-    },
-    {
       id: "telegram",
       label: "Telegram",
       url: "https://t.me/BitcoinBLTE"
     },
     {
-      id: "github",
-      label: "GitHub",
-      url: "https://github.com/BitcoinBLTE"
+      id: "discord",
+      label: "Discord",
+      url: "https://discord.gg/CK2kF7cKfk"
+    },
+    {
+      id: "whatsapp",
+      label: "WhatsApp Channel",
+      url: "https://whatsapp.com/channel/0029VbDVWun545v2OGjFL51v"
+    },
+    {
+      id: "twitter",
+      label: "X (Twitter)",
+      url: "https://x.com/BitcoinBLTE"
+    },
+    {
+      id: "youtube",
+      label: "YouTube",
+      url: "https://www.youtube.com/@BitcoinLiteEdition"
     },
     {
       id: "instagram",
@@ -111,9 +121,9 @@ export const TOKEN_CONFIG: ProjectConfig = {
       url: "https://www.instagram.com/bitcoinblte"
     },
     {
-      id: "youtube",
-      label: "YouTube",
-      url: "https://www.youtube.com/@BitcoinLiteEdition"
+      id: "github",
+      label: "GitHub",
+      url: "https://github.com/BitcoinBLTE"
     },
     {
       id: "email",

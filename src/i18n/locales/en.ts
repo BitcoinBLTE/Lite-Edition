@@ -611,6 +611,8 @@ export const en: TranslationSchema = {
     github_desc: 'Open-source token specifications, distribution verification scripts, and community tools.',
     instagram_desc: 'Official media, infographics, and visual updates from the Bitcoin Lite Edition community.',
     youtube_desc: 'Official YouTube channel for architectural briefings, video guides, and project updates.',
+    discord_desc: 'Official Discord server for technical discussion, architectural channels, and community coordination.',
+    whatsapp_desc: 'Official WhatsApp channel for verified broadcasts, development bulletins, and immediate alerts.',
     email_desc: 'Direct project communications, technical inquiries, and verified ecosystem correspondence.',
     generic_desc: 'Community coordination and verified discussion updates.',
     verified_badge: 'Verified',
