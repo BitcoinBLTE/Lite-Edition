@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Copy, Check, ExternalLink, ShieldCheck, BookOpen, Mail } from 'lucide-react';
-import { TOKEN_CONFIG } from '../config/tokenConfig';
+import { Copy, Check, ExternalLink, ShieldCheck, BookOpen, Mail, Download } from 'lucide-react';
+import { TOKEN_CONFIG, getWhitepaperPdfUrl } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { InstagramIcon, XTwitterIcon, GithubIcon, TelegramIcon, YouTubeIcon } from './PlatformIcons';
 
@@ -112,6 +112,18 @@ export const Footer: React.FC<FooterProps> = ({
                   <BookOpen className="w-3.5 h-3.5 text-[#B8661B]" />
                   <span>{t.footer.whitepaper_v1}</span>
                 </button>
+              </li>
+              <li>
+                <a
+                  href={getWhitepaperPdfUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#4A4A4A] hover:text-[#B8661B] transition-colors py-0.5 inline-flex items-center gap-1.5"
+                  title="White Paper Specification (PDF)"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#B8661B]" />
+                  <span>White Paper (PDF)</span>
+                </a>
               </li>
               {navLinks.map((link) => (
                 <li key={link.href}>

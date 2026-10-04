@@ -44,6 +44,7 @@ export interface ProjectConfig {
   missionStatement: string;
   authorityStatus: string;
   isMainnetLive: boolean;
+  whitepaperPdfDriveUrl: string;
   tradingVenues: {
     name: string;
     url: string | null;
@@ -69,6 +70,8 @@ export const TOKEN_CONFIG: ProjectConfig = {
   missionStatement: "Bitcoin Lite Edition is a Solana-based digital asset inspired by the principles that helped make Bitcoin a defining innovation in digital finance—scarcity, transparency, decentralization, and borderless digital value.",
   authorityStatus: "Mint authority permanently revoked / Immutable supply on Solana genesis",
   isMainnetLive: Boolean(import.meta.env.VITE_TOKEN_MINT_ADDRESS),
+  // Official White Paper PDF Link (defaults to verified hosted PDF, or custom Google Drive link when set)
+  whitepaperPdfDriveUrl: (import.meta.env.VITE_WHITEPAPER_DRIVE_URL as string) || "/bitcoin-lite-edition-whitepaper.pdf",
   tradingVenues: [
     {
       name: "Raydium (DEX)",
@@ -208,3 +211,73 @@ export const validateTokenomicsIntegrity = (): boolean => {
   const sumAmount = TOKEN_CONFIG.allocations.reduce((acc, a) => acc + a.amount, 0);
   return sumPercentage === 100 && sumAmount === TOKEN_CONFIG.totalSupply;
 };
+
+export const isRealGoogleDriveUrl = (url: string | null | undefined): boolean => {
+  if (!url) return false;
+  return (
+    url.includes('drive.google.com') && 
+    !url.includes('1_BLTE_BitcoinLiteEdition') &&
+    !url.includes('example')
+  );
+};
+
+export const getCustomGoogleDriveUrl = (): string | null => {
+  if (typeof window !== 'undefined') {
+    try {
+      const stored = localStorage.getItem('blte_whitepaper_drive_url');
+      if (stored && isRealGoogleDriveUrl(stored)) {
+        return stored;
+      }
+    } catch {
+      // ignore
+    }
+  }
+  const envUrl = import.meta.env.VITE_WHITEPAPER_DRIVE_URL as string;
+  if (isRealGoogleDriveUrl(envUrl)) {
+    return envUrl;
+  }
+  if (isRealGoogleDriveUrl(TOKEN_CONFIG.whitepaperPdfDriveUrl)) {
+    return TOKEN_CONFIG.whitepaperPdfDriveUrl;
+  }
+  return null;
+};
+
+export const setCustomGoogleDriveUrl = (url: string | null): void => {
+  if (typeof window !== 'undefined') {
+    try {
+      if (url && url.trim().length > 0) {
+        localStorage.setItem('blte_whitepaper_drive_url', url.trim());
+      } else {
+        localStorage.removeItem('blte_whitepaper_drive_url');
+      }
+      window.dispatchEvent(new Event('blte_drive_url_changed'));
+    } catch {
+      // ignore
+    }
+  }
+};
+
+/**
+ * Resolves the verified White Paper PDF link.
+ * If a valid Google Drive URL is provided, formats it for view or direct download.
+ * Otherwise, returns the hosted official publication PDF (/bitcoin-lite-edition-whitepaper.pdf)
+ * which guarantees 100% reliability for BOTH viewing in browser and direct downloading.
+ */
+export const getWhitepaperPdfUrl = (directDownload = false): string => {
+  const driveUrl = getCustomGoogleDriveUrl();
+  if (driveUrl) {
+    const fileIdMatch = driveUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || driveUrl.match(/id=([a-zA-Z0-9_-]+)/);
+    if (fileIdMatch && fileIdMatch[1]) {
+      const fileId = fileIdMatch[1];
+      if (directDownload) {
+        return `https://drive.google.com/uc?export=download&id=${fileId}`;
+      }
+      return `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+    }
+    return driveUrl;
+  }
+
+  return '/bitcoin-lite-edition-whitepaper.pdf';
+};
+
+

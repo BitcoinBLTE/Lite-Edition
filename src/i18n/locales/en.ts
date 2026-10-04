@@ -9,6 +9,7 @@ export const en: TranslationSchema = {
     copied: 'Copied',
     copy_all: 'Copy Complete Text',
     print: 'Print Document',
+    download_pdf: 'Download PDF',
     got_it: 'Got It',
     acknowledge: 'Acknowledge & Close',
     verified: 'Verified',
@@ -748,6 +749,8 @@ export const en: TranslationSchema = {
       doc_sub: 'ARCHITECTURAL WHITE PAPER (SOLANA MAINNET SPECIFICATION)',
       toc_title: 'Table of Contents',
       copied_toast: 'Full text copied to clipboard',
+      download_pdf: 'Download PDF',
+      download_btn: 'Download Official PDF',
       chapters: [
         {
           id: 'abstract',

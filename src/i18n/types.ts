@@ -7,6 +7,7 @@ export interface TranslationSchema {
     copied: string;
     copy_all: string;
     print: string;
+    download_pdf?: string;
     got_it: string;
     acknowledge: string;
     verified: string;
@@ -355,6 +356,8 @@ export interface TranslationSchema {
       doc_sub: string;
       toc_title: string;
       copied_toast: string;
+      download_pdf?: string;
+      download_btn?: string;
       chapters: Array<{ id: string; num: string; title: string; content: string[] }>;
     };
     education_modal: {
