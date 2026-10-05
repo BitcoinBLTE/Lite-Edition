@@ -804,7 +804,7 @@ export const ptPT: TranslationSchema = {
           num: '7',
           title: 'Alocação Tokenomics (Total 100% = 420.000 BLTE)',
           content: [
-            '• Lançamento Justo: 55% (231.000 BLTE)\n• Pool de Liquidez DEX: 25% (105.000 BLTE)\n• Reserva de Escassez: 12% (50.400 BLTE)\n• Arquitetura e Segurança: 8% (33.600 BLTE)',
+            '• Lançamento Justo: 55% (231.000 BLTE)\n• Pool de Liquidez DEX: 20% (84.000 BLTE)\n• Reserva de Escassez: 15% (63.000 BLTE)\n• Arquitetura e Segurança: 10% (42.000 BLTE)',
           ],
         },
         {

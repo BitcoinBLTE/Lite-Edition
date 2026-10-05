@@ -143,24 +143,24 @@ export const TOKEN_CONFIG: ProjectConfig = {
     {
       id: "liquidity",
       category: "DEX Liquidity Pool",
-      percentage: 25,
-      amount: 105000,
+      percentage: 20,
+      amount: 84000,
       description: "Permanent automated market maker liquidity on Solana decentralized exchanges.",
       color: "#EAB308" // Gold
     },
     {
       id: "ecosystem",
       category: "Ecosystem & Scarcity Reserve",
-      percentage: 12,
-      amount: 50400,
+      percentage: 15,
+      amount: 63000,
       description: "Community initiatives, open-source integrations, and validator tooling grants.",
       color: "#14F195" // Solana Green
     },
     {
       id: "development",
       category: "Core Architecture & Audits",
-      percentage: 8,
-      amount: 33600,
+      percentage: 10,
+      amount: 42000,
       description: "Smart contract maintenance, security verifications, and protocol tooling.",
       color: "#9945FF" // Solana Purple
     }

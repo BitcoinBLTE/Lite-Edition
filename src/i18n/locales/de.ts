@@ -804,7 +804,7 @@ export const de: TranslationSchema = {
           num: '7',
           title: 'Tokenomics-Zuteilung (Exakt 100% = 420.000 BLTE)',
           content: [
-            '• Fairer Start & Verteilung: 55% (231.000 BLTE)\n• DEX-Liquiditätspool: 25% (105.000 BLTE)\n• Ökosystem & Reserve: 12% (50.400 BLTE)\n• Architektur & Audits: 8% (33.600 BLTE)',
+            '• Fairer Start & Verteilung: 55% (231.000 BLTE)\n• DEX-Liquiditätspool: 20% (84.000 BLTE)\n• Ökosystem & Reserve: 15% (63.000 BLTE)\n• Architektur & Audits: 10% (42.000 BLTE)',
           ],
         },
         {

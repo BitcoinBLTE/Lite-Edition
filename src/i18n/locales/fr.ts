@@ -804,7 +804,7 @@ export const fr: TranslationSchema = {
           num: '7',
           title: 'Allocation tokenomics (Total strict 100 % = 420 000 BLTE)',
           content: [
-            '• Lancement équitable & distribution : 55 % (231 000 BLTE)\n• Bassin de liquidité DEX : 25 % (105 000 BLTE)\n• Écosystème & réserve de rareté : 12 % (50 400 BLTE)\n• Architecture & audits : 8 % (33 600 BLTE)',
+            '• Lancement équitable & distribution : 55 % (231 000 BLTE)\n• Bassin de liquidité DEX : 20 % (84 000 BLTE)\n• Écosystème & réserve de rareté : 15 % (63 000 BLTE)\n• Architecture & audits : 10 % (42 000 BLTE)',
           ],
         },
         {

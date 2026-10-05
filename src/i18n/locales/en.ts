@@ -812,7 +812,7 @@ export const en: TranslationSchema = {
           num: '7',
           title: 'Tokenomics & Mathematical Cap',
           content: [
-            'Strict 100% Mathematical Allocation (420,000 BLTE):\n• Fair Launch & Public Distribution: 55% (231,000 BLTE)\n• DEX Liquidity Pool: 25% (105,000 BLTE)\n• Ecosystem & Scarcity Reserve: 12% (50,400 BLTE)\n• Core Architecture & Security Audits: 8% (33,600 BLTE)',
+            'Strict 100% Mathematical Allocation (420,000 BLTE):\n• Fair Launch & Public Distribution: 55% (231,000 BLTE)\n• DEX Liquidity Pool: 20% (84,000 BLTE)\n• Ecosystem & Scarcity Reserve: 15% (63,000 BLTE)\n• Core Architecture & Security Audits: 10% (42,000 BLTE)',
           ],
         },
         {
