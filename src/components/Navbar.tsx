@@ -132,7 +132,21 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </nav>
 
-          <div className="pt-2 border-t border-[#E5E5E5]">
+          <div className="pt-2 border-t border-[#E5E5E5] space-y-2">
+            <a
+              href={TOKEN_CONFIG.stakingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-3 px-4 text-xs font-bold text-white bg-[#B8661B] hover:bg-[#964E10] rounded-[14px] transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_8px_rgba(184,102,27,0.2)] text-center"
+              title="Stake BLTE (40% APY)"
+            >
+              <span>STAKE</span>
+              <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
+                40% APY
+              </span>
+            </a>
+
             <button
               onClick={() => {
                 setMobileMenuOpen(false);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Check, ExternalLink, ShieldCheck, BookOpen, Mail, Download } from 'lucide-react';
+import { Copy, Check, ShieldCheck, BookOpen, Mail, Download } from 'lucide-react';
 import { TOKEN_CONFIG, getWhitepaperPdfUrl } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { 
@@ -135,6 +135,20 @@ export const Footer: React.FC<FooterProps> = ({
                   <span>White Paper (PDF)</span>
                 </a>
               </li>
+              <li>
+                <a
+                  href={TOKEN_CONFIG.stakingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#B8661B] hover:text-[#964E10] font-semibold transition-colors py-0.5 inline-flex items-center gap-1.5"
+                  title="Stake (40% APY)"
+                >
+                  <span>Stake</span>
+                  <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#FAF5EF] text-[#B8661B] border border-[#E9C9A5]">
+                    40% APY
+                  </span>
+                </a>
+              </li>
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -206,12 +220,26 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
             )}
 
-            <button
-              onClick={onOpenTradeModal}
-              className="w-full mt-2 py-3 px-4 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] transition-colors cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.05)]"
-            >
-              {t.footer.btn_buy_trade}
-            </button>
+            <div className="flex flex-col sm:flex-row gap-2 mt-2">
+              <button
+                onClick={onOpenTradeModal}
+                className="flex-1 py-3 px-3 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] transition-colors cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.05)] text-center"
+              >
+                {t.footer.btn_buy_trade}
+              </button>
+              <a
+                href={TOKEN_CONFIG.stakingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3 px-3.5 text-xs font-bold text-white bg-[#B8661B] hover:bg-[#964E10] rounded-[14px] transition-colors cursor-pointer shadow-[0_2px_8px_rgba(184,102,27,0.25)] flex items-center justify-center gap-1.5 whitespace-nowrap text-center"
+                title="Stake BLTE on Streamflow Finance (40% APY)"
+              >
+                <span>STAKE</span>
+                <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
+                  40% APY
+                </span>
+              </a>
+            </div>
           </div>
         </div>
 

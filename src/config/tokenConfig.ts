@@ -50,6 +50,8 @@ export interface ProjectConfig {
     url: string | null;
     status: 'LIVE' | 'PENDING_DEPLOYMENT';
   }[];
+  stakingUrl: string;
+  stakingApy: string;
   socials: SocialLink[];
   allocations: TokenAllocation[];
   roadmap: RoadmapMilestone[];
@@ -72,6 +74,8 @@ export const TOKEN_CONFIG: ProjectConfig = {
   isMainnetLive: Boolean(import.meta.env.VITE_TOKEN_MINT_ADDRESS),
   // Official White Paper PDF Link (defaults to verified hosted PDF, or custom Google Drive link when set)
   whitepaperPdfDriveUrl: (import.meta.env.VITE_WHITEPAPER_DRIVE_URL as string) || "/bitcoin-lite-edition-whitepaper.pdf",
+  stakingUrl: "https://app.streamflow.finance/staking/solana/mainnet/",
+  stakingApy: "40%",
   tradingVenues: [
     {
       name: "Raydium (DEX)",

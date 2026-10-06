@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { HeroCoin3D } from './HeroCoin3D';
 import { useLanguage } from '../i18n/LanguageContext';
+import { TOKEN_CONFIG } from '../config/tokenConfig';
 
 interface HeroSectionProps {
   onOpenTradeModal: () => void;
@@ -46,7 +47,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </p>
 
         {/* 5. Primary Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-4">
           <button
             onClick={onExploreToken}
             className="px-6 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-sm font-bold text-white bg-[#111111] hover:bg-[#B8661B] active:bg-[#964E10] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-200 flex items-center gap-2.5 group whitespace-nowrap cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
@@ -69,6 +70,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           >
             {t.hero.btn_buy_trade}
           </button>
+        </div>
+
+        {/* Dedicated Stake Action - Positioned Below */}
+        <div className="flex justify-center mb-10">
+          <a
+            href={TOKEN_CONFIG.stakingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 sm:px-7 sm:py-3.5 text-xs sm:text-sm font-bold text-white bg-[#B8661B] hover:bg-[#964E10] active:bg-[#7D3E08] rounded-[16px] shadow-[0_4px_16px_rgba(184,102,27,0.25)] transition-all whitespace-nowrap flex items-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none group"
+            title="Stake Bitcoin Lite Edition on Streamflow Finance (40% APY)"
+          >
+            <span>STAKE</span>
+            <span className="text-[10px] sm:text-[11px] font-mono font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
+              40% APY
+            </span>
+          </a>
         </div>
 
         {/* 6. Secondary Technical Monospace Metadata (Strict Zero-Pill) */}

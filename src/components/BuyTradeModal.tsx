@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, AlertCircle, ShoppingCart, ArrowRightLeft } from 'lucide-react';
+import { ExternalLink, AlertCircle, ShoppingCart, ArrowRightLeft, Sparkles } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -69,6 +69,35 @@ export const BuyTradeModal: React.FC<BuyTradeModalProps> = ({
           <span className="text-xs font-mono uppercase tracking-[2px] text-[#B8661B] font-bold block">
             {t.modals.buy_trade.venues_heading}
           </span>
+
+          {/* Streamflow Official Staking Pool */}
+          <div className="p-4 rounded-[20px] border border-[#E9C9A5] bg-[#FAF5EF] flex items-center justify-between shadow-[0_2px_10px_rgba(184,102,27,0.06)] hover:border-[#B8661B] transition-all">
+            <div className="flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-[12px] bg-[#B8661B] text-white flex items-center justify-center p-1 shrink-0 shadow-2xs">
+                <Sparkles className="w-5 h-5 text-amber-200" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-[800] text-[#080808] block font-display">Streamflow Staking</span>
+                  <span className="text-[10px] font-mono font-extrabold px-1.5 py-0.5 rounded-full bg-[#B8661B] text-white leading-none">
+                    40% APY
+                  </span>
+                </div>
+                <span className="text-xs font-mono text-[#888888]">
+                  Official Solana Mainnet Pool
+                </span>
+              </div>
+            </div>
+
+            <a
+              href={TOKEN_CONFIG.stakingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-xs font-bold rounded-[14px] bg-[#B8661B] text-white hover:bg-[#964E10] shadow-[0_2px_8px_rgba(184,102,27,0.2)] flex items-center gap-1.5 cursor-pointer transition-colors"
+            >
+              <span>STAKE</span>
+            </a>
+          </div>
 
           {TOKEN_CONFIG.tradingVenues.map((venue) => (
             <div

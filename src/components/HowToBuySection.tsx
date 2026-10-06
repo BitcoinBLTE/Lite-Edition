@@ -185,11 +185,24 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
             <div className="flex flex-wrap lg:flex-col gap-3 shrink-0">
               <button
                 onClick={onOpenTradeModal}
-                className="px-7 py-4 text-xs sm:text-sm font-bold rounded-[16px] bg-[#111111] hover:bg-[#B8661B] text-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all flex items-center gap-2.5 cursor-pointer whitespace-nowrap"
+                className="px-7 py-4 text-xs sm:text-sm font-bold rounded-[16px] bg-[#111111] hover:bg-[#B8661B] text-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all flex items-center justify-center gap-2.5 cursor-pointer whitespace-nowrap"
               >
                 <span>{t.how_to_buy.btn_trade_portal}</span>
                 <ArrowRight className="w-4 h-4 stroke-[2]" />
               </button>
+
+              <a
+                href={TOKEN_CONFIG.stakingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-4 text-xs sm:text-sm font-bold rounded-[16px] bg-[#FAF5EF] hover:bg-[#F2E8DC] text-[#B8661B] border border-[#E9C9A5] shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap group"
+                title="Stake BLTE on Streamflow (40% APY)"
+              >
+                <span>STAKE</span>
+                <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-[#B8661B] text-white leading-none">
+                  40% APY
+                </span>
+              </a>
             </div>
           </div>
         </div>
