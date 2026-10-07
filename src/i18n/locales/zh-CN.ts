@@ -353,24 +353,19 @@ export const zhCN: TranslationSchema = {
     verified_alloc: '通过数学 100% 验证的硬性分配方案（100%）',
     allocations: [
       {
-        id: 'fair-launch',
-        category: '公平启动与社区公开发行',
-        description: '以去中心化公开方式直接分配给社区支持者与流通盘。',
+        id: 'season-1',
+        category: '第一季 — 公平启动与社区公开发行',
+        description: '以去中心化公开方式直接分配给社区支持者与创世流通盘。',
       },
       {
-        id: 'liquidity',
-        category: 'DEX 去中心化做市流动性池',
-        description: '在 Solana 头部去中心化交易所注资并永久锁定的基础流动性。',
+        id: 'season-2',
+        category: '第二季 — 首期做市流动池',
+        description: '在 Solana 去中心化交易所注资并永久锁定的初始 AMM 流动池。',
       },
       {
-        id: 'ecosystem',
-        category: '生态发展与稀缺性战略储备',
-        description: '用于长期开源集成、验证节点支持及社区提案赋能。',
-      },
-      {
-        id: 'development',
-        category: '核心架构维护与安全审计',
-        description: '智能合约日常维护、第三方独立安全审计及底层开发工具。',
+        id: 'season-3',
+        category: '第三季 — 次级流动池与生态扩展',
+        description: '次级深度流动性支持、跨协议流动性路由及生态交易所拓展。',
       },
     ],
     data_source: '数据来源：中央单一配置模型。100% = 420,000 BLTE。',
@@ -804,7 +799,7 @@ export const zhCN: TranslationSchema = {
           num: '7',
           title: '代币经济学分配（严苛 100% = 420,000 BLTE）',
           content: [
-            '• 公平启动与社区公开发行：55%（231,000 BLTE）\n• 去中心化交易所 AMM 流动池：20%（84,000 BLTE）\n• 生态发展与战略储备：15%（63,000 BLTE）\n• 底层架构与安全审计：10%（42,000 BLTE）',
+            '• 第一季 — 公平启动与社区公开发行：55%（231,000 BLTE）\n• 第二季 — 首期做市流动池：25%（105,000 BLTE）\n• 第三季 — 次级流动池与生态扩展：20%（84,000 BLTE）',
           ],
         },
         {

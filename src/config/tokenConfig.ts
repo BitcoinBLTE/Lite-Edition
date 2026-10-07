@@ -79,18 +79,8 @@ export const TOKEN_CONFIG: ProjectConfig = {
   tradingVenues: [
     {
       name: "Raydium (DEX)",
-      url: null, // Populated upon pool creation
-      status: "PENDING_DEPLOYMENT"
-    },
-    {
-      name: "Jupiter Aggregator",
-      url: null,
-      status: "PENDING_DEPLOYMENT"
-    },
-    {
-      name: "Orca",
-      url: null,
-      status: "PENDING_DEPLOYMENT"
+      url: "https://raydium.io/swap/",
+      status: "LIVE"
     }
   ],
   socials: [
@@ -137,36 +127,28 @@ export const TOKEN_CONFIG: ProjectConfig = {
   ],
   allocations: [
     {
-      id: "fair-launch",
-      category: "Fair Launch & Public Distribution",
+      id: "season-1",
+      category: "Fair Launch & Community",
       percentage: 55,
       amount: 231000,
-      description: "Direct community and public liquidity allocation with decentralized access.",
+      description: "Direct community and public distribution with decentralized genesis access.",
       color: "#D97706" // Warm amber/gold
     },
     {
-      id: "liquidity",
-      category: "DEX Liquidity Pool",
-      percentage: 20,
-      amount: 84000,
-      description: "Permanent automated market maker liquidity on Solana decentralized exchanges.",
+      id: "season-2",
+      category: "First Liquidity",
+      percentage: 25,
+      amount: 105000,
+      description: "Initial automated market maker (AMM) DEX liquidity pool deployment on Solana.",
       color: "#EAB308" // Gold
     },
     {
-      id: "ecosystem",
-      category: "Ecosystem & Scarcity Reserve",
-      percentage: 15,
-      amount: 63000,
-      description: "Community initiatives, open-source integrations, and validator tooling grants.",
+      id: "season-3",
+      category: "Secondary Liquidity",
+      percentage: 20,
+      amount: 84000,
+      description: "Secondary decentralized liquidity depth, ecosystem routing, and exchange expansion.",
       color: "#14F195" // Solana Green
-    },
-    {
-      id: "development",
-      category: "Core Architecture & Audits",
-      percentage: 10,
-      amount: 42000,
-      description: "Smart contract maintenance, security verifications, and protocol tooling.",
-      color: "#9945FF" // Solana Purple
     }
   ],
   roadmap: [
@@ -191,7 +173,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
         "Mint authority revocation & immutability verification",
         "Initial decentralized liquidity pool creation",
         "On-chain verification on Solscan & Solana Explorer",
-        "DexScreener and Jupiter terminal integration"
+        "DexScreener and Raydium DEX integration"
       ]
     },
     {

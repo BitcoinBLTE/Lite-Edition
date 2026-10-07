@@ -243,14 +243,14 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
-        {/* Legal Disclaimer Box */}
+        {/* Legal Disclaimer Box — Clear Conceptual Distinction & Non-Affiliation Statement */}
         <div className="pt-8 pb-6 border-b border-[#E5E5E5]">
           <div className="p-6 rounded-[24px] bg-[#FCFCFC] border border-[#E5E5E5] text-xs text-[#4A4A4A] leading-[1.8] space-y-2.5">
             <p className="font-bold text-[#080808] uppercase font-mono tracking-[1.5px]">
-              {t.footer.disclaimer_heading}
+              {t.about.distinction_title}
             </p>
             <p>
-              {t.footer.disclaimer_text}
+              {t.about.distinction_desc}
             </p>
             <p className="text-[11px] text-[#888888]">
               {t.footer.disclaimer_risk}

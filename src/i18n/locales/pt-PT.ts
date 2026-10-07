@@ -353,24 +353,19 @@ export const ptPT: TranslationSchema = {
     verified_alloc: 'Alocação 100% Verificada Matematicamente (100%)',
     allocations: [
       {
-        id: 'fair-launch',
-        category: 'Lançamento Justo e Distribuição Pública',
+        id: 'season-1',
+        category: 'Temporada 1 — Lançamento Justo e Comunidade',
         description: 'Alocação comunitária aberta com acesso descentralizado.',
       },
       {
-        id: 'liquidity',
-        category: 'Pool de Liquidez DEX',
+        id: 'season-2',
+        category: 'Temporada 2 — Primeira Liquidez',
         description: 'Liquidez permanente em corretoras descentralizadas na Solana.',
       },
       {
-        id: 'ecosystem',
-        category: 'Ecossistema e Reserva de Escassez',
-        description: 'Iniciativas comunitárias, integrações e bolsas para validadores.',
-      },
-      {
-        id: 'development',
-        category: 'Arquitetura Central e Auditorias',
-        description: 'Manutenção de contratos, auditorias de segurança e ferramentas.',
+        id: 'season-3',
+        category: 'Temporada 3 — Liquidez Secundária',
+        description: 'Profundidade de liquidez secundária, rotatividade do ecossistema e expansão.',
       },
     ],
     data_source: 'Fonte de dados: Modelo de configuração central. 100% = 420.000 BLTE.',
@@ -804,7 +799,7 @@ export const ptPT: TranslationSchema = {
           num: '7',
           title: 'Alocação Tokenomics (Total 100% = 420.000 BLTE)',
           content: [
-            '• Lançamento Justo: 55% (231.000 BLTE)\n• Pool de Liquidez DEX: 20% (84.000 BLTE)\n• Reserva de Escassez: 15% (63.000 BLTE)\n• Arquitetura e Segurança: 10% (42.000 BLTE)',
+            '• Temporada 1 — Lançamento Justo e Comunidade: 55% (231.000 BLTE)\n• Temporada 2 — Primeira Liquidez: 25% (105.000 BLTE)\n• Temporada 3 — Liquidez Secundária: 20% (84.000 BLTE)',
           ],
         },
         {

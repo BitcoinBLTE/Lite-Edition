@@ -350,35 +350,30 @@ export const es: TranslationSchema = {
     view_explorer: 'VER EN EXPLORADOR',
   },
   tokenomics: {
-    kicker: 'Estructura económica · Escasez matemática',
+    kicker: 'Estructura de distribución · Escasez matemática',
     title: '420.000 SUMINISTRO TOTAL',
-    subtitle: 'Una distribución de tokens estrictamente limitada configurada a partir de un modelo de datos central. Cero puertas traseras de emisión, cero inflación oculta.',
-    fixed_cap: 'Límite fijo inmutable',
+    subtitle: 'Una distribución de tokens estrictamente limitada configurada a través de tres asignaciones estratégicas. Cero puertas traseras de emisión, cero inflación oculta.',
+    fixed_cap: 'LÍMITE FIJO',
     total_supply: 'SUMINISTRO TOTAL',
-    verified_alloc: 'Distribución verificada',
+    verified_alloc: 'Asignación verificada del 100% matemática (100%)',
     allocations: [
       {
-        id: 'fair_launch',
-        category: 'Lanzamiento justo y liquidez en DEX',
-        description: 'Provisión inicial de liquidez y distribución descentralizada comunitaria en exchanges descentralizados de Solana.',
+        id: 'season-1',
+        category: 'Lanzamiento justo y comunidad',
+        description: 'Distribución comunitaria y pública directa con acceso descentralizado desde el bloque cero.',
       },
       {
-        id: 'development',
-        category: 'Desarrollo del protocolo e investigación',
-        description: 'Mantenimiento continuo de código abierto, infraestructura RPC, herramientas y contratos inteligentes.',
+        id: 'season-2',
+        category: 'Primera liquidez',
+        description: 'Despliegue del pool inicial de liquidez AMM en exchanges descentralizados de Solana.',
       },
       {
-        id: 'ecosystem',
-        category: 'Ecosistema e iniciativas comunitarias',
-        description: 'Herramientas comunitarias, integraciones educativas y esfuerzos de adopción descentralizada.',
-      },
-      {
-        id: 'reserve',
-        category: 'Reserva estratégica y liquidez futura',
-        description: 'Reservas asignadas para futuros pares de liquidez verificables y expansión.',
+        id: 'season-3',
+        category: 'Liquidez secundaria',
+        description: 'Profundidad de liquidez secundaria descentralizada, enrutamiento del ecosistema y expansión.',
       },
     ],
-    data_source: 'Datos derivados directamente de la configuración verificada del token',
+    data_source: 'Fuente de datos: Modelo de configuración central único. 100% = 420.000 BLTE.',
   },
   how_to_buy: {
     kicker: 'Guía de adquisición · Recomendaciones de seguridad',
@@ -817,11 +812,9 @@ export const es: TranslationSchema = {
         {
           id: 'tokenomics',
           num: '07',
-          title: '7. Tokenomics y límite matemático',
+          title: '7. Tokenomics y distribución en tres temporadas',
           content: [
-            'El modelo de tokenomics de Bitcoin Lite Edition se basa en la simplicidad matemática y la ausencia de inflación posterior a la génesis.',
-            'El 100% de los 420.000 tokens se crean en el bloque de génesis. No existe código para crear nuevos tokens, ni emisiones inflacionarias, ni desbloqueos encubiertos.',
-            'La distribución está estructurada para respaldar la liquidez inicial en exchanges descentralizados, el mantenimiento continuo de código abierto y la expansión del ecosistema de la comunidad.',
+            'Asignación matemática estricta en tres temporadas (420.000 BLTE):\n• Temporada 1 — Lanzamiento justo y comunidad: 55% (231.000 BLTE)\n• Temporada 2 — Primera liquidez: 25% (105.000 BLTE)\n• Temporada 3 — Liquidez secundaria: 20% (84.000 BLTE)',
           ],
         },
         {

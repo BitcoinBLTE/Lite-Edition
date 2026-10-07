@@ -353,24 +353,19 @@ export const ja: TranslationSchema = {
     verified_alloc: '100% 数学的に検証された配分（100%）',
     allocations: [
       {
-        id: 'fair-launch',
-        category: 'フェアローンチ ＆ 公開分配',
+        id: 'season-1',
+        category: 'シーズン 1 — フェアローンチ ＆ コミュニティ',
         description: '分散型アクセスによるコミュニティおよび流動性の公開割り当て。',
       },
       {
-        id: 'liquidity',
-        category: 'DEX 流動性プール',
-        description: 'Solana 分散型取引所における恒久的な自動マーケットメーカー流動性。',
+        id: 'season-2',
+        category: 'シーズン 2 — 初期流動性',
+        description: 'Solana 分散型取引所における初期 AMM 流動性プールの展開。',
       },
       {
-        id: 'ecosystem',
-        category: 'エコシステム ＆ 希少性リザーブ',
-        description: 'コミュニティ施策、オープンソース統合、バリデータ助成金。',
-      },
-      {
-        id: 'development',
-        category: 'コア開発 ＆ セキュリティ監査',
-        description: 'スマートコントラクト保守、セキュリティ検証、プロトコルツール。',
+        id: 'season-3',
+        category: 'シーズン 3 — セカンダリ流動性',
+        description: 'セカンダリ流動性の深度、エコシステムルーティングおよび取引所拡大。',
       },
     ],
     data_source: 'データソース: 単一中央構成モデル。100% = 420,000 BLTE。',
@@ -804,7 +799,7 @@ export const ja: TranslationSchema = {
           num: '7',
           title: 'トケノミクス配分 (厳密に100% = 420,000 BLTE)',
           content: [
-            '• フェアローンチ＆公開分配: 55% (231,000 BLTE)\n• DEX 流動性プール: 20% (84,000 BLTE)\n• エコシステム＆希少性リザーブ: 15% (63,000 BLTE)\n• コア開発＆監査: 10% (42,000 BLTE)',
+            '• シーズン 1 — フェアローンチ ＆ コミュニティ: 55% (231,000 BLTE)\n• シーズン 2 — 初期流動性: 25% (105,000 BLTE)\n• シーズン 3 — セカンダリ流動性: 20% (84,000 BLTE)',
           ],
         },
         {

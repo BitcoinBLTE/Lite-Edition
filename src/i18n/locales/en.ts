@@ -346,32 +346,27 @@ export const en: TranslationSchema = {
     view_explorer: 'VIEW ON SOLANA EXPLORER',
   },
   tokenomics: {
-    kicker: 'Economic Structure · Mathematical Scarcity',
+    kicker: 'Distribution Structure · Mathematical Scarcity',
     title: '420,000 TOTAL SUPPLY',
-    subtitle: 'A strictly capped token distribution configured from a central data model. No minting backdoor, zero hidden inflation.',
+    subtitle: 'A strictly capped token distribution configured across three strategic allocations. No minting backdoor, zero hidden inflation.',
     fixed_cap: 'FIXED CAP',
     total_supply: 'TOTAL SUPPLY',
     verified_alloc: 'Verified 100% Mathematical Allocation (100%)',
     allocations: [
       {
-        id: 'fair-launch',
-        category: 'Fair Launch & Public Distribution',
-        description: 'Direct community and public liquidity allocation with decentralized access.',
+        id: 'season-1',
+        category: 'Fair Launch & Community',
+        description: 'Direct community and public distribution with decentralized genesis access.',
       },
       {
-        id: 'liquidity',
-        category: 'DEX Liquidity Pool',
-        description: 'Permanent automated market maker liquidity on Solana decentralized exchanges.',
+        id: 'season-2',
+        category: 'First Liquidity',
+        description: 'Initial automated market maker (AMM) DEX liquidity pool deployment on Solana.',
       },
       {
-        id: 'ecosystem',
-        category: 'Ecosystem & Scarcity Reserve',
-        description: 'Community initiatives, open-source integrations, and validator tooling grants.',
-      },
-      {
-        id: 'development',
-        category: 'Core Architecture & Audits',
-        description: 'Smart contract maintenance, security verifications, and protocol tooling.',
+        id: 'season-3',
+        category: 'Secondary Liquidity',
+        description: 'Secondary decentralized liquidity depth, ecosystem routing, and exchange expansion.',
       },
     ],
     data_source: 'Data source: Single central configuration model. 100% = 420,000 BLTE.',
@@ -403,7 +398,7 @@ export const en: TranslationSchema = {
         step: '04',
         title: 'Access a Decentralized Exchange',
         summary: 'Connect your wallet to an official Solana DEX venue.',
-        description: "Open an official decentralized exchange (DEX) or DEX aggregator on Solana, such as Jupiter Aggregator (jup.ag) or Raydium (raydium.io), and click 'Connect Wallet' using your installed Solana wallet.",
+        description: "Open an official decentralized exchange (DEX) on Solana, such as Raydium (raydium.io), and click 'Connect Wallet' using your installed Solana wallet.",
         action_label: 'View Venues',
       },
       {
@@ -578,7 +573,7 @@ export const en: TranslationSchema = {
           'Mint authority revocation & immutability verification',
           'Initial decentralized liquidity pool creation',
           'On-chain verification on Solscan & Solana Explorer',
-          'DexScreener and Jupiter terminal integration',
+          'DexScreener and Raydium DEX integration',
         ],
       },
       {
@@ -650,7 +645,7 @@ export const en: TranslationSchema = {
       },
       {
         question: 'How and where can I buy or acquire Bitcoin Lite Edition?',
-        answer: "Bitcoin Lite Edition is acquired through verified decentralized exchanges (DEXes) on Solana, such as Jupiter Aggregator and Raydium. You will need a non-custodial Solana wallet (e.g., Phantom or Solflare) funded with SOL. In the DEX interface, enter the official verified BLTE mint address to execute the swap. Follow the 7-step guide in the 'How to Acquire' section on this website.",
+        answer: "Bitcoin Lite Edition is acquired through verified decentralized exchanges (DEXes) on Solana, such as Raydium. You will need a non-custodial Solana wallet (e.g., Phantom or Solflare) funded with SOL. In the DEX interface, enter the official verified BLTE mint address to execute the swap. Follow the 7-step guide in the 'How to Acquire' section on this website.",
       },
       {
         question: 'Where can I verify the token and its parameters?',
@@ -697,10 +692,10 @@ export const en: TranslationSchema = {
       title: 'BUY / TRADE — BITCOIN LITE EDITION',
       subtitle: 'Decentralized Venues · Movable Panel',
       alert_title: 'Pre-Launch / Initial Liquidity Pending',
-      alert_desc: 'Official trading venues on Solana decentralized exchanges (Raydium and Jupiter) will activate upon verified liquidity pool deployment. Do not attempt to purchase from unverified token mints claiming to be Bitcoin Lite Edition.',
+      alert_desc: 'Official trading venues on Solana decentralized exchanges (Raydium) will activate upon verified liquidity pool deployment. Do not attempt to purchase from unverified token mints claiming to be Bitcoin Lite Edition.',
       venues_heading: 'Official Decentralized Venues',
       pending_status: 'Awaiting Deployment',
-      footer_note: 'Solana DEX Aggregators',
+      footer_note: 'Solana DEX',
     },
     legal: {
       terms_title: 'TERMS OF INFORMATIONAL USE',
@@ -810,9 +805,9 @@ export const en: TranslationSchema = {
         {
           id: 'tokenomics',
           num: '7',
-          title: 'Tokenomics & Mathematical Cap',
+          title: 'Tokenomics & Mathematical Allocation',
           content: [
-            'Strict 100% Mathematical Allocation (420,000 BLTE):\n• Fair Launch & Public Distribution: 55% (231,000 BLTE)\n• DEX Liquidity Pool: 20% (84,000 BLTE)\n• Ecosystem & Scarcity Reserve: 15% (63,000 BLTE)\n• Core Architecture & Security Audits: 10% (42,000 BLTE)',
+            'Strict Mathematical Allocation (420,000 BLTE):\n• Fair Launch & Community: 55% (231,000 BLTE)\n• First Liquidity: 25% (105,000 BLTE)\n• Secondary Liquidity: 20% (84,000 BLTE)',
           ],
         },
         {

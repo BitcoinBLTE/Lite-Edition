@@ -7,7 +7,6 @@ import {
   Coins, 
   Network, 
   Sparkles, 
-  AlertTriangle, 
   Key, 
   Lock, 
   ArrowRight, 
@@ -145,19 +144,6 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
-
-            {/* Non-Affiliation Box */}
-            <div className="p-7 sm:p-8 rounded-[28px] sm:rounded-[32px] bg-[#FCFCFC] border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex items-start gap-4">
-              <div className="w-10 h-10 rounded-[12px] bg-[#FAF5EF] border border-[#E9C9A5] text-[#B8661B] flex items-center justify-center shrink-0 mt-0.5">
-                <AlertTriangle className="w-5 h-5 stroke-[2]" />
-              </div>
-              <div className="space-y-1 text-xs sm:text-sm text-[#4A4A4A] leading-[1.8]">
-                <strong className="font-bold text-[#080808] block text-base font-display">{t.education.tab1.boundary_title}</strong>
-                <p>
-                  {t.education.tab1.boundary_desc}
-                </p>
               </div>
             </div>
           </div>

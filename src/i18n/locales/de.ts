@@ -353,24 +353,19 @@ export const de: TranslationSchema = {
     verified_alloc: '100% mathematisch verifizierte Zuteilung (100%)',
     allocations: [
       {
-        id: 'fair-launch',
-        category: 'Fairer Start & Öffentliche Verteilung',
+        id: 'season-1',
+        category: 'Saison 1 — Fair Launch & Community',
         description: 'Direkte Zuteilung an die Community und dezentrale Liquidität.',
       },
       {
-        id: 'liquidity',
-        category: 'DEX-Liquiditätspool',
+        id: 'season-2',
+        category: 'Saison 2 — Erste Liquidität',
         description: 'Dauerhafte AMM-Liquidität auf dezentralen Solana-Börsen.',
       },
       {
-        id: 'ecosystem',
-        category: 'Ökosystem & Knappheitsreserve',
-        description: 'Community-Initiativen, Open-Source-Integrationen und Förderungen.',
-      },
-      {
-        id: 'development',
-        category: 'Kernarchitektur & Audits',
-        description: 'Smart-Contract-Wartung, Sicherheitsprüfungen und Tooling.',
+        id: 'season-3',
+        category: 'Saison 3 — Sekundäre Liquidität',
+        description: 'Sekundäre Liquiditätstiefe, Ökosystem-Routing und Börsenerweiterung.',
       },
     ],
     data_source: 'Datenquelle: Zentrales Konfigurationsmodell. 100% = 420.000 BLTE.',
@@ -804,7 +799,7 @@ export const de: TranslationSchema = {
           num: '7',
           title: 'Tokenomics-Zuteilung (Exakt 100% = 420.000 BLTE)',
           content: [
-            '• Fairer Start & Verteilung: 55% (231.000 BLTE)\n• DEX-Liquiditätspool: 20% (84.000 BLTE)\n• Ökosystem & Reserve: 15% (63.000 BLTE)\n• Architektur & Audits: 10% (42.000 BLTE)',
+            '• Saison 1 — Fair Launch & Community: 55% (231.000 BLTE)\n• Saison 2 — Erste Liquidität: 25% (105.000 BLTE)\n• Saison 3 — Sekundäre Liquidität: 20% (84.000 BLTE)',
           ],
         },
         {

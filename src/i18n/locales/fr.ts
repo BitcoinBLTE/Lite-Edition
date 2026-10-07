@@ -353,24 +353,19 @@ export const fr: TranslationSchema = {
     verified_alloc: 'Allocation vérifiée à 100 % (100 %)',
     allocations: [
       {
-        id: 'fair-launch',
-        category: 'Lancement équitable & Distribution publique',
+        id: 'season-1',
+        category: 'Saison 1 — Lancement équitable & Communauté',
         description: 'Allocation publique et communautaire avec accès décentralisé.',
       },
       {
-        id: 'liquidity',
-        category: 'Bassin de liquidité DEX',
+        id: 'season-2',
+        category: 'Saison 2 — Première liquidité',
         description: 'Liquidité permanente AMM sur les bourses décentralisées de Solana.',
       },
       {
-        id: 'ecosystem',
-        category: 'Écosystème & Réserve de rareté',
-        description: 'Initiatives communautaires, subventions de développement et intégrations.',
-      },
-      {
-        id: 'development',
-        category: 'Architecture de base & Audits',
-        description: 'Maintenance des contrats, vérifications de sécurité et outillage.',
+        id: 'season-3',
+        category: 'Saison 3 — Liquidité secondaire',
+        description: 'Profondeur de liquidité secondaire, routage d’écosystème et expansion.',
       },
     ],
     data_source: 'Source de données : Modèle de configuration central. 100 % = 420 000 BLTE.',
@@ -804,7 +799,7 @@ export const fr: TranslationSchema = {
           num: '7',
           title: 'Allocation tokenomics (Total strict 100 % = 420 000 BLTE)',
           content: [
-            '• Lancement équitable & distribution : 55 % (231 000 BLTE)\n• Bassin de liquidité DEX : 20 % (84 000 BLTE)\n• Écosystème & réserve de rareté : 15 % (63 000 BLTE)\n• Architecture & audits : 10 % (42 000 BLTE)',
+            '• Saison 1 — Lancement équitable & Communauté : 55 % (231 000 BLTE)\n• Saison 2 — Première liquidité : 25 % (105 000 BLTE)\n• Saison 3 — Liquidité secondaire : 20 % (84 000 BLTE)',
           ],
         },
         {

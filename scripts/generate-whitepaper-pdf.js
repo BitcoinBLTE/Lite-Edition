@@ -239,11 +239,10 @@ async function generateWhitepaperPdf() {
       num: '7',
       title: 'Tokenomics & Mathematical Allocation',
       paras: [
-        'The total token supply is strictly configured at 420,000 tokens, allocated across verifiable public categories:',
-        '• Fair Launch & Public Distribution: 55% (231,000 BLTE) — Direct community and public liquidity allocation.',
-        '• DEX Liquidity Pool: 20% (84,000 BLTE) — Permanent automated market maker liquidity on Solana decentralized exchanges.',
-        '• Ecosystem & Scarcity Reserve: 15% (63,000 BLTE) — Community initiatives, open-source integrations, and validator tooling grants.',
-        '• Core Architecture & Security Audits: 10% (42,000 BLTE) — Smart contract maintenance, security verifications, and protocol tooling.'
+        'The total token supply is strictly configured at 420,000 tokens, structured across three strategic allocations:',
+        '• Fair Launch & Community: 55% (231,000 BLTE) — Direct community and public distribution with decentralized genesis access.',
+        '• First Liquidity: 25% (105,000 BLTE) — Initial automated market maker (AMM) DEX liquidity pool deployment on Solana.',
+        '• Secondary Liquidity: 20% (84,000 BLTE) — Secondary decentralized liquidity depth, ecosystem routing, and exchange expansion.'
       ]
     },
     {

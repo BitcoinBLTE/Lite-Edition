@@ -350,35 +350,30 @@ export const no: TranslationSchema = {
     view_explorer: 'SE PÅ BLOKKUTFORSKER',
   },
   tokenomics: {
-    kicker: 'Økonomisk struktur · Matematisk knapphet',
+    kicker: 'Tre-sesongers distribusjonsstruktur · Matematisk knapphet',
     title: '420 000 TOTALT TILBUD',
-    subtitle: 'En strengt begrenset tokendistribusjon konfigurert fra en sentral datamodell. Null bakdører for preging, null skjult inflasjon.',
-    fixed_cap: 'Uforanderlig fast tak',
+    subtitle: 'En strengt begrenset tokendistribusjon strukturert over tre strategiske sesonger. Null bakdører for preging, null skjult inflasjon.',
+    fixed_cap: 'FAST TAK',
     total_supply: 'TOTALT TILBUD',
-    verified_alloc: 'Verifisert fordeling',
+    verified_alloc: 'Verifisert 100 % fordeling i tre sesonger (100 %)',
     allocations: [
       {
-        id: 'fair_launch',
-        category: 'Rettferdig lansering og DEX-likviditet',
-        description: 'Innledende likviditetsforsyning og desentralisert fellesskapsdistribusjon på Solana desentraliserte børser.',
+        id: 'season-1',
+        category: 'Sesong 1 — Rettferdig lansering og fellesskap',
+        description: 'Direkte fellesskaps- og offentlig distribusjon med desentralisert tilgang fra blokk null.',
       },
       {
-        id: 'development',
-        category: 'Protokollutvikling og forskning',
-        description: 'Kontinuerlig åpen kildekode-vedlikehold, RPC-infrastruktur, verktøy og smarte kontrakter.',
+        id: 'season-2',
+        category: 'Sesong 2 — Første likviditet',
+        description: 'Innledende AMM DEX-likviditetspool utplassert på Solana.',
       },
       {
-        id: 'ecosystem',
-        category: 'Økosystem og fellesskapsinitiativer',
-        description: 'Fellesskapsverktøy, opplæringsintegrasjoner og desentralisert adopsjon.',
-      },
-      {
-        id: 'reserve',
-        category: 'Strategisk reserve og fremtidig likviditet',
-        description: 'Avsatte reserver for fremtidige etterprøvbare likviditetspar og utvidelse.',
+        id: 'season-3',
+        category: 'Sesong 3 — Sekundær likviditet',
+        description: 'Sekundær desentralisert likviditetsdybde, økosystemruting og utvidelse.',
       },
     ],
-    data_source: 'Data hentet direkte fra verifisert tokenkonfigurasjon',
+    data_source: 'Datakilde: Enkel sentral konfigurasjonsmodell. 100 % = 420 000 BLTE.',
   },
   how_to_buy: {
     kicker: 'Kjøpsveiledning · Sikkerhetsanbefalinger',
@@ -817,11 +812,9 @@ export const no: TranslationSchema = {
         {
           id: 'tokenomics',
           num: '07',
-          title: '7. Tokenomikk og matematisk tak',
+          title: '7. Tokenomikk og fordeling i tre sesonger',
           content: [
-            'Tokenomikkmodellen er bygget på matematisk enkelhet og totalt fravær av inflasjon etter opprettelsen.',
-            '100 % av de 420 000 tokenene skapes ved genesis. Det eksisterer ingen kode for å opprette flere tokens eller innføre inflasjon.',
-            'Fordelingen er strukturert for å støtte innledende likviditet, videreutvikling med åpen kildekode og fellesskapsvekst.',
+            'Streng matematisk fordeling i tre sesonger (420 000 BLTE):\n• Sesong 1 — Rettferdig lansering og fellesskap: 55 % (231 000 BLTE)\n• Sesong 2 — Første likviditet: 25 % (105 000 BLTE)\n• Sesong 3 — Sekundær likviditet: 20 % (84 000 BLTE)',
           ],
         },
         {

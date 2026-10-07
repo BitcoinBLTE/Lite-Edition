@@ -7,7 +7,6 @@ import {
   Eye, 
   Globe2, 
   Sparkles, 
-  Info, 
   CheckCircle2 
 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -82,21 +81,6 @@ export const AboutSection: React.FC = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Technical Distinction & Non-Affiliation Editorial Card */}
-        <div className="p-8 sm:p-10 rounded-[32px] sm:rounded-[38px] bg-[#FCFCFC] border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] text-xs sm:text-sm text-[#4A4A4A] leading-[1.8] flex items-start gap-5">
-          <div className="w-11 h-11 rounded-[14px] bg-[#FAF5EF] border border-[#E9C9A5] text-[#B8661B] flex items-center justify-center shrink-0 shadow-2xs mt-0.5">
-            <Info className="w-5 h-5 stroke-[2]" />
-          </div>
-          <div className="space-y-1.5">
-            <strong className="font-[800] text-[#080808] block font-display text-base tracking-tight">
-              {t.about.distinction_title}
-            </strong>
-            <p className="text-[#4A4A4A] font-[450]">
-              {t.about.distinction_desc}
-            </p>
-          </div>
         </div>
       </div>
     </section>

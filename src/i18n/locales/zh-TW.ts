@@ -353,24 +353,19 @@ export const zhTW: TranslationSchema = {
     verified_alloc: '通過數學 100% 驗證的硬性分配方案（100%）',
     allocations: [
       {
-        id: 'fair-launch',
-        category: '公平啟動與社群公開發行',
-        description: '以去中心化公開方式直接分配給社群支持者與流通盤。',
+        id: 'season-1',
+        category: '第一季 — 公平啟動與社群公開發行',
+        description: '以去中心化公開方式直接分配給社群支持者與創世流通盤。',
       },
       {
-        id: 'liquidity',
-        category: 'DEX 去中心化做市流動性池',
-        description: '在 Solana 頭部去中心化交易所注資並永久鎖定的基礎流動性。',
+        id: 'season-2',
+        category: '第二季 — 首期做市流動池',
+        description: '在 Solana 去中心化交易所注資並永久鎖定的初始 AMM 流動池。',
       },
       {
-        id: 'ecosystem',
-        category: '生態發展與稀缺性戰略儲備',
-        description: '用於長期開源整合、驗證節點支援及社群提案賦能。',
-      },
-      {
-        id: 'development',
-        category: '核心架構維護與安全審計',
-        description: '智能合約日常維護、第三方獨立安全審計及底層開發工具。',
+        id: 'season-3',
+        category: '第三季 — 次級流動池與生態擴展',
+        description: '次級深度流動性支援、跨協議流動性路由及生態交易所拓展。',
       },
     ],
     data_source: '數據來源：中央單一配置模型。100% = 420,000 BLTE。',
@@ -804,7 +799,7 @@ export const zhTW: TranslationSchema = {
           num: '7',
           title: '代幣經濟學分配（嚴苛 100% = 420,000 BLTE）',
           content: [
-            '• 公平啟動與社群公開發行：55%（231,000 BLTE）\n• 去中心化交易所 AMM 流動池：20%（84,000 BLTE）\n• 生態發展與戰略儲備：15%（63,000 BLTE）\n• 底層架構與安全審計：10%（42,000 BLTE）',
+            '• 第一季 — 公平啟動與社群公開發行：55%（231,000 BLTE）\n• 第二季 — 首期做市流動池：25%（105,000 BLTE）\n• 第三季 — 次級流動池與生態擴展：20%（84,000 BLTE）',
           ],
         },
         {

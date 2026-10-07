@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
-import { RaydiumIcon, JupiterIcon, OrcaIcon } from './PlatformIcons';
+import { RaydiumIcon } from './PlatformIcons';
 
 interface HowToBuySectionProps {
   onOpenTradeModal: () => void;
@@ -120,14 +120,6 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
                       <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-white border border-[#E5E5E5] text-[11px] font-mono font-bold text-[#080808] shadow-2xs">
                         <RaydiumIcon size={16} />
                         <span>Raydium</span>
-                      </div>
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-white border border-[#E5E5E5] text-[11px] font-mono font-bold text-[#080808] shadow-2xs">
-                        <JupiterIcon size={16} />
-                        <span>Jupiter</span>
-                      </div>
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-white border border-[#E5E5E5] text-[11px] font-mono font-bold text-[#080808] shadow-2xs">
-                        <OrcaIcon size={16} />
-                        <span>Orca</span>
                       </div>
                     </div>
                   )}

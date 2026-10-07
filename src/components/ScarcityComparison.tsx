@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Info } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export const ScarcityComparison: React.FC = () => {
@@ -147,17 +147,6 @@ export const ScarcityComparison: React.FC = () => {
                   ))}
                 </tbody>
               </table>
-            </div>
-          </div>
-
-          {/* Critical Clarification & Distinction Box */}
-          <div className="mt-8 p-7 sm:p-8 rounded-[28px] sm:rounded-[32px] bg-[#FCFCFC] border border-[#E5E5E5] text-[#4A4A4A] text-xs sm:text-sm leading-[1.8] flex items-start gap-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
-            <div className="w-10 h-10 rounded-[12px] bg-[#FAF5EF] border border-[#E9C9A5] text-[#B8661B] flex items-center justify-center shrink-0 mt-0.5">
-              <Info className="w-5 h-5 stroke-[2]" />
-            </div>
-            <div>
-              <strong className="font-[800] text-[#080808] font-display text-sm block mb-1">{t.scarcity.distinction_title}</strong>
-              <p>{t.scarcity.distinction_desc}</p>
             </div>
           </div>
         </div>

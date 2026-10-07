@@ -11,7 +11,7 @@
   --color-card: #FCFCFC;
   --color-dark: #080808;
   --color-muted: #4A4A4A;
-  --color-line: #E5E5E5;
+  --color-line: #EAB308;
 }
 
 @layer utilities {
@@ -179,27 +179,43 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
   background-color: rgba(0, 0, 0, 0.85) !important;
 }
 
-/* Border overrides in dark theme */
-[data-theme="dark"] .border-\[\#E5E5E5\],
-[data-theme="dark"] .border-\[\#E5E5E5\]\/80 {
-  border-color: #242428 !important;
+/* ============================================================
+   GOLD YELLOW CONTAINER LINES
+   All card containers, section dividers, borders, dialogs, and panels
+   feature prominent, crisp gold yellow container line aesthetics.
+   ============================================================ */
+.border-\[\#E5E5E5\],
+.border-\[\#E5E5E5\]\/80,
+.border-\[\#E5E5E5\]\/60,
+.border-\[\#D0D0D0\],
+.border-\[\#D9D9D9\],
+.border-\[\#DCDCDC\],
+.border-\[\#CCCCCC\],
+.border-\[\#E9C9A5\],
+.border-\[\#E9C9A5\]\/80,
+.border-\[\#F0F0F0\],
+.border-line {
+  border-color: #EAB308 !important;
 }
 
+[data-theme="dark"] .border-\[\#E5E5E5\],
+[data-theme="dark"] .border-\[\#E5E5E5\]\/80,
+[data-theme="dark"] .border-\[\#E5E5E5\]\/60,
 [data-theme="dark"] .border-\[\#D0D0D0\],
 [data-theme="dark"] .border-\[\#D9D9D9\],
 [data-theme="dark"] .border-\[\#DCDCDC\],
-[data-theme="dark"] .border-\[\#CCCCCC\] {
-  border-color: #333338 !important;
-}
-
+[data-theme="dark"] .border-\[\#CCCCCC\],
 [data-theme="dark"] .border-\[\#E9C9A5\],
-[data-theme="dark"] .border-\[\#E9C9A5\]\/80 {
-  border-color: #5C3A1A !important;
+[data-theme="dark"] .border-\[\#E9C9A5\]\/80,
+[data-theme="dark"] .border-\[\#F0F0F0\],
+[data-theme="dark"] .border-line {
+  border-color: #EAB308 !important;
 }
 
 /* Grid & List Dividers */
+.divide-\[\#E5E5E5\] > * + *,
 [data-theme="dark"] .divide-\[\#E5E5E5\] > * + * {
-  border-color: #242428 !important;
+  border-color: #EAB308 !important;
 }
 
 /* SVG Donut and Track Overrides */
@@ -309,36 +325,37 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .pillar-distinction-card {
   background-color: #FCFCFC;
   background-image: linear-gradient(135deg, #FCFCFC 0%, #FAF8F5 70%, #FAF5EF 100%);
-  border-color: #E5E5E5;
+  border-color: #EAB308 !important;
 }
 
 [data-theme="dark"] .pillar-distinction-card {
   background-color: #121215 !important;
   background-image: linear-gradient(135deg, #121215 0%, #15151A 70%, #1C150E 100%) !important;
-  border-color: #242428 !important;
+  border-color: #EAB308 !important;
 }
 
 .card-last-step {
   background-color: #FCFCFC;
   background-image: linear-gradient(135deg, #FCFCFC 0%, #FAF8F5 70%, #FAF5EF 100%);
-  border-color: #E5E5E5;
+  border-color: #EAB308 !important;
 }
 
 [data-theme="dark"] .card-last-step {
   background-color: #121215 !important;
   background-image: linear-gradient(135deg, #121215 0%, #15151A 70%, #1C150E 100%) !important;
-  border-color: #242428 !important;
+  border-color: #EAB308 !important;
 }
 
 /* Detailed Comparative Matrix Table */
 .matrix-header-row {
   background-color: #F8F8F8;
+  border-color: #EAB308 !important;
 }
 
 [data-theme="dark"] .matrix-header-row {
   background-color: #18181D !important;
   color: #FFFFFF !important;
-  border-color: #242428 !important;
+  border-color: #EAB308 !important;
 }
 
 .matrix-row-default {
