@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ShieldCheck, CheckCircle2, Lock, Sparkles, Layers } from 'lucide-react';
 import { TOKEN_CONFIG, validateTokenomicsIntegrity } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const WhitePaperCircleTokenomics: React.FC = () => {
   const { t } = useLanguage();
@@ -9,6 +10,11 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
 
   const rawAllocations = TOKEN_CONFIG.allocations;
   const isMathematicallyValid = validateTokenomicsIntegrity();
+  const alloc3DTypes: Record<string, Realistic3DIconType> = {
+    'season-1': 'globe',
+    'season-2': 'sol',
+    'season-3': 'dex',
+  };
 
   const allocations = rawAllocations.map((alloc) => {
     const loc = t.tokenomics.allocations.find((a) => a.id === alloc.id);
@@ -106,7 +112,8 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <div>
+                  <div className="flex flex-col items-center">
+                    <Realistic3DIcon type="scarcity" size="sm" className="mb-1" />
                     <div className="text-[10px] font-mono uppercase tracking-[2px] text-[#888888]">
                       Fixed Hard Cap
                     </div>
@@ -145,10 +152,7 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
                 >
                   <div className="flex items-center justify-between gap-3 mb-1.5">
                     <div className="flex items-center gap-2.5 min-w-0">
-                      <span
-                        className="w-3 h-3 rounded-full shrink-0 ring-2 ring-white shadow-xs"
-                        style={{ backgroundColor: alloc.color }}
-                      />
+                      <Realistic3DIcon type={alloc3DTypes[alloc.id] || 'scarcity'} size="sm" />
                       <span className="text-sm font-[800] text-[#080808] font-display truncate">
                         {alloc.category}
                       </span>

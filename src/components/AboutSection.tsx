@@ -1,22 +1,22 @@
 import React from 'react';
-import { 
-  Layers, 
-  ShieldCheck, 
-  Zap, 
-  Lock, 
-  Eye, 
-  Globe2, 
-  Sparkles, 
-  CheckCircle2 
-} from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
-  const featureIcons = [Layers, Zap, Lock, Eye, Globe2, ShieldCheck, Sparkles];
+  const pillar3DIcons: Realistic3DIconType[] = [
+    'scarcity',
+    'execution',
+    'security',
+    'transparency',
+    'globe',
+    'verification',
+    'distinction',
+  ];
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="about" className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
@@ -35,7 +35,6 @@ export const AboutSection: React.FC = () => {
         {/* Architectural Foundation Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {t.about.pillars.map((feat, index) => {
-            const Icon = featureIcons[index] || Layers;
             const isWide = index === t.about.pillars.length - 1; // 7th feature spans across
             return (
               <div
@@ -46,9 +45,7 @@ export const AboutSection: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-[14px] bg-[#F5F5F5] border border-[#E5E5E5] flex items-center justify-center text-[#080808] group-hover:bg-[#FAF5EF] group-hover:text-[#B8661B] group-hover:border-[#E9C9A5] group-hover:scale-105 transition-all shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
-                      <Icon className="w-5 h-5 stroke-[2]" />
-                    </div>
+                    <Realistic3DIcon type={pillar3DIcons[index] || 'scarcity'} size="lg" />
                     <span className="text-xs font-mono font-semibold text-[#888888] tracking-wider uppercase">
                       {feat.highlight}
                     </span>

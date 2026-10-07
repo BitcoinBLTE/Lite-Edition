@@ -8,10 +8,10 @@
 
   --color-copper: #B8661B;
   --color-copper-light: #E9C9A5;
-  --color-card: #FCFCFC;
+  --color-card: #F7F5EE;
   --color-dark: #080808;
   --color-muted: #4A4A4A;
-  --color-line: #EAB308;
+  --color-line: rgba(234, 179, 8, 0.05);
 }
 
 @layer utilities {
@@ -44,11 +44,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Subtle editorial card shadow */
 .shadow-editorial {
-  box-shadow: 0 4px 28px -2px rgba(8, 8, 8, 0.05), 0 2px 8px -2px rgba(8, 8, 8, 0.03);
+  box-shadow: 0 6px 28px -2px rgba(8, 8, 8, 0.06), 0 2px 8px -2px rgba(8, 8, 8, 0.03);
 }
 
 .shadow-subtle {
-  box-shadow: 0 2px 12px rgba(8, 8, 8, 0.04);
+  box-shadow: 0 3px 16px rgba(8, 8, 8, 0.05);
+}
+
+.shadow-\[0_4px_28px_rgba\(0\,0\,0\,0\.05\)\],
+.shadow-\[0_4px_24px_rgba\(0\,0\,0\,0\.05\)\],
+.shadow-\[0_4px_24px_rgba\(0\,0\,0\,0\.04\)\] {
+  box-shadow: 0 6px 28px -2px rgba(8, 8, 8, 0.06), 0 2px 8px -2px rgba(8, 8, 8, 0.03) !important;
 }
 
 @keyframes spinCoin3D {
@@ -57,6 +63,28 @@ h1, h2, h3, h4, h5, h6 {
   }
   100% {
     transform: rotateY(360deg);
+  }
+}
+
+/* Subtle pulse animation for STAKE pill/card on homepage */
+@keyframes subtleStakePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(184, 102, 27, 0.08), 0 0 0 0 rgba(184, 102, 27, 0);
+  }
+  50% {
+    transform: scale(1.015);
+    box-shadow: 0 8px 30px rgba(184, 102, 27, 0.22), 0 0 0 3px rgba(184, 102, 27, 0.15);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtleStakePulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-subtle-pulse {
+    animation: none !important;
   }
 }
 
@@ -78,6 +106,7 @@ canvas,
 [style*="translate3d"],
 .animate-spin,
 .animate-pulse,
+.animate-subtle-pulse,
 [style*="spinCoin3D"] {
   transition: none !important;
 }
@@ -180,9 +209,27 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 }
 
 /* ============================================================
-   GOLD YELLOW CONTAINER LINES
+   POLISHED CONTAINER BACKGROUNDS (LIGHT THEME)
+   Gives cards, panels, and dialogs a distinct, visible, elegant
+   warm tone with soft elevation against the pure white canvas
+   ============================================================ */
+.bg-\[\#FCFCFC\],
+.bg-\[\#FCFCFD\] {
+  background-color: #F7F5EE !important;
+}
+
+.bg-\[\#F9F9F9\] {
+  background-color: #F2EFE7 !important;
+}
+
+.bg-\[\#F7F7F7\] {
+  background-color: #F0EDE5 !important;
+}
+
+/* ============================================================
+   GOLD YELLOW CONTAINER LINES (5% VISIBILITY)
    All card containers, section dividers, borders, dialogs, and panels
-   feature prominent, crisp gold yellow container line aesthetics.
+   feature ultra-subtle, elegant 5% visibility gold yellow container lines.
    ============================================================ */
 .border-\[\#E5E5E5\],
 .border-\[\#E5E5E5\]\/80,
@@ -193,9 +240,12 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .border-\[\#CCCCCC\],
 .border-\[\#E9C9A5\],
 .border-\[\#E9C9A5\]\/80,
+.border-\[\#EAB308\],
+.border-\[\#EAB308\]\/50,
+.border-\[\#EAB308\]\/5,
 .border-\[\#F0F0F0\],
 .border-line {
-  border-color: #EAB308 !important;
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 [data-theme="dark"] .border-\[\#E5E5E5\],
@@ -207,15 +257,18 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 [data-theme="dark"] .border-\[\#CCCCCC\],
 [data-theme="dark"] .border-\[\#E9C9A5\],
 [data-theme="dark"] .border-\[\#E9C9A5\]\/80,
+[data-theme="dark"] .border-\[\#EAB308\],
+[data-theme="dark"] .border-\[\#EAB308\]\/50,
+[data-theme="dark"] .border-\[\#EAB308\]\/5,
 [data-theme="dark"] .border-\[\#F0F0F0\],
 [data-theme="dark"] .border-line {
-  border-color: #EAB308 !important;
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 /* Grid & List Dividers */
 .divide-\[\#E5E5E5\] > * + *,
 [data-theme="dark"] .divide-\[\#E5E5E5\] > * + * {
-  border-color: #EAB308 !important;
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 /* SVG Donut and Track Overrides */
@@ -300,8 +353,8 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 /* Dialogs, Popovers & Lists in dark theme */
 [data-theme="dark"] [role="listbox"],
 [data-theme="dark"] [role="dialog"] {
-  background-color: #121215 !important;
-  border-color: #242428 !important;
+  background-color: #141419 !important;
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 /* Selection colors in dark theme */
@@ -323,39 +376,39 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
    Fixes 07 · Distinction, Detailed Comparative Matrix, and 07.
    ============================================================ */
 .pillar-distinction-card {
-  background-color: #FCFCFC;
-  background-image: linear-gradient(135deg, #FCFCFC 0%, #FAF8F5 70%, #FAF5EF 100%);
-  border-color: #EAB308 !important;
+  background-color: #F7F5EE;
+  background-image: linear-gradient(135deg, #F7F5EE 0%, #FAF5EF 60%, #F5EADB 100%);
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 [data-theme="dark"] .pillar-distinction-card {
-  background-color: #121215 !important;
-  background-image: linear-gradient(135deg, #121215 0%, #15151A 70%, #1C150E 100%) !important;
-  border-color: #EAB308 !important;
+  background-color: #141419 !important;
+  background-image: linear-gradient(135deg, #141419 0%, #171720 60%, #20170E 100%) !important;
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 .card-last-step {
-  background-color: #FCFCFC;
-  background-image: linear-gradient(135deg, #FCFCFC 0%, #FAF8F5 70%, #FAF5EF 100%);
-  border-color: #EAB308 !important;
+  background-color: #F7F5EE;
+  background-image: linear-gradient(135deg, #F7F5EE 0%, #FAF5EF 60%, #F5EADB 100%);
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 [data-theme="dark"] .card-last-step {
-  background-color: #121215 !important;
-  background-image: linear-gradient(135deg, #121215 0%, #15151A 70%, #1C150E 100%) !important;
-  border-color: #EAB308 !important;
+  background-color: #141419 !important;
+  background-image: linear-gradient(135deg, #141419 0%, #171720 60%, #20170E 100%) !important;
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 /* Detailed Comparative Matrix Table */
 .matrix-header-row {
-  background-color: #F8F8F8;
-  border-color: #EAB308 !important;
+  background-color: #F0EDE6;
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 [data-theme="dark"] .matrix-header-row {
-  background-color: #18181D !important;
+  background-color: #181820 !important;
   color: #FFFFFF !important;
-  border-color: #EAB308 !important;
+  border-color: rgba(234, 179, 8, 0.05) !important;
 }
 
 .matrix-row-default {
@@ -363,15 +416,15 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 }
 
 [data-theme="dark"] .matrix-row-default {
-  background-color: #121215 !important;
+  background-color: #141419 !important;
 }
 
 .matrix-row-alt {
-  background-color: #FAFAFA;
+  background-color: #F7F5EE;
 }
 
 [data-theme="dark"] .matrix-row-alt {
-  background-color: #16161B !important;
+  background-color: #181822 !important;
 }
 
 .matrix-col-highlight {

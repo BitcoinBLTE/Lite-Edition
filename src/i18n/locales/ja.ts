@@ -354,17 +354,17 @@ export const ja: TranslationSchema = {
     allocations: [
       {
         id: 'season-1',
-        category: 'シーズン 1 — フェアローンチ ＆ コミュニティ',
+        category: 'フェアローンチ ＆ コミュニティ',
         description: '分散型アクセスによるコミュニティおよび流動性の公開割り当て。',
       },
       {
         id: 'season-2',
-        category: 'シーズン 2 — 初期流動性',
+        category: '初期流動性',
         description: 'Solana 分散型取引所における初期 AMM 流動性プールの展開。',
       },
       {
         id: 'season-3',
-        category: 'シーズン 3 — セカンダリ流動性',
+        category: 'セカンダリ流動性',
         description: 'セカンダリ流動性の深度、エコシステムルーティングおよび取引所拡大。',
       },
     ],
@@ -397,7 +397,7 @@ export const ja: TranslationSchema = {
         step: '04',
         title: '分散型取引所（DEX）にアクセス',
         summary: '公式 Solana DEX 会場にウォレットを接続。',
-        description: 'Jupiter (jup.ag) や Raydium (raydium.io) を開き、ウォレットを接続します。',
+        description: 'Raydium (raydium.io) を開き、ウォレットを接続します。',
         action_label: '取引会場を見る',
       },
       {
@@ -572,7 +572,7 @@ export const ja: TranslationSchema = {
           'ミント権限の放棄と不変性の検証',
           '初期分散型流動性プールの作成',
           'Solscan と Solana Explorer でのオンチェーン検証',
-          'DexScreener および Jupiter 端末の統合',
+          'DexScreener および Raydium 端末の統合',
         ],
       },
       {
@@ -640,7 +640,7 @@ export const ja: TranslationSchema = {
       },
       {
         question: 'どこで購入・取得できますか？',
-        answer: 'Jupiter や Raydium などの Solana 分散型取引所（DEX）で取得できます。Phantom 等のウォレットに SOL を準備し、公式サイト記載の公式ミントアドレスで交換します。',
+        answer: 'Raydium などの Solana 分散型取引所（DEX）で取得できます。Phantom 等のウォレットに SOL を準備し、公式サイト記載の公式ミントアドレスで交換します。',
       },
       {
         question: 'トークンやパラメータはどこで検証できますか？',
@@ -687,7 +687,7 @@ export const ja: TranslationSchema = {
       title: '購入 / 取引 — BITCOIN LITE EDITION',
       subtitle: '分散型取引所 · 移動可能パネル',
       alert_title: 'ローンチ前 / 初期流動性の展開準備中',
-      alert_desc: 'Raydium や Jupiter 等の公式取引会場は、流動性プールの展開完了時に有効化されます。Bitcoin Lite Edition を騙る未検証の偽物にご注意ください。',
+      alert_desc: 'Raydium 等の公式取引会場は、流動性プールの展開完了時に有効化されます。Bitcoin Lite Edition を騙る未検証の偽物にご注意ください。',
       venues_heading: '公式分散型取引所（DEX）',
       pending_status: '展開待機中',
       footer_note: 'Solana DEX アグリゲーター',
@@ -799,7 +799,7 @@ export const ja: TranslationSchema = {
           num: '7',
           title: 'トケノミクス配分 (厳密に100% = 420,000 BLTE)',
           content: [
-            '• シーズン 1 — フェアローンチ ＆ コミュニティ: 55% (231,000 BLTE)\n• シーズン 2 — 初期流動性: 25% (105,000 BLTE)\n• シーズン 3 — セカンダリ流動性: 20% (84,000 BLTE)',
+            '• フェアローンチ ＆ コミュニティ: 55% (231,000 BLTE)\n• 初期流動性: 25% (105,000 BLTE)\n• セカンダリ流動性: 20% (84,000 BLTE)',
           ],
         },
         {

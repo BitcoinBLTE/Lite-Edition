@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { TOKEN_CONFIG, getWhitepaperPdfUrl } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 interface BitcoinEducationSectionProps {
   onOpenWhitePaper: () => void;
@@ -33,9 +34,10 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
   const [activeTab, setActiveTab] = useState<'overview' | 'how-it-works' | 'supply' | 'genesis'>('overview');
 
   const mechanismIcons = [Layers, Coins, Network, Cpu, FileText, Key];
+  const mechanism3DIcons: Realistic3DIconType[] = ['ledger', 'utxo', 'mining', 'keys', 'halving', 'nodes'];
 
   return (
-    <section id="bitcoin-education" className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="bitcoin-education" className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-12">
@@ -101,8 +103,11 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
           <div className="space-y-8 animate-in fade-in duration-200">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 bg-[#FCFCFC] rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] space-y-5">
-                <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
-                  {t.education.tab1.def_kicker}
+                <div className="flex items-center justify-between gap-4">
+                  <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
+                    {t.education.tab1.def_kicker}
+                  </div>
+                  <Realistic3DIcon type="ledger" size="md" />
                 </div>
                 <h3 className="text-2xl font-[800] text-[#080808] font-display tracking-tight">
                   {t.education.tab1.def_title}
@@ -127,8 +132,11 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
               </div>
 
               <div className="lg:col-span-5 bg-[#FCFCFC] rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] space-y-5">
-                <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
-                  {t.education.tab1.shift_kicker}
+                <div className="flex items-center justify-between gap-4">
+                  <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
+                    {t.education.tab1.shift_kicker}
+                  </div>
+                  <Realistic3DIcon type="expansion" size="md" />
                 </div>
                 <h3 className="text-2xl font-[800] text-[#080808] font-display tracking-tight">
                   {t.education.tab1.shift_title}
@@ -158,12 +166,9 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {t.education.tab2.mechanisms.map((mech, index) => {
-                const Icon = mechanismIcons[index] || Layers;
                 return (
                   <div key={index} className="bg-[#FCFCFC] rounded-[28px] p-7 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] hover:border-[#D0D0D0] hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] transition-all space-y-3">
-                    <div className="w-11 h-11 rounded-[12px] bg-[#F5F5F5] border border-[#E5E5E5] flex items-center justify-center text-[#080808]">
-                      <Icon className="w-5 h-5 stroke-[2] text-[#B8661B]" />
-                    </div>
+                    <Realistic3DIcon type={mechanism3DIcons[index] || 'ledger'} size="md" />
                     <div className="text-xs font-mono text-[#B8661B] uppercase font-bold tracking-[2px]">{mech.num}</div>
                     <h4 className="text-lg font-[800] text-[#080808] font-display tracking-tight">{mech.title}</h4>
                     <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] leading-[1.75]">
@@ -182,8 +187,11 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Supply Card */}
               <div className="bg-[#FCFCFC] rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] space-y-4">
-                <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
-                  {t.education.tab3.supply_kicker}
+                <div className="flex items-center justify-between gap-4">
+                  <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
+                    {t.education.tab3.supply_kicker}
+                  </div>
+                  <Realistic3DIcon type="scarcity" size="md" />
                 </div>
                 <h3 className="text-2xl font-[800] text-[#080808] font-display tracking-tight">
                   {t.education.tab3.supply_title}
@@ -217,8 +225,11 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
 
               {/* Decentralization Card */}
               <div className="bg-[#FCFCFC] rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] space-y-4">
-                <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
-                  {t.education.tab3.decent_kicker}
+                <div className="flex items-center justify-between gap-4">
+                  <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
+                    {t.education.tab3.decent_kicker}
+                  </div>
+                  <Realistic3DIcon type="nodes" size="md" />
                 </div>
                 <h3 className="text-2xl font-[800] text-[#080808] font-display tracking-tight">
                   {t.education.tab3.decent_title}
@@ -254,9 +265,12 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
           <div className="space-y-8 animate-in fade-in duration-200">
             {/* Main Genesis Narrative */}
             <div className="bg-[#FCFCFC] rounded-[32px] sm:rounded-[42px] p-8 sm:p-12 border border-[#E5E5E5] shadow-[0_4px_28px_rgba(0,0,0,0.05)] space-y-6">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[3px]">
-                <Sparkles className="w-4 h-4 text-[#B8661B]" />
-                <span>{t.education.tab4.archive_kicker}</span>
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[3px]">
+                  <Sparkles className="w-4 h-4 text-[#B8661B]" />
+                  <span>{t.education.tab4.archive_kicker}</span>
+                </div>
+                <Realistic3DIcon type="distinction" size="md" />
               </div>
 
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-[900] text-[#080808] font-display tracking-tight">
@@ -284,8 +298,11 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
               {/* Core Invariants of Genesis */}
               <div className="pt-6 border-t border-[#E5E5E5] grid grid-cols-1 md:grid-cols-3 gap-6">
                 {t.education.tab4.invariants.map((inv, idx) => (
-                  <div key={idx} className="p-6 rounded-[22px] bg-[#FAF5EF] border border-[#E9C9A5]/80 space-y-2">
-                    <span className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2px] block">{inv.tag}</span>
+                  <div key={idx} className="p-6 rounded-[22px] bg-[#FAF5EF] border border-[#E9C9A5]/80 space-y-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2px] block">{inv.tag}</span>
+                      <Realistic3DIcon type={['scarcity', 'execution', 'security'][idx] || 'scarcity'} size="sm" />
+                    </div>
                     <h4 className="text-base font-[800] text-[#080808] font-display">{inv.title}</h4>
                     <p className="text-xs text-[#4A4A4A] font-[450] leading-[1.75]">
                       {inv.desc}

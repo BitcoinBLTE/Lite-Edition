@@ -14,6 +14,7 @@ import { RotatingCoinLogo } from './RotatingCoinLogo';
 import { WhitePaperCircleTokenomics } from './WhitePaperCircleTokenomics';
 import { useLanguage } from '../i18n/LanguageContext';
 import { getWhitepaperPdfUrl } from '../config/tokenConfig';
+import { Realistic3DIcon } from './Realistic3DIcon';
 
 interface WhitePaperModalProps {
   isOpen: boolean;
@@ -72,7 +73,7 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
       onClose={onClose}
       title={wp.title}
       subtitle={wp.subtitle}
-      icon={<BookOpen className="w-5 h-5 text-[#B8661B] shrink-0" />}
+      icon={<Realistic3DIcon type="mint" size="sm" />}
       maxWidthClass="max-w-5xl"
       maxHeightClass="h-[92vh]"
       ariaLabelledBy="whitepaper-title"

@@ -354,17 +354,17 @@ export const zhCN: TranslationSchema = {
     allocations: [
       {
         id: 'season-1',
-        category: '第一季 — 公平启动与社区公开发行',
+        category: '公平启动与社区公开发行',
         description: '以去中心化公开方式直接分配给社区支持者与创世流通盘。',
       },
       {
         id: 'season-2',
-        category: '第二季 — 首期做市流动池',
+        category: '首期做市流动池',
         description: '在 Solana 去中心化交易所注资并永久锁定的初始 AMM 流动池。',
       },
       {
         id: 'season-3',
-        category: '第三季 — 次级流动池与生态扩展',
+        category: '次级流动池与生态扩展',
         description: '次级深度流动性支持、跨协议流动性路由及生态交易所拓展。',
       },
     ],
@@ -397,7 +397,7 @@ export const zhCN: TranslationSchema = {
         step: '04',
         title: '打开去中心化交易所（DEX）',
         summary: '在官方合规的 DEX 聚合器上连接钱包。',
-        description: '打开 Jupiter (jup.ag) 或 Raydium (raydium.io)，点击右上角“连接钱包”按钮。',
+        description: '打开 Raydium (raydium.io)，点击右上角“连接钱包”按钮。',
         action_label: '查看交易平台',
       },
       {
@@ -572,7 +572,7 @@ export const zhCN: TranslationSchema = {
           '铸造与冻结权限永久销毁核查',
           '首批去中心化做市流动池注入',
           'Solscan 与 Solana Explorer 权威收录',
-          'DexScreener 与 Jupiter 交易聚合集成',
+          'DexScreener 与 Raydium DEX集成',
         ],
       },
       {
@@ -640,7 +640,7 @@ export const zhCN: TranslationSchema = {
       },
       {
         question: '我可以在哪里安全地获取它？',
-        answer: '可以通过 Jupiter、Raydium 等 Solana 官方合规的 DEX 聚合器进行获取。您只需使用诸如 Phantom、Solflare 等自托管钱包备好少许 SOL，输入本站公示的真实 Mint 地址进行兑换。',
+        answer: '可以通过 Raydium 等 Solana 官方合规的 DEX 聚合器进行获取。您只需使用诸如 Phantom、Solflare 等自托管钱包备好少许 SOL，输入本站公示的真实 Mint 地址进行兑换。',
       },
       {
         question: '我该如何在链上核实该代币的真伪？',
@@ -687,7 +687,7 @@ export const zhCN: TranslationSchema = {
       title: '购买 / 交易 — BITCOIN LITE EDITION',
       subtitle: '去中心化交互通道 · 可自由拖动面板',
       alert_title: '公开发行前期 / 初始流动性池部署中',
-      alert_desc: 'Solana 去中心化交易所（Raydium 与 Jupiter）的正规通道将在首期流动性完成注入后即刻开启。切勿与任何声称本代币的非官方合约交互。',
+      alert_desc: 'Solana 去中心化交易所（Raydium）的正规通道将在首期流动性完成注入后即刻开启。切勿与任何声称本代币的非官方合约交互。',
       venues_heading: '官方推荐的去中心化交易场所（DEX）',
       pending_status: '等待主网池注入',
       footer_note: 'Solana 链上原生 DEX 聚合网络',
@@ -799,7 +799,7 @@ export const zhCN: TranslationSchema = {
           num: '7',
           title: '代币经济学分配（严苛 100% = 420,000 BLTE）',
           content: [
-            '• 第一季 — 公平启动与社区公开发行：55%（231,000 BLTE）\n• 第二季 — 首期做市流动池：25%（105,000 BLTE）\n• 第三季 — 次级流动池与生态扩展：20%（84,000 BLTE）',
+            '• 公平启动与社区公开发行：55%（231,000 BLTE）\n• 首期做市流动池：25%（105,000 BLTE）\n• 次级流动池与生态扩展：20%（84,000 BLTE）',
           ],
         },
         {

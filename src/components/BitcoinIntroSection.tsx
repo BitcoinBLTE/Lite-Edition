@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon } from './Realistic3DIcon';
 
 interface BitcoinIntroSectionProps {
   onLearnMore: () => void;
@@ -14,14 +15,17 @@ export const BitcoinIntroSection: React.FC<BitcoinIntroSectionProps> = ({
   const { t } = useLanguage();
 
   return (
-    <section id="bitcoin-intro" className="py-16 md:py-24 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="bitcoin-intro" className="py-16 md:py-24 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Card: 38-42px rounded, #FCFCFC background, 1px solid #E5E5E5 border, subtle shadow */}
         <div className="max-w-4xl mx-auto bg-[#FCFCFC] border border-[#E5E5E5] rounded-[32px] sm:rounded-[42px] p-8 sm:p-12 md:p-14 shadow-[0_4px_28px_rgba(0,0,0,0.05)]">
-          {/* Section Label: Technical monospace, 600-700 weight, 3-4px spacing, #B8661B burnt copper */}
-          <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-4 flex items-center gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" aria-hidden="true" />
-            <span>{t.intro.badge}</span>
+          {/* Section Header with 3D Medallion Icon */}
+          <div className="flex items-start justify-between gap-4 mb-4">
+            <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] flex items-center gap-2.5 pt-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" aria-hidden="true" />
+              <span>{t.intro.badge}</span>
+            </div>
+            <Realistic3DIcon type="foundation" size="lg" />
           </div>
 
           {/* Section Heading: Oversized futuristic geometric heading, near-black #080808, 900 weight */}

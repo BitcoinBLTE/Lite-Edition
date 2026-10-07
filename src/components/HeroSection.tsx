@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const { t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden pt-6 pb-16 md:pt-12 md:pb-24 bg-white border-b border-[#E5E5E5]">
+    <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 bg-white">
       {/* Subtle warm copper ambient background glow */}
       <div 
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] h-[520px] rounded-full bg-gradient-to-b from-[#B8661B]/5 via-[#E9C9A5]/4 to-transparent blur-3xl pointer-events-none -z-10"
@@ -26,39 +26,43 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* 1. Rotating Coin at the top */}
-        <div className="mb-6 flex justify-center items-center w-full">
-          <HeroCoin3D />
+        {/* Small gold eyebrow */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF5EF] border border-[#EAB308]/5 text-[#B8661B] text-xs font-mono font-bold tracking-[2.5px] uppercase mb-4 sm:mb-5 shadow-2xs">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B]" />
+          <span>{t.hero.eyebrow || 'BITCOIN LITE EDITION · BLTE'}</span>
         </div>
 
-        {/* 2. Oversized Futuristic Heading (800-900 weight, near-black #080808) */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-[900] tracking-[-0.03em] text-[#080808] font-display text-balance leading-[1.12] mb-4">
+        {/* Large hero heading: occupying multiple lines naturally */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-[900] tracking-tight text-[#080808] font-display leading-[1.2] sm:leading-[1.15] mb-5 sm:mb-6 max-w-xl text-balance">
           {t.hero.title}
         </h1>
 
-        {/* 3. Sub Header - Clean & punchy */}
-        <p className="text-base sm:text-lg md:text-xl font-semibold text-[#080808] font-display tracking-tight text-balance max-w-2xl mb-4">
-          {t.hero.subtitle}
-        </p>
-
-        {/* 4. Supporting Editorial Description (#4A4A4A with generous line-height) */}
-        <p className="text-sm sm:text-base text-[#4A4A4A] font-[450] leading-[1.8] sm:leading-[1.85] max-w-2xl mb-8">
+        {/* Large readable introduction: comfortable 18-21px reading text */}
+        <p className="text-[18px] sm:text-[19px] md:text-[20px] text-[#4A4A4A] font-[450] leading-[1.75] sm:leading-[1.8] max-w-lg mx-auto mb-6 sm:mb-8 text-balance px-2">
           {t.hero.description}
         </p>
 
-        {/* 5. Primary Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-4">
+        {/* Rotating 3D Coin directly above Explore Token Architecture button */}
+        <div className="mb-6 sm:mb-7 flex justify-center items-center w-full">
+          <HeroCoin3D />
+        </div>
+
+        {/* Primary CTA: Full-width rounded black button with subtle gold accent/arrow */}
+        <div className="w-full max-w-sm sm:max-w-md mx-auto mb-4">
           <button
             onClick={onExploreToken}
-            className="px-6 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-sm font-bold text-white bg-[#111111] hover:bg-[#B8661B] active:bg-[#964E10] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-200 flex items-center gap-2.5 group whitespace-nowrap cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
+            className="w-full py-4 px-6 sm:px-8 text-base font-bold text-white bg-[#111111] hover:bg-[#B8661B] active:bg-[#964E10] rounded-[22px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-200 flex items-center justify-center gap-3 cursor-pointer group focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
           >
             <span>{t.hero.btn_explore}</span>
-            <ArrowRight className="w-4 h-4 stroke-[2] group-hover:translate-x-1 transition-transform duration-200 text-[#E9C9A5]" />
+            <ArrowRight className="w-5 h-5 stroke-[2] text-[#EAB308] group-hover:translate-x-1 transition-transform duration-200" />
           </button>
+        </div>
 
+        {/* Secondary Actions: Clean two-option row [ Read White Paper ] BUY / TRADE */}
+        <div className="w-full max-w-sm sm:max-w-md mx-auto flex items-center justify-between gap-3 mb-8">
           <button
             onClick={onOpenWhitePaper}
-            className="px-6 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-sm font-semibold text-[#222222] bg-white hover:bg-[#F9F9F9] hover:border-[#CCCCCC] border border-[#D9D9D9] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all whitespace-nowrap flex items-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
+            className="flex-1 py-3.5 px-5 text-sm font-semibold text-[#111111] bg-[#FAF5EF] hover:bg-[#F2E8DC] border border-[#EAB308]/5 hover:border-[#B8661B] rounded-[18px] shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none whitespace-nowrap"
           >
             <BookOpen className="w-4 h-4 text-[#B8661B] stroke-[2]" />
             <span>{t.hero.btn_whitepaper}</span>
@@ -66,44 +70,59 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           <button
             onClick={onOpenTradeModal}
-            className="px-5 py-3.5 sm:py-4 text-xs font-mono font-bold text-[#080808] hover:text-[#B8661B] hover:bg-[#FAF5EF] rounded-[16px] transition-colors cursor-pointer"
+            className="py-3 px-4 text-xs sm:text-sm font-mono font-bold text-[#080808] hover:text-[#B8661B] hover:bg-[#FAF5EF] rounded-[14px] transition-colors cursor-pointer uppercase tracking-[1.5px] whitespace-nowrap underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
           >
             {t.hero.btn_buy_trade}
           </button>
         </div>
 
-        {/* Dedicated Stake Action - Positioned Below */}
-        <div className="flex justify-center mb-10">
-          <a
-            href={TOKEN_CONFIG.stakingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 sm:px-7 sm:py-3.5 text-xs sm:text-sm font-bold text-white bg-[#B8661B] hover:bg-[#964E10] active:bg-[#7D3E08] rounded-[16px] shadow-[0_4px_16px_rgba(184,102,27,0.25)] transition-all whitespace-nowrap flex items-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none group"
-            title="Stake Bitcoin Lite Edition on Streamflow Finance (40% APY)"
-          >
-            <span>STAKE</span>
-            <span className="text-[10px] sm:text-[11px] font-mono font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
-              40% APY
+        {/* Staking CTA: Prominent gold/orange rounded card with visible polished container and subtle pulse */}
+        <a
+          href={TOKEN_CONFIG.stakingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full max-w-sm sm:max-w-md mx-auto bg-[#FAF5EF] hover:bg-[#F5EADB] border border-[#EAB308]/5 rounded-[24px] p-4 sm:p-5 shadow-[0_4px_20px_rgba(184,102,27,0.08)] flex items-center justify-between gap-3 transition-all duration-200 group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none mb-8 sm:mb-10 animate-subtle-pulse hover:scale-[1.015]"
+          title="Stake Bitcoin Lite Edition on Streamflow (40% APY)"
+        >
+          <div className="text-left">
+            <span className="text-base sm:text-lg font-[900] text-[#080808] font-display tracking-tight group-hover:text-[#B8661B] transition-colors block">
+              STAKE
             </span>
-          </a>
-        </div>
+            <span className="text-xs sm:text-sm text-[#666666] font-medium block">
+              Earn Rewards
+            </span>
+          </div>
 
-        {/* 6. Secondary Technical Monospace Metadata (Strict Zero-Pill) */}
-        <div className="pt-6 border-t border-[#E5E5E5] w-full flex flex-wrap items-center justify-center gap-y-2.5 gap-x-5 text-xs font-mono font-semibold text-[#4A4A4A] uppercase tracking-[2.5px]">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B]" />
-            <span className="text-[#080808] font-bold tabular-nums">420,000</span>
-            <span>{t.hero.stat_supply}</span>
+          <div className="flex items-center gap-2.5 shrink-0">
+            <span className="text-sm sm:text-base font-mono font-black px-3.5 py-1.5 rounded-full bg-[#B8661B] text-white shadow-[0_2px_8px_rgba(184,102,27,0.25)] tracking-tight">
+              {TOKEN_CONFIG.stakingApy} APY
+            </span>
+            <div className="w-8 h-8 rounded-full bg-white border border-[#EAB308]/5 text-[#B8661B] flex items-center justify-center group-hover:translate-x-0.5 group-hover:bg-[#B8661B] group-hover:text-white transition-all shadow-xs">
+              <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+            </div>
           </div>
-          <span className="text-[#D9D9D9] hidden sm:inline" aria-hidden="true">/</span>
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#111111] dark:bg-[#E9C9A5]" />
-            <span>{t.hero.stat_network}</span>
-          </div>
-          <span className="text-[#D9D9D9] hidden sm:inline" aria-hidden="true">/</span>
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B]" />
-            <span>{t.hero.stat_scarcity}</span>
+        </a>
+
+        {/* Token Metrics: Supply information with polished container cards */}
+        <div className="w-full max-w-sm sm:max-w-md mx-auto pt-2">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
+            <div className="flex flex-col items-center justify-center p-4 rounded-[20px] bg-[#FAF5EF] border border-[#EAB308]/5 shadow-2xs">
+              <span className="text-2xl sm:text-3xl font-mono font-[900] text-[#080808] tabular-nums tracking-tight">
+                420,000
+              </span>
+              <span className="text-[11px] font-mono font-bold text-[#888888] uppercase tracking-[2px] mt-1">
+                {t.hero.stat_supply || 'TOTAL SUPPLY'}
+              </span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center p-4 rounded-[20px] bg-[#FAF5EF] border border-[#EAB308]/5 shadow-2xs">
+              <span className="text-xl sm:text-2xl md:text-3xl font-mono font-[900] text-[#B8661B] uppercase tracking-tight">
+                {t.hero.stat_scarcity || 'FIXED SUPPLY'}
+              </span>
+              <span className="text-[11px] font-mono font-bold text-[#888888] uppercase tracking-[2px] mt-1">
+                {t.hero.max_supply || 'MAX SUPPLY'}
+              </span>
+            </div>
           </div>
         </div>
       </div>

@@ -35,8 +35,9 @@ export interface TranslationSchema {
   hero: {
     independent_asset: string;
     fixed_scarcity: string;
+    eyebrow?: string;
     title: string;
-    subtitle: string;
+    subtitle?: string;
     description: string;
     btn_explore: string;
     btn_whitepaper: string;
@@ -44,6 +45,7 @@ export interface TranslationSchema {
     stat_supply: string;
     stat_network: string;
     stat_scarcity: string;
+    max_supply?: string;
   };
   intro: {
     badge: string;

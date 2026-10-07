@@ -1,18 +1,18 @@
 import React from 'react';
-import { Zap, Coins, Eye, Globe } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const WhySolanaSection: React.FC = () => {
   const { t } = useLanguage();
-  const icons = [Zap, Coins, Eye, Globe];
+  const solana3DIcons: Realistic3DIconType[] = ['speed', 'fee', 'clock', 'blocks'];
 
   const features = t.why_solana.pillars.map((item, idx) => ({
     ...item,
-    icon: icons[idx] || Zap,
+    iconType: solana3DIcons[idx] || 'speed',
   }));
 
   return (
-    <section className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3.5 flex items-center gap-2.5">
@@ -30,16 +30,13 @@ export const WhySolanaSection: React.FC = () => {
         {/* 4 Feature Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item) => {
-            const Icon = item.icon;
             return (
               <div
                 key={item.title}
                 className="bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] hover:border-[#D0D0D0] hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-[14px] bg-[#F5F5F5] border border-[#E5E5E5] flex items-center justify-center text-[#080808] mb-6 group-hover:bg-[#FAF5EF] group-hover:text-[#B8661B] group-hover:border-[#E9C9A5] transition-all">
-                    <Icon className="w-5 h-5 stroke-[2]" />
-                  </div>
+                  <Realistic3DIcon type={item.iconType} size="lg" className="mb-6" />
 
                   <h3 className="text-lg font-[800] text-[#080808] font-display tracking-tight mb-2">
                     {item.title}

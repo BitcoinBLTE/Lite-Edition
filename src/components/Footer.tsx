@@ -49,9 +49,9 @@ export const Footer: React.FC<FooterProps> = ({
   const activeSocials = TOKEN_CONFIG.socials.filter((s) => s.url !== null);
 
   return (
-    <footer className="bg-white border-t border-[#E5E5E5] text-[#4A4A4A]">
+    <footer className="bg-white text-[#4A4A4A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#E5E5E5]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12">
           {/* Brand & Mission Column */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
@@ -244,7 +244,7 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Legal Disclaimer Box — Clear Conceptual Distinction & Non-Affiliation Statement */}
-        <div className="pt-8 pb-6 border-b border-[#E5E5E5]">
+        <div className="pt-8 pb-6">
           <div className="p-6 rounded-[24px] bg-[#FCFCFC] border border-[#E5E5E5] text-xs text-[#4A4A4A] leading-[1.8] space-y-2.5">
             <p className="font-bold text-[#080808] uppercase font-mono tracking-[1.5px]">
               {t.about.distinction_title}

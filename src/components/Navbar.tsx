@@ -30,16 +30,16 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#E5E5E5] transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-3 sm:gap-4">
         {/* Zone 1: Brand Wordmark with 3D Rotating Coin Logo */}
         <a
           href="#"
-          className="flex items-center gap-2.5 text-[#080808] hover:text-[#B8661B] transition-colors shrink min-w-0 group select-none"
+          className="flex items-center gap-2.5 sm:gap-3 text-[#080808] hover:text-[#B8661B] transition-colors shrink min-w-0 group select-none py-1"
           title="Bitcoin Lite Edition Home"
         >
-          <RotatingCoinLogo size={26} className="shrink-0" />
-          <span className="text-sm sm:text-base font-extrabold tracking-tight font-display text-[#080808] group-hover:text-[#B8661B] transition-colors truncate">
+          <RotatingCoinLogo size={28} className="shrink-0" />
+          <span className="text-sm sm:text-base font-black tracking-tight font-display text-[#080808] group-hover:text-[#B8661B] transition-colors truncate">
             {TOKEN_CONFIG.name.toUpperCase()}
           </span>
         </a>
@@ -91,10 +91,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-[#080808] hover:text-[#B8661B] focus-visible:ring-2 focus-visible:ring-[#B8661B] rounded-[12px] cursor-pointer"
+            className="p-2.5 text-[#080808] hover:text-[#B8661B] hover:bg-[#FAF8F5] focus-visible:ring-2 focus-visible:ring-[#B8661B] rounded-[14px] border border-[#EAB308]/5 transition-colors cursor-pointer flex items-center justify-center"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 stroke-[2.5]" /> : <Menu className="w-5 h-5 stroke-[2.5]" />}
           </button>
         </div>
       </div>

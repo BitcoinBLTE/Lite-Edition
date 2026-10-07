@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Copy, Check, ExternalLink, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Copy, Check, ExternalLink, AlertCircle } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const TokenOverview: React.FC = () => {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
+
+  const specIcons: Realistic3DIconType[] = ['distinction', 'scarcity', 'speed', 'halving', 'mint', 'utxo'];
 
   const handleCopy = () => {
     if (!TOKEN_CONFIG.mintAddress) return;
@@ -28,7 +31,7 @@ export const TokenOverview: React.FC = () => {
     : `https://solscan.io`;
 
   return (
-    <section id="token" className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="token" className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3.5 flex items-center gap-2.5">
@@ -52,8 +55,11 @@ export const TokenOverview: React.FC = () => {
                 key={index} 
                 className={`p-7 sm:p-9 ${index >= 3 ? 'sm:border-t sm:border-[#E5E5E5]' : ''}`}
               >
-                <div className="text-[10px] font-mono text-[#888888] font-bold uppercase tracking-[2px] mb-2.5">
-                  {spec.label}
+                <div className="flex items-center justify-between gap-3 mb-2.5">
+                  <span className="text-[10px] font-mono text-[#888888] font-bold uppercase tracking-[2px]">
+                    {spec.label}
+                  </span>
+                  <Realistic3DIcon type={specIcons[index] || 'scarcity'} size="sm" />
                 </div>
                 <div className={`text-xl sm:text-2xl font-[800] text-[#080808] ${spec.mono ? 'font-mono tabular-nums' : 'font-display tracking-tight'}`}>
                   {spec.value}
@@ -66,8 +72,8 @@ export const TokenOverview: React.FC = () => {
           <div className="p-7 sm:p-10 bg-white">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-2.5 max-w-2xl">
-                <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px] flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#B8661B] stroke-[2]" />
+                <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px] flex items-center gap-2.5">
+                  <Realistic3DIcon type="verification" size="sm" />
                   <span>{t.token_overview.contract_label}</span>
                   <span aria-hidden="true" className="text-[#D9D9D9]">·</span>
                   <span className="text-[#888888]">{t.token_overview.authentic_id}</span>

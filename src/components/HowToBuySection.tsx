@@ -17,6 +17,7 @@ import {
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { RaydiumIcon } from './PlatformIcons';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 interface HowToBuySectionProps {
   onOpenTradeModal: () => void;
@@ -27,6 +28,15 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
 }) => {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
+  const step3DIcons: Realistic3DIconType[] = [
+    'wallet',
+    'sol',
+    'dex',
+    'mint',
+    'slippage',
+    'confirm',
+    'receipt',
+  ];
 
   const handleCopy = () => {
     if (!TOKEN_CONFIG.mintAddress) return;
@@ -61,7 +71,7 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
   });
 
   return (
-    <section id="how-to-buy" className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="how-to-buy" className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
@@ -97,9 +107,7 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
                     <span className="w-8 h-8 rounded-[10px] bg-[#F5F5F5] border border-[#E5E5E5] flex items-center justify-center font-mono text-xs font-bold text-[#080808] group-hover:bg-[#FAF5EF] group-hover:text-[#B8661B] group-hover:border-[#E9C9A5] transition-colors">
                       {st.step}
                     </span>
-                    <div className="w-9 h-9 rounded-[12px] bg-white border border-[#E5E5E5] flex items-center justify-center text-[#B8661B]">
-                      <Icon className="w-4 h-4 stroke-[2]" />
-                    </div>
+                    <Realistic3DIcon type={step3DIcons[index] || 'wallet'} size="md" />
                   </div>
 
                   <h3 className="text-base sm:text-lg font-[800] text-[#080808] font-display tracking-tight mb-1.5">
@@ -145,9 +153,7 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
         <div className="bg-[#FCFCFC] rounded-[32px] sm:rounded-[40px] border-2 border-[#B8661B] p-8 sm:p-12 shadow-[0_6px_30px_rgba(184,102,27,0.08)]">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="flex items-start gap-5">
-              <div className="w-12 h-12 rounded-[16px] bg-[#FAF5EF] border border-[#E9C9A5] text-[#B8661B] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                <AlertTriangle className="w-6 h-6 stroke-[2]" />
-              </div>
+              <Realistic3DIcon type="shield" size="lg" className="shrink-0 mt-0.5" />
 
               <div className="space-y-2.5">
                 <div className="text-xs font-mono font-bold uppercase tracking-[2.5px] text-[#B8661B] flex items-center gap-2">

@@ -354,17 +354,17 @@ export const ptPT: TranslationSchema = {
     allocations: [
       {
         id: 'season-1',
-        category: 'Temporada 1 — Lançamento Justo e Comunidade',
+        category: 'Lançamento Justo e Comunidade',
         description: 'Alocação comunitária aberta com acesso descentralizado.',
       },
       {
         id: 'season-2',
-        category: 'Temporada 2 — Primeira Liquidez',
+        category: 'Primeira Liquidez',
         description: 'Liquidez permanente em corretoras descentralizadas na Solana.',
       },
       {
         id: 'season-3',
-        category: 'Temporada 3 — Liquidez Secundária',
+        category: 'Liquidez Secundária',
         description: 'Profundidade de liquidez secundária, rotatividade do ecossistema e expansão.',
       },
     ],
@@ -397,7 +397,7 @@ export const ptPT: TranslationSchema = {
         step: '04',
         title: 'Aceder a uma Corretora Descentralizada (DEX)',
         summary: 'Conecte a carteira a uma plataforma oficial na Solana.',
-        description: 'Abra um agregador como Jupiter (jup.ag) ou Raydium (raydium.io) e clique em «Conectar Carteira».',
+        description: 'Abra um agregador como Raydium (raydium.io) e clique em «Conectar Carteira».',
         action_label: 'Ver Plataformas',
       },
       {
@@ -572,7 +572,7 @@ export const ptPT: TranslationSchema = {
           'Revogação da autoridade de mint e verificação',
           'Criação da primeira pool de liquidez DEX',
           'Verificação no Solscan e Solana Explorer',
-          'Integração nos terminais DexScreener e Jupiter',
+          'Integração nos terminais DexScreener e Raydium',
         ],
       },
       {
@@ -640,7 +640,7 @@ export const ptPT: TranslationSchema = {
       },
       {
         question: 'Como e onde posso adquirir?',
-        answer: 'Em corretoras descentralizadas (DEX) na Solana, como Jupiter ou Raydium, usando carteiras de autocustódia com saldo em SOL.',
+        answer: 'Em corretoras descentralizadas (DEX) na Solana, como Raydium, usando carteiras de autocustódia com saldo em SOL.',
       },
       {
         question: 'Onde posso auditar o token?',
@@ -687,7 +687,7 @@ export const ptPT: TranslationSchema = {
       title: 'COMPRAR / NEGOCIAR — BITCOIN LITE EDITION',
       subtitle: 'Plataformas Descentralizadas · Painel Móvel',
       alert_title: 'Pré-Lançamento / Liquidez Inicial Pendente',
-      alert_desc: 'As corretoras descentralizadas oficiais na Solana (Raydium e Jupiter) serão ativadas após a injeção da liquidez inicial. Não compre tokens em endereços não verificados.',
+      alert_desc: 'As corretoras descentralizadas oficiais na Solana (Raydium) serão ativadas após a injeção da liquidez inicial. Não compre tokens em endereços não verificados.',
       venues_heading: 'Plataformas Descentralizadas Oficiais (DEX)',
       pending_status: 'Aguardar Implementação',
       footer_note: 'Agregadores DEX na Solana',
@@ -799,7 +799,7 @@ export const ptPT: TranslationSchema = {
           num: '7',
           title: 'Alocação Tokenomics (Total 100% = 420.000 BLTE)',
           content: [
-            '• Temporada 1 — Lançamento Justo e Comunidade: 55% (231.000 BLTE)\n• Temporada 2 — Primeira Liquidez: 25% (105.000 BLTE)\n• Temporada 3 — Liquidez Secundária: 20% (84.000 BLTE)',
+            '• Lançamento Justo e Comunidade: 55% (231.000 BLTE)\n• Primeira Liquidez: 25% (105.000 BLTE)\n• Liquidez Secundária: 20% (84.000 BLTE)',
           ],
         },
         {

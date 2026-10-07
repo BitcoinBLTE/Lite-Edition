@@ -1,12 +1,13 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon } from './Realistic3DIcon';
 
 export const ScarcityComparison: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3.5 flex items-center justify-center gap-2.5">
@@ -26,16 +27,19 @@ export const ScarcityComparison: React.FC = () => {
           <div className="flex flex-col items-center space-y-4">
             {/* Step 1: Bitcoin */}
             <div className="w-full bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-              <div className="space-y-1.5">
-                <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#888888] uppercase">
-                  {t.scarcity.step1_kicker}
+              <div className="flex items-start gap-4">
+                <Realistic3DIcon type="ledger" size="md" className="mt-1" />
+                <div className="space-y-1.5">
+                  <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#888888] uppercase">
+                    {t.scarcity.step1_kicker}
+                  </div>
+                  <h3 className="text-2xl font-[800] text-[#080808] font-display">
+                    {t.scarcity.step1_title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] leading-[1.7]">
+                    {t.scarcity.step1_desc}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-[800] text-[#080808] font-display">
-                  {t.scarcity.step1_title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] leading-[1.7]">
-                  {t.scarcity.step1_desc}
-                </p>
               </div>
               <div className="text-left sm:text-right shrink-0">
                 <div className="text-2xl sm:text-3xl font-mono font-[800] text-[#080808] tabular-nums">
@@ -55,17 +59,20 @@ export const ScarcityComparison: React.FC = () => {
 
             {/* Step 2: Bitcoin Lite Edition (Marquee Hero Box in Burnt Copper) */}
             <div className="w-full bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border-2 border-[#B8661B] shadow-[0_6px_30px_rgba(184,102,27,0.08)] flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative overflow-hidden">
-              <div className="space-y-1.5 relative z-10">
-                <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#B8661B] uppercase flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#B8661B] inline-block animate-pulse" />
-                  <span>{t.scarcity.step2_kicker}</span>
+              <div className="flex items-start gap-4 relative z-10">
+                <Realistic3DIcon type="scarcity" size="lg" className="mt-1" />
+                <div className="space-y-1.5">
+                  <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#B8661B] uppercase flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#B8661B] inline-block animate-pulse" />
+                    <span>{t.scarcity.step2_kicker}</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-[900] text-[#080808] font-display tracking-tight">
+                    {t.scarcity.step2_title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] max-w-md leading-[1.7]">
+                    {t.scarcity.step2_desc}
+                  </p>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-[900] text-[#080808] font-display tracking-tight">
-                  {t.scarcity.step2_title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] max-w-md leading-[1.7]">
-                  {t.scarcity.step2_desc}
-                </p>
               </div>
 
               <div className="text-left sm:text-right shrink-0 relative z-10">
@@ -86,19 +93,22 @@ export const ScarcityComparison: React.FC = () => {
 
             {/* Step 3: Solana */}
             <div className="w-full bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-              <div className="space-y-1.5">
-                <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#080808] uppercase">
-                  {t.scarcity.step3_kicker}
+              <div className="flex items-start gap-4">
+                <Realistic3DIcon type="speed" size="md" className="mt-1" />
+                <div className="space-y-1.5">
+                  <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#080808] uppercase">
+                    {t.scarcity.step3_kicker}
+                  </div>
+                  <h3 className="text-2xl font-[800] text-[#080808] font-display flex items-center gap-2">
+                    <span>{t.scarcity.step3_title}</span>
+                    <span className="text-sm font-mono font-medium text-[#888888] tracking-normal">
+                      · {t.scarcity.step3_layer}
+                    </span>
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] leading-[1.7]">
+                    {t.scarcity.step3_desc}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-[800] text-[#080808] font-display flex items-center gap-2">
-                  <span>{t.scarcity.step3_title}</span>
-                  <span className="text-sm font-mono font-medium text-[#888888] tracking-normal">
-                    · {t.scarcity.step3_layer}
-                  </span>
-                </h3>
-                <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] leading-[1.7]">
-                  {t.scarcity.step3_desc}
-                </p>
               </div>
               <div className="text-left sm:text-right shrink-0">
                 <div className="text-lg sm:text-xl font-mono font-bold text-[#080808]">
@@ -113,13 +123,16 @@ export const ScarcityComparison: React.FC = () => {
 
           {/* Side-by-Side Comparison Matrix: Rounded Editorial Card */}
           <div className="mt-14 bg-[#FCFCFC] rounded-[32px] sm:rounded-[38px] border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] overflow-hidden">
-            <div className="p-7 sm:p-8 border-b border-[#E5E5E5] bg-[#FCFCFC]">
-              <div className="text-xs font-mono font-bold uppercase tracking-[2.5px] text-[#B8661B]">
-                {t.scarcity.matrix_kicker}
+            <div className="p-7 sm:p-8 border-b border-[#E5E5E5] bg-[#FCFCFC] flex items-center justify-between gap-4">
+              <div>
+                <div className="text-xs font-mono font-bold uppercase tracking-[2.5px] text-[#B8661B]">
+                  {t.scarcity.matrix_kicker}
+                </div>
+                <h4 className="text-xl font-[800] text-[#080808] font-display mt-1">
+                  {t.scarcity.matrix_title}
+                </h4>
               </div>
-              <h4 className="text-xl font-[800] text-[#080808] font-display mt-1">
-                {t.scarcity.matrix_title}
-              </h4>
+              <Realistic3DIcon type="verification" size="sm" />
             </div>
 
             <div className="overflow-x-auto">

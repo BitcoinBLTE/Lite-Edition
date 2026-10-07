@@ -2,9 +2,11 @@ import React from 'react';
 import { CheckCircle2, Clock } from 'lucide-react';
 import { TOKEN_CONFIG, RoadmapMilestone } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const RoadmapSection: React.FC = () => {
   const { t } = useLanguage();
+  const roadmap3DTypes: Realistic3DIconType[] = ['foundation', 'launch', 'ecosystem', 'expansion'];
 
   const getStatusBadge = (status: RoadmapMilestone['status']) => {
     switch (status) {
@@ -42,7 +44,7 @@ export const RoadmapSection: React.FC = () => {
   });
 
   return (
-    <section id="roadmap" className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="roadmap" className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3.5 flex items-center gap-2.5">
@@ -70,9 +72,12 @@ export const RoadmapSection: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono font-bold text-[#888888] uppercase tracking-wider">
-                    {t.roadmap.stage} 0{idx + 1}
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <Realistic3DIcon type={roadmap3DTypes[idx] || 'foundation'} size="sm" />
+                    <span className="text-xs font-mono font-bold text-[#888888] uppercase tracking-wider">
+                      {t.roadmap.stage} 0{idx + 1}
+                    </span>
+                  </div>
                   {getStatusBadge(phase.status)}
                 </div>
 

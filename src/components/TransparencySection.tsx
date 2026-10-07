@@ -1,7 +1,8 @@
 import React from 'react';
-import { ShieldCheck, ExternalLink, Key, Lock, Activity, Database, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const TransparencySection: React.FC = () => {
   const { t } = useLanguage();
@@ -10,7 +11,7 @@ export const TransparencySection: React.FC = () => {
     ? `https://solscan.io/token/${TOKEN_CONFIG.mintAddress}`
     : `https://solscan.io`;
 
-  const icons = [Database, Key, Lock, ShieldCheck, Activity, CheckCircle2];
+  const transparency3DTypes: Realistic3DIconType[] = ['ledger', 'keys', 'lock', 'shield', 'speed', 'verification'];
   const links = [
     explorerUrl,
     explorerUrl,
@@ -22,12 +23,12 @@ export const TransparencySection: React.FC = () => {
 
   const cards = t.transparency.cards.map((card, idx) => ({
     ...card,
-    icon: icons[idx] || CheckCircle2,
+    iconType: transparency3DTypes[idx] || 'verification',
     link: links[idx] || explorerUrl,
   }));
 
   return (
-    <section id="transparency" className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="transparency" className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
@@ -46,7 +47,6 @@ export const TransparencySection: React.FC = () => {
         {/* 6 Transparency Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card) => {
-            const Icon = card.icon;
             return (
               <div
                 key={card.title}
@@ -57,9 +57,7 @@ export const TransparencySection: React.FC = () => {
                     <span className="text-[10px] font-mono font-bold text-[#888888] uppercase tracking-[2px]">
                       {card.subtitle}
                     </span>
-                    <div className="w-10 h-10 rounded-[12px] bg-[#F5F5F5] border border-[#E5E5E5] flex items-center justify-center text-[#080808] group-hover:bg-[#FAF5EF] group-hover:text-[#B8661B] group-hover:border-[#E9C9A5] transition-all">
-                      <Icon className="w-4 h-4 stroke-[2]" />
-                    </div>
+                    <Realistic3DIcon type={card.iconType} size="md" />
                   </div>
 
                   <h3 className="text-xl font-[800] text-[#080808] font-display tracking-tight mb-2">

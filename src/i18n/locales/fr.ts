@@ -354,17 +354,17 @@ export const fr: TranslationSchema = {
     allocations: [
       {
         id: 'season-1',
-        category: 'Saison 1 — Lancement équitable & Communauté',
+        category: 'Lancement équitable & Communauté',
         description: 'Allocation publique et communautaire avec accès décentralisé.',
       },
       {
         id: 'season-2',
-        category: 'Saison 2 — Première liquidité',
+        category: 'Première liquidité',
         description: 'Liquidité permanente AMM sur les bourses décentralisées de Solana.',
       },
       {
         id: 'season-3',
-        category: 'Saison 3 — Liquidité secondaire',
+        category: 'Liquidité secondaire',
         description: 'Profondeur de liquidité secondaire, routage d’écosystème et expansion.',
       },
     ],
@@ -397,7 +397,7 @@ export const fr: TranslationSchema = {
         step: '04',
         title: 'Accéder à une bourse décentralisée (DEX)',
         summary: 'Connectez votre portefeuille à un DEX officiel Solana.',
-        description: 'Ouvrez un agrégateur Solana tel que Jupiter (jup.ag) ou Raydium (raydium.io) et cliquez sur « Connecter le portefeuille ».',
+        description: 'Ouvrez un agrégateur Solana tel que Raydium (raydium.io) et cliquez sur « Connecter le portefeuille ».',
         action_label: 'Voir les plateformes',
       },
       {
@@ -572,7 +572,7 @@ export const fr: TranslationSchema = {
           'Révocation de l’autorité d’émission et vérification de l’immuabilité',
           'Création du premier bassin de liquidité décentralisé',
           'Vérification sur Solscan et Solana Explorer',
-          'Intégration des terminaux DexScreener et Jupiter',
+          'Intégration des terminaux DexScreener et Raydium',
         ],
       },
       {
@@ -640,7 +640,7 @@ export const fr: TranslationSchema = {
       },
       {
         question: 'Comment et où puis-je acheter Bitcoin Lite Edition ?',
-        answer: 'Via les bourses décentralisées (DEX) de Solana, telles que Jupiter ou Raydium, à l’aide d’un portefeuille autonome (Phantom, Solflare) approvisionné en SOL, en utilisant l’adresse officielle de mint.',
+        answer: 'Via les bourses décentralisées (DEX) de Solana, telles que Raydium, à l’aide d’un portefeuille autonome (Phantom, Solflare) approvisionné en SOL, en utilisant l’adresse officielle de mint.',
       },
       {
         question: 'Où puis-je vérifier le jeton et ses paramètres ?',
@@ -687,7 +687,7 @@ export const fr: TranslationSchema = {
       title: 'ACHETER / ÉCHANGER — BITCOIN LITE EDITION',
       subtitle: 'Plateformes décentralisées · Panneau déplaçable',
       alert_title: 'Pré-lancement / Liquidité initiale en cours de déploiement',
-      alert_desc: 'Les plateformes d’échange décentralisées officielles (Raydium et Jupiter) seront activées dès le déploiement vérifié du bassin de liquidité. Ne tentez pas d’acheter depuis des contrats non vérifiés.',
+      alert_desc: 'Les plateformes d’échange décentralisées officielles (Raydium) seront activées dès le déploiement vérifié du bassin de liquidité. Ne tentez pas d’acheter depuis des contrats non vérifiés.',
       venues_heading: 'Bourses décentralisées officielles (DEX)',
       pending_status: 'En attente de déploiement',
       footer_note: 'Agrégateurs DEX Solana',
@@ -799,7 +799,7 @@ export const fr: TranslationSchema = {
           num: '7',
           title: 'Allocation tokenomics (Total strict 100 % = 420 000 BLTE)',
           content: [
-            '• Saison 1 — Lancement équitable & Communauté : 55 % (231 000 BLTE)\n• Saison 2 — Première liquidité : 25 % (105 000 BLTE)\n• Saison 3 — Liquidité secondaire : 20 % (84 000 BLTE)',
+            '• Lancement équitable & Communauté : 55 % (231 000 BLTE)\n• Première liquidité : 25 % (105 000 BLTE)\n• Liquidité secondaire : 20 % (84 000 BLTE)',
           ],
         },
         {

@@ -355,21 +355,21 @@ export const no: TranslationSchema = {
     subtitle: 'En strengt begrenset tokendistribusjon strukturert over tre strategiske sesonger. Null bakdører for preging, null skjult inflasjon.',
     fixed_cap: 'FAST TAK',
     total_supply: 'TOTALT TILBUD',
-    verified_alloc: 'Verifisert 100 % fordeling i tre sesonger (100 %)',
+    verified_alloc: 'Verifisert 100 % fordeling i tre tildelinger (100 %)',
     allocations: [
       {
         id: 'season-1',
-        category: 'Sesong 1 — Rettferdig lansering og fellesskap',
+        category: 'Rettferdig lansering og fellesskap',
         description: 'Direkte fellesskaps- og offentlig distribusjon med desentralisert tilgang fra blokk null.',
       },
       {
         id: 'season-2',
-        category: 'Sesong 2 — Første likviditet',
+        category: 'Første likviditet',
         description: 'Innledende AMM DEX-likviditetspool utplassert på Solana.',
       },
       {
         id: 'season-3',
-        category: 'Sesong 3 — Sekundær likviditet',
+        category: 'Sekundær likviditet',
         description: 'Sekundær desentralisert likviditetsdybde, økosystemruting og utvidelse.',
       },
     ],
@@ -401,7 +401,7 @@ export const no: TranslationSchema = {
       {
         step: '04',
         title: 'Koble til en desentralisert børs (DEX)',
-        summary: 'Gå til en verifisert agregator eller DEX som Jupiter eller Raydium.',
+        summary: 'Gå til en verifisert agregator eller DEX som Raydium eller Raydium.',
         description: 'Naviger til en anerkjent desentralisert børs på Solana via nettleseren i lommeboken eller en sikker stasjonær nettleser.',
       },
       {
@@ -430,7 +430,7 @@ export const no: TranslationSchema = {
       'Kontroller alltid kontraktadressen på Solscan før du bekrefter en handel.',
       'Ingen legitime teammedlemmer fra Bitcoin Lite Edition vil sende deg private meldinger først.',
       'Oppgi aldri gjenopprettingsfrasen din på noe nettsted, skjema eller meldingsapp.',
-      'Sørg for at du handler via anerkjente DEX-plattformer som Jupiter eller Raydium.',
+      'Sørg for at du handler via anerkjente DEX-plattformer som Raydium eller Raydium.',
     ],
     btn_trade_portal: 'Åpne handelsportal',
     venue_action: 'Åpne verifisert DEX',
@@ -454,7 +454,7 @@ export const no: TranslationSchema = {
     status_connecting: 'Kobler til Solana RPC-noder...',
     status_unavailable: 'Målinger aktiveres ved likviditet på Mainnet',
     activates_title: 'Markedstelemetri aktiveres med likviditetsbassenget på Mainnet',
-    activates_desc: 'I henhold til vår null-simuleringspolicy hentes sanntidspriser, grafer og volumer direkte fra Raydium/Jupiter så snart likviditetsbassenget er etablert.',
+    activates_desc: 'I henhold til vår null-simuleringspolicy hentes sanntidspriser, grafer og volumer direkte fra Raydium/Raydium så snart likviditetsbassenget er etablert.',
     btn_price_chart: 'Se prisdiagram',
     btn_buy_trade: 'KJØP / HANDEL BLTE',
     btn_view_explorer: 'Se på Solscan',
@@ -580,7 +580,7 @@ export const no: TranslationSchema = {
         title: 'Fase 03: Økosystem og telemetri',
         description: 'Integrasjon i Solana-agregatorer og aktivering av handelsterminal og analyse.',
         items: [
-          'Full integrasjon i Jupiter DEX Aggregator',
+          'Full integrasjon i Raydium DEX',
           'Oppføring på sporingsplattformer (CoinGecko / CMC)',
           'Integrasjon av sanntidsgrafer via DexScreener og Birdeye',
           'Aktivering av sanntidsanalysepanel for tokenbeholdere',
@@ -641,7 +641,7 @@ export const no: TranslationSchema = {
       },
       {
         question: 'Hvor og hvordan kan jeg kjøpe Bitcoin Lite Edition?',
-        answer: 'Bitcoin Lite Edition kjøpes via verifiserte desentraliserte børser (DEX) på Solana, som Jupiter og Raydium. Du trenger en Solana-lommebok (f.eks. Phantom eller Solflare) fylt med SOL. Lim inn den verifiserte kontraktadressen for å gjennomføre handelen.',
+        answer: 'Bitcoin Lite Edition kjøpes via verifiserte desentraliserte børser (DEX) på Solana, som Raydium. Du trenger en Solana-lommebok (f.eks. Phantom eller Solflare) fylt med SOL. Lim inn den verifiserte kontraktadressen for å gjennomføre handelen.',
       },
       {
         question: 'Hvor kan jeg verifisere tokenet og parameterne?',
@@ -688,7 +688,7 @@ export const no: TranslationSchema = {
       title: 'KJØP / HANDEL — BITCOIN LITE EDITION',
       subtitle: 'Desentraliserte markedsplasser · Flyttbart panel',
       alert_title: 'Førlansering / Innledende likviditet avventes',
-      alert_desc: 'Offisielle handelsplattformer på Solana desentraliserte børser (Raydium og Jupiter) vil aktiveres ved verifisert lansering av likviditetsbassenget. Ikke forsøk å kjøpe fra uverifiserte adresser.',
+      alert_desc: 'Offisielle handelsplattformer på Solana desentraliserte børser (Raydium) vil aktiveres ved verifisert lansering av likviditetsbassenget. Ikke forsøk å kjøpe fra uverifiserte adresser.',
       venues_heading: 'Offisielle desentraliserte markedsplasser',
       pending_status: 'Avventer Mainnet-basseng',
       footer_note: 'Solana DEX-agregatorer',
@@ -812,9 +812,9 @@ export const no: TranslationSchema = {
         {
           id: 'tokenomics',
           num: '07',
-          title: '7. Tokenomikk og fordeling i tre sesonger',
+          title: '7. Tokenomikk og fordeling i tre tildelinger',
           content: [
-            'Streng matematisk fordeling i tre sesonger (420 000 BLTE):\n• Sesong 1 — Rettferdig lansering og fellesskap: 55 % (231 000 BLTE)\n• Sesong 2 — Første likviditet: 25 % (105 000 BLTE)\n• Sesong 3 — Sekundær likviditet: 20 % (84 000 BLTE)',
+            'Streng matematisk fordeling i tre tildelinger (420 000 BLTE):\n• Rettferdig lansering og fellesskap: 55 % (231 000 BLTE)\n• Første likviditet: 25 % (105 000 BLTE)\n• Sekundær likviditet: 20 % (84 000 BLTE)',
           ],
         },
         {

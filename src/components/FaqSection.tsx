@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ChevronDown, ShieldAlert } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon } from './Realistic3DIcon';
 
 export const FaqSection: React.FC = () => {
   const { t } = useLanguage();
@@ -11,7 +12,7 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="faq" className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3.5 flex items-center justify-center gap-2.5">
@@ -59,7 +60,7 @@ export const FaqSection: React.FC = () => {
                     <p>{faq.answer}</p>
                     {faq.isDisclaimer && (
                       <div className="mt-4 p-4 bg-[#FAF5EF] rounded-[16px] border border-[#E9C9A5] text-xs text-[#080808] font-medium flex items-center gap-3">
-                        <ShieldAlert className="w-4 h-4 text-[#B8661B] shrink-0 stroke-[2]" />
+                        <Realistic3DIcon type="shield" size="sm" />
                         <span>{t.faq.notice_text}</span>
                       </div>
                     )}

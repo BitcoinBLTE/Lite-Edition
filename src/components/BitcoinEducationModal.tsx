@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 interface BitcoinEducationModalProps {
   isOpen: boolean;
@@ -23,6 +24,8 @@ export const BitcoinEducationModal: React.FC<BitcoinEducationModalProps> = ({
   const { t } = useLanguage();
   const [activeChapter, setActiveChapter] = useState<'intro' | 'mechanisms' | 'scarcity' | 'genesis' | 'distinction'>('intro');
   const [copied, setCopied] = useState(false);
+
+  const mechanism3DTypes: Realistic3DIconType[] = ['ledger', 'utxo', 'mining', 'keys', 'halving', 'nodes'];
 
   if (!isOpen) return null;
 
@@ -52,7 +55,7 @@ export const BitcoinEducationModal: React.FC<BitcoinEducationModalProps> = ({
       onClose={onClose}
       title={edu.title}
       subtitle={edu.subtitle}
-      icon={<BookOpen className="w-5 h-5 text-[#B8661B]" />}
+      icon={<Realistic3DIcon type="ledger" size="sm" />}
       maxWidthClass="max-w-4xl"
       maxHeightClass="h-[88vh]"
       ariaLabelledBy="bitcoin-education-modal-title"
@@ -192,16 +195,16 @@ export const BitcoinEducationModal: React.FC<BitcoinEducationModalProps> = ({
 
             <div className="space-y-3">
               {edu.chapters.mechanisms.items.map((item, idx) => (
-                <div key={idx} className="p-5 rounded-[20px] bg-[#FCFCFC] border border-[#E5E5E5]">
-                  <h5 className="text-sm font-[800] text-[#080808] flex items-center gap-2.5 font-display">
-                    <span className="w-5 h-5 rounded-[8px] bg-[#FAF5EF] border border-[#E9C9A5] text-[#B8661B] text-xs flex items-center justify-center font-mono font-bold">
-                      {idx + 1}
-                    </span>
-                    <span>{item.title}</span>
-                  </h5>
-                  <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] mt-1.5 pl-8 leading-[1.75]">
-                    {item.desc}
-                  </p>
+                <div key={idx} className="p-5 rounded-[20px] bg-[#FCFCFC] border border-[#E5E5E5] flex items-start gap-3.5">
+                  <Realistic3DIcon type={mechanism3DTypes[idx] || 'ledger'} size="sm" className="mt-0.5 shrink-0" />
+                  <div>
+                    <h5 className="text-sm font-[800] text-[#080808] font-display">
+                      {item.title}
+                    </h5>
+                    <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] mt-1 leading-[1.75]">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -223,12 +226,18 @@ export const BitcoinEducationModal: React.FC<BitcoinEducationModalProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-5 rounded-[20px] bg-[#FCFCFC] border border-[#E5E5E5] space-y-2">
-                <span className="text-xs font-mono text-[#888888] uppercase block font-bold">Bitcoin (BTC)</span>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs font-mono text-[#888888] uppercase block font-bold">Bitcoin (BTC)</span>
+                  <Realistic3DIcon type="ledger" size="sm" />
+                </div>
                 <div className="text-xl font-mono font-[900] text-[#080808]">{edu.chapters.scarcity.stat_btc}</div>
               </div>
 
               <div className="p-5 rounded-[20px] bg-[#FAF5EF] border border-[#E9C9A5] space-y-2">
-                <span className="text-xs font-mono text-[#B8661B] uppercase block font-bold">Bitcoin Lite Edition (BLTE)</span>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs font-mono text-[#B8661B] uppercase block font-bold">Bitcoin Lite Edition (BLTE)</span>
+                  <Realistic3DIcon type="scarcity" size="sm" />
+                </div>
                 <div className="text-xl font-mono font-[900] text-[#B8661B]">{edu.chapters.scarcity.stat_ble}</div>
               </div>
             </div>

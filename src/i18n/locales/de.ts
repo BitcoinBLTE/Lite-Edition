@@ -354,17 +354,17 @@ export const de: TranslationSchema = {
     allocations: [
       {
         id: 'season-1',
-        category: 'Saison 1 — Fair Launch & Community',
+        category: 'Fair Launch & Community',
         description: 'Direkte Zuteilung an die Community und dezentrale Liquidität.',
       },
       {
         id: 'season-2',
-        category: 'Saison 2 — Erste Liquidität',
+        category: 'Erste Liquidität',
         description: 'Dauerhafte AMM-Liquidität auf dezentralen Solana-Börsen.',
       },
       {
         id: 'season-3',
-        category: 'Saison 3 — Sekundäre Liquidität',
+        category: 'Sekundäre Liquidität',
         description: 'Sekundäre Liquiditätstiefe, Ökosystem-Routing und Börsenerweiterung.',
       },
     ],
@@ -397,7 +397,7 @@ export const de: TranslationSchema = {
         step: '04',
         title: 'Dezentrale Börse (DEX) aufrufen',
         summary: 'Verbinden Sie Ihr Wallet mit einer Solana-DEX.',
-        description: 'Öffnen Sie eine dezentrale Börse wie Jupiter (jup.ag) oder Raydium (raydium.io) und klicken Sie auf «Wallet verbinden».',
+        description: 'Öffnen Sie eine dezentrale Börse wie Raydium (raydium.io) und klicken Sie auf «Wallet verbinden».',
         action_label: 'Handelsplätze ansehen',
       },
       {
@@ -572,7 +572,7 @@ export const de: TranslationSchema = {
           'Widerruf der Mint-Autorität & Verifizierung der Unveränderlichkeit',
           'Erstellung des ersten dezentralen Liquiditätspools',
           'On-Chain-Verifizierung auf Solscan & Solana Explorer',
-          'Integration von DexScreener & Jupiter-Terminal',
+          'Integration von DexScreener & Raydium-Terminal',
         ],
       },
       {
@@ -640,7 +640,7 @@ export const de: TranslationSchema = {
       },
       {
         question: 'Wo kann ich BLTE erwerben?',
-        answer: 'Über dezentrale Solana-Börsen wie Jupiter oder Raydium mittels einer Self-Custody-Wallet (Phantom, Solflare) und SOL.',
+        answer: 'Über dezentrale Solana-Börsen wie Raydium mittels einer Self-Custody-Wallet (Phantom, Solflare) und SOL.',
       },
       {
         question: 'Wo kann ich die Parameter überprüfen?',
@@ -687,7 +687,7 @@ export const de: TranslationSchema = {
       title: 'KAUFEN / HANDELN — BITCOIN LITE EDITION',
       subtitle: 'Dezentrale Handelsplätze · Bewegliches Panel',
       alert_title: 'Pre-Launch / Initiale Liquidität in Vorbereitung',
-      alert_desc: 'Offizielle Handelsplätze (Raydium und Jupiter) werden mit dem Pool-Deployment aktiviert. Kaufen Sie nicht von ungeprüften Mint-Adressen.',
+      alert_desc: 'Offizielle Handelsplätze (Raydium) werden mit dem Pool-Deployment aktiviert. Kaufen Sie nicht von ungeprüften Mint-Adressen.',
       venues_heading: 'Offizielle dezentrale Handelsplätze (DEX)',
       pending_status: 'Bereitstellung ausstehend',
       footer_note: 'Solana DEX Aggregatoren',
@@ -799,7 +799,7 @@ export const de: TranslationSchema = {
           num: '7',
           title: 'Tokenomics-Zuteilung (Exakt 100% = 420.000 BLTE)',
           content: [
-            '• Saison 1 — Fair Launch & Community: 55% (231.000 BLTE)\n• Saison 2 — Erste Liquidität: 25% (105.000 BLTE)\n• Saison 3 — Sekundäre Liquidität: 20% (84.000 BLTE)',
+            '• Fair Launch & Community: 55% (231.000 BLTE)\n• Erste Liquidität: 25% (105.000 BLTE)\n• Sekundäre Liquidität: 20% (84.000 BLTE)',
           ],
         },
         {

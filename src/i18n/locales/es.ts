@@ -401,8 +401,8 @@ export const es: TranslationSchema = {
       {
         step: '04',
         title: 'Conéctate a un exchange descentralizado de Solana',
-        summary: 'Accede a un agregador o DEX verificado como Jupiter o Raydium.',
-        description: 'Navega a un exchange descentralizado reconocido de Solana (como Jupiter Aggregator o Raydium AMM) utilizando el navegador seguro dentro de tu billetera o un navegador de escritorio verificado.',
+        summary: 'Accede a un agregador o DEX verificado como Raydium o Raydium.',
+        description: 'Navega a un exchange descentralizado reconocido de Solana (como Raydium Aggregator o Raydium AMM) utilizando el navegador seguro dentro de tu billetera o un navegador de escritorio verificado.',
       },
       {
         step: '05',
@@ -430,7 +430,7 @@ export const es: TranslationSchema = {
       'Verifica siempre la dirección del contrato mint en Solscan antes de confirmar cualquier intercambio.',
       'Ningún miembro legítimo del equipo de Bitcoin Lite Edition te enviará mensajes directos primero ni te pedirá claves privadas.',
       'Nunca introduzcas tu frase secreta de recuperación en ningún sitio web, formulario ni aplicación de chat.',
-      'Asegúrate de que estás operando a través de plataformas DEX verificadas como Jupiter o Raydium.',
+      'Asegúrate de que estás operando a través de plataformas DEX verificadas como Raydium o Raydium.',
     ],
     btn_trade_portal: 'Abrir portal de compra / intercambio',
     venue_action: 'Abrir DEX verificado',
@@ -454,7 +454,7 @@ export const es: TranslationSchema = {
     status_connecting: 'Conectando con nodos RPC de Solana...',
     status_unavailable: 'Métricas activas pendientes de liquidez en Mainnet',
     activates_title: 'La telemetría de mercado en vivo se activa con el pool de liquidez en Mainnet',
-    activates_desc: 'Siguiendo nuestra política de cero simulaciones, los precios en vivo, gráficos y volúmenes se consultan directamente de los pares de liquidez en Raydium / Jupiter tan pronto como el pool esté activo en la cadena.',
+    activates_desc: 'Siguiendo nuestra política de cero simulaciones, los precios en vivo, gráficos y volúmenes se consultan directamente de los pares de liquidez en Raydium tan pronto como el pool esté activo en la cadena.',
     btn_price_chart: 'Ver gráfico de precios',
     btn_buy_trade: 'COMPRAR / OPERAR BLTE',
     btn_view_explorer: 'Ver en Solscan',
@@ -571,7 +571,7 @@ export const es: TranslationSchema = {
         description: 'Despliegue verificado en la red principal de Solana y establecimiento de la liquidez descentralizada.',
         items: [
           'Despliegue oficial en la red principal de Solana',
-          'Creación de pool de liquidez descentralizado en Raydium / Orca',
+          'Creación de pool de liquidez descentralizado en Raydium',
           'Bloqueo / quema de tokens LP de liquidez verificable',
           'Verificación de metadatos en Solscan y Solana Explorer',
         ],
@@ -580,7 +580,7 @@ export const es: TranslationSchema = {
         title: 'Fase 03: Ecosistema y Telemetría',
         description: 'Integración en agregadores de Solana y activación del terminal de trading y análisis.',
         items: [
-          'Integración completa en Jupiter DEX Aggregator',
+          'Integración completa en Raydium DEX',
           'Listado en plataformas de seguimiento (CoinGecko / CMC)',
           'Integración de gráficos en vivo con DexScreener y Birdeye',
           'Activación del panel de análisis de tenedores en tiempo real',
@@ -641,7 +641,7 @@ export const es: TranslationSchema = {
       },
       {
         question: '¿Cómo y dónde puedo comprar o adquirir Bitcoin Lite Edition?',
-        answer: 'Bitcoin Lite Edition se adquiere a través de exchanges descentralizados (DEX) verificados en Solana, como Jupiter Aggregator y Raydium. Necesitarás una billetera Solana sin custodia (por ejemplo, Phantom o Solflare) con fondos en SOL. En la interfaz del DEX, introduce la dirección oficial verificada de mint de BLTE para realizar el intercambio.',
+        answer: 'Bitcoin Lite Edition se adquiere a través de exchanges descentralizados (DEX) verificados en Solana, como Raydium. Necesitarás una billetera Solana sin custodia (por ejemplo, Phantom o Solflare) con fondos en SOL. En la interfaz del DEX, introduce la dirección oficial verificada de mint de BLTE para realizar el intercambio.',
       },
       {
         question: '¿Dónde puedo verificar el token y sus parámetros?',
@@ -688,7 +688,7 @@ export const es: TranslationSchema = {
       title: 'COMPRAR / OPERAR — BITCOIN LITE EDITION',
       subtitle: 'Plataformas descentralizadas · Panel desplazable',
       alert_title: 'Pre-lanzamiento / Liquidez inicial pendiente',
-      alert_desc: 'Las plataformas oficiales de negociación en exchanges descentralizados de Solana (Raydium y Jupiter) se activarán tras el despliegue verificado del pool de liquidez. No intentes comprar desde contratos no verificados.',
+      alert_desc: 'Las plataformas oficiales de negociación en exchanges descentralizados de Solana (Raydium) se activarán tras el despliegue verificado del pool de liquidez. No intentes comprar desde contratos no verificados.',
       venues_heading: 'Plataformas descentralizadas oficiales',
       pending_status: 'Pendiente de pool en Mainnet',
       footer_note: 'Agregadores DEX en Solana',
@@ -812,9 +812,9 @@ export const es: TranslationSchema = {
         {
           id: 'tokenomics',
           num: '07',
-          title: '7. Tokenomics y distribución en tres temporadas',
+          title: '7. Tokenomics y distribución en tres asignaciones',
           content: [
-            'Asignación matemática estricta en tres temporadas (420.000 BLTE):\n• Temporada 1 — Lanzamiento justo y comunidad: 55% (231.000 BLTE)\n• Temporada 2 — Primera liquidez: 25% (105.000 BLTE)\n• Temporada 3 — Liquidez secundaria: 20% (84.000 BLTE)',
+            'Asignación matemática estricta en tres asignaciones (420.000 BLTE):\n• Lanzamiento justo y comunidad: 55% (231.000 BLTE)\n• Primera liquidez: 25% (105.000 BLTE)\n• Liquidez secundaria: 20% (84.000 BLTE)',
           ],
         },
         {
@@ -834,7 +834,7 @@ export const es: TranslationSchema = {
           content: [
             'Fase 01: Especificación del protocolo, auditoría del modelo de tokenomics y despliegue del contrato inteligente.',
             'Fase 02: Despliegue en la red principal de Solana, provisión y bloqueo de liquidez descentralizada.',
-            'Fase 03: Integración en plataformas de análisis en tiempo real (DexScreener, Birdeye) y agregadores (Jupiter).',
+            'Fase 03: Integración en plataformas de análisis en tiempo real (DexScreener, Birdeye) y terminales DEX.',
             'Fase 04: Gobernanza comunitaria descentralizada y herramientas de software de código abierto.',
           ],
         },

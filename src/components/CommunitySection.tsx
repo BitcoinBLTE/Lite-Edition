@@ -18,7 +18,7 @@ export const CommunitySection: React.FC = () => {
   const activeSocials = TOKEN_CONFIG.socials.filter((s) => s.url !== null);
 
   return (
-    <section className="py-16 md:py-24 bg-white border-b border-[#E5E5E5]">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3 flex items-center gap-2.5">

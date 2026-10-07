@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import { TOKEN_CONFIG, validateTokenomicsIntegrity } from '../config/tokenConfig';
 import { ShieldCheck, Info } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const TokenomicsSection: React.FC = () => {
   const { t } = useLanguage();
   const [activeId, setActiveId] = useState<string | null>(null);
   const rawAllocations = TOKEN_CONFIG.allocations;
   const isMathematicallyValid = validateTokenomicsIntegrity();
+  const alloc3DTypes: Record<string, Realistic3DIconType> = {
+    'season-1': 'globe',
+    'season-2': 'sol',
+    'season-3': 'dex',
+  };
 
   const allocations = rawAllocations.map((alloc) => {
     const loc = t.tokenomics.allocations.find((a) => a.id === alloc.id);
@@ -40,7 +46,7 @@ export const TokenomicsSection: React.FC = () => {
     : null;
 
   return (
-    <section id="tokenomics" className="py-20 md:py-28 bg-white border-b border-[#E5E5E5] scroll-mt-16">
+    <section id="tokenomics" className="py-20 md:py-28 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
@@ -95,7 +101,8 @@ export const TokenomicsSection: React.FC = () => {
               {/* Center Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center px-4">
                 {activeAllocation ? (
-                  <div className="animate-in fade-in duration-200">
+                  <div className="animate-in fade-in duration-200 flex flex-col items-center">
+                    <Realistic3DIcon type={alloc3DTypes[activeAllocation.id] || 'scarcity'} size="sm" className="mb-1" />
                     <div className="text-3xl sm:text-4xl font-mono font-[900] text-[#080808] tabular-nums">
                       {activeAllocation.percentage}%
                     </div>
@@ -107,7 +114,8 @@ export const TokenomicsSection: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <div>
+                  <div className="flex flex-col items-center">
+                    <Realistic3DIcon type="scarcity" size="sm" className="mb-1" />
                     <div className="text-[10px] font-mono uppercase tracking-[2px] text-[#888888]">
                       {t.tokenomics.fixed_cap}
                     </div>
@@ -145,12 +153,8 @@ export const TokenomicsSection: React.FC = () => {
                   }`}
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3.5">
-                      <span
-                        className="w-3.5 h-3.5 rounded-[4px] shrink-0"
-                        style={{ backgroundColor: alloc.color }}
-                        aria-hidden="true"
-                      />
+                    <div className="flex items-center gap-3">
+                      <Realistic3DIcon type={alloc3DTypes[alloc.id] || 'scarcity'} size="sm" />
                       <h4 className="text-base font-[800] text-[#080808] font-display">
                         {alloc.category}
                       </h4>

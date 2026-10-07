@@ -1,9 +1,10 @@
 import React from 'react';
-import { ExternalLink, ShoppingCart, ArrowRightLeft } from 'lucide-react';
+import { ArrowRightLeft } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { RaydiumIcon } from './PlatformIcons';
+import { Realistic3DIcon } from './Realistic3DIcon';
 
 interface BuyTradeModalProps {
   isOpen: boolean;
@@ -31,7 +32,7 @@ export const BuyTradeModal: React.FC<BuyTradeModalProps> = ({
       onClose={onClose}
       title={t.modals.buy_trade.title}
       subtitle={t.modals.buy_trade.subtitle}
-      icon={<ShoppingCart className="w-5 h-5 text-[#B8661B]" />}
+      icon={<Realistic3DIcon type="dex" size="sm" />}
       maxWidthClass="max-w-lg"
       ariaLabelledBy="trade-modal-title"
       footer={
@@ -55,11 +56,14 @@ export const BuyTradeModal: React.FC<BuyTradeModalProps> = ({
 
           {/* Streamflow Staking */}
           <div className="p-4 rounded-[20px] border border-[#E9C9A5] bg-[#FAF5EF] flex items-center justify-between shadow-[0_2px_10px_rgba(184,102,27,0.06)] hover:border-[#B8661B] transition-all">
-            <div className="flex items-center gap-2.5">
-              <span className="text-sm sm:text-base font-[800] text-[#080808] font-display">Streamflow Staking</span>
-              <span className="text-[10px] font-mono font-extrabold px-1.5 py-0.5 rounded-full bg-[#B8661B] text-white leading-none">
-                40% APY
-              </span>
+            <div className="flex items-center gap-3">
+              <Realistic3DIcon type="scarcity" size="sm" />
+              <div>
+                <span className="text-sm sm:text-base font-[800] text-[#080808] font-display block">Streamflow Staking</span>
+                <span className="text-[10px] font-mono font-extrabold px-1.5 py-0.5 rounded-full bg-[#B8661B] text-white leading-none inline-block mt-0.5">
+                  40% APY
+                </span>
+              </div>
             </div>
 
             <a
@@ -82,10 +86,7 @@ export const BuyTradeModal: React.FC<BuyTradeModalProps> = ({
                   {getVenueIcon(venue.name)}
                 </div>
                 <div>
-                  <span className="text-sm font-[800] text-[#080808] block font-display">{venue.name}</span>
-                  <span className="text-xs font-mono text-[#888888]">
-                    Solana AMM & DEX
-                  </span>
+                  <span className="text-sm sm:text-base font-[800] text-[#080808] block font-display">{venue.name}</span>
                 </div>
               </div>
 
@@ -93,10 +94,9 @@ export const BuyTradeModal: React.FC<BuyTradeModalProps> = ({
                 href={venue.url || "https://raydium.io/swap/"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-xs font-bold rounded-[14px] bg-[#111111] text-white hover:bg-[#B8661B] shadow-[0_2px_8px_rgba(0,0,0,0.05)] flex items-center gap-1.5 cursor-pointer transition-colors"
+                className="px-5 py-2 text-xs font-bold rounded-[14px] bg-[#111111] text-white hover:bg-[#B8661B] shadow-[0_2px_8px_rgba(0,0,0,0.05)] flex items-center justify-center cursor-pointer transition-colors"
               >
                 <span>Trade</span>
-                <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
           ))}
@@ -104,9 +104,12 @@ export const BuyTradeModal: React.FC<BuyTradeModalProps> = ({
 
         {/* Scarcity Safety Verification Checklist */}
         <div className="p-4.5 bg-[#FAF5EF] rounded-[20px] border border-[#E9C9A5] space-y-2 text-xs text-[#4A4A4A] shadow-2xs">
-          <span className="font-bold text-[#080808] font-mono uppercase tracking-[2px] block">
-            {t.how_to_buy.advisory_kicker}:
-          </span>
+          <div className="flex items-center justify-between gap-3 mb-1">
+            <span className="font-bold text-[#080808] font-mono uppercase tracking-[2px] block">
+              {t.how_to_buy.advisory_kicker}:
+            </span>
+            <Realistic3DIcon type="shield" size="sm" />
+          </div>
           <ul className="space-y-1.5 list-disc list-inside">
             {t.how_to_buy.security_items.map((sec, idx) => (
               <li key={idx} className="leading-relaxed">{sec}</li>
