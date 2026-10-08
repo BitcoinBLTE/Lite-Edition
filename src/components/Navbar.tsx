@@ -74,90 +74,135 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
         </nav>
 
-        {/* Zone 3: Desktop Right Controls */}
-        <div className="hidden sm:flex items-center gap-3 shrink-0">
+        {/* Zone 3: Controls (Buy/Trade, Language, and Hamburger Menu Button on Desktop and Mobile) */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             onClick={onOpenTradeModal}
-            className="px-4 py-2 text-xs font-mono font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-colors cursor-pointer"
+            className="hidden sm:inline-flex px-4 py-2 text-xs font-mono font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-colors cursor-pointer"
           >
             {t.hero.btn_buy_trade}
           </button>
-          <LanguageDropdown />
-        </div>
-
-        {/* Mobile Header Elements */}
-        <div className="flex items-center gap-2 sm:hidden shrink-0">
+          
           <LanguageDropdown />
 
+          {/* Hamburger Menu Toggle Button — Displayed on Desktop, Tablet, and Mobile */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 text-[#080808] hover:text-[#B8661B] hover:bg-[#FAF8F5] focus-visible:ring-2 focus-visible:ring-[#B8661B] rounded-[14px] border border-[#EAB308]/5 transition-colors cursor-pointer flex items-center justify-center"
+            className="p-2 sm:p-2.5 text-[#080808] hover:text-[#B8661B] hover:bg-[#FAF8F5] focus-visible:ring-2 focus-visible:ring-[#B8661B] rounded-[14px] border border-[#EAB308]/10 hover:border-[#B8661B]/30 transition-colors cursor-pointer flex items-center justify-center gap-1.5"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+            title={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5 stroke-[2.5]" /> : <Menu className="w-5 h-5 stroke-[2.5]" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5 stroke-[2.5]" />
+            ) : (
+              <Menu className="w-5 h-5 stroke-[2.5]" />
+            )}
+            <span className="hidden md:inline text-[11px] font-mono font-bold uppercase tracking-wider text-[#4A4A4A]">
+              {mobileMenuOpen ? 'CLOSE' : 'MENU'}
+            </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Responsive Menu Drawer (Desktop & Mobile) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-[#E5E5E5] bg-white px-4 pt-3 pb-6 space-y-4 shadow-[0_12px_30px_rgba(0,0,0,0.08)] animate-in slide-in-from-top-2 duration-150">
-          <nav className="flex flex-col space-y-1">
-            {navLinks.map((link) => {
-              if (link.action) {
-                return (
-                  <button
-                    key={link.label}
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      link.action!();
-                    }}
-                    className="w-full text-left px-3.5 py-2.5 text-sm font-semibold text-[#B8661B] hover:bg-[#FAF5EF] rounded-[12px] flex items-center justify-between transition-colors"
-                  >
-                    <span>{link.label}</span>
-                    <BookOpen className="w-4 h-4 text-[#B8661B]" />
-                  </button>
-                );
-              }
-              return (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 top-16 sm:top-18 bg-black/20 backdrop-blur-xs z-30 transition-opacity" 
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+
+          {/* Drawer Content */}
+          <div className="relative z-40 border-b border-[#E5E5E5] bg-white px-4 sm:px-8 pt-4 pb-8 shadow-[0_16px_40px_rgba(0,0,0,0.12)] animate-in slide-in-from-top-2 duration-150 max-h-[calc(100vh-4.5rem)] overflow-y-auto">
+            <div className="max-w-7xl mx-auto">
+              {/* Header inside drawer */}
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#F0F0F0]">
+                <div className="text-xs font-mono font-bold tracking-[2.5px] uppercase text-[#B8661B]">
+                  {TOKEN_CONFIG.name.toUpperCase()} · ECOSYSTEM DIRECTORY
+                </div>
+                <div className="text-[11px] font-mono text-[#888888]">
+                  SUPPLY: {TOKEN_CONFIG.shortSupply}
+                </div>
+              </div>
+
+              {/* Navigation Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 mb-6">
+                {navLinks.map((link) => {
+                  if (link.action) {
+                    return (
+                      <button
+                        key={link.label}
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          link.action!();
+                        }}
+                        className="text-left p-3 rounded-[14px] bg-[#FAF5EF] hover:bg-[#F2E8DC] border border-[#E9C9A5]/60 flex items-center justify-between group transition-colors cursor-pointer"
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <BookOpen className="w-4 h-4 text-[#B8661B]" />
+                          <span className="text-sm font-bold text-[#B8661B]">{link.label}</span>
+                        </div>
+                        <span className="text-[10px] font-mono font-bold text-[#B8661B] bg-white/80 px-2 py-0.5 rounded">PDF</span>
+                      </button>
+                    );
+                  }
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="p-3 rounded-[14px] hover:bg-[#F7F7F7] border border-transparent hover:border-[#E5E5E5] text-sm font-medium text-[#4A4A4A] hover:text-[#080808] flex items-center justify-between transition-colors"
+                    >
+                      <span>{link.label}</span>
+                      <span className="text-xs text-[#CCCCCC] group-hover:text-[#B8661B]">→</span>
+                    </a>
+                  );
+                })}
+              </div>
+
+              {/* Actions & Staking Banner */}
+              <div className="pt-4 border-t border-[#E5E5E5] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 items-center">
                 <a
-                  key={link.href}
-                  href={link.href}
+                  href={TOKEN_CONFIG.stakingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3.5 py-2.5 text-sm font-medium text-[#4A4A4A] hover:text-[#080808] hover:bg-[#F7F7F7] rounded-[12px] transition-colors"
+                  className="py-3 px-4 text-xs font-bold text-white bg-[#B8661B] hover:bg-[#964E10] rounded-[14px] transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_8px_rgba(184,102,27,0.2)] text-center"
+                  title="Stake BLTE (40% APY)"
                 >
-                  {link.label}
+                  <span>STAKE BITCOIN LITE EDITION</span>
+                  <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
+                    40% APY
+                  </span>
                 </a>
-              );
-            })}
-          </nav>
 
-          <div className="pt-2 border-t border-[#E5E5E5] space-y-2">
-            <a
-              href={TOKEN_CONFIG.stakingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 px-4 text-xs font-bold text-white bg-[#B8661B] hover:bg-[#964E10] rounded-[14px] transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_8px_rgba(184,102,27,0.2)] text-center"
-              title="Stake BLTE (40% APY)"
-            >
-              <span>STAKE</span>
-              <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
-                40% APY
-              </span>
-            </a>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenTradeModal();
+                  }}
+                  className="py-3 px-4 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] transition-colors text-center cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.05)]"
+                >
+                  {t.hero.btn_buy_trade}
+                </button>
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenTradeModal();
-              }}
-              className="w-full py-3 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] transition-colors text-center cursor-pointer"
-            >
-              {t.hero.btn_buy_trade}
-            </button>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenWhitePaper();
+                  }}
+                  className="py-3 px-4 text-xs font-bold text-[#111111] hover:text-[#B8661B] bg-[#FCFCFC] hover:bg-[#FAF5EF] border border-[#D9D9D9] hover:border-[#E9C9A5] rounded-[14px] transition-colors text-center cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <BookOpen className="w-4 h-4 text-[#B8661B]" />
+                  <span>{t.hero.btn_whitepaper}</span>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

@@ -551,7 +551,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
       drawParallelogram(36, 24);
       ctx.restore();
 
-      // --- Bottom Main Number: "420,000" (Moved to bottom of coin) ---
+      // --- Bottom Main Number: "2.1M" (Moved to bottom of coin) ---
       const numY = c + 180;
       ctx.save();
       ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
@@ -568,8 +568,8 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
       ctx.fillStyle = numGrad;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.font = '900 210px "Outfit", "Inter", "Arial Black", sans-serif';
-      ctx.fillText('420,000', c, numY);
+      ctx.font = '900 240px "Outfit", "Inter", "Arial Black", sans-serif';
+      ctx.fillText('2.1M', c, numY);
       ctx.restore();
 
       // Number Emboss Stroke
@@ -577,14 +577,14 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
       ctx.lineWidth = 5;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.font = '900 210px "Outfit", "Inter", "Arial Black", sans-serif';
-      ctx.strokeText('420,000', c - 2, numY - 2);
+      ctx.font = '900 240px "Outfit", "Inter", "Arial Black", sans-serif';
+      ctx.strokeText('2.1M', c - 2, numY - 2);
 
       ctx.strokeStyle = '#78350F';
       ctx.lineWidth = 7;
-      ctx.strokeText('420,000', c + 2, numY + 2);
+      ctx.strokeText('2.1M', c + 2, numY + 2);
 
-      // --- Subtitle: "TOTAL SUPPLY" (Moved below 420,000 at bottom) ---
+      // --- Subtitle: "TOTAL SUPPLY" (Moved below 2.1M at bottom) ---
       const subY = c + 325;
       ctx.save();
       ctx.font = 'bold 64px "Outfit", "Inter", "Arial", sans-serif';
@@ -762,7 +762,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
 
       if (!isDraggingRef.current) {
         // Continuous smooth rotation around vertical Y axis:
-        // Front (0°) -> Thin Side (90°) -> Back 420K (180°) -> Side (270°) -> Front (360°)
+        // Front (0°) -> Thin Side (90°) -> Back 2.1M (180°) -> Side (270°) -> Front (360°)
         coinGroup.rotation.y = (coinGroup.rotation.y + autoRotationSpeed * delta) % (Math.PI * 2);
         
         // Restore X pitch smoothly to baseline
@@ -861,7 +861,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
         ref={containerRef}
         className="w-full h-full cursor-grab active:cursor-grabbing touch-none flex items-center justify-center"
         role="img"
-        aria-label="Interactive 3D minted coin of Bitcoin Lite Edition with continuous rotation around vertical Y axis, showing 420,000 fixed supply on reverse"
+        aria-label="Interactive 3D minted coin of Bitcoin Lite Edition with continuous rotation around vertical Y axis, showing 2,100,000 (2.1M) fixed supply on reverse"
       />
     </div>
   );

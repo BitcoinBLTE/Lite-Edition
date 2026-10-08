@@ -89,6 +89,28 @@ async function generateWhitepaperPdf() {
     return lines;
   }
 
+  function makeDonutSlicePath(cx, cy, rOut, rIn, startDeg, endDeg) {
+    const startRad = (startDeg * Math.PI) / 180;
+    const endRad = (endDeg * Math.PI) / 180;
+    const steps = Math.max(12, Math.ceil((endDeg - startDeg) / 2));
+    let path = '';
+    // Outer arc
+    for (let i = 0; i <= steps; i++) {
+      const a = startRad + (i / steps) * (endRad - startRad);
+      const x = cx + rOut * Math.cos(a);
+      const y = cy + rOut * Math.sin(a);
+      path += (i === 0 ? 'M ' : 'L ') + x.toFixed(2) + ' ' + y.toFixed(2) + ' ';
+    }
+    // Inner arc back
+    for (let i = steps; i >= 0; i--) {
+      const a = startRad + (i / steps) * (endRad - startRad);
+      const x = cx + rIn * Math.cos(a);
+      const y = cy + rIn * Math.sin(a);
+      path += 'L ' + x.toFixed(2) + ' ' + y.toFixed(2) + ' ';
+    }
+    return path + 'Z';
+  }
+
   // --- COVER & HEADER BLOCK (Page 1) ---
   // Top Decorative Bar
   currentPage.drawRectangle({
@@ -144,7 +166,7 @@ async function generateWhitepaperPdf() {
 
   const specCols = [
     { label: 'TOKEN SYMBOL', val: 'BLTE' },
-    { label: 'TOTAL SUPPLY', val: '420,000 (FIXED)' },
+    { label: 'TOTAL SUPPLY', val: '2,100,000 (2.1M)' },
     { label: 'CONSENSUS', val: 'SOLANA L1 (PoH/PoS)' },
     { label: 'AUTHORITY', val: 'PERMANENTLY REVOKED' },
   ];
@@ -193,7 +215,7 @@ async function generateWhitepaperPdf() {
       num: '2',
       title: 'Foundational Philosophy: Digital Scarcity',
       paras: [
-        'While Bitcoin proved that mathematical scarcity can form the basis of decentralized digital store-of-value, proof-of-work architectures face structural limitations including multi-minute block latency, volatile mempool fee spikes, and intensive thermodynamic energy consumption. Bitcoin Lite Edition adopts the principle of absolute digital scarcity—enforcing a fixed cap of 420,000 tokens with permanently revoked mint authority—while leveraging Solana\'s Proof-of-History (PoH) consensus for sub-second block finality.',
+        'While Bitcoin proved that mathematical scarcity can form the basis of decentralized digital store-of-value, proof-of-work architectures face structural limitations including multi-minute block latency, volatile mempool fee spikes, and intensive thermodynamic energy consumption. Bitcoin Lite Edition adopts the principle of absolute digital scarcity—enforcing a fixed cap of 2,100,000 tokens (2.1M) with permanently revoked mint authority—while leveraging Solana\'s Proof-of-History (PoH) consensus for sub-second block finality.',
         'Scarcity in Bitcoin Lite Edition is strict and non-inflationary: there are no secondary mints, dynamic emission curves, or validator staking rewards paid through unbacked token issuance.'
       ]
     },
@@ -201,7 +223,7 @@ async function generateWhitepaperPdf() {
       num: '3',
       title: 'The Genesis of Bitcoin Lite Edition',
       paras: [
-        'Conceived as a modern realization of digital scarcity, BLTE was created with exactly 420,000 tokens (50x numerically scarcer than Bitcoin\'s 21,000,000 limit). At block zero, both Mint Authority and Freeze Authority were irrevocably revoked (set to null).',
+        'Conceived as a modern realization of digital scarcity, BLTE was created with exactly 2,100,000 tokens (2.1M, 10x numerically scarcer than Bitcoin\'s 21,000,000 limit). At block zero, both Mint Authority and Freeze Authority were irrevocably revoked (set to null).',
         'The "Lite" paradigm represents sub-second ~400ms finality, sub-penny settlement fees (<$0.001 per transfer), and eco-friendly Proof-of-Stake consensus.'
       ]
     },
@@ -210,7 +232,7 @@ async function generateWhitepaperPdf() {
       title: 'Technical Distinction from Bitcoin',
       paras: [
         'Bitcoin operates on its own dedicated Layer 1 network utilizing Proof-of-Work (PoW) mining, SHA-256 hashing, UTXO transaction accounting, and 10-minute block intervals with a 21,000,000 coin cap.',
-        'Bitcoin Lite Edition is an SPL token on the Solana Layer 1, utilizing Proof-of-History (PoH) and Tower BFT consensus, account-based state transitions, ~400 millisecond blocks, and a fixed cap of 420,000 BLTE. It is completely independent in governance, codebase, consensus, and ledger infrastructure.'
+        'Bitcoin Lite Edition is an SPL token on the Solana Layer 1, utilizing Proof-of-History (PoH) and Tower BFT consensus, account-based state transitions, ~400 millisecond blocks, and a fixed cap of 2,100,000 BLTE (2.1M). It is completely independent in governance, codebase, consensus, and ledger infrastructure.'
       ]
     },
     {
@@ -229,7 +251,7 @@ async function generateWhitepaperPdf() {
         '• Token Symbol / Ticker: BLTE',
         '• Network: Solana Layer 1 Blockchain',
         '• Token Program Standard: SPL / Token-2022',
-        '• Total Supply: 420,000 BLTE (Strict Fixed Cap)',
+        '• Total Supply: 2,100,000 BLTE (2.1M Strict Fixed Cap)',
         '• Decimals: 9 (0.000000001 BLTE base unit resolution)',
         '• Mint Authority: Permanently Revoked (Null address)',
         '• Freeze Authority: Permanently Revoked (Null address)'
@@ -239,10 +261,10 @@ async function generateWhitepaperPdf() {
       num: '7',
       title: 'Tokenomics & Mathematical Allocation',
       paras: [
-        'The total token supply is strictly configured at 420,000 tokens, structured across three strategic allocations:',
-        '• Fair Launch & Community: 55% (231,000 BLTE) — Direct community and public distribution with decentralized genesis access.',
-        '• First Liquidity: 25% (105,000 BLTE) — Initial automated market maker (AMM) DEX liquidity pool deployment on Solana.',
-        '• Secondary Liquidity: 20% (84,000 BLTE) — Secondary decentralized liquidity depth, ecosystem routing, and exchange expansion.'
+        'The total token supply is strictly configured at 2,100,000 tokens (2.1M), structured across three major strategic allocations only:',
+        '• Fair Launch: 60% (1,260,000 BLTE) — Direct community and public fair launch distribution on Solana with borderless access.',
+        '• Liquidity Pool: 20% (420,000 BLTE) — Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
+        '• Staking rewards, Dev, dex listing: 20% (420,000 BLTE) — Streamflow staking yield rewards, technical development, and DEX/CEX ecosystem listings.'
       ]
     },
     {
@@ -347,6 +369,195 @@ async function generateWhitepaperPdf() {
         currentY -= 13.5;
       }
       currentY -= 5;
+    }
+
+    // If Chapter 7, render dedicated Circular Tokenomics Design (Vector Donut Chart & 3-Section Allocation)
+    if (ch.num === '7') {
+      const tokenomicsBoxHeight = 158;
+      checkPageBreak(tokenomicsBoxHeight + 20);
+
+      const boxY = currentY - tokenomicsBoxHeight;
+      currentPage.drawRectangle({
+        x: MARGIN_LEFT,
+        y: boxY,
+        width: CONTENT_WIDTH,
+        height: tokenomicsBoxHeight,
+        color: lightBg,
+        borderColor: lightBorder,
+        borderWidth: 1,
+      });
+
+      // Header inside box
+      currentPage.drawText('CIRCULAR TOKENOMIC ARCHITECTURE · 100% INVIOLABLE GENESIS DISTRIBUTION', {
+        x: MARGIN_LEFT + 12,
+        y: currentY - 16,
+        size: 7.5,
+        font: fontMonoBold,
+        color: goldColor,
+      });
+
+      currentPage.drawLine({
+        start: { x: MARGIN_LEFT + 12, y: currentY - 22 },
+        end: { x: MARGIN_LEFT + CONTENT_WIDTH - 12, y: currentY - 22 },
+        thickness: 0.5,
+        color: lightBorder,
+      });
+
+      // --- LEFT SIDE: Vector Circle Donut Chart ---
+      const chartCenterX = MARGIN_LEFT + 75;
+      const chartCenterY = boxY + 70;
+      const rOuter = 46;
+      const rInner = 28;
+
+      // Slice 1: 60% Fair Launch (-90 deg to 126 deg) = 216 deg
+      const pathFairLaunch = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, -90, 126);
+      currentPage.drawSvgPath(pathFairLaunch, { color: rgb(0.85, 0.47, 0.02) }); // #D97706 Warm Amber Gold
+
+      // Slice 2: 20% Liquidity Pool (126 deg to 198 deg) = 72 deg
+      const pathLiquidity = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, 126, 198);
+      currentPage.drawSvgPath(pathLiquidity, { color: rgb(0.92, 0.70, 0.03) }); // #EAB308 Bright Gold
+
+      // Slice 3: 20% Staking rewards, Dev, dex listing (198 deg to 270 deg) = 72 deg
+      const pathStakingDev = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, 198, 270);
+      currentPage.drawSvgPath(pathStakingDev, { color: rgb(0.72, 0.40, 0.11) }); // #B8661B Bronze Copper
+
+      // Center disc inside donut
+      currentPage.drawCircle({
+        x: chartCenterX,
+        y: chartCenterY,
+        size: rInner - 1,
+        color: rgb(1, 1, 1),
+        borderColor: lightBorder,
+        borderWidth: 0.5,
+      });
+
+      // Center labels
+      const supplyMainStr = '2.1M';
+      const supplyMainWidth = fontBold.widthOfTextAtSize(supplyMainStr, 13);
+      currentPage.drawText(supplyMainStr, {
+        x: chartCenterX - supplyMainWidth / 2,
+        y: chartCenterY + 4,
+        size: 13,
+        font: fontBold,
+        color: darkColor,
+      });
+
+      const tokenSymStr = 'BLTE';
+      const tokenSymWidth = fontMonoBold.widthOfTextAtSize(tokenSymStr, 7.5);
+      currentPage.drawText(tokenSymStr, {
+        x: chartCenterX - tokenSymWidth / 2,
+        y: chartCenterY - 5,
+        size: 7.5,
+        font: fontMonoBold,
+        color: goldColor,
+      });
+
+      const subCapStr = 'TOTAL CAP';
+      const subCapWidth = fontMono.widthOfTextAtSize(subCapStr, 5.5);
+      currentPage.drawText(subCapStr, {
+        x: chartCenterX - subCapWidth / 2,
+        y: chartCenterY - 13,
+        size: 5.5,
+        font: fontMono,
+        color: grayColor,
+      });
+
+      // --- RIGHT SIDE: Allocation Breakdown Rows ---
+      const legendX = MARGIN_LEFT + 150;
+      const legendWidth = CONTENT_WIDTH - 162;
+
+      const allocItems = [
+        {
+          pct: '60%',
+          title: 'Fair Launch',
+          amount: '1,260,000 BLTE',
+          desc: 'Direct community and public fair launch distribution on Solana with borderless access.',
+          color: rgb(0.85, 0.47, 0.02),
+        },
+        {
+          pct: '20%',
+          title: 'Liquidity Pool',
+          amount: '420,000 BLTE',
+          desc: 'Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
+          color: rgb(0.92, 0.70, 0.03),
+        },
+        {
+          pct: '20%',
+          title: 'Staking rewards, Dev, dex listing',
+          amount: '420,000 BLTE',
+          desc: 'Streamflow staking yield rewards, technical development, and DEX/CEX ecosystem listings.',
+          color: rgb(0.72, 0.40, 0.11),
+        },
+      ];
+
+      let itemY = currentY - 36;
+      allocItems.forEach((item) => {
+        // Colored badge
+        currentPage.drawRectangle({
+          x: legendX,
+          y: itemY - 2,
+          width: 26,
+          height: 14,
+          color: item.color,
+        });
+
+        const pctWidth = fontMonoBold.widthOfTextAtSize(item.pct, 8);
+        currentPage.drawText(item.pct, {
+          x: legendX + (26 - pctWidth) / 2,
+          y: itemY + 2,
+          size: 8,
+          font: fontMonoBold,
+          color: rgb(1, 1, 1),
+        });
+
+        // Title and Amount
+        currentPage.drawText(item.title, {
+          x: legendX + 32,
+          y: itemY + 3,
+          size: 9,
+          font: fontBold,
+          color: darkColor,
+        });
+
+        const amountStr = `(${item.amount})`;
+        const amountWidth = fontMono.widthOfTextAtSize(amountStr, 7.5);
+        currentPage.drawText(amountStr, {
+          x: legendX + legendWidth - amountWidth,
+          y: itemY + 3,
+          size: 7.5,
+          font: fontMono,
+          color: goldColor,
+        });
+
+        // Description line
+        currentPage.drawText(item.desc, {
+          x: legendX + 32,
+          y: itemY - 8,
+          size: 7.5,
+          font: fontRegular,
+          color: grayColor,
+        });
+
+        itemY -= 32;
+      });
+
+      // Bottom Integrity Note
+      currentPage.drawLine({
+        start: { x: MARGIN_LEFT + 12, y: boxY + 20 },
+        end: { x: MARGIN_LEFT + CONTENT_WIDTH - 12, y: boxY + 20 },
+        thickness: 0.5,
+        color: lightBorder,
+      });
+
+      currentPage.drawText('VERIFIED: 100% Mathematical Integrity · 2,100,000 / 2,100,000 BLTE Accounted For · Mint Authority Revoked', {
+        x: MARGIN_LEFT + 12,
+        y: boxY + 8,
+        size: 7,
+        font: fontMonoBold,
+        color: rgb(0.09, 0.4, 0.2), // forest green
+      });
+
+      currentY -= (tokenomicsBoxHeight + 16);
     }
 
     currentY -= 10;

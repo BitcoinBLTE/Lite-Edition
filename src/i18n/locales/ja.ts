@@ -35,7 +35,7 @@ export const ja: TranslationSchema = {
   },
   hero: {
     independent_asset: 'Solana 独立型デジタル資産',
-    fixed_scarcity: '固定希少性: 420,000 BLTE',
+    fixed_scarcity: '固定希少性: 2,100,000 BLTE',
     title: 'BITCOIN LITE EDITION',
     subtitle: 'デジタル資産環境における新たな章',
     description: '«Bitcoin Lite Edition は、希少性、透明性、分散化、国境なき価値転送というビットコインの革新原則に触発された、Solana 基盤の独立系デジタル資産です。»',
@@ -55,20 +55,20 @@ export const ja: TranslationSchema = {
     learn_more: 'ビットコインについて詳しく知る',
     explore_genesis: '創世記と技術的構造',
     tag_independent: 'Solana 独立型資産',
-    tag_cap: '数学的上限: 420,000 BLTE',
+    tag_cap: '数学的上限: 2,100,000 BLTE',
     tag_non_affiliated: 'Bitcoin Core 非提携',
   },
   about: {
     kicker: 'プロジェクト構造 · 基本原則',
     title: 'BITCOIN LITE EDITION とは？',
-    description: 'ビットコインはデジタル希少性、分散化、オープンなP2P決済の概念を革新しました。Bitcoin Lite Edition は、420,000トークンという極めて希少な上限と、Solanaブロックチェーンのミリ秒単位の速度、極低手数料、徹底した透明性を組み合わせた資産です。',
+    description: 'ビットコインはデジタル希少性、分散化、オープンなP2P決済の概念を革新しました。Bitcoin Lite Edition は、2,100,000トークンという極めて希少な上限と、Solanaブロックチェーンのミリ秒単位の速度、極低手数料、徹底した透明性を組み合わせた資産です。',
     pillars: [
       {
         kicker: '01 · 希少性',
-        title: '420,000 固定トークン供給量',
+        title: '2,100,000 固定トークン供給量',
         summary: 'インフレのない厳格な数値的希少性。',
-        description: 'ビットコインの2,100万枚より50倍少ない、厳密に420,000トークンの固定ハードキャップ。二次発行、動的排出、隠された解除枠は一切ありません。',
-        highlight: '固定 420K 上限',
+        description: 'ビットコインの2,100万枚より10倍少ない、厳密に2,100,000トークンの固定ハードキャップ。二次発行、動的排出、隠された解除枠は一切ありません。',
+        highlight: '固定 2.1M 上限',
         verified: '検証済み',
         network: 'Solana L1',
       },
@@ -212,8 +212,8 @@ export const ja: TranslationSchema = {
       btc_supply_label: 'ビットコイン最大供給量:',
       ble_supply_label: 'Bitcoin Lite Edition 供給量:',
       ratio_label: '数値比率:',
-      ratio_val: 'BLTE は BTC より数値的に 50倍 希少です',
-      supply_footer: 'Bitcoin Lite Edition の総供給量は創世時に420,000枚すべて発行済みであり、ミント権限は永久に放棄されています。',
+      ratio_val: 'BLTE は BTC より数値的に 10倍 希少です',
+      supply_footer: 'Bitcoin Lite Edition の総供給量は創世時に2,100,000枚すべて発行済みであり、ミント権限は永久に放棄されています。',
       decent_kicker: '分散化の原則',
       decent_title: '分散型ネットワーク対中央集権',
       decent_desc: '分散化とは、いかなる単一の企業、政府、管理者も、取引の取り消し、台帳の改ざん、口座の凍結、勝手な増刷を行えないことを意味します。',
@@ -234,8 +234,8 @@ export const ja: TranslationSchema = {
       invariants: [
         {
           tag: '創世記の不変則 01',
-          title: '420,000 固定上限',
-          desc: 'ビットコインの2,100万枚より50倍希少な厳密に420,000トークン。追加発行は永久に不可能です。',
+          title: '2,100,000 固定上限',
+          desc: 'ビットコインの2,100万枚より10倍希少な厳密に2,100,000トークン。追加発行は永久に不可能です。',
         },
         {
           tag: '創世記の不変則 02',
@@ -292,12 +292,12 @@ export const ja: TranslationSchema = {
       {
         metric: '総 / 最大供給量',
         bitcoin: '21,000,000 BTC',
-        ble: '420,000 BLTE（固定）',
+        ble: '2,100,000 BLTE（固定）',
       },
       {
         metric: '供給上限比率',
         bitcoin: '1倍（基準値）',
-        ble: '50倍少ない数値的供給量',
+        ble: '10倍少ない数値的供給量',
       },
       {
         metric: 'ブロック確定速度',
@@ -346,29 +346,29 @@ export const ja: TranslationSchema = {
   },
   tokenomics: {
     kicker: '経済構造 · 数学的希少性',
-    title: '420,000 総供給量',
+    title: '2.1M 総供給量',
     subtitle: '中央データモデルに基づく厳格なトークン配分。ミントバックドアや隠れインフレは一切ありません。',
     fixed_cap: '固定上限',
     total_supply: '総供給量',
     verified_alloc: '100% 数学的に検証された配分（100%）',
     allocations: [
       {
-        id: 'season-1',
-        category: 'フェアローンチ ＆ コミュニティ',
-        description: '分散型アクセスによるコミュニティおよび流動性の公開割り当て。',
+            id: "fair-launch",
+            category: "フェアローンチ",
+            description: "Solana上でのコミュニティ向け直接・公開配布、ボーダーレスな参加 (60%)。"
       },
       {
-        id: 'season-2',
-        category: '初期流動性',
-        description: 'Solana 分散型取引所における初期 AMM 流動性プールの展開。',
+            id: "liquidity-pool",
+            category: "流動性プール",
+            description: "Raydium上でのAMM DEX流動性プール展開 (20%)。"
       },
       {
-        id: 'season-3',
-        category: 'セカンダリ流動性',
-        description: 'セカンダリ流動性の深度、エコシステムルーティングおよび取引所拡大。',
-      },
-    ],
-    data_source: 'データソース: 単一中央構成モデル。100% = 420,000 BLTE。',
+            id: "staking-dev-dex",
+            category: "ステーキング報酬・開発・DEX上場",
+            description: "Streamflowステーキング利回り報酬、技術開発、DEX/CEXエコシステム上場 (20%)。"
+      }
+],
+    data_source: 'データソース：中央単一構成モデル。100% = 2,100,000 BLTE (2.1M)。',
   },
   how_to_buy: {
     kicker: '取得ガイド · ステップバイステップ手順',
@@ -404,7 +404,7 @@ export const ja: TranslationSchema = {
         step: '05',
         title: '公式ミントアドレスを入力',
         summary: '公式サイトに掲載された真正なコントラクトIDを入力。',
-        description: 'スワップ画面のトークン選択で公式 BLTE アドレスを貼り付けます。シンボルが BLTE で総供給量が 420,000 であることを必ず確認してください。',
+        description: 'スワップ画面のトークン選択で公式 BLTE アドレスを貼り付けます。シンボルが BLTE で総供給量が 2,100,000 であることを必ず確認してください。',
         action_label: 'アドレスをコピー',
       },
       {
@@ -423,9 +423,9 @@ export const ja: TranslationSchema = {
     ],
     advisory_kicker: 'セキュリティ ＆ 偽造防止に関する注意 · ゼロトラスト',
     advisory_title: '偽トークンやなりすましから資産を守るために',
-    advisory_desc: '分散型取引所では誰でも同名のトークンを作成可能です。必ず当公式サイトに掲載されたコントラクトアドレスと一致していること、総供給量が厳密に420,000枚でミント権限が放棄されていることを確認してください。',
+    advisory_desc: '分散型取引所では誰でも同名のトークンを作成可能です。必ず当公式サイトに掲載されたコントラクトアドレスと一致していること、総供給量が厳密に2,100,000枚でミント権限が放棄されていることを確認してください。',
     security_items: [
-      '固定 420,000 枚の供給上限',
+      '固定 2,100,000 枚の供給上限',
       'ミント権限永久放棄済み',
       '管理者の凍結権限なし',
     ],
@@ -468,7 +468,7 @@ export const ja: TranslationSchema = {
       {
         title: 'トークン供給量',
         subtitle: '固定された数学的上限',
-        primaryValue: '420,000 BLTE',
+        primaryValue: '2,100,000 BLTE',
         detail: '創世パラメータに固定。供給量を増やしたり、希薄化することは決してできません。',
         linkLabel: 'オンチェーンで供給量を検証',
       },
@@ -619,11 +619,11 @@ export const ja: TranslationSchema = {
     items: [
       {
         question: 'Bitcoin Lite Edition とは何ですか？',
-        answer: 'Bitcoin Lite Edition は、Solana ブロックチェーン上に構築された独立したデジタル資産です。ビットコインのデジタル希少性パラダイムに着想を得て、420,000トークンの固定上限を持ち、Solana の高速・低コスト・透明な台帳上で動作します。',
+        answer: 'Bitcoin Lite Edition は、Solana ブロックチェーン上に構築された独立したデジタル資産です。ビットコインのデジタル希少性パラダイムに着想を得て、2,100,000トークンの固定上限を持ち、Solana の高速・低コスト・透明な台帳上で動作します。',
       },
       {
         question: '総供給量はいくらですか？',
-        answer: '総供給量は厳格に 420,000 トークンです。インフレ型のトークンとは異なり、創世時に上限が固定され、一切増刷できません。',
+        answer: '総供給量は厳格に 2,100,000 トークンです。インフレ型のトークンとは異なり、創世時に上限が固定され、一切増刷できません。',
       },
       {
         question: 'どのブロックチェーン上に構築されていますか？',
@@ -636,7 +636,7 @@ export const ja: TranslationSchema = {
       },
       {
         question: 'ビットコインと比べて希少性はどうですか？',
-        answer: 'ビットコインは最大2,100万枚ですが、Bitcoin Lite Edition は厳格に420,000枚であり、数値的に50倍希少です。またSolana上でサブセコンドで決済されます。',
+        answer: 'ビットコインは最大2,100万枚ですが、Bitcoin Lite Edition は厳格に2,100,000枚であり、数値的に10倍希少です。またSolana上でサブセコンドで決済されます。',
       },
       {
         question: 'どこで購入・取得できますか？',
@@ -648,7 +648,7 @@ export const ja: TranslationSchema = {
       },
       {
         question: 'トークン供給量が増えたり希薄化したりすることはありますか？',
-        answer: 'いいえ。創世時にミント権限が永久に放棄（nullに設定）されているため、420,000 BLTE という不変の供給上限がコンセンサスによって永続的に保護されます。',
+        answer: 'いいえ。創世時にミント権限が永久に放棄（nullに設定）されているため、2,100,000 BLTE という不変の供給上限がコンセンサスによって永続的に保護されます。',
       },
       {
         question: 'どのウォレットで BLTE を保管できますか？',
@@ -656,13 +656,13 @@ export const ja: TranslationSchema = {
       },
       {
         question: '偽トークンや詐欺から身を守るにはどうすればよいですか？',
-        answer: '許可型でないブロックチェーンでは誰でも同名トークンを作成できるため、必ず当公式サイト記載のミントアドレスと一致しているか、上限が420,000枚かを確認してください。',
+        answer: '許可型でないブロックチェーンでは誰でも同名トークンを作成できるため、必ず当公式サイト記載のミントアドレスと一致しているか、上限が2,100,000枚かを確認してください。',
         isDisclaimer: true,
       },
     ],
   },
   footer: {
-    brand_sub: 'Solana 上に構築 · 固定 420,000 BLTE',
+    brand_sub: 'Solana 上に構築 · 固定 2,100,000 BLTE',
     mission: 'デジタル希少性、オープンなブロックチェーン検証可能性、規律あるトークン構造の独立した探求。',
     btn_whitepaper: 'ホワイトペーパーを読む',
     nav_heading: 'ナビゲーション',
@@ -747,7 +747,7 @@ export const ja: TranslationSchema = {
           num: '1',
           title: '要約とアブストラクト',
           content: [
-            'Bitcoin Lite Edition は、Solana ブロックチェーン上に構築された独立したデジタル資産です。2008年にビットコインが確立したデジタル希少性の原則に着想を受け、420,000トークンという超希少な固定資産を高スループット・低遅延な環境で探求します。',
+            'Bitcoin Lite Edition は、Solana ブロックチェーン上に構築された独立したデジタル資産です。2008年にビットコインが確立したデジタル希少性の原則に着想を受け、2,100,000トークンという超希少な固定資産を高スループット・低遅延な環境で探求します。',
             '重要：Bitcoin Lite Edition はビットコインそのものや公式製品ではなく、Bitcoin Core やサトシ・ナカモト等とは一切関係ありません。Solana 上の独立した SPL トークンです。',
           ],
         },
@@ -756,7 +756,7 @@ export const ja: TranslationSchema = {
           num: '2',
           title: '基本的哲学：再考された希少性',
           content: [
-            'ビットコインが数学的希少性の価値を証明した一方で、従来のPoWは遅延や手数料の課題を抱えています。BLTE は420,000枚の絶対的希少性とミント権限の放棄を維持しながら、Solana の PoH によりサブセコンドの確定を実現します。',
+            'ビットコインが数学的希少性の価値を証明した一方で、従来のPoWは遅延や手数料の課題を抱えています。BLTE は2,100,000枚の絶対的希少性とミント権限の放棄を維持しながら、Solana の PoH によりサブセコンドの確定を実現します。',
             'BLTE の希少性は動的インフレを起こさず、追加発行やインフレによるステーキング報酬もありません。',
           ],
         },
@@ -765,7 +765,7 @@ export const ja: TranslationSchema = {
           num: '3',
           title: 'Bitcoin Lite Edition の創世記',
           content: [
-            'ビットコインの50倍希少な厳密に420,000トークンとして設計。ブロックゼロでミント権限と凍結権限が無効化（null）されました。',
+            'ビットコインの10倍希少な厳密に2,100,000トークンとして設計。ブロックゼロでミント権限と凍結権限が無効化（null）されました。',
             '「Light」は、約400msの超高速確定、1セント未満の手数料、環境負荷の少ない PoS を象徴します。',
           ],
         },
@@ -775,7 +775,7 @@ export const ja: TranslationSchema = {
           title: 'ビットコインとの技術的区別',
           content: [
             'ビットコインは独自の L1、PoW マイニング、SHA-256、UTXO、10分ブロック、上限2,100万枚で動作します。',
-            'BLTE は Solana L1 上の SPL トークンであり、PoH、アカウント型台帳、約400msブロック、上限420,000枚です。完全に独立しています。',
+            'BLTE は Solana L1 上の SPL トークンであり、PoH、アカウント型台帳、約400msブロック、上限2,100,000枚です。完全に独立しています。',
           ],
         },
         {
@@ -791,15 +791,15 @@ export const ja: TranslationSchema = {
           num: '6',
           title: '技術的トークン仕様',
           content: [
-            '• トークン名: Bitcoin Lite Edition\n• シンボル: BLTE\n• ネットワーク: Solana\n• 規格: SPL / Token-2022\n• 総供給量: 420,000（固定）\n• 小数点桁数: 9\n• ミント権限: 創世時に永久放棄\n• 凍結権限: なし・無効化済み',
+            '• トークン名: Bitcoin Lite Edition\n• シンボル: BLTE\n• ネットワーク: Solana\n• 規格: SPL / Token-2022\n• 総供給量: 2,100,000（固定）\n• 小数点桁数: 9\n• ミント権限: 創世時に永久放棄\n• 凍結権限: なし・無効化済み',
           ],
         },
         {
           id: 'tokenomics',
           num: '7',
-          title: 'トケノミクス配分 (厳密に100% = 420,000 BLTE)',
+          title: 'トークノミクスと数学的配分',
           content: [
-            '• フェアローンチ ＆ コミュニティ: 55% (231,000 BLTE)\n• 初期流動性: 25% (105,000 BLTE)\n• セカンダリ流動性: 20% (84,000 BLTE)',
+            "厳格な3大セクション配分（2,100,000 BLTE · 2.1M）：\n• フェアローンチ：60% (1,260,000 BLTE)\n• 流動性プール：20% (420,000 BLTE)\n• ステーキング報酬・開発・DEX上場：20% (420,000 BLTE)",
           ],
         },
         {
@@ -883,10 +883,10 @@ export const ja: TranslationSchema = {
         scarcity: {
           title: '第3章: 希少性の比較分析',
           p1: '希少性は持続的価値の経済的基盤です。ビットコインは発行上限を2,100万枚に設定しました。',
-          p2: 'Bitcoin Lite Edition (BLTE) はさらに徹底した希少性を実現し、厳密に420,000枚の固定上限を持ちます。',
+          p2: 'Bitcoin Lite Edition (BLTE) はさらに徹底した希少性を実現し、厳密に2,100,000枚の固定上限を持ちます。',
           stat_btc: '21,000,000 BTC',
-          stat_ble: '420,000 BLTE',
-          ratio: 'ビットコインより 50倍 高い数値的希少性',
+          stat_ble: '2.1M BLTE',
+          ratio: 'ビットコインより 10倍 高い数値的希少性',
         },
         genesis: {
           title: '第4章: Bitcoin Lite Edition の創世記',
@@ -895,8 +895,8 @@ export const ja: TranslationSchema = {
           p2: '15年後、その思想を Solana エコシステム上で実現するため BLTE が誕生しました。約400msの確定、極小手数料、100%の不変性を誇ります。',
           invariants: [
             {
-              title: '固定 420,000 トークン上限',
-              desc: 'ビットコインの50倍希少で、オンチェーンで恒久的に強制。',
+              title: '固定 2,100,000 トークン上限',
+              desc: 'ビットコインの10倍希少で、オンチェーンで恒久的に強制。',
             },
             {
               title: 'ブロックゼロでの権限放棄',

@@ -35,7 +35,7 @@ export const no: TranslationSchema = {
   },
   hero: {
     independent_asset: 'Uavhengig Solana-ressurs',
-    fixed_scarcity: 'Fast knapphet: 420 000 BLTE',
+    fixed_scarcity: 'Fast knapphet: 2 100 000 BLTE',
     title: 'BITCOIN LITE EDITION',
     subtitle: 'Et nytt kapittel i det digitale ressurslandskapet',
     description: '«Bitcoin Lite Edition er en Solana-basert digital ressurs inspirert av prinsippene som gjorde Bitcoin til en banebrytende innovasjon innen digital finans: knapphet, åpenhet, desentralisering og grenseløs digital verdi.»',
@@ -55,20 +55,20 @@ export const no: TranslationSchema = {
     learn_more: 'Lær mer om Bitcoin',
     explore_genesis: 'Opprinnelse og teknisk arkitektur',
     tag_independent: 'Uavhengig Solana-ressurs',
-    tag_cap: 'Matematisk tak: 420 000 BLTE',
+    tag_cap: 'Matematisk tak: 2 100 000 BLTE',
     tag_non_affiliated: 'Ikke tilknyttet Bitcoin Core',
   },
   about: {
     kicker: 'Prosjektarkitektur · Kjerneprinsipper',
     title: 'HVA ER BITCOIN LITE EDITION?',
-    description: 'Bitcoin introduserte en revolusjonerende måte å tenke på digital knapphet, desentralisering og åpne oppgjør mellom parter. Bitcoin Lite Edition utforsker dette definerende konseptet gjennom et ekstremt knapt, matematisk begrenset tilbud på 420 000 tokens kombinert med lynrask hastighet, minimale gebyrer og radikal åpenhet på Solana-blokkjeden.',
+    description: 'Bitcoin introduserte en revolusjonerende måte å tenke på digital knapphet, desentralisering og åpne oppgjør mellom parter. Bitcoin Lite Edition utforsker dette definerende konseptet gjennom et ekstremt knapt, matematisk begrenset tilbud på 2 100 000 tokens kombinert med lynrask hastighet, minimale gebyrer og radikal åpenhet på Solana-blokkjeden.',
     pillars: [
       {
         kicker: '01 · Knapphet',
-        title: 'Fast tilbud på 420 000 tokens',
+        title: 'Fast tilbud på 2 100 000 tokens',
         summary: 'Streng numerisk knapphet uten inflasjon.',
-        description: 'Konfigurert med et definitivt tak på nøyaktig 420 000 tokens – et tak som er 50 ganger lavere enn Bitcoins grense på 21 000 000. Det finnes ingen sekundære preginger, dynamiske utslipp eller skjulte reserveopplåsinger.',
-        highlight: 'Fast 420K-tak',
+        description: 'Konfigurert med et definitivt tak på nøyaktig 2 100 000 tokens – et tak som er 10 ganger lavere enn Bitcoins grense på 21 000 000. Det finnes ingen sekundære preginger, dynamiske utslipp eller skjulte reserveopplåsinger.',
+        highlight: 'Fast 2.1M-tak',
         verified: 'Verifisert',
         network: 'Solana L1',
       },
@@ -208,11 +208,11 @@ export const no: TranslationSchema = {
       supply_kicker: 'Økonomisk sammenligning',
       supply_title: 'Fast tilbud og knapphetsprofiler',
       supply_p1: 'Knapphet er det grunnleggende økonomiske prinsippet som gjør det mulig for digitale ressurser å fungere som pålitelige verdioppbevaringsmidler. Ved å håndheve et uforanderlig utslippstak kodet inn i protokollen, eliminerte Bitcoin risikoen for vilkårlig devaluering fra sentralbanker.',
-      supply_p2: 'Bitcoin Lite Edition viderefører denne modellen med streng numerisk knapphet i Solana-miljøet, og begrenser det totale tilbudet til nøyaktig 420 000 tokens.',
+      supply_p2: 'Bitcoin Lite Edition viderefører denne modellen med streng numerisk knapphet i Solana-miljøet, og begrenser det totale tilbudet til nøyaktig 2 100 000 tokens.',
       btc_supply_label: 'Totalt tilbud av Bitcoin',
       ble_supply_label: 'Totalt tilbud av Bitcoin Lite Edition',
       ratio_label: 'Numerisk knapphetsfaktor',
-      ratio_val: '50 ganger lavere tilbud enn Bitcoin',
+      ratio_val: '10 ganger lavere tilbud enn Bitcoin',
       supply_footer: 'Begge modeller deler det ufravikelige prinsippet om null tilbudsvekst utover den hardkodede grensen.',
       decent_kicker: 'Valideringsarkitektur',
       decent_title: 'Desentralisering gjennom distribuerte nettverk',
@@ -234,8 +234,8 @@ export const no: TranslationSchema = {
       invariants: [
         {
           tag: 'Invarians 01',
-          title: 'Ubetinget fast tak på 420 000',
-          desc: '50 ganger mer numerisk knapt enn Bitcoins 21 millioner. Hele tilbudet opprettes ved genesis uten inflasjonsplaner eller sekundære utslipp.',
+          title: 'Ubetinget fast tak på 2 100 000',
+          desc: '10 ganger mer numerisk knapt enn Bitcoins 21 millioner. Hele tilbudet opprettes ved genesis uten inflasjonsplaner eller sekundære utslipp.',
         },
         {
           tag: 'Invarians 02',
@@ -270,8 +270,8 @@ export const no: TranslationSchema = {
     step1_stat_label: 'Maksimalt tilbudstak',
     step2_kicker: 'Trinn 02 · Uavhengig knapphetsressurs',
     step2_title: 'Bitcoin Lite Edition (BLTE)',
-    step2_desc: 'Et uavhengig token som implementerer et strengt tak på 420 000 tokens på Solanas utførelseslag med tilbakekalt preging.',
-    step2_stat_label: '50 ganger lavere numerisk tilbud',
+    step2_desc: 'Et uavhengig token som implementerer et strengt tak på 2 100 000 tokens på Solanas utførelseslag med tilbakekalt preging.',
+    step2_stat_label: '10 ganger lavere numerisk tilbud',
     step3_kicker: 'Trinn 03 · Oppgjørsarkitektur',
     step3_title: 'Solana-nettverket',
     step3_layer: 'Grunnleggende L1-lag',
@@ -297,7 +297,7 @@ export const no: TranslationSchema = {
       {
         metric: 'Totalt / maksimalt tilbud',
         bitcoin: '21 000 000 BTC',
-        ble: '420 000 BLTE (Fast)',
+        ble: '2 100 000 BLTE (Fast)',
       },
       {
         metric: 'Tilbudstak-forhold',
@@ -351,29 +351,29 @@ export const no: TranslationSchema = {
   },
   tokenomics: {
     kicker: 'Tre-sesongers distribusjonsstruktur · Matematisk knapphet',
-    title: '420 000 TOTALT TILBUD',
+    title: '2.1M TOTALT TILBUD',
     subtitle: 'En strengt begrenset tokendistribusjon strukturert over tre strategiske sesonger. Null bakdører for preging, null skjult inflasjon.',
     fixed_cap: 'FAST TAK',
     total_supply: 'TOTALT TILBUD',
     verified_alloc: 'Verifisert 100 % fordeling i tre tildelinger (100 %)',
     allocations: [
       {
-        id: 'season-1',
-        category: 'Rettferdig lansering og fellesskap',
-        description: 'Direkte fellesskaps- og offentlig distribusjon med desentralisert tilgang fra blokk null.',
+            id: "fair-launch",
+            category: "Rettferdig lansering",
+            description: "Direkte samfunns- og offentlig distribusjon på Solana med grenseløs tilgang (60%)."
       },
       {
-        id: 'season-2',
-        category: 'Første likviditet',
-        description: 'Innledende AMM DEX-likviditetspool utplassert på Solana.',
+            id: "liquidity-pool",
+            category: "Likviditetsbasseng",
+            description: "AMM DEX likviditetsbasseng distribusjon på Raydium (20%)."
       },
       {
-        id: 'season-3',
-        category: 'Sekundær likviditet',
-        description: 'Sekundær desentralisert likviditetsdybde, økosystemruting og utvidelse.',
-      },
-    ],
-    data_source: 'Datakilde: Enkel sentral konfigurasjonsmodell. 100 % = 420 000 BLTE.',
+            id: "staking-dev-dex",
+            category: "Staking-belønninger, Dev, DEX-notering",
+            description: "Streamflow staking-belønninger, teknisk utvikling og DEX/CEX-noteringer (20%)."
+      }
+],
+    data_source: 'Datakilde: Sentral konfigurasjonsmodell. 100 % = 2 100 000 BLTE (2.1M).',
   },
   how_to_buy: {
     kicker: 'Kjøpsveiledning · Sikkerhetsanbefalinger',
@@ -471,7 +471,7 @@ export const no: TranslationSchema = {
       {
         title: 'Tokentilbud',
         subtitle: 'Fast matematisk tak',
-        primaryValue: '420 000 BLTE',
+        primaryValue: '2 100 000 BLTE',
         detail: 'Hardkodet inn i tokenets genesis-parametere. Tilbudet kan aldri utvides, inflateres eller utvannes.',
         linkLabel: 'Verifiser tilbud på kjeden',
       },
@@ -560,7 +560,7 @@ export const no: TranslationSchema = {
         title: 'Fase 01: Arkitektur og Genesis',
         description: 'Utvikling av tokenspesifikasjoner, knapphetsmodell og distribusjon av smartkontrakt.',
         items: [
-          'Matematisk tokenomikkmodell og fast tak på 420 000',
+          'Matematisk tokenomikkmodell og fast tak på 2 100 000',
           'Utvikling av SPL-smartkontrakt på Solana',
           'Permanent tilbakekalling av pregings- og frysefullmakter',
           'Lansering av offisiell nettportal og hvitbok',
@@ -620,11 +620,11 @@ export const no: TranslationSchema = {
     items: [
       {
         question: 'Hva er Bitcoin Lite Edition?',
-        answer: 'Bitcoin Lite Edition er en uavhengig digital ressurs bygget direkte på Solana-blokkjeden. Inspirert av det grunnleggende paradigmet om digital knapphet etablert av Bitcoin, introduserer det et fast tak på 420 000 tokens designet for å fungere med Solanas høye hastighet, lave kostnader og åpne struktur.',
+        answer: 'Bitcoin Lite Edition er en uavhengig digital ressurs bygget direkte på Solana-blokkjeden. Inspirert av det grunnleggende paradigmet om digital knapphet etablert av Bitcoin, introduserer det et fast tak på 2 100 000 tokens designet for å fungere med Solanas høye hastighet, lave kostnader og åpne struktur.',
       },
       {
         question: 'Hva er det totale tilbudet?',
-        answer: 'Det totale tilbudet er strengt begrenset til 420 000 tokens. I motsetning til inflasjonsdrevne tokens med dynamisk preging eller opplåsingsplaner, er dette tilbudet fastsatt ved opprettelsen og kan aldri økes.',
+        answer: 'Det totale tilbudet er strengt begrenset til 2 100 000 tokens. I motsetning til inflasjonsdrevne tokens med dynamisk preging eller opplåsingsplaner, er dette tilbudet fastsatt ved opprettelsen og kan aldri økes.',
       },
       {
         question: 'Hvilken blokkjede er det bygget på?',
@@ -637,7 +637,7 @@ export const no: TranslationSchema = {
       },
       {
         question: 'Hvordan sammenlignes knappheten med Bitcoin?',
-        answer: 'Bitcoin var banebrytende innen digital knapphet med et tak på 21 000 000 mynter. Bitcoin Lite Edition har et fast tak på nøyaktig 420 000 tokens – noe som gir et tilbud som er 50 ganger lavere i antall. I tillegg gjøres oppgjøret på sekunder på Solana.',
+        answer: 'Bitcoin var banebrytende innen digital knapphet med et tak på 21 000 000 mynter. Bitcoin Lite Edition har et fast tak på nøyaktig 2 100 000 tokens – noe som gir et tilbud som er 10 ganger lavere i antall. I tillegg gjøres oppgjøret på sekunder på Solana.',
       },
       {
         question: 'Hvor og hvordan kan jeg kjøpe Bitcoin Lite Edition?',
@@ -649,7 +649,7 @@ export const no: TranslationSchema = {
       },
       {
         question: 'Kan tilbudet noensinne økes eller utvannes?',
-        answer: 'Nei. Smartkontraktarkitekturen spesifiserer permanent tilbakekalling av pregingsfullmakten ved lansering, slik at den settes til null. Dette sikrer et uforanderlig tilbudstak på 420 000 BLTE.',
+        answer: 'Nei. Smartkontraktarkitekturen spesifiserer permanent tilbakekalling av pregingsfullmakten ved lansering, slik at den settes til null. Dette sikrer et uforanderlig tilbudstak på 2 100 000 BLTE.',
       },
       {
         question: 'Hvilke kryptolommebøker støtter BLTE?',
@@ -657,7 +657,7 @@ export const no: TranslationSchema = {
       },
       {
         question: 'Hvordan beskytter jeg meg mot forfalskede tokens og svindel?',
-        answer: 'Fordi hvem som helst kan lage tokens med vilkårlige navn på åpne blokkjeder, må du alltid sjekke den offisielle kontraktadressen publisert på dette nettstedet. Kontroller at tilbudet er nøyaktig 420 000 og at pregingsfullmakten er null på Solscan.',
+        answer: 'Fordi hvem som helst kan lage tokens med vilkårlige navn på åpne blokkjeder, må du alltid sjekke den offisielle kontraktadressen publisert på dette nettstedet. Kontroller at tilbudet er nøyaktig 2 100 000 og at pregingsfullmakten er null på Solscan.',
         isDisclaimer: true,
       },
     ],
@@ -748,7 +748,7 @@ export const no: TranslationSchema = {
           num: '01',
           title: '1. Sammendrag og abstrakt',
           content: [
-            'Bitcoin Lite Edition er en uavhengig digital ressurs bygget nativt på Solana-blokkjeden. Inspirert av det opprinnelige paradigmet om digital knapphet etablert av Bitcoin i 2008, utforsker prosjektet anvendelsen av et ultra-knapt, matematisk begrenset aktivum (420 000 tokens) i et moderne utførelsesmiljø med høy ytelse og lav forsinkelse.',
+            'Bitcoin Lite Edition er en uavhengig digital ressurs bygget nativt på Solana-blokkjeden. Inspirert av det opprinnelige paradigmet om digital knapphet etablert av Bitcoin i 2008, utforsker prosjektet anvendelsen av et ultra-knapt, matematisk begrenset aktivum (2 100 000 tokens) i et moderne utførelsesmiljø med høy ytelse og lav forsinkelse.',
             'I motsetning til tradisjonelle forgreninger som replikerer UTXO-tilstanden eller energikrevende utvinning, implementerer Bitcoin Lite Edition streng knapphet via Solanas SPL-tokenstandard, og oppnår ~400ms endelighet med minimale transaksjonsgebyrer (<$0.001).',
             'Ved å permanent tilbakekalle pregings- og frysefullmakter ved opprettelse, garanterer protokollen et matematisk maksimalt tilbud uten administrative bakdører.',
           ],
@@ -759,7 +759,7 @@ export const no: TranslationSchema = {
           title: '2. Grunnleggende filosofi: Digital knapphet',
           content: [
             'I 2008 beviste publiseringen av Bitcoins hvitbok at varig verdi i den digitale sfæren krevde etterprøvbar knapphet immun mot institusjonell manipulasjon.',
-            'Bitcoins tak på 21 millioner mynter etablerte en standard om at matematisk forutsigbarhet skaper tillit. Bitcoin Lite Edition viderefører denne filosofien ved å redusere tilbudstaket til 420 000 tokens – en 50 ganger høyere numerisk knapphet.',
+            'Bitcoins tak på 21 millioner mynter etablerte en standard om at matematisk forutsigbarhet skaper tillit. Bitcoin Lite Edition viderefører denne filosofien ved å redusere tilbudstaket til 2 100 000 tokens – en 10 ganger høyere numerisk knapphet.',
             'Denne tilnærmingen støttes av fullstendig etterprøvbarhet på en åpen og universelt tilgjengelig hovedbok.',
           ],
         },
@@ -803,7 +803,7 @@ export const no: TranslationSchema = {
             'Ticker: BLTE',
             'Nettverk: Solana Layer 1',
             'Tokenstandard: SPL Token / Token-2022',
-            'Totalt tilbud: 420 000 BLTE (Uforanderlig)',
+            'Totalt tilbud: 2 100 000 BLTE (Uforanderlig)',
             'Desimaler: 9',
             'Pregingsfullmakt: Tilbakekalt (Null)',
             'Frysefullmakt: Deaktivert',
@@ -811,10 +811,10 @@ export const no: TranslationSchema = {
         },
         {
           id: 'tokenomics',
-          num: '07',
-          title: '7. Tokenomikk og fordeling i tre tildelinger',
+          num: '7',
+          title: 'Tokenomics og matematisk allokering',
           content: [
-            'Streng matematisk fordeling i tre tildelinger (420 000 BLTE):\n• Rettferdig lansering og fellesskap: 55 % (231 000 BLTE)\n• Første likviditet: 25 % (105 000 BLTE)\n• Sekundær likviditet: 20 % (84 000 BLTE)',
+            "Streng matematisk allokering i tre hovedseksjoner (2 100 000 BLTE · 2.1M):\n• Rettferdig lansering: 60 % (1 260 000 BLTE)\n• Likviditetsbasseng: 20 % (420 000 BLTE)\n• Staking-belønninger, Dev, DEX-notering: 20 % (420 000 BLTE)",
           ],
         },
         {
@@ -902,10 +902,10 @@ export const no: TranslationSchema = {
         scarcity: {
           title: 'Kapittel 03: Komparativ knapphetsanalyse',
           p1: 'Knapphet er det økonomiske fundamentet for varig verdi. Bitcoin har et fast tak på 21 000 000 BTC fordelt over et århundre.',
-          p2: 'Bitcoin Lite Edition (BLTE) har en enda strengere knapphetsprofil: nøyaktig 420 000 tokens.',
+          p2: 'Bitcoin Lite Edition (BLTE) har en enda strengere knapphetsprofil: nøyaktig 2 100 000 tokens.',
           stat_btc: '21 000 000 BTC',
-          stat_ble: '420 000 BLTE',
-          ratio: '50 ganger høyere numerisk knapphet enn Bitcoin',
+          stat_ble: '2.1M BLTE',
+          ratio: '10 ganger høyere numerisk knapphet enn Bitcoin',
         },
         genesis: {
           title: 'Kapittel 04: Opprinnelsen til Bitcoin Lite Edition',
@@ -914,8 +914,8 @@ export const no: TranslationSchema = {
           p2: 'Femten år senere bringer Bitcoin Lite Edition denne tidløse tankegangen til Solana, med ~400ms oppgjør, minimale gebyrer og 100 % uforanderlighet.',
           invariants: [
             {
-              title: 'Fast tak på 420 000 tokens',
-              desc: '50 ganger mer numerisk knapt enn Bitcoin, permanent håndhevet på kjeden.',
+              title: 'Fast tak på 2 100 000 tokens',
+              desc: '10 ganger mer numerisk knapt enn Bitcoin, permanent håndhevet på kjeden.',
             },
             {
               title: 'Fullmakter tilbakekalt ved blokk null',

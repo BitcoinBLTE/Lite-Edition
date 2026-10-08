@@ -43,7 +43,7 @@ export const ScarcityComparison: React.FC = () => {
               </div>
               <div className="text-left sm:text-right shrink-0">
                 <div className="text-2xl sm:text-3xl font-mono font-[800] text-[#080808] tabular-nums">
-                  21,000,000
+                  21.M
                 </div>
                 <div className="text-xs font-mono text-[#888888] uppercase tracking-wider font-semibold">
                   {t.scarcity.step1_stat_label}
@@ -77,7 +77,7 @@ export const ScarcityComparison: React.FC = () => {
 
               <div className="text-left sm:text-right shrink-0 relative z-10">
                 <div className="text-3xl sm:text-4xl font-mono font-[900] text-[#B8661B] tabular-nums">
-                  420,000
+                  2.1M
                 </div>
                 <div className="text-xs font-mono text-[#4A4A4A] uppercase font-bold tracking-wider">
                   {t.scarcity.step2_stat_label}

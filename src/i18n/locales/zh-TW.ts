@@ -35,7 +35,7 @@ export const zhTW: TranslationSchema = {
   },
   hero: {
     independent_asset: 'Solana 獨立數位資產',
-    fixed_scarcity: '固定稀缺性：420,000 BLTE',
+    fixed_scarcity: '固定稀缺性：2,100,000 BLTE',
     title: 'BITCOIN LITE EDITION',
     subtitle: '數位資產領域的嶄新篇章',
     description: '« Bitcoin Lite Edition 是基於 Solana 建構的獨立數位資產，其靈感源自於奠定比特幣在數位金融中里程碑地位的核心原則——稀缺性、透明度、去中心化與無國界價值轉移。 »',
@@ -55,20 +55,20 @@ export const zhTW: TranslationSchema = {
     learn_more: '深入瞭解比特幣',
     explore_genesis: '創世與技術架構',
     tag_independent: 'Solana 獨立資產',
-    tag_cap: '數學上限：420,000 BLTE',
+    tag_cap: '數學上限：2,100,000 BLTE',
     tag_non_affiliated: '非 Bitcoin Core 附屬項目',
   },
   about: {
     kicker: '項目架構 · 核心原則',
     title: '什麼是 BITCOIN LITE EDITION？',
-    description: '比特幣革新了關於數位稀缺性、去中心化和開放點對點結算的思考方式。Bitcoin Lite Edition 透過 420,000 顆代幣的絕對硬頂，結合 Solana 區塊鏈的亞秒級速度、近乎為零的微小手續費以及徹底的鏈上透明度，重構了這一理念。',
+    description: '比特幣革新了關於數位稀缺性、去中心化和開放點對點結算的思考方式。Bitcoin Lite Edition 透過 2,100,000 顆代幣的絕對硬頂，結合 Solana 區塊鏈的亞秒級速度、近乎為零的微小手續費以及徹底的鏈上透明度，重構了這一理念。',
     pillars: [
       {
         kicker: '01 · 稀缺性',
-        title: '420,000 枚固定代幣總量',
+        title: '2,100,000 枚固定代幣總量',
         summary: '嚴格的數學稀缺，杜絕通膨。',
-        description: '設定了嚴格為 420,000 枚的絕對上限——比比特幣的 2100 萬枚少 50 倍。無二次鑄造，無動態增發，無隱藏解鎖。',
-        highlight: '固定 420K 上限',
+        description: '設定了嚴格為 2,100,000 枚的絕對上限——比比特幣的 2100 萬枚少 10 倍。無二次鑄造，無動態增發，無隱藏解鎖。',
+        highlight: '固定 2.1M 上限',
         verified: '已驗證',
         network: 'Solana L1',
       },
@@ -212,8 +212,8 @@ export const zhTW: TranslationSchema = {
       btc_supply_label: '比特幣最大供應量：',
       ble_supply_label: 'Bitcoin Lite Edition 供應量：',
       ratio_label: '稀缺比例：',
-      ratio_val: 'BLTE 在絕對數值上比 BTC 稀缺 50 倍',
-      supply_footer: 'Bitcoin Lite Edition 在創世之初已全額鑄造並封頂為 420,000 枚，增發權限永久銷毀。',
+      ratio_val: 'BLTE 在絕對數值上比 BTC 稀缺 10 倍',
+      supply_footer: 'Bitcoin Lite Edition 在創世之初已全額鑄造並封頂為 2,100,000 枚，增發權限永久銷毀。',
       decent_kicker: '去中心化原則',
       decent_title: '分散式網路 vs 中心化集權',
       decent_desc: '去中心化意味著沒有任何單個公司、政府或高管能夠回滾交易、篡改歷史帳目或肆意超發增發。',
@@ -234,8 +234,8 @@ export const zhTW: TranslationSchema = {
       invariants: [
         {
           tag: '創世不可變項 01',
-          title: '420,000 枚固定絕對硬頂',
-          desc: '總量嚴格鎖定在 420,000 枚——比比特幣稀缺 50 倍，永遠無法以任何方式增發。',
+          title: '2,100,000 枚固定絕對硬頂',
+          desc: '總量嚴格鎖定在 2,100,000 枚——比比特幣稀缺 10 倍，永遠無法以任何方式增發。',
         },
         {
           tag: '創世不可變項 02',
@@ -292,12 +292,12 @@ export const zhTW: TranslationSchema = {
       {
         metric: '總量 / 最大供應量',
         bitcoin: '21,000,000 BTC',
-        ble: '420,000 BLTE (固定不增)',
+        ble: '2,100,000 BLTE (固定不增)',
       },
       {
         metric: '供應量稀缺比率',
         bitcoin: '1x（基準參照）',
-        ble: '絕對數值上少 50 倍',
+        ble: '絕對數值上少 10 倍',
       },
       {
         metric: '區塊結算時間',
@@ -346,29 +346,29 @@ export const zhTW: TranslationSchema = {
   },
   tokenomics: {
     kicker: '經濟模型 · 數學硬約束',
-    title: '420,000 總供應量',
+    title: '2.1M 總供應量',
     subtitle: '基於中央數據模型確立的嚴苛分配方案。零鑄幣後門，絕無暗箱通膨。',
     fixed_cap: '絕對硬頂',
     total_supply: '總供應量',
     verified_alloc: '通過數學 100% 驗證的硬性分配方案（100%）',
     allocations: [
       {
-        id: 'season-1',
-        category: '公平啟動與社群公開發行',
-        description: '以去中心化公開方式直接分配給社群支持者與創世流通盤。',
+            id: "fair-launch",
+            category: "公平啟動 (Fair Launch)",
+            description: "透過 Solana 面向全社區無門檻公開分發，實現去中心化自由流通 (60%)。"
       },
       {
-        id: 'season-2',
-        category: '首期做市流動池',
-        description: '在 Solana 去中心化交易所注資並永久鎖定的初始 AMM 流動池。',
+            id: "liquidity-pool",
+            category: "流動性資金池 (Liquidity Pool)",
+            description: "在 Raydium 上部署的自動做市商 (AMM) 去中心化深度流動池 (20%)。"
       },
       {
-        id: 'season-3',
-        category: '次級流動池與生態擴展',
-        description: '次級深度流動性支援、跨協議流動性路由及生態交易所拓展。',
-      },
-    ],
-    data_source: '數據來源：中央單一配置模型。100% = 420,000 BLTE。',
+            id: "staking-dev-dex",
+            category: "質押獎勵、開發與 DEX 上線",
+            description: "Streamflow 質押收益獎勵、技術持續開發及 DEX/CEX 生態上線 (20%)。"
+      }
+],
+    data_source: '數據來源：中央單一配置模型。100% = 2,100,000 BLTE (2.1M)。',
   },
   how_to_buy: {
     kicker: '獲取全流程指引 · 步驟分解',
@@ -404,7 +404,7 @@ export const zhTW: TranslationSchema = {
         step: '05',
         title: '貼上官方代幣 Mint 地址',
         summary: '精確核對本站公示的正版代幣合約。',
-        description: '在兌換選擇框中貼上官方公佈的 BLTE Mint 地址。仔細核對代幣代號為 BLTE 且總量為 420,000。',
+        description: '在兌換選擇框中貼上官方公佈的 BLTE Mint 地址。仔細核對代幣代號為 BLTE 且總量為 2,100,000。',
         action_label: '複製合約地址',
       },
       {
@@ -423,9 +423,9 @@ export const zhTW: TranslationSchema = {
     ],
     advisory_kicker: '防釣魚安全預警 · 零信任準則',
     advisory_title: '警惕假冒仿盤，保護您的鏈上數位資產',
-    advisory_desc: '去中心化公鏈允許任何人創建同名代幣。請務必核實代幣 Mint 地址是否與本官方網站公佈的一字不差，並確認其總供應量嚴格等於 420,000 枚且鑄幣權完全放棄。',
+    advisory_desc: '去中心化公鏈允許任何人創建同名代幣。請務必核實代幣 Mint 地址是否與本官方網站公佈的一字不差，並確認其總供應量嚴格等於 2,100,000 枚且鑄幣權完全放棄。',
     security_items: [
-      '固定 420,000 枚總量硬頂',
+      '固定 2,100,000 枚總量硬頂',
       '鑄造增發權限已徹底廢除',
       '無任何管理員帳戶凍結權',
     ],
@@ -468,7 +468,7 @@ export const zhTW: TranslationSchema = {
       {
         title: '代幣總供應量',
         subtitle: '數學固化硬頂',
-        primaryValue: '420,000 BLTE',
+        primaryValue: '2,100,000 BLTE',
         detail: '硬編碼於創世參數中，任何人都無法對其進行稀釋或增發。',
         linkLabel: '在鏈上核實總供應量',
       },
@@ -619,11 +619,11 @@ export const zhTW: TranslationSchema = {
     items: [
       {
         question: '什麼是 Bitcoin Lite Edition？',
-        answer: 'Bitcoin Lite Edition 是構建於 Solana 上的獨立數位資產。它以比特幣的數位稀缺性哲學為靈感，設定了嚴格的 420,000 枚固定總量，並充分利用 Solana 的高吞吐量、極低費率和鏈上透明性運行。',
+        answer: 'Bitcoin Lite Edition 是構建於 Solana 上的獨立數位資產。它以比特幣的數位稀缺性哲學為靈感，設定了嚴格的 2,100,000 枚固定總量，並充分利用 Solana 的高吞吐量、極低費率和鏈上透明性運行。',
       },
       {
         question: '代幣的真正發行總量是多少？',
-        answer: '總量嚴格鎖定為 420,000 枚。不同於具有挖礦增發或解鎖拋壓的通膨幣種，BLTE 的總量自創世起便恆定封頂，絕無可能增發。',
+        answer: '總量嚴格鎖定為 2,100,000 枚。不同於具有挖礦增發或解鎖拋壓的通膨幣種，BLTE 的總量自創世起便恆定封頂，絕無可能增發。',
       },
       {
         question: '它是基於哪條公鏈發行的？',
@@ -636,7 +636,7 @@ export const zhTW: TranslationSchema = {
       },
       {
         question: '它的稀缺性與比特幣相比如何？',
-        answer: '比特幣的總上限是 21,000,000 枚，而 Bitcoin Lite Edition 的上限只有 420,000 枚，從數學數值來看比比特幣稀缺 50 倍，且能實現即時結算。',
+        answer: '比特幣的總上限是 21,000,000 枚，而 Bitcoin Lite Edition 的上限只有 2,100,000 枚，從數學數值來看比比特幣稀缺 10 倍，且能實現即時結算。',
       },
       {
         question: '我可以在哪裡安全地獲取它？',
@@ -656,13 +656,13 @@ export const zhTW: TranslationSchema = {
       },
       {
         question: '如何防範假幣欺詐和盜竊？',
-        answer: '因為公鏈沒有上幣準入，任何人都能起名為“Bitcoin Lite”，所以請嚴格以本站公佈的 Mint 合約地址為唯一基準，並核對總量是否為 420,000。官方人員絕不會私聊索要私鑰。',
+        answer: '因為公鏈沒有上幣準入，任何人都能起名為“Bitcoin Lite”，所以請嚴格以本站公佈的 Mint 合約地址為唯一基準，並核對總量是否為 2,100,000。官方人員絕不會私聊索要私鑰。',
         isDisclaimer: true,
       },
     ],
   },
   footer: {
-    brand_sub: '依託 Solana 原生構建 · 恆定 420,000 BLTE',
+    brand_sub: '依託 Solana 原生構建 · 恆定 2,100,000 BLTE',
     mission: '對數位稀缺性、公鏈無欺核查性與自律代幣體系的獨立探索。',
     btn_whitepaper: '閱讀官方白皮書',
     nav_heading: '網站導航',
@@ -747,7 +747,7 @@ export const zhTW: TranslationSchema = {
           num: '1',
           title: '執行摘要與核心引言',
           content: [
-            'Bitcoin Lite Edition 是原生構建於 Solana 公鏈上的獨立數位資產。受 2008 年比特幣確立的數位稀缺性範式啟發，本項目旨在現代化的高吞吐量、低延遲環境中，探索極端稀缺且具有硬性數學上限（420,000 枚）的資產應用。',
+            'Bitcoin Lite Edition 是原生構建於 Solana 公鏈上的獨立數位資產。受 2008 年比特幣確立的數位稀缺性範式啟發，本項目旨在現代化的高吞吐量、低延遲環境中，探索極端稀缺且具有硬性數學上限（2,100,000 枚）的資產應用。',
             '關鍵法律與概念澄清：Bitcoin Lite Edition 不是比特幣，不是其官方衍生品，與中本聰或 Bitcoin Core 團隊無任何僱傭或許可關係。它作為 SPL 標準代幣完全獨立地運行在 Solana 之上。',
           ],
         },
@@ -756,7 +756,7 @@ export const zhTW: TranslationSchema = {
           num: '2',
           title: '基礎哲學：數位稀缺的重構',
           content: [
-            '比特幣證明了數學稀缺可以成為去中心化價值的錨點，然而傳統工作量證明機制面臨確認遲緩與費用波動的掣肘。BLTE 在繼承 420,000 枚絕對硬頂與鑄幣權永久放棄的同時，借助歷史證明（PoH）共識實現了亞秒級確定性。',
+            '比特幣證明了數學稀缺可以成為去中心化價值的錨點，然而傳統工作量證明機制面臨確認遲緩與費用波動的掣肘。BLTE 在繼承 2,100,000 枚絕對硬頂與鑄幣權永久放棄的同時，借助歷史證明（PoH）共識實現了亞秒級確定性。',
             'BLTE 的稀缺性絕無任何動態通膨成分。沒有第二批次增發，沒有彈性通膨排期，也沒有依靠稀釋持幣人以維繫的節點增發獎勵。',
           ],
         },
@@ -765,7 +765,7 @@ export const zhTW: TranslationSchema = {
           num: '3',
           title: 'Bitcoin Lite Edition 的創世歷程',
           content: [
-            '作為對現代數位稀缺性的探求，BLTE 總量嚴格設置為 420,000 枚（比比特幣稀缺 50 倍）。在零號區塊，鑄造權（Mint Authority）和凍結權（Freeze Authority）被不可逆地註銷為空（null）。',
+            '作為對現代數位稀缺性的探求，BLTE 總量嚴格設置為 2,100,000 枚（比比特幣稀缺 10 倍）。在零號區塊，鑄造權（Mint Authority）和凍結權（Freeze Authority）被不可逆地註銷為空（null）。',
             '“Light”代表約 400 毫秒的閃電級結算、不足一美分的超輕微互動成本，以及環保高效的 PoS 鏈上共識。',
           ],
         },
@@ -775,7 +775,7 @@ export const zhTW: TranslationSchema = {
           title: '與比特幣的技術區別',
           content: [
             '比特幣運行於專屬的 PoW 礦工公鏈之上，採用 SHA-256 演算法、UTXO 帳本模型、10 分鐘出塊，總量 2100 萬枚。',
-            'BLTE 則是 Solana 上的 SPL 標準代幣，採用 PoH + Tower BFT 共識、基於帳戶的狀態轉移模型、約 400 毫秒出塊週期，總量 420,000 枚。二者在代碼、算力與治理上毫無關聯。',
+            'BLTE 則是 Solana 上的 SPL 標準代幣，採用 PoH + Tower BFT 共識、基於帳戶的狀態轉移模型、約 400 毫秒出塊週期，總量 2,100,000 枚。二者在代碼、算力與治理上毫無關聯。',
           ],
         },
         {
@@ -791,15 +791,15 @@ export const zhTW: TranslationSchema = {
           num: '6',
           title: '代幣完整技術規格參數',
           content: [
-            '• 代幣全稱：Bitcoin Lite Edition\n• 代幣代號：BLTE\n• 部署公鏈：Solana\n• 遵循標準：SPL / Token-2022\n• 總發行量：420,000（不可更改）\n• 精度位數：9\n• 增發權限：創世即刻永久註銷\n• 凍結權限：已註銷 / 無',
+            '• 代幣全稱：Bitcoin Lite Edition\n• 代幣代號：BLTE\n• 部署公鏈：Solana\n• 遵循標準：SPL / Token-2022\n• 總發行量：2,100,000（不可更改）\n• 精度位數：9\n• 增發權限：創世即刻永久註銷\n• 凍結權限：已註銷 / 無',
           ],
         },
         {
           id: 'tokenomics',
           num: '7',
-          title: '代幣經濟學分配（嚴苛 100% = 420,000 BLTE）',
+          title: '代幣經濟學分配（三大核心板塊）',
           content: [
-            '• 公平啟動與社群公開發行：55%（231,000 BLTE）\n• 首期做市流動池：25%（105,000 BLTE）\n• 次級流動池與生態擴展：20%（84,000 BLTE）',
+            "嚴苛數學硬約束分配（僅分為三大核心板塊，總量 2,100,000 BLTE · 2.1M）：\n• 公平啟動 (Fair Launch)：60% (1,260,000 BLTE)\n• 流動性資金池 (Liquidity Pool)：20% (420,000 BLTE)\n• 質押獎勵、開發與 DEX 上線：20% (420,000 BLTE)",
           ],
         },
         {
@@ -884,10 +884,10 @@ export const zhTW: TranslationSchema = {
         scarcity: {
           title: '第三章：稀缺性深度對比',
           p1: '稀缺性是長期經濟價值的承載根基。比特幣設定了 21,000,000 BTC 的總盤子，透過減半週期逐步釋放。',
-          p2: 'Bitcoin Lite Edition 則更進一步，執行了嚴苛至極的 420,000 枚固定絕對封頂。',
+          p2: 'Bitcoin Lite Edition 則更進一步，執行了嚴苛至極的 2,100,000 枚固定絕對封頂。',
           stat_btc: '21,000,000 BTC',
-          stat_ble: '420,000 BLTE',
-          ratio: '在絕對數值上比比特幣稀缺 50 倍',
+          stat_ble: '2.1M BLTE',
+          ratio: '在絕對數值上比比特幣稀缺 10 倍',
         },
         genesis: {
           title: '第四章：Bitcoin Lite Edition 創世歷程',
@@ -896,8 +896,8 @@ export const zhTW: TranslationSchema = {
           p2: '十五年後，為了將這一不朽信念移植至 Solana 高性能生態，BLTE 應運而生——提供約 400 毫秒終局性、微不足道的摩擦力與徹底的鏈上不變性。',
           invariants: [
             {
-              title: '420,000 枚固定絕對硬頂',
-              desc: '比比特幣稀缺 50 倍，永遠鎖定在鏈上。',
+              title: '2,100,000 枚固定絕對硬頂',
+              desc: '比比特幣稀缺 10 倍，永遠鎖定在鏈上。',
             },
             {
               title: '零號區塊永久銷毀特權',

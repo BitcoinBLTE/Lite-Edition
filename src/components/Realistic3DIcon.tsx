@@ -82,7 +82,7 @@ export const Realistic3DIcon: React.FC<Realistic3DIconProps> = ({
               d="M12 26 L14 20 L34 20 L36 26 Z"
               fill="url(#goldSheen-3d)"
             />
-            {/* Ingot Stamp Emblem: 420K Symbol */}
+            {/* Ingot Stamp Emblem: 2.1M BLTE Scarcity Emblem */}
             <circle cx="24" cy="23" r="2.5" fill="#78350F" opacity="0.8" />
             <path
               d="M23 22 L25 24 M25 22 L23 24"

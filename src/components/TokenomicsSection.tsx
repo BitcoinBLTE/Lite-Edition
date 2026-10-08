@@ -10,9 +10,9 @@ export const TokenomicsSection: React.FC = () => {
   const rawAllocations = TOKEN_CONFIG.allocations;
   const isMathematicallyValid = validateTokenomicsIntegrity();
   const alloc3DTypes: Record<string, Realistic3DIconType> = {
-    'season-1': 'globe',
-    'season-2': 'sol',
-    'season-3': 'dex',
+    'fair-launch': 'globe',
+    'liquidity-pool': 'sol',
+    'staking-dev-dex': 'dex',
   };
 
   const allocations = rawAllocations.map((alloc) => {
@@ -120,7 +120,7 @@ export const TokenomicsSection: React.FC = () => {
                       {t.tokenomics.fixed_cap}
                     </div>
                     <div className="text-3xl sm:text-4xl font-mono font-[900] text-[#080808] tabular-nums tracking-tight my-1">
-                      420,000
+                      {TOKEN_CONFIG.shortSupply}
                     </div>
                     <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2px]">
                       {t.tokenomics.total_supply}

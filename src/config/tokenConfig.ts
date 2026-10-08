@@ -4,7 +4,7 @@
  * Strict Zero-Fake-Data compliance:
  * - Mint address is dynamically configured or null prior to deployment.
  * - Social links only appear when live URLs exist.
- * - Allocations strictly equal 100% (420,000 tokens).
+ * - Allocations strictly equal 100% (2,100,000 tokens / 2.1M).
  * - Roadmap statuses strictly reflect verified milestones.
  */
 
@@ -37,6 +37,7 @@ export interface ProjectConfig {
   network: string;
   totalSupply: number;
   formattedSupply: string;
+  shortSupply: string;
   tokenStandard: string;
   decimals: number;
   mintAddress: string | null;
@@ -62,14 +63,15 @@ export const TOKEN_CONFIG: ProjectConfig = {
   shortName: "Bitcoin Lite",
   symbol: "BLTE",
   network: "Solana",
-  totalSupply: 420000,
-  formattedSupply: "420,000",
+  totalSupply: 2100000,
+  formattedSupply: "2,100,000",
+  shortSupply: "2.1M",
   tokenStandard: "SPL / Token-2022",
   decimals: 9,
   // When deployed to mainnet, populate via VITE_TOKEN_MINT_ADDRESS or set directly:
   mintAddress: (import.meta.env.VITE_TOKEN_MINT_ADDRESS as string) || null,
   tagline: "A New Chapter in the Digital Asset Landscape",
-  missionStatement: "Bitcoin Lite Edition is a Solana-based digital asset inspired by the principles that helped make Bitcoin a defining innovation in digital finance—scarcity, transparency, decentralization, and borderless digital value.",
+  missionStatement: "Bitcoin Lite Edition (BLTE) brings Bitcoin-inspired principles of scarcity, transparency, and decentralization to the Solana ecosystem.",
   authorityStatus: "Mint authority permanently revoked / Immutable supply on Solana genesis",
   isMainnetLive: Boolean(import.meta.env.VITE_TOKEN_MINT_ADDRESS),
   // Official White Paper PDF Link (defaults to verified hosted PDF, or custom Google Drive link when set)
@@ -127,28 +129,28 @@ export const TOKEN_CONFIG: ProjectConfig = {
   ],
   allocations: [
     {
-      id: "season-1",
-      category: "Fair Launch & Community",
-      percentage: 55,
-      amount: 231000,
-      description: "Direct community and public distribution with decentralized genesis access.",
+      id: "fair-launch",
+      category: "Fair Launch",
+      percentage: 60,
+      amount: 1260000,
+      description: "Direct community and public fair launch distribution on Solana with borderless access.",
       color: "#D97706" // Warm amber/gold
     },
     {
-      id: "season-2",
-      category: "First Liquidity",
-      percentage: 25,
-      amount: 105000,
-      description: "Initial automated market maker (AMM) DEX liquidity pool deployment on Solana.",
+      id: "liquidity-pool",
+      category: "Liquidity Pool",
+      percentage: 20,
+      amount: 420000,
+      description: "Automated market maker (AMM) DEX liquidity pool deployment on Raydium.",
       color: "#EAB308" // Gold
     },
     {
-      id: "season-3",
-      category: "Secondary Liquidity",
+      id: "staking-dev-dex",
+      category: "Staking rewards, Dev, dex listing",
       percentage: 20,
-      amount: 84000,
-      description: "Secondary decentralized liquidity depth, ecosystem routing, and exchange expansion.",
-      color: "#14F195" // Solana Green
+      amount: 420000,
+      description: "Streamflow staking yield rewards, technical development, and DEX/CEX ecosystem listings.",
+      color: "#B8661B" // Burnt Copper / Bronze
     }
   ],
   roadmap: [

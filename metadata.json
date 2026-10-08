@@ -1,6 +1,6 @@
 {
   "name": "Remix Remix Bitcoin Lite Edition | Digital Scarcity on Solana",
-  "description": "Bitcoin Lite Edition is an independent digital asset built on Solana, featuring a fixed total supply of 420,000 tokens and a transparency-focused ecosystem.",
+  "description": "Bitcoin Lite Edition (BLTE) is an independent digital asset built on Solana, featuring a fixed total supply of 2,100,000 tokens (2.1M) and a transparency-focused ecosystem.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

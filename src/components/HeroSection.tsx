@@ -37,10 +37,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {t.hero.title}
         </h1>
 
-        {/* Large readable introduction: comfortable 18-21px reading text */}
-        <p className="text-[18px] sm:text-[19px] md:text-[20px] text-[#4A4A4A] font-[450] leading-[1.75] sm:leading-[1.8] max-w-lg mx-auto mb-6 sm:mb-8 text-balance px-2">
-          {t.hero.description}
-        </p>
+        {/* Large readable introduction: comfortable 18-20px reading text with vertical orange-gold accent line, strictly displaying in three lines */}
+        <div className="max-w-xl mx-auto mb-6 sm:mb-8 px-2 flex items-stretch gap-3.5 sm:gap-4 text-left justify-center">
+          <div 
+            className="w-[5px] rounded-full bg-gradient-to-b from-[#EAB308] via-[#B8661B] to-[#964E10] shrink-0 self-stretch my-0.5" 
+            aria-hidden="true" 
+          />
+          <p className="text-[17px] sm:text-[18px] md:text-[19px] text-[#4A4A4A] font-[450] leading-[1.65] sm:leading-[1.7] max-w-[530px]">
+            <span className="hidden sm:inline">
+              Bitcoin Lite Edition (BLTE) brings Bitcoin-inspired principles<br />
+              of scarcity, transparency, and decentralization<br />
+              to the Solana ecosystem.
+            </span>
+            <span className="sm:hidden inline">
+              Bitcoin Lite Edition (BLTE) brings Bitcoin-inspired principles of scarcity, transparency, and decentralization to the Solana ecosystem.
+            </span>
+          </p>
+        </div>
 
         {/* Rotating 3D Coin directly above Explore Token Architecture button */}
         <div className="mb-6 sm:mb-7 flex justify-center items-center w-full">
@@ -108,7 +121,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
             <div className="flex flex-col items-center justify-center p-4 rounded-[20px] bg-[#FAF5EF] border border-[#EAB308]/5 shadow-2xs">
               <span className="text-2xl sm:text-3xl font-mono font-[900] text-[#080808] tabular-nums tracking-tight">
-                420,000
+                2.1M
               </span>
               <span className="text-[11px] font-mono font-bold text-[#888888] uppercase tracking-[2px] mt-1">
                 {t.hero.stat_supply || 'TOTAL SUPPLY'}

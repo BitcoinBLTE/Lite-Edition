@@ -35,7 +35,7 @@ export const es: TranslationSchema = {
   },
   hero: {
     independent_asset: 'Activo independiente en Solana',
-    fixed_scarcity: 'Escasez fija: 420.000 BLTE',
+    fixed_scarcity: 'Escasez fija: 2.100.000 BLTE',
     title: 'BITCOIN LITE EDITION',
     subtitle: 'Un nuevo capítulo en el panorama de activos digitales',
     description: '«Bitcoin Lite Edition es un activo digital basado en Solana, inspirado en los principios que convirtieron a Bitcoin en una innovación definitoria en las finanzas digitales: escasez, transparencia, descentralización y valor digital sin fronteras.»',
@@ -55,20 +55,20 @@ export const es: TranslationSchema = {
     learn_more: 'Aprender más sobre Bitcoin',
     explore_genesis: 'Génesis y arquitectura técnica',
     tag_independent: 'Activo independiente en Solana',
-    tag_cap: 'Límite matemático: 420.000 BLTE',
+    tag_cap: 'Límite matemático: 2.100.000 BLTE',
     tag_non_affiliated: 'No afiliado con Bitcoin Core',
   },
   about: {
     kicker: 'Arquitectura del proyecto · Principios fundamentales',
     title: '¿QUÉ ES BITCOIN LITE EDITION?',
-    description: 'Bitcoin introdujo una forma revolucionaria de entender la escasez digital, la descentralización y la liquidación abierta de igual a igual. Bitcoin Lite Edition explora ese concepto definitorio mediante un suministro ultraescaso y matemáticamente limitado de 420.000 tokens combinado con la velocidad subsegundo, comisiones insignificantes y la transparencia radical de la cadena de bloques Solana.',
+    description: 'Bitcoin introdujo una forma revolucionaria de entender la escasez digital, la descentralización y la liquidación abierta de igual a igual. Bitcoin Lite Edition explora ese concepto definitorio mediante un suministro ultraescaso y matemáticamente limitado de 2.100.000 tokens combinado con la velocidad subsegundo, comisiones insignificantes y la transparencia radical de la cadena de bloques Solana.',
     pillars: [
       {
         kicker: '01 · Escasez',
-        title: 'Suministro fijo de 420.000 tokens',
+        title: 'Suministro fijo de 2.100.000 tokens',
         summary: 'Escasez numérica estricta sin inflación.',
-        description: "Configurado con un límite estricto definitivo de exactamente 420.000 tokens: 50 veces menor que el límite numérico de 21.000.000 de Bitcoin. No existen emisiones secundarias, inflación dinámica ni desbloqueos de reservas ocultas.",
-        highlight: 'Límite fijo 420K',
+        description: "Configurado con un límite estricto definitivo de exactamente 2.100.000 tokens: 10 veces menor que el límite numérico de 21.000.000 de Bitcoin. No existen emisiones secundarias, inflación dinámica ni desbloqueos de reservas ocultas.",
+        highlight: 'Límite fijo 2.1M',
         verified: 'Verificado',
         network: 'Solana L1',
       },
@@ -208,11 +208,11 @@ export const es: TranslationSchema = {
       supply_kicker: 'Comparación económica',
       supply_title: 'Suministro fijo y perfiles de escasez',
       supply_p1: 'La escasez es el principio económico fundamental que permite a los activos digitales actuar como depósitos de valor fiables. Al imponer un límite de emisión inmutable por código, Bitcoin eliminó el riesgo de devaluación arbitraria impulsada por los bancos centrales.',
-      supply_p2: 'Bitcoin Lite Edition lleva este modelo de escasez numérica estricta a un extremo matemático dentro del entorno Solana, limitando la emisión total a exactamente 420.000 tokens.',
+      supply_p2: 'Bitcoin Lite Edition lleva este modelo de escasez numérica estricta a un extremo matemático dentro del entorno Solana, limitando la emisión total a exactamente 2.100.000 tokens.',
       btc_supply_label: 'Suministro total de Bitcoin',
       ble_supply_label: 'Suministro total de Bitcoin Lite Edition',
       ratio_label: 'Multiplicador de escasez numérica',
-      ratio_val: '50 veces menor en suministro que Bitcoin',
+      ratio_val: '10 veces menor en suministro que Bitcoin',
       supply_footer: 'Ambos modelos comparten el principio inmutable de cero expansión de suministro más allá del límite codificado.',
       decent_kicker: 'Arquitectura de validación',
       decent_title: 'Descentralización a través de redes distribuidas',
@@ -234,8 +234,8 @@ export const es: TranslationSchema = {
       invariants: [
         {
           tag: 'Invariante 01',
-          title: 'Límite fijo incondicional de 420.000',
-          desc: '50 veces numéricamente más escaso que el límite de 21 millones de Bitcoin. El suministro total existe al momento de la creación génesis sin cronogramas de inflación ni emisiones secundarias.',
+          title: 'Límite fijo incondicional de 2.100.000',
+          desc: '10 veces numéricamente más escaso que el límite de 21 millones de Bitcoin. El suministro total existe al momento de la creación génesis sin cronogramas de inflación ni emisiones secundarias.',
         },
         {
           tag: 'Invariante 02',
@@ -270,8 +270,8 @@ export const es: TranslationSchema = {
     step1_stat_label: 'Límite máximo de suministro',
     step2_kicker: 'Paso 02 · Activo de escasez independiente',
     step2_title: 'Bitcoin Lite Edition (BLTE)',
-    step2_desc: 'Un token independiente que implementa un límite estricto de 420.000 tokens en la capa de ejecución de Solana con emisión revocada.',
-    step2_stat_label: 'Suministro numérico 50 veces menor',
+    step2_desc: 'Un token independiente que implementa un límite estricto de 2.100.000 tokens en la capa de ejecución de Solana con emisión revocada.',
+    step2_stat_label: 'Suministro numérico 10 veces menor',
     step3_kicker: 'Paso 03 · Infraestructura de liquidación',
     step3_title: 'Red Solana',
     step3_layer: 'Capa base L1',
@@ -297,7 +297,7 @@ export const es: TranslationSchema = {
       {
         metric: 'Suministro total / máximo',
         bitcoin: '21.000.000 BTC',
-        ble: '420.000 BLTE (Fijo)',
+        ble: '2.100.000 BLTE (Fijo)',
       },
       {
         metric: 'Proporción de límite de suministro',
@@ -351,29 +351,29 @@ export const es: TranslationSchema = {
   },
   tokenomics: {
     kicker: 'Estructura de distribución · Escasez matemática',
-    title: '420.000 SUMINISTRO TOTAL',
+    title: '2.1M SUMINISTRO TOTAL',
     subtitle: 'Una distribución de tokens estrictamente limitada configurada a través de tres asignaciones estratégicas. Cero puertas traseras de emisión, cero inflación oculta.',
     fixed_cap: 'LÍMITE FIJO',
     total_supply: 'SUMINISTRO TOTAL',
     verified_alloc: 'Asignación verificada del 100% matemática (100%)',
     allocations: [
       {
-        id: 'season-1',
-        category: 'Lanzamiento justo y comunidad',
-        description: 'Distribución comunitaria y pública directa con acceso descentralizado desde el bloque cero.',
+            id: "fair-launch",
+            category: "Lanzamiento justo",
+            description: "Distribución comunitaria y pública directa con acceso descentralizado en Solana (60%)."
       },
       {
-        id: 'season-2',
-        category: 'Primera liquidez',
-        description: 'Despliegue del pool inicial de liquidez AMM en exchanges descentralizados de Solana.',
+            id: "liquidity-pool",
+            category: "Pool de liquidez",
+            description: "Despliegue de pool de liquidez AMM DEX en Raydium (20%)."
       },
       {
-        id: 'season-3',
-        category: 'Liquidez secundaria',
-        description: 'Profundidad de liquidez secundaria descentralizada, enrutamiento del ecosistema y expansión.',
-      },
-    ],
-    data_source: 'Fuente de datos: Modelo de configuración central único. 100% = 420.000 BLTE.',
+            id: "staking-dev-dex",
+            category: "Recompensas de staking, Dev, listado DEX",
+            description: "Recompensas de rendimiento de staking en Streamflow, desarrollo técnico y listados en DEX/CEX (20%)."
+      }
+],
+    data_source: 'Fuente de datos: Modelo de configuración central único. 100% = 2.100.000 BLTE (2.1M).',
   },
   how_to_buy: {
     kicker: 'Guía de adquisición · Recomendaciones de seguridad',
@@ -471,7 +471,7 @@ export const es: TranslationSchema = {
       {
         title: 'Suministro de tokens',
         subtitle: 'Límite matemático fijo',
-        primaryValue: '420.000 BLTE',
+        primaryValue: '2.100.000 BLTE',
         detail: 'Codificado en los parámetros de creación génesis del token. El suministro nunca puede aumentarse, inflarse ni diluirse.',
         linkLabel: 'Verificar suministro en la cadena',
       },
@@ -560,7 +560,7 @@ export const es: TranslationSchema = {
         title: 'Fase 01: Arquitectura y Génesis',
         description: 'Desarrollo de las especificaciones del token, arquitectura de escasez y despliegue del contrato inteligente.',
         items: [
-          'Modelo matemático de tokenomics y límite estricto de 420.000',
+          'Modelo matemático de tokenomics y límite estricto de 2.100.000',
           'Desarrollo del contrato inteligente SPL en Solana',
           'Revocación permanente de autoridades de emisión y congelación',
           'Lanzamiento del portal web oficial y Libro Blanco',
@@ -620,11 +620,11 @@ export const es: TranslationSchema = {
     items: [
       {
         question: '¿Qué es Bitcoin Lite Edition?',
-        answer: 'Bitcoin Lite Edition es un activo digital independiente construido de forma nativa en la blockchain Solana. Inspirado en el paradigma fundacional de escasez digital establecido por Bitcoin, introduce un suministro fijo y limitado de 420.000 tokens diseñado para operar con la arquitectura de alta velocidad, bajo costo y transparencia de Solana.',
+        answer: 'Bitcoin Lite Edition es un activo digital independiente construido de forma nativa en la blockchain Solana. Inspirado en el paradigma fundacional de escasez digital establecido por Bitcoin, introduce un suministro fijo y limitado de 2.100.000 tokens diseñado para operar con la arquitectura de alta velocidad, bajo costo y transparencia de Solana.',
       },
       {
         question: '¿Cuál es el suministro total?',
-        answer: 'El suministro total es estrictamente de 420.000 tokens. A diferencia de los tokens inflacionarios con emisiones dinámicas, subsidios de staking o periodos de desbloqueo, este suministro se fija en la génesis y nunca puede aumentarse.',
+        answer: 'El suministro total es estrictamente de 2.100.000 tokens. A diferencia de los tokens inflacionarios con emisiones dinámicas, subsidios de staking o periodos de desbloqueo, este suministro se fija en la génesis y nunca puede aumentarse.',
       },
       {
         question: '¿En qué cadena de bloques está construido?',
@@ -637,7 +637,7 @@ export const es: TranslationSchema = {
       },
       {
         question: '¿Cómo se compara la escasez con la de Bitcoin?',
-        answer: 'Bitcoin fue pionero en la escasez digital con un límite máximo estricto de 21.000.000 de monedas. Bitcoin Lite Edition cuenta con un límite estricto de 420.000 tokens, lo que representa un suministro numérico 50 veces menor. Además, BLTE se ejecuta en Solana con finalidad en menos de un segundo en lugar de bloques de 10 minutos de prueba de trabajo.',
+        answer: 'Bitcoin fue pionero en la escasez digital con un límite máximo estricto de 21.000.000 de monedas. Bitcoin Lite Edition cuenta con un límite estricto de 2.100.000 tokens, lo que representa un suministro numérico 10 veces menor. Además, BLTE se ejecuta en Solana con finalidad en menos de un segundo en lugar de bloques de 10 minutos de prueba de trabajo.',
       },
       {
         question: '¿Cómo y dónde puedo comprar o adquirir Bitcoin Lite Edition?',
@@ -649,7 +649,7 @@ export const es: TranslationSchema = {
       },
       {
         question: '¿Puede el suministro de tokens aumentar o diluirse alguna vez?',
-        answer: 'No. La arquitectura del contrato inteligente especifica la revocación permanente de la autoridad de emisión tras el despliegue génesis, estableciéndola en null. Este estado garantiza un límite de suministro absoluto e inmutable de 420.000 BLTE respaldado por el consenso de Solana.',
+        answer: 'No. La arquitectura del contrato inteligente especifica la revocación permanente de la autoridad de emisión tras el despliegue génesis, estableciéndola en null. Este estado garantiza un límite de suministro absoluto e inmutable de 2.100.000 BLTE respaldado por el consenso de Solana.',
       },
       {
         question: '¿Qué billeteras criptográficas pueden almacenar tokens BLTE?',
@@ -657,7 +657,7 @@ export const es: TranslationSchema = {
       },
       {
         question: '¿Cómo me protejo contra tokens falsificados y estafas?',
-        answer: 'Dado que cualquiera puede crear tokens con nombres arbitrarios en blockchains públicas, verifica siempre la dirección auténtica del contrato mint publicada en este sitio web oficial. Comprueba que el suministro sea exactamente 420.000 y que la autoridad de emisión esté revocada en Solscan. Los miembros del equipo nunca te enviarán mensajes directos primero.',
+        answer: 'Dado que cualquiera puede crear tokens con nombres arbitrarios en blockchains públicas, verifica siempre la dirección auténtica del contrato mint publicada en este sitio web oficial. Comprueba que el suministro sea exactamente 2.100.000 y que la autoridad de emisión esté revocada en Solscan. Los miembros del equipo nunca te enviarán mensajes directos primero.',
         isDisclaimer: true,
       },
     ],
@@ -748,7 +748,7 @@ export const es: TranslationSchema = {
           num: '01',
           title: '1. Resumen ejecutivo y extracto',
           content: [
-            'Bitcoin Lite Edition es un activo digital independiente construido de forma nativa en la blockchain Solana. Inspirado en el paradigma fundacional de escasez digital establecido por Bitcoin en 2008, Bitcoin Lite Edition explora la aplicación de un activo ultraescaso y matemáticamente limitado (420.000 tokens) dentro de un entorno de ejecución moderno, de alto rendimiento y baja latencia.',
+            'Bitcoin Lite Edition es un activo digital independiente construido de forma nativa en la blockchain Solana. Inspirado en el paradigma fundacional de escasez digital establecido por Bitcoin en 2008, Bitcoin Lite Edition explora la aplicación de un activo ultraescaso y matemáticamente limitado (2.100.000 tokens) dentro de un entorno de ejecución moderno, de alto rendimiento y baja latencia.',
             'A diferencia de las bifurcaciones tradicionales que replican el estado del libro mayor UTXO o el consenso de prueba de trabajo que consume mucha energía, Bitcoin Lite Edition implementa la escasez estricta a través del estándar SPL Token de Solana, logrando una finalidad de liquidación de ~400ms con comisiones de red por debajo de un centavo (<$0.001).',
             'Al revocar irrevocablemente las autoridades de emisión y congelación en la génesis, el protocolo garantiza una oferta máxima matemática sin puertas traseras de gobernanza ni emisiones dinámicas.',
           ],
@@ -759,7 +759,7 @@ export const es: TranslationSchema = {
           title: '2. Filosofía fundacional: Escasez digital',
           content: [
             'En 2008, la publicación del libro blanco de Bitcoin demostró por primera vez que el valor duradero en el ámbito digital requería una escasez computacionalmente verificable e inmune a la interferencia política o institucional.',
-            'El límite estricto de 21 millones de monedas de Bitcoin estableció un precedente de que la previsibilidad matemática fomenta la confianza. Bitcoin Lite Edition amplía esta filosofía reduciendo el límite de suministro a 420.000 tokens, lo que representa una escasez numérica 50 veces superior.',
+            'El límite estricto de 21 millones de monedas de Bitcoin estableció un precedente de que la previsibilidad matemática fomenta la confianza. Bitcoin Lite Edition amplía esta filosofía reduciendo el límite de suministro a 2.100.000 tokens, lo que representa una escasez numérica 10 veces superior.',
             'Esta agresiva escasez numérica está respaldada por una verificación radical en cadena en un libro mayor abierto y descentralizado accesible universalmente.',
           ],
         },
@@ -803,7 +803,7 @@ export const es: TranslationSchema = {
             'Símbolo / Ticker: BLTE',
             'Red de cadena de bloques: Solana Layer 1',
             'Estándar del token: SPL Token / Token-2022',
-            'Suministro total inmutable: 420.000 BLTE',
+            'Suministro total inmutable: 2.100.000 BLTE',
             'Decimales: 9',
             'Autoridad de emisión (Mint): Permanentemente revocada (Null)',
             'Autoridad de congelación (Freeze): Deshabilitada permanentemente',
@@ -811,10 +811,10 @@ export const es: TranslationSchema = {
         },
         {
           id: 'tokenomics',
-          num: '07',
-          title: '7. Tokenomics y distribución en tres asignaciones',
+          num: '7',
+          title: 'Tokenomics y asignación matemática',
           content: [
-            'Asignación matemática estricta en tres asignaciones (420.000 BLTE):\n• Lanzamiento justo y comunidad: 55% (231.000 BLTE)\n• Primera liquidez: 25% (105.000 BLTE)\n• Liquidez secundaria: 20% (84.000 BLTE)',
+            "Asignación matemática estricta en tres secciones principales (2.100.000 BLTE · 2.1M):\n• Lanzamiento justo: 60% (1.260.000 BLTE)\n• Pool de liquidez: 20% (420.000 BLTE)\n• Recompensas de staking, Dev, listado DEX: 20% (420.000 BLTE)",
           ],
         },
         {
@@ -902,10 +902,10 @@ export const es: TranslationSchema = {
         scarcity: {
           title: 'Capítulo 03: Análisis comparativo de escasez',
           p1: 'La escasez es el pilar económico del valor duradero. Bitcoin fijó su emisión en 21.000.000 BTC a lo largo de más de un siglo mediante halvings periódicos.',
-          p2: 'Bitcoin Lite Edition (BLTE) implementa un perfil de escasez aún más estricto: un límite absoluto de exactamente 420.000 tokens.',
+          p2: 'Bitcoin Lite Edition (BLTE) implementa un perfil de escasez aún más estricto: un límite absoluto de exactamente 2.100.000 tokens.',
           stat_btc: '21.000.000 BTC',
-          stat_ble: '420.000 BLTE',
-          ratio: 'Escasez numérica 50 veces mayor que Bitcoin',
+          stat_ble: '2.1M BLTE',
+          ratio: 'Escasez numérica 10 veces mayor que Bitcoin',
         },
         genesis: {
           title: 'Capítulo 04: La génesis de Bitcoin Lite Edition',
@@ -914,8 +914,8 @@ export const es: TranslationSchema = {
           p2: 'Quince años después, Bitcoin Lite Edition traslada ese espíritu intemporal al ecosistema de Solana, ofreciendo finalidad en ~400ms, comisiones ínfimas y 100% de inmutabilidad en la cadena.',
           invariants: [
             {
-              title: 'Límite fijo de 420.000 tokens',
-              desc: '50 veces numéricamente más escaso que Bitcoin, aplicado de forma permanente en la cadena.',
+              title: 'Límite fijo de 2.100.000 tokens',
+              desc: '10 veces numéricamente más escaso que Bitcoin, aplicado de forma permanente en la cadena.',
             },
             {
               title: 'Revocación de autoridad en el bloque cero',

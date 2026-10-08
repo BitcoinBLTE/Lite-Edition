@@ -35,7 +35,7 @@ export const ptPT: TranslationSchema = {
   },
   hero: {
     independent_asset: 'Ativo Solana Independente',
-    fixed_scarcity: 'Escassez Fixa: 420.000 BLTE',
+    fixed_scarcity: 'Escassez Fixa: 2.100.000 BLTE',
     title: 'BITCOIN LITE EDITION',
     subtitle: 'Um novo capítulo no panorama dos ativos digitais',
     description: '« Bitcoin Lite Edition é um ativo digital baseado em Solana, inspirado nos princípios que tornaram a Bitcoin uma inovação definitiva nas finanças digitais: escassez, transparência, descentralização e transferência de valor sem fronteiras. »',
@@ -55,20 +55,20 @@ export const ptPT: TranslationSchema = {
     learn_more: 'Saber mais sobre a Bitcoin',
     explore_genesis: 'Génese e Arquitetura Técnica',
     tag_independent: 'Ativo Solana Independente',
-    tag_cap: 'Teto Matemático: 420.000 BLTE',
+    tag_cap: 'Teto Matemático: 2.100.000 BLTE',
     tag_non_affiliated: 'Não afiliado à Bitcoin Core',
   },
   about: {
     kicker: 'Arquitetura do Projeto · Princípios Centrais',
     title: 'O QUE É O BITCOIN LITE EDITION?',
-    description: 'A Bitcoin revolucionou a forma de pensar a escassez digital e as liquidações P2P. O Bitcoin Lite Edition explora esse paradigma através de uma oferta rigorosamente limitada a 420.000 tokens, combinada com a velocidade de sub-segundo, taxas mínimas e transparência radical da Solana.',
+    description: 'A Bitcoin revolucionou a forma de pensar a escassez digital e as liquidações P2P. O Bitcoin Lite Edition explora esse paradigma através de uma oferta rigorosamente limitada a 2.100.000 tokens, combinada com a velocidade de sub-segundo, taxas mínimas e transparência radical da Solana.',
     pillars: [
       {
         kicker: '01 · Escassez',
-        title: 'Oferta Fixa de 420.000 Tokens',
+        title: 'Oferta Fixa de 2.100.000 Tokens',
         summary: 'Escassez numérica estrita sem inflação.',
-        description: 'Teto definitivo de 420.000 tokens — 50 vezes inferior ao limite de 21 milhões da Bitcoin. Sem emissões secundárias ou reservas ocultas.',
-        highlight: 'Teto Fixo de 420K',
+        description: 'Teto definitivo de 2.100.000 tokens — 10 vezes inferior ao limite de 21 milhões da Bitcoin. Sem emissões secundárias ou reservas ocultas.',
+        highlight: 'Teto Fixo de 2.1M',
         verified: 'Verificado',
         network: 'Solana L1',
       },
@@ -213,7 +213,7 @@ export const ptPT: TranslationSchema = {
       ble_supply_label: 'Oferta do Bitcoin Lite Edition:',
       ratio_label: 'Proporção Numérica:',
       ratio_val: 'O BLTE é numericamente 50x mais escasso que a BTC',
-      supply_footer: 'A oferta total do Bitcoin Lite Edition foi totalmente emitida na génese, limitada a 420.000 tokens e com autoridade de emissão revogada.',
+      supply_footer: 'A oferta total do Bitcoin Lite Edition foi totalmente emitida na génese, limitada a 2.100.000 tokens e com autoridade de emissão revogada.',
       decent_kicker: 'Princípio da Descentralização',
       decent_title: 'Redes Distribuídas vs Autoridades Centrais',
       decent_desc: 'A descentralização garante que nenhuma entidade governamental ou corporativa pode reverter transações ou emitir moeda arbitrariamente.',
@@ -234,8 +234,8 @@ export const ptPT: TranslationSchema = {
       invariants: [
         {
           tag: 'Invariante da Génese 01',
-          title: 'O Teto Fixo de 420.000 Tokens',
-          desc: '50 vezes mais escasso que a Bitcoin. Nenhum token adicional poderá jamais ser criado.',
+          title: 'O Teto Fixo de 2.100.000 Tokens',
+          desc: '10 vezes mais escasso que a Bitcoin. Nenhum token adicional poderá jamais ser criado.',
         },
         {
           tag: 'Invariante da Génese 02',
@@ -292,7 +292,7 @@ export const ptPT: TranslationSchema = {
       {
         metric: 'Oferta Total / Máxima',
         bitcoin: '21.000.000 BTC',
-        ble: '420.000 BLTE (Fixa)',
+        ble: '2.100.000 BLTE (Fixa)',
       },
       {
         metric: 'Rácio de Escassez',
@@ -346,29 +346,29 @@ export const ptPT: TranslationSchema = {
   },
   tokenomics: {
     kicker: 'Estrutura Económica · Escassez Matemática',
-    title: '420.000 OFERTA TOTAL',
+    title: '2.1M OFERTA TOTAL',
     subtitle: 'Distribuição estritamente limitada a partir de um modelo central. Sem emissão adicional, sem inflação oculta.',
     fixed_cap: 'TETO FIXO',
     total_supply: 'OFERTA TOTAL',
     verified_alloc: 'Alocação 100% Verificada Matematicamente (100%)',
     allocations: [
       {
-        id: 'season-1',
-        category: 'Lançamento Justo e Comunidade',
-        description: 'Alocação comunitária aberta com acesso descentralizado.',
+            id: "fair-launch",
+            category: "Lançamento Justo",
+            description: "Distribuição comunitária e pública direta na Solana com acesso sem fronteiras (60%)."
       },
       {
-        id: 'season-2',
-        category: 'Primeira Liquidez',
-        description: 'Liquidez permanente em corretoras descentralizadas na Solana.',
+            id: "liquidity-pool",
+            category: "Pool de Liquidez",
+            description: "Implementação de pool de liquidez AMM DEX no Raydium (20%)."
       },
       {
-        id: 'season-3',
-        category: 'Liquidez Secundária',
-        description: 'Profundidade de liquidez secundária, rotatividade do ecossistema e expansão.',
-      },
-    ],
-    data_source: 'Fonte de dados: Modelo de configuração central. 100% = 420.000 BLTE.',
+            id: "staking-dev-dex",
+            category: "Recompensas de Staking, Dev, Listagem DEX",
+            description: "Recompensas de staking Streamflow, desenvolvimento técnico e listagens em DEX/CEX (20%)."
+      }
+],
+    data_source: 'Fonte de dados: Modelo de configuração central único. 100% = 2.100.000 BLTE (2.1M).',
   },
   how_to_buy: {
     kicker: 'Guia de Aquisição · Procedimento Passo a Passo',
@@ -404,7 +404,7 @@ export const ptPT: TranslationSchema = {
         step: '05',
         title: 'Inserir o Endereço de Mint Oficial',
         summary: 'Cole o identificador autêntico do contrato BLTE.',
-        description: 'No seletor de tokens, cole o endereço oficial BLTE deste site. Confirme o símbolo BLTE e a oferta de 420.000.',
+        description: 'No seletor de tokens, cole o endereço oficial BLTE deste site. Confirme o símbolo BLTE e a oferta de 2.100.000.',
         action_label: 'Copiar Endereço',
       },
       {
@@ -423,9 +423,9 @@ export const ptPT: TranslationSchema = {
     ],
     advisory_kicker: 'Aviso de Segurança e Anti-Fraude · Protocolo Zero Confiança',
     advisory_title: 'Proteja o seu capital contra tokens falsificados e imitadores',
-    advisory_desc: 'Em redes abertas, qualquer pessoa pode criar tokens com nomes semelhantes. Verifique sempre se o endereço de contrato coincide com o exibido neste site oficial e se a oferta é de 420.000 com autoridade revogada.',
+    advisory_desc: 'Em redes abertas, qualquer pessoa pode criar tokens com nomes semelhantes. Verifique sempre se o endereço de contrato coincide com o exibido neste site oficial e se a oferta é de 2.100.000 com autoridade revogada.',
     security_items: [
-      'Teto fixo de 420.000 tokens',
+      'Teto fixo de 2.100.000 tokens',
       'Autoridade de emissão revogada',
       'Sem poderes de congelamento',
     ],
@@ -468,7 +468,7 @@ export const ptPT: TranslationSchema = {
       {
         title: 'Oferta de Tokens',
         subtitle: 'Teto Matemático Fixo',
-        primaryValue: '420.000 BLTE',
+        primaryValue: '2.100.000 BLTE',
         detail: 'Inscrito na génese. A oferta nunca poderá ser inflacionada ou diluída.',
         linkLabel: 'Verificar oferta na cadeia',
       },
@@ -619,11 +619,11 @@ export const ptPT: TranslationSchema = {
     items: [
       {
         question: 'O que é o Bitcoin Lite Edition?',
-        answer: 'É um ativo digital independente construído na Solana. Inspirado na escassez da Bitcoin, possui um teto fixo de 420.000 tokens e opera na infraestrutura rápida e económica da Solana.',
+        answer: 'É um ativo digital independente construído na Solana. Inspirado na escassez da Bitcoin, possui um teto fixo de 2.100.000 tokens e opera na infraestrutura rápida e económica da Solana.',
       },
       {
         question: 'Qual é a oferta total?',
-        answer: 'A oferta é estritamente de 420.000 tokens. Não há inflação nem emissões secundárias posteriores.',
+        answer: 'A oferta é estritamente de 2.100.000 tokens. Não há inflação nem emissões secundárias posteriores.',
       },
       {
         question: 'Em que blockchain foi construído?',
@@ -636,7 +636,7 @@ export const ptPT: TranslationSchema = {
       },
       {
         question: 'Como se compara a escassez com a Bitcoin?',
-        answer: 'A Bitcoin tem um teto de 21 milhões. O BLTE tem um teto de 420.000 — 50 vezes menor numericamente, com liquidação instantânea.',
+        answer: 'A Bitcoin tem um teto de 21 milhões. O BLTE tem um teto de 2.100.000 — 10 vezes menor numericamente, com liquidação instantânea.',
       },
       {
         question: 'Como e onde posso adquirir?',
@@ -648,7 +648,7 @@ export const ptPT: TranslationSchema = {
       },
       {
         question: 'A oferta pode alguma vez aumentar?',
-        answer: 'Não. A autoridade de emissão foi irrevogavelmente revogada na génese, fixando o limite em 420.000 BLTE.',
+        answer: 'Não. A autoridade de emissão foi irrevogavelmente revogada na génese, fixando o limite em 2.100.000 BLTE.',
       },
       {
         question: 'Que carteiras suportam BLTE?',
@@ -656,13 +656,13 @@ export const ptPT: TranslationSchema = {
       },
       {
         question: 'Como me posso proteger de fraudes?',
-        answer: 'Certifique-se de que o endereço do contrato coincide exatamente com o publicado neste site e que a oferta é de 420.000.',
+        answer: 'Certifique-se de que o endereço do contrato coincide exatamente com o publicado neste site e que a oferta é de 2.100.000.',
         isDisclaimer: true,
       },
     ],
   },
   footer: {
-    brand_sub: 'Construído na Solana · Fixado em 420.000 BLTE',
+    brand_sub: 'Construído na Solana · Fixado em 2.100.000 BLTE',
     mission: 'Uma exploração independente da escassez digital e da transparência aberta na blockchain.',
     btn_whitepaper: 'Ler Whitepaper',
     nav_heading: 'Navegação',
@@ -747,7 +747,7 @@ export const ptPT: TranslationSchema = {
           num: '1',
           title: 'Sumário Executivo e Resumo',
           content: [
-            'O Bitcoin Lite Edition é um ativo digital independente construído nativamente na Solana. Inspirado na escassez matemática estabelecida em 2008, explora um teto restrito de 420.000 tokens num ambiente veloz e moderno.',
+            'O Bitcoin Lite Edition é um ativo digital independente construído nativamente na Solana. Inspirado na escassez matemática estabelecida em 2008, explora um teto restrito de 2.100.000 tokens num ambiente veloz e moderno.',
             'NOTA IMPORTANTE: Não é a Bitcoin nem tem ligação à Bitcoin Core ou a Satoshi Nakamoto.',
           ],
         },
@@ -756,7 +756,7 @@ export const ptPT: TranslationSchema = {
           num: '2',
           title: 'Filosofia Fundamental: A Escassez Reimaginada',
           content: [
-            'A escassez na Bitcoin comprovou o valor descentralizado, mas a arquitetura PoW acarreta latência. O BLTE une 420.000 tokens fixos ao consenso Proof-of-History da Solana para liquidações imediatas.',
+            'A escassez na Bitcoin comprovou o valor descentralizado, mas a arquitetura PoW acarreta latência. O BLTE une 2.100.000 tokens fixos ao consenso Proof-of-History da Solana para liquidações imediatas.',
             'A escassez é estrita e sem inflação posterior.',
           ],
         },
@@ -765,7 +765,7 @@ export const ptPT: TranslationSchema = {
           num: '3',
           title: 'A Génese do Bitcoin Lite Edition',
           content: [
-            'Criado com exatamente 420.000 tokens (50x mais escasso que a Bitcoin). Autoridades de mint e freeze revogadas no bloco zero.',
+            'Criado com exatamente 2.100.000 tokens (50x mais escasso que a Bitcoin). Autoridades de mint e freeze revogadas no bloco zero.',
             'O paradigma «Light» significa liquidações em ~400ms, taxas de fração de cêntimo e menor pegada ecológica.',
           ],
         },
@@ -775,7 +775,7 @@ export const ptPT: TranslationSchema = {
           title: 'Distinção Técnica da Bitcoin',
           content: [
             'Bitcoin opera em PoW, SHA-256, UTXO, blocos de 10 min e 21 milhões de moedas.',
-            'BLTE é um token SPL na Solana L1 com PoH, modelo de contas, blocos de ~400ms e 420.000 unidades.',
+            'BLTE é um token SPL na Solana L1 com PoH, modelo de contas, blocos de ~400ms e 2.100.000 unidades.',
           ],
         },
         {
@@ -791,15 +791,15 @@ export const ptPT: TranslationSchema = {
           num: '6',
           title: 'Especificações Técnicas',
           content: [
-            '• Nome: Bitcoin Lite Edition\n• Símbolo: BLTE\n• Rede: Solana\n• Padrão: SPL / Token-2022\n• Oferta Total: 420.000 (Fixa)\n• Decimais: 9\n• Autoridade de Mint: Permanentemente Revogada\n• Autoridade de Freeze: Nenhuma / Desativada',
+            '• Nome: Bitcoin Lite Edition\n• Símbolo: BLTE\n• Rede: Solana\n• Padrão: SPL / Token-2022\n• Oferta Total: 2.100.000 (Fixa)\n• Decimais: 9\n• Autoridade de Mint: Permanentemente Revogada\n• Autoridade de Freeze: Nenhuma / Desativada',
           ],
         },
         {
           id: 'tokenomics',
           num: '7',
-          title: 'Alocação Tokenomics (Total 100% = 420.000 BLTE)',
+          title: 'Tokenomics e Alocação Matemática',
           content: [
-            '• Lançamento Justo e Comunidade: 55% (231.000 BLTE)\n• Primeira Liquidez: 25% (105.000 BLTE)\n• Liquidez Secundária: 20% (84.000 BLTE)',
+            "Alocação matemática estrita em três secções principais (2.100.000 BLTE · 2.1M):\n• Lançamento Justo: 60% (1.260.000 BLTE)\n• Pool de Liquidez: 20% (420.000 BLTE)\n• Recompensas de Staking, Dev, Listagem DEX: 20% (420.000 BLTE)",
           ],
         },
         {
@@ -883,10 +883,10 @@ export const ptPT: TranslationSchema = {
         scarcity: {
           title: 'Capítulo 03: Análise Comparativa de Escassez',
           p1: 'A escassez é a base do valor sustentável. A Bitcoin fixou 21 milhões de moedas.',
-          p2: 'O Bitcoin Lite Edition adota um limite ainda mais estrito de 420.000 tokens.',
+          p2: 'O Bitcoin Lite Edition adota um limite ainda mais estrito de 2.100.000 tokens.',
           stat_btc: '21.000.000 BTC',
-          stat_ble: '420.000 BLTE',
-          ratio: '50 vezes mais escasso numericamente que a Bitcoin',
+          stat_ble: '2.1M BLTE',
+          ratio: '10 vezes mais escasso numericamente que a Bitcoin',
         },
         genesis: {
           title: 'Capítulo 04: A Génese do Bitcoin Lite Edition',
@@ -895,8 +895,8 @@ export const ptPT: TranslationSchema = {
           p2: '15 anos depois, o BLTE traz este ideal para a Solana com finalidade de 400ms e taxas insignificantes.',
           invariants: [
             {
-              title: 'Limite Fixo de 420.000 Tokens',
-              desc: '50 vezes mais escasso que a Bitcoin, gravado na cadeia.',
+              title: 'Limite Fixo de 2.100.000 Tokens',
+              desc: '10 vezes mais escasso que a Bitcoin, gravado na cadeia.',
             },
             {
               title: 'Revogação de Autoridades no Bloco Zero',

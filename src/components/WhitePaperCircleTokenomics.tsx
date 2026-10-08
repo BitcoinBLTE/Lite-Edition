@@ -11,9 +11,9 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
   const rawAllocations = TOKEN_CONFIG.allocations;
   const isMathematicallyValid = validateTokenomicsIntegrity();
   const alloc3DTypes: Record<string, Realistic3DIconType> = {
-    'season-1': 'globe',
-    'season-2': 'sol',
-    'season-3': 'dex',
+    'fair-launch': 'globe',
+    'liquidity-pool': 'sol',
+    'staking-dev-dex': 'dex',
   };
 
   const allocations = rawAllocations.map((alloc) => {
@@ -49,8 +49,8 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
     <div className="space-y-6 pt-2">
       {/* Intro Editorial Note */}
       <p className="text-sm sm:text-base text-[#4A4A4A] font-[450] leading-[1.8]">
-        Bitcoin Lite Edition enforces an inviolable mathematical cap of 420,000 tokens on Solana Layer 1.
-        The allocation is structured to ensure maximum community distribution, sustained liquidity, and verifiable long-term stability.
+        Bitcoin Lite Edition enforces an inviolable mathematical cap of {TOKEN_CONFIG.shortSupply} tokens on Solana Layer 1.
+        The allocation is structured into three major sections only: 60% Fair Launch, 20% Liquidity Pool, and 20% Staking rewards, Dev, dex listing.
       </p>
 
       {/* Main Circle Tokenomic Container */}
@@ -118,10 +118,10 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
                       Fixed Hard Cap
                     </div>
                     <div className="text-3xl sm:text-4xl font-mono font-[900] text-[#080808] tabular-nums tracking-tight my-0.5">
-                      420,000
+                      {TOKEN_CONFIG.shortSupply}
                     </div>
                     <div className="text-[11px] font-mono font-bold text-[#B8661B] uppercase tracking-[2px]">
-                      TOTAL BLTE SUPPLY
+                      BLTE TOTAL SUPPLY
                     </div>
                   </div>
                 )}
@@ -192,7 +192,7 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
         <div className="mt-8 pt-6 border-t border-[#E5E5E5] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-2 text-[#166534] font-mono font-bold">
             <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
-            <span>100% Mathematical Integrity (420,000 / 420,000 BLTE Accounted For)</span>
+            <span>100% Mathematical Integrity · {TOKEN_CONFIG.shortSupply} BLTE Verified Allocation</span>
           </div>
 
           <div className="flex items-center gap-2 text-[#888888] font-mono">

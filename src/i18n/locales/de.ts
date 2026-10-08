@@ -35,7 +35,7 @@ export const de: TranslationSchema = {
   },
   hero: {
     independent_asset: 'Unabhängiges Solana-Asset',
-    fixed_scarcity: 'Feste Knappheit: 420.000 BLTE',
+    fixed_scarcity: 'Feste Knappheit: 2.100.000 BLTE',
     title: 'BITCOIN LITE EDITION',
     subtitle: 'Ein neues Kapitel in der digitalen Asset-Landschaft',
     description: '« Bitcoin Lite Edition ist ein auf Solana basierendes digitales Asset, inspiriert von den Prinzipien, die Bitcoin zu einer definierenden Innovation machten: mathematische Knappheit, Transparenz, Dezentralisierung und grenzenloser Wertetransfer. »',
@@ -55,20 +55,20 @@ export const de: TranslationSchema = {
     learn_more: 'Mehr über Bitcoin erfahren',
     explore_genesis: 'Genesis & Technische Architektur',
     tag_independent: 'Unabhängiges Solana-Asset',
-    tag_cap: 'Mathematische Obergrenze: 420.000 BLTE',
+    tag_cap: 'Mathematische Obergrenze: 2.100.000 BLTE',
     tag_non_affiliated: 'Keine Verbindung zu Bitcoin Core',
   },
   about: {
     kicker: 'Projektarchitektur · Grundprinzipien',
     title: 'WAS IST BITCOIN LITE EDITION?',
-    description: 'Bitcoin revolutionierte die Vorstellung von digitaler Knappheit und dezentraler P2P-Abrechnung. Bitcoin Lite Edition erforscht dieses Paradigma mit einer ultra-knappen Obergrenze von 420.000 Token kombiniert mit der Millisekunden-Geschwindigkeit, den minimalen Gebühren und der On-Chain-Transparenz von Solana.',
+    description: 'Bitcoin revolutionierte die Vorstellung von digitaler Knappheit und dezentraler P2P-Abrechnung. Bitcoin Lite Edition erforscht dieses Paradigma mit einer ultra-knappen Obergrenze von 2.100.000 Token kombiniert mit der Millisekunden-Geschwindigkeit, den minimalen Gebühren und der On-Chain-Transparenz von Solana.',
     pillars: [
       {
         kicker: '01 · Knappheit',
-        title: 'Feste Obergrenze von 420.000 Token',
+        title: 'Feste Obergrenze von 2.100.000 Token',
         summary: 'Strenge mathematische Knappheit ohne Inflation.',
-        description: 'Eine endgültige Obergrenze von genau 420.000 Token – 50-mal seltener als Bitcoins 21 Millionen. Keine sekundären Mints, keine versteckten Reserve-Freischaltungen.',
-        highlight: 'Feste 420K Obergrenze',
+        description: 'Eine endgültige Obergrenze von genau 2.100.000 Token – 10-mal seltener als Bitcoins 21 Millionen. Keine sekundären Mints, keine versteckten Reserve-Freischaltungen.',
+        highlight: 'Feste 2.1M Obergrenze',
         verified: 'Verifiziert',
         network: 'Solana L1',
       },
@@ -212,8 +212,8 @@ export const de: TranslationSchema = {
       btc_supply_label: 'Bitcoin Maximalangebot:',
       ble_supply_label: 'Bitcoin Lite Edition Angebot:',
       ratio_label: 'Numerisches Verhältnis:',
-      ratio_val: 'BLTE ist numerisch 50-mal knapper als BTC',
-      supply_footer: 'Das Gesamtangebot von Bitcoin Lite Edition wurde bei Genesis vollständig auf 420.000 Token geprägt und die Prägeberechtigung dauerhaft gelöscht.',
+      ratio_val: 'BLTE ist numerisch 10-mal knapper als BTC',
+      supply_footer: 'Das Gesamtangebot von Bitcoin Lite Edition wurde bei Genesis vollständig auf 2.100.000 Token geprägt und die Prägeberechtigung dauerhaft gelöscht.',
       decent_kicker: 'Prinzip der Dezentralisierung',
       decent_title: 'Verteilte Netzwerke vs. Zentrale Instanzen',
       decent_desc: 'Dezentralisierung garantiert, dass kein einzelnes Unternehmen und keine Regierung Transaktionen rückgängig machen oder beliebig Geld drucken kann.',
@@ -234,8 +234,8 @@ export const de: TranslationSchema = {
       invariants: [
         {
           tag: 'Genesis Invariante 01',
-          title: 'Das feste 420.000 Limit',
-          desc: '50-mal seltener als Bitcoin. Unter keinen Umständen können weitere Token erzeugt werden.',
+          title: 'Das feste 2.100.000 Limit',
+          desc: '10-mal seltener als Bitcoin. Unter keinen Umständen können weitere Token erzeugt werden.',
         },
         {
           tag: 'Genesis Invariante 02',
@@ -292,12 +292,12 @@ export const de: TranslationSchema = {
       {
         metric: 'Gesamt- / Maximalangebot',
         bitcoin: '21.000.000 BTC',
-        ble: '420.000 BLTE (Fest)',
+        ble: '2.100.000 BLTE (Fest)',
       },
       {
         metric: 'Knappheitsverhältnis',
         bitcoin: '1x (Referenzbasis)',
-        ble: '50-mal geringeres Angebot',
+        ble: '10-mal geringeres Angebot',
       },
       {
         metric: 'Transaktionsbestätigung',
@@ -346,29 +346,29 @@ export const de: TranslationSchema = {
   },
   tokenomics: {
     kicker: 'Wirtschaftsstruktur · Mathematische Knappheit',
-    title: '420.000 GESAMTANGEBOT',
+    title: '2.1M GESAMTANGEBOT',
     subtitle: 'Streng gedeckelte Token-Verteilung aus einem zentralen Datenmodell. Keine Prägehintertür, keine Inflation.',
     fixed_cap: 'FESTES LIMIT',
     total_supply: 'GESAMTANGEBOT',
     verified_alloc: '100% mathematisch verifizierte Zuteilung (100%)',
     allocations: [
       {
-        id: 'season-1',
-        category: 'Fair Launch & Community',
-        description: 'Direkte Zuteilung an die Community und dezentrale Liquidität.',
+            id: "fair-launch",
+            category: "Fairer Start",
+            description: "Direkte Verteilung an die Community und Öffentlichkeit auf Solana mit grenzenlosem Zugang (60%)."
       },
       {
-        id: 'season-2',
-        category: 'Erste Liquidität',
-        description: 'Dauerhafte AMM-Liquidität auf dezentralen Solana-Börsen.',
+            id: "liquidity-pool",
+            category: "Liquiditätspool",
+            description: "AMM DEX Liquiditätspool-Bereitstellung auf Raydium (20%)."
       },
       {
-        id: 'season-3',
-        category: 'Sekundäre Liquidität',
-        description: 'Sekundäre Liquiditätstiefe, Ökosystem-Routing und Börsenerweiterung.',
-      },
-    ],
-    data_source: 'Datenquelle: Zentrales Konfigurationsmodell. 100% = 420.000 BLTE.',
+            id: "staking-dev-dex",
+            category: "Staking-Belohnungen, Dev, DEX-Listing",
+            description: "Streamflow Staking-Ertragsbelohnungen, technische Entwicklung und DEX/CEX-Listings (20%)."
+      }
+],
+    data_source: 'Datenquelle: Zentrales Konfigurationsmodell. 100% = 2.100.000 BLTE (2.1M).',
   },
   how_to_buy: {
     kicker: 'Kaufanleitung · Schritt-für-Schritt-Verfahren',
@@ -404,7 +404,7 @@ export const de: TranslationSchema = {
         step: '05',
         title: 'Offizielle Mint-Adresse eingeben',
         summary: 'Fügen Sie die authentische Token-ID ein.',
-        description: 'Fügen Sie die offizielle BLTE-Adresse aus diesem Portal in das Token-Auswahlfeld ein. Prüfen Sie das Symbol BLTE und das 420.000 Angebot.',
+        description: 'Fügen Sie die offizielle BLTE-Adresse aus diesem Portal in das Token-Auswahlfeld ein. Prüfen Sie das Symbol BLTE und das 2.100.000 Angebot.',
         action_label: 'Adresse kopieren',
       },
       {
@@ -423,9 +423,9 @@ export const de: TranslationSchema = {
     ],
     advisory_kicker: 'Sicherheits- & Betrugshinweis · Zero-Trust-Protokoll',
     advisory_title: 'Schützen Sie Ihr Kapital vor gefälschten Token & Betrügern',
-    advisory_desc: 'Auf dezentralen Börsen kann jeder Token mit ähnlichen Namen erstellen. Prüfen Sie immer die exakte Mint-Adresse auf dieser Website und stellen Sie sicher, dass das Angebot exakt 420.000 Token beträgt und die Mint-Autorität widerrufen ist.',
+    advisory_desc: 'Auf dezentralen Börsen kann jeder Token mit ähnlichen Namen erstellen. Prüfen Sie immer die exakte Mint-Adresse auf dieser Website und stellen Sie sicher, dass das Angebot exakt 2.100.000 Token beträgt und die Mint-Autorität widerrufen ist.',
     security_items: [
-      'Festes Limit von 420.000 Token',
+      'Festes Limit von 2.100.000 Token',
       'Prägeberechtigung widerrufen',
       'Keine Einfrier-Befugnis',
     ],
@@ -468,7 +468,7 @@ export const de: TranslationSchema = {
       {
         title: 'Token-Angebot',
         subtitle: 'Festes mathematisches Limit',
-        primaryValue: '420.000 BLTE',
+        primaryValue: '2.100.000 BLTE',
         detail: 'Fest im Genesis-Code verankert. Das Angebot kann niemals erweitert oder verwässert werden.',
         linkLabel: 'Angebot On-Chain prüfen',
       },
@@ -619,11 +619,11 @@ export const de: TranslationSchema = {
     items: [
       {
         question: 'Was ist Bitcoin Lite Edition?',
-        answer: 'Bitcoin Lite Edition ist ein eigenständiges digitales Asset auf Solana. Inspiriert von Bitcoins Knappheit, besitzt es ein festes Angebot von 420.000 Token und operiert auf Solanas schnellem und transparentem Hauptbuch.',
+        answer: 'Bitcoin Lite Edition ist ein eigenständiges digitales Asset auf Solana. Inspiriert von Bitcoins Knappheit, besitzt es ein festes Angebot von 2.100.000 Token und operiert auf Solanas schnellem und transparentem Hauptbuch.',
       },
       {
         question: 'Wie hoch ist das Gesamtangebot?',
-        answer: 'Das Gesamtangebot beträgt exakt 420.000 Token. Es ist von Beginn an festgeschrieben und kann nicht erhöht werden.',
+        answer: 'Das Gesamtangebot beträgt exakt 2.100.000 Token. Es ist von Beginn an festgeschrieben und kann nicht erhöht werden.',
       },
       {
         question: 'Auf welcher Blockchain basiert das Token?',
@@ -636,7 +636,7 @@ export const de: TranslationSchema = {
       },
       {
         question: 'Wie verhält sich die Knappheit im Vergleich zu Bitcoin?',
-        answer: 'Bitcoins Obergrenze liegt bei 21.000.000. BLTE hat ein Limit von 420.000 Token – numerisch 50-mal seltener, bei sofortiger Abrechnung.',
+        answer: 'Bitcoins Obergrenze liegt bei 21.000.000. BLTE hat ein Limit von 2.100.000 Token – numerisch 10-mal seltener, bei sofortiger Abrechnung.',
       },
       {
         question: 'Wo kann ich BLTE erwerben?',
@@ -648,7 +648,7 @@ export const de: TranslationSchema = {
       },
       {
         question: 'Kann das Token-Angebot jemals verwässert werden?',
-        answer: 'Nein. Die Prägeberechtigung wurde unwiderruflich auf null gesetzt, womit das Limit von 420.000 BLTE dauerhaft feststeht.',
+        answer: 'Nein. Die Prägeberechtigung wurde unwiderruflich auf null gesetzt, womit das Limit von 2.100.000 BLTE dauerhaft feststeht.',
       },
       {
         question: 'Welche Wallets unterstützen BLTE?',
@@ -656,13 +656,13 @@ export const de: TranslationSchema = {
       },
       {
         question: 'Wie schütze ich mich vor Nachahmern?',
-        answer: 'Prüfen Sie immer, ob die Vertragsadresse mit der auf dieser offiziellen Website übereinstimmt und das Limit 420.000 beträgt.',
+        answer: 'Prüfen Sie immer, ob die Vertragsadresse mit der auf dieser offiziellen Website übereinstimmt und das Limit 2.100.000 beträgt.',
         isDisclaimer: true,
       },
     ],
   },
   footer: {
-    brand_sub: 'Gebaut auf Solana · Feste 420.000 BLTE',
+    brand_sub: 'Gebaut auf Solana · Feste 2.100.000 BLTE',
     mission: 'Eine eigenständige Erforschung digitaler Knappheit und verifizierbarer Token-Architektur.',
     btn_whitepaper: 'Whitepaper lesen',
     nav_heading: 'Navigation',
@@ -747,7 +747,7 @@ export const de: TranslationSchema = {
           num: '1',
           title: 'Zusammenfassung & Abstract',
           content: [
-            'Bitcoin Lite Edition ist ein unabhängiges digitales Asset auf Solana. Inspiriert von der 2008 begründeten digitalen Knappheit, erforscht es 420.000 Token in einer hochleistungsfähigen Umgebung.',
+            'Bitcoin Lite Edition ist ein unabhängiges digitales Asset auf Solana. Inspiriert von der 2008 begründeten digitalen Knappheit, erforscht es 2.100.000 Token in einer hochleistungsfähigen Umgebung.',
             'WICHTIGER HINWEIS: Bitcoin Lite Edition ist kein Bitcoin, kein offizielles Bitcoin-Produkt und steht in keiner Verbindung zu Bitcoin Core oder Satoshi Nakamoto.',
           ],
         },
@@ -756,7 +756,7 @@ export const de: TranslationSchema = {
           num: '2',
           title: 'Grundphilosophie: Knappheit neu gedacht',
           content: [
-            'Während Bitcoin den Wert mathematischer Knappheit bewies, führen ältere PoW-Systeme zu Latenzen. BLTE wendet feste Knappheit von 420.000 Token auf Solanas PoH-Konsens an.',
+            'Während Bitcoin den Wert mathematischer Knappheit bewies, führen ältere PoW-Systeme zu Latenzen. BLTE wendet feste Knappheit von 2.100.000 Token auf Solanas PoH-Konsens an.',
             'Die Knappheit ist absolut und ohne Inflation. Es gibt keine Zweitprägungen oder inflationsfinanzierten Staking-Erträge.',
           ],
         },
@@ -765,7 +765,7 @@ export const de: TranslationSchema = {
           num: '3',
           title: 'Die Genesis von Bitcoin Lite Edition',
           content: [
-            'Genau 420.000 Token (50x seltener als Bitcoin). Ab Block Null wurden Mint- und Freeze-Befugnisse dauerhaft gelöscht.',
+            'Genau 2.100.000 Token (50x seltener als Bitcoin). Ab Block Null wurden Mint- und Freeze-Befugnisse dauerhaft gelöscht.',
             '«Light» steht für ~400ms Finalität, Gebühren unter 0,001 $ und umweltfreundlichen PoS.',
           ],
         },
@@ -775,7 +775,7 @@ export const de: TranslationSchema = {
           title: 'Technische Unterscheidung zu Bitcoin',
           content: [
             'Bitcoin läuft auf PoW, SHA-256, UTXO, 10-Minuten-Blöcken mit 21 Mio. Coins.',
-            'BLTE ist ein SPL-Token auf Solana L1 mit PoH, kontobasierter Architektur, ~400ms Blöcken und 420.000 Einheiten.',
+            'BLTE ist ein SPL-Token auf Solana L1 mit PoH, kontobasierter Architektur, ~400ms Blöcken und 2.100.000 Einheiten.',
           ],
         },
         {
@@ -791,15 +791,15 @@ export const de: TranslationSchema = {
           num: '6',
           title: 'Technische Token-Spezifikationen',
           content: [
-            '• Name: Bitcoin Lite Edition\n• Symbol: BLTE\n• Netzwerk: Solana\n• Standard: SPL / Token-2022\n• Angebot: 420.000 (Fest)\n• Dezimalstellen: 9\n• Mint-Autorität: Dauerhaft widerrufen\n• Freeze-Autorität: Deaktiviert',
+            '• Name: Bitcoin Lite Edition\n• Symbol: BLTE\n• Netzwerk: Solana\n• Standard: SPL / Token-2022\n• Angebot: 2.100.000 (Fest)\n• Dezimalstellen: 9\n• Mint-Autorität: Dauerhaft widerrufen\n• Freeze-Autorität: Deaktiviert',
           ],
         },
         {
           id: 'tokenomics',
           num: '7',
-          title: 'Tokenomics-Zuteilung (Exakt 100% = 420.000 BLTE)',
+          title: 'Tokenomics & Mathematische Allokation',
           content: [
-            '• Fair Launch & Community: 55% (231.000 BLTE)\n• Erste Liquidität: 25% (105.000 BLTE)\n• Sekundäre Liquidität: 20% (84.000 BLTE)',
+            "Strikte mathematische Allokation in drei Hauptabschnitten (2.100.000 BLTE · 2.1M):\n• Fairer Start: 60% (1.260.000 BLTE)\n• Liquiditätspool: 20% (420.000 BLTE)\n• Staking-Belohnungen, Dev, DEX-Listing: 20% (420.000 BLTE)",
           ],
         },
         {
@@ -883,10 +883,10 @@ export const de: TranslationSchema = {
         scarcity: {
           title: 'Kapitel 03: Knappheitsvergleich',
           p1: 'Knappheit ist die ökonomische Basis beständigen Wertes. Bitcoins Limit liegt bei 21 Millionen.',
-          p2: 'BLTE setzt auf ein noch schärferes Limit von exakt 420.000 Token.',
+          p2: 'BLTE setzt auf ein noch schärferes Limit von exakt 2.100.000 Token.',
           stat_btc: '21.000.000 BTC',
-          stat_ble: '420.000 BLTE',
-          ratio: '50-mal höhere numerische Knappheit als Bitcoin',
+          stat_ble: '2.1M BLTE',
+          ratio: '10-mal höhere numerische Knappheit als Bitcoin',
         },
         genesis: {
           title: 'Kapitel 04: Die Genesis von Bitcoin Lite Edition',
@@ -895,8 +895,8 @@ export const de: TranslationSchema = {
           p2: '15 Jahre später bringt BLTE dieses Erbe auf Solana – mit 400ms Finalität und minimalen Gebühren.',
           invariants: [
             {
-              title: 'Festes 420.000 Limit',
-              desc: '50-mal seltener als Bitcoin, auf der Chain dauerhaft verankert.',
+              title: 'Festes 2.100.000 Limit',
+              desc: '10-mal seltener als Bitcoin, auf der Chain dauerhaft verankert.',
             },
             {
               title: 'Rechte-Widerruf ab Block Null',

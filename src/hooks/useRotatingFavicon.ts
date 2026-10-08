@@ -69,12 +69,12 @@ export function useRotatingFavicon() {
         ctx.textBaseline = 'middle';
         ctx.fillText('₿', 0, 0.5);
       } else {
-        // Back: 420K
+        // Back: 2.1M
         ctx.fillStyle = '#F59E0B';
         ctx.font = 'bold 9px monospace';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('420K', 0, 0);
+        ctx.fillText('2.1M', 0, 0);
       }
 
       ctx.restore();

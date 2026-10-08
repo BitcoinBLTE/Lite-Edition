@@ -273,8 +273,11 @@ export const BitcoinEducationModal: React.FC<BitcoinEducationModalProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
                 {edu.chapters.genesis.invariants.map((inv, idx) => (
-                  <div key={idx} className="p-4 rounded-[16px] bg-[#FCFCFC] border border-[#E5E5E5] space-y-1">
-                    <span className="font-bold text-[#080808] text-xs block font-display">{inv.title}</span>
+                  <div key={idx} className="p-4 rounded-[16px] bg-[#FCFCFC] border border-[#E5E5E5] space-y-2">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-bold text-[#080808] text-xs block font-display">{inv.title}</span>
+                      <Realistic3DIcon type={['scarcity', 'execution', 'security'][idx] || 'scarcity'} size="sm" />
+                    </div>
                     <p className="text-xs text-[#4A4A4A] leading-[1.7]">{inv.desc}</p>
                   </div>
                 ))}

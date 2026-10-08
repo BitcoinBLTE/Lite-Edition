@@ -206,11 +206,11 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                 <div className="p-5 rounded-[20px] bg-white border border-[#E5E5E5] space-y-3 font-mono text-xs shadow-2xs">
                   <div className="flex items-center justify-between pb-2.5 border-b border-[#E5E5E5]">
                     <span className="text-[#666666]">{t.education.tab3.btc_supply_label}:</span>
-                    <strong className="text-[#080808] text-sm font-bold">21,000,000 BTC</strong>
+                    <strong className="text-[#080808] text-sm font-bold">21.M BTC</strong>
                   </div>
                   <div className="flex items-center justify-between pb-2.5 border-b border-[#E5E5E5]">
                     <span className="text-[#666666]">{t.education.tab3.ble_supply_label}:</span>
-                    <strong className="text-[#B8661B] text-sm font-bold">420,000 BLTE</strong>
+                    <strong className="text-[#B8661B] text-sm font-bold">2.1M BLTE</strong>
                   </div>
                   <div className="flex items-center justify-between pt-1 text-[#166534] font-bold">
                     <span>{t.education.tab3.ratio_label}:</span>

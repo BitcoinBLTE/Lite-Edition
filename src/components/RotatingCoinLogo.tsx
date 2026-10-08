@@ -67,7 +67,7 @@ export const RotatingCoinLogo: React.FC<RotatingCoinLogoProps> = ({
           </div>
         </div>
 
-        {/* BACK FACE (180°): Golden Rim + 420K BLTE */}
+        {/* BACK FACE (180°): Golden Rim + 2.1M BLTE */}
         <div
           className="absolute inset-0 rounded-full flex flex-col items-center justify-center shadow-sm"
           style={{
@@ -95,7 +95,7 @@ export const RotatingCoinLogo: React.FC<RotatingCoinLogoProps> = ({
                 filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.8))',
               }}
             >
-              420K
+              2.1M
             </span>
             <span
               className="font-bold leading-none tracking-tighter text-amber-400"

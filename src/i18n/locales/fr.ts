@@ -35,7 +35,7 @@ export const fr: TranslationSchema = {
   },
   hero: {
     independent_asset: 'Actif Solana Indépendant',
-    fixed_scarcity: 'Rareté fixée : 420 000 BLTE',
+    fixed_scarcity: 'Rareté fixée : 2 100 000 BLTE',
     title: 'BITCOIN LITE EDITION',
     subtitle: "Un nouveau chapitre dans l'univers des actifs numériques",
     description: "« Bitcoin Lite Edition est un actif numérique basé sur Solana, inspiré par les principes fondateurs de Bitcoin dans la finance numérique : rareté, transparence, décentralisation et transfert de valeur sans frontières. »",
@@ -55,20 +55,20 @@ export const fr: TranslationSchema = {
     learn_more: 'En savoir plus sur Bitcoin',
     explore_genesis: 'Genèse et architecture technique',
     tag_independent: 'Actif Solana indépendant',
-    tag_cap: 'Plafond mathématique : 420 000 BLTE',
+    tag_cap: 'Plafond mathématique : 2 100 000 BLTE',
     tag_non_affiliated: 'Non affilié à Bitcoin Core',
   },
   about: {
     kicker: 'Architecture du projet · Principes fondamentaux',
     title: "QU'EST-CE QUE BITCOIN LITE EDITION ?",
-    description: "Bitcoin a révolutionné la façon de concevoir la rareté numérique et les règlements P2P. Bitcoin Lite Edition explore ce paradigme à travers une offre ultra-restreinte de 420 000 jetons, associée à la rapidité sub-seconde, aux frais négligeables et à la transparence radicale de Solana.",
+    description: "Bitcoin a révolutionné la façon de concevoir la rareté numérique et les règlements P2P. Bitcoin Lite Edition explore ce paradigme à travers une offre ultra-restreinte de 2 100 000 jetons, associée à la rapidité sub-seconde, aux frais négligeables et à la transparence radicale de Solana.",
     pillars: [
       {
         kicker: '01 · Rareté',
-        title: 'Offre fixe de 420 000 jetons',
+        title: 'Offre fixe de 2 100 000 jetons',
         summary: 'Rareté numérique stricte sans inflation.',
-        description: "Plafond définitif de 420 000 jetons, soit 50 fois inférieur à la limite de 21 millions de Bitcoin. Aucune émission secondaire, aucune dilution ou déverrouillage de réserve.",
-        highlight: 'Plafond fixe de 420K',
+        description: "Plafond définitif de 2 100 000 jetons, soit 10 fois inférieur à la limite de 21 millions de Bitcoin. Aucune émission secondaire, aucune dilution ou déverrouillage de réserve.",
+        highlight: 'Plafond fixe de 2.1M',
         verified: 'Vérifié',
         network: 'Solana L1',
       },
@@ -212,8 +212,8 @@ export const fr: TranslationSchema = {
       btc_supply_label: 'Offre maximale de Bitcoin :',
       ble_supply_label: 'Offre de Bitcoin Lite Edition :',
       ratio_label: 'Ratio de rareté numérique :',
-      ratio_val: 'BLTE est 50 fois plus rare numériquement que BTC',
-      supply_footer: "L'offre totale de Bitcoin Lite Edition est entièrement émise et plafonnée à 420 000, l'autorité d'émission étant révoquée dès la création.",
+      ratio_val: 'BLTE est 10 fois plus rare numériquement que BTC',
+      supply_footer: "L'offre totale de Bitcoin Lite Edition est entièrement émise et plafonnée à 2 100 000, l'autorité d'émission étant révoquée dès la création.",
       decent_kicker: 'Principe de décentralisation',
       decent_title: 'Réseaux distribués vs Autorités centrales',
       decent_desc: 'La décentralisation garantit qu’aucune entité ne peut annuler de transaction, censurer des soldes ou créer de la monnaie arbitrairement.',
@@ -234,8 +234,8 @@ export const fr: TranslationSchema = {
       invariants: [
         {
           tag: 'Invariant de la Genèse 01',
-          title: 'Le plafond fixe de 420 000 jetons',
-          desc: '50 fois plus rare que les 21 millions de Bitcoin. Aucun jeton supplémentaire ne pourra jamais être créé.',
+          title: 'Le plafond fixe de 2 100 000 jetons',
+          desc: '10 fois plus rare que les 21 millions de Bitcoin. Aucun jeton supplémentaire ne pourra jamais être créé.',
         },
         {
           tag: 'Invariant de la Genèse 02',
@@ -292,7 +292,7 @@ export const fr: TranslationSchema = {
       {
         metric: 'Offre totale / maximale',
         bitcoin: '21 000 000 BTC',
-        ble: '420 000 BLTE (Fixe)',
+        ble: '2 100 000 BLTE (Fixe)',
       },
       {
         metric: "Ratio d'offre maximale",
@@ -346,29 +346,29 @@ export const fr: TranslationSchema = {
   },
   tokenomics: {
     kicker: 'Structure économique · Rareté mathématique',
-    title: '420 000 OFFRE TOTALE',
+    title: '2.1M OFFRE TOTALE',
     subtitle: 'Une distribution strictement plafonnée depuis un modèle de données central. Zéro porte dérobée, zéro inflation cachée.',
     fixed_cap: 'PLAFOND FIXE',
     total_supply: 'OFFRE TOTALE',
     verified_alloc: 'Allocation vérifiée à 100 % (100 %)',
     allocations: [
       {
-        id: 'season-1',
-        category: 'Lancement équitable & Communauté',
-        description: 'Allocation publique et communautaire avec accès décentralisé.',
+            id: "fair-launch",
+            category: "Lancement équitable",
+            description: "Distribution publique et communautaire directe sur Solana avec accès sans frontières (60%)."
       },
       {
-        id: 'season-2',
-        category: 'Première liquidité',
-        description: 'Liquidité permanente AMM sur les bourses décentralisées de Solana.',
+            id: "liquidity-pool",
+            category: "Pool de liquidité",
+            description: "Déploiement du pool de liquidité DEX AMM sur Raydium (20%)."
       },
       {
-        id: 'season-3',
-        category: 'Liquidité secondaire',
-        description: 'Profondeur de liquidité secondaire, routage d’écosystème et expansion.',
-      },
-    ],
-    data_source: 'Source de données : Modèle de configuration central. 100 % = 420 000 BLTE.',
+            id: "staking-dev-dex",
+            category: "Récompenses de staking, Dév, listing DEX",
+            description: "Rendements de staking Streamflow, développement technique et cotations DEX/CEX (20%)."
+      }
+],
+    data_source: 'Source de données : Modèle de configuration central. 100 % = 2 100 000 BLTE (2.1M).',
   },
   how_to_buy: {
     kicker: 'Guide d’acquisition · Procédure pas à pas',
@@ -404,7 +404,7 @@ export const fr: TranslationSchema = {
         step: '05',
         title: 'Renseigner l’adresse de mint officielle',
         summary: 'Collez l’identifiant authentique de Bitcoin Lite Edition.',
-        description: 'Dans le sélecteur, collez l’adresse officielle BLTE publiée sur ce site. Vérifiez que le symbole est BLTE et l’offre de 420 000.',
+        description: 'Dans le sélecteur, collez l’adresse officielle BLTE publiée sur ce site. Vérifiez que le symbole est BLTE et l’offre de 2 100 000.',
         action_label: "Copier l'adresse",
       },
       {
@@ -423,9 +423,9 @@ export const fr: TranslationSchema = {
     ],
     advisory_kicker: 'Sécurité et prévention des arnaques · Protocole zéro confiance',
     advisory_title: 'Protégez vos capitaux contre les faux jetons et les imitateurs',
-    advisory_desc: "Sur les blockchains sans permission, n'importe qui peut créer un jeton portant le nom « Bitcoin Lite ». Vérifiez toujours que l'adresse du contrat correspond rigoureusement à celle publiée sur ce site officiel et que l'offre est plafonnée à 420 000 avec autorité révoquée.",
+    advisory_desc: "Sur les blockchains sans permission, n'importe qui peut créer un jeton portant le nom « Bitcoin Lite ». Vérifiez toujours que l'adresse du contrat correspond rigoureusement à celle publiée sur ce site officiel et que l'offre est plafonnée à 2 100 000 avec autorité révoquée.",
     security_items: [
-      'Plafond fixe de 420 000 jetons',
+      'Plafond fixe de 2 100 000 jetons',
       'Autorité d’émission révoquée',
       'Aucun pouvoir de gel administrateur',
     ],
@@ -468,7 +468,7 @@ export const fr: TranslationSchema = {
       {
         title: 'Offre du jeton',
         subtitle: 'Plafond mathématique fixe',
-        primaryValue: '420 000 BLTE',
+        primaryValue: '2 100 000 BLTE',
         detail: 'Gravé dans les paramètres de la genèse. L’offre ne peut être ni augmentée ni diluée.',
         linkLabel: 'Vérifier l’offre sur la chaîne',
       },
@@ -619,11 +619,11 @@ export const fr: TranslationSchema = {
     items: [
       {
         question: "Qu'est-ce que Bitcoin Lite Edition ?",
-        answer: "Bitcoin Lite Edition est un actif numérique indépendant construit sur Solana. Inspiré par le principe de rareté numérique établi par Bitcoin, il présente une offre plafonnée à 420 000 jetons et bénéficie des performances ultra-rapides et transparentes de Solana.",
+        answer: "Bitcoin Lite Edition est un actif numérique indépendant construit sur Solana. Inspiré par le principe de rareté numérique établi par Bitcoin, il présente une offre plafonnée à 2 100 000 jetons et bénéficie des performances ultra-rapides et transparentes de Solana.",
       },
       {
         question: "Quelle est l'offre totale ?",
-        answer: "L'offre totale est strictement de 420 000 jetons. Contrairement aux jetons inflationnistes, cette offre est fixée dès la genèse et ne peut jamais être augmentée.",
+        answer: "L'offre totale est strictement de 2 100 000 jetons. Contrairement aux jetons inflationnistes, cette offre est fixée dès la genèse et ne peut jamais être augmentée.",
       },
       {
         question: 'Sur quelle blockchain est-il déployé ?',
@@ -636,7 +636,7 @@ export const fr: TranslationSchema = {
       },
       {
         question: 'Comment la rareté se compare-t-elle à celle de Bitcoin ?',
-        answer: 'Bitcoin est plafonné à 21 000 000 d’unités. Bitcoin Lite Edition est plafonné à 420 000 unités, soit 50 fois plus rare numériquement, avec une exécution quasi instantanée.',
+        answer: 'Bitcoin est plafonné à 21 000 000 d’unités. Bitcoin Lite Edition est plafonné à 2 100 000 unités, soit 10 fois plus rare numériquement, avec une exécution quasi instantanée.',
       },
       {
         question: 'Comment et où puis-je acheter Bitcoin Lite Edition ?',
@@ -648,7 +648,7 @@ export const fr: TranslationSchema = {
       },
       {
         question: "L'offre peut-elle augmenter ou être diluée ?",
-        answer: "Non. L'autorité d'émission a été définitivement révoquée dès la création du jeton (fixée à null), garantissant un plafond absolu et immuable de 420 000 BLTE.",
+        answer: "Non. L'autorité d'émission a été définitivement révoquée dès la création du jeton (fixée à null), garantissant un plafond absolu et immuable de 2 100 000 BLTE.",
       },
       {
         question: 'Quels portefeuilles peuvent stocker BLTE ?',
@@ -662,7 +662,7 @@ export const fr: TranslationSchema = {
     ],
   },
   footer: {
-    brand_sub: 'Bâti sur Solana · Fixé à 420 000 BLTE',
+    brand_sub: 'Bâti sur Solana · Fixé à 2 100 000 BLTE',
     mission: 'Une exploration indépendante de la rareté numérique, de la vérifiabilité publique et d’une architecture disciplinée.',
     btn_whitepaper: 'Lire le livre blanc',
     nav_heading: 'Navigation',
@@ -747,7 +747,7 @@ export const fr: TranslationSchema = {
           num: '1',
           title: 'Résumé exécutif & Synthèse',
           content: [
-            "Bitcoin Lite Edition est un actif numérique indépendant bâti nativement sur Solana. Inspiré par le paradigme de rareté établi par Bitcoin en 2008, il explore une offre ultra-restreinte de 420 000 jetons au sein d'un environnement d'exécution à très haut débit.",
+            "Bitcoin Lite Edition est un actif numérique indépendant bâti nativement sur Solana. Inspiré par le paradigme de rareté établi par Bitcoin en 2008, il explore une offre ultra-restreinte de 2 100 000 jetons au sein d'un environnement d'exécution à très haut débit.",
             "DISTINCTION LÉGALE IMPORTANTE : Bitcoin Lite Edition n'est pas Bitcoin, n'est pas un produit officiel Bitcoin et n'a aucune affiliation avec Bitcoin Core ou Satoshi Nakamoto. Il fonctionne comme un jeton SPL autonome sur Solana.",
           ],
         },
@@ -756,7 +756,7 @@ export const fr: TranslationSchema = {
           num: '2',
           title: 'Philosophie fondamentale : La rareté réinventée',
           content: [
-            "Tandis que Bitcoin a démontré la valeur de la rareté mathématique, ses temps de latence et ses frais de mempool imposent des frictions. BLTE applique une rareté absolue de 420 000 jetons avec autorité révoquée, tout en bénéficiant du consensus Proof-of-History de Solana.",
+            "Tandis que Bitcoin a démontré la valeur de la rareté mathématique, ses temps de latence et ses frais de mempool imposent des frictions. BLTE applique une rareté absolue de 2 100 000 jetons avec autorité révoquée, tout en bénéficiant du consensus Proof-of-History de Solana.",
             "La rareté de BLTE est absolue et sans inflation. Il n'y a aucune émission secondaire, aucune émission dynamique, ni récompense de jalonnement financée par l'inflation.",
           ],
         },
@@ -765,7 +765,7 @@ export const fr: TranslationSchema = {
           num: '3',
           title: 'La Genèse de Bitcoin Lite Edition',
           content: [
-            'Créé avec exactement 420 000 jetons (50 fois plus rare que Bitcoin). Dès le bloc zéro, les autorités de mint et de gel ont été définitivement révoquées (null).',
+            'Créé avec exactement 2 100 000 jetons (10 fois plus rare que Bitcoin). Dès le bloc zéro, les autorités de mint et de gel ont été définitivement révoquées (null).',
             'Le paradigme « Light » incarne une finalité de ~400 ms, des frais minimes (<0,001 $) et un consensus Proof-of-Stake respectueux de l’environnement.',
           ],
         },
@@ -775,7 +775,7 @@ export const fr: TranslationSchema = {
           title: 'Distinction technique avec Bitcoin',
           content: [
             'Bitcoin fonctionne sur sa propre couche 1 avec minage PoW, hachage SHA-256, UTXO, blocs de 10 minutes et 21 millions de pièces.',
-            'BLTE est un jeton SPL sur Solana Layer 1 avec consensus PoH + Tower BFT, comptes de soldes, blocs de ~400 ms et plafond strict de 420 000 BLTE. Gouvernance et code sont 100 % distincts.',
+            'BLTE est un jeton SPL sur Solana Layer 1 avec consensus PoH + Tower BFT, comptes de soldes, blocs de ~400 ms et plafond strict de 2 100 000 BLTE. Gouvernance et code sont 100 % distincts.',
           ],
         },
         {
@@ -791,15 +791,15 @@ export const fr: TranslationSchema = {
           num: '6',
           title: 'Spécifications techniques du jeton',
           content: [
-            '• Nom : Bitcoin Lite Edition\n• Symbole : BLTE\n• Réseau : Solana\n• Norme : SPL / Token-2022\n• Offre totale : 420 000 (Fixe)\n• Décimales : 9\n• Autorité d’émission : Révoquée de manière permanente\n• Autorité de gel : Aucune / Désactivée',
+            '• Nom : Bitcoin Lite Edition\n• Symbole : BLTE\n• Réseau : Solana\n• Norme : SPL / Token-2022\n• Offre totale : 2 100 000 (Fixe)\n• Décimales : 9\n• Autorité d’émission : Révoquée de manière permanente\n• Autorité de gel : Aucune / Désactivée',
           ],
         },
         {
           id: 'tokenomics',
           num: '7',
-          title: 'Allocation tokenomics (Total strict 100 % = 420 000 BLTE)',
+          title: 'Tokenomics et allocation mathématique',
           content: [
-            '• Lancement équitable & Communauté : 55 % (231 000 BLTE)\n• Première liquidité : 25 % (105 000 BLTE)\n• Liquidité secondaire : 20 % (84 000 BLTE)',
+            "Allocation mathématique stricte en trois sections majeures (2 100 000 BLTE · 2.1M) :\n• Lancement équitable : 60 % (1 260 000 BLTE)\n• Pool de liquidité : 20 % (420 000 BLTE)\n• Récompenses de staking, Dév, listing DEX : 20 % (420 000 BLTE)",
           ],
         },
         {
@@ -883,10 +883,10 @@ export const fr: TranslationSchema = {
         scarcity: {
           title: 'Chapitre 03 : Analyse comparative de la rareté',
           p1: 'La rareté est le fondement économique de la valeur durable. Bitcoin a plafonné son émission à 21 millions de pièces.',
-          p2: 'Bitcoin Lite Edition applique une politique encore plus rigoureuse avec un plafond fixe strict de 420 000 jetons.',
+          p2: 'Bitcoin Lite Edition applique une politique encore plus rigoureuse avec un plafond fixe strict de 2 100 000 jetons.',
           stat_btc: '21 000 000 BTC',
-          stat_ble: '420 000 BLTE',
-          ratio: '50 fois plus rare numériquement que Bitcoin',
+          stat_ble: '2.1M BLTE',
+          ratio: '10 fois plus rare numériquement que Bitcoin',
         },
         genesis: {
           title: 'Chapitre 04 : La Genèse de Bitcoin Lite Edition',
@@ -895,8 +895,8 @@ export const fr: TranslationSchema = {
           p2: 'Quinze ans après, Bitcoin Lite Edition transpose cet idéal sur Solana, apportant une finalité en 400 ms, des micro-frais et une immuabilité absolue.',
           invariants: [
             {
-              title: 'Plafond fixe de 420 000 jetons',
-              desc: '50 fois plus rare que Bitcoin, garanti de manière permanente sur la chaîne.',
+              title: 'Plafond fixe de 2 100 000 jetons',
+              desc: '10 fois plus rare que Bitcoin, garanti de manière permanente sur la chaîne.',
             },
             {
               title: 'Révocation des autorités au bloc zéro',
