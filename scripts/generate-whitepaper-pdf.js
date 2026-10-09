@@ -166,7 +166,7 @@ async function generateWhitepaperPdf() {
 
   const specCols = [
     { label: 'TOKEN SYMBOL', val: 'BLTE' },
-    { label: 'TOTAL SUPPLY', val: '2,100,000 (2.1M)' },
+    { label: 'TOTAL SUPPLY', val: '2.1M' },
     { label: 'CONSENSUS', val: 'SOLANA L1 (PoH/PoS)' },
     { label: 'AUTHORITY', val: 'PERMANENTLY REVOKED' },
   ];

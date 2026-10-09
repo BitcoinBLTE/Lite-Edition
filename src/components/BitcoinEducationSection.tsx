@@ -34,7 +34,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
   const [activeTab, setActiveTab] = useState<'overview' | 'how-it-works' | 'supply' | 'genesis'>('overview');
 
   const mechanismIcons = [Layers, Coins, Network, Cpu, FileText, Key];
-  const mechanism3DIcons: Realistic3DIconType[] = ['ledger', 'utxo', 'mining', 'keys', 'halving', 'nodes'];
+  const mechanism3DIcons: Realistic3DIconType[] = ['architecture', 'utxo', 'mining', 'keys', 'halving', 'decentralization'];
 
   return (
     <section id="bitcoin-education" className="py-20 md:py-28 bg-white scroll-mt-16">
@@ -107,7 +107,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
                     {t.education.tab1.def_kicker}
                   </div>
-                  <Realistic3DIcon type="ledger" size="md" />
+                  <Realistic3DIcon type="bitcoin" size="md" />
                 </div>
                 <h3 className="text-2xl font-[800] text-[#080808] font-display tracking-tight">
                   {t.education.tab1.def_title}
@@ -136,7 +136,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
                     {t.education.tab1.shift_kicker}
                   </div>
-                  <Realistic3DIcon type="expansion" size="md" />
+                  <Realistic3DIcon type="solana" size="md" />
                 </div>
                 <h3 className="text-2xl font-[800] text-[#080808] font-display tracking-tight">
                   {t.education.tab1.shift_title}
@@ -191,7 +191,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
                     {t.education.tab3.supply_kicker}
                   </div>
-                  <Realistic3DIcon type="scarcity" size="md" />
+                  <Realistic3DIcon type="token-supply" size="md" />
                 </div>
                 <h3 className="text-2xl font-[800] text-[#080808] font-display tracking-tight">
                   {t.education.tab3.supply_title}
@@ -229,7 +229,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px]">
                     {t.education.tab3.decent_kicker}
                   </div>
-                  <Realistic3DIcon type="nodes" size="md" />
+                  <Realistic3DIcon type="decentralization" size="md" />
                 </div>
                 <h3 className="text-2xl font-[800] text-[#080808] font-display tracking-tight">
                   {t.education.tab3.decent_title}
@@ -270,7 +270,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   <Sparkles className="w-4 h-4 text-[#B8661B]" />
                   <span>{t.education.tab4.archive_kicker}</span>
                 </div>
-                <Realistic3DIcon type="distinction" size="md" />
+                <Realistic3DIcon type="blte" size="md" />
               </div>
 
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-[900] text-[#080808] font-display tracking-tight">
@@ -301,7 +301,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   <div key={idx} className="p-6 rounded-[22px] bg-[#FAF5EF] border border-[#E9C9A5]/80 space-y-3">
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2px] block">{inv.tag}</span>
-                      <Realistic3DIcon type={['scarcity', 'execution', 'security'][idx] || 'scarcity'} size="sm" />
+                      <Realistic3DIcon type={['token-supply', 'execution', 'security'][idx] || 'token-supply'} size="sm" />
                     </div>
                     <h4 className="text-base font-[800] text-[#080808] font-display">{inv.title}</h4>
                     <p className="text-xs text-[#4A4A4A] font-[450] leading-[1.75]">

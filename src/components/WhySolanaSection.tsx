@@ -4,7 +4,7 @@ import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const WhySolanaSection: React.FC = () => {
   const { t } = useLanguage();
-  const solana3DIcons: Realistic3DIconType[] = ['speed', 'fee', 'clock', 'blocks'];
+  const solana3DIcons: Realistic3DIconType[] = ['solana', 'token-supply', 'transactions', 'architecture'];
 
   const features = t.why_solana.pillars.map((item, idx) => ({
     ...item,

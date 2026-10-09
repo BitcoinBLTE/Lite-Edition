@@ -63,13 +63,13 @@ export const en: TranslationSchema = {
   about: {
     kicker: 'Project Architecture · Core Principles',
     title: 'WHAT IS BITCOIN LITE EDITION?',
-    description: 'Bitcoin introduced a revolutionary way of thinking about digital scarcity, decentralization, and open peer-to-peer settlement. Bitcoin Lite Edition explores that defining concept through an ultra-scarce, mathematically capped supply of 2,100,000 tokens (2.1M) combined with the sub-second speed, negligible fees, and radical transparency of the Solana blockchain.',
+    description: 'Bitcoin introduced a revolutionary way of thinking about digital scarcity, decentralization, and open peer-to-peer settlement. Bitcoin Lite Edition explores that defining concept through an ultra-scarce, mathematically capped supply of 2.1M combined with the sub-second speed, negligible fees, and radical transparency of the Solana blockchain.',
     pillars: [
       {
         kicker: '01 · Scarcity',
         title: '2.1M Fixed Token Supply',
         summary: 'Strict numerical scarcity without inflation.',
-        description: "Configured with a definitive hard cap of exactly 2,100,000 tokens (2.1M)—10 times lower numerical cap than Bitcoin's 21,000,000 limit. There are no secondary mints, dynamic emissions, or hidden reserve unlocks.",
+        description: "Configured with a definitive hard cap of exactly 2.1M—10 times lower numerical cap than Bitcoin's 21,000,000 limit. There are no secondary mints, dynamic emissions, or hidden reserve unlocks.",
         highlight: 'Fixed 2.1M Cap',
         verified: 'Verified',
         network: 'Solana L1',
@@ -215,7 +215,7 @@ export const en: TranslationSchema = {
       ble_supply_label: 'Bitcoin Lite Edition Supply:',
       ratio_label: 'Numerical Ratio:',
       ratio_val: 'BLTE is 10x scarcer numerically than BTC',
-      supply_footer: 'Total supply for Bitcoin Lite Edition is fully minted and capped at 2,100,000 (2.1M) with mint authority permanently revoked upon creation.',
+      supply_footer: 'Total supply for Bitcoin Lite Edition is fully minted and capped at 2.1M with mint authority permanently revoked upon creation.',
       decent_kicker: 'Decentralization Principle',
       decent_title: 'Distributed Networks vs Central Authorities',
       decent_desc: 'Decentralization means that no single company, government, server, or executive has the power to reverse transactions, alter the historical ledger, freeze individual accounts, or arbitrarily inflate the money supply.',
@@ -237,7 +237,7 @@ export const en: TranslationSchema = {
         {
           tag: 'Genesis Invariant 01',
           title: 'The 2.1M Fixed Cap',
-          desc: "At genesis, exactly 2,100,000 tokens (2.1M) were created—10 times numerically scarcer than Bitcoin's 21 million. No additional tokens can ever be created under any circumstances.",
+          desc: "At genesis, exactly 2.1M were created—10 times numerically scarcer than Bitcoin's 21 million. No additional tokens can ever be created under any circumstances.",
         },
         {
           tag: 'Genesis Invariant 02',
@@ -406,7 +406,7 @@ export const en: TranslationSchema = {
         step: '05',
         title: 'Input Official Token Mint Address',
         summary: 'Verify and paste the authentic Bitcoin Lite Edition contract ID.',
-        description: 'In the swap token selector, paste the verified Bitcoin Lite Edition mint address published on this official portal. Always double-check that the token symbol reads BLTE and the total supply reads strictly 2,100,000 (2.1M).',
+        description: 'In the swap token selector, paste the verified Bitcoin Lite Edition mint address published on this official portal. Always double-check that the token symbol reads BLTE and the total supply reads strictly 2.1M.',
         action_label: 'Copy Address',
       },
       {
@@ -425,7 +425,7 @@ export const en: TranslationSchema = {
     ],
     advisory_kicker: 'Security & Anti-Scam Advisory · Zero-Trust Protocol',
     advisory_title: 'Protect Your Capital Against Fake Tokens & Impersonators',
-    advisory_desc: 'Decentralized exchanges permit anyone to create a token with the name "Bitcoin Lite" or ticker "BLTE". Always verify that the contract mint address matches the authentic ID displayed on this official website, and verify that the total supply reads exactly 2,100,000 tokens (2.1M) with mint authority permanently revoked.',
+    advisory_desc: 'Decentralized exchanges permit anyone to create a token with the name "Bitcoin Lite" or ticker "BLTE". Always verify that the contract mint address matches the authentic ID displayed on this official website, and verify that the total supply reads exactly 2.1M with mint authority permanently revoked.',
     security_items: [
       'Fixed 2.1M supply cap',
       'Mint authority revoked',
@@ -625,11 +625,11 @@ export const en: TranslationSchema = {
     items: [
       {
         question: 'What is Bitcoin Lite Edition?',
-        answer: "Bitcoin Lite Edition is an independent digital asset built natively on the Solana blockchain. Inspired by the foundational paradigm of digital scarcity established by Bitcoin, it introduces a fixed, hard-capped supply of 2,100,000 tokens (2.1M) designed to operate with Solana's high-speed, cost-effective, and transparent distributed ledger architecture.",
+        answer: "Bitcoin Lite Edition is an independent digital asset built natively on the Solana blockchain. Inspired by the foundational paradigm of digital scarcity established by Bitcoin, it introduces a fixed, hard-capped supply of 2.1M designed to operate with Solana's high-speed, cost-effective, and transparent distributed ledger architecture.",
       },
       {
         question: 'What is the total supply?',
-        answer: 'The total supply is strictly 2,100,000 tokens (2.1M). Unlike inflationary tokens with dynamic minting schedules, staking emissions, or unlock cliffs, this supply is configured at genesis and cannot be increased.',
+        answer: 'The total supply is strictly 2.1M. Unlike inflationary tokens with dynamic minting schedules, staking emissions, or unlock cliffs, this supply is configured at genesis and cannot be increased.',
       },
       {
         question: 'Which blockchain is it built on?',
@@ -642,7 +642,7 @@ export const en: TranslationSchema = {
       },
       {
         question: 'How does the scarcity compare to Bitcoin?',
-        answer: 'Bitcoin pioneered digital scarcity with a maximum hard cap of 21,000,000 coins. Bitcoin Lite Edition features a hard cap of strictly 2,100,000 tokens (2.1M)—which is 10 times lower in numerical supply. Furthermore, BLTE executes on Solana Layer 1 with sub-second finality rather than 10-minute proof-of-work blocks.',
+        answer: 'Bitcoin pioneered digital scarcity with a maximum hard cap of 21,000,000 coins. Bitcoin Lite Edition features a hard cap of strictly 2.1M—which is 10 times lower in numerical supply. Furthermore, BLTE executes on Solana Layer 1 with sub-second finality rather than 10-minute proof-of-work blocks.',
       },
       {
         question: 'How and where can I buy or acquire Bitcoin Lite Edition?',
@@ -662,7 +662,7 @@ export const en: TranslationSchema = {
       },
       {
         question: 'How do I protect myself against counterfeit tokens and scams?',
-        answer: 'Because anyone can create tokens with arbitrary names on permissionless blockchains, always verify the authentic contract mint address published on this official website. Verify that the total supply is strictly 2,100,000 (2.1M) and that mint authority is revoked on Solscan. Team members will never direct message you first or request your private keys.',
+        answer: 'Because anyone can create tokens with arbitrary names on permissionless blockchains, always verify the authentic contract mint address published on this official website. Verify that the total supply is strictly 2.1M and that mint authority is revoked on Solscan. Team members will never direct message you first or request your private keys.',
         isDisclaimer: true,
       },
     ],
@@ -764,7 +764,7 @@ export const en: TranslationSchema = {
           num: '2',
           title: 'Foundational Philosophy: Digital Scarcity',
           content: [
-            "While Bitcoin proved that mathematical scarcity can form the basis of decentralized value, historical proof-of-work architectures face structural challenges with transaction latency, variable mempool fees, and environmental overhead. Bitcoin Lite Edition adopts the principle of absolute digital scarcity—enforcing a fixed cap of 2,100,000 tokens (2.1M) with permanently revoked mint authority—while leveraging Solana's Proof-of-History (PoH) consensus for sub-second block finality.",
+            "While Bitcoin proved that mathematical scarcity can form the basis of decentralized value, historical proof-of-work architectures face structural challenges with transaction latency, variable mempool fees, and environmental overhead. Bitcoin Lite Edition adopts the principle of absolute digital scarcity—enforcing a fixed cap of 2.1M with permanently revoked mint authority—while leveraging Solana's Proof-of-History (PoH) consensus for sub-second block finality.",
             'Scarcity in Bitcoin Lite Edition is not dynamic or inflationary. There are no secondary mints, dynamic emission schedules, or validator staking rewards paid through token inflation.',
           ],
         },
@@ -800,7 +800,7 @@ export const en: TranslationSchema = {
           num: '6',
           title: 'Technical Token Specifications',
           content: [
-            '• Token Name: Bitcoin Lite Edition\n• Symbol: BLTE\n• Network: Solana\n• Standard: SPL / Token-2022\n• Total Supply: 2,100,000 (2.1M Fixed)\n• Decimals: 9 (0.000000001 BLTE base resolution)\n• Mint Authority: Permanently Revoked upon Genesis\n• Freeze Authority: Permanently Revoked / None',
+            '• Token Name: Bitcoin Lite Edition\n• Symbol: BLTE\n• Network: Solana\n• Standard: SPL / Token-2022\n• Total Supply: 2.1M\n• Decimals: 9 (0.000000001 BLTE base resolution)\n• Mint Authority: Permanently Revoked upon Genesis\n• Freeze Authority: Permanently Revoked / None',
           ],
         },
         {
@@ -895,7 +895,7 @@ export const en: TranslationSchema = {
         scarcity: {
           title: 'Chapter 03: Comparative Scarcity Analysis',
           p1: 'Scarcity is the economic foundation of durable value. Bitcoin capped its total issuance at 21,000,000 BTC, distributed across 130+ years via halving epochs.',
-          p2: 'Bitcoin Lite Edition (BLTE) implements an even more aggressive scarcity profile: a strict hard cap of exactly 2,100,000 tokens (2.1M).',
+          p2: 'Bitcoin Lite Edition (BLTE) implements an even more aggressive scarcity profile: a strict hard cap of exactly 2.1M.',
           stat_btc: '21,000,000 BTC',
           stat_ble: '2.1M BLTE',
           ratio: '10x Higher Numerical Scarcity than Bitcoin',

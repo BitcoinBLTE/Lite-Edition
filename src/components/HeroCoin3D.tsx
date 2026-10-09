@@ -861,7 +861,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
         ref={containerRef}
         className="w-full h-full cursor-grab active:cursor-grabbing touch-none flex items-center justify-center"
         role="img"
-        aria-label="Interactive 3D minted coin of Bitcoin Lite Edition with continuous rotation around vertical Y axis, showing 2,100,000 (2.1M) fixed supply on reverse"
+        aria-label="Interactive 3D minted coin of Bitcoin Lite Edition with continuous rotation around vertical Y axis, showing 2.1M fixed supply on reverse"
       />
     </div>
   );

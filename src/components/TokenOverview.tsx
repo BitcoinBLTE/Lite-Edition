@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const TokenOverview: React.FC = () => {
   const { t } = useLanguage();
@@ -13,13 +14,18 @@ export const TokenOverview: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const specs = [
-    { label: t.token_overview.specs.token_name, value: TOKEN_CONFIG.name, mono: false },
-    { label: t.token_overview.specs.token_symbol, value: TOKEN_CONFIG.symbol, mono: true },
-    { label: t.token_overview.specs.blockchain_network, value: TOKEN_CONFIG.network, mono: false },
-    { label: t.token_overview.specs.total_supply, value: `${TOKEN_CONFIG.shortSupply} ${t.token_overview.specs.tokens_suffix}`, mono: true },
-    { label: t.token_overview.specs.token_standard, value: TOKEN_CONFIG.tokenStandard, mono: false },
-    { label: t.token_overview.specs.decimals, value: TOKEN_CONFIG.decimals.toString(), mono: true },
+  const specs: Array<{
+    label: string;
+    value: string;
+    mono: boolean;
+    iconType: Realistic3DIconType;
+  }> = [
+    { label: t.token_overview.specs.token_name, value: TOKEN_CONFIG.name, mono: false, iconType: 'blte' },
+    { label: t.token_overview.specs.token_symbol, value: TOKEN_CONFIG.symbol, mono: true, iconType: 'bitcoin' },
+    { label: t.token_overview.specs.blockchain_network, value: TOKEN_CONFIG.network, mono: false, iconType: 'solana' },
+    { label: t.token_overview.specs.total_supply, value: `${TOKEN_CONFIG.shortSupply} ${t.token_overview.specs.tokens_suffix}`, mono: true, iconType: 'token-supply' },
+    { label: t.token_overview.specs.token_standard, value: TOKEN_CONFIG.tokenStandard, mono: false, iconType: 'architecture' },
+    { label: t.token_overview.specs.decimals, value: TOKEN_CONFIG.decimals.toString(), mono: true, iconType: 'verification' },
   ];
 
   const explorerUrl = TOKEN_CONFIG.mintAddress
@@ -31,6 +37,7 @@ export const TokenOverview: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3.5 flex items-center gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" aria-hidden="true" />
             <span>{t.token_overview.kicker}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-[900] text-[#080808] font-display tracking-tight text-balance leading-[1.15]">
@@ -41,21 +48,25 @@ export const TokenOverview: React.FC = () => {
           </p>
         </div>
 
-        {/* Dashboard Editorial Container — Pure Minimalist Architectural Typography with Zero Icons */}
+        {/* Dashboard Editorial Container with Realistic 3D Crypto & Fintech Icons */}
         <div className="bg-[#FCFCFC] rounded-[32px] sm:rounded-[40px] border border-[#E5E5E5] shadow-[0_4px_28px_rgba(0,0,0,0.05)] overflow-hidden">
           {/* Top Specification Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E5E5E5] border-b border-[#E5E5E5]">
             {specs.map((spec, index) => (
               <div 
                 key={index} 
-                className={`p-7 sm:p-9 ${index >= 3 ? 'sm:border-t sm:border-[#E5E5E5]' : ''}`}
+                className={`p-7 sm:p-9 ${index >= 3 ? 'sm:border-t sm:border-[#E5E5E5]' : ''} flex items-start justify-between gap-4 group/spec hover:bg-white transition-colors`}
               >
-                <div className="text-[10px] font-mono text-[#888888] font-bold uppercase tracking-[2px] mb-2.5">
-                  {spec.label}
+                <div>
+                  <div className="text-[10px] font-mono text-[#888888] font-bold uppercase tracking-[2px] mb-2.5">
+                    {spec.label}
+                  </div>
+                  <div className={`text-xl sm:text-2xl font-[800] text-[#080808] ${spec.mono ? 'font-mono tabular-nums' : 'font-display tracking-tight'}`}>
+                    {spec.value}
+                  </div>
                 </div>
-                <div className={`text-xl sm:text-2xl font-[800] text-[#080808] ${spec.mono ? 'font-mono tabular-nums' : 'font-display tracking-tight'}`}>
-                  {spec.value}
-                </div>
+
+                <Realistic3DIcon type={spec.iconType} size="md" className="shrink-0 mt-0.5" />
               </div>
             ))}
           </div>
@@ -64,10 +75,13 @@ export const TokenOverview: React.FC = () => {
           <div className="p-7 sm:p-10 bg-white">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-2.5 max-w-2xl">
-                <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px] flex items-center gap-2.5">
-                  <span>{t.token_overview.contract_label}</span>
-                  <span aria-hidden="true" className="text-[#D9D9D9]">·</span>
-                  <span className="text-[#888888]">{t.token_overview.authentic_id}</span>
+                <div className="flex items-center gap-3">
+                  <Realistic3DIcon type="contract" size="sm" />
+                  <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px] flex items-center gap-2.5">
+                    <span>{t.token_overview.contract_label}</span>
+                    <span aria-hidden="true" className="text-[#D9D9D9]">·</span>
+                    <span className="text-[#888888]">{t.token_overview.authentic_id}</span>
+                  </div>
                 </div>
 
                 {TOKEN_CONFIG.mintAddress ? (
@@ -105,8 +119,9 @@ export const TokenOverview: React.FC = () => {
                   href={explorerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 text-xs font-bold rounded-[16px] bg-[#111111] hover:bg-[#B8661B] text-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all flex items-center justify-center whitespace-nowrap cursor-pointer"
+                  className="px-5 py-3 text-xs font-bold rounded-[16px] bg-[#111111] hover:bg-[#B8661B] text-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all flex items-center gap-2.5 whitespace-nowrap cursor-pointer group"
                 >
+                  <Realistic3DIcon type="explorer" size="sm" className="-my-1" />
                   <span>{t.token_overview.view_explorer}</span>
                 </a>
               </div>

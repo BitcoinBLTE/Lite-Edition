@@ -29,13 +29,13 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
   const step3DIcons: Realistic3DIconType[] = [
-    'wallet',
-    'sol',
-    'dex',
+    'acquisition',
+    'token-supply',
+    'liquidity',
     'mint',
     'slippage',
-    'confirm',
-    'receipt',
+    'verification',
+    'transactions',
   ];
 
   const handleCopy = () => {

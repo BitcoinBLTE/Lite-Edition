@@ -6,13 +6,13 @@ import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
   const pillar3DIcons: Realistic3DIconType[] = [
-    'scarcity',
+    'token-supply',
     'execution',
     'security',
     'transparency',
-    'globe',
+    'decentralization',
     'verification',
-    'distinction',
+    'architecture',
   ];
 
   return (

@@ -28,7 +28,7 @@ export const ScarcityComparison: React.FC = () => {
             {/* Step 1: Bitcoin */}
             <div className="w-full bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               <div className="flex items-start gap-4">
-                <Realistic3DIcon type="ledger" size="md" className="mt-1" />
+                <Realistic3DIcon type="bitcoin" size="md" className="mt-1" />
                 <div className="space-y-1.5">
                   <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#888888] uppercase">
                     {t.scarcity.step1_kicker}
@@ -60,7 +60,7 @@ export const ScarcityComparison: React.FC = () => {
             {/* Step 2: Bitcoin Lite Edition (Marquee Hero Box in Burnt Copper) */}
             <div className="w-full bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border-2 border-[#B8661B] shadow-[0_6px_30px_rgba(184,102,27,0.08)] flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative overflow-hidden">
               <div className="flex items-start gap-4 relative z-10">
-                <Realistic3DIcon type="scarcity" size="lg" className="mt-1" />
+                <Realistic3DIcon type="blte" size="lg" className="mt-1" />
                 <div className="space-y-1.5">
                   <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#B8661B] uppercase flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#B8661B] inline-block animate-pulse" />
@@ -94,7 +94,7 @@ export const ScarcityComparison: React.FC = () => {
             {/* Step 3: Solana */}
             <div className="w-full bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               <div className="flex items-start gap-4">
-                <Realistic3DIcon type="speed" size="md" className="mt-1" />
+                <Realistic3DIcon type="solana" size="md" className="mt-1" />
                 <div className="space-y-1.5">
                   <div className="text-xs font-mono font-bold tracking-[2.5px] text-[#080808] uppercase">
                     {t.scarcity.step3_kicker}

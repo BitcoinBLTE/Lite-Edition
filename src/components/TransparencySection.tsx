@@ -11,7 +11,14 @@ export const TransparencySection: React.FC = () => {
     ? `https://solscan.io/token/${TOKEN_CONFIG.mintAddress}`
     : `https://solscan.io`;
 
-  const transparency3DTypes: Realistic3DIconType[] = ['ledger', 'keys', 'lock', 'shield', 'speed', 'verification'];
+  const transparency3DTypes: Realistic3DIconType[] = [
+    'transparency',
+    'security',
+    'lock',
+    'architecture',
+    'explorer',
+    'verification',
+  ];
   const links = [
     explorerUrl,
     explorerUrl,

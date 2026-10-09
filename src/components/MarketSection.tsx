@@ -163,7 +163,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
           /* TRUTHFUL ZERO-MOCK DATA STATE: Large Editorial Card */
           <div className="bg-[#FCFCFC] rounded-[32px] sm:rounded-[42px] border border-[#E5E5E5] shadow-[0_4px_28px_rgba(0,0,0,0.05)] p-8 sm:p-14 text-center max-w-3xl mx-auto">
             <div className="flex justify-center mb-6">
-              <Realistic3DIcon type="dex" size="xl" />
+              <Realistic3DIcon type="market" size="xl" />
             </div>
 
             <div className="text-xs font-mono font-bold uppercase tracking-[3px] text-[#B8661B] mb-2.5">

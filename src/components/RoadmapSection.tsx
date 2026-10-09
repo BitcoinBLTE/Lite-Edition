@@ -6,7 +6,7 @@ import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 export const RoadmapSection: React.FC = () => {
   const { t } = useLanguage();
-  const roadmap3DTypes: Realistic3DIconType[] = ['foundation', 'launch', 'ecosystem', 'expansion'];
+  const roadmap3DTypes: Realistic3DIconType[] = ['roadmap', 'fair-launch', 'ecosystem', 'expansion'];
 
   const getStatusBadge = (status: RoadmapMilestone['status']) => {
     switch (status) {

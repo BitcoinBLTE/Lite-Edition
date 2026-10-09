@@ -25,7 +25,7 @@ export const BitcoinIntroSection: React.FC<BitcoinIntroSectionProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" aria-hidden="true" />
               <span>{t.intro.badge}</span>
             </div>
-            <Realistic3DIcon type="foundation" size="lg" />
+            <Realistic3DIcon type="bitcoin" size="lg" />
           </div>
 
           {/* Section Heading: Oversized futuristic geometric heading, near-black #080808, 900 weight */}

@@ -11,9 +11,9 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
   const rawAllocations = TOKEN_CONFIG.allocations;
   const isMathematicallyValid = validateTokenomicsIntegrity();
   const alloc3DTypes: Record<string, Realistic3DIconType> = {
-    'fair-launch': 'globe',
-    'liquidity-pool': 'sol',
-    'staking-dev-dex': 'dex',
+    'fair-launch': 'fair-launch',
+    'liquidity-pool': 'liquidity',
+    'staking-dev-dex': 'staking',
   };
 
   const allocations = rawAllocations.map((alloc) => {
@@ -113,7 +113,7 @@ export const WhitePaperCircleTokenomics: React.FC = () => {
                   </div>
                 ) : (
                   <div className="flex flex-col items-center">
-                    <Realistic3DIcon type="scarcity" size="sm" className="mb-1" />
+                    <Realistic3DIcon type="token-supply" size="sm" className="mb-1" />
                     <div className="text-[10px] font-mono uppercase tracking-[2px] text-[#888888]">
                       Fixed Hard Cap
                     </div>

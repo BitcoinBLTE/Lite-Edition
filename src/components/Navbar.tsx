@@ -4,6 +4,7 @@ import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { LanguageDropdown } from './LanguageDropdown';
 import { RotatingCoinLogo } from './RotatingCoinLogo';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 interface NavbarProps {
   onOpenTradeModal: () => void;
@@ -17,16 +18,22 @@ export const Navbar: React.FC<NavbarProps> = ({
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { label: t.nav.about, href: '#about', action: null },
-    { label: t.nav.bitcoin_education, href: '#bitcoin-education', action: null },
-    { label: t.nav.token, href: '#token', action: null },
-    { label: t.nav.tokenomics, href: '#tokenomics', action: null },
-    { label: t.nav.how_to_buy, href: '#how-to-buy', action: null },
-    { label: t.nav.whitepaper, href: '#whitepaper', action: onOpenWhitePaper, isWhitepaper: true },
-    { label: t.nav.roadmap, href: '#roadmap', action: null },
-    { label: t.nav.transparency, href: '#transparency', action: null },
-    { label: t.nav.faq, href: '#faq', action: null }
+  const navLinks: Array<{
+    label: string;
+    href: string;
+    action: (() => void) | null;
+    isWhitepaper?: boolean;
+    iconType: Realistic3DIconType;
+  }> = [
+    { label: t.nav.about, href: '#about', action: null, iconType: 'blte' },
+    { label: t.nav.bitcoin_education, href: '#bitcoin-education', action: null, iconType: 'bitcoin' },
+    { label: t.nav.token, href: '#token', action: null, iconType: 'token-supply' },
+    { label: t.nav.tokenomics, href: '#tokenomics', action: null, iconType: 'liquidity' },
+    { label: t.nav.how_to_buy, href: '#how-to-buy', action: null, iconType: 'acquisition' },
+    { label: t.nav.whitepaper, href: '#whitepaper', action: onOpenWhitePaper, isWhitepaper: true, iconType: 'contract' },
+    { label: t.nav.roadmap, href: '#roadmap', action: null, iconType: 'roadmap' },
+    { label: t.nav.transparency, href: '#transparency', action: null, iconType: 'transparency' },
+    { label: t.nav.faq, href: '#faq', action: null, iconType: 'verification' }
   ];
 
   return (
@@ -139,10 +146,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                           setMobileMenuOpen(false);
                           link.action!();
                         }}
-                        className="text-left p-3 rounded-[14px] bg-[#FAF5EF] hover:bg-[#F2E8DC] border border-[#E9C9A5]/60 flex items-center justify-between group transition-colors cursor-pointer"
+                        className="text-left p-3 rounded-[16px] bg-[#FAF5EF] hover:bg-[#F2E8DC] border border-[#E9C9A5]/60 flex items-center justify-between group transition-colors cursor-pointer"
                       >
-                        <div className="flex items-center gap-2.5">
-                          <BookOpen className="w-4 h-4 text-[#B8661B]" />
+                        <div className="flex items-center gap-3">
+                          <Realistic3DIcon type={link.iconType} size="sm" />
                           <span className="text-sm font-bold text-[#B8661B]">{link.label}</span>
                         </div>
                         <span className="text-[10px] font-mono font-bold text-[#B8661B] bg-white/80 px-2 py-0.5 rounded">PDF</span>
@@ -154,10 +161,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="p-3 rounded-[14px] hover:bg-[#F7F7F7] border border-transparent hover:border-[#E5E5E5] text-sm font-medium text-[#4A4A4A] hover:text-[#080808] flex items-center justify-between transition-colors"
+                      className="p-3 rounded-[16px] hover:bg-[#F7F7F7] border border-transparent hover:border-[#E5E5E5] text-sm font-medium text-[#4A4A4A] hover:text-[#080808] flex items-center justify-between transition-colors group"
                     >
-                      <span>{link.label}</span>
-                      <span className="text-xs text-[#CCCCCC] group-hover:text-[#B8661B]">→</span>
+                      <div className="flex items-center gap-3">
+                        <Realistic3DIcon type={link.iconType} size="sm" />
+                        <span className="font-semibold">{link.label}</span>
+                      </div>
+                      <span className="text-xs text-[#CCCCCC] group-hover:text-[#B8661B] transition-colors">→</span>
                     </a>
                   );
                 })}
@@ -194,7 +204,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     setMobileMenuOpen(false);
                     onOpenWhitePaper();
                   }}
-                  className="py-3 px-4 text-xs font-bold text-[#111111] hover:text-[#B8661B] bg-[#FCFCFC] hover:bg-[#FAF5EF] border border-[#D9D9D9] hover:border-[#E9C9A5] rounded-[14px] transition-colors text-center cursor-pointer flex items-center justify-center gap-2"
+                  className="py-3 px-4 text-xs font-bold text-[#111111] dark:text-[#FFFFFF] hover:text-[#B8661B] bg-[#FCFCFC] dark:bg-[#18181D] hover:bg-[#FAF5EF] dark:hover:bg-[#222228] border border-[#D9D9D9] dark:border-[#333339] hover:border-[#E9C9A5] rounded-[14px] transition-colors text-center cursor-pointer flex items-center justify-center gap-2"
                 >
                   <BookOpen className="w-4 h-4 text-[#B8661B]" />
                   <span>{t.hero.btn_whitepaper}</span>

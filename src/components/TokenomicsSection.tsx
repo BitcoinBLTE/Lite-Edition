@@ -10,9 +10,9 @@ export const TokenomicsSection: React.FC = () => {
   const rawAllocations = TOKEN_CONFIG.allocations;
   const isMathematicallyValid = validateTokenomicsIntegrity();
   const alloc3DTypes: Record<string, Realistic3DIconType> = {
-    'fair-launch': 'globe',
-    'liquidity-pool': 'sol',
-    'staking-dev-dex': 'dex',
+    'fair-launch': 'fair-launch',
+    'liquidity-pool': 'liquidity',
+    'staking-dev-dex': 'staking',
   };
 
   const allocations = rawAllocations.map((alloc) => {
@@ -102,7 +102,7 @@ export const TokenomicsSection: React.FC = () => {
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center px-4">
                 {activeAllocation ? (
                   <div className="animate-in fade-in duration-200 flex flex-col items-center">
-                    <Realistic3DIcon type={alloc3DTypes[activeAllocation.id] || 'scarcity'} size="sm" className="mb-1" />
+                    <Realistic3DIcon type={alloc3DTypes[activeAllocation.id] || 'token-supply'} size="sm" className="mb-1" />
                     <div className="text-3xl sm:text-4xl font-mono font-[900] text-[#080808] tabular-nums">
                       {activeAllocation.percentage}%
                     </div>
@@ -115,7 +115,7 @@ export const TokenomicsSection: React.FC = () => {
                   </div>
                 ) : (
                   <div className="flex flex-col items-center">
-                    <Realistic3DIcon type="scarcity" size="sm" className="mb-1" />
+                    <Realistic3DIcon type="token-supply" size="sm" className="mb-1" />
                     <div className="text-[10px] font-mono uppercase tracking-[2px] text-[#888888]">
                       {t.tokenomics.fixed_cap}
                     </div>

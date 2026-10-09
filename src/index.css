@@ -448,3 +448,46 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
   background-color: rgba(184, 102, 27, 0.15) !important;
 }
 
+/* ============================================================
+   REALISTIC 3D ICON SUBTLE ANIMATIONS & RESPONSIVENESS
+   ============================================================ */
+@keyframes icon3dFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0.3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes icon3dGleam {
+  0%, 100% {
+    opacity: 0.15;
+    transform: translateX(-100%) skewX(-25deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(200%) skewX(-25deg);
+  }
+}
+
+.animate-3d-float {
+  animation: icon3dFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-3d-gleam {
+  animation: icon3dGleam 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-3d-float,
+  .animate-3d-gleam {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+

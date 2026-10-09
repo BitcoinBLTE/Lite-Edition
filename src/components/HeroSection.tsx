@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen } from 'lucide-react';
 import { HeroCoin3D } from './HeroCoin3D';
 import { useLanguage } from '../i18n/LanguageContext';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
+import { Realistic3DIcon } from './Realistic3DIcon';
 
 interface HeroSectionProps {
   onOpenTradeModal: () => void;
@@ -43,15 +44,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="w-[5px] rounded-full bg-gradient-to-b from-[#EAB308] via-[#B8661B] to-[#964E10] shrink-0 self-stretch my-0.5" 
             aria-hidden="true" 
           />
-          <p className="text-[17px] sm:text-[18px] md:text-[19px] text-[#4A4A4A] font-[450] leading-[1.65] sm:leading-[1.7] max-w-[530px]">
-            <span className="hidden sm:inline">
-              Bitcoin Lite Edition (BLTE) brings Bitcoin-inspired principles<br />
-              of scarcity, transparency, and decentralization<br />
-              to the Solana ecosystem.
-            </span>
-            <span className="sm:hidden inline">
-              Bitcoin Lite Edition (BLTE) brings Bitcoin-inspired principles of scarcity, transparency, and decentralization to the Solana ecosystem.
-            </span>
+          <p className="text-[17px] sm:text-[18px] md:text-[19px] text-[#4A4A4A] dark:text-[#E4E4E7] font-[450] leading-[1.65] sm:leading-[1.7] max-w-[530px]">
+            {t.hero.description}
           </p>
         </div>
 
@@ -75,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="w-full max-w-sm sm:max-w-md mx-auto flex items-center justify-between gap-3 mb-8">
           <button
             onClick={onOpenWhitePaper}
-            className="flex-1 py-3.5 px-5 text-sm font-semibold text-[#111111] bg-[#FAF5EF] hover:bg-[#F2E8DC] border border-[#EAB308]/5 hover:border-[#B8661B] rounded-[18px] shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none whitespace-nowrap"
+            className="flex-1 py-3.5 px-5 text-sm font-semibold text-[#111111] dark:text-[#FFFFFF] bg-[#FAF5EF] hover:bg-[#F2E8DC] dark:bg-[#1C150E] dark:hover:bg-[#281D12] border border-[#EAB308]/20 hover:border-[#B8661B] rounded-[18px] shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none whitespace-nowrap"
           >
             <BookOpen className="w-4 h-4 text-[#B8661B] stroke-[2]" />
             <span>{t.hero.btn_whitepaper}</span>
@@ -83,7 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           <button
             onClick={onOpenTradeModal}
-            className="py-3 px-4 text-xs sm:text-sm font-mono font-bold text-[#080808] hover:text-[#B8661B] hover:bg-[#FAF5EF] rounded-[14px] transition-colors cursor-pointer uppercase tracking-[1.5px] whitespace-nowrap underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
+            className="py-3 px-4 text-xs sm:text-sm font-mono font-bold text-[#080808] dark:text-[#F4F4F5] hover:text-[#B8661B] hover:bg-[#FAF5EF] dark:hover:bg-[#1C150E] rounded-[14px] transition-colors cursor-pointer uppercase tracking-[1.5px] whitespace-nowrap underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
           >
             {t.hero.btn_buy_trade}
           </button>
@@ -97,13 +91,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           className="w-full max-w-sm sm:max-w-md mx-auto bg-[#FAF5EF] hover:bg-[#F5EADB] border border-[#EAB308]/5 rounded-[24px] p-4 sm:p-5 shadow-[0_4px_20px_rgba(184,102,27,0.08)] flex items-center justify-between gap-3 transition-all duration-200 group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none mb-8 sm:mb-10 animate-subtle-pulse hover:scale-[1.015]"
           title="Stake Bitcoin Lite Edition on Streamflow (40% APY)"
         >
-          <div className="text-left">
-            <span className="text-base sm:text-lg font-[900] text-[#080808] font-display tracking-tight group-hover:text-[#B8661B] transition-colors block">
-              STAKE
-            </span>
-            <span className="text-xs sm:text-sm text-[#666666] font-medium block">
-              Earn Rewards
-            </span>
+          <div className="flex items-center gap-3.5">
+            <Realistic3DIcon type="staking" size="md" className="shrink-0" />
+            <div className="text-left">
+              <span className="text-base sm:text-lg font-[900] text-[#080808] font-display tracking-tight group-hover:text-[#B8661B] transition-colors block">
+                STAKE
+              </span>
+              <span className="text-xs sm:text-sm text-[#666666] font-medium block">
+                Earn Rewards
+              </span>
+            </div>
           </div>
 
           <div className="flex items-center gap-2.5 shrink-0">
@@ -120,6 +117,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="w-full max-w-sm sm:max-w-md mx-auto pt-2">
           <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
             <div className="flex flex-col items-center justify-center p-4 rounded-[20px] bg-[#FAF5EF] border border-[#EAB308]/5 shadow-2xs">
+              <Realistic3DIcon type="token-supply" size="sm" className="mb-1" />
               <span className="text-2xl sm:text-3xl font-mono font-[900] text-[#080808] tabular-nums tracking-tight">
                 2.1M
               </span>
@@ -129,6 +127,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             <div className="flex flex-col items-center justify-center p-4 rounded-[20px] bg-[#FAF5EF] border border-[#EAB308]/5 shadow-2xs">
+              <Realistic3DIcon type="security" size="sm" className="mb-1" />
               <span className="text-xl sm:text-2xl md:text-3xl font-mono font-[900] text-[#B8661B] uppercase tracking-tight">
                 {t.hero.stat_scarcity || 'FIXED SUPPLY'}
               </span>
