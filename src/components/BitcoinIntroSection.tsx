@@ -53,7 +53,7 @@ export const BitcoinIntroSection: React.FC<BitcoinIntroSectionProps> = ({
             {onOpenEducationModal && (
               <button
                 onClick={onOpenEducationModal}
-                className="px-6 py-4 text-sm font-semibold text-[#222222] bg-white hover:bg-[#F9F9F9] hover:border-[#CCCCCC] border border-[#D9D9D9] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
+                className="px-6 py-4 text-sm font-semibold text-[#222222] dark:text-white bg-white dark:bg-[#18181D] hover:bg-[#F9F9F9] dark:hover:bg-[#222228] hover:border-[#CCCCCC] dark:hover:border-[#B8661B]/40 border border-[#D9D9D9] dark:border-[#333339] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
               >
                 <BookOpen className="w-4 h-4 text-[#B8661B] stroke-[2]" />
                 <span>{t.intro.explore_genesis}</span>

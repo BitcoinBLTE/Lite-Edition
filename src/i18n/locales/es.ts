@@ -814,7 +814,7 @@ export const es: TranslationSchema = {
           num: '7',
           title: 'Tokenomics y asignación matemática',
           content: [
-            "Asignación matemática estricta en tres secciones principales (2.100.000 BLTE · 2.1M):\n• Lanzamiento justo: 60% (1.260.000 BLTE)\n• Pool de liquidez: 20% (420.000 BLTE)\n• Recompensas de staking, Dev, listado DEX: 20% (420.000 BLTE)",
+            "Asignación matemática estricta en tres secciones principales:\n• Lanzamiento justo: 60% (660.000 BLTE)\n• Pool de liquidez: 20% (220.000 BLTE)\n• Recompensas de staking, Dev, listado DEX: 20% (220.000 BLTE)",
           ],
         },
         {

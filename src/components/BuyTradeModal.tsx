@@ -61,7 +61,7 @@ export const BuyTradeModal: React.FC<BuyTradeModalProps> = ({
               <div>
                 <span className="text-sm sm:text-base font-[800] text-[#080808] font-display block">Streamflow Staking</span>
                 <span className="text-[10px] font-mono font-extrabold px-1.5 py-0.5 rounded-full bg-[#B8661B] text-white leading-none inline-block mt-0.5">
-                  40% APY
+                  11.61% APY
                 </span>
               </div>
             </div>

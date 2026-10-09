@@ -799,7 +799,7 @@ export const zhCN: TranslationSchema = {
           num: '7',
           title: '代币经济学分配（三大核心板块）',
           content: [
-            "严苛数学硬约束分配（仅分为三大核心板块，总量 2,100,000 BLTE · 2.1M）：\n• 公平启动 (Fair Launch)：60% (1,260,000 BLTE)\n• 流动性资金池 (Liquidity Pool)：20% (420,000 BLTE)\n• 质押奖励、开发与 DEX 上线：20% (420,000 BLTE)",
+            "严苛数学硬约束分配（仅分为三大核心板块）：\n• 公平启动 (Fair Launch)：60% (660,000 BLTE)\n• 流动性资金池 (Liquidity Pool)：20% (220,000 BLTE)\n• 质押奖励、开发与 DEX 上线：20% (220,000 BLTE)",
           ],
         },
         {

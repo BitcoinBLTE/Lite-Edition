@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
-import { Menu, X, BookOpen } from 'lucide-react';
+import { Menu, X, BookOpen, Compass, Activity, ArrowRight } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { LanguageDropdown } from './LanguageDropdown';
 import { RotatingCoinLogo } from './RotatingCoinLogo';
 import { useLanguage } from '../i18n/LanguageContext';
+import { useTheme } from '../theme/ThemeContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
 interface NavbarProps {
   onOpenTradeModal: () => void;
   onOpenWhitePaper: () => void;
+  onOpenExplore: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenTradeModal,
-  onOpenWhitePaper
+  onOpenWhitePaper,
+  onOpenExplore
 }) => {
   const { t } = useLanguage();
+  const { isBlack } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks: Array<{
@@ -23,8 +27,10 @@ export const Navbar: React.FC<NavbarProps> = ({
     href: string;
     action: (() => void) | null;
     isWhitepaper?: boolean;
+    isExplore?: boolean;
     iconType: Realistic3DIconType;
   }> = [
+    { label: 'Explore', href: '#explore', action: onOpenExplore, isExplore: true, iconType: 'transparency' },
     { label: t.nav.about, href: '#about', action: null, iconType: 'blte' },
     { label: t.nav.bitcoin_education, href: '#bitcoin-education', action: null, iconType: 'bitcoin' },
     { label: t.nav.token, href: '#token', action: null, iconType: 'token-supply' },
@@ -146,13 +152,19 @@ export const Navbar: React.FC<NavbarProps> = ({
                           setMobileMenuOpen(false);
                           link.action!();
                         }}
-                        className="text-left p-3 rounded-[16px] bg-[#FAF5EF] hover:bg-[#F2E8DC] border border-[#E9C9A5]/60 flex items-center justify-between group transition-colors cursor-pointer"
+                        className={`text-left p-3 rounded-[16px] border flex items-center justify-between group transition-colors cursor-pointer ${
+                          link.isExplore
+                            ? 'bg-[#FAF5EF] dark:bg-[#1C150E] border-[#B8661B]/40 hover:border-[#B8661B]'
+                            : 'bg-[#FAF5EF] hover:bg-[#F2E8DC] dark:bg-[#1C150E] dark:hover:bg-[#281D12] border-[#E9C9A5]/60 hover:border-[#B8661B]'
+                        }`}
                       >
                         <div className="flex items-center gap-3">
                           <Realistic3DIcon type={link.iconType} size="sm" />
-                          <span className="text-sm font-bold text-[#B8661B]">{link.label}</span>
+                          <span className="text-sm font-bold text-[#B8661B] dark:text-[#EAB308]">{link.label}</span>
                         </div>
-                        <span className="text-[10px] font-mono font-bold text-[#B8661B] bg-white/80 px-2 py-0.5 rounded">PDF</span>
+                        <span className="text-[10px] font-mono font-bold text-[#B8661B] bg-white/80 dark:bg-black/60 px-2 py-0.5 rounded">
+                          {link.isExplore ? 'LIVE' : 'PDF'}
+                        </span>
                       </button>
                     );
                   }
@@ -161,7 +173,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="p-3 rounded-[16px] hover:bg-[#F7F7F7] border border-transparent hover:border-[#E5E5E5] text-sm font-medium text-[#4A4A4A] hover:text-[#080808] flex items-center justify-between transition-colors group"
+                      className="p-3 rounded-[16px] hover:bg-[#F7F7F7] dark:hover:bg-[#16161B] border border-transparent hover:border-[#E5E5E5] text-sm font-medium text-[#4A4A4A] dark:text-[#D4D4D8] hover:text-[#080808] dark:hover:text-white flex items-center justify-between transition-colors group"
                     >
                       <div className="flex items-center gap-3">
                         <Realistic3DIcon type={link.iconType} size="sm" />
@@ -173,19 +185,19 @@ export const Navbar: React.FC<NavbarProps> = ({
                 })}
               </div>
 
-              {/* Actions & Staking Banner */}
-              <div className="pt-4 border-t border-[#E5E5E5] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 items-center">
+              {/* Actions & Staking Banner: Only STAKE BLTE and BUY/TRADE */}
+              <div className="pt-4 border-t border-[#E5E5E5] dark:border-[#222228] grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
                 <a
                   href={TOKEN_CONFIG.stakingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-3 px-4 text-xs font-bold text-white bg-[#B8661B] hover:bg-[#964E10] rounded-[14px] transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_8px_rgba(184,102,27,0.2)] text-center"
-                  title="Stake BLTE (40% APY)"
+                  className="py-3.5 px-5 text-xs font-bold text-white bg-[#B8661B] hover:bg-[#964E10] rounded-[14px] transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_8px_rgba(184,102,27,0.2)] text-center"
+                  title="Stake BLTE (11.61% APY)"
                 >
-                  <span>STAKE BITCOIN LITE EDITION</span>
+                  <span>STAKE BLTE</span>
                   <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
-                    40% APY
+                    11.61% APY
                   </span>
                 </a>
 
@@ -194,20 +206,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                     setMobileMenuOpen(false);
                     onOpenTradeModal();
                   }}
-                  className="py-3 px-4 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] transition-colors text-center cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.05)]"
+                  className="py-3.5 px-5 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] transition-colors text-center cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.05)] uppercase tracking-wider font-mono"
                 >
                   {t.hero.btn_buy_trade}
-                </button>
-
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenWhitePaper();
-                  }}
-                  className="py-3 px-4 text-xs font-bold text-[#111111] dark:text-[#FFFFFF] hover:text-[#B8661B] bg-[#FCFCFC] dark:bg-[#18181D] hover:bg-[#FAF5EF] dark:hover:bg-[#222228] border border-[#D9D9D9] dark:border-[#333339] hover:border-[#E9C9A5] rounded-[14px] transition-colors text-center cursor-pointer flex items-center justify-center gap-2"
-                >
-                  <BookOpen className="w-4 h-4 text-[#B8661B]" />
-                  <span>{t.hero.btn_whitepaper}</span>
                 </button>
               </div>
             </div>

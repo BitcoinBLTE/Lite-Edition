@@ -799,7 +799,7 @@ export const zhTW: TranslationSchema = {
           num: '7',
           title: '代幣經濟學分配（三大核心板塊）',
           content: [
-            "嚴苛數學硬約束分配（僅分為三大核心板塊，總量 2,100,000 BLTE · 2.1M）：\n• 公平啟動 (Fair Launch)：60% (1,260,000 BLTE)\n• 流動性資金池 (Liquidity Pool)：20% (420,000 BLTE)\n• 質押獎勵、開發與 DEX 上線：20% (420,000 BLTE)",
+            "嚴苛數學硬約束分配（僅分為三大核心板塊）：\n• 公平啟動 (Fair Launch)：60% (660,000 BLTE)\n• 流動性資金池 (Liquidity Pool)：20% (220,000 BLTE)\n• 質押獎勵、開發與 DEX 上線：20% (220,000 BLTE)",
           ],
         },
         {

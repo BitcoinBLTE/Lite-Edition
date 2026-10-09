@@ -324,7 +324,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                 <div className="flex items-center gap-3">
                   <button
                     onClick={onOpenWhitePaper}
-                    className="px-5 py-3 text-xs font-semibold text-[#222222] bg-white hover:bg-[#F9F9F9] hover:border-[#CCCCCC] border border-[#D9D9D9] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-1.5 cursor-pointer"
+                    className="px-5 py-3 text-xs font-semibold text-[#222222] dark:text-white bg-white dark:bg-[#18181D] hover:bg-[#F9F9F9] dark:hover:bg-[#222228] hover:border-[#CCCCCC] dark:hover:border-[#B8661B]/40 border border-[#D9D9D9] dark:border-[#333339] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-1.5 cursor-pointer"
                   >
                     <FileText className="w-3.5 h-3.5 text-[#B8661B]" />
                     <span>{t.education.tab4.btn_whitepaper}</span>

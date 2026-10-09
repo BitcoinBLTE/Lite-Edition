@@ -19,6 +19,7 @@ import { BuyTradeModal } from './components/BuyTradeModal';
 import { LegalModal } from './components/LegalModals';
 import { WhitePaperModal } from './components/WhitePaperModal';
 import { BitcoinEducationModal } from './components/BitcoinEducationModal';
+import { ExploreModal } from './components/ExploreModal';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { ThemeProvider } from './theme/ThemeContext';
 import { ThemeToggle } from './components/ThemeToggle';
@@ -29,6 +30,7 @@ export default function App() {
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
   const [whitePaperOpen, setWhitePaperOpen] = useState(false);
   const [educationModalOpen, setEducationModalOpen] = useState(false);
+  const [exploreOpen, setExploreOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'terms' | 'privacy' | null>(null);
 
   // Listen for hash URLs for direct navigation
@@ -39,6 +41,8 @@ export default function App() {
         setWhitePaperOpen(true);
       } else if (hash === '#education' || hash === '#genesis-guide') {
         setEducationModalOpen(true);
+      } else if (hash === '#explore') {
+        setExploreOpen(true);
       }
     };
     handleHash();
@@ -47,10 +51,7 @@ export default function App() {
   }, []);
 
   const scrollToTokenOverview = () => {
-    const el = document.getElementById('token');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    setExploreOpen(true);
   };
 
   const scrollToEducation = () => {
@@ -68,6 +69,7 @@ export default function App() {
           <Navbar
             onOpenTradeModal={() => setTradeModalOpen(true)}
             onOpenWhitePaper={() => setWhitePaperOpen(true)}
+            onOpenExplore={() => setExploreOpen(true)}
           />
 
           {/* Main Content Sections - All Preserved & Enhanced */}
@@ -157,6 +159,12 @@ export default function App() {
         <LegalModal
           type={legalModalType}
           onClose={() => setLegalModalType(null)}
+        />
+
+        <ExploreModal
+          isOpen={exploreOpen}
+          onClose={() => setExploreOpen(false)}
+          onOpenTradeModal={() => setTradeModalOpen(true)}
         />
 
         {/* Tiny clickable theme toggle icon at the bottom */}

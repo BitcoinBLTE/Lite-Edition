@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="pt-1">
               <button
                 onClick={onOpenWhitePaper}
-                className="px-4 py-2 rounded-[14px] bg-[#FAF5EF] hover:bg-[#F2E8DC] text-[#B8661B] border border-[#E9C9A5] text-xs font-mono font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-[14px] bg-[#FAF5EF] dark:bg-[#1C150E] hover:bg-[#F2E8DC] dark:hover:bg-[#281D12] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/30 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <BookOpen className="w-3.5 h-3.5 text-[#B8661B]" />
                 <span>{t.footer.btn_whitepaper}</span>
@@ -141,11 +141,11 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#B8661B] hover:text-[#964E10] font-semibold transition-colors py-0.5 inline-flex items-center gap-1.5"
-                  title="Stake (40% APY)"
+                  title="Stake (11.61% APY)"
                 >
                   <span>Stake</span>
                   <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#FAF5EF] text-[#B8661B] border border-[#E9C9A5]">
-                    40% APY
+                    11.61% APY
                   </span>
                 </a>
               </li>
@@ -232,11 +232,11 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-3 px-3.5 text-xs font-bold text-white bg-[#B8661B] hover:bg-[#964E10] rounded-[14px] transition-colors cursor-pointer shadow-[0_2px_8px_rgba(184,102,27,0.25)] flex items-center justify-center gap-1.5 whitespace-nowrap text-center"
-                title="Stake BLTE on Streamflow Finance (40% APY)"
+                title="Stake BLTE on Streamflow Finance (11.61% APY)"
               >
                 <span>STAKE</span>
                 <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
-                  40% APY
+                  11.61% APY
                 </span>
               </a>
             </div>

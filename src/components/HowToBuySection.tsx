@@ -194,11 +194,11 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-4 text-xs sm:text-sm font-bold rounded-[16px] bg-[#FAF5EF] hover:bg-[#F2E8DC] text-[#B8661B] border border-[#E9C9A5] shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap group"
-                title="Stake BLTE on Streamflow (40% APY)"
+                title="Stake BLTE on Streamflow (11.61% APY)"
               >
                 <span>STAKE</span>
                 <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-[#B8661B] text-white leading-none">
-                  40% APY
+                  11.61% APY
                 </span>
               </a>
             </div>

@@ -3,9 +3,10 @@ import * as THREE from 'three';
 
 interface HeroCoin3DProps {
   onInteract?: () => void;
+  className?: string;
 }
 
-export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
+export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef<boolean>(false);
   const startPointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -845,7 +846,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract }) => {
   }, [onInteract]);
 
   return (
-    <div className="relative w-full max-w-[195px] sm:max-w-[220px] md:max-w-[240px] aspect-square mx-auto flex items-center justify-center select-none">
+    <div className={`relative w-full aspect-square mx-auto flex items-center justify-center select-none ${className || 'max-w-[240px] sm:max-w-[280px] lg:max-w-[420px] xl:max-w-[460px]'}`}>
       {/* Warm Golden Floor Reflection & Glow (Matching luxury photography in reference image) */}
       <div
         className="absolute -bottom-5 w-3/4 h-8 bg-gradient-to-t from-amber-500/20 via-amber-600/10 to-transparent rounded-full blur-xl transform scale-y-50 pointer-events-none"

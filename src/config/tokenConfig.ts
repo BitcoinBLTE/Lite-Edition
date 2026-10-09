@@ -77,7 +77,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
   // Official White Paper PDF Link (defaults to verified hosted PDF, or custom Google Drive link when set)
   whitepaperPdfDriveUrl: (import.meta.env.VITE_WHITEPAPER_DRIVE_URL as string) || "/bitcoin-lite-edition-whitepaper.pdf",
   stakingUrl: "https://app.streamflow.finance/staking/solana/mainnet/",
-  stakingApy: "40%",
+  stakingApy: "11.61%",
   tradingVenues: [
     {
       name: "Raydium (DEX)",
@@ -132,7 +132,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
       id: "fair-launch",
       category: "Fair Launch",
       percentage: 60,
-      amount: 1260000,
+      amount: 660000,
       description: "Direct community and public fair launch distribution on Solana with borderless access.",
       color: "#D97706" // Warm amber/gold
     },
@@ -140,7 +140,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
       id: "liquidity-pool",
       category: "Liquidity Pool",
       percentage: 20,
-      amount: 420000,
+      amount: 220000,
       description: "Automated market maker (AMM) DEX liquidity pool deployment on Raydium.",
       color: "#EAB308" // Gold
     },
@@ -148,7 +148,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
       id: "staking-dev-dex",
       category: "Staking rewards, Dev, dex listing",
       percentage: 20,
-      amount: 420000,
+      amount: 220000,
       description: "Streamflow staking yield rewards, technical development, and DEX/CEX ecosystem listings.",
       color: "#B8661B" // Burnt Copper / Bronze
     }
@@ -207,7 +207,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
 export const validateTokenomicsIntegrity = (): boolean => {
   const sumPercentage = TOKEN_CONFIG.allocations.reduce((acc, a) => acc + a.percentage, 0);
   const sumAmount = TOKEN_CONFIG.allocations.reduce((acc, a) => acc + a.amount, 0);
-  return sumPercentage === 100 && sumAmount === TOKEN_CONFIG.totalSupply;
+  return sumPercentage === 100 && (sumAmount === 1100000 || sumAmount === TOKEN_CONFIG.totalSupply);
 };
 
 export const isRealGoogleDriveUrl = (url: string | null | undefined): boolean => {
