@@ -30,12 +30,13 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
 
   const [stakingStats] = useState({
     apr: '11.61%',
-    liquid: '135,000',
-    native: '135,000'
+    liquid: '180,000',
+    native: '180,000'
   });
 
   const [supplyStats, setSupplyStats] = useState({
     circulating: '1,100,000',
+    nonCirculatory: '1,000,000',
     max: '2,100,000',
     holders: '1'
   });
@@ -307,7 +308,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Game rewards</span>
                   <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
-                    220,000
+                    135,000
                   </span>
                 </div>
               </div>
@@ -337,6 +338,13 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                   <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Circulating</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.circulating}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Non circulatory</span>
+                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                    {supplyStats.nonCirculatory}
                   </span>
                 </div>
 
