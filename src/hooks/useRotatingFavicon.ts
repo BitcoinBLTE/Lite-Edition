@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import bitcoinLiteLogo from '../assets/images/bitcoin_lite_logo_1791633769447.jpg';
 
 /**
  * useRotatingFavicon / useStaticFavicon:
@@ -9,7 +10,7 @@ export function useRotatingFavicon() {
   useEffect(() => {
     if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
-    const logoSrc = '/src/assets/images/bitcoin_lite_logo_1791633769447.jpg';
+    const logoSrc = bitcoinLiteLogo || '/bitcoin-lite-logo.jpg';
     let link: HTMLLinkElement | null = document.querySelector("link[rel*='icon']");
     if (!link) {
       link = document.createElement('link');

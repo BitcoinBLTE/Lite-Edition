@@ -8,6 +8,8 @@
  * - Roadmap statuses strictly reflect verified milestones.
  */
 
+import bitcoinLiteLogo from '../assets/images/bitcoin_lite_logo_1791633769447.jpg';
+
 export interface TokenAllocation {
   id: string;
   category: string;
@@ -79,7 +81,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
   whitepaperPdfDriveUrl: (import.meta.env.VITE_WHITEPAPER_DRIVE_URL as string) || "/bitcoin-lite-edition-whitepaper.pdf",
   stakingUrl: "https://app.streamflow.finance/staking/solana/mainnet/",
   stakingApy: "11.61%",
-  logoUrl: "/src/assets/images/bitcoin_lite_logo_1791633769447.jpg",
+  logoUrl: bitcoinLiteLogo || "/bitcoin-lite-logo.jpg",
   tradingVenues: [
     {
       name: "Raydium (DEX)",

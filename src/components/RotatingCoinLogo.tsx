@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import bitcoinLiteLogo from '../assets/images/bitcoin_lite_logo_1791633769447.jpg';
 
 interface RotatingCoinLogoProps {
   size?: number;
@@ -13,7 +14,9 @@ export const RotatingCoinLogo: React.FC<RotatingCoinLogoProps> = ({
   className = '',
   ariaLabel = 'Bitcoin Lite Edition Logo',
 }) => {
-  const logoSrc = '/src/assets/images/bitcoin_lite_logo_1791633769447.jpg';
+  const [hasError, setHasError] = useState(false);
+  // Bundled Vite asset in production + fallback to static public asset
+  const logoSrc = hasError ? '/bitcoin-lite-logo.jpg' : (bitcoinLiteLogo || '/bitcoin-lite-logo.jpg');
 
   return (
     <div
@@ -28,6 +31,7 @@ export const RotatingCoinLogo: React.FC<RotatingCoinLogoProps> = ({
         referrerPolicy="no-referrer"
         className="w-full h-full object-cover rounded-full pointer-events-none"
         loading="eager"
+        onError={() => setHasError(true)}
       />
     </div>
   );
