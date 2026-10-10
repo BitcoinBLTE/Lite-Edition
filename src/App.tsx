@@ -6,7 +6,7 @@ import { AboutSection } from './components/AboutSection';
 import { BitcoinEducationSection } from './components/BitcoinEducationSection';
 import { ScarcityComparison } from './components/ScarcityComparison';
 import { TokenOverview } from './components/TokenOverview';
-import { TokenomicsSection } from './components/TokenomicsSection';
+import { ExploreSection } from './components/ExploreSection';
 import { HowToBuySection } from './components/HowToBuySection';
 import { MarketSection } from './components/MarketSection';
 import { TransparencySection } from './components/TransparencySection';
@@ -20,6 +20,7 @@ import { LegalModal } from './components/LegalModals';
 import { WhitePaperModal } from './components/WhitePaperModal';
 import { BitcoinEducationModal } from './components/BitcoinEducationModal';
 import { ExploreModal } from './components/ExploreModal';
+import { GameModal } from './components/GameModal';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { ThemeProvider } from './theme/ThemeContext';
 import { ThemeToggle } from './components/ThemeToggle';
@@ -31,6 +32,7 @@ export default function App() {
   const [whitePaperOpen, setWhitePaperOpen] = useState(false);
   const [educationModalOpen, setEducationModalOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
+  const [gameModalOpen, setGameModalOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'terms' | 'privacy' | null>(null);
 
   // Listen for hash URLs for direct navigation
@@ -43,6 +45,8 @@ export default function App() {
         setEducationModalOpen(true);
       } else if (hash === '#explore') {
         setExploreOpen(true);
+      } else if (hash === '#game') {
+        setGameModalOpen(true);
       }
     };
     handleHash();
@@ -70,6 +74,7 @@ export default function App() {
             onOpenTradeModal={() => setTradeModalOpen(true)}
             onOpenWhitePaper={() => setWhitePaperOpen(true)}
             onOpenExplore={() => setExploreOpen(true)}
+            onOpenGame={() => setGameModalOpen(true)}
           />
 
           {/* Main Content Sections - All Preserved & Enhanced */}
@@ -102,8 +107,11 @@ export default function App() {
           {/* Token Overview Dashboard */}
           <TokenOverview />
 
-          {/* Tokenomics with Interactive Allocation Chart */}
-          <TokenomicsSection />
+          {/* Explore Section replacing Tokenomics: Review Protocol Stats and Activity */}
+          <ExploreSection
+            onOpenExplore={() => setExploreOpen(true)}
+            onOpenTradeModal={() => setTradeModalOpen(true)}
+          />
 
           {/* 7-Step Acquisition Guide & Security Advisory */}
           <HowToBuySection
@@ -165,6 +173,15 @@ export default function App() {
           isOpen={exploreOpen}
           onClose={() => setExploreOpen(false)}
           onOpenTradeModal={() => setTradeModalOpen(true)}
+        />
+
+        <GameModal
+          isOpen={gameModalOpen}
+          onClose={() => setGameModalOpen(false)}
+          onOpenExplore={() => {
+            setGameModalOpen(false);
+            setExploreOpen(true);
+          }}
         />
 
         {/* Tiny clickable theme toggle icon at the bottom */}

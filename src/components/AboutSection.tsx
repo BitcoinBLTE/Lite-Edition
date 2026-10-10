@@ -73,7 +73,6 @@ export const AboutSection: React.FC = () => {
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" />
                     <span>{feat.verified || 'Verified'}</span>
                   </span>
-                  <span className="font-mono text-[#888888]">{feat.network || 'Solana L1'}</span>
                 </div>
               </div>
             );

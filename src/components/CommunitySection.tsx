@@ -6,10 +6,7 @@ import {
   InstagramIcon, 
   XTwitterIcon, 
   GithubIcon, 
-  TelegramIcon, 
-  YouTubeIcon,
-  DiscordIcon,
-  WhatsAppIcon 
+  DiscordIcon 
 } from './PlatformIcons';
 
 export const CommunitySection: React.FC = () => {
@@ -39,10 +36,7 @@ export const CommunitySection: React.FC = () => {
             const isTwitter = social.id === 'twitter';
             const isGithub = social.id === 'github';
             const isInstagram = social.id === 'instagram';
-            const isTelegram = social.id === 'telegram';
             const isDiscord = social.id === 'discord';
-            const isWhatsApp = social.id === 'whatsapp';
-            const isYouTube = social.id === 'youtube';
             const isEmail = social.id === 'email';
             const isMailto = social.url?.startsWith('mailto:');
 
@@ -57,12 +51,9 @@ export const CommunitySection: React.FC = () => {
               >
                 <span className="shrink-0 text-[#080808] group-hover:text-[#B8661B] transition-all group-hover:scale-110">
                   {isTwitter && <XTwitterIcon size={22} />}
-                  {isTelegram && <TelegramIcon size={22} />}
                   {isDiscord && <DiscordIcon size={22} />}
-                  {isWhatsApp && <WhatsAppIcon size={22} />}
                   {isGithub && <GithubIcon size={22} />}
                   {isInstagram && <InstagramIcon size={22} />}
-                  {isYouTube && <YouTubeIcon size={22} />}
                   {isEmail && <Mail className="w-5.5 h-5.5" />}
                 </span>
                 <span className="text-base sm:text-lg font-bold font-display tracking-tight group-hover:underline underline-offset-4">

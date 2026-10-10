@@ -23,7 +23,7 @@ export const no: TranslationSchema = {
     about: 'Om prosjektet',
     bitcoin_education: 'Bitcoin og opprinnelse',
     token: 'Token',
-    tokenomics: 'Tokenomikk',
+    tokenomics: 'Explore',
     how_to_buy: 'Slik kjøper du',
     whitepaper: 'Hvitbok',
     roadmap: 'Veikart',
@@ -43,12 +43,12 @@ export const no: TranslationSchema = {
     btn_whitepaper: 'Les hvitbok',
     btn_buy_trade: 'KJØP / HANDEL',
     stat_supply: 'TOTALT TILBUD',
-    stat_network: 'SOLANA-NETTVERK',
+    stat_network: '',
     stat_scarcity: 'FAST TILBUD',
   },
   intro: {
     badge: 'HISTORISK PRESEDENS OG ARKITEKTONISK EVOLUSJON',
-    title: 'Et nytt kapittel i det digitale ressurslandskapet',
+    title: 'En ny æra innen digital finans',
     p1: 'Bitcoin introduserte verden for ideen om at verdi kunne eksistere rent digitalt – sikret ikke av institusjoner eller mellommenn, men av matematikk, åpne nettverk og kryptografisk konsensus. Det beviste at grenseløs verdioverføring mellom likeverdige parter var mulig og la grunnlaget for en helt ny finansiell tidsalder.',
     p2: 'Dette grunnleggende gjennombruddet utløste fremveksten av kryptovaluta, desentralisert finans (DeFi) og det bredere Web3-økosystemet. Over tid inspirerte dette fundamentet kontinuerlig eksperimentering i det digitale ressursrommet – inkludert prosjekter som utforsker alternative utførelsesmiljøer, høyere transaksjonshastigheter og nye fellesskapsdrevne modeller.',
     p3: 'Bitcoin Lite Edition er en del av dette utviklende landskapet. Inspirert av prinsippene som bidro til å gjøre Bitcoin til en definerende innovasjon innen digital finans – knapphet, åpenhet og desentralisering – representerer det en distinkt digital ressurs utviklet for å utforske disse ideene innenfor det moderne Solana-økosystemet.',
@@ -70,16 +70,16 @@ export const no: TranslationSchema = {
         description: 'Konfigurert med et definitivt tak på nøyaktig 2 100 000 tokens – et tak som er 10 ganger lavere enn Bitcoins grense på 21 000 000. Det finnes ingen sekundære preginger, dynamiske utslipp eller skjulte reserveopplåsinger.',
         highlight: 'Fast 2.1M-tak',
         verified: 'Verifisert',
-        network: 'Solana L1',
+        network: '',
       },
       {
         kicker: '02 · Ytelse',
-        title: 'Høykapasitets Solana L1',
+        title: 'Høykapasitets Solana',
         summary: 'Deterministisk endelighet på under ett sekund.',
         description: 'Distribuert direkte på Solana-blokkjeden, med utnyttelse av Proof-of-History (PoH)-konsensus for å oppnå ~400 millisekunders transaksjonsendelighet og minimale nettverksgebyrer under en brøkdel av et øre (<$0.001).',
         highlight: '~400ms blokker',
         verified: 'Verifisert',
-        network: 'Solana L1',
+        network: '',
       },
       {
         kicker: '03 · Uforanderlighet',
@@ -88,7 +88,7 @@ export const no: TranslationSchema = {
         description: 'Pregingsfullmakten (mint authority) settes permanent til null umiddelbart ved opprettelsen av genesis-tokenet. Frysefullmakten er deaktivert. Ingen sentral administrator eller smartkontrakt-proxy kan endre tokentilbudet eller fryse brukersaldoer.',
         highlight: 'Preging tilbakekalt',
         verified: 'Verifisert',
-        network: 'Solana L1',
+        network: '',
       },
       {
         kicker: '04 · Åpenhet',
@@ -97,7 +97,7 @@ export const no: TranslationSchema = {
         description: 'Hver eneste parameter – totalt tilbud, beholdningsfordeling, tokenkontoer og kontraktkonfigurasjon – kan revideres uavhengig i sanntid av alle nettverksdeltakere ved hjelp av offentlige Solana-utforskere som Solscan.',
         highlight: 'Offentlig hovedbok',
         verified: 'Verifisert',
-        network: 'Solana L1',
+        network: '',
       },
       {
         kicker: '05 · Desentralisering',
@@ -106,7 +106,7 @@ export const no: TranslationSchema = {
         description: 'Brukere beholder fullt, ikke-depotmessig eierskap til sine eiendeler i personlige Solana-lommebøker. Transaksjoner utføres direkte over Solanas desentraliserte validatornettverk uten mellomledd.',
         highlight: 'Eget eierskap',
         verified: 'Verifisert',
-        network: 'Solana L1',
+        network: '',
       },
       {
         kicker: '06 · Integritet',
@@ -115,7 +115,7 @@ export const no: TranslationSchema = {
         description: 'Bygget for seriøse blokkjededeltakere. Vi avviser falske handelsvolumer, oppdiktede partnerskap og kunstige beholdertall. All telemetri på dette nettstedet kobles direkte til verifiserbare kilder på kjeden.',
         highlight: 'Verifisert',
         verified: 'Verifisert',
-        network: 'Solana L1',
+        network: '',
       },
       {
         kicker: '07 · Skille',
@@ -124,7 +124,7 @@ export const no: TranslationSchema = {
         description: 'Selv om den er inspirert av den matematiske knappheten og den åpne filosofien introdusert av Bitcoin, er Bitcoin Lite Edition en helt separat, uavhengig digital SPL-ressurs og er ikke tilknyttet Bitcoin eller Bitcoin Core-utviklere.',
         highlight: 'Uavhengig',
         verified: 'Verifisert',
-        network: 'Solana L1',
+        network: '',
       },
     ],
     distinction_title: 'Tydelig konseptuelt skille og erklæring om uavhengighet',
@@ -244,7 +244,7 @@ export const no: TranslationSchema = {
         },
         {
           tag: 'Invarians 03',
-          title: 'Oppgjør på under ett sekund på Solana L1',
+          title: 'Oppgjør på under ett sekund på Solana',
           desc: 'Transaksjoner bekreftet på ~400 millisekunder med gebyrer under $0.001, noe som muliggjør umiddelbare og energieffektive overføringer.',
         },
         {
@@ -335,7 +335,7 @@ export const no: TranslationSchema = {
     specs: {
       token_name: 'Tokennavn',
       token_symbol: 'Tokensymbol',
-      blockchain_network: 'Blokkjednettverk',
+      blockchain_network: '',
       total_supply: 'Totalt tilbud',
       token_standard: 'Tokenstandard',
       decimals: 'Desimaler',
@@ -814,7 +814,7 @@ export const no: TranslationSchema = {
           num: '7',
           title: 'Tokenomics og matematisk allokering',
           content: [
-            "Streng matematisk allokering i tre hovedseksjoner (2 100 000 BLTE · 2.1M):\n• Rettferdig lansering: 60 % (1 260 000 BLTE)\n• Likviditetsbasseng: 20 % (420 000 BLTE)\n• Staking-belønninger, Dev, DEX-notering: 20 % (420 000 BLTE)",
+            "Streng matematisk allokering i tre hovedseksjoner:\n• Rettferdig lansering: 60 % (660 000 BLTE)\n• Likviditetsbasseng: 20 % (220 000 BLTE)\n• Staking-belønninger, Dev, DEX-notering: 20 % (220 000 BLTE)",
           ],
         },
         {
@@ -922,7 +922,7 @@ export const no: TranslationSchema = {
               desc: 'Preging settes permanent til null og frysing deaktiveres ved lansering.',
             },
             {
-              title: 'Høykapasitets Solana L1',
+              title: 'Høykapasitets Solana',
               desc: '~400ms oppgjørstid og ubetydelige transaksjonsgebyrer (<$0.001).',
             },
           ],

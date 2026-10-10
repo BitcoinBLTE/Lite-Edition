@@ -53,6 +53,7 @@ export interface ProjectConfig {
   }[];
   stakingUrl: string;
   stakingApy: string;
+  logoUrl: string;
   socials: SocialLink[];
   allocations: TokenAllocation[];
   roadmap: RoadmapMilestone[];
@@ -78,6 +79,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
   whitepaperPdfDriveUrl: (import.meta.env.VITE_WHITEPAPER_DRIVE_URL as string) || "/bitcoin-lite-edition-whitepaper.pdf",
   stakingUrl: "https://app.streamflow.finance/staking/solana/mainnet/",
   stakingApy: "11.61%",
+  logoUrl: "/src/assets/images/bitcoin_lite_logo_1791633769447.jpg",
   tradingVenues: [
     {
       name: "Raydium (DEX)",
@@ -87,29 +89,14 @@ export const TOKEN_CONFIG: ProjectConfig = {
   ],
   socials: [
     {
-      id: "telegram",
-      label: "Telegram",
-      url: "https://t.me/BitcoinBLTE"
-    },
-    {
       id: "discord",
       label: "Discord",
       url: "https://discord.gg/CK2kF7cKfk"
     },
     {
-      id: "whatsapp",
-      label: "WhatsApp Channel",
-      url: "https://whatsapp.com/channel/0029VbDVWun545v2OGjFL51v"
-    },
-    {
       id: "twitter",
       label: "X (Twitter)",
       url: "https://x.com/BitcoinBLTE"
-    },
-    {
-      id: "youtube",
-      label: "YouTube",
-      url: "https://www.youtube.com/@BitcoinLiteEdition"
     },
     {
       id: "instagram",

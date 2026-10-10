@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { RotatingCoinLogo } from './RotatingCoinLogo';
-import { WhitePaperCircleTokenomics } from './WhitePaperCircleTokenomics';
+import { WhitePaperExploreMetrics } from './WhitePaperExploreMetrics';
 import { useLanguage } from '../i18n/LanguageContext';
 import { getWhitepaperPdfUrl } from '../config/tokenConfig';
 import { Realistic3DIcon } from './Realistic3DIcon';
@@ -181,7 +181,7 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
                     : 'text-[#4A4A4A] hover:text-[#080808] hover:bg-[#F5F5F5]'
                 }`}
               >
-                <span className="truncate">{s.num}. {s.title}</span>
+                <span className="truncate">{s.num}. {s.id === 'tokenomics' ? 'Explore' : s.title}</span>
                 <ChevronRight className={`w-3.5 h-3.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity ${
                   activeSection === s.id ? 'opacity-100 text-[#B8661B]' : 'text-[#888888]'
                 }`} />
@@ -225,10 +225,10 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
           {chapters.map((ch) => (
             <section key={ch.id} id={`wp-${ch.id}`} className="space-y-4 scroll-mt-6">
               <h3 className="text-xl sm:text-2xl font-[800] text-[#080808] font-display border-b border-[#E5E5E5] pb-2">
-                {ch.num}. {ch.title}
+                {ch.num}. {ch.id === 'tokenomics' ? 'Explore' : ch.title}
               </h3>
               {ch.id === 'tokenomics' ? (
-                <WhitePaperCircleTokenomics />
+                <WhitePaperExploreMetrics />
               ) : (
                 <div className="space-y-3.5 text-sm sm:text-base leading-[1.8] text-[#4A4A4A] font-[450]">
                   {ch.content.map((paragraph, pIdx) => (

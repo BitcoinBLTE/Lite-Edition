@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { Copy, Check, ShieldCheck, BookOpen, Mail, Download } from 'lucide-react';
 import { TOKEN_CONFIG, getWhitepaperPdfUrl } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
+import { RotatingCoinLogo } from './RotatingCoinLogo';
 import { 
   InstagramIcon, 
   XTwitterIcon, 
   GithubIcon, 
-  TelegramIcon, 
-  YouTubeIcon,
-  DiscordIcon,
-  WhatsAppIcon 
+  DiscordIcon 
 } from './PlatformIcons';
 
 interface FooterProps {
@@ -36,10 +34,10 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   const navLinks = [
+    { label: 'Explore', href: '#explore' },
     { label: t.nav.about, href: '#about' },
     { label: t.nav.bitcoin_education, href: '#bitcoin-education' },
     { label: t.nav.token, href: '#token' },
-    { label: t.nav.tokenomics, href: '#tokenomics' },
     { label: t.nav.how_to_buy, href: '#how-to-buy' },
     { label: t.nav.roadmap, href: '#roadmap' },
     { label: t.nav.transparency, href: '#transparency' },
@@ -55,7 +53,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Brand & Mission Column */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#B8661B] inline-block" />
+              <RotatingCoinLogo size={24} className="shrink-0" />
               <span className="text-xl font-[900] text-[#080808] tracking-tight font-display">
                 {TOKEN_CONFIG.name.toUpperCase()}
               </span>
@@ -95,12 +93,9 @@ export const Footer: React.FC<FooterProps> = ({
                     title={social.label}
                   >
                     {social.id === 'twitter' && <XTwitterIcon size={15} />}
-                    {social.id === 'telegram' && <TelegramIcon size={16} />}
                     {social.id === 'discord' && <DiscordIcon size={16} />}
-                    {social.id === 'whatsapp' && <WhatsAppIcon size={16} />}
                     {social.id === 'github' && <GithubIcon size={15} />}
                     {social.id === 'instagram' && <InstagramIcon size={16} />}
-                    {social.id === 'youtube' && <YouTubeIcon size={16} />}
                     {social.id === 'email' && <Mail className="w-3.5 h-3.5" />}
                   </a>
                 );
