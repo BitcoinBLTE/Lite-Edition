@@ -14,6 +14,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
   onOpenTradeModal
 }) => {
   const { t } = useLanguage();
+  const exp = t.modals?.explore_modal;
 
   const [marketStats, setMarketStats] = useState({
     price: '$0.00',
@@ -94,13 +95,13 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
           <div className="max-w-3xl">
             <div className="text-xs font-mono font-bold tracking-[3px] uppercase text-[#B8661B] mb-3 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#B8661B] animate-pulse" />
-              <span>EXPLORE PROTOCOL</span>
+              <span>{exp?.section_tag || 'EXPLORE PROTOCOL'}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] text-[#080808] dark:text-white font-display tracking-tight leading-[1.15]">
-              Review Protocol Stats and Activity
+              {exp?.section_title || 'Review Protocol Stats and Activity'}
             </h2>
             <p className="mt-3 text-base sm:text-lg text-[#555555] dark:text-[#A1A1AA] leading-relaxed">
-              Real-time on-chain metrics, staking economics, and verified supply distribution directly connected to the blockchain.
+              {exp?.section_desc || 'Real-time on-chain metrics, staking economics, and verified supply distribution directly connected to the blockchain.'}
             </p>
           </div>
 
@@ -112,15 +113,15 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
                 : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/20'
             }`}>
               <span className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500 animate-ping'}`} />
-              <span>{isLive ? 'Live Pool Active' : 'Live Sync Active'}</span>
+              <span>{isLive ? (exp?.live_pool_active || 'Live Pool Active') : (exp?.live_sync_active || 'Live Sync Active')}</span>
             </div>
 
             <button
               onClick={checkLiveTelemetry}
               disabled={isRefreshing}
               className="p-2 rounded-xl text-[#666666] hover:text-[#B8661B] dark:text-[#A1A1AA] dark:hover:text-white bg-white dark:bg-[#1C150E] hover:bg-[#FAF5EF] border border-[#E5E5E5] dark:border-[#B8661B]/20 transition-all cursor-pointer disabled:opacity-50 shadow-2xs"
-              title="Refresh Live Data"
-              aria-label="Refresh live data"
+              title={exp?.refresh_live_data || 'Refresh Live Data'}
+              aria-label={exp?.refresh_live_data || 'Refresh live data'}
             >
               <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin text-[#B8661B]' : ''}`} />
             </button>
@@ -135,30 +136,30 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             <div>
               <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-[#F0F0F0] dark:border-[#222228]">
                 <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase">
-                  Market →
+                  {exp?.card_market || 'Market'} →
                 </span>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B]">
-                  DEX
+                  {exp?.badge_dex || 'DEX'}
                 </span>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Price</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.price || 'Price'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {marketStats.price}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Volume (24h)</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.volume_24h || 'Volume (24h)'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {marketStats.volume24h}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Liquidity</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.liquidity || 'Liquidity'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {marketStats.liquidity}
                   </span>
@@ -167,7 +168,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             </div>
 
             <div className="mt-5 pt-3 border-t border-[#F0F0F0] dark:border-[#222228] text-[10px] font-mono text-[#888888] dark:text-[#71717A] text-right">
-              {isLive ? 'Live Liquidity Pool' : 'Awaiting Pair Genesis'}
+              {isLive ? (exp?.live_liquidity_pool || 'Live Liquidity Pool') : (exp?.awaiting_pair || 'Awaiting Pair Genesis')}
             </div>
           </div>
 
@@ -176,30 +177,30 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             <div>
               <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-[#F0F0F0] dark:border-[#222228]">
                 <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase">
-                  Staking →
+                  {exp?.card_staking || 'Staking'} →
                 </span>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B]">
-                  ESCROW
+                  {exp?.badge_escrow || 'ESCROW'}
                 </span>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">APR</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.apr || 'APR'}</span>
                   <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
                     {stakingStats.apr}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Liquid</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.liquid || 'Liquid'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {stakingStats.liquid}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Native</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.native || 'Native'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {stakingStats.native}
                   </span>
@@ -208,7 +209,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             </div>
 
             <div className="mt-5 pt-3 border-t border-[#F0F0F0] dark:border-[#222228] text-[10px] font-mono text-[#888888] dark:text-[#71717A] text-right">
-              Streamflow Protocol Verified
+              {exp?.staking_verified || 'Streamflow Protocol Verified'}
             </div>
           </div>
 
@@ -217,30 +218,30 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             <div>
               <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-[#F0F0F0] dark:border-[#222228]">
                 <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase">
-                  Game →
+                  {exp?.card_game || 'Game'} →
                 </span>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
-                  COMING SOON
+                  {exp?.badge_coming_soon || 'COMING SOON'}
                 </span>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Total rewards</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.total_rewards || 'Total rewards'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     0
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Participation count</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.participation_count || 'Participation count'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     0
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Game rewards</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.game_rewards || 'Game rewards'}</span>
                   <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
                     135,000
                   </span>
@@ -249,7 +250,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             </div>
 
             <div className="mt-5 pt-3 border-t border-[#F0F0F0] dark:border-[#222228] text-[10px] font-mono text-[#B8661B] dark:text-[#EAB308] font-bold text-right">
-              Coming Soon
+              {exp?.coming_soon || 'Coming Soon'}
             </div>
           </div>
 
@@ -258,37 +259,37 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             <div>
               <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-[#F0F0F0] dark:border-[#222228]">
                 <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase">
-                  Supply →
+                  {exp?.card_supply || 'Supply'} →
                 </span>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B]">
-                  SOLANA
+                  {exp?.badge_network || 'SOLANA'}
                 </span>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Circulating</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.circulating || 'Circulating'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.circulating}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Non circulatory</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.non_circulatory || 'Non circulatory'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.nonCirculatory}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Max</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.max_supply || 'Max'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.max}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Holders</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.holders || 'Holders'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.holders}
                   </span>
@@ -297,7 +298,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             </div>
 
             <div className="mt-5 pt-3 border-t border-[#F0F0F0] dark:border-[#222228] text-[10px] font-mono text-[#888888] dark:text-[#71717A] text-right">
-              Zero Inflation / Immutable
+              {exp?.zero_inflation || 'Zero Inflation / Immutable'}
             </div>
           </div>
 
@@ -307,7 +308,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
         <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
           <div className="flex items-center gap-2 text-xs text-[#888888] font-mono">
             <Activity className="w-4 h-4 text-[#B8661B]" />
-            <span>Telemetry updated: {lastSyncTime}</span>
+            <span>{exp?.synced || 'Telemetry updated'}: {lastSyncTime === 'Just now' ? (exp?.just_now || 'Just now') : lastSyncTime}</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -318,7 +319,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
               className="px-5 py-3 rounded-[14px] bg-[#B8661B] hover:bg-[#964E10] text-white font-bold font-mono text-xs transition-colors flex items-center gap-2 shadow-xs"
             >
               <Coins className="w-4 h-4" />
-              <span>STAKE BLTE (11.61% APY)</span>
+              <span>{exp?.btn_stake ? exp.btn_stake.toUpperCase() : 'STAKE BLTE (11.61% APY)'}</span>
             </a>
 
             {onOpenTradeModal && (
@@ -326,7 +327,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
                 onClick={onOpenTradeModal}
                 className="px-5 py-3 rounded-[14px] bg-[#111111] hover:bg-[#B8661B] text-white font-bold font-mono text-xs transition-colors cursor-pointer shadow-xs"
               >
-                BUY / TRADE
+                {t.nav.buy_trade || 'BUY / TRADE'}
               </button>
             )}
 
@@ -336,7 +337,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
                 className="px-5 py-3 rounded-[14px] bg-white dark:bg-[#18181D] hover:bg-[#FAF5EF] text-[#080808] dark:text-white border border-[#E5E5E5] dark:border-[#B8661B]/30 font-bold font-mono text-xs transition-colors cursor-pointer flex items-center gap-1.5"
               >
                 <Compass className="w-4 h-4 text-[#B8661B]" />
-                <span>EXPLORE PANEL</span>
+                <span>{exp?.btn_explore_panel || 'EXPLORE PANEL'}</span>
               </button>
             )}
           </div>

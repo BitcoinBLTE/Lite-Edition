@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     isWhitepaper?: boolean;
     isExplore?: boolean;
   }> = [
-    { label: 'Explore', href: '#explore', action: onOpenExplore, isExplore: true },
+    { label: t.nav.explore || 'Explore', href: '#explore', action: onOpenExplore, isExplore: true },
     { label: t.nav.about, href: '#about', action: null },
     { label: t.nav.bitcoin_education, href: '#bitcoin-education', action: null },
     { label: t.nav.token, href: '#token', action: null },
@@ -66,12 +66,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     href?: string;
   }> = [
     {
-      label: 'Explore',
+      label: t.nav.explore || 'Explore',
       icon: <Compass className="w-5 h-5 shrink-0" />,
       action: () => onOpenExplore()
     },
     {
-      label: 'Stake BLTE',
+      label: t.nav.stake_blte || 'Stake BLTE',
       icon: <Coins className="w-5 h-5 shrink-0" />,
       badge: '11.61%',
       action: () => {
@@ -79,19 +79,19 @@ export const Navbar: React.FC<NavbarProps> = ({
       }
     },
     {
-      label: 'Buy/Trade',
+      label: t.nav.buy_trade || 'Buy/Trade',
       icon: <ArrowLeftRight className="w-5 h-5 shrink-0" />,
       action: () => onOpenTradeModal()
     },
     {
-      label: 'Game',
+      label: t.nav.game || 'Game',
       icon: <Gamepad2 className="w-5 h-5 shrink-0" />,
       action: () => {
         if (onOpenGame) onOpenGame();
       }
     },
     {
-      label: 'Read White Paper',
+      label: t.nav.whitepaper || 'Read White Paper',
       icon: <BookOpen className="w-5 h-5 shrink-0" />,
       action: () => onOpenWhitePaper()
     },

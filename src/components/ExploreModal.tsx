@@ -20,6 +20,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
 }) => {
   const { t } = useLanguage();
   const { isBlack } = useTheme();
+  const exp = t.modals?.explore_modal;
 
   // Baseline protocol values requested by specification
   const [marketStats, setMarketStats] = useState({
@@ -106,7 +107,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
       title={
         <div className="flex items-center gap-2">
           <span className="font-display font-black tracking-tight text-lg sm:text-xl text-[#080808] dark:text-white">
-            Explore
+            {exp?.title || 'Explore'}
           </span>
           <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1 ${
             isLive 
@@ -114,11 +115,11 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
               : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
           }`}>
             <span className={`w-1.5 h-1.5 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500 animate-ping'}`} />
-            {isLive ? 'Live Pool Active' : 'Live Sync Active'}
+            {isLive ? (exp?.live_pool_active || 'Live Pool Active') : (exp?.live_sync_active || 'Live Sync Active')}
           </span>
         </div>
       }
-      subtitle="Review protocol stats and activity."
+      subtitle={exp?.subtitle || 'Review protocol stats and activity.'}
       icon={<Realistic3DIcon type="transparency" size="md" />}
       maxWidthClass="max-w-4xl"
       ariaLabelledBy="explore-panel-title"
@@ -127,8 +128,8 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
           onClick={checkLiveTelemetry}
           disabled={isRefreshing}
           className="p-1.5 rounded-lg text-[#666666] hover:text-[#B8661B] dark:text-[#A1A1AA] dark:hover:text-white hover:bg-[#FAF5EF] dark:hover:bg-[#1C150E] transition-all cursor-pointer disabled:opacity-50"
-          title="Refresh Live Data"
-          aria-label="Refresh live data"
+          title={exp?.refresh_live_data || 'Refresh Live Data'}
+          aria-label={exp?.refresh_live_data || 'Refresh live data'}
         >
           <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin text-[#B8661B]' : ''}`} />
         </button>
@@ -137,7 +138,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
         <div className="px-5 sm:px-6 py-3.5 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-[#71717A]">
             <Activity className="w-3.5 h-3.5 text-[#B8661B]" />
-            <span className="font-mono text-[11px]">Synced: {lastSyncTime}</span>
+            <span className="font-mono text-[11px]">{exp?.synced || 'Synced'}: {lastSyncTime === 'Just now' ? (exp?.just_now || 'Just now') : lastSyncTime}</span>
           </div>
 
           <div className="flex items-center gap-2.5">
@@ -148,7 +149,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
               className="px-3.5 py-2 rounded-[12px] bg-[#B8661B] hover:bg-[#964E10] text-white font-bold font-mono transition-colors flex items-center gap-1.5 shadow-xs"
             >
               <Coins className="w-3.5 h-3.5" />
-              <span>Stake (11.61% APY)</span>
+              <span>{exp?.btn_stake || 'Stake (11.61% APY)'}</span>
             </a>
 
             {onOpenTradeModal && (
@@ -159,7 +160,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                 }}
                 className="px-3.5 py-2 rounded-[12px] bg-[#111111] hover:bg-[#B8661B] text-white font-bold font-mono transition-colors cursor-pointer"
               >
-                Trade
+                {exp?.btn_trade || 'Trade'}
               </button>
             )}
 
@@ -180,8 +181,8 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
             onClick={checkLiveTelemetry}
             disabled={isRefreshing}
             className="p-2 rounded-xl text-[#666666] hover:text-[#B8661B] dark:text-[#A1A1AA] dark:hover:text-white bg-[#FAF5EF] hover:bg-[#F2E8DC] dark:bg-[#1C150E] dark:hover:bg-[#281D12] border border-[#EAB308]/15 transition-all cursor-pointer disabled:opacity-50"
-            title="Refresh Live Data"
-            aria-label="Refresh live data"
+            title={exp?.refresh_live_data || 'Refresh Live Data'}
+            aria-label={exp?.refresh_live_data || 'Refresh live data'}
           >
             <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin text-[#B8661B]' : ''}`} />
           </button>
@@ -196,31 +197,31 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase">
-                    Market →
+                    {exp?.card_market || 'Market'} →
                   </span>
                 </div>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B]">
-                  DEX
+                  {exp?.badge_dex || 'DEX'}
                 </span>
               </div>
 
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Price</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.price || 'Price'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {marketStats.price}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Volume (24h)</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.volume_24h || 'Volume (24h)'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {marketStats.volume24h}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Liquidity</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.liquidity || 'Liquidity'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {marketStats.liquidity}
                   </span>
@@ -229,7 +230,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
             </div>
 
             <div className="mt-4 pt-3 border-t border-[#EAB308]/10 text-[10px] font-mono text-[#888888] dark:text-[#71717A] text-right">
-              {isLive ? 'Live Liquidity Pool' : 'Awaiting Pair Genesis'}
+              {isLive ? (exp?.live_liquidity_pool || 'Live Liquidity Pool') : (exp?.awaiting_pair || 'Awaiting Pair Genesis')}
             </div>
           </div>
 
@@ -239,31 +240,31 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase">
-                    Staking →
+                    {exp?.card_staking || 'Staking'} →
                   </span>
                 </div>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B]">
-                  ESCROW
+                  {exp?.badge_escrow || 'ESCROW'}
                 </span>
               </div>
 
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">APR</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.apr || 'APR'}</span>
                   <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
                     {stakingStats.apr}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Liquid</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.liquid || 'Liquid'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {stakingStats.liquid}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Native</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.native || 'Native'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {stakingStats.native}
                   </span>
@@ -272,7 +273,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
             </div>
 
             <div className="mt-4 pt-3 border-t border-[#EAB308]/10 text-[10px] font-mono text-[#888888] dark:text-[#71717A] text-right">
-              Streamflow Protocol Verified
+              {exp?.staking_verified || 'Streamflow Protocol Verified'}
             </div>
           </div>
 
@@ -282,31 +283,31 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase">
-                    Game →
+                    {exp?.card_game || 'Game'} →
                   </span>
                 </div>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
-                  COMING SOON
+                  {exp?.badge_coming_soon || 'COMING SOON'}
                 </span>
               </div>
 
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Total rewards</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.total_rewards || 'Total rewards'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     0
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Participation count</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.participation_count || 'Participation count'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     0
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Game rewards</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.game_rewards || 'Game rewards'}</span>
                   <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
                     135,000
                   </span>
@@ -315,7 +316,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
             </div>
 
             <div className="mt-4 pt-3 border-t border-[#EAB308]/10 text-[10px] font-mono text-[#B8661B] dark:text-[#EAB308] font-bold text-right">
-              Coming Soon
+              {exp?.coming_soon || 'Coming Soon'}
             </div>
           </div>
 
@@ -325,38 +326,38 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase">
-                    Supply →
+                    {exp?.card_supply || 'Supply'} →
                   </span>
                 </div>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B]">
-                  SOLANA
+                  {exp?.badge_network || 'SOLANA'}
                 </span>
               </div>
 
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Circulating</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.circulating || 'Circulating'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.circulating}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Non circulatory</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.non_circulatory || 'Non circulatory'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.nonCirculatory}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Max</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.max_supply || 'Max'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.max}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">Holders</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.holders || 'Holders'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {supplyStats.holders}
                   </span>
@@ -365,7 +366,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
             </div>
 
             <div className="mt-4 pt-3 border-t border-[#EAB308]/10 text-[10px] font-mono text-[#888888] dark:text-[#71717A] text-right">
-              Zero Inflation / Immutable
+              {exp?.zero_inflation || 'Zero Inflation / Immutable'}
             </div>
           </div>
 

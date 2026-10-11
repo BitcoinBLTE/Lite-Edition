@@ -16,13 +16,14 @@ export const GameModal: React.FC<GameModalProps> = ({
   onOpenExplore
 }) => {
   const { t } = useLanguage();
+  const gm = t.modals?.game_modal;
 
   return (
     <DraggableModal
       isOpen={isOpen}
       onClose={onClose}
-      title="GAME"
-      subtitle="Interactive Protocol Gaming Module"
+      title={gm?.title || 'GAME'}
+      subtitle={gm?.subtitle || 'Interactive Protocol Gaming Module'}
       icon={<Realistic3DIcon type="transparency" size="sm" />}
       maxWidthClass="max-w-md"
       ariaLabelledBy="game-modal-title"
@@ -37,7 +38,7 @@ export const GameModal: React.FC<GameModalProps> = ({
               className="text-xs font-bold text-[#B8661B] hover:text-[#964E10] dark:text-[#EAB308] flex items-center gap-1.5 cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Explore Protocol Stats</span>
+              <span>{gm?.btn_explore_stats || 'Explore Protocol Stats'}</span>
             </button>
           )}
 
@@ -59,14 +60,14 @@ export const GameModal: React.FC<GameModalProps> = ({
 
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Clock className="w-3.5 h-3.5 animate-pulse text-[#B8661B]" />
-            <span>Coming Soon</span>
+            <span>{gm?.badge_coming_soon || 'Coming Soon'}</span>
           </div>
 
           <h3 className="text-xl sm:text-2xl font-[900] text-[#080808] dark:text-white font-display tracking-tight">
-            Bitcoin Lite Edition Game
+            {gm?.game_title || 'Bitcoin Lite Edition Game'}
           </h3>
           <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A1A1AA] max-w-sm mx-auto leading-relaxed">
-            The decentralized interactive gaming ecosystem is currently under development. Compete, participate, and claim verified on-chain rewards.
+            {gm?.description || 'The decentralized interactive gaming ecosystem is currently under development. Compete, participate, and claim verified on-chain rewards.'}
           </p>
         </div>
 
@@ -74,7 +75,7 @@ export const GameModal: React.FC<GameModalProps> = ({
         <div className="grid grid-cols-3 gap-2.5 pt-1">
           <div className="p-3.5 rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center">
             <div className="text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1">
-              Total Rewards
+              {gm?.total_rewards || 'Total Rewards'}
             </div>
             <div className="text-base sm:text-lg font-mono font-black text-[#080808] dark:text-white tabular-nums">
               0
@@ -83,7 +84,7 @@ export const GameModal: React.FC<GameModalProps> = ({
 
           <div className="p-3.5 rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center">
             <div className="text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1">
-              Participants
+              {gm?.participants || 'Participants'}
             </div>
             <div className="text-base sm:text-lg font-mono font-black text-[#080808] dark:text-white tabular-nums">
               0
@@ -92,7 +93,7 @@ export const GameModal: React.FC<GameModalProps> = ({
 
           <div className="p-3.5 rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center">
             <div className="text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1">
-              Game Rewards
+              {gm?.game_rewards || 'Game Rewards'}
             </div>
             <div className="text-base sm:text-lg font-mono font-black text-[#B8661B] dark:text-[#EAB308] tabular-nums">
               135,000
@@ -104,10 +105,10 @@ export const GameModal: React.FC<GameModalProps> = ({
         <div className="rounded-[16px] bg-[#FAF5EF] dark:bg-[#18181D] border border-[#E9C9A5]/50 dark:border-[#B8661B]/20 p-4 text-left space-y-1.5">
           <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308]">
             <Trophy className="w-3.5 h-3.5" />
-            <span>Dedicated Reward Allocation</span>
+            <span>{gm?.reward_notice_title || 'Dedicated Reward Allocation'}</span>
           </div>
           <p className="text-xs text-[#555555] dark:text-[#A1A1AA] leading-relaxed">
-            135,000 BLTE tokens are mathematically reserved for competitive gaming bounties, leaderboard rewards, and verified player participation.
+            {gm?.reward_notice_desc || '135,000 BLTE tokens are mathematically reserved for competitive gaming bounties, leaderboard rewards, and verified player participation.'}
           </p>
         </div>
       </div>
