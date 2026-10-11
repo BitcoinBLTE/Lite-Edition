@@ -952,6 +952,7 @@ export const no: TranslationSchema = {
       badge_dex: 'DEX',
       price: 'Pris',
       volume_24h: 'Volum (24t)',
+      market_cap: 'Markedsverdi',
       liquidity: 'Likviditet',
       live_liquidity_pool: 'Live likviditetspool',
       awaiting_pair: 'Venter på par-genesis',

@@ -933,6 +933,7 @@ export const de: TranslationSchema = {
       badge_dex: 'DEX',
       price: 'Preis',
       volume_24h: 'Volumen (24h)',
+      market_cap: 'Marktkapitalisierung',
       liquidity: 'Liquidität',
       live_liquidity_pool: 'Live-Liquiditätspool',
       awaiting_pair: 'Warten auf Paar-Genesis',

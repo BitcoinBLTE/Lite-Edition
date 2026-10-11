@@ -934,6 +934,7 @@ export const zhCN: TranslationSchema = {
       badge_dex: 'DEX',
       price: '价格',
       volume_24h: '24小时交易量',
+      market_cap: '总市值',
       liquidity: '流动性',
       live_liquidity_pool: '实时流动性池',
       awaiting_pair: '等待交易对创世',

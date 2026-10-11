@@ -933,6 +933,7 @@ export const ptPT: TranslationSchema = {
       badge_dex: 'DEX',
       price: 'Preço',
       volume_24h: 'Volume (24h)',
+      market_cap: 'Capitalização',
       liquidity: 'Liquidez',
       live_liquidity_pool: 'Pool de liquidez em direto',
       awaiting_pair: 'A aguardar génese do par',

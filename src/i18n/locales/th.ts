@@ -952,6 +952,7 @@ export const th: TranslationSchema = {
       badge_dex: 'DEX',
       price: 'ราคา',
       volume_24h: 'ปริมาณการซื้อขาย (24 ชม.)',
+      market_cap: 'มูลค่าตามราคาตลาด',
       liquidity: 'สภาพคล่อง',
       live_liquidity_pool: 'พูลสภาพคล่องสด',
       awaiting_pair: 'กำลังรอกำเนิดคู่เหรียญ',

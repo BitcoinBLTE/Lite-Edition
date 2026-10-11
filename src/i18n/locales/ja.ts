@@ -933,6 +933,7 @@ export const ja: TranslationSchema = {
       badge_dex: 'DEX',
       price: '価格',
       volume_24h: '24時間取引高',
+      market_cap: '時価総額',
       liquidity: '流動性',
       live_liquidity_pool: 'ライブ流動性プール',
       awaiting_pair: 'ペアジェネシス待機中',

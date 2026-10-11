@@ -19,6 +19,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
   const [marketStats, setMarketStats] = useState({
     price: '$0.00',
     volume24h: '$0.00',
+    marketCap: '$0.00',
     liquidity: '$0.00'
   });
 
@@ -54,6 +55,10 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
           ? `$${data.volume24h.toLocaleString(undefined, { maximumFractionDigits: 0 })}`
           : '$0.00';
 
+        const formattedMcap = data.marketCapUsd !== null
+          ? `$${data.marketCapUsd.toLocaleString(undefined, { maximumFractionDigits: 0 })}`
+          : '$0.00';
+
         const formattedLiq = data.liquidityUsd !== null
           ? `$${data.liquidityUsd.toLocaleString(undefined, { maximumFractionDigits: 0 })}`
           : '$0.00';
@@ -61,6 +66,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
         setMarketStats({
           price: formattedPrice,
           volume24h: formattedVol,
+          marketCap: formattedMcap,
           liquidity: formattedLiq
         });
       } else {
@@ -68,6 +74,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
         setMarketStats({
           price: '$0.00',
           volume24h: '$0.00',
+          marketCap: '$0.00',
           liquidity: '$0.00'
         });
       }
@@ -155,6 +162,13 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
                   <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.volume_24h || 'Volume (24h)'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
                     {marketStats.volume24h}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.market_cap || t.market?.market_cap || 'Market Cap'}</span>
+                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                    {marketStats.marketCap}
                   </span>
                 </div>
 

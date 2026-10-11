@@ -943,6 +943,7 @@ export const en: TranslationSchema = {
       badge_dex: 'DEX',
       price: 'Price',
       volume_24h: 'Volume (24h)',
+      market_cap: 'Market Cap',
       liquidity: 'Liquidity',
       live_liquidity_pool: 'Live Liquidity Pool',
       awaiting_pair: 'Awaiting Pair Genesis',

@@ -427,6 +427,7 @@ export interface TranslationSchema {
       badge_dex: string;
       price: string;
       volume_24h: string;
+      market_cap: string;
       liquidity: string;
       live_liquidity_pool: string;
       awaiting_pair: string;
