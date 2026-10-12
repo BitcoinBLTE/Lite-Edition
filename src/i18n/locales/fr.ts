@@ -23,7 +23,7 @@ export const fr: TranslationSchema = {
     about: 'À propos',
     bitcoin_education: 'Bitcoin & Genèse',
     token: 'Jeton',
-    tokenomics: 'Explore',
+    tokenomics: 'Tokénomique',
     how_to_buy: 'Comment acheter',
     whitepaper: 'Livre blanc',
     roadmap: 'Feuille de route',
@@ -350,27 +350,22 @@ export const fr: TranslationSchema = {
   tokenomics: {
     kicker: 'Structure économique · Rareté mathématique',
     title: '2.1M OFFRE TOTALE',
-    subtitle: 'Une distribution strictement plafonnée depuis un modèle de données central. Zéro porte dérobée, zéro inflation cachée.',
+    subtitle: 'Une distribution strictement plafonnée configurée en deux allocations stratégiques : lancement équitable et pool de liquidité. Zéro porte dérobée, zéro inflation cachée.',
     fixed_cap: 'PLAFOND FIXE',
     total_supply: 'OFFRE TOTALE',
-    verified_alloc: 'Allocation vérifiée à 100 % (100 %)',
+    verified_alloc: 'Allocation vérifiée à 100 % · Lancement équitable & Pool de liquidité',
     allocations: [
       {
-            id: "fair-launch",
-            category: "Lancement équitable",
-            description: "Distribution publique et communautaire directe sur Solana avec accès sans frontières (60%)."
+        id: "fair-launch",
+        category: "Lancement équitable",
+        description: "Distribution publique et communautaire directe sur Solana avec accès sans frontières."
       },
       {
-            id: "liquidity-pool",
-            category: "Pool de liquidité",
-            description: "Déploiement du pool de liquidité DEX AMM sur Raydium (20%)."
-      },
-      {
-            id: "staking-dev-dex",
-            category: "Récompenses de staking, Dév, listing DEX",
-            description: "Rendements de staking Streamflow, développement technique et cotations DEX/CEX (20%)."
+        id: "liquidity-pool",
+        category: "Pool de liquidité",
+        description: "Déploiement du pool de liquidité DEX AMM sur Raydium."
       }
-],
+    ],
     data_source: 'Source de données : Modèle de configuration central. 100 % = 2 100 000 BLTE (2.1M).',
   },
   how_to_buy: {
@@ -802,7 +797,7 @@ export const fr: TranslationSchema = {
           num: '7',
           title: 'Tokenomics et allocation mathématique',
           content: [
-            "Allocation mathématique stricte en trois sections majeures :\n• Lancement équitable : 60 % (660 000 BLTE)\n• Pool de liquidité : 20 % (220 000 BLTE)\n• Récompenses de staking, Dév, listing DEX : 20 % (220 000 BLTE)",
+            "Allocation mathématique stricte (70 % Lancement équitable · 30 % Pool de liquidité) :\n• Lancement équitable : 70 % (1 470 000 BLTE)\n• Pool de liquidité : 30 % (630 000 BLTE)",
           ],
         },
         {

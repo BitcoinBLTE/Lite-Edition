@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { RefreshCw, ExternalLink, Activity, Coins } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
-import { fetchLiveMarketData, LiveMarketData } from '../services/marketDataService';
+import { fetchLiveMarketData, fetchTokenHoldersCount, LiveMarketData } from '../services/marketDataService';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useTheme } from '../theme/ThemeContext';
 import { Realistic3DIcon } from './Realistic3DIcon';
@@ -32,13 +32,13 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
 
   const [stakingStats] = useState({
     apr: '11.61%',
-    liquid: '180,000',
-    native: '180,000'
+    liquid: '$0.00',
+    native: '$0.00'
   });
 
   const [supplyStats, setSupplyStats] = useState({
-    circulating: '1,100,000',
-    nonCirculatory: '1,000,000',
+    circulating: '2,100,000',
+    nonCirculatory: '0.00',
     max: '2,100,000',
     holders: '1'
   });
@@ -87,6 +87,12 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
           marketCap: '$0.00',
           liquidity: '$0.00'
         });
+      }
+
+      // Automatically query live token holders count on-chain when token address is available
+      const liveHolders = await fetchTokenHoldersCount();
+      if (liveHolders) {
+        setSupplyStats(prev => ({ ...prev, holders: liveHolders }));
       }
 
       setLastSyncTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }));
@@ -323,7 +329,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.game_rewards || 'Game rewards'}</span>
                   <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
-                    135,000
+                    $0.00
                   </span>
                 </div>
               </div>

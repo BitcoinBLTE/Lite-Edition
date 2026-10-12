@@ -122,3 +122,53 @@ export async function fetchLiveMarketData(customMintAddress?: string | null): Pr
     };
   }
 }
+
+/**
+ * Automatically fetch on-chain token holders count when token mint address is available.
+ */
+export async function fetchTokenHoldersCount(customMintAddress?: string | null): Promise<string | null> {
+  const address = customMintAddress ?? TOKEN_CONFIG.mintAddress;
+  if (!address) {
+    return null;
+  }
+
+  // 1. Query verified Solana token inspector API (Rugcheck report)
+  try {
+    const res = await fetch(`https://api.rugcheck.xyz/v1/tokens/${address}/report`, {
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      if (typeof data.totalHolders === 'number' && data.totalHolders > 0) {
+        return data.totalHolders.toLocaleString();
+      }
+    }
+  } catch {
+    // Gracefully proceed to fallback
+  }
+
+  // 2. Fallback to Solana Mainnet RPC largest token accounts
+  try {
+    const rpcRes = await fetch('https://api.mainnet-beta.solana.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 'holders-count',
+        method: 'getTokenLargestAccounts',
+        params: [address]
+      })
+    });
+    if (rpcRes.ok) {
+      const rpcData = await rpcRes.json();
+      if (rpcData?.result?.value && Array.isArray(rpcData.result.value)) {
+        return `${rpcData.result.value.length}+`;
+      }
+    }
+  } catch {
+    // Non-blocking telemetry fallback
+  }
+
+  return null;
+}
+

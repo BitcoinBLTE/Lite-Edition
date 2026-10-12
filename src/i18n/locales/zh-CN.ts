@@ -23,7 +23,7 @@ export const zhCN: TranslationSchema = {
     about: '关于项目',
     bitcoin_education: '比特币与创世',
     token: '代币',
-    tokenomics: 'Explore',
+    tokenomics: '代币经济学',
     how_to_buy: '如何购买',
     whitepaper: '白皮书',
     roadmap: '路线图',
@@ -350,27 +350,22 @@ export const zhCN: TranslationSchema = {
   tokenomics: {
     kicker: '经济模型 · 数学硬约束',
     title: '2.1M 总供应量',
-    subtitle: '基于中央数据模型确立的严苛分配方案。零铸币后门，绝无暗箱通胀。',
+    subtitle: '基于中央数据模型确立的严苛分配方案，仅分为两大战略板块：公平启动与流动性资金池。零铸币后门，绝无暗箱通胀。',
     fixed_cap: '绝对硬顶',
     total_supply: '总供应量',
-    verified_alloc: '通过数学 100% 验证的硬性分配方案（100%）',
+    verified_alloc: '通过数学 100% 验证的硬性分配方案 · 公平启动与流动性资金池',
     allocations: [
       {
-            id: "fair-launch",
-            category: "公平启动 (Fair Launch)",
-            description: "通过 Solana 面向全社区无门槛公开分发，实现去中心化自由流通 (60%)。"
+        id: "fair-launch",
+        category: "公平启动 (Fair Launch)",
+        description: "通过 Solana 面向全社区无门槛公开分发，实现去中心化自由流通。"
       },
       {
-            id: "liquidity-pool",
-            category: "流动性资金池 (Liquidity Pool)",
-            description: "在 Raydium 上部署的自动做市商 (AMM) 去中心化深度流动池 (20%)。"
-      },
-      {
-            id: "staking-dev-dex",
-            category: "质押奖励、开发与 DEX 上线",
-            description: "Streamflow 质押收益奖励、技术持续开发及 DEX/CEX 生态上线 (20%)。"
+        id: "liquidity-pool",
+        category: "流动性资金池 (Liquidity Pool)",
+        description: "在 Raydium 上部署的自动做市商 (AMM) 去中心化深度流动池。"
       }
-],
+    ],
     data_source: '数据来源：中央单一配置模型。100% = 2,100,000 BLTE (2.1M)。',
   },
   how_to_buy: {
@@ -800,9 +795,9 @@ export const zhCN: TranslationSchema = {
         {
           id: 'tokenomics',
           num: '7',
-          title: '代币经济学分配（三大核心板块）',
+          title: '代币经济学分配（两大核心板块）',
           content: [
-            "严苛数学硬约束分配（仅分为三大核心板块）：\n• 公平启动 (Fair Launch)：60% (660,000 BLTE)\n• 流动性资金池 (Liquidity Pool)：20% (220,000 BLTE)\n• 质押奖励、开发与 DEX 上线：20% (220,000 BLTE)",
+            "严苛数学硬约束分配（70% 公平启动 · 30% 流动性资金池）：\n• 公平启动 (Fair Launch)：70% (1,470,000 BLTE)\n• 流动性资金池 (Liquidity Pool)：30% (630,000 BLTE)",
           ],
         },
         {
@@ -973,7 +968,7 @@ export const zhCN: TranslationSchema = {
       participants: '参与者',
       game_rewards: '游戏奖励',
       reward_notice_title: '专属奖励分配',
-      reward_notice_desc: '135,000 BLTE 代币通过数学机制预留给竞技赏金、排行榜奖励和经过验证的玩家参与。',
+      reward_notice_desc: '竞技赏金、排行榜奖励和经过验证的玩家参与奖励链上遥测。',
     },
   },
 };

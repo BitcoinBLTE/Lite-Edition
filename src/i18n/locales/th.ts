@@ -23,7 +23,7 @@ export const th: TranslationSchema = {
     about: 'เกี่ยวกับเรา',
     bitcoin_education: 'บิตคอยน์และจุดเริ่มต้น',
     token: 'โทเค็น',
-    tokenomics: 'Explore',
+    tokenomics: 'โทเคโนมิกส์',
     how_to_buy: 'วิธีซื้อ',
     whitepaper: 'ไวท์เปเปอร์',
     roadmap: 'แผนงาน',
@@ -353,29 +353,24 @@ export const th: TranslationSchema = {
     view_explorer: 'ดูบนบล็อกเชนเอ็กซ์พลอเรอร์',
   },
   tokenomics: {
-    kicker: 'โครงสร้างการจัดสรร 3 การจัดสรร · ความขาดแคลนทางคณิตศาสตร์',
+    kicker: 'โครงสร้างการจัดสรร · ความขาดแคลนทางคณิตศาสตร์',
     title: '2.1M อุปทานทั้งหมด',
-    subtitle: 'การจัดสรรโทเค็นที่มีการจำกัดจำนวนอย่างเคร่งครัดแบ่งออกเป็น 3 การจัดสรรเชิงกลยุทธ์ ไม่มีช่องทางสร้างโทเค็นเพิ่ม ปราศจากเงินเฟ้อแอบแฝง',
+    subtitle: 'การจัดสรรโทเค็นที่มีการจำกัดจำนวนอย่างเคร่งครัดใน 2 ส่วนเชิงกลยุทธ์: การเปิดตัวอย่างเป็นธรรม และ พูลสภาพคล่อง ปราศจากเงินเฟ้อแอบแฝง',
     fixed_cap: 'เพดานจำกัดคงที่',
     total_supply: 'อุปทานทั้งหมด',
-    verified_alloc: 'การจัดสรรที่ได้รับการตรวจสอบ 100% ใน 3 การจัดสรร (100%)',
+    verified_alloc: 'การจัดสรรที่ได้รับการตรวจสอบ 100% ทางคณิตศาสตร์ · Fair Launch & Liquidity Pool',
     allocations: [
       {
-            id: "fair-launch",
-            category: "การเปิดตัวอย่างเป็นธรรม (Fair Launch)",
-            description: "การแจกจ่ายสู่ชุมชนและสาธารณะโดยตรงบน Solana แบบไร้พรมแดน (60%)"
+        id: "fair-launch",
+        category: "การเปิดตัวอย่างเป็นธรรม (Fair Launch)",
+        description: "การแจกจ่ายสู่ชุมชนและสาธารณะโดยตรงบน Solana แบบไร้พรมแดน"
       },
       {
-            id: "liquidity-pool",
-            category: "พูลสภาพคล่อง (Liquidity Pool)",
-            description: "การติดตั้งพูลสภาพคล่อง AMM DEX บน Raydium (20%)"
-      },
-      {
-            id: "staking-dev-dex",
-            category: "รางวัล Staking, การพัฒนา, การลิสต์ DEX",
-            description: "ผลตอบแทนการ Staking บน Streamflow, การพัฒนาทางเทคนิค และการลิสต์บน DEX/CEX (20%)"
+        id: "liquidity-pool",
+        category: "พูลสภาพคล่อง (Liquidity Pool)",
+        description: "การติดตั้งพูลสภาพคล่อง AMM DEX บน Raydium"
       }
-],
+    ],
     data_source: 'แหล่งข้อมูล: โมเดลการกำหนดค่าศูนย์กลาง 100% = 2,100,000 BLTE (2.1M)',
   },
   how_to_buy: {
@@ -817,7 +812,7 @@ export const th: TranslationSchema = {
           num: '7',
           title: 'Tokenomics และการจัดสรรทางคณิตศาสตร์',
           content: [
-            "การจัดสรรทางคณิตศาสตร์อย่างเข้มงวดใน 3 ส่วนหลักเท่านั้น:\n• การเปิดตัวอย่างเป็นธรรม (Fair Launch): 60% (660,000 BLTE)\n• พูลสภาพคล่อง (Liquidity Pool): 20% (220,000 BLTE)\n• รางวัล Staking, การพัฒนา, การลิสต์ DEX: 20% (220,000 BLTE)",
+            "การจัดสรรทางคณิตศาสตร์อย่างเข้มงวด (70% Fair Launch · 30% Liquidity Pool):\n• การเปิดตัวอย่างเป็นธรรม (Fair Launch): 70% (1,470,000 BLTE)\n• พูลสภาพคล่อง (Liquidity Pool): 30% (630,000 BLTE)",
           ],
         },
         {
@@ -991,7 +986,7 @@ export const th: TranslationSchema = {
       participants: 'ผู้เข้าร่วม',
       game_rewards: 'รางวัลเกม',
       reward_notice_title: 'การจัดสรรรางวัลเฉพาะ',
-      reward_notice_desc: '135,000 โทเค็น BLTE ถูกจัดสรรทางคณิตศาสตร์สำหรับรางวัลการแข่งขัน ลีดเดอร์บอร์ด และการมีส่วนร่วมของผู้เล่นที่ได้รับการตรวจสอบ',
+      reward_notice_desc: 'การวัดผลทางไกลสำหรับรางวัลการแข่งขัน ลีดเดอร์บอร์ด และการมีส่วนร่วมของผู้เล่นที่ได้รับการตรวจสอบ',
     },
   },
 };

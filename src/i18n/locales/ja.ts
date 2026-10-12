@@ -23,7 +23,7 @@ export const ja: TranslationSchema = {
     about: '概要',
     bitcoin_education: 'ビットコインと創世記',
     token: 'トークン',
-    tokenomics: 'Explore',
+    tokenomics: 'トークノミクス',
     how_to_buy: '購入方法',
     whitepaper: 'ホワイトペーパー',
     roadmap: 'ロードマップ',
@@ -350,27 +350,22 @@ export const ja: TranslationSchema = {
   tokenomics: {
     kicker: '経済構造 · 数学的希少性',
     title: '2.1M 総供給量',
-    subtitle: '中央データモデルに基づく厳格なトークン配分。ミントバックドアや隠れインフレは一切ありません。',
+    subtitle: 'フェアローンチと流動性プールの2つの戦略的配分のみに厳格に制限されたトークン設計。ミントバックドアや隠れインフレは一切ありません。',
     fixed_cap: '固定上限',
     total_supply: '総供給量',
-    verified_alloc: '100% 数学的に検証された配分（100%）',
+    verified_alloc: '100% 数学的に検証された配分 · フェアローンチ & 流動性プール',
     allocations: [
       {
-            id: "fair-launch",
-            category: "フェアローンチ",
-            description: "Solana上でのコミュニティ向け直接・公開配布、ボーダーレスな参加 (60%)。"
+        id: "fair-launch",
+        category: "フェアローンチ",
+        description: "Solana上でのコミュニティ向け直接・公開配布、ボーダーレスな参加。"
       },
       {
-            id: "liquidity-pool",
-            category: "流動性プール",
-            description: "Raydium上でのAMM DEX流動性プール展開 (20%)。"
-      },
-      {
-            id: "staking-dev-dex",
-            category: "ステーキング報酬・開発・DEX上場",
-            description: "Streamflowステーキング利回り報酬、技術開発、DEX/CEXエコシステム上場 (20%)。"
+        id: "liquidity-pool",
+        category: "流動性プール",
+        description: "Raydium上でのAMM DEX流動性プール展開。"
       }
-],
+    ],
     data_source: 'データソース：中央単一構成モデル。100% = 2,100,000 BLTE (2.1M)。',
   },
   how_to_buy: {
@@ -802,7 +797,7 @@ export const ja: TranslationSchema = {
           num: '7',
           title: 'トークノミクスと数学的配分',
           content: [
-            "厳格な3大セクション配分：\n• フェアローンチ：60% (660,000 BLTE)\n• 流動性プール：20% (220,000 BLTE)\n• ステーキング報酬・開発・DEX上場：20% (220,000 BLTE)",
+            "厳格な数学的配分（70% フェアローンチ · 30% 流動性プール）：\n• フェアローンチ：70% (1,470,000 BLTE)\n• 流動性プール：30% (630,000 BLTE)",
           ],
         },
         {
@@ -972,7 +967,7 @@ export const ja: TranslationSchema = {
       participants: '参加者',
       game_rewards: 'ゲーム報酬',
       reward_notice_title: '専用報酬割り当て',
-      reward_notice_desc: '135,000 BLTEトークンが競技ゲームバウンティ、リーダーボード報酬、検証済みプレイヤー参加のために数学的に確保されています。',
+      reward_notice_desc: '競技ゲームバウンティ、リーダーボード報酬、検証済みプレイヤー参加のためのテレメトリ。',
     },
   },
 };

@@ -23,7 +23,7 @@ export const ptPT: TranslationSchema = {
     about: 'Sobre',
     bitcoin_education: 'Bitcoin e Génese',
     token: 'Token',
-    tokenomics: 'Explore',
+    tokenomics: 'Tokenomics',
     how_to_buy: 'Como comprar',
     whitepaper: 'Whitepaper',
     roadmap: 'Roteiro',
@@ -350,27 +350,22 @@ export const ptPT: TranslationSchema = {
   tokenomics: {
     kicker: 'Estrutura Económica · Escassez Matemática',
     title: '2.1M OFERTA TOTAL',
-    subtitle: 'Distribuição estritamente limitada a partir de um modelo central. Sem emissão adicional, sem inflação oculta.',
+    subtitle: 'Distribuição estritamente limitada configurada em duas alocações estratégicas: lançamento justo e pool de liquidez. Sem emissão adicional, sem inflação oculta.',
     fixed_cap: 'TETO FIXO',
     total_supply: 'OFERTA TOTAL',
-    verified_alloc: 'Alocação 100% Verificada Matematicamente (100%)',
+    verified_alloc: 'Alocação 100% Verificada Matematicamente · Lançamento Justo & Pool de Liquidez',
     allocations: [
       {
-            id: "fair-launch",
-            category: "Lançamento Justo",
-            description: "Distribuição comunitária e pública direta na Solana com acesso sem fronteiras (60%)."
+        id: "fair-launch",
+        category: "Lançamento Justo",
+        description: "Distribuição comunitária e pública direta na Solana com acesso sem fronteiras."
       },
       {
-            id: "liquidity-pool",
-            category: "Pool de Liquidez",
-            description: "Implementação de pool de liquidez AMM DEX no Raydium (20%)."
-      },
-      {
-            id: "staking-dev-dex",
-            category: "Recompensas de Staking, Dev, Listagem DEX",
-            description: "Recompensas de staking Streamflow, desenvolvimento técnico e listagens em DEX/CEX (20%)."
+        id: "liquidity-pool",
+        category: "Pool de Liquidez",
+        description: "Implementação de pool de liquidez AMM DEX no Raydium."
       }
-],
+    ],
     data_source: 'Fonte de dados: Modelo de configuração central único. 100% = 2.100.000 BLTE (2.1M).',
   },
   how_to_buy: {
@@ -802,7 +797,7 @@ export const ptPT: TranslationSchema = {
           num: '7',
           title: 'Tokenomics e Alocação Matemática',
           content: [
-            "Alocação matemática estrita em três secções principais:\n• Lançamento Justo: 60% (660.000 BLTE)\n• Pool de Liquidez: 20% (220.000 BLTE)\n• Recompensas de Staking, Dev, Listagem DEX: 20% (220.000 BLTE)",
+            "Alocação matemática estrita (70% Lançamento Justo · 30% Pool de Liquidez):\n• Lançamento Justo: 70% (1.470.000 BLTE)\n• Pool de Liquidez: 30% (630.000 BLTE)",
           ],
         },
         {

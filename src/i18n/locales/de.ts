@@ -23,7 +23,7 @@ export const de: TranslationSchema = {
     about: 'Über uns',
     bitcoin_education: 'Bitcoin & Entstehung',
     token: 'Token',
-    tokenomics: 'Explore',
+    tokenomics: 'Tokenomics',
     how_to_buy: 'Kaufanleitung',
     whitepaper: 'Whitepaper',
     roadmap: 'Roadmap',
@@ -350,27 +350,22 @@ export const de: TranslationSchema = {
   tokenomics: {
     kicker: 'Wirtschaftsstruktur · Mathematische Knappheit',
     title: '2.1M GESAMTANGEBOT',
-    subtitle: 'Streng gedeckelte Token-Verteilung aus einem zentralen Datenmodell. Keine Prägehintertür, keine Inflation.',
+    subtitle: 'Streng gedeckelte Token-Verteilung auf zwei strategische Zuteilungen: fairer Start und Liquiditätspool. Keine Prägehintertür, keine Inflation.',
     fixed_cap: 'FESTES LIMIT',
     total_supply: 'GESAMTANGEBOT',
-    verified_alloc: '100% mathematisch verifizierte Zuteilung (100%)',
+    verified_alloc: '100% mathematisch verifizierte Zuteilung · Fairer Start & Liquiditätspool',
     allocations: [
       {
-            id: "fair-launch",
-            category: "Fairer Start",
-            description: "Direkte Verteilung an die Community und Öffentlichkeit auf Solana mit grenzenlosem Zugang (60%)."
+        id: "fair-launch",
+        category: "Fairer Start",
+        description: "Direkte Verteilung an die Community und Öffentlichkeit auf Solana mit grenzenlosem Zugang."
       },
       {
-            id: "liquidity-pool",
-            category: "Liquiditätspool",
-            description: "AMM DEX Liquiditätspool-Bereitstellung auf Raydium (20%)."
-      },
-      {
-            id: "staking-dev-dex",
-            category: "Staking-Belohnungen, Dev, DEX-Listing",
-            description: "Streamflow Staking-Ertragsbelohnungen, technische Entwicklung und DEX/CEX-Listings (20%)."
+        id: "liquidity-pool",
+        category: "Liquiditätspool",
+        description: "AMM DEX Liquiditätspool-Bereitstellung auf Raydium."
       }
-],
+    ],
     data_source: 'Datenquelle: Zentrales Konfigurationsmodell. 100% = 2.100.000 BLTE (2.1M).',
   },
   how_to_buy: {
@@ -802,7 +797,7 @@ export const de: TranslationSchema = {
           num: '7',
           title: 'Tokenomics & Mathematische Allokation',
           content: [
-            "Strikte mathematische Allokation in drei Hauptabschnitten:\n• Fairer Start: 60% (660.000 BLTE)\n• Liquiditätspool: 20% (220.000 BLTE)\n• Staking-Belohnungen, Dev, DEX-Listing: 20% (220.000 BLTE)",
+            "Strikte mathematische Allokation (70% Fairer Start · 30% Liquiditätspool):\n• Fairer Start: 70% (1.470.000 BLTE)\n• Liquiditätspool: 30% (630.000 BLTE)",
           ],
         },
         {

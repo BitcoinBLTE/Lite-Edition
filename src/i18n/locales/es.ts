@@ -23,7 +23,7 @@ export const es: TranslationSchema = {
     about: 'Acerca de',
     bitcoin_education: 'Bitcoin y Génesis',
     token: 'Token',
-    tokenomics: 'Explore',
+    tokenomics: 'Tokenómica',
     how_to_buy: 'Cómo comprar',
     whitepaper: 'Libro blanco',
     roadmap: 'Hoja de ruta',
@@ -355,27 +355,22 @@ export const es: TranslationSchema = {
   tokenomics: {
     kicker: 'Estructura de distribución · Escasez matemática',
     title: '2.1M SUMINISTRO TOTAL',
-    subtitle: 'Una distribución de tokens estrictamente limitada configurada a través de tres asignaciones estratégicas. Cero puertas traseras de emisión, cero inflación oculta.',
+    subtitle: 'Una distribución de tokens estrictamente limitada configurada a través de dos asignaciones estratégicas: lanzamiento justo y pool de liquidez. Cero puertas traseras de emisión, cero inflación oculta.',
     fixed_cap: 'LÍMITE FIJO',
     total_supply: 'SUMINISTRO TOTAL',
-    verified_alloc: 'Asignación verificada del 100% matemática (100%)',
+    verified_alloc: 'Asignación verificada del 100% matemática · Lanzamiento justo & Pool de liquidez',
     allocations: [
       {
-            id: "fair-launch",
-            category: "Lanzamiento justo",
-            description: "Distribución comunitaria y pública directa con acceso descentralizado en Solana (60%)."
+        id: "fair-launch",
+        category: "Lanzamiento justo",
+        description: "Distribución comunitaria y pública directa con acceso descentralizado en Solana."
       },
       {
-            id: "liquidity-pool",
-            category: "Pool de liquidez",
-            description: "Despliegue de pool de liquidez AMM DEX en Raydium (20%)."
-      },
-      {
-            id: "staking-dev-dex",
-            category: "Recompensas de staking, Dev, listado DEX",
-            description: "Recompensas de rendimiento de staking en Streamflow, desarrollo técnico y listados en DEX/CEX (20%)."
+        id: "liquidity-pool",
+        category: "Pool de liquidez",
+        description: "Despliegue de pool de liquidez AMM DEX en Raydium."
       }
-],
+    ],
     data_source: 'Fuente de datos: Modelo de configuración central único. 100% = 2.100.000 BLTE (2.1M).',
   },
   how_to_buy: {
@@ -817,7 +812,7 @@ export const es: TranslationSchema = {
           num: '7',
           title: 'Tokenomics y asignación matemática',
           content: [
-            "Asignación matemática estricta en tres secciones principales:\n• Lanzamiento justo: 60% (660.000 BLTE)\n• Pool de liquidez: 20% (220.000 BLTE)\n• Recompensas de staking, Dev, listado DEX: 20% (220.000 BLTE)",
+            "Asignación matemática estricta (70% Lanzamiento justo · 30% Pool de liquidez):\n• Lanzamiento justo: 70% (1.470.000 BLTE)\n• Pool de liquidez: 30% (630.000 BLTE)",
           ],
         },
         {

@@ -120,26 +120,18 @@ export const TOKEN_CONFIG: ProjectConfig = {
     {
       id: "fair-launch",
       category: "Fair Launch",
-      percentage: 60,
-      amount: 660000,
+      percentage: 70,
+      amount: 1470000,
       description: "Direct community and public fair launch distribution on Solana with borderless access.",
       color: "#D97706" // Warm amber/gold
     },
     {
       id: "liquidity-pool",
       category: "Liquidity Pool",
-      percentage: 20,
-      amount: 220000,
+      percentage: 30,
+      amount: 630000,
       description: "Automated market maker (AMM) DEX liquidity pool deployment on Raydium.",
-      color: "#EAB308" // Gold
-    },
-    {
-      id: "staking-dev-dex",
-      category: "Staking rewards, Dev, dex listing",
-      percentage: 20,
-      amount: 220000,
-      description: "Streamflow staking yield rewards, technical development, and DEX/CEX ecosystem listings.",
-      color: "#B8661B" // Burnt Copper / Bronze
+      color: "#B8661B" // Burnt copper/bronze
     }
   ],
   roadmap: [

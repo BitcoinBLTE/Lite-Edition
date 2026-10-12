@@ -23,7 +23,7 @@ export const no: TranslationSchema = {
     about: 'Om prosjektet',
     bitcoin_education: 'Bitcoin og opprinnelse',
     token: 'Token',
-    tokenomics: 'Explore',
+    tokenomics: 'Tokenomics',
     how_to_buy: 'Slik kjøper du',
     whitepaper: 'Hvitbok',
     roadmap: 'Veikart',
@@ -353,29 +353,24 @@ export const no: TranslationSchema = {
     view_explorer: 'SE PÅ BLOKKUTFORSKER',
   },
   tokenomics: {
-    kicker: 'Tre-sesongers distribusjonsstruktur · Matematisk knapphet',
+    kicker: 'Distribusjonsstruktur · Matematisk knapphet',
     title: '2.1M TOTALT TILBUD',
-    subtitle: 'En strengt begrenset tokendistribusjon strukturert over tre strategiske sesonger. Null bakdører for preging, null skjult inflasjon.',
+    subtitle: 'En strengt begrenset tokendistribusjon konfigurert over to strategiske tildelinger: rettferdig lansering og likviditetsbasseng. Null bakdører for preging, null skjult inflasjon.',
     fixed_cap: 'FAST TAK',
     total_supply: 'TOTALT TILBUD',
-    verified_alloc: 'Verifisert 100 % fordeling i tre tildelinger (100 %)',
+    verified_alloc: 'Verifisert 100 % matematisk fordeling · Rettferdig lansering & Likviditetsbasseng',
     allocations: [
       {
-            id: "fair-launch",
-            category: "Rettferdig lansering",
-            description: "Direkte samfunns- og offentlig distribusjon på Solana med grenseløs tilgang (60%)."
+        id: "fair-launch",
+        category: "Rettferdig lansering",
+        description: "Direkte samfunns- og offentlig distribusjon på Solana med grenseløs tilgang."
       },
       {
-            id: "liquidity-pool",
-            category: "Likviditetsbasseng",
-            description: "AMM DEX likviditetsbasseng distribusjon på Raydium (20%)."
-      },
-      {
-            id: "staking-dev-dex",
-            category: "Staking-belønninger, Dev, DEX-notering",
-            description: "Streamflow staking-belønninger, teknisk utvikling og DEX/CEX-noteringer (20%)."
+        id: "liquidity-pool",
+        category: "Likviditetsbasseng",
+        description: "AMM DEX likviditetsbasseng distribusjon på Raydium."
       }
-],
+    ],
     data_source: 'Datakilde: Sentral konfigurasjonsmodell. 100 % = 2 100 000 BLTE (2.1M).',
   },
   how_to_buy: {
@@ -817,7 +812,7 @@ export const no: TranslationSchema = {
           num: '7',
           title: 'Tokenomics og matematisk allokering',
           content: [
-            "Streng matematisk allokering i tre hovedseksjoner:\n• Rettferdig lansering: 60 % (660 000 BLTE)\n• Likviditetsbasseng: 20 % (220 000 BLTE)\n• Staking-belønninger, Dev, DEX-notering: 20 % (220 000 BLTE)",
+            "Streng matematisk allokering (70 % Rettferdig lansering · 30 % Likviditetsbasseng):\n• Rettferdig lansering: 70 % (1 470 000 BLTE)\n• Likviditetsbasseng: 30 % (630 000 BLTE)",
           ],
         },
         {

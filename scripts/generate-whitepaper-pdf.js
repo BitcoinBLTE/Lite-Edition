@@ -261,10 +261,9 @@ async function generateWhitepaperPdf() {
       num: '7',
       title: 'Tokenomics & Mathematical Allocation',
       paras: [
-        'The total token supply is strictly configured at 2,100,000 tokens (2.1M), structured across three major strategic allocations only:',
-        '• Fair Launch: 60% (1,260,000 BLTE) — Direct community and public fair launch distribution on Solana with borderless access.',
-        '• Liquidity Pool: 20% (420,000 BLTE) — Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
-        '• Staking rewards, Dev, dex listing: 20% (420,000 BLTE) — Streamflow staking yield rewards, technical development, and DEX/CEX ecosystem listings.'
+        'The total token supply is strictly configured at 2,100,000 tokens (2.1M), structured across two strategic allocations only:',
+        '• Fair Launch: 70% (1,470,000 BLTE) — Direct community and public fair launch distribution on Solana with borderless access.',
+        '• Liquidity Pool: 30% (630,000 BLTE) — Automated market maker (AMM) DEX liquidity pool deployment on Raydium.'
       ]
     },
     {
@@ -409,17 +408,13 @@ async function generateWhitepaperPdf() {
       const rOuter = 46;
       const rInner = 28;
 
-      // Slice 1: 60% Fair Launch (-90 deg to 126 deg) = 216 deg
-      const pathFairLaunch = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, -90, 126);
-      currentPage.drawSvgPath(pathFairLaunch, { color: rgb(0.85, 0.47, 0.02) }); // #D97706 Warm Amber Gold
+      // Slice 1: Fair Launch (-90 deg to 162 deg) = 252 deg
+      const pathFairLaunch = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, -90, 162);
+      currentPage.drawSvgPath(pathFairLaunch, { color: rgb(0.96, 0.62, 0.04) }); // #F59E0B Vibrant Warm Gold
 
-      // Slice 2: 20% Liquidity Pool (126 deg to 198 deg) = 72 deg
-      const pathLiquidity = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, 126, 198);
-      currentPage.drawSvgPath(pathLiquidity, { color: rgb(0.92, 0.70, 0.03) }); // #EAB308 Bright Gold
-
-      // Slice 3: 20% Staking rewards, Dev, dex listing (198 deg to 270 deg) = 72 deg
-      const pathStakingDev = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, 198, 270);
-      currentPage.drawSvgPath(pathStakingDev, { color: rgb(0.72, 0.40, 0.11) }); // #B8661B Bronze Copper
+      // Slice 2: Liquidity Pool (162 deg to 270 deg) = 108 deg
+      const pathLiquidity = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, 162, 270);
+      currentPage.drawSvgPath(pathLiquidity, { color: rgb(0.01, 0.52, 0.78) }); // #0284C7 Deep Ocean Blue
 
       // Center disc inside donut
       currentPage.drawCircle({
@@ -468,53 +463,35 @@ async function generateWhitepaperPdf() {
 
       const allocItems = [
         {
-          pct: '60%',
           title: 'Fair Launch',
-          amount: '1,260,000 BLTE',
+          amount: '1,470,000 BLTE',
           desc: 'Direct community and public fair launch distribution on Solana with borderless access.',
-          color: rgb(0.85, 0.47, 0.02),
+          color: rgb(0.96, 0.62, 0.04), // #F59E0B
         },
         {
-          pct: '20%',
           title: 'Liquidity Pool',
-          amount: '420,000 BLTE',
+          amount: '630,000 BLTE',
           desc: 'Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
-          color: rgb(0.92, 0.70, 0.03),
-        },
-        {
-          pct: '20%',
-          title: 'Staking rewards, Dev, dex listing',
-          amount: '420,000 BLTE',
-          desc: 'Streamflow staking yield rewards, technical development, and DEX/CEX ecosystem listings.',
-          color: rgb(0.72, 0.40, 0.11),
+          color: rgb(0.01, 0.52, 0.78), // #0284C7
         },
       ];
 
       let itemY = currentY - 36;
       allocItems.forEach((item) => {
-        // Colored badge
+        // Distinct color swatch bullet indicator (no percentage text)
         currentPage.drawRectangle({
           x: legendX,
-          y: itemY - 2,
-          width: 26,
+          y: itemY,
+          width: 14,
           height: 14,
           color: item.color,
         });
 
-        const pctWidth = fontMonoBold.widthOfTextAtSize(item.pct, 8);
-        currentPage.drawText(item.pct, {
-          x: legendX + (26 - pctWidth) / 2,
-          y: itemY + 2,
-          size: 8,
-          font: fontMonoBold,
-          color: rgb(1, 1, 1),
-        });
-
         // Title and Amount
         currentPage.drawText(item.title, {
-          x: legendX + 32,
+          x: legendX + 22,
           y: itemY + 3,
-          size: 9,
+          size: 9.5,
           font: fontBold,
           color: darkColor,
         });
@@ -531,8 +508,8 @@ async function generateWhitepaperPdf() {
 
         // Description line
         currentPage.drawText(item.desc, {
-          x: legendX + 32,
-          y: itemY - 8,
+          x: legendX + 22,
+          y: itemY - 9,
           size: 7.5,
           font: fontRegular,
           color: grayColor,

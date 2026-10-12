@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Menu, 
   X, 
@@ -13,7 +13,9 @@ import {
   CreditCard, 
   Route, 
   ShieldCheck, 
-  HelpCircle 
+  HelpCircle,
+  Check,
+  PieChart
 } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { LanguageDropdown } from './LanguageDropdown';
@@ -37,28 +39,47 @@ export const Navbar: React.FC<NavbarProps> = ({
   const { t } = useLanguage();
   const { isBlack } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = useState<string | null>(null);
 
-  // Desktop navigation links (Tokenomics removed completely and replaced with Explore)
+  // Sync selected menu item with URL hash or action
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const found = hamburgerListItems.find(item => item.href === hash);
+        if (found) {
+          setSelectedMenuItem(found.id);
+        }
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
+  // Desktop navigation links with stable unique IDs
   const desktopNavLinks: Array<{
+    id: string;
     label: string;
     href: string;
     action: (() => void) | null;
     isWhitepaper?: boolean;
     isExplore?: boolean;
   }> = [
-    { label: t.nav.explore || 'Explore', href: '#explore', action: onOpenExplore, isExplore: true },
-    { label: t.nav.about, href: '#about', action: null },
-    { label: t.nav.bitcoin_education, href: '#bitcoin-education', action: null },
-    { label: t.nav.token, href: '#token', action: null },
-    { label: t.nav.how_to_buy, href: '#how-to-buy', action: null },
-    { label: t.nav.whitepaper, href: '#whitepaper', action: onOpenWhitePaper, isWhitepaper: true },
-    { label: t.nav.roadmap, href: '#roadmap', action: null },
-    { label: t.nav.transparency, href: '#transparency', action: null },
-    { label: t.nav.faq, href: '#faq', action: null }
+    { id: 'desk-explore', label: t.nav.explore || 'Explore', href: '#explore', action: onOpenExplore, isExplore: true },
+    { id: 'desk-about', label: t.nav.about, href: '#about', action: null },
+    { id: 'desk-education', label: t.nav.bitcoin_education, href: '#bitcoin-education', action: null },
+    { id: 'desk-token', label: t.nav.token, href: '#token', action: null },
+    { id: 'desk-how-to-buy', label: t.nav.how_to_buy, href: '#how-to-buy', action: null },
+    { id: 'desk-whitepaper', label: t.nav.whitepaper, href: '#whitepaper', action: onOpenWhitePaper, isWhitepaper: true },
+    { id: 'desk-roadmap', label: t.nav.roadmap, href: '#roadmap', action: null },
+    { id: 'desk-transparency', label: t.nav.transparency, href: '#transparency', action: null },
+    { id: 'desk-faq', label: t.nav.faq, href: '#faq', action: null }
   ];
 
-  // Hamburger Menu: Each button displays its representing icon first, then the label.
+  // Hamburger Menu with stable unique IDs: Each button displays its representing icon first, then the label.
   const hamburgerListItems: Array<{
+    id: string;
     label: string;
     icon: React.ReactNode;
     badge?: string;
@@ -66,11 +87,13 @@ export const Navbar: React.FC<NavbarProps> = ({
     href?: string;
   }> = [
     {
+      id: 'hamb-explore',
       label: t.nav.explore || 'Explore',
       icon: <Compass className="w-5 h-5 shrink-0" />,
       action: () => onOpenExplore()
     },
     {
+      id: 'hamb-stake',
       label: t.nav.stake_blte || 'Stake BLTE',
       icon: <Coins className="w-5 h-5 shrink-0" />,
       badge: '11.61%',
@@ -79,11 +102,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       }
     },
     {
+      id: 'hamb-buy-trade',
       label: t.nav.buy_trade || 'Buy/Trade',
       icon: <ArrowLeftRight className="w-5 h-5 shrink-0" />,
       action: () => onOpenTradeModal()
     },
     {
+      id: 'hamb-game',
       label: t.nav.game || 'Game',
       icon: <Gamepad2 className="w-5 h-5 shrink-0" />,
       action: () => {
@@ -91,46 +116,79 @@ export const Navbar: React.FC<NavbarProps> = ({
       }
     },
     {
+      id: 'hamb-whitepaper',
       label: t.nav.whitepaper || 'Read White Paper',
       icon: <BookOpen className="w-5 h-5 shrink-0" />,
       action: () => onOpenWhitePaper()
     },
     {
+      id: 'hamb-tokenomics',
+      label: t.nav.tokenomics || 'Tokenomics',
+      icon: <PieChart className="w-5 h-5 shrink-0" />,
+      href: '#tokenomics'
+    },
+    {
+      id: 'hamb-about',
       label: t.nav.about,
       icon: <Info className="w-5 h-5 shrink-0" />,
       href: '#about'
     },
     {
+      id: 'hamb-education',
       label: t.nav.bitcoin_education,
       icon: <GraduationCap className="w-5 h-5 shrink-0" />,
       href: '#bitcoin-education'
     },
     {
+      id: 'hamb-token',
       label: t.nav.token,
       icon: <CircleDollarSign className="w-5 h-5 shrink-0" />,
       href: '#token'
     },
     {
+      id: 'hamb-how-to-buy',
       label: t.nav.how_to_buy,
       icon: <CreditCard className="w-5 h-5 shrink-0" />,
       href: '#how-to-buy'
     },
     {
+      id: 'hamb-roadmap',
       label: t.nav.roadmap,
       icon: <Route className="w-5 h-5 shrink-0" />,
       href: '#roadmap'
     },
     {
+      id: 'hamb-transparency',
       label: t.nav.transparency,
       icon: <ShieldCheck className="w-5 h-5 shrink-0" />,
       href: '#transparency'
     },
     {
+      id: 'hamb-faq',
       label: t.nav.faq,
       icon: <HelpCircle className="w-5 h-5 shrink-0" />,
       href: '#faq'
     }
   ];
+
+  const handleMenuItemClick = (item: typeof hamburgerListItems[0]) => {
+    setSelectedMenuItem(item.id);
+    setTimeout(() => {
+      setMobileMenuOpen(false);
+      if (item.action) {
+        item.action();
+      } else if (item.href) {
+        if (item.href.startsWith('#')) {
+          const target = document.querySelector(item.href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.location.hash = item.href;
+          }
+        }
+      }
+    }, 280);
+  };
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#0A0A0E]/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-colors border-b border-[#E5E5E5] dark:border-[#1E1E24]">
@@ -153,7 +211,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             if (link.action) {
               return (
                 <button
-                  key={link.label}
+                  key={link.id}
                   onClick={(e) => {
                     e.preventDefault();
                     link.action!();
@@ -167,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             }
             return (
               <a
-                key={link.href}
+                key={link.id}
                 href={link.href}
                 className="hover:text-[#080808] dark:hover:text-white transition-colors py-1 hover:underline underline-offset-4 decoration-[#B8661B]/70 whitespace-nowrap"
               >
@@ -235,42 +293,48 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               </div>
 
-              {/* Clean List: Icon then button label */}
-              <ul className="divide-y divide-gray-100 dark:divide-zinc-800/60">
-                {hamburgerListItems.map((item) => (
-                  <li key={item.label}>
-                    {item.action ? (
+              {/* Clean List: Icon then button label with Selection Highlight */}
+              <ul className="space-y-1.5">
+                {hamburgerListItems.map((item) => {
+                  const isSelected = selectedMenuItem === item.id;
+                  return (
+                    <li key={item.id}>
                       <button
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          item.action!();
-                        }}
-                        className="w-full text-left py-3 sm:py-3.5 text-base sm:text-lg font-bold text-[#111111] dark:text-[#F3F4F6] hover:text-[#B8661B] dark:hover:text-[#EAB308] transition-colors cursor-pointer flex items-center gap-3.5 tracking-tight group"
+                        onClick={() => handleMenuItemClick(item)}
+                        className={`w-full text-left px-4 py-3 sm:py-3.5 rounded-[18px] transition-all cursor-pointer flex items-center gap-3.5 tracking-tight group ${
+                          isSelected
+                            ? 'bg-[#FAF5EF] dark:bg-[#251A10] text-[#B8661B] dark:text-[#FBBF24] border-2 border-[#B8661B] dark:border-[#EAB308] shadow-[0_4px_16px_rgba(184,102,27,0.2)] ring-2 ring-[#B8661B]/30 font-bold'
+                            : 'text-[#111111] dark:text-[#F3F4F6] hover:text-[#B8661B] dark:hover:text-[#EAB308] hover:bg-[#FAF8F5] dark:hover:bg-[#16161B] border border-transparent'
+                        }`}
                       >
-                        <span className="text-[#B8661B] dark:text-[#EAB308] group-hover:scale-110 transition-transform">
+                        <span className={`p-2 rounded-[12px] transition-all ${
+                          isSelected 
+                            ? 'bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-sm scale-105' 
+                            : 'bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] group-hover:scale-105'
+                        }`}>
                           {item.icon}
                         </span>
-                        <span>{item.label}</span>
-                        {item.badge && (
-                          <span className="ml-auto text-xs sm:text-sm font-mono font-black px-3 py-1 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 shadow-xs tracking-tight">
-                            {item.badge}
-                          </span>
-                        )}
+                        <span className="text-base sm:text-lg font-bold truncate">
+                          {item.label}
+                        </span>
+                        
+                        <div className="ml-auto flex items-center gap-2 shrink-0">
+                          {item.badge && (
+                            <span className="text-xs sm:text-sm font-mono font-black px-3 py-1 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 shadow-xs tracking-tight">
+                              {item.badge}
+                            </span>
+                          )}
+                          {isSelected && (
+                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-mono font-black bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs animate-in fade-in zoom-in-95 duration-150">
+                              <Check className="w-3.5 h-3.5 stroke-[3]" />
+                              <span>SELECTED</span>
+                            </span>
+                          )}
+                        </div>
                       </button>
-                    ) : (
-                      <a
-                        href={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="w-full text-left py-3 sm:py-3.5 text-base sm:text-lg font-bold text-[#111111] dark:text-[#F3F4F6] hover:text-[#B8661B] dark:hover:text-[#EAB308] transition-colors cursor-pointer flex items-center gap-3.5 tracking-tight group"
-                      >
-                        <span className="text-[#B8661B] dark:text-[#EAB308] group-hover:scale-110 transition-transform">
-                          {item.icon}
-                        </span>
-                        <span>{item.label}</span>
-                      </a>
-                    )}
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

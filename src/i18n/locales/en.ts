@@ -24,7 +24,7 @@ export const en: TranslationSchema = {
     about: 'About',
     bitcoin_education: 'Bitcoin & Genesis',
     token: 'Token',
-    tokenomics: 'Explore',
+    tokenomics: 'Tokenomics',
     how_to_buy: 'How to Buy',
     whitepaper: 'White Paper',
     roadmap: 'Roadmap',
@@ -352,10 +352,10 @@ export const en: TranslationSchema = {
   tokenomics: {
     kicker: 'Distribution Structure · Mathematical Scarcity',
     title: '2.1M TOTAL SUPPLY',
-    subtitle: 'A strictly capped token distribution configured across three strategic allocations only. No minting backdoor, zero hidden inflation.',
+    subtitle: 'A strictly capped token distribution configured across two strategic allocations only. No minting backdoor, zero hidden inflation.',
     fixed_cap: 'FIXED CAP',
     total_supply: 'TOTAL SUPPLY',
-    verified_alloc: 'Verified 100% Mathematical Allocation (100%)',
+    verified_alloc: 'Verified 100% Mathematical Allocation · Fair Launch & Liquidity Pool',
     allocations: [
       {
         id: 'fair-launch',
@@ -366,11 +366,6 @@ export const en: TranslationSchema = {
         id: 'liquidity-pool',
         category: 'Liquidity Pool',
         description: 'Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
-      },
-      {
-        id: 'staking-dev-dex',
-        category: 'Staking rewards, Dev, dex listing',
-        description: 'Streamflow staking yield rewards, technical development, and DEX/CEX ecosystem listings.',
       },
     ],
     data_source: 'Data source: Single central configuration model. 100% = 2,100,000 BLTE (2.1M).',
@@ -809,7 +804,7 @@ export const en: TranslationSchema = {
           num: '7',
           title: 'Tokenomics & Mathematical Allocation',
           content: [
-            'Strict Mathematical Allocation (in three major sections):\n• Fair Launch: 60% (660,000 BLTE)\n• Liquidity Pool: 20% (220,000 BLTE)\n• Staking rewards, Dev, dex listing: 20% (220,000 BLTE)',
+            'Strict Mathematical Allocation (70% Fair Launch · 30% Liquidity Pool):\n• Fair Launch: 70% (1,470,000 BLTE)\n• Liquidity Pool: 30% (630,000 BLTE)',
           ],
         },
         {
@@ -982,7 +977,7 @@ export const en: TranslationSchema = {
       participants: 'Participants',
       game_rewards: 'Game Rewards',
       reward_notice_title: 'Dedicated Reward Allocation',
-      reward_notice_desc: '135,000 BLTE tokens are mathematically reserved for competitive gaming bounties, leaderboard rewards, and verified player participation.',
+      reward_notice_desc: 'BLTE gaming bounties, leaderboard rewards, and verified player participation telemetry.',
     },
   },
 };

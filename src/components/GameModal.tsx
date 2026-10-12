@@ -96,7 +96,7 @@ export const GameModal: React.FC<GameModalProps> = ({
               {gm?.game_rewards || 'Game Rewards'}
             </div>
             <div className="text-base sm:text-lg font-mono font-black text-[#B8661B] dark:text-[#EAB308] tabular-nums">
-              135,000
+              $0.00
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@ export const GameModal: React.FC<GameModalProps> = ({
             <span>{gm?.reward_notice_title || 'Dedicated Reward Allocation'}</span>
           </div>
           <p className="text-xs text-[#555555] dark:text-[#A1A1AA] leading-relaxed">
-            {gm?.reward_notice_desc || '135,000 BLTE tokens are mathematically reserved for competitive gaming bounties, leaderboard rewards, and verified player participation.'}
+            {gm?.reward_notice_desc || 'Protocol gaming bounties, leaderboard competitions, and verified player participation reward telemetry.'}
           </p>
         </div>
       </div>

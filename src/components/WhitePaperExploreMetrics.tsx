@@ -57,11 +57,11 @@ export const WhitePaperExploreMetrics: React.FC = () => {
             </div>
             <div className="flex justify-between">
               <span className="text-[#888888]">{exp?.liquid || 'Liquid'}</span>
-              <span className="font-mono font-bold text-[#080808] dark:text-white">180,000</span>
+              <span className="font-mono font-bold text-[#080808] dark:text-white">$0.00</span>
             </div>
             <div className="flex justify-between">
               <span className="text-[#888888]">{exp?.native || 'Native'}</span>
-              <span className="font-mono font-bold text-[#080808] dark:text-white">180,000</span>
+              <span className="font-mono font-bold text-[#080808] dark:text-white">$0.00</span>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ export const WhitePaperExploreMetrics: React.FC = () => {
             </div>
             <div className="flex justify-between">
               <span className="text-[#888888]">{exp?.game_rewards || 'Game rewards'}</span>
-              <span className="font-mono font-bold text-[#B8661B]">135,000</span>
+              <span className="font-mono font-bold text-[#B8661B]">$0.00</span>
             </div>
           </div>
         </div>
@@ -97,11 +97,11 @@ export const WhitePaperExploreMetrics: React.FC = () => {
           <div className="space-y-2 text-xs">
             <div className="flex justify-between">
               <span className="text-[#888888]">{exp?.circulating || 'Circulating'}</span>
-              <span className="font-mono font-bold text-[#080808] dark:text-white">1,100,000</span>
+              <span className="font-mono font-bold text-[#080808] dark:text-white">2,100,000</span>
             </div>
             <div className="flex justify-between">
               <span className="text-[#888888]">{exp?.non_circulatory || 'Non circulatory'}</span>
-              <span className="font-mono font-bold text-[#080808] dark:text-white">1,000,000</span>
+              <span className="font-mono font-bold text-[#080808] dark:text-white">0.00</span>
             </div>
             <div className="flex justify-between">
               <span className="text-[#888888]">{exp?.max_supply || 'Max Supply'}</span>
@@ -123,7 +123,7 @@ export const WhitePaperExploreMetrics: React.FC = () => {
         <ul className="list-disc pl-5 space-y-1">
           <li><strong>Zero Additional Minting:</strong> Mint authority was irrevocably revoked upon SPL genesis. No entity can create additional BLTE tokens.</li>
           <li><strong>Streamflow Staking Escrow:</strong> Staking rewards are locked within non-custodial smart contracts and distributed according to fixed APY schedules.</li>
-          <li><strong>Game Rewards Reserve:</strong> 135,000 BLTE is reserved for decentralized gaming mechanics and leaderboard distributions.</li>
+          <li><strong>Mathematical Allocation:</strong> 70% Fair Launch (1,470,000 BLTE) and 30% Liquidity Pool (630,000 BLTE) with 2,100,000 hard cap.</li>
           <li><strong>Public Transparency:</strong> All circulating tokens and contracts are verifiable via public Solana block explorers.</li>
         </ul>
       </div>

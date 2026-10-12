@@ -6,6 +6,7 @@ import { AboutSection } from './components/AboutSection';
 import { BitcoinEducationSection } from './components/BitcoinEducationSection';
 import { ScarcityComparison } from './components/ScarcityComparison';
 import { TokenOverview } from './components/TokenOverview';
+import { TokenomicsSection } from './components/TokenomicsSection';
 import { ExploreSection } from './components/ExploreSection';
 import { HowToBuySection } from './components/HowToBuySection';
 import { MarketSection } from './components/MarketSection';
@@ -107,7 +108,10 @@ export default function App() {
           {/* Token Overview Dashboard */}
           <TokenOverview />
 
-          {/* Explore Section replacing Tokenomics: Review Protocol Stats and Activity */}
+          {/* Circular Tokenomics Architecture Design */}
+          <TokenomicsSection />
+
+          {/* Explore Section: Review Protocol Stats and Activity */}
           <ExploreSection
             onOpenExplore={() => setExploreOpen(true)}
             onOpenTradeModal={() => setTradeModalOpen(true)}
