@@ -288,16 +288,16 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.circulating || 'Circulating'}</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.non_circulatory || 'Non circulatory'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
-                    {supplyStats.circulating}
+                    {supplyStats.nonCirculatory}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.non_circulatory || 'Non circulatory'}</span>
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.circulating || 'Circulating'}</span>
                   <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
-                    {supplyStats.nonCirculatory}
+                    {supplyStats.circulating}
                   </span>
                 </div>
 

@@ -20,7 +20,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
 
   // Distinct High-Contrast Colors:
   // Side 1 (Fair Launch): Radiant Sun Gold / Amber (#F59E0B)
-  // Side 2 (Liquidity Pool): Vibrant Electric Azure / Deep Cyan (#0284C7)
+  // Side 2 (Liquidity Pool): Radiant Light Green / Mint (#22C55E)
   const allocations = [
     {
       id: 'fair-launch' as const,
@@ -42,13 +42,13 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       amount: '630,000 BLTE',
       desc: tok.allocations?.[1]?.description || 'Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
       tag: 'RAYDIUM AMM DEX',
-      color: '#0284C7',
-      lightColor: '#38BDF8',
-      darkColor: '#0369A1',
+      color: '#22C55E',
+      lightColor: '#86EFAC',
+      darkColor: '#16A34A',
       gradientId: 'liquidityGradient',
-      glowColor: 'rgba(2, 132, 199, 0.45)',
-      activeBorder: 'border-[#0284C7] ring-2 ring-[#0284C7]/50 bg-[#0284C7]/10 dark:bg-[#0284C7]/15 shadow-[0_8px_24px_rgba(2,132,199,0.18)]',
-      badgeBg: 'bg-[#0284C7]/15 text-[#0284C7] dark:text-[#38BDF8] border-[#0284C7]/40',
+      glowColor: 'rgba(34, 197, 94, 0.45)',
+      activeBorder: 'border-[#22C55E] ring-2 ring-[#22C55E]/50 bg-[#22C55E]/10 dark:bg-[#22C55E]/15 shadow-[0_8px_24px_rgba(34,197,94,0.18)]',
+      badgeBg: 'bg-[#22C55E]/15 text-[#16A34A] dark:text-[#4ADE80] border-[#22C55E]/40',
     },
   ];
 
@@ -134,11 +134,11 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
             onClick={() => toggleSelect('liquidity-pool')}
             className={`px-3.5 py-1.5 rounded-[14px] text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
               selectedId === 'liquidity-pool'
-                ? 'bg-[#0284C7] text-white shadow-[0_2px_12px_rgba(2,132,199,0.4)] ring-2 ring-[#0284C7]/40'
-                : 'text-[#0284C7] dark:text-[#38BDF8] bg-[#0284C7]/10 hover:bg-[#0284C7]/20 border border-[#0284C7]/30'
+                ? 'bg-[#22C55E] text-white shadow-[0_2px_12px_rgba(34,197,94,0.4)] ring-2 ring-[#22C55E]/40'
+                : 'text-[#16A34A] dark:text-[#4ADE80] bg-[#22C55E]/10 hover:bg-[#22C55E]/20 border border-[#22C55E]/30'
             }`}
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-[#0284C7]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#22C55E]" />
             <span>Liquidity Pool · 630K</span>
           </button>
         </div>
@@ -165,8 +165,8 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                 background: selectedId === 'fair-launch'
                   ? 'radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, transparent 70%)'
                   : selectedId === 'liquidity-pool'
-                  ? 'radial-gradient(circle, rgba(2, 132, 199, 0.4) 0%, transparent 70%)'
-                  : 'radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(2, 132, 199, 0.22) 55%, transparent 70%)',
+                  ? 'radial-gradient(circle, rgba(34, 197, 94, 0.4) 0%, transparent 70%)'
+                  : 'radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(34, 197, 94, 0.22) 55%, transparent 70%)',
               }}
             />
 
@@ -182,11 +182,11 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                   <stop offset="100%" stopColor="#D97706" />
                 </linearGradient>
 
-                {/* Side 2 Gradient: Vibrant Electric Azure */}
+                {/* Side 2 Gradient: Radiant Light Green */}
                 <linearGradient id="liquidityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#38BDF8" />
-                  <stop offset="50%" stopColor="#0284C7" />
-                  <stop offset="100%" stopColor="#0369A1" />
+                  <stop offset="0%" stopColor="#86EFAC" />
+                  <stop offset="50%" stopColor="#22C55E" />
+                  <stop offset="100%" stopColor="#16A34A" />
                 </linearGradient>
 
                 {/* Shadow Filters for Selection Pop */}
@@ -194,7 +194,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                   <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#F59E0B" floodOpacity="0.7" />
                 </filter>
                 <filter id="liquidityShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#0284C7" floodOpacity="0.7" />
+                  <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#22C55E" floodOpacity="0.7" />
                 </filter>
               </defs>
 
@@ -240,7 +240,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                 }`}
               />
 
-              {/* Side 2: Liquidity Pool Segment (Vibrant Electric Azure / Cyan) */}
+              {/* Side 2: Liquidity Pool Segment (Radiant Light Green) */}
               <circle
                 cx="160"
                 cy="160"

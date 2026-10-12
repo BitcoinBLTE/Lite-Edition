@@ -414,7 +414,7 @@ async function generateWhitepaperPdf() {
 
       // Slice 2: Liquidity Pool (162 deg to 270 deg) = 108 deg
       const pathLiquidity = makeDonutSlicePath(chartCenterX, chartCenterY, rOuter, rInner, 162, 270);
-      currentPage.drawSvgPath(pathLiquidity, { color: rgb(0.01, 0.52, 0.78) }); // #0284C7 Deep Ocean Blue
+      currentPage.drawSvgPath(pathLiquidity, { color: rgb(0.13, 0.77, 0.37) }); // #22C55E Light Green
 
       // Center disc inside donut
       currentPage.drawCircle({
@@ -472,7 +472,7 @@ async function generateWhitepaperPdf() {
           title: 'Liquidity Pool',
           amount: '630,000 BLTE',
           desc: 'Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
-          color: rgb(0.01, 0.52, 0.78), // #0284C7
+          color: rgb(0.13, 0.77, 0.37), // #22C55E Light Green
         },
       ];
 

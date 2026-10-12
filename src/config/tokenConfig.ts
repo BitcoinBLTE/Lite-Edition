@@ -131,7 +131,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
       percentage: 30,
       amount: 630000,
       description: "Automated market maker (AMM) DEX liquidity pool deployment on Raydium.",
-      color: "#B8661B" // Burnt copper/bronze
+      color: "#22C55E" // Radiant light green
     }
   ],
   roadmap: [

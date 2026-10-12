@@ -325,9 +325,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                             </span>
                           )}
                           {isSelected && (
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-mono font-black bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs animate-in fade-in zoom-in-95 duration-150">
-                              <Check className="w-3.5 h-3.5 stroke-[3]" />
-                              <span>SELECTED</span>
+                            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs animate-in fade-in zoom-in-95 duration-150">
+                              <Check className="w-4 h-4 stroke-[3]" />
                             </span>
                           )}
                         </div>
