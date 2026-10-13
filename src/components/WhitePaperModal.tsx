@@ -75,16 +75,16 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
       title={wp.title}
       subtitle={wp.subtitle}
       icon={<Realistic3DIcon type="mint" size="sm" />}
-      maxWidthClass="max-w-5xl"
-      maxHeightClass="h-[92vh]"
+      maxWidthClass="max-w-5xl w-full"
+      maxHeightClass="max-h-[92vh] h-[92vh]"
       ariaLabelledBy="whitepaper-title"
       headerActions={
-        <div className="flex items-center gap-2 relative" ref={menuRef}>
+        <div className="flex items-center gap-1.5 sm:gap-2 relative" ref={menuRef}>
           {/* Download Official PDF Action Button - Icon Only */}
           <button
             type="button"
             onClick={() => setPdfMenuOpen(!pdfMenuOpen)}
-            className="w-8.5 h-8.5 flex items-center justify-center text-[#B8661B] bg-[#FAF5EF] hover:bg-[#F2E8DC] active:bg-[#E9C9A5] border border-[#E9C9A5] rounded-[12px] shadow-[0_2px_6px_rgba(0,0,0,0.03)] transition-all cursor-pointer group"
+            className="w-8.5 h-8.5 flex items-center justify-center text-[#B8661B] bg-[#FAF5EF] hover:bg-[#F2E8DC] active:bg-[#E9C9A5] border border-[#E9C9A5] rounded-[12px] shadow-[0_2px_6px_rgba(0,0,0,0.03)] transition-all cursor-pointer group shrink-0"
             title="White Paper PDF (View & Download Options)"
             aria-label={downloadPdfLabel}
             aria-expanded={pdfMenuOpen}
@@ -94,7 +94,7 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
 
           {/* PDF Action Dropdown Popover */}
           {pdfMenuOpen && (
-            <div className="absolute right-0 top-full mt-2 w-72 bg-white border border-[#E5E5E5] rounded-[18px] shadow-[0_12px_40px_rgba(0,0,0,0.15)] p-2.5 z-50 animate-in fade-in zoom-in-95 duration-100">
+            <div className="absolute right-0 top-full mt-2 w-72 max-w-[calc(100vw-36px)] bg-white border border-[#E5E5E5] rounded-[18px] shadow-[0_12px_40px_rgba(0,0,0,0.15)] p-2.5 z-50 animate-in fade-in zoom-in-95 duration-100">
               <div className="px-2 py-1.5 border-b border-[#F0F0F0] mb-1.5 flex items-center justify-between">
                 <span className="text-[11px] font-mono font-bold text-[#080808]">WHITE PAPER (PDF)</span>
                 <span className="text-[9px] font-mono text-[#B8661B] bg-[#FAF5EF] px-1.5 py-0.5 rounded font-bold">A4 · v1.0</span>
@@ -156,7 +156,7 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
 
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold text-[#080808] bg-[#FCFCFC] hover:bg-[#F5F5F5] border border-[#D9D9D9] rounded-[12px] shadow-[0_2px_6px_rgba(0,0,0,0.03)] transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-mono font-bold text-[#080808] bg-[#FCFCFC] hover:bg-[#F5F5F5] border border-[#D9D9D9] rounded-[12px] shadow-[0_2px_6px_rgba(0,0,0,0.03)] transition-colors cursor-pointer shrink-0"
             title={t.common.print}
           >
             <Printer className="w-3.5 h-3.5 text-[#4A4A4A]" />
@@ -165,7 +165,7 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
         </div>
       }
     >
-      <div className="flex flex-col lg:flex-row h-full">
+      <div className="flex flex-col lg:flex-row h-full min-h-0">
         {/* Left Table of Contents (Desktop) */}
         <aside className="hidden lg:block w-72 border-r border-[#E5E5E5] bg-[#FCFCFC] p-5 overflow-y-auto shrink-0">
           <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2px] mb-3">
@@ -191,10 +191,30 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
           </nav>
         </aside>
 
+        {/* Mobile Chapter Quick Navigation (visible below lg) */}
+        <div className="lg:hidden border-b border-[#E5E5E5] bg-[#FCFCFC] px-3 sm:px-6 py-2 overflow-x-auto flex items-center gap-1.5 shrink-0">
+          <span className="text-[10px] font-mono font-bold text-[#B8661B] uppercase tracking-wider shrink-0 pr-1">
+            {wp.toc_title}:
+          </span>
+          {chapters.map((s) => (
+            <button
+              key={s.id}
+              onClick={() => scrollToChapter(s.id)}
+              className={`px-2 py-1 rounded-[8px] text-[11px] font-mono whitespace-nowrap transition-colors shrink-0 cursor-pointer ${
+                activeSection === s.id
+                  ? 'bg-[#FAF5EF] text-[#B8661B] font-bold border border-[#E9C9A5]'
+                  : 'text-[#666666] hover:bg-[#F5F5F5] border border-transparent'
+              }`}
+            >
+              {s.num}. {s.title}
+            </button>
+          ))}
+        </div>
+
         {/* Right Main Document */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-10 lg:p-12 space-y-12 text-[#4A4A4A] font-sans leading-[1.8] bg-white">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-8 lg:p-12 space-y-8 sm:space-y-12 text-[#4A4A4A] font-sans leading-[1.8] bg-white min-w-0">
           {/* Document Title Header with 3D Rotating Logo */}
-          <div className="border-b border-[#E5E5E5] pb-8 text-center sm:text-left">
+          <div className="border-b border-[#E5E5E5] pb-6 sm:pb-8 text-center sm:text-left">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-4">
               <RotatingCoinLogo size={48} className="shrink-0 mt-1" />
               <div className="flex-1 min-w-0">
@@ -212,10 +232,10 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
                     <Download className="w-3.5 h-3.5 text-[#B8661B] group-hover:scale-110 transition-transform" />
                   </button>
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-[900] text-[#080808] font-display tracking-tight leading-tight">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-[900] text-[#080808] font-display tracking-tight leading-tight break-words">
                   {wp.doc_title}
                 </h1>
-                <p className="mt-2 text-lg sm:text-xl font-semibold text-[#080808] font-display">
+                <p className="mt-2 text-base sm:text-xl font-semibold text-[#080808] font-display">
                   {wp.doc_sub}
                 </p>
               </div>
@@ -225,16 +245,16 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
           {/* Chapters Render */}
           {chapters.map((ch) => (
             <section key={ch.id} id={`wp-${ch.id}`} className="space-y-4 scroll-mt-6">
-              <h3 className="text-xl sm:text-2xl font-[800] text-[#080808] font-display border-b border-[#E5E5E5] pb-2">
+              <h3 className="text-lg sm:text-2xl font-[800] text-[#080808] font-display border-b border-[#E5E5E5] pb-2">
                 {ch.num}. {ch.title}
               </h3>
               {ch.id === 'tokenomics' ? (
-                <div className="space-y-6">
+                <div className="space-y-6 overflow-hidden w-full">
                   <TokenomicsCircleDesign />
                   <WhitePaperExploreMetrics />
                 </div>
               ) : (
-                <div className="space-y-3.5 text-sm sm:text-base leading-[1.8] text-[#4A4A4A] font-[450]">
+                <div className="space-y-3.5 text-xs sm:text-sm lg:text-base leading-[1.8] text-[#4A4A4A] font-[450] break-words">
                   {ch.content.map((paragraph, pIdx) => (
                     <p key={pIdx} className="whitespace-pre-line">
                       {paragraph}
@@ -246,7 +266,7 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
           ))}
 
           {/* Document Signature with PDF Download Icon Only */}
-          <div className="pt-6 border-t border-[#E5E5E5] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#888888]">
+          <div className="pt-6 border-t border-[#E5E5E5] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#888888] text-center sm:text-left">
             <div>
               © {new Date().getFullYear()} Bitcoin Lite Edition. {t.footer.rights}
             </div>

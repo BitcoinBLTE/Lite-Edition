@@ -60,6 +60,8 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
 
   // Mouse & Touch Drag Handlers
   const handleDragStart = (clientX: number, clientY: number) => {
+    // Only enable dragging on screens >= 640px to prevent mobile layout clipping & erratic touch jump
+    if (typeof window !== 'undefined' && window.innerWidth < 640) return;
     setIsDragging(true);
     dragStartRef.current = {
       mouseX: clientX,
@@ -131,7 +133,7 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150 overflow-hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-5 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150 overflow-hidden"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           onClose();
@@ -147,7 +149,7 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
           transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
           transition: isDragging ? 'none' : 'transform 0.15s ease-out'
         }}
-        className={`bg-white rounded-[28px] sm:rounded-[36px] w-full border border-[#E5E5E5] shadow-[0_20px_60px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col ${maxWidthClass} ${maxHeightClass} animate-in zoom-in-95 duration-150 relative ${
+        className={`bg-white rounded-[24px] sm:rounded-[36px] w-full border border-[#E5E5E5] shadow-[0_20px_60px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col ${maxWidthClass} ${maxHeightClass} animate-in zoom-in-95 duration-150 relative ${
           isDragging ? 'select-none shadow-[0_24px_70px_rgba(184,102,27,0.15)] ring-2 ring-[#B8661B]' : ''
         }`}
       >
@@ -155,13 +157,13 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
         <div
           onMouseDown={handleMouseDown}
           onTouchStart={handleTouchStart}
-          className="px-6 py-4.5 border-b border-[#E5E5E5] bg-[#FCFCFC] flex items-center justify-between shrink-0 cursor-grab active:cursor-grabbing select-none group transition-colors hover:bg-[#F9F9F9]"
+          className="px-4 sm:px-6 py-3.5 sm:py-4.5 border-b border-[#E5E5E5] bg-[#FCFCFC] flex items-center justify-between shrink-0 sm:cursor-grab sm:active:cursor-grabbing select-none group transition-colors hover:bg-[#F9F9F9] min-w-0"
           title="Click and drag to move panel"
         >
           {/* Left: Drag grip indicator + Icon + Title */}
-          <div className="flex items-center gap-3 min-w-0 pr-2">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
             <div 
-              className="text-[#888888] group-hover:text-[#B8661B] transition-colors flex items-center shrink-0 cursor-grab"
+              className="text-[#888888] group-hover:text-[#B8661B] transition-colors hidden sm:flex items-center shrink-0 cursor-grab"
               aria-hidden="true"
             >
               <GripHorizontal className="w-4 h-4" />
@@ -174,11 +176,11 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
             )}
 
             <div className="min-w-0">
-              <h3 id={ariaLabelledBy} className="text-base font-[800] text-[#080808] font-display truncate">
+              <h3 id={ariaLabelledBy} className="text-sm sm:text-base font-[800] text-[#080808] font-display truncate">
                 {title}
               </h3>
               {subtitle && (
-                <div className="text-[11px] font-mono font-medium text-[#888888] truncate">
+                <div className="text-[10px] sm:text-[11px] font-mono font-medium text-[#888888] truncate">
                   {subtitle}
                 </div>
               )}
@@ -187,19 +189,19 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
 
           {/* Right: Reset Position button, Header Actions, and Close button */}
           <div 
-            className="flex items-center gap-2 shrink-0"
+            className="flex items-center gap-1.5 sm:gap-2 shrink-0"
             onMouseDown={(e) => e.stopPropagation()}
             onTouchStart={(e) => e.stopPropagation()}
           >
             {(position.x !== 0 || position.y !== 0) && (
               <button
                 onClick={() => setPosition({ x: 0, y: 0 })}
-                className="p-1 rounded-[8px] text-[#666666] hover:text-[#080808] hover:bg-[#F0F0F0] transition-colors text-[11px] font-mono flex items-center gap-1 px-2 cursor-pointer"
+                className="p-1 rounded-[8px] text-[#666666] hover:text-[#080808] hover:bg-[#F0F0F0] transition-colors text-[11px] font-mono hidden sm:flex items-center gap-1 px-2 cursor-pointer"
                 title={t.common.drag_hint}
                 aria-label={t.common.center}
               >
                 <RotateCcw className="w-3 h-3" />
-                <span className="hidden sm:inline">{t.common.center}</span>
+                <span>{t.common.center}</span>
               </button>
             )}
 
@@ -208,7 +210,7 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
             {/* Close Button Icon */}
             <button
               onClick={onClose}
-              className="p-2 rounded-[12px] text-[#666666] hover:text-[#080808] hover:bg-[#F0F0F0] active:bg-[#E5E5E5] transition-colors cursor-pointer ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8661B]"
+              className="p-1.5 sm:p-2 rounded-[12px] text-[#666666] hover:text-[#080808] hover:bg-[#F0F0F0] active:bg-[#E5E5E5] transition-colors cursor-pointer ml-0.5 sm:ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8661B]"
               aria-label={t.common.close}
             >
               <X className="w-5 h-5 stroke-[2]" />
@@ -217,7 +219,7 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto min-h-0 min-w-0">
           {children}
         </div>
 

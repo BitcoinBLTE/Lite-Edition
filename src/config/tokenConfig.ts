@@ -8,7 +8,8 @@
  * - Roadmap statuses strictly reflect verified milestones.
  */
 
-import bitcoinLiteLogo from '../assets/images/bitcoin_lite_logo_1791633769447.jpg';
+// Centralized Project & Token Configuration
+const bitcoinLiteLogo = '/bitcoin-lite-logo.jpg';
 
 export interface TokenAllocation {
   id: string;
@@ -61,6 +62,21 @@ export interface ProjectConfig {
   roadmap: RoadmapMilestone[];
 }
 
+
+const getEnvVar = (key: string): string => {
+  try {
+    if (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env[key]) {
+      return (import.meta as any).env[key];
+    }
+  } catch {}
+  try {
+    if (typeof process !== 'undefined' && process.env && process.env[key]) {
+      return process.env[key] as string;
+    }
+  } catch {}
+  return '';
+};
+
 export const TOKEN_CONFIG: ProjectConfig = {
   name: "Bitcoin Lite Edition",
   shortName: "Bitcoin Lite",
@@ -72,13 +88,13 @@ export const TOKEN_CONFIG: ProjectConfig = {
   tokenStandard: "SPL / Token-2022",
   decimals: 9,
   // When deployed to mainnet, populate via VITE_TOKEN_MINT_ADDRESS or set directly:
-  mintAddress: (import.meta.env.VITE_TOKEN_MINT_ADDRESS as string) || null,
+  mintAddress: getEnvVar('VITE_TOKEN_MINT_ADDRESS') || null,
   tagline: "A New Chapter in the Digital Asset Landscape",
   missionStatement: "Bitcoin Lite Edition (BLTE) brings Bitcoin-inspired principles of scarcity, transparency, and decentralization to the Solana ecosystem.",
   authorityStatus: "Mint authority permanently revoked / Immutable supply on Solana genesis",
-  isMainnetLive: Boolean(import.meta.env.VITE_TOKEN_MINT_ADDRESS),
+  isMainnetLive: Boolean(getEnvVar('VITE_TOKEN_MINT_ADDRESS')),
   // Official White Paper PDF Link (defaults to verified hosted PDF, or custom Google Drive link when set)
-  whitepaperPdfDriveUrl: (import.meta.env.VITE_WHITEPAPER_DRIVE_URL as string) || "/bitcoin-lite-edition-whitepaper.pdf",
+  whitepaperPdfDriveUrl: getEnvVar('VITE_WHITEPAPER_DRIVE_URL') || "/bitcoin-lite-edition-whitepaper.pdf",
   stakingUrl: "https://app.streamflow.finance/staking/solana/mainnet/",
   stakingApy: "11.61%",
   logoUrl: bitcoinLiteLogo || "/bitcoin-lite-logo.jpg",

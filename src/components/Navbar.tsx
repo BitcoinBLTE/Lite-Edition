@@ -41,22 +41,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState<string | null>(null);
 
-  // Sync selected menu item with URL hash or action
-  useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash;
-      if (hash) {
-        const found = hamburgerListItems.find(item => item.href === hash);
-        if (found) {
-          setSelectedMenuItem(found.id);
-        }
-      }
-    };
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
-  }, []);
-
   // Desktop navigation links with stable unique IDs
   const desktopNavLinks: Array<{
     id: string;
@@ -172,9 +156,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   const handleMenuItemClick = (item: typeof hamburgerListItems[0]) => {
+    // Container appears on button when clicked
     setSelectedMenuItem(item.id);
     setTimeout(() => {
+      // Disappears when section opens
       setMobileMenuOpen(false);
+      setSelectedMenuItem(null);
       if (item.action) {
         item.action();
       } else if (item.href) {
@@ -248,7 +235,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Hamburger Menu Toggle Button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen);
+              setSelectedMenuItem(null);
+            }}
             className="p-2 sm:p-2.5 text-[#080808] dark:text-white hover:text-[#B8661B] hover:bg-[#FAF8F5] dark:hover:bg-[#1C150E] focus-visible:ring-2 focus-visible:ring-[#B8661B] rounded-[14px] border border-[#EAB308]/10 hover:border-[#B8661B]/30 transition-colors cursor-pointer flex items-center justify-center gap-1.5"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
@@ -272,7 +262,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Backdrop */}
           <div 
             className="fixed inset-0 top-16 sm:top-18 bg-black/30 backdrop-blur-xs z-30 transition-opacity" 
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={() => {
+              setMobileMenuOpen(false);
+              setSelectedMenuItem(null);
+            }}
             aria-hidden="true"
           />
 

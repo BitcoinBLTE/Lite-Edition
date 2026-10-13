@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Coins, CheckCircle2, Lock, MousePointerClick, Layers, PieChart } from 'lucide-react';
+import { Coins, CheckCircle2, PieChart } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -26,7 +26,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       id: 'fair-launch' as const,
       title: tok.allocations?.[0]?.category || 'Fair Launch',
       amount: '1,470,000 BLTE',
-      desc: tok.allocations?.[0]?.description || 'Direct community and public fair launch distribution on Solana with borderless access.',
+      desc: '',
       tag: 'COMMUNITY LAUNCH',
       color: '#F59E0B',
       lightColor: '#FCD34D',
@@ -40,7 +40,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       id: 'liquidity-pool' as const,
       title: tok.allocations?.[1]?.category || 'Liquidity Pool',
       amount: '630,000 BLTE',
-      desc: tok.allocations?.[1]?.description || 'Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
+      desc: '',
       tag: 'RAYDIUM AMM DEX',
       color: '#22C55E',
       lightColor: '#86EFAC',
@@ -79,7 +79,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
   };
 
   return (
-    <div className={`rounded-[32px] bg-[#FAF5EF]/70 dark:bg-[#121217] border border-[#E9C9A5]/90 dark:border-[#B8661B]/35 p-6 sm:p-10 lg:p-12 space-y-8 shadow-[0_8px_32px_rgba(0,0,0,0.04)] ${className}`}>
+    <div className={`rounded-[24px] sm:rounded-[32px] bg-[#FAF5EF]/70 dark:bg-[#121217] border border-[#E9C9A5]/90 dark:border-[#B8661B]/35 p-4 sm:p-8 lg:p-12 space-y-6 sm:space-y-8 shadow-[0_8px_32px_rgba(0,0,0,0.04)] ${className}`}>
       {showTitle && (
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E9C9A5]/60 dark:border-[#282832]">
           <div>
@@ -91,36 +91,43 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
               {tok.title || '2.1M TOTAL SUPPLY'}
             </h3>
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold self-start sm:self-auto shadow-xs">
-            <ShieldCheck className="w-4 h-4" />
-            <span>100% AUDITABLE ON-CHAIN</span>
-          </div>
+          <button
+            type="button"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/25 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold self-start sm:self-auto shadow-xs"
+          >
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+            <span>100% circulatory</span>
+          </button>
         </div>
       )}
 
       {/* Interactive Quick-Selection Control Pill Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-white dark:bg-[#181820] p-2 sm:p-2.5 rounded-[20px] border border-[#E5E5E5] dark:border-[#262630] shadow-xs">
-        <div className="flex items-center gap-2 px-3 py-1 text-xs font-mono font-bold text-[#888888] dark:text-[#A1A1AA] uppercase tracking-wider">
-          <Layers className="w-3.5 h-3.5 text-[#B8661B]" />
-          <span>Select Side:</span>
-        </div>
+      <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 bg-white dark:bg-[#181820] p-2 sm:p-2.5 rounded-[18px] sm:rounded-[20px] border border-[#E5E5E5] dark:border-[#262630] shadow-xs">
+        <button
+          type="button"
+          onClick={() => setSelectedId(null)}
+          className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25 text-[11px] sm:text-xs font-mono font-bold shadow-2xs hover:bg-emerald-500/20 transition-colors cursor-pointer"
+        >
+          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+          <span>100% circulatory</span>
+        </button>
 
         <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
           <button
             onClick={() => setSelectedId(null)}
-            className={`px-3.5 py-1.5 rounded-[14px] text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
               selectedId === null
-                ? 'bg-[#111111] text-white dark:bg-white dark:text-[#080808] shadow-xs'
-                : 'text-[#555555] dark:text-[#A1A1AA] hover:bg-[#FAF8F5] dark:hover:bg-[#202028]'
+                ? 'bg-[#111111] text-white dark:bg-[#252532] dark:text-white dark:border dark:border-[#424256] shadow-xs'
+                : 'text-[#555555] dark:text-[#D4D4D8] hover:bg-[#FAF8F5] dark:hover:bg-[#202028] dark:hover:text-white'
             }`}
           >
-            <PieChart className="w-3.5 h-3.5" />
+            <PieChart className={`w-3.5 h-3.5 shrink-0 ${selectedId === null ? 'text-amber-400 dark:text-amber-300' : 'text-[#888888] dark:text-[#D4D4D8]'}`} />
             <span>Overview (2.1M)</span>
           </button>
 
           <button
             onClick={() => toggleSelect('fair-launch')}
-            className={`px-3.5 py-1.5 rounded-[14px] text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
               selectedId === 'fair-launch'
                 ? 'bg-[#F59E0B] text-white shadow-[0_2px_12px_rgba(245,158,11,0.4)] ring-2 ring-[#F59E0B]/40'
                 : 'text-[#B8661B] dark:text-[#FBBF24] bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20 border border-[#F59E0B]/30'
@@ -132,7 +139,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
 
           <button
             onClick={() => toggleSelect('liquidity-pool')}
-            className={`px-3.5 py-1.5 rounded-[14px] text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
               selectedId === 'liquidity-pool'
                 ? 'bg-[#22C55E] text-white shadow-[0_2px_12px_rgba(34,197,94,0.4)] ring-2 ring-[#22C55E]/40'
                 : 'text-[#16A34A] dark:text-[#4ADE80] bg-[#22C55E]/10 hover:bg-[#22C55E]/20 border border-[#22C55E]/30'
@@ -147,16 +154,10 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       {/* Main Container: Expanded Selectable Donut Chart on Left, Interactive Cards on Right */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
         {/* Left: Expanded, Selectable Donut Chart */}
-        <div className="lg:col-span-6 flex flex-col items-center justify-center relative select-none py-2">
+        <div className="lg:col-span-6 flex flex-col items-center justify-center relative select-none py-2 min-w-0">
           
-          {/* Helper hint for direct circle interaction */}
-          <div className="mb-3 text-xs font-mono font-semibold text-[#888888] dark:text-[#A1A1AA] flex items-center gap-2">
-            <MousePointerClick className="w-4 h-4 text-[#B8661B]" />
-            <span>{selectedId ? 'Click slice again or center disc to clear selection' : 'Click either side of the circle to select'}</span>
-          </div>
-
           {/* Expanded Donut Graphic Container */}
-          <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[440px] md:h-[440px] lg:w-[460px] lg:h-[460px] flex items-center justify-center">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[440px] lg:h-[440px] max-w-full flex items-center justify-center aspect-square">
             
             {/* Dynamic ambient background glow tuned to active selection */}
             <div
@@ -275,16 +276,16 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
             {/* Center Disc: Interactive with Dynamic Inspection & Tap to Reset */}
             <div
               onClick={() => setSelectedId(null)}
-              className="absolute inset-0 m-auto w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-white dark:bg-[#121217] border-2 border-[#E5E5E5] dark:border-[#262632] shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center text-center p-4 cursor-pointer transition-all hover:scale-[1.02]"
+              className="absolute inset-0 m-auto w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-white dark:bg-[#121217] border-2 border-[#E5E5E5] dark:border-[#262632] shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center text-center p-3 sm:p-4 cursor-pointer transition-all hover:scale-[1.02]"
               title={selectedId ? "Click to reset view" : "2.1M BLTE Hard Cap"}
             >
               {selectedItem ? (
-                <div className="space-y-1.5 animate-in fade-in zoom-in-95 duration-200">
+                <div className="space-y-1 sm:space-y-1.5 animate-in fade-in zoom-in-95 duration-200">
                   <span
-                    className="inline-block w-3.5 h-3.5 rounded-full mb-1 shadow-xs"
+                    className="inline-block w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full mb-0.5 sm:mb-1 shadow-xs"
                     style={{ backgroundColor: selectedItem.color }}
                   />
-                  <div className="font-display font-[900] text-xl sm:text-2xl text-[#080808] dark:text-white tracking-tight leading-tight">
+                  <div className="font-display font-[900] text-lg sm:text-2xl text-[#080808] dark:text-white tracking-tight leading-tight">
                     {selectedItem.title}
                   </div>
                   <div
@@ -293,115 +294,77 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                   >
                     {selectedItem.amount}
                   </div>
-                  <div className="text-[10px] sm:text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#111111]/5 dark:bg-white/10 text-[#888888] dark:text-[#A1A1AA] uppercase tracking-wider inline-block">
-                    ACTIVE SELECTION · TAP TO RESET
+                  <div className="text-[9px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#111111]/5 dark:bg-white/10 text-[#888888] dark:text-[#A1A1AA] uppercase tracking-wider inline-block">
+                    ACTIVE ALLOCATION
                   </div>
                 </div>
               ) : (
-                <div className="space-y-1">
-                  <span className="font-display font-[900] text-4xl sm:text-5xl text-[#080808] dark:text-white tracking-tight leading-none block">
+                <div className="space-y-0.5 sm:space-y-1">
+                  <span className="font-display font-[900] text-3xl sm:text-5xl text-[#080808] dark:text-white tracking-tight leading-none block">
                     2.1M
                   </span>
-                  <span className="font-mono text-sm sm:text-base font-black text-[#B8661B] dark:text-[#EAB308] tracking-widest block">
+                  <span className="font-mono text-xs sm:text-base font-black text-[#B8661B] dark:text-[#EAB308] tracking-widest block">
                     BLTE
                   </span>
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#888888] dark:text-[#A1A1AA] font-bold block pt-1">
+                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#888888] dark:text-[#A1A1AA] font-bold block pt-0.5 sm:pt-1">
                     {tok.fixed_cap || 'HARD CAP'}
-                  </span>
-                  <span className="text-[10px] font-mono text-[#B8661B] dark:text-[#EAB308] font-semibold block pt-0.5">
-                    TAP EITHER SIDE
                   </span>
                 </div>
               )}
             </div>
           </div>
-
-          <div className="mt-5 text-xs font-mono text-[#888888] dark:text-[#A1A1AA] text-center flex items-center justify-center gap-2">
-            <span>{tok.data_source || 'Mathematical Genesis Model'}</span>
-            <span className="text-[#D9D9D9]">·</span>
-            <span>Immutable L1 Supply</span>
-          </div>
         </div>
 
         {/* Right: Selectable Breakdown Cards with Color Distinction */}
-        <div className="lg:col-span-6 space-y-4">
+        <div className="lg:col-span-6 space-y-3.5 sm:space-y-4">
           {allocations.map((item) => {
             const isSelected = selectedId === item.id;
             return (
               <div
                 key={item.id}
                 onClick={() => toggleSelect(item.id)}
-                className={`p-6 sm:p-7 rounded-[24px] bg-white dark:bg-[#18181F] border shadow-xs transition-all cursor-pointer space-y-3.5 group ${
+                className={`p-4 sm:p-6 lg:p-7 rounded-[20px] sm:rounded-[24px] bg-white dark:bg-[#18181F] border shadow-xs transition-all cursor-pointer space-y-3 group ${
                   isSelected
                     ? item.activeBorder
                     : 'border-[#E5E5E5] dark:border-[#262630] hover:border-[#B8661B]/50'
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3.5">
+                  <div className="flex items-center gap-3 sm:gap-3.5 min-w-0">
                     <span
-                      className="w-5 h-5 rounded-full shrink-0 shadow-xs ring-4 transition-transform group-hover:scale-110"
+                      className="w-4 h-4 sm:w-5 sm:h-5 rounded-full shrink-0 shadow-xs ring-4 transition-transform group-hover:scale-110"
                       style={{
                         backgroundColor: item.color,
                         boxShadow: `0 0 14px ${item.glowColor}`,
                       }}
                     />
-                    <div>
-                      <div className="text-lg sm:text-xl font-bold text-[#080808] dark:text-white font-display">
+                    <div className="min-w-0">
+                      <div className="text-base sm:text-xl font-bold text-[#080808] dark:text-white font-display truncate">
                         {item.title}
                       </div>
-                      <div className="text-[11px] font-mono text-[#888888] dark:text-[#71717A] tracking-wider font-semibold">
+                      <div className="text-[10px] sm:text-[11px] font-mono text-[#888888] dark:text-[#71717A] tracking-wider font-semibold">
                         {item.tag}
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                     <span
-                      className="text-base sm:text-lg font-mono font-black"
+                      className="text-sm sm:text-lg font-mono font-black"
                       style={{ color: item.color }}
                     >
                       {item.amount}
                     </span>
                     {isSelected && (
-                      <span className="p-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                        <CheckCircle2 className="w-5 h-5" />
+                      <span className="p-0.5 sm:p-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                        <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" />
                       </span>
                     )}
                   </div>
                 </div>
-
-                <p className="text-xs sm:text-sm text-[#555555] dark:text-[#A1A1AA] leading-relaxed pl-8">
-                  {item.desc}
-                </p>
-
-                <div className="pl-8 pt-1 flex items-center gap-2 text-xs font-mono font-bold">
-                  <span
-                    className={`px-3 py-1 rounded-full border text-[11px] transition-all ${
-                      isSelected
-                        ? item.badgeBg
-                        : 'bg-transparent text-[#888888] dark:text-[#71717A] border-[#E5E5E5] dark:border-[#282832]'
-                    }`}
-                  >
-                    {isSelected ? 'SELECTED ALLOCATION' : 'CLICK TO SELECT'}
-                  </span>
-                </div>
               </div>
             );
           })}
-
-          {/* Verification Footer Banner without any 70/30 text */}
-          <div className="p-4 sm:p-5 rounded-[20px] bg-[#FAF5EF] dark:bg-[#1C1610] border border-[#E9C9A5]/70 dark:border-[#B8661B]/30 flex items-center justify-between gap-3 text-xs text-[#555555] dark:text-[#D4D4D8]">
-            <div className="flex items-center gap-3">
-              <Lock className="w-4 h-4 text-[#B8661B] shrink-0" />
-              <span className="font-mono text-xs font-semibold">
-                Verified 100% Mathematical Genesis Model · Fair Launch & Liquidity Pool
-              </span>
-            </div>
-            <span className="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-white dark:bg-[#251E16] text-[#B8661B] border border-[#E9C9A5]/60 shrink-0">
-              SOLANA L1
-            </span>
-          </div>
         </div>
       </div>
     </div>

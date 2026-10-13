@@ -5,7 +5,6 @@ import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { fetchLiveMarketData, fetchTokenHoldersCount, LiveMarketData } from '../services/marketDataService';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useTheme } from '../theme/ThemeContext';
-import { Realistic3DIcon } from './Realistic3DIcon';
 
 interface ExploreModalProps {
   isOpen: boolean;
@@ -118,11 +117,11 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
       isOpen={isOpen}
       onClose={onClose}
       title={
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap min-w-0">
           <span className="font-display font-black tracking-tight text-lg sm:text-xl text-[#080808] dark:text-white">
             {exp?.title || 'Explore'}
           </span>
-          <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1 ${
+          <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1 shrink-0 ${
             isLive 
               ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20' 
               : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
@@ -133,8 +132,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
         </div>
       }
       subtitle={exp?.subtitle || 'Review protocol stats and activity.'}
-      icon={<Realistic3DIcon type="transparency" size="md" />}
-      maxWidthClass="max-w-4xl"
+      maxWidthClass="max-w-4xl w-full"
       ariaLabelledBy="explore-panel-title"
       headerActions={
         <button
@@ -148,20 +146,22 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
         </button>
       }
       footer={
-        <div className="px-5 sm:px-6 py-3.5 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 text-[#71717A]">
-            <Activity className="w-3.5 h-3.5 text-[#B8661B]" />
-            <span className="font-mono text-[11px]">{exp?.synced || 'Synced'}: {lastSyncTime === 'Just now' ? (exp?.just_now || 'Just now') : lastSyncTime}</span>
+        <div className="px-4 sm:px-6 py-3.5 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] dark:border-[#222228] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 text-[#71717A] min-w-0">
+            <Activity className="w-3.5 h-3.5 text-[#B8661B] shrink-0" />
+            <span className="font-mono text-[11px] truncate">
+              {exp?.synced || 'Synced'}: {lastSyncTime === 'Just now' ? (exp?.just_now || 'Just now') : lastSyncTime}
+            </span>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-2.5 flex-wrap justify-end">
             <a
               href={TOKEN_CONFIG.stakingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-[12px] bg-[#B8661B] hover:bg-[#964E10] text-white font-bold font-mono transition-colors flex items-center gap-1.5 shadow-xs"
+              className="px-3 sm:px-3.5 py-2 rounded-[12px] bg-[#B8661B] hover:bg-[#964E10] text-white font-bold font-mono transition-colors flex items-center gap-1.5 shadow-xs text-xs"
             >
-              <Coins className="w-3.5 h-3.5" />
+              <Coins className="w-3.5 h-3.5 shrink-0" />
               <span>{exp?.btn_stake || 'Stake (11.61% APY)'}</span>
             </a>
 
@@ -171,7 +171,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                   onClose();
                   onOpenTradeModal();
                 }}
-                className="px-3.5 py-2 rounded-[12px] bg-[#111111] hover:bg-[#B8661B] text-white font-bold font-mono transition-colors cursor-pointer"
+                className="px-3 sm:px-3.5 py-2 rounded-[12px] bg-[#111111] hover:bg-[#B8661B] text-white font-bold font-mono transition-colors cursor-pointer text-xs"
               >
                 {exp?.btn_trade || 'Trade'}
               </button>
@@ -179,7 +179,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
 
             <button
               onClick={onClose}
-              className="px-3 py-2 rounded-[12px] text-[#4A4A4A] dark:text-[#D4D4D8] hover:bg-[#F2EFE7] dark:hover:bg-[#1C150E] font-medium transition-colors cursor-pointer"
+              className="px-3 py-2 rounded-[12px] text-[#4A4A4A] dark:text-[#D4D4D8] hover:bg-[#F2EFE7] dark:hover:bg-[#1C150E] font-medium transition-colors cursor-pointer text-xs"
             >
               {t.common.close}
             </button>
@@ -187,7 +187,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
         </div>
       }
     >
-      <div className="p-5 sm:p-7 space-y-6">
+      <div className="p-4 sm:p-6 lg:p-7 space-y-5 sm:space-y-6">
         {/* Refresh Icon */}
         <div className="flex items-center justify-end -mt-1 -mb-1">
           <button
@@ -202,10 +202,10 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
         </div>
 
         {/* 4 Dedicated Protocol Stat Sections */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           
           {/* Section 1: Market */}
-          <div className="rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/10 p-5 shadow-xs flex flex-col justify-between">
+          <div className="rounded-[20px] sm:rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/15 p-4 sm:p-5 shadow-xs flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-2">
@@ -218,31 +218,31 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                 </span>
               </div>
 
-              <div className="space-y-3.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.price || 'Price'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+              <div className="space-y-3 sm:space-y-3.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.price || 'Price'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {marketStats.price}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.volume_24h || 'Volume (24h)'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.volume_24h || 'Volume (24h)'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {marketStats.volume24h}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.market_cap || t.market?.market_cap || 'Market Cap'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.market_cap || t.market?.market_cap || 'Market Cap'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {marketStats.marketCap}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.liquidity || 'Liquidity'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.liquidity || 'Liquidity'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {marketStats.liquidity}
                   </span>
                 </div>
@@ -255,7 +255,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
           </div>
 
           {/* Section 2: Staking */}
-          <div className="rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/10 p-5 shadow-xs flex flex-col justify-between">
+          <div className="rounded-[20px] sm:rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/15 p-4 sm:p-5 shadow-xs flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-2">
@@ -268,24 +268,24 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                 </span>
               </div>
 
-              <div className="space-y-3.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.apr || 'APR'}</span>
-                  <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
+              <div className="space-y-3 sm:space-y-3.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.apr || 'APR'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums truncate text-right">
                     {stakingStats.apr}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.liquid || 'Liquid'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.liquid || 'Liquid'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {stakingStats.liquid}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.native || 'Native'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.native || 'Native'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {stakingStats.native}
                   </span>
                 </div>
@@ -298,7 +298,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
           </div>
 
           {/* Section 3: Game (Placed above supply section) */}
-          <div className="rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/10 p-5 shadow-xs flex flex-col justify-between">
+          <div className="rounded-[20px] sm:rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/15 p-4 sm:p-5 shadow-xs flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-2">
@@ -311,24 +311,24 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                 </span>
               </div>
 
-              <div className="space-y-3.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.total_rewards || 'Total rewards'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+              <div className="space-y-3 sm:space-y-3.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.total_rewards || 'Total rewards'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     0
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.participation_count || 'Participation count'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.participation_count || 'Participation count'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     0
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.game_rewards || 'Game rewards'}</span>
-                  <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.game_rewards || 'Game rewards'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums truncate text-right">
                     $0.00
                   </span>
                 </div>
@@ -341,7 +341,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
           </div>
 
           {/* Section 4: Supply */}
-          <div className="rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/10 p-5 shadow-xs flex flex-col justify-between">
+          <div className="rounded-[20px] sm:rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/15 p-4 sm:p-5 shadow-xs flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-2">
@@ -354,31 +354,31 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                 </span>
               </div>
 
-              <div className="space-y-3.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.non_circulatory || 'Non circulatory'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+              <div className="space-y-3 sm:space-y-3.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.non_circulatory || 'Non circulatory'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {supplyStats.nonCirculatory}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.circulating || 'Circulating'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.circulating || 'Circulating'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {supplyStats.circulating}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.max_supply || 'Max'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.max_supply || 'Max'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {supplyStats.max}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium">{exp?.holders || 'Holders'}</span>
-                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{exp?.holders || 'Holders'}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
                     {supplyStats.holders}
                   </span>
                 </div>

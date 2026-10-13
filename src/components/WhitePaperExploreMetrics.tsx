@@ -95,21 +95,21 @@ export const WhitePaperExploreMetrics: React.FC = () => {
             <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#FAF5EF] text-[#B8661B]">{exp?.badge_network || 'SOLANA'}</span>
           </div>
           <div className="space-y-2 text-xs">
-            <div className="flex justify-between">
-              <span className="text-[#888888]">{exp?.circulating || 'Circulating'}</span>
-              <span className="font-mono font-bold text-[#080808] dark:text-white">2,100,000</span>
-            </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-2">
               <span className="text-[#888888]">{exp?.non_circulatory || 'Non circulatory'}</span>
-              <span className="font-mono font-bold text-[#080808] dark:text-white">0.00</span>
+              <span className="font-mono font-bold text-[#080808] dark:text-white tabular-nums">0.00</span>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-2">
+              <span className="text-[#888888]">{exp?.circulating || 'Circulating'}</span>
+              <span className="font-mono font-bold text-[#080808] dark:text-white tabular-nums">2,100,000</span>
+            </div>
+            <div className="flex justify-between gap-2">
               <span className="text-[#888888]">{exp?.max_supply || 'Max Supply'}</span>
-              <span className="font-mono font-bold text-[#080808] dark:text-white">2,100,000</span>
+              <span className="font-mono font-bold text-[#080808] dark:text-white tabular-nums">2,100,000</span>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-2">
               <span className="text-[#888888]">Inflation Rate</span>
-              <span className="font-mono font-bold text-[#16A34A]">0.00% ({exp?.zero_inflation || 'Hard Capped'})</span>
+              <span className="font-mono font-bold text-[#16A34A] tabular-nums">0.00% ({exp?.zero_inflation || 'Hard Capped'})</span>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@ export const WhitePaperExploreMetrics: React.FC = () => {
         <ul className="list-disc pl-5 space-y-1">
           <li><strong>Zero Additional Minting:</strong> Mint authority was irrevocably revoked upon SPL genesis. No entity can create additional BLTE tokens.</li>
           <li><strong>Streamflow Staking Escrow:</strong> Staking rewards are locked within non-custodial smart contracts and distributed according to fixed APY schedules.</li>
-          <li><strong>Mathematical Allocation:</strong> 70% Fair Launch (1,470,000 BLTE) and 30% Liquidity Pool (630,000 BLTE) with 2,100,000 hard cap.</li>
+          <li><strong>Mathematical Allocation:</strong> Fair Launch (1,470,000 BLTE) and Liquidity Pool (630,000 BLTE) with 2,100,000 hard cap.</li>
           <li><strong>Public Transparency:</strong> All circulating tokens and contracts are verifiable via public Solana block explorers.</li>
         </ul>
       </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Gamepad2, Clock, Trophy, Users, Coins, Sparkles } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { useLanguage } from '../i18n/LanguageContext';
-import { Realistic3DIcon } from './Realistic3DIcon';
 
 interface GameModalProps {
   isOpen: boolean;
@@ -24,34 +23,33 @@ export const GameModal: React.FC<GameModalProps> = ({
       onClose={onClose}
       title={gm?.title || 'GAME'}
       subtitle={gm?.subtitle || 'Interactive Protocol Gaming Module'}
-      icon={<Realistic3DIcon type="transparency" size="sm" />}
-      maxWidthClass="max-w-md"
+      maxWidthClass="max-w-md w-full"
       ariaLabelledBy="game-modal-title"
       footer={
-        <div className="px-6 py-4 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] dark:border-[#222228] flex flex-wrap items-center justify-between gap-3">
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] dark:border-[#222228] flex items-center justify-between gap-3">
           {onOpenExplore && (
             <button
               onClick={() => {
                 onClose();
                 onOpenExplore();
               }}
-              className="text-xs font-bold text-[#B8661B] hover:text-[#964E10] dark:text-[#EAB308] flex items-center gap-1.5 cursor-pointer"
+              className="text-xs font-bold text-[#B8661B] hover:text-[#964E10] dark:text-[#EAB308] flex items-center gap-1.5 cursor-pointer py-1 min-w-0"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>{gm?.btn_explore_stats || 'Explore Protocol Stats'}</span>
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">{gm?.btn_explore_stats || 'Explore Protocol Stats'}</span>
             </button>
           )}
 
           <button
             onClick={onClose}
-            className="px-5 py-2.5 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer ml-auto"
+            className="px-5 py-2.5 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer ml-auto shrink-0"
           >
             {t.common.close}
           </button>
         </div>
       }
     >
-      <div className="p-6 text-center space-y-6">
+      <div className="p-4 sm:p-6 text-center space-y-5 sm:space-y-6">
         {/* Game Icon & Coming Soon Badge */}
         <div className="space-y-3">
           <div className="w-16 h-16 rounded-[22px] bg-[#FAF5EF] dark:bg-[#1C150E] border border-[#E9C9A5] dark:border-[#B8661B]/30 flex items-center justify-center mx-auto text-[#B8661B] dark:text-[#EAB308] shadow-xs">
@@ -72,30 +70,30 @@ export const GameModal: React.FC<GameModalProps> = ({
         </div>
 
         {/* Live Metrics Cards */}
-        <div className="grid grid-cols-3 gap-2.5 pt-1">
-          <div className="p-3.5 rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center">
-            <div className="text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1">
+        <div className="grid grid-cols-3 gap-2 sm:gap-2.5 pt-1">
+          <div className="p-2 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center flex flex-col justify-between min-w-0">
+            <div className="text-[9px] sm:text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1 leading-tight line-clamp-2">
               {gm?.total_rewards || 'Total Rewards'}
             </div>
-            <div className="text-base sm:text-lg font-mono font-black text-[#080808] dark:text-white tabular-nums">
+            <div className="text-sm sm:text-lg font-mono font-black text-[#080808] dark:text-white tabular-nums truncate">
               0
             </div>
           </div>
 
-          <div className="p-3.5 rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center">
-            <div className="text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1">
+          <div className="p-2 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center flex flex-col justify-between min-w-0">
+            <div className="text-[9px] sm:text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1 leading-tight line-clamp-2">
               {gm?.participants || 'Participants'}
             </div>
-            <div className="text-base sm:text-lg font-mono font-black text-[#080808] dark:text-white tabular-nums">
+            <div className="text-sm sm:text-lg font-mono font-black text-[#080808] dark:text-white tabular-nums truncate">
               0
             </div>
           </div>
 
-          <div className="p-3.5 rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center">
-            <div className="text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1">
+          <div className="p-2 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF5EF]/60 dark:bg-[#16161C] border border-[#EAB308]/15 text-center flex flex-col justify-between min-w-0">
+            <div className="text-[9px] sm:text-[10px] font-mono text-[#888888] dark:text-[#A1A1AA] uppercase font-bold mb-1 leading-tight line-clamp-2">
               {gm?.game_rewards || 'Game Rewards'}
             </div>
-            <div className="text-base sm:text-lg font-mono font-black text-[#B8661B] dark:text-[#EAB308] tabular-nums">
+            <div className="text-sm sm:text-lg font-mono font-black text-[#B8661B] dark:text-[#EAB308] tabular-nums truncate">
               $0.00
             </div>
           </div>
