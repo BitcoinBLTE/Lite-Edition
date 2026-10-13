@@ -250,7 +250,7 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
               </h3>
               {ch.id === 'tokenomics' ? (
                 <div className="space-y-6 overflow-hidden w-full">
-                  <TokenomicsCircleDesign />
+                  <TokenomicsCircleDesign showTitle={false} />
                   <WhitePaperExploreMetrics />
                 </div>
               ) : (
