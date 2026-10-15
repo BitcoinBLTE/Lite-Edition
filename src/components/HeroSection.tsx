@@ -21,12 +21,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const { isBlack } = useTheme();
 
   // Track responsive screen size to mount a single WebGL coin instance in the correct container
-  const [isDesktop, setIsDesktop] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(min-width: 1024px)').matches;
+    }
+    return true;
+  });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const mql = window.matchMedia('(min-width: 1024px)');
-    setIsDesktop(mql.matches);
     const onChange = (e: MediaQueryListEvent) => {
       setIsDesktop(e.matches);
     };
@@ -71,11 +75,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Mobile / Tablet Rotating Coin ONLY (Hidden on Desktop) */}
-            {!isDesktop && (
-              <div className="mb-7 flex justify-center items-center w-full lg:hidden">
+            <div className="mb-7 flex justify-center items-center w-full lg:hidden min-h-[220px] sm:min-h-[260px]">
+              {!isDesktop && (
                 <HeroCoin3D className="max-w-[220px] sm:max-w-[260px]" />
-              </div>
-            )}
+              )}
+            </div>
 
             {/* Action Buttons: Unified, professional layout on desktop and mobile */}
             <div className="w-full flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 max-w-xl">

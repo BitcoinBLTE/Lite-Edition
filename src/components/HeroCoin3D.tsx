@@ -12,6 +12,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
   const startPointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const startRotationRef = useRef<{ y: number; x: number }>({ y: 0, x: 0 });
   const [hintVisible, setHintVisible] = useState(true);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -774,6 +775,10 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
       animId = requestAnimationFrame(animate);
     };
 
+    // Immediate first render to ensure no blank frame or delay
+    renderer.render(scene, camera);
+    setIsReady(true);
+
     animId = requestAnimationFrame(animate);
 
     // 6. Pointer Drag Interaction
@@ -857,10 +862,28 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
         aria-hidden="true"
       />
 
+      {/* Immediate Synchronous Coin Preview: Ensures the rotating coin is visible immediately on refresh/reload without disappearing */}
+      <div
+        className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300 ${
+          isReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
+        aria-hidden="true"
+      >
+        <div className="w-[88%] h-[88%] rounded-full shadow-[0_16px_48px_rgba(0,0,0,0.6)] overflow-hidden border border-[#EAB308]/60 bg-[#121215]">
+          <img
+            src="/bitcoin-lite-logo.jpg"
+            alt="Bitcoin Lite Edition Coin"
+            className="w-full h-full object-cover"
+            loading="eager"
+            decoding="sync"
+          />
+        </div>
+      </div>
+
       {/* 3D WebGL Canvas Container */}
       <div
         ref={containerRef}
-        className="w-full h-full cursor-grab active:cursor-grabbing touch-none flex items-center justify-center"
+        className="w-full h-full cursor-grab active:cursor-grabbing touch-none flex items-center justify-center relative z-10"
         role="img"
         aria-label="Interactive 3D minted coin of Bitcoin Lite Edition with continuous rotation around vertical Y axis, showing 2.1M fixed supply on reverse"
       />
