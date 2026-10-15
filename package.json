@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
+    "generate-favicons": "node scripts/generate-favicons-and-logos.js",
     "generate-pdf": "tsx scripts/generate-whitepaper-pdf.js",
-    "build": "npm run generate-pdf && vite build && (cp -rf dist build 2>/dev/null || true)",
+    "build": "npm run generate-favicons && npm run generate-pdf && vite build && (cp -rf dist build 2>/dev/null || true)",
     "preview": "vite preview",
     "clean": "rm -rf dist build server.js",
     "lint": "tsc --noEmit"

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { BitcoinLiteCoinSvg } from './BitcoinLiteCoinSvg';
+import bitcoinLiteLogo from '../assets/images/bitcoin_lite_logo_1791633769447.jpg';
 
 interface HeroCoin3DProps {
   onInteract?: () => void;
@@ -869,11 +871,14 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
         }`}
         aria-hidden="true"
       >
-        <div className="w-[88%] h-[88%] rounded-full shadow-[0_16px_48px_rgba(0,0,0,0.6)] overflow-hidden border border-[#EAB308]/60 bg-[#121215]">
+        <div className="w-[88%] h-[88%] rounded-full shadow-[0_16px_48px_rgba(0,0,0,0.6)] overflow-hidden border border-[#EAB308]/60 bg-[#121215] relative flex items-center justify-center">
+          {/* Vector SVG Emblem that renders synchronously with 0 network latency */}
+          <BitcoinLiteCoinSvg size="100%" className="w-full h-full" />
+          {/* Bundled photo overlay */}
           <img
-            src="/bitcoin-lite-logo.jpg"
+            src={bitcoinLiteLogo}
             alt="Bitcoin Lite Edition Coin"
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
             decoding="sync"
           />
