@@ -15,17 +15,17 @@ export const CommunitySection: React.FC = () => {
   const activeSocials = TOKEN_CONFIG.socials.filter((s) => s.url !== null);
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white dark:bg-[#080808] transition-colors border-t border-[#EAE6DF] dark:border-[#1E1E26]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10">
-          <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3 flex items-center gap-2.5">
+          <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] dark:text-[#EAB308] mb-3 flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" aria-hidden="true" />
             <span>{t.community.kicker}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] text-[#080808] font-display tracking-tight text-balance leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] text-[#080808] dark:text-white font-display tracking-tight text-balance leading-[1.15]">
             {t.community.title}
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#4A4A4A] font-[450] leading-[1.8] text-balance">
+          <p className="mt-3 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.community.subtitle}
           </p>
         </div>
@@ -46,10 +46,10 @@ export const CommunitySection: React.FC = () => {
                 href={social.url!}
                 target={isMailto ? undefined : '_blank'}
                 rel={isMailto ? undefined : 'noopener noreferrer'}
-                className="inline-flex items-center gap-2.5 text-[#080808] hover:text-[#B8661B] transition-colors py-1 group cursor-pointer"
+                className="inline-flex items-center gap-2.5 text-[#080808] dark:text-[#E2E8F0] hover:text-[#B8661B] dark:hover:text-[#F59E0B] transition-colors py-1 group cursor-pointer"
                 title={social.label}
               >
-                <span className="shrink-0 text-[#080808] group-hover:text-[#B8661B] transition-all group-hover:scale-110">
+                <span className="shrink-0 text-[#080808] dark:text-[#E2E8F0] group-hover:text-[#B8661B] dark:group-hover:text-[#F59E0B] transition-all group-hover:scale-110">
                   {isTwitter && <XTwitterIcon size={22} />}
                   {isDiscord && <DiscordIcon size={22} />}
                   {isGithub && <GithubIcon size={22} />}

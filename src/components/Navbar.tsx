@@ -178,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#0A0A0E]/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-colors border-b border-[#E5E5E5] dark:border-[#1E1E24]">
+    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#08080C]/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-colors border-b border-[#EAE6DF] dark:border-[#1E1E26]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-3 sm:gap-4">
         {/* Zone 1: Brand Wordmark with Official Coin Logo */}
         <a
@@ -193,7 +193,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </a>
 
         {/* Zone 2: Clean Desktop Text Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-xs xl:text-sm font-medium text-[#4A4A4A] dark:text-[#A1A1AA]">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-xs xl:text-sm font-semibold text-[#475569] dark:text-[#CBD5E1]">
           {desktopNavLinks.map((link) => {
             if (link.action) {
               return (
@@ -205,7 +205,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   }}
                   className="hover:text-[#080808] dark:hover:text-white transition-colors py-1 hover:underline underline-offset-4 decoration-[#B8661B]/70 cursor-pointer flex items-center gap-1.5 whitespace-nowrap"
                 >
-                  {link.isWhitepaper && <BookOpen className="w-3.5 h-3.5 text-[#B8661B]" />}
+                  {link.isWhitepaper && <BookOpen className="w-3.5 h-3.5 text-[#B8661B] dark:text-[#EAB308]" />}
                   <span>{link.label}</span>
                 </button>
               );
@@ -239,7 +239,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               setMobileMenuOpen(!mobileMenuOpen);
               setSelectedMenuItem(null);
             }}
-            className="p-2 sm:p-2.5 text-[#080808] dark:text-white hover:text-[#B8661B] hover:bg-[#FAF8F5] dark:hover:bg-[#1C150E] focus-visible:ring-2 focus-visible:ring-[#B8661B] rounded-[14px] border border-[#EAB308]/10 hover:border-[#B8661B]/30 transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+            className="p-2 sm:p-2.5 text-[#080808] dark:text-white hover:text-[#B8661B] hover:bg-[#FAF8F5] dark:hover:bg-[#1C150E] focus-visible:ring-2 focus-visible:ring-[#B8661B] rounded-[14px] border border-[#EAE6DF] dark:border-[#22222E] hover:border-[#B8661B]/30 transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-2xs"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
             title={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -249,7 +249,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             ) : (
               <Menu className="w-5 h-5 stroke-[2.5]" />
             )}
-            <span className="hidden md:inline text-[11px] font-mono font-bold uppercase tracking-wider text-[#4A4A4A] dark:text-[#A1A1AA]">
+            <span className="hidden md:inline text-[11px] font-mono font-bold uppercase tracking-wider text-[#475569] dark:text-[#CBD5E1]">
               {mobileMenuOpen ? 'CLOSE' : 'MENU'}
             </span>
           </button>
@@ -261,7 +261,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <>
           {/* Backdrop */}
           <div 
-            className="fixed inset-0 top-16 sm:top-18 bg-black/30 backdrop-blur-xs z-30 transition-opacity" 
+            className="fixed inset-0 top-16 sm:top-18 bg-black/40 backdrop-blur-xs z-30 transition-opacity" 
             onClick={() => {
               setMobileMenuOpen(false);
               setSelectedMenuItem(null);
@@ -269,19 +269,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             aria-hidden="true"
           />
 
-          {/* Drawer Content:
-              - Each button displays its representing icon first, then the label
-          */}
-          <div className="relative z-40 border-b border-[#E5E5E5] dark:border-[#1E1E24] bg-white dark:bg-[#0E0E12] px-5 sm:px-8 py-6 shadow-[0_16px_40px_rgba(0,0,0,0.14)] animate-in slide-in-from-top-2 duration-150 max-h-[calc(100vh-4.5rem)] overflow-y-auto">
+          {/* Drawer Content */}
+          <div className="relative z-40 border-b border-[#EAE6DF] dark:border-[#1E1E26] bg-white dark:bg-[#0B0B0F] px-5 sm:px-8 py-6 shadow-[0_16px_40px_rgba(0,0,0,0.14)] animate-in slide-in-from-top-2 duration-150 max-h-[calc(100vh-4.5rem)] overflow-y-auto">
             <div className="max-w-2xl mx-auto">
               
               {/* Header inside drawer */}
-              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#F0F0F0] dark:border-[#222228]">
-                <div className="flex items-center gap-2 text-xs font-mono font-bold tracking-[2.5px] uppercase text-[#B8661B]">
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#F0ECE1] dark:border-[#202028]">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold tracking-[2.5px] uppercase text-[#B8661B] dark:text-[#EAB308]">
                   <RotatingCoinLogo size={20} className="shrink-0" />
                   <span>{TOKEN_CONFIG.name.toUpperCase()} · MENU</span>
                 </div>
-                <div className="text-[11px] font-mono text-[#888888] dark:text-[#71717A]">
+                <div className="text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8]">
                   SUPPLY: {TOKEN_CONFIG.shortSupply}
                 </div>
               </div>

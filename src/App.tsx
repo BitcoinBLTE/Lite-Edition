@@ -69,7 +69,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="min-h-screen bg-white text-[#080808] flex flex-col transition-colors duration-200 selection:bg-[#FAF5EF] selection:text-[#B8661B] relative">
+        <div className="min-h-screen bg-[#FCFBF9] dark:bg-[#070709] text-[#080808] dark:text-[#F3F4F6] flex flex-col transition-colors duration-200 selection:bg-[#FAF5EF] selection:text-[#B8661B] relative">
           {/* Navigation Bar with Multilingual Language Selector and BUY/TRADE CTA */}
           <Navbar
             onOpenTradeModal={() => setTradeModalOpen(true)}

@@ -92,7 +92,7 @@ interface Realistic3DIconProps {
   type: Realistic3DIconType | string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
-  variant?: 'gold' | 'copper' | 'amber' | 'solana';
+  variant?: 'medallion' | 'plain';
   animated?: boolean;
 }
 
@@ -102,7 +102,7 @@ const SolanaStrokeIcon: React.FC<{ className?: string }> = ({ className = 'w-ful
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="2.2"
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
@@ -119,7 +119,7 @@ const BlteStrokeIcon: React.FC<{ className?: string }> = ({ className = 'w-full 
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="2.2"
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
@@ -138,16 +138,26 @@ const BlteStrokeIcon: React.FC<{ className?: string }> = ({ className = 'w-full 
 export const Realistic3DIcon: React.FC<Realistic3DIconProps> = ({
   type,
   size = 'md',
-  className = ''
+  className = '',
+  variant = 'medallion',
 }) => {
+  const containerClass =
+    size === 'sm'
+      ? 'w-8 h-8 rounded-[11px] p-1.5'
+      : size === 'lg'
+      ? 'w-14 h-14 rounded-[18px] p-3'
+      : size === 'xl'
+      ? 'w-18 h-18 rounded-[22px] p-4'
+      : 'w-11 h-11 rounded-[15px] p-2.5';
+
   const iconSizeClass =
     size === 'sm'
-      ? 'w-5 h-5'
+      ? 'w-4 h-4'
       : size === 'lg'
-      ? 'w-8 h-8'
+      ? 'w-7 h-7'
       : size === 'xl'
-      ? 'w-10 h-10'
-      : 'w-6 h-6';
+      ? 'w-9 h-9'
+      : 'w-5 h-5';
 
   const renderIcon = () => {
     switch (type) {
@@ -239,12 +249,30 @@ export const Realistic3DIcon: React.FC<Realistic3DIconProps> = ({
     }
   };
 
+  if (variant === 'plain') {
+    return (
+      <span
+        className={`inline-flex items-center justify-center text-[#B8661B] dark:text-[#EAB308] shrink-0 ${className}`}
+        aria-hidden="true"
+      >
+        {renderIcon()}
+      </span>
+    );
+  }
+
+  // Luxury 3D Medallion Presentation with Multi-Layer Specular Gradients and Ambient Drop Shadow
   return (
-    <span
-      className={`inline-flex items-center justify-center text-[#B8661B] dark:text-[#EAB308] shrink-0 ${className}`}
+    <div
+      className={`relative inline-flex items-center justify-center shrink-0 select-none bg-gradient-to-br from-[#FFFDF9] via-[#FAF4EA] to-[#F3E7D3] dark:from-[#281D12] dark:via-[#1B140D] dark:to-[#120D08] border border-[#EAB308]/30 dark:border-[#EAB308]/35 shadow-[0_3px_12px_rgba(184,102,27,0.09),inset_0_1px_1px_rgba(255,255,255,0.95)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(253,224,71,0.2),0_0_12px_rgba(234,179,8,0.12)] text-[#B8661B] dark:text-[#FBBF24] transition-all duration-300 group-hover:scale-105 group-hover:border-[#EAB308]/60 group-hover:shadow-[0_6px_24px_rgba(184,102,27,0.18)] ${containerClass} ${className}`}
       aria-hidden="true"
     >
-      {renderIcon()}
-    </span>
+      {/* Specular Top Arch Highlight */}
+      <span className="absolute inset-x-0 top-0 h-1/2 rounded-t-[inherit] bg-gradient-to-b from-white/60 dark:from-white/12 to-transparent pointer-events-none" />
+
+      {/* Primary Glyph */}
+      <span className="relative z-10 drop-shadow-[0_1px_2px_rgba(184,102,27,0.25)] dark:drop-shadow-[0_1px_4px_rgba(234,179,8,0.4)] flex items-center justify-center">
+        {renderIcon()}
+      </span>
+    </div>
   );
 };

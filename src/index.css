@@ -40,8 +40,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.dark body,
+[data-theme="dark"] body,
+.theme-black body {
+  background-color: #070709;
+  color: #F3F4F6;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #080808;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6,
+.theme-black h1, .theme-black h2, .theme-black h3, .theme-black h4, .theme-black h5, .theme-black h6 {
+  color: #FFFFFF;
 }
 
 /* Subtle editorial card shadow */
@@ -201,27 +214,27 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 }
 
 /* ============================================================
-   POLISHED CONTAINER BACKGROUNDS (LIGHT THEME)
-   Gives cards, panels, and dialogs a distinct, visible, elegant
-   warm tone with soft elevation against the pure white canvas
+   PREMIUM POLISHED CONTAINER BACKGROUNDS (LIGHT THEME)
+   Gives cards, panels, and dialogs a pristine, crisp, luminous
+   surface with delicate warm elevation against the canvas
    ============================================================ */
 .bg-\[\#FCFCFC\],
 .bg-\[\#FCFCFD\] {
-  background-color: #F7F5EE !important;
+  background-color: #FFFFFF !important;
 }
 
 .bg-\[\#F9F9F9\] {
-  background-color: #F2EFE7 !important;
+  background-color: #FAF8F5 !important;
 }
 
 .bg-\[\#F7F7F7\] {
-  background-color: #F0EDE5 !important;
+  background-color: #F8F6F2 !important;
 }
 
 /* ============================================================
-   GOLD YELLOW CONTAINER LINES (5% VISIBILITY)
-   All card containers, section dividers, borders, dialogs, and panels
-   feature ultra-subtle, elegant 5% visibility gold yellow container lines.
+   REFINED LUXURY HAIRLINE BORDERS & DIVIDERS
+   Card containers, section dividers, borders, dialogs, and panels
+   feature crisp, elegant, visible golden-copper hairline borders.
    ============================================================ */
 .border-\[\#E5E5E5\],
 .border-\[\#E5E5E5\]\/80,
@@ -237,7 +250,7 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .border-\[\#EAB308\]\/5,
 .border-\[\#F0F0F0\],
 .border-line {
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  border-color: rgba(184, 102, 27, 0.16) !important;
 }
 
 [data-theme="dark"] .border-\[\#E5E5E5\],
@@ -254,13 +267,16 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 [data-theme="dark"] .border-\[\#EAB308\]\/5,
 [data-theme="dark"] .border-\[\#F0F0F0\],
 [data-theme="dark"] .border-line {
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  border-color: rgba(234, 179, 8, 0.20) !important;
 }
 
 /* Grid & List Dividers */
-.divide-\[\#E5E5E5\] > * + *,
+.divide-\[\#E5E5E5\] > * + * {
+  border-color: rgba(184, 102, 27, 0.14) !important;
+}
+
 [data-theme="dark"] .divide-\[\#E5E5E5\] > * + * {
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  border-color: rgba(234, 179, 8, 0.18) !important;
 }
 
 /* SVG Donut and Track Overrides */
@@ -398,39 +414,43 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
    Fixes 07 · Distinction, Detailed Comparative Matrix, and 07.
    ============================================================ */
 .pillar-distinction-card {
-  background-color: #F7F5EE;
-  background-image: linear-gradient(135deg, #F7F5EE 0%, #FAF5EF 60%, #F5EADB 100%);
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(135deg, #FFFFFF 0%, #FAF5EE 50%, #F5EADB 100%);
+  border-color: rgba(184, 102, 27, 0.20) !important;
+  box-shadow: 0 4px 24px -2px rgba(184, 102, 27, 0.08) !important;
 }
 
 [data-theme="dark"] .pillar-distinction-card {
   background-color: #141419 !important;
-  background-image: linear-gradient(135deg, #141419 0%, #171720 60%, #20170E 100%) !important;
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  background-image: linear-gradient(135deg, #161720 0%, #1A1410 50%, #24180D 100%) !important;
+  border-color: rgba(234, 179, 8, 0.25) !important;
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.6), 0 0 16px rgba(234, 179, 8, 0.1) !important;
 }
 
 .card-last-step {
-  background-color: #F7F5EE;
-  background-image: linear-gradient(135deg, #F7F5EE 0%, #FAF5EF 60%, #F5EADB 100%);
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(135deg, #FFFFFF 0%, #FAF5EE 50%, #F5EADB 100%);
+  border-color: rgba(184, 102, 27, 0.20) !important;
+  box-shadow: 0 4px 24px -2px rgba(184, 102, 27, 0.08) !important;
 }
 
 [data-theme="dark"] .card-last-step {
   background-color: #141419 !important;
-  background-image: linear-gradient(135deg, #141419 0%, #171720 60%, #20170E 100%) !important;
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  background-image: linear-gradient(135deg, #161720 0%, #1A1410 50%, #24180D 100%) !important;
+  border-color: rgba(234, 179, 8, 0.25) !important;
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.6), 0 0 16px rgba(234, 179, 8, 0.1) !important;
 }
 
 /* Detailed Comparative Matrix Table */
 .matrix-header-row {
-  background-color: #F0EDE6;
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  background-color: #F8F6F1;
+  border-color: rgba(184, 102, 27, 0.16) !important;
 }
 
 [data-theme="dark"] .matrix-header-row {
-  background-color: #181820 !important;
+  background-color: #181822 !important;
   color: #FFFFFF !important;
-  border-color: rgba(234, 179, 8, 0.05) !important;
+  border-color: rgba(234, 179, 8, 0.20) !important;
 }
 
 .matrix-row-default {

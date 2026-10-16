@@ -91,13 +91,6 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
               {tok.title || '2.1M TOTAL SUPPLY'}
             </h3>
           </div>
-          <button
-            type="button"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/25 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold self-start sm:self-auto shadow-xs"
-          >
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-            <span>100% circulatory</span>
-          </button>
         </div>
       )}
 
@@ -276,7 +269,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
             {/* Center Disc: Interactive with Dynamic Inspection & Tap to Reset */}
             <div
               onClick={() => setSelectedId(null)}
-              className="absolute inset-0 m-auto w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-white dark:bg-[#121217] border-2 border-[#E5E5E5] dark:border-[#262632] shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center text-center p-3 sm:p-4 cursor-pointer transition-all hover:scale-[1.02]"
+              className="absolute inset-0 m-auto w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-white dark:bg-[#121217] border-2 border-[#EAE6DF] dark:border-[#262632] shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center text-center p-3 sm:p-4 cursor-pointer transition-all hover:scale-[1.02]"
               title={selectedId ? "Click to reset view" : "2.1M BLTE Hard Cap"}
             >
               {selectedItem ? (
@@ -294,7 +287,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                   >
                     {selectedItem.amount}
                   </div>
-                  <div className="text-[9px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#111111]/5 dark:bg-white/10 text-[#888888] dark:text-[#A1A1AA] uppercase tracking-wider inline-block">
+                  <div className="text-[9px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#111111]/5 dark:bg-white/10 text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider inline-block">
                     ACTIVE ALLOCATION
                   </div>
                 </div>
@@ -306,7 +299,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                   <span className="font-mono text-xs sm:text-base font-black text-[#B8661B] dark:text-[#EAB308] tracking-widest block">
                     BLTE
                   </span>
-                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#888888] dark:text-[#A1A1AA] font-bold block pt-0.5 sm:pt-1">
+                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#64748B] dark:text-[#94A3B8] font-bold block pt-0.5 sm:pt-1">
                     {tok.fixed_cap || 'HARD CAP'}
                   </span>
                 </div>
@@ -323,10 +316,10 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
               <div
                 key={item.id}
                 onClick={() => toggleSelect(item.id)}
-                className={`p-4 sm:p-6 lg:p-7 rounded-[20px] sm:rounded-[24px] bg-white dark:bg-[#18181F] border shadow-xs transition-all cursor-pointer space-y-3 group ${
+                className={`p-4 sm:p-6 lg:p-7 rounded-[20px] sm:rounded-[24px] bg-white dark:bg-[#14141C] border-2 shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] transition-all cursor-pointer space-y-3 group ${
                   isSelected
                     ? item.activeBorder
-                    : 'border-[#E5E5E5] dark:border-[#262630] hover:border-[#B8661B]/50'
+                    : 'border-[#D8D1C4] dark:border-[#2A2A38] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_28px_rgba(184,102,27,0.12)]'
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">
@@ -342,7 +335,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                       <div className="text-base sm:text-xl font-bold text-[#080808] dark:text-white font-display truncate">
                         {item.title}
                       </div>
-                      <div className="text-[10px] sm:text-[11px] font-mono text-[#888888] dark:text-[#71717A] tracking-wider font-semibold">
+                      <div className="text-[10px] sm:text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] tracking-wider font-semibold">
                         {item.tag}
                       </div>
                     </div>

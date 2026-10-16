@@ -149,21 +149,21 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
           transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
           transition: isDragging ? 'none' : 'transform 0.15s ease-out'
         }}
-        className={`bg-white rounded-[24px] sm:rounded-[36px] w-full border border-[#E5E5E5] shadow-[0_20px_60px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col ${maxWidthClass} ${maxHeightClass} animate-in zoom-in-95 duration-150 relative ${
-          isDragging ? 'select-none shadow-[0_24px_70px_rgba(184,102,27,0.15)] ring-2 ring-[#B8661B]' : ''
+        className={`bg-white dark:bg-[#121217] rounded-[24px] sm:rounded-[36px] w-full border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_24px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_24px_70px_rgba(0,0,0,0.7)] overflow-hidden flex flex-col ${maxWidthClass} ${maxHeightClass} animate-in zoom-in-95 duration-150 relative ${
+          isDragging ? 'select-none shadow-[0_28px_80px_rgba(184,102,27,0.25)] ring-2 ring-[#B8661B]' : ''
         }`}
       >
         {/* Draggable Title Bar / Header */}
         <div
           onMouseDown={handleMouseDown}
           onTouchStart={handleTouchStart}
-          className="px-4 sm:px-6 py-3.5 sm:py-4.5 border-b border-[#E5E5E5] bg-[#FCFCFC] flex items-center justify-between shrink-0 sm:cursor-grab sm:active:cursor-grabbing select-none group transition-colors hover:bg-[#F9F9F9] min-w-0"
+          className="px-4 sm:px-6 py-3.5 sm:py-4.5 border-b-2 border-[#D8D1C4] dark:border-[#282836] bg-[#FAF8F5] dark:bg-[#15151C] flex items-center justify-between shrink-0 sm:cursor-grab sm:active:cursor-grabbing select-none group transition-colors hover:bg-[#F5F2EB] dark:hover:bg-[#1A1A24] min-w-0"
           title="Click and drag to move panel"
         >
           {/* Left: Drag grip indicator + Icon + Title */}
           <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
             <div 
-              className="text-[#888888] group-hover:text-[#B8661B] transition-colors hidden sm:flex items-center shrink-0 cursor-grab"
+              className="text-[#888888] dark:text-[#A1A1AA] group-hover:text-[#B8661B] dark:group-hover:text-[#EAB308] transition-colors hidden sm:flex items-center shrink-0 cursor-grab"
               aria-hidden="true"
             >
               <GripHorizontal className="w-4 h-4" />
@@ -176,11 +176,11 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
             )}
 
             <div className="min-w-0">
-              <h3 id={ariaLabelledBy} className="text-sm sm:text-base font-[800] text-[#080808] font-display truncate">
+              <h3 id={ariaLabelledBy} className="text-sm sm:text-base font-[800] text-[#080808] dark:text-white font-display truncate">
                 {title}
               </h3>
               {subtitle && (
-                <div className="text-[10px] sm:text-[11px] font-mono font-medium text-[#888888] truncate">
+                <div className="text-[10px] sm:text-[11px] font-mono font-medium text-[#64748B] dark:text-[#94A3B8] truncate">
                   {subtitle}
                 </div>
               )}
@@ -196,7 +196,7 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
             {(position.x !== 0 || position.y !== 0) && (
               <button
                 onClick={() => setPosition({ x: 0, y: 0 })}
-                className="p-1 rounded-[8px] text-[#666666] hover:text-[#080808] hover:bg-[#F0F0F0] transition-colors text-[11px] font-mono hidden sm:flex items-center gap-1 px-2 cursor-pointer"
+                className="p-1 rounded-[8px] text-[#666666] dark:text-[#A1A1AA] hover:text-[#080808] dark:hover:text-white hover:bg-[#EFECE6] dark:hover:bg-[#20202A] transition-colors text-[11px] font-mono hidden sm:flex items-center gap-1 px-2 cursor-pointer"
                 title={t.common.drag_hint}
                 aria-label={t.common.center}
               >
@@ -210,7 +210,7 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
             {/* Close Button Icon */}
             <button
               onClick={onClose}
-              className="p-1.5 sm:p-2 rounded-[12px] text-[#666666] hover:text-[#080808] hover:bg-[#F0F0F0] active:bg-[#E5E5E5] transition-colors cursor-pointer ml-0.5 sm:ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8661B]"
+              className="p-1.5 sm:p-2 rounded-[12px] text-[#666666] dark:text-[#A1A1AA] hover:text-[#080808] dark:hover:text-white hover:bg-[#EFECE6] dark:hover:bg-[#20202A] active:bg-[#D8D1C4] transition-colors cursor-pointer ml-0.5 sm:ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8661B]"
               aria-label={t.common.close}
             >
               <X className="w-5 h-5 stroke-[2]" />

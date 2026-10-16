@@ -39,7 +39,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   }, []);
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-14 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 bg-white dark:bg-[#080808] transition-colors">
+    <section className="relative overflow-hidden pt-8 pb-14 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 bg-[#FCFBF9] dark:bg-[#070709] transition-colors border-b border-[#EAE6DF] dark:border-[#1E1E26]">
       {/* Subtle warm copper ambient background glow */}
       <div 
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] lg:w-[1040px] h-[520px] lg:h-[640px] rounded-full bg-gradient-to-b from-[#B8661B]/8 via-[#E9C9A5]/4 to-transparent blur-3xl pointer-events-none -z-10"
@@ -53,8 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* Left Column: Heading, Prose, and Action CTAs */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Small gold brand eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] border border-[#EAB308]/20 text-[#B8661B] dark:text-[#EAB308] text-xs font-mono font-bold tracking-[2.5px] uppercase mb-4 sm:mb-5 shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] border border-[#EAB308]/25 text-[#B8661B] dark:text-[#EAB308] text-xs font-mono font-bold tracking-[2.5px] uppercase mb-4 sm:mb-5 shadow-2xs">
               <span>{t.hero.eyebrow || 'BITCOIN LITE EDITION · BLTE'}</span>
             </div>
 
@@ -63,13 +62,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {t.hero.title}
             </h1>
 
-            {/* Introduction with vertical orange-gold accent bar */}
-            <div className="max-w-2xl mb-6 sm:mb-8 flex items-stretch gap-3.5 sm:gap-4 text-left">
-              <div 
-                className="w-[5px] rounded-full bg-gradient-to-b from-[#EAB308] via-[#B8661B] to-[#964E10] shrink-0 self-stretch my-0.5" 
-                aria-hidden="true" 
-              />
-              <p className="text-[16px] sm:text-[18px] md:text-[19px] text-[#4A4A4A] dark:text-[#E4E4E7] font-[450] leading-[1.65] sm:leading-[1.7]">
+            {/* Introduction prose */}
+            <div className="max-w-2xl mb-6 sm:mb-8 text-left">
+              <p className="text-[17px] sm:text-[19px] md:text-[20px] text-[#334155] dark:text-[#E2E8F0] font-[450] leading-[1.65] sm:leading-[1.7]">
                 {t.hero.description}
               </p>
             </div>
@@ -154,7 +149,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* ROW 2: Balanced Protocol Metrics & Utilities (Staking Card on Left, Supply Stats on Right) */}
-        <div className="mt-8 lg:mt-10 pt-5 lg:pt-6 border-t border-[#E5E5E5]/70 dark:border-[#1E1E24] max-w-4xl xl:max-w-5xl mx-auto">
+        <div className="mt-8 lg:mt-10 pt-5 lg:pt-6 border-t border-[#D8D1C4] dark:border-[#20202A] max-w-4xl xl:max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 items-stretch">
             
             {/* Left Utility: Staking Card */}
@@ -163,21 +158,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 href={TOKEN_CONFIG.stakingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full h-full bg-[#FAF5EF] dark:bg-[#1C150E] hover:bg-[#F5EADB] dark:hover:bg-[#281D12] border border-[#EAB308]/20 rounded-[16px] sm:rounded-[18px] px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-xs hover:shadow-sm flex items-center justify-between gap-3 transition-all duration-200 group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none hover:scale-[1.01]"
+                className="w-full h-full bg-white dark:bg-[#121218] hover:bg-[#FDFBF7] dark:hover:bg-[#1A1A22] border-2 border-[#D8D1C4] dark:border-[#2D2D3D] hover:border-[#B8661B] dark:hover:border-[#EAB308] rounded-[20px] px-4 py-3 sm:px-5 sm:py-3.5 shadow-subtle hover:shadow-[0_8px_24px_rgba(184,102,27,0.14)] flex items-center justify-between gap-3 transition-all duration-200 group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none"
                 title="Stake Bitcoin Lite Edition (11.61% APY)"
               >
-                <div className="flex items-center gap-2.5 sm:gap-3">
+                <div className="flex items-center gap-3">
                   <Realistic3DIcon type="staking" size="sm" className="shrink-0" />
-                  <span className="text-sm sm:text-base font-[900] text-[#080808] dark:text-white font-display tracking-tight group-hover:text-[#B8661B] transition-colors block">
+                  <span className="text-sm sm:text-base font-[900] text-[#080808] dark:text-white font-display tracking-tight group-hover:text-[#B8661B] dark:group-hover:text-[#EAB308] transition-colors block">
                     STAKE BLTE
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-                  <span className="text-xs sm:text-sm font-mono font-black px-2.5 py-1 rounded-full bg-[#B8661B] text-white shadow-2xs tracking-tight">
+                  <span className="text-xs sm:text-sm font-mono font-black px-3 py-1 rounded-full bg-gradient-to-r from-[#B8661B] to-[#D97706] text-white shadow-2xs tracking-tight">
                     {TOKEN_CONFIG.stakingApy} APY
                   </span>
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white dark:bg-[#121215] border border-[#EAB308]/15 text-[#B8661B] flex items-center justify-center group-hover:translate-x-0.5 group-hover:bg-[#B8661B] group-hover:text-white transition-all shadow-2xs">
+                  <div className="w-7 h-7 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] border border-[#EAB308]/25 text-[#B8661B] dark:text-[#EAB308] flex items-center justify-center group-hover:translate-x-0.5 group-hover:bg-[#B8661B] group-hover:text-white transition-all shadow-2xs">
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                   </div>
                 </div>
@@ -188,23 +183,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="md:col-span-6 lg:col-span-6 flex flex-col justify-center">
               <div className="grid grid-cols-2 gap-3 sm:gap-4 h-full">
                 {/* Stat 1: Total Supply */}
-                <div className="flex flex-col items-center justify-center px-3 py-2.5 sm:px-4 sm:py-3 rounded-[16px] sm:rounded-[18px] bg-[#FAF5EF] dark:bg-[#1C150E] border border-[#EAB308]/15 shadow-2xs text-center">
-                  <Realistic3DIcon type="token-supply" size="sm" className="mb-1 shrink-0" />
+                <div className="flex flex-col items-center justify-center px-4 py-3 sm:px-5 sm:py-3.5 rounded-[20px] bg-white dark:bg-[#121218] border-2 border-[#D8D1C4] dark:border-[#2D2D3D] shadow-subtle text-center hover:border-[#B8661B]/60 dark:hover:border-[#EAB308]/60 transition-all">
+                  <Realistic3DIcon type="token-supply" size="sm" className="mb-1.5 shrink-0" />
                   <span className="text-xl sm:text-2xl font-mono font-[900] text-[#080808] dark:text-white tabular-nums tracking-tight leading-tight">
                     2.1M
                   </span>
-                  <span className="text-[10px] sm:text-[11px] font-mono font-bold text-[#888888] dark:text-[#71717A] uppercase tracking-[1.5px] mt-0.5 leading-tight">
+                  <span className="text-[10px] sm:text-[11px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-[1.5px] mt-0.5 leading-tight">
                     {t.hero.stat_supply || 'TOTAL SUPPLY'}
                   </span>
                 </div>
 
                 {/* Stat 2: Fixed Scarcity */}
-                <div className="flex flex-col items-center justify-center px-3 py-2.5 sm:px-4 sm:py-3 rounded-[16px] sm:rounded-[18px] bg-[#FAF5EF] dark:bg-[#1C150E] border border-[#EAB308]/15 shadow-2xs text-center">
-                  <Realistic3DIcon type="security" size="sm" className="mb-1 shrink-0" />
+                <div className="flex flex-col items-center justify-center px-4 py-3 sm:px-5 sm:py-3.5 rounded-[20px] bg-white dark:bg-[#121218] border-2 border-[#D8D1C4] dark:border-[#2D2D3D] shadow-subtle text-center hover:border-[#B8661B]/60 dark:hover:border-[#EAB308]/60 transition-all">
+                  <Realistic3DIcon type="security" size="sm" className="mb-1.5 shrink-0" />
                   <span className="text-base sm:text-lg md:text-xl font-mono font-[900] text-[#B8661B] dark:text-[#EAB308] uppercase tracking-tight leading-tight">
                     {t.hero.stat_scarcity || 'FIXED SUPPLY'}
                   </span>
-                  <span className="text-[10px] sm:text-[11px] font-mono font-bold text-[#888888] dark:text-[#71717A] uppercase tracking-[1.5px] mt-0.5 leading-tight">
+                  <span className="text-[10px] sm:text-[11px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-[1.5px] mt-0.5 leading-tight">
                     {t.hero.max_supply || 'MAX SUPPLY: 2,100,000'}
                   </span>
                 </div>

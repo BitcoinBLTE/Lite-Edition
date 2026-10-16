@@ -47,23 +47,23 @@ export const Footer: React.FC<FooterProps> = ({
   const activeSocials = TOKEN_CONFIG.socials.filter((s) => s.url !== null);
 
   return (
-    <footer className="bg-white text-[#4A4A4A]">
+    <footer className="bg-white dark:bg-[#08080B] text-[#4A4A4A] dark:text-[#A1A1AA] border-t border-[#E5E5E5] dark:border-white/10 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12">
           {/* Brand & Mission Column */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
               <RotatingCoinLogo size={24} className="shrink-0" />
-              <span className="text-xl font-[900] text-[#080808] tracking-tight font-display">
+              <span className="text-xl font-[900] text-[#080808] dark:text-white tracking-tight font-display">
                 {TOKEN_CONFIG.name.toUpperCase()}
               </span>
             </div>
             
-            <div className="text-xs font-mono font-bold text-[#B8661B] uppercase tracking-[2.5px] flex items-center gap-2">
+            <div className="text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-[2.5px] flex items-center gap-2">
               <span>{t.footer.brand_sub}</span>
             </div>
 
-            <p className="text-sm text-[#4A4A4A] font-[450] leading-[1.8] max-w-sm">
+            <p className="text-sm text-[#4A4A4A] dark:text-[#A1A1AA] font-[450] leading-[1.8] max-w-sm">
               {t.footer.mission}
             </p>
 
@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({
                     href={social.url!}
                     target={isMailto ? undefined : '_blank'}
                     rel={isMailto ? undefined : 'noopener noreferrer'}
-                    className="w-9 h-9 rounded-[12px] bg-[#F5F5F5] hover:bg-[#FAF5EF] border border-[#E5E5E5] hover:border-[#E9C9A5] flex items-center justify-center text-[#080808] hover:text-[#B8661B] transition-colors"
+                    className="w-9 h-9 rounded-[12px] bg-[#FAF8F5] dark:bg-[#15151C] hover:bg-[#FAF5EF] dark:hover:bg-[#251B12] border border-[#EAB308]/20 dark:border-[#EAB308]/30 flex items-center justify-center text-[#080808] dark:text-white hover:text-[#B8661B] transition-all shadow-2xs hover:scale-105"
                     aria-label={social.label}
                     title={social.label}
                   >
@@ -105,16 +105,16 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Navigation Links Column */}
           <div className="md:col-span-3 space-y-3.5">
-            <span className="text-xs font-mono uppercase tracking-[2px] text-[#080808] font-bold block">
+            <span className="text-xs font-mono uppercase tracking-[2px] text-[#080808] dark:text-white font-bold block">
               {t.footer.nav_heading}
             </span>
             <ul className="space-y-2 text-sm font-medium">
               <li>
                 <button
                   onClick={onOpenWhitePaper}
-                  className="hover:text-[#080808] text-[#B8661B] font-bold transition-colors py-0.5 inline-flex items-center gap-1.5 cursor-pointer"
+                  className="hover:text-[#080808] dark:hover:text-white text-[#B8661B] dark:text-[#EAB308] font-bold transition-colors py-0.5 inline-flex items-center gap-1.5 cursor-pointer"
                 >
-                  <BookOpen className="w-3.5 h-3.5 text-[#B8661B]" />
+                  <BookOpen className="w-3.5 h-3.5 text-[#B8661B] dark:text-[#EAB308]" />
                   <span>{t.footer.whitepaper_v1}</span>
                 </button>
               </li>
@@ -123,10 +123,10 @@ export const Footer: React.FC<FooterProps> = ({
                   href={getWhitepaperPdfUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#4A4A4A] hover:text-[#B8661B] transition-colors py-0.5 inline-flex items-center gap-1.5"
+                  className="text-[#475569] dark:text-[#A1A1AA] hover:text-[#B8661B] dark:hover:text-[#EAB308] transition-colors py-0.5 inline-flex items-center gap-1.5"
                   title="White Paper Specification (PDF)"
                 >
-                  <Download className="w-3.5 h-3.5 text-[#B8661B]" />
+                  <Download className="w-3.5 h-3.5 text-[#B8661B] dark:text-[#EAB308]" />
                   <span>White Paper (PDF)</span>
                 </a>
               </li>
@@ -135,11 +135,11 @@ export const Footer: React.FC<FooterProps> = ({
                   href={TOKEN_CONFIG.stakingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#B8661B] hover:text-[#964E10] font-semibold transition-colors py-0.5 inline-flex items-center gap-1.5"
+                  className="text-[#B8661B] dark:text-[#EAB308] hover:text-[#964E10] font-semibold transition-colors py-0.5 inline-flex items-center gap-1.5"
                   title="Stake (11.61% APY)"
                 >
                   <span>Stake</span>
-                  <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#FAF5EF] text-[#B8661B] border border-[#E9C9A5]">
+                  <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/30">
                     11.61% APY
                   </span>
                 </a>
@@ -148,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[#4A4A4A] hover:text-[#080808] transition-colors py-0.5 inline-block"
+                    className="text-[#475569] dark:text-[#A1A1AA] hover:text-[#080808] dark:hover:text-white transition-colors py-0.5 inline-block"
                   >
                     {link.label}
                   </a>
@@ -157,7 +157,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={onOpenTermsModal}
-                  className="text-[#4A4A4A] hover:text-[#080808] transition-colors py-0.5 inline-block text-left cursor-pointer"
+                  className="text-[#475569] dark:text-[#A1A1AA] hover:text-[#080808] dark:hover:text-white transition-colors py-0.5 inline-block text-left cursor-pointer"
                 >
                   {t.footer.terms}
                 </button>
@@ -165,7 +165,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={onOpenPrivacyModal}
-                  className="text-[#4A4A4A] hover:text-[#080808] transition-colors py-0.5 inline-block text-left cursor-pointer"
+                  className="text-[#475569] dark:text-[#A1A1AA] hover:text-[#080808] dark:hover:text-white transition-colors py-0.5 inline-block text-left cursor-pointer"
                 >
                   {t.footer.privacy}
                 </button>
@@ -175,38 +175,38 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Contract Address Column */}
           <div className="md:col-span-4 space-y-3.5">
-            <span className="text-xs font-mono uppercase tracking-[2px] text-[#080808] font-bold block">
+            <span className="text-xs font-mono uppercase tracking-[2px] text-[#080808] dark:text-white font-bold block">
               {t.footer.contract_heading}
             </span>
 
             {TOKEN_CONFIG.mintAddress ? (
-              <div className="p-4 bg-[#FCFCFC] rounded-[18px] border border-[#E5E5E5] space-y-2.5">
-                <span className="text-[10px] font-mono text-[#888888] font-bold block uppercase tracking-wider">
+              <div className="p-4 bg-white dark:bg-[#121218] rounded-[18px] border-2 border-[#D8D1C4] dark:border-[#282836] space-y-2.5 shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
+                <span className="text-[10px] font-mono text-[#64748B] dark:text-[#94A3B8] font-bold block uppercase tracking-wider">
                   {t.footer.mint_label}
                 </span>
-                <span className="font-mono text-xs text-[#080808] font-bold break-all block">
+                <span className="font-mono text-xs text-[#080808] dark:text-white font-bold break-all block">
                   {TOKEN_CONFIG.mintAddress}
                 </span>
                 <button
                   onClick={handleCopy}
-                  className="text-xs font-bold text-[#B8661B] hover:text-[#964E10] flex items-center gap-1 mt-1 cursor-pointer"
+                  className="text-xs font-bold text-[#B8661B] dark:text-[#EAB308] hover:text-[#964E10] flex items-center gap-1 mt-1 cursor-pointer"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-[#16A34A]" />
+                      <Check className="w-3.5 h-3.5 text-[#16A34A] dark:text-[#4ADE80]" />
                       <span>{t.footer.copied}</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5 text-[#B8661B]" />
+                      <Copy className="w-3.5 h-3.5 text-[#B8661B] dark:text-[#EAB308]" />
                       <span>{t.footer.copy_address}</span>
                     </>
                   )}
                 </button>
               </div>
             ) : (
-              <div className="p-5 bg-[#FCFCFC] rounded-[18px] border border-[#E5E5E5] text-xs text-[#4A4A4A] space-y-2">
-                <span className="font-bold text-[#080808] block text-sm font-display">
+              <div className="p-5 bg-white dark:bg-[#121218] rounded-[18px] border-2 border-[#D8D1C4] dark:border-[#282836] text-xs text-[#475569] dark:text-[#CBD5E1] space-y-2 shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
+                <span className="font-bold text-[#080808] dark:text-white block text-sm font-display">
                   {t.footer.prelaunch_heading}
                 </span>
                 <p className="leading-relaxed">
@@ -240,27 +240,27 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Legal Disclaimer Box — Clear Conceptual Distinction & Non-Affiliation Statement */}
         <div className="pt-8 pb-6">
-          <div className="p-6 rounded-[24px] bg-[#FCFCFC] border border-[#E5E5E5] text-xs text-[#4A4A4A] leading-[1.8] space-y-2.5">
-            <p className="font-bold text-[#080808] uppercase font-mono tracking-[1.5px]">
+          <div className="p-6 rounded-[24px] bg-white dark:bg-[#121218] border-2 border-[#D8D1C4] dark:border-[#282836] text-xs text-[#475569] dark:text-[#CBD5E1] leading-[1.8] space-y-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
+            <p className="font-bold text-[#080808] dark:text-white uppercase font-mono tracking-[1.5px]">
               {t.about.distinction_title}
             </p>
             <p>
               {t.about.distinction_desc}
             </p>
-            <p className="text-[11px] text-[#888888]">
+            <p className="text-[11px] text-[#64748B] dark:text-[#94A3B8]">
               {t.footer.disclaimer_risk}
             </p>
           </div>
         </div>
 
         {/* Bottom Copyright & Status */}
-        <div className="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[#888888]">
+        <div className="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[#64748B] dark:text-[#94A3B8]">
           <div>
             © {new Date().getFullYear()} Bitcoin Lite Edition. {t.footer.rights}
           </div>
           <div className="flex items-center gap-3 font-mono text-[11px]">
-            <span className="flex items-center gap-1.5 text-[#166534] font-bold">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
+            <span className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>{t.footer.mainnet_pending}</span>
             </span>
           </div>

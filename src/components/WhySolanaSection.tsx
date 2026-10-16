@@ -12,17 +12,17 @@ export const WhySolanaSection: React.FC = () => {
   }));
 
   return (
-    <section className="py-20 md:py-28 bg-white scroll-mt-16">
+    <section className="py-20 md:py-28 bg-white dark:bg-[#080808] scroll-mt-16 transition-colors border-t border-[#EAE6DF] dark:border-[#1E1E26]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
-          <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3.5 flex items-center gap-2.5">
+          <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] dark:text-[#EAB308] mb-3.5 flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" aria-hidden="true" />
             <span>{t.why_solana.kicker}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-[900] text-[#080808] font-display tracking-tight text-balance leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-[900] text-[#080808] dark:text-white font-display tracking-tight text-balance leading-[1.15]">
             {t.why_solana.title}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#4A4A4A] font-[450] leading-[1.8] text-balance">
+          <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.why_solana.subtitle}
           </p>
         </div>
@@ -33,25 +33,25 @@ export const WhySolanaSection: React.FC = () => {
             return (
               <div
                 key={item.title}
-                className="bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.05)] hover:border-[#D0D0D0] hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] transition-all flex flex-col justify-between group"
+                className="bg-[#FCFCFC] dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_4px_24px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:border-[#B8661B]/35 dark:hover:border-[#EAB308]/40 hover:shadow-[0_8px_30px_rgba(184,102,27,0.08)] transition-all flex flex-col justify-between group"
               >
                 <div>
                   <Realistic3DIcon type={item.iconType} size="lg" className="mb-6" />
 
-                  <h3 className="text-lg font-[800] text-[#080808] font-display tracking-tight mb-2">
+                  <h3 className="text-lg font-[800] text-[#080808] dark:text-white font-display tracking-tight mb-2">
                     {item.title}
                   </h3>
 
-                  <div className="text-xs font-semibold text-[#080808] mb-2 leading-relaxed">
+                  <div className="text-xs font-semibold text-[#1E293B] dark:text-[#E2E8F0] mb-2 leading-relaxed">
                     {item.lead}
                   </div>
 
-                  <p className="text-xs text-[#4A4A4A] font-[450] leading-[1.75]">
+                  <p className="text-xs text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.75]">
                     {item.detail}
                   </p>
                 </div>
 
-                <div className="mt-7 pt-4 border-t border-[#E5E5E5] text-[10px] font-mono font-bold text-[#888888] uppercase tracking-[2px]">
+                <div className="mt-7 pt-4 border-t border-[#E5E5E5] dark:border-[#22222A] text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-[2px]">
                   {item.badge}
                 </div>
               </div>

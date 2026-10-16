@@ -44,17 +44,17 @@ export const RoadmapSection: React.FC = () => {
   });
 
   return (
-    <section id="roadmap" className="py-20 md:py-28 bg-white scroll-mt-16">
+    <section id="roadmap" className="py-20 md:py-28 bg-[#FAF8F5]/60 dark:bg-[#0A0A0E] scroll-mt-16 transition-colors border-t border-[#EAE6DF] dark:border-[#1E1E26]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
-          <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] mb-3.5 flex items-center gap-2.5">
+          <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] dark:text-[#EAB308] mb-3.5 flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" aria-hidden="true" />
             <span>{t.roadmap.kicker}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-[900] text-[#080808] font-display tracking-tight text-balance leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-[900] text-[#080808] dark:text-white font-display tracking-tight text-balance leading-[1.15]">
             {t.roadmap.title}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#4A4A4A] font-[450] leading-[1.8] text-balance">
+          <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.roadmap.subtitle}
           </p>
         </div>
@@ -64,40 +64,40 @@ export const RoadmapSection: React.FC = () => {
           {phases.map((phase, idx) => (
             <div
               key={phase.title}
-              className={`bg-[#FCFCFC] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.05)] hover:border-[#D0D0D0] hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] transition-all ${
+              className={`bg-white dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:border-[#B8661B]/35 dark:hover:border-[#EAB308]/40 hover:shadow-[0_8px_30px_rgba(184,102,27,0.08)] transition-all ${
                 phase.status === 'IN_PROGRESS'
-                  ? 'border-2 border-[#B8661B] shadow-[0_4px_24px_rgba(184,102,27,0.08)]'
-                  : 'border-[#E5E5E5]'
+                  ? 'border-2 border-[#B8661B] dark:border-[#F59E0B] shadow-[0_4px_24px_rgba(184,102,27,0.12)]'
+                  : 'border-[#E5E5E5] dark:border-[#22222A]'
               }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <Realistic3DIcon type={roadmap3DTypes[idx] || 'foundation'} size="sm" />
-                    <span className="text-xs font-mono font-bold text-[#888888] uppercase tracking-wider">
+                    <span className="text-xs font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider">
                       {t.roadmap.stage} 0{idx + 1}
                     </span>
                   </div>
                   {getStatusBadge(phase.status)}
                 </div>
 
-                <h3 className="text-lg font-[800] text-[#080808] font-display tracking-tight mb-2">
+                <h3 className="text-lg font-[800] text-[#080808] dark:text-white font-display tracking-tight mb-2">
                   {phase.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-[#4A4A4A] font-[450] mb-6 leading-[1.75]">
+                <p className="text-xs sm:text-sm text-[#475569] dark:text-[#94A3B8] font-[450] mb-6 leading-[1.75]">
                   {phase.description}
                 </p>
 
                 <ul className="space-y-2.5">
                   {phase.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs text-[#080808] font-medium">
+                    <li key={i} className="flex items-start gap-2.5 text-xs text-[#080808] dark:text-[#E2E8F0] font-medium">
                       <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${
                         phase.status === 'COMPLETED'
-                          ? 'bg-[#16A34A]'
+                          ? 'bg-[#16A34A] dark:bg-[#4ADE80]'
                           : phase.status === 'IN_PROGRESS'
-                          ? 'bg-[#B8661B]'
-                          : 'bg-[#CCCCCC]'
+                          ? 'bg-[#B8661B] dark:bg-[#F59E0B]'
+                          : 'bg-[#CCCCCC] dark:bg-[#4B5563]'
                       }`} />
                       <span className="leading-snug">{item}</span>
                     </li>
@@ -105,7 +105,7 @@ export const RoadmapSection: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-[#E5E5E5] flex items-center justify-between text-[11px] font-mono text-[#888888]">
+              <div className="mt-8 pt-4 border-t border-[#E5E5E5] dark:border-[#22222A] flex items-center justify-between text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8]">
                 <span>{t.roadmap.verified_milestones}</span>
                 <span>{phase.items.length} {t.roadmap.items_suffix}</span>
               </div>
