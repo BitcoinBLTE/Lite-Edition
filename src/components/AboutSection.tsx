@@ -16,7 +16,7 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#08080C] scroll-mt-16 transition-colors border-t border-[#D8D1C4] dark:border-[#1E1E26]">
+    <section id="about" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#08080C] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
@@ -39,7 +39,7 @@ export const AboutSection: React.FC = () => {
             return (
               <div
                 key={feat.kicker}
-                className={`rounded-[28px] sm:rounded-[36px] p-8 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.5)] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_10px_32px_rgba(184,102,27,0.12)] transition-all flex flex-col justify-between group ${
+                className={`rounded-[28px] sm:rounded-[36px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group ${
                   isWide ? 'md:col-span-2 lg:col-span-3 pillar-distinction-card' : 'bg-white dark:bg-[#121218]'
                 }`}
               >
@@ -68,7 +68,7 @@ export const AboutSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t-2 border-[#D8D1C4] dark:border-[#282836] flex items-center justify-between text-xs font-medium text-[#64748B] dark:text-[#94A3B8]">
+                <div className="mt-8 pt-4 flex items-center justify-between text-xs font-medium text-[#64748B] dark:text-[#94A3B8]">
                   <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold text-[#166534] dark:text-[#4ADE80]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A] dark:text-[#4ADE80]" />
                     <span>{feat.verified || 'Verified'}</span>

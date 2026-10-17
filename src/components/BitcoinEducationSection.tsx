@@ -37,7 +37,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
   const mechanism3DIcons: Realistic3DIconType[] = ['architecture', 'utxo', 'mining', 'keys', 'halving', 'decentralization'];
 
   return (
-    <section id="bitcoin-education" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#070709] scroll-mt-16 transition-colors border-t border-[#D8D1C4] dark:border-[#1E1E26]">
+    <section id="bitcoin-education" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#070709] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-12">
@@ -54,12 +54,12 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
         </div>
 
         {/* Tab Navigation / Filter */}
-        <div className="flex flex-wrap items-center gap-2 p-1.5 bg-[#EFECE6] dark:bg-[#15151B] border-2 border-[#D8D1C4] dark:border-[#2D2D3D] rounded-[18px] mb-10 w-fit">
+        <div className="flex flex-wrap items-center gap-2 p-1.5 bg-[#EFECE6]/70 dark:bg-[#15151B] rounded-[20px] mb-10 w-fit shadow-xs">
           <button
             onClick={() => setActiveTab('overview')}
             className={`px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-[14px] transition-all cursor-pointer ${
               activeTab === 'overview'
-                ? 'bg-white dark:bg-[#20202A] text-[#080808] dark:text-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-[#D8D1C4] dark:border-[#30303D]'
+                ? 'bg-white dark:bg-[#20202A] text-[#080808] dark:text-white shadow-sm'
                 : 'text-[#475569] hover:text-[#080808] hover:bg-white/60 dark:text-[#94A3B8] dark:hover:text-white dark:hover:bg-white/10'
             }`}
           >
@@ -69,7 +69,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
             onClick={() => setActiveTab('how-it-works')}
             className={`px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-[14px] transition-all cursor-pointer ${
               activeTab === 'how-it-works'
-                ? 'bg-white dark:bg-[#20202A] text-[#080808] dark:text-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-[#D8D1C4] dark:border-[#30303D]'
+                ? 'bg-white dark:bg-[#20202A] text-[#080808] dark:text-white shadow-sm'
                 : 'text-[#475569] hover:text-[#080808] hover:bg-white/60 dark:text-[#94A3B8] dark:hover:text-white dark:hover:bg-white/10'
             }`}
           >
@@ -79,7 +79,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
             onClick={() => setActiveTab('supply')}
             className={`px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-[14px] transition-all cursor-pointer ${
               activeTab === 'supply'
-                ? 'bg-white dark:bg-[#20202A] text-[#080808] dark:text-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-[#D8D1C4] dark:border-[#30303D]'
+                ? 'bg-white dark:bg-[#20202A] text-[#080808] dark:text-white shadow-sm'
                 : 'text-[#475569] hover:text-[#080808] hover:bg-white/60 dark:text-[#94A3B8] dark:hover:text-white dark:hover:bg-white/10'
             }`}
           >
@@ -102,7 +102,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
         {activeTab === 'overview' && (
           <div className="space-y-8 animate-in fade-in duration-200">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 bg-white dark:bg-[#121217] rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.5)] space-y-5">
+              <div className="lg:col-span-7 bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 shadow-[0_10px_35px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.45)] space-y-5">
                 <div className="flex items-center justify-between gap-4">
                   <div className="text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-[2.5px]">
                     {t.education.tab1.def_kicker}
@@ -119,19 +119,19 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   {t.education.tab1.p2}
                 </p>
 
-                <div className="pt-4 border-t border-[#D8D1C4] dark:border-[#282836] grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-[16px] bg-[#FAF8F5] dark:bg-[#181820] border-2 border-[#D8D1C4] dark:border-[#252530]">
+                <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-[18px] bg-[#FAF8F5] dark:bg-[#181820] shadow-xs">
                     <span className="text-[10px] font-mono text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.education.tab1.asset_class_label}</span>
                     <strong className="text-sm font-bold text-[#080808] dark:text-white block mt-1">{t.education.tab1.asset_class_val}</strong>
                   </div>
-                  <div className="p-4 rounded-[16px] bg-[#FAF8F5] dark:bg-[#181820] border-2 border-[#D8D1C4] dark:border-[#252530]">
+                  <div className="p-4 rounded-[18px] bg-[#FAF8F5] dark:bg-[#181820] shadow-xs">
                     <span className="text-[10px] font-mono text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.education.tab1.settlement_label}</span>
                     <strong className="text-sm font-bold text-[#080808] dark:text-white block mt-1">{t.education.tab1.settlement_val}</strong>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-white dark:bg-[#121217] rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.5)] space-y-5">
+              <div className="lg:col-span-5 bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 shadow-[0_10px_35px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.45)] space-y-5">
                 <div className="flex items-center justify-between gap-4">
                   <div className="text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-[2.5px]">
                     {t.education.tab1.shift_kicker}
@@ -167,7 +167,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {t.education.tab2.mechanisms.map((mech, index) => {
                 return (
-                  <div key={index} className="bg-white dark:bg-[#121217] rounded-[28px] p-7 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.4)] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_10px_30px_rgba(184,102,27,0.12)] transition-all space-y-3">
+                  <div key={index} className="bg-white/95 dark:bg-[#121217]/95 rounded-[28px] p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 space-y-3">
                     <Realistic3DIcon type={mechanism3DIcons[index] || 'ledger'} size="md" />
                     <div className="text-xs font-mono text-[#B8661B] dark:text-[#EAB308] uppercase font-bold tracking-[2px]">{mech.num}</div>
                     <h4 className="text-lg font-[800] text-[#080808] dark:text-white font-display tracking-tight">{mech.title}</h4>
@@ -186,7 +186,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
           <div className="space-y-8 animate-in fade-in duration-200">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Supply Card */}
-              <div className="bg-white dark:bg-[#121217] rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.5)] space-y-4">
+              <div className="bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 shadow-[0_10px_35px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.45)] space-y-4">
                 <div className="flex items-center justify-between gap-4">
                   <div className="text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-[2.5px]">
                     {t.education.tab3.supply_kicker}
@@ -203,12 +203,12 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   {t.education.tab3.supply_p2}
                 </p>
 
-                <div className="p-5 rounded-[20px] bg-[#FAF8F5] dark:bg-[#181820] border-2 border-[#D8D1C4] dark:border-[#252530] space-y-3 font-mono text-xs shadow-2xs">
-                  <div className="flex items-center justify-between pb-2.5 border-b border-[#D8D1C4] dark:border-[#252530]">
+                <div className="p-5 rounded-[20px] bg-[#FAF8F5] dark:bg-[#181820] space-y-3 font-mono text-xs shadow-xs">
+                  <div className="flex items-center justify-between pb-2.5 border-b border-black/[0.04] dark:border-white/[0.06]">
                     <span className="text-[#64748B] dark:text-[#94A3B8]">{t.education.tab3.btc_supply_label}:</span>
                     <strong className="text-[#080808] dark:text-white text-sm font-bold">21.M BTC</strong>
                   </div>
-                  <div className="flex items-center justify-between pb-2.5 border-b border-[#D8D1C4] dark:border-[#252530]">
+                  <div className="flex items-center justify-between pb-2.5 border-b border-black/[0.04] dark:border-white/[0.06]">
                     <span className="text-[#64748B] dark:text-[#94A3B8]">{t.education.tab3.ble_supply_label}:</span>
                     <strong className="text-[#B8661B] dark:text-[#F59E0B] text-sm font-bold">2.1M BLTE</strong>
                   </div>
@@ -224,7 +224,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
               </div>
 
               {/* Decentralization Card */}
-              <div className="bg-white dark:bg-[#121217] rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.5)] space-y-4">
+              <div className="bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[38px] p-7 sm:p-10 shadow-[0_10px_35px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.45)] space-y-4">
                 <div className="flex items-center justify-between gap-4">
                   <div className="text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-[2.5px]">
                     {t.education.tab3.decent_kicker}
@@ -238,7 +238,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                   {t.education.tab3.decent_desc}
                 </p>
                 <div className="space-y-3 pt-2">
-                  <div className="p-4 rounded-[16px] bg-[#FAF8F5] dark:bg-[#181820] border-2 border-[#D8D1C4] dark:border-[#252530]">
+                  <div className="p-4 rounded-[16px] bg-[#FAF8F5] dark:bg-[#181820] shadow-xs">
                     <strong className="text-xs font-mono uppercase text-[#080808] dark:text-white font-bold block mb-1">
                       {t.education.tab3.btc_decent_title}
                     </strong>
@@ -246,7 +246,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                       {t.education.tab3.btc_decent_desc}
                     </p>
                   </div>
-                  <div className="p-4 rounded-[16px] bg-[#FAF8F5] dark:bg-[#181820] border-2 border-[#D8D1C4] dark:border-[#252530]">
+                  <div className="p-4 rounded-[16px] bg-[#FAF8F5] dark:bg-[#181820] shadow-xs">
                     <strong className="text-xs font-mono uppercase text-[#B8661B] dark:text-[#F59E0B] font-bold block mb-1">
                       {t.education.tab3.sol_decent_title}
                     </strong>
@@ -264,7 +264,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
         {activeTab === 'genesis' && (
           <div className="space-y-8 animate-in fade-in duration-200">
             {/* Main Genesis Narrative */}
-            <div className="bg-white dark:bg-[#121217] rounded-[32px] sm:rounded-[42px] p-8 sm:p-12 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.5)] space-y-6">
+            <div className="bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[42px] p-8 sm:p-12 shadow-[0_12px_44px_rgba(0,0,0,0.04)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.45)] space-y-6">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-[3px]">
                   <Sparkles className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
@@ -296,9 +296,9 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
               </div>
 
               {/* Core Invariants of Genesis */}
-              <div className="pt-6 border-t border-[#D8D1C4] dark:border-[#282836] grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="pt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {t.education.tab4.invariants.map((inv, idx) => (
-                  <div key={idx} className="p-6 rounded-[22px] bg-[#FAF5EF] dark:bg-[#1C1712] border-2 border-[#E9C9A5] dark:border-[#B8661B]/40 space-y-3 shadow-2xs">
+                  <div key={idx} className="p-6 rounded-[22px] bg-[#FAF5EF] dark:bg-[#1C1712] space-y-3 shadow-xs">
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-[2px] block">{inv.tag}</span>
                       <Realistic3DIcon type={['token-supply', 'execution', 'security'][idx] || 'token-supply'} size="sm" />
@@ -312,7 +312,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
               </div>
 
               {/* Comparison & Action CTA */}
-              <div className="pt-6 border-t border-[#E5E5E5] dark:border-[#22222A] flex flex-wrap items-center justify-between gap-4">
+              <div className="pt-6 flex flex-wrap items-center justify-between gap-4">
                 <div className="text-xs font-mono font-medium text-[#64748B] dark:text-[#94A3B8]">
                   <span>{t.education.tab4.immutable_state}</span>
                   <span className="mx-2">·</span>
@@ -324,7 +324,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                 <div className="flex items-center gap-3">
                   <button
                     onClick={onOpenWhitePaper}
-                    className="px-5 py-3 text-xs font-semibold text-[#222222] dark:text-white bg-white dark:bg-[#18181D] hover:bg-[#F9F9F9] dark:hover:bg-[#222228] hover:border-[#CCCCCC] dark:hover:border-[#B8661B]/40 border border-[#D9D9D9] dark:border-[#333339] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-1.5 cursor-pointer"
+                    className="px-5 py-3 text-xs font-semibold text-[#222222] dark:text-white bg-white dark:bg-[#18181D] hover:bg-[#F9F9F9] dark:hover:bg-[#222228] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-1.5 cursor-pointer"
                   >
                     <FileText className="w-3.5 h-3.5 text-[#B8661B]" />
                     <span>{t.education.tab4.btn_whitepaper}</span>
@@ -334,7 +334,7 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                     href={getWhitepaperPdfUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 text-[#4A4A4A] dark:text-[#A1A1AA] hover:text-[#B8661B] dark:hover:text-[#F59E0B] hover:bg-[#FAF5EF] dark:hover:bg-[#1C1712] border border-[#D9D9D9] dark:border-[#333339] hover:border-[#E9C9A5] dark:hover:border-[#B8661B]/50 bg-white dark:bg-[#18181D] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer flex items-center justify-center group"
+                    className="p-3 text-[#4A4A4A] dark:text-[#A1A1AA] hover:text-[#B8661B] dark:hover:text-[#F59E0B] hover:bg-[#FAF5EF] dark:hover:bg-[#1C1712] bg-white dark:bg-[#18181D] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer flex items-center justify-center group"
                     title="White Paper Specification (PDF)"
                     aria-label="Download White Paper PDF"
                   >

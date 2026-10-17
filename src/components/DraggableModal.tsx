@@ -149,7 +149,7 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
           transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
           transition: isDragging ? 'none' : 'transform 0.15s ease-out'
         }}
-        className={`bg-white dark:bg-[#121217] rounded-[24px] sm:rounded-[36px] w-full border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_24px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_24px_70px_rgba(0,0,0,0.7)] overflow-hidden flex flex-col ${maxWidthClass} ${maxHeightClass} animate-in zoom-in-95 duration-150 relative ${
+        className={`bg-white dark:bg-[#121217] rounded-[24px] sm:rounded-[36px] w-full shadow-[0_24px_70px_rgba(0,0,0,0.18)] dark:shadow-[0_24px_70px_rgba(0,0,0,0.7)] overflow-hidden flex flex-col ${maxWidthClass} ${maxHeightClass} animate-in zoom-in-95 duration-150 relative ${
           isDragging ? 'select-none shadow-[0_28px_80px_rgba(184,102,27,0.25)] ring-2 ring-[#B8661B]' : ''
         }`}
       >
@@ -157,7 +157,7 @@ export const DraggableModal: React.FC<DraggableModalProps> = ({
         <div
           onMouseDown={handleMouseDown}
           onTouchStart={handleTouchStart}
-          className="px-4 sm:px-6 py-3.5 sm:py-4.5 border-b-2 border-[#D8D1C4] dark:border-[#282836] bg-[#FAF8F5] dark:bg-[#15151C] flex items-center justify-between shrink-0 sm:cursor-grab sm:active:cursor-grabbing select-none group transition-colors hover:bg-[#F5F2EB] dark:hover:bg-[#1A1A24] min-w-0"
+          className="px-4 sm:px-6 py-3.5 sm:py-4.5 bg-[#FAF8F5] dark:bg-[#15151C] flex items-center justify-between shrink-0 sm:cursor-grab sm:active:cursor-grabbing select-none group transition-colors hover:bg-[#F5F2EB] dark:hover:bg-[#1A1A24] min-w-0"
           title="Click and drag to move panel"
         >
           {/* Left: Drag grip indicator + Icon + Title */}

@@ -33,7 +33,7 @@ export const TokenOverview: React.FC = () => {
     : `https://solscan.io`;
 
   return (
-    <section id="token" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#070709] scroll-mt-16 transition-colors border-t border-[#D8D1C4] dark:border-[#1E1E26]">
+    <section id="token" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#070709] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] dark:text-[#EAB308] mb-3.5 flex items-center gap-2.5">
@@ -49,13 +49,13 @@ export const TokenOverview: React.FC = () => {
         </div>
 
         {/* Dashboard Editorial Container with Realistic 3D Crypto & Fintech Icons */}
-        <div className="bg-white dark:bg-[#121217] rounded-[32px] sm:rounded-[40px] border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_8px_32px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden">
+        <div className="bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[40px] shadow-[0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.45)] overflow-hidden backdrop-blur-sm">
           {/* Top Specification Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#D8D1C4] dark:divide-[#282836] border-b-2 border-[#D8D1C4] dark:border-[#282836]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-black/[0.04] dark:divide-white/[0.06] border-b border-black/[0.04] dark:border-white/[0.06]">
             {specs.map((spec, index) => (
               <div 
                 key={index} 
-                className={`p-7 sm:p-9 ${index >= 3 ? 'sm:border-t-2 sm:border-[#D8D1C4] dark:sm:border-[#282836]' : ''} flex items-start justify-between gap-4 group/spec hover:bg-[#FAF8F5] dark:hover:bg-[#181820] transition-colors`}
+                className={`p-7 sm:p-9 ${index >= 3 ? 'sm:border-t sm:border-black/[0.04] dark:sm:border-white/[0.06]' : ''} flex items-start justify-between gap-4 group/spec hover:bg-[#FAF8F5]/80 dark:hover:bg-[#181820]/80 transition-colors`}
               >
                 <div>
                   <div className="text-[10px] font-mono text-[#64748B] dark:text-[#94A3B8] font-bold uppercase tracking-[2px] mb-2.5">
@@ -72,7 +72,7 @@ export const TokenOverview: React.FC = () => {
           </div>
 
           {/* Contract / Mint Address Section */}
-          <div className="p-7 sm:p-10 bg-[#FAF8F5] dark:bg-[#15151C]">
+          <div className="p-7 sm:p-10 bg-[#FAF8F5]/70 dark:bg-[#15151C]/70">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-2.5 max-w-2xl">
                 <div className="flex items-center gap-3">
@@ -85,11 +85,11 @@ export const TokenOverview: React.FC = () => {
                 </div>
 
                 {TOKEN_CONFIG.mintAddress ? (
-                  <div className="font-mono text-sm sm:text-base font-bold text-[#080808] dark:text-white break-all bg-white dark:bg-[#121217] p-4 rounded-[16px] border-2 border-[#D8D1C4] dark:border-[#282836] select-all shadow-2xs">
+                  <div className="font-mono text-sm sm:text-base font-bold text-[#080808] dark:text-white break-all bg-white dark:bg-[#121217] p-4 rounded-[18px] shadow-sm select-all">
                     {TOKEN_CONFIG.mintAddress}
                   </div>
                 ) : (
-                  <div className="bg-[#FAF5EF] dark:bg-[#1C1712] border-2 border-[#E9C9A5] dark:border-[#B8661B]/40 rounded-[20px] p-5 text-xs sm:text-sm text-[#080808] dark:text-white">
+                  <div className="bg-[#FAF5EF] dark:bg-[#1C1712] rounded-[20px] p-5 text-xs sm:text-sm text-[#080808] dark:text-white shadow-sm">
                     <p className="font-bold text-[#080808] dark:text-white font-display text-sm">
                       {t.token_overview.deployment_pending_title}
                     </p>
@@ -105,10 +105,10 @@ export const TokenOverview: React.FC = () => {
                 <button
                   onClick={handleCopy}
                   disabled={!TOKEN_CONFIG.mintAddress}
-                  className={`px-5 py-3.5 text-xs font-bold rounded-[16px] border-2 transition-all flex items-center justify-center whitespace-nowrap ${
+                  className={`px-5 py-3.5 text-xs font-bold rounded-[16px] transition-all flex items-center justify-center whitespace-nowrap shadow-sm hover:shadow-md cursor-pointer ${
                     TOKEN_CONFIG.mintAddress
-                      ? 'bg-white dark:bg-[#181820] hover:bg-[#FAF8F5] dark:hover:bg-[#22222A] text-[#222222] dark:text-white border-[#D8D1C4] dark:border-[#333345] hover:border-[#B8661B] dark:hover:border-[#EAB308] shadow-[0_2px_8px_rgba(0,0,0,0.04)] cursor-pointer'
-                      : 'bg-[#F5F5F5] dark:bg-[#181820] text-[#888888] dark:text-[#64748B] border-[#D8D1C4] dark:border-[#262633] cursor-not-allowed'
+                      ? 'bg-white dark:bg-[#181820] hover:bg-[#FAF8F5] dark:hover:bg-[#22222A] text-[#222222] dark:text-white'
+                      : 'bg-[#F5F5F5] dark:bg-[#181820] text-[#888888] dark:text-[#64748B] cursor-not-allowed'
                   }`}
                   title={TOKEN_CONFIG.mintAddress ? t.token_overview.copy_address : t.token_overview.deployment_pending_title}
                 >

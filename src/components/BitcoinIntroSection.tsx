@@ -15,10 +15,10 @@ export const BitcoinIntroSection: React.FC<BitcoinIntroSectionProps> = ({
   const { t } = useLanguage();
 
   return (
-    <section id="bitcoin-intro" className="py-16 md:py-24 bg-[#FAF7F2] dark:bg-[#070709] scroll-mt-16 transition-colors border-t border-[#D8D1C4] dark:border-[#1E1E26]">
+    <section id="bitcoin-intro" className="py-16 md:py-24 bg-[#FAF7F2] dark:bg-[#070709] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Card: Spans full max-w-7xl width with balanced 2-column desktop architecture */}
-        <div className="bg-white dark:bg-[#121218] border-2 border-[#D8D1C4] dark:border-[#2A2A38] rounded-[28px] sm:rounded-[36px] lg:rounded-[42px] p-7 sm:p-10 lg:p-14 xl:p-16 shadow-[0_8px_32px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+        <div className="bg-white/95 dark:bg-[#121217]/95 rounded-[28px] sm:rounded-[36px] lg:rounded-[42px] p-7 sm:p-10 lg:p-14 xl:p-16 shadow-[0_12px_44px_rgba(0,0,0,0.04)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.45)] backdrop-blur-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
             
             {/* Left Column (Badge, Decorative Icon, Heading, and Action Buttons) */}
@@ -50,7 +50,7 @@ export const BitcoinIntroSection: React.FC<BitcoinIntroSectionProps> = ({
                 {onOpenEducationModal && (
                   <button
                     onClick={onOpenEducationModal}
-                    className="px-5 sm:px-6 py-3.5 sm:py-4 text-sm font-semibold text-[#222222] dark:text-white bg-white dark:bg-[#18181D] hover:bg-[#FAF8F5] dark:hover:bg-[#222228] hover:border-[#B8661B] dark:hover:border-[#EAB308] border-2 border-[#D8D1C4] dark:border-[#333345] rounded-[18px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none whitespace-nowrap"
+                    className="px-5 sm:px-6 py-3.5 sm:py-4 text-sm font-semibold text-[#222222] dark:text-white bg-white dark:bg-[#18181D] hover:bg-[#FAF8F5] dark:hover:bg-[#222228] rounded-[18px] shadow-[0_2px_10px_rgba(0,0,0,0.04)] transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B8661B] focus-visible:outline-none whitespace-nowrap"
                   >
                     <BookOpen className="w-4 h-4 text-[#B8661B] stroke-[2]" />
                     <span>{t.intro.explore_genesis}</span>

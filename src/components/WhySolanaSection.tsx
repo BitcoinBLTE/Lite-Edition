@@ -12,7 +12,7 @@ export const WhySolanaSection: React.FC = () => {
   }));
 
   return (
-    <section className="py-20 md:py-28 bg-white dark:bg-[#080808] scroll-mt-16 transition-colors border-t border-[#EAE6DF] dark:border-[#1E1E26]">
+    <section className="py-20 md:py-28 bg-white dark:bg-[#080808] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] dark:text-[#EAB308] mb-3.5 flex items-center gap-2.5">
@@ -33,7 +33,7 @@ export const WhySolanaSection: React.FC = () => {
             return (
               <div
                 key={item.title}
-                className="bg-[#FCFCFC] dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_4px_24px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:border-[#B8661B]/35 dark:hover:border-[#EAB308]/40 hover:shadow-[0_8px_30px_rgba(184,102,27,0.08)] transition-all flex flex-col justify-between group"
+                className="bg-[#FCFCFC] dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <Realistic3DIcon type={item.iconType} size="lg" className="mb-6" />
@@ -51,7 +51,7 @@ export const WhySolanaSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-7 pt-4 border-t border-[#E5E5E5] dark:border-[#22222A] text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-[2px]">
+                <div className="mt-7 pt-3 text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-[2px]">
                   {item.badge}
                 </div>
               </div>

@@ -71,7 +71,7 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
   });
 
   return (
-    <section id="how-to-buy" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#08080C] scroll-mt-16 transition-colors border-t border-[#D8D1C4] dark:border-[#1E1E26]">
+    <section id="how-to-buy" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#08080C] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
@@ -97,14 +97,14 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
             return (
               <div
                 key={st.step}
-                className={`rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.4)] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_10px_32px_rgba(184,102,27,0.12)] transition-all flex flex-col justify-between group ${
+                className={`rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group ${
                   isLast ? 'md:col-span-2 lg:col-span-1 xl:col-span-2 card-last-step' : 'bg-white dark:bg-[#121217]'
                 }`}
               >
                 <div>
                   {/* Step Header */}
                   <div className="flex items-center justify-between mb-5">
-                    <span className="w-8 h-8 rounded-[10px] bg-[#FAF8F5] dark:bg-[#181820] border-2 border-[#D8D1C4] dark:border-[#2E2E3E] flex items-center justify-center font-mono text-xs font-bold text-[#080808] dark:text-white group-hover:bg-[#FAF5EF] dark:group-hover:bg-[#1C1712] group-hover:text-[#B8661B] dark:group-hover:text-[#F59E0B] group-hover:border-[#B8661B] dark:group-hover:border-[#EAB308] transition-colors">
+                    <span className="w-8 h-8 rounded-[10px] bg-[#FAF8F5] dark:bg-[#181820] flex items-center justify-center font-mono text-xs font-bold text-[#080808] dark:text-white group-hover:bg-[#FAF5EF] dark:group-hover:bg-[#1C1712] group-hover:text-[#B8661B] dark:group-hover:text-[#F59E0B] transition-colors shadow-2xs">
                       {st.step}
                     </span>
                     <Realistic3DIcon type={step3DIcons[index] || 'wallet'} size="md" />
@@ -124,8 +124,8 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
 
                   {/* DEX Platform Logos on Step 4 */}
                   {isDexStep && (
-                    <div className="mt-4 pt-3.5 border-t-2 border-[#D8D1C4] dark:border-[#282836] flex flex-wrap items-center gap-2">
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-[#FAF8F5] dark:bg-[#181820] border-2 border-[#D8D1C4] dark:border-[#282836] text-[11px] font-mono font-bold text-[#080808] dark:text-white shadow-2xs">
+                    <div className="mt-4 pt-3 flex flex-wrap items-center gap-2">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-[#FAF8F5] dark:bg-[#181820] text-[11px] font-mono font-bold text-[#080808] dark:text-white shadow-2xs">
                         <RaydiumIcon size={16} />
                         <span>Raydium</span>
                       </div>
@@ -134,7 +134,7 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
                 </div>
 
                 {st.actionLabel && (
-                  <div className="mt-6 pt-4 border-t-2 border-[#D8D1C4] dark:border-[#282836]">
+                  <div className="mt-6 pt-3">
                     <button
                       onClick={st.action || undefined}
                       className="text-xs sm:text-sm font-bold text-[#B8661B] dark:text-[#F59E0B] hover:text-[#964E10] dark:hover:text-[#FBBF24] flex items-center gap-1.5 transition-colors cursor-pointer group"
@@ -150,7 +150,7 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
         </div>
 
         {/* Safety, Security & Anti-Phishing Advisory Notice Box */}
-        <div className="bg-white dark:bg-[#121217] rounded-[32px] sm:rounded-[40px] border-2 border-[#B8661B] dark:border-[#F59E0B]/70 p-8 sm:p-12 shadow-[0_8px_32px_rgba(184,102,27,0.10)] dark:shadow-[0_8px_32px_rgba(245,158,11,0.16)]">
+        <div className="bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 shadow-[0_12px_44px_rgba(184,102,27,0.08)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)]">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="flex items-start gap-5">
               <Realistic3DIcon type="shield" size="lg" className="shrink-0 mt-0.5" />

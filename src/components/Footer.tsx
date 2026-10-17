@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({
   const activeSocials = TOKEN_CONFIG.socials.filter((s) => s.url !== null);
 
   return (
-    <footer className="bg-white dark:bg-[#08080B] text-[#4A4A4A] dark:text-[#A1A1AA] border-t border-[#E5E5E5] dark:border-white/10 transition-colors">
+    <footer className="bg-white dark:bg-[#08080B] text-[#4A4A4A] dark:text-[#A1A1AA] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12">
           {/* Brand & Mission Column */}
@@ -71,7 +71,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="pt-1">
               <button
                 onClick={onOpenWhitePaper}
-                className="px-4 py-2 rounded-[14px] bg-[#FAF5EF] dark:bg-[#1C150E] hover:bg-[#F2E8DC] dark:hover:bg-[#281D12] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/30 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-[14px] bg-[#FAF5EF] dark:bg-[#1C150E] hover:bg-[#F2E8DC] dark:hover:bg-[#281D12] text-[#B8661B] dark:text-[#EAB308] text-xs font-mono font-bold flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
               >
                 <BookOpen className="w-3.5 h-3.5 text-[#B8661B]" />
                 <span>{t.footer.btn_whitepaper}</span>
@@ -180,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({
             </span>
 
             {TOKEN_CONFIG.mintAddress ? (
-              <div className="p-4 bg-white dark:bg-[#121218] rounded-[18px] border-2 border-[#D8D1C4] dark:border-[#282836] space-y-2.5 shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
+              <div className="p-4 bg-white dark:bg-[#121218] rounded-[18px] space-y-2.5 shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="text-[10px] font-mono text-[#64748B] dark:text-[#94A3B8] font-bold block uppercase tracking-wider">
                   {t.footer.mint_label}
                 </span>
@@ -205,7 +205,7 @@ export const Footer: React.FC<FooterProps> = ({
                 </button>
               </div>
             ) : (
-              <div className="p-5 bg-white dark:bg-[#121218] rounded-[18px] border-2 border-[#D8D1C4] dark:border-[#282836] text-xs text-[#475569] dark:text-[#CBD5E1] space-y-2 shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
+              <div className="p-5 bg-white dark:bg-[#121218] rounded-[18px] text-xs text-[#475569] dark:text-[#CBD5E1] space-y-2 shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="font-bold text-[#080808] dark:text-white block text-sm font-display">
                   {t.footer.prelaunch_heading}
                 </span>
@@ -230,7 +230,7 @@ export const Footer: React.FC<FooterProps> = ({
                 title="Stake BLTE on Streamflow Finance (11.61% APY)"
               >
                 <span>STAKE</span>
-                <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 border border-amber-300/30 leading-none">
+                <span className="text-[10px] font-sans font-extrabold px-1.5 py-0.5 rounded-full bg-black/25 text-amber-200 leading-none">
                   11.61% APY
                 </span>
               </a>
@@ -240,7 +240,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Legal Disclaimer Box — Clear Conceptual Distinction & Non-Affiliation Statement */}
         <div className="pt-8 pb-6">
-          <div className="p-6 rounded-[24px] bg-white dark:bg-[#121218] border-2 border-[#D8D1C4] dark:border-[#282836] text-xs text-[#475569] dark:text-[#CBD5E1] leading-[1.8] space-y-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
+          <div className="p-6 rounded-[24px] bg-white dark:bg-[#121218] text-xs text-[#475569] dark:text-[#CBD5E1] leading-[1.8] space-y-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
             <p className="font-bold text-[#080808] dark:text-white uppercase font-mono tracking-[1.5px]">
               {t.about.distinction_title}
             </p>

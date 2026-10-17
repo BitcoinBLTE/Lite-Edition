@@ -44,7 +44,7 @@ export const RoadmapSection: React.FC = () => {
   });
 
   return (
-    <section id="roadmap" className="py-20 md:py-28 bg-[#FAF8F5]/60 dark:bg-[#0A0A0E] scroll-mt-16 transition-colors border-t border-[#EAE6DF] dark:border-[#1E1E26]">
+    <section id="roadmap" className="py-20 md:py-28 bg-[#FAF8F5]/60 dark:bg-[#0A0A0E] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] dark:text-[#EAB308] mb-3.5 flex items-center gap-2.5">
@@ -64,10 +64,10 @@ export const RoadmapSection: React.FC = () => {
           {phases.map((phase, idx) => (
             <div
               key={phase.title}
-              className={`bg-white dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:border-[#B8661B]/35 dark:hover:border-[#EAB308]/40 hover:shadow-[0_8px_30px_rgba(184,102,27,0.08)] transition-all ${
+              className={`rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 ${
                 phase.status === 'IN_PROGRESS'
-                  ? 'border-2 border-[#B8661B] dark:border-[#F59E0B] shadow-[0_4px_24px_rgba(184,102,27,0.12)]'
-                  : 'border-[#E5E5E5] dark:border-[#22222A]'
+                  ? 'bg-[#FAF5EF] dark:bg-[#1A1510] shadow-[0_12px_36px_rgba(184,102,27,0.14)] dark:shadow-[0_12px_36px_rgba(245,158,11,0.22)]'
+                  : 'bg-white/95 dark:bg-[#121217]/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_36px_rgba(184,102,27,0.08)]'
               }`}
             >
               <div>
@@ -105,7 +105,7 @@ export const RoadmapSection: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-[#E5E5E5] dark:border-[#22222A] flex items-center justify-between text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8]">
+              <div className="mt-8 pt-3 flex items-center justify-between text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8]">
                 <span>{t.roadmap.verified_milestones}</span>
                 <span>{phase.items.length} {t.roadmap.items_suffix}</span>
               </div>

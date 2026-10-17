@@ -35,7 +35,7 @@ export const TransparencySection: React.FC = () => {
   }));
 
   return (
-    <section id="transparency" className="py-20 md:py-28 bg-[#FAF8F5]/60 dark:bg-[#0A0A0E] scroll-mt-16 transition-colors border-t border-[#EAE6DF] dark:border-[#1E1E26]">
+    <section id="transparency" className="py-20 md:py-28 bg-[#FAF8F5]/60 dark:bg-[#0A0A0E] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
@@ -57,7 +57,7 @@ export const TransparencySection: React.FC = () => {
             return (
               <div
                 key={card.title}
-                className="bg-white dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_4px_24px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:border-[#B8661B]/35 dark:hover:border-[#EAB308]/40 hover:shadow-[0_8px_30px_rgba(184,102,27,0.08)] transition-all flex flex-col justify-between group"
+                className="bg-white/95 dark:bg-[#121217]/95 rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -80,7 +80,7 @@ export const TransparencySection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-7 pt-4 border-t border-[#E5E5E5] dark:border-[#22222A]">
+                <div className="mt-7 pt-3">
                   <a
                     href={card.link}
                     target="_blank"

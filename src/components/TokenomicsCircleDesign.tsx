@@ -33,8 +33,8 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       darkColor: '#D97706',
       gradientId: 'fairLaunchGradient',
       glowColor: 'rgba(245, 158, 11, 0.45)',
-      activeBorder: 'border-[#F59E0B] ring-2 ring-[#F59E0B]/50 bg-[#F59E0B]/10 dark:bg-[#F59E0B]/15 shadow-[0_8px_24px_rgba(245,158,11,0.18)]',
-      badgeBg: 'bg-[#F59E0B]/15 text-[#D97706] dark:text-[#FBBF24] border-[#F59E0B]/40',
+      activeBorder: 'bg-[#F59E0B]/10 dark:bg-[#F59E0B]/15 shadow-[0_10px_32px_rgba(245,158,11,0.22)]',
+      badgeBg: 'bg-[#F59E0B]/15 text-[#D97706] dark:text-[#FBBF24]',
     },
     {
       id: 'liquidity-pool' as const,
@@ -47,8 +47,8 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       darkColor: '#16A34A',
       gradientId: 'liquidityGradient',
       glowColor: 'rgba(34, 197, 94, 0.45)',
-      activeBorder: 'border-[#22C55E] ring-2 ring-[#22C55E]/50 bg-[#22C55E]/10 dark:bg-[#22C55E]/15 shadow-[0_8px_24px_rgba(34,197,94,0.18)]',
-      badgeBg: 'bg-[#22C55E]/15 text-[#16A34A] dark:text-[#4ADE80] border-[#22C55E]/40',
+      activeBorder: 'bg-[#22C55E]/10 dark:bg-[#22C55E]/15 shadow-[0_10px_32px_rgba(34,197,94,0.22)]',
+      badgeBg: 'bg-[#22C55E]/15 text-[#16A34A] dark:text-[#4ADE80]',
     },
   ];
 
@@ -79,9 +79,9 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
   };
 
   return (
-    <div className={`rounded-[24px] sm:rounded-[32px] bg-[#FAF5EF]/70 dark:bg-[#121217] border border-[#E9C9A5]/90 dark:border-[#B8661B]/35 p-4 sm:p-8 lg:p-12 space-y-6 sm:space-y-8 shadow-[0_8px_32px_rgba(0,0,0,0.04)] ${className}`}>
+    <div className={`rounded-[24px] sm:rounded-[32px] bg-[#FAF5EF]/70 dark:bg-[#121217] p-4 sm:p-8 lg:p-12 space-y-6 sm:space-y-8 shadow-[0_8px_32px_rgba(0,0,0,0.04)] ${className}`}>
       {showTitle && (
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E9C9A5]/60 dark:border-[#282832]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#B8661B] uppercase tracking-wider">
               <Coins className="w-4 h-4" />
@@ -95,11 +95,11 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       )}
 
       {/* Interactive Quick-Selection Control Pill Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 bg-white dark:bg-[#181820] p-2 sm:p-2.5 rounded-[18px] sm:rounded-[20px] border border-[#E5E5E5] dark:border-[#262630] shadow-xs">
+      <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 bg-white dark:bg-[#181820] p-2 sm:p-2.5 rounded-[18px] sm:rounded-[20px] shadow-xs">
         <button
           type="button"
           onClick={() => setSelectedId(null)}
-          className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25 text-[11px] sm:text-xs font-mono font-bold shadow-2xs hover:bg-emerald-500/20 transition-colors cursor-pointer"
+          className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[11px] sm:text-xs font-mono font-bold shadow-2xs hover:bg-emerald-500/20 transition-colors cursor-pointer"
         >
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
           <span>100% circulatory</span>
@@ -110,7 +110,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
             onClick={() => setSelectedId(null)}
             className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
               selectedId === null
-                ? 'bg-[#111111] text-white dark:bg-[#252532] dark:text-white dark:border dark:border-[#424256] shadow-xs'
+                ? 'bg-[#111111] text-white dark:bg-[#252532] dark:text-white shadow-xs'
                 : 'text-[#555555] dark:text-[#D4D4D8] hover:bg-[#FAF8F5] dark:hover:bg-[#202028] dark:hover:text-white'
             }`}
           >
@@ -123,7 +123,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
             className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
               selectedId === 'fair-launch'
                 ? 'bg-[#F59E0B] text-white shadow-[0_2px_12px_rgba(245,158,11,0.4)] ring-2 ring-[#F59E0B]/40'
-                : 'text-[#B8661B] dark:text-[#FBBF24] bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20 border border-[#F59E0B]/30'
+                : 'text-[#B8661B] dark:text-[#FBBF24] bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20'
             }`}
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
@@ -135,7 +135,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
             className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
               selectedId === 'liquidity-pool'
                 ? 'bg-[#22C55E] text-white shadow-[0_2px_12px_rgba(34,197,94,0.4)] ring-2 ring-[#22C55E]/40'
-                : 'text-[#16A34A] dark:text-[#4ADE80] bg-[#22C55E]/10 hover:bg-[#22C55E]/20 border border-[#22C55E]/30'
+                : 'text-[#16A34A] dark:text-[#4ADE80] bg-[#22C55E]/10 hover:bg-[#22C55E]/20'
             }`}
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#22C55E]" />
@@ -269,7 +269,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
             {/* Center Disc: Interactive with Dynamic Inspection & Tap to Reset */}
             <div
               onClick={() => setSelectedId(null)}
-              className="absolute inset-0 m-auto w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-white dark:bg-[#121217] border-2 border-[#EAE6DF] dark:border-[#262632] shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center text-center p-3 sm:p-4 cursor-pointer transition-all hover:scale-[1.02]"
+              className="absolute inset-0 m-auto w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-white dark:bg-[#121217] shadow-[0_12px_36px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center p-3 sm:p-4 cursor-pointer transition-all hover:scale-[1.02]"
               title={selectedId ? "Click to reset view" : "2.1M BLTE Hard Cap"}
             >
               {selectedItem ? (
@@ -316,10 +316,10 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
               <div
                 key={item.id}
                 onClick={() => toggleSelect(item.id)}
-                className={`p-4 sm:p-6 lg:p-7 rounded-[20px] sm:rounded-[24px] bg-white dark:bg-[#14141C] border-2 shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] transition-all cursor-pointer space-y-3 group ${
+                className={`p-5 sm:p-6 lg:p-7 rounded-[24px] bg-white/95 dark:bg-[#14141C]/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 cursor-pointer space-y-3 group ${
                   isSelected
                     ? item.activeBorder
-                    : 'border-[#D8D1C4] dark:border-[#2A2A38] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_28px_rgba(184,102,27,0.12)]'
+                    : 'hover:shadow-[0_12px_36px_rgba(0,0,0,0.08)] hover:-translate-y-0.5'
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">

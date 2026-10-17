@@ -100,7 +100,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
   }, [checkLiveTelemetry]);
 
   return (
-    <section id="explore" className="py-20 md:py-28 bg-[#FAF8F5]/80 dark:bg-[#0B0B0F] scroll-mt-16 transition-colors border-y border-[#EAE6DF] dark:border-[#1E1E26]">
+    <section id="explore" className="py-20 md:py-28 bg-[#FAF8F5]/80 dark:bg-[#0B0B0F] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
@@ -120,10 +120,10 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
 
           {/* Sync Controls */}
           <div className="flex items-center gap-3 shrink-0">
-            <div className={`px-3 py-1.5 rounded-full text-xs font-mono font-bold flex items-center gap-2 border ${
+            <div className={`px-3 py-1.5 rounded-full text-xs font-mono font-bold flex items-center gap-2 ${
               isLive
-                ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/30'
-                : 'bg-amber-500/10 text-amber-800 dark:text-amber-400 border-amber-500/30'
+                ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
+                : 'bg-amber-500/10 text-amber-800 dark:text-amber-400'
             }`}>
               <span className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500 animate-ping'}`} />
               <span>{isLive ? (exp?.live_pool_active || 'Live Pool Active') : (exp?.live_sync_active || 'Live Sync Active')}</span>
@@ -132,7 +132,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             <button
               onClick={checkLiveTelemetry}
               disabled={isRefreshing}
-              className="p-2.5 rounded-xl text-[#475569] hover:text-[#B8661B] dark:text-[#A1A1AA] dark:hover:text-white bg-white dark:bg-[#1C150E] hover:bg-[#FAF5EF] border border-[#EAE6DF] dark:border-[#B8661B]/30 transition-all cursor-pointer disabled:opacity-50 shadow-2xs"
+              className="p-2.5 rounded-xl text-[#475569] hover:text-[#B8661B] dark:text-[#A1A1AA] dark:hover:text-white bg-white dark:bg-[#1C150E] hover:bg-[#FAF5EF] transition-all cursor-pointer disabled:opacity-50 shadow-sm"
               title={exp?.refresh_live_data || 'Refresh Live Data'}
               aria-label={exp?.refresh_live_data || 'Refresh live data'}
             >
@@ -145,13 +145,13 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           
           {/* Card 1: Market */}
-          <div className="rounded-[24px] bg-white dark:bg-[#13131A] border-2 border-[#D8D1C4] dark:border-[#282836] p-6 shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_30px_rgba(184,102,27,0.12)] transition-all">
+          <div className="rounded-[28px] bg-white/95 dark:bg-[#13131A]/95 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300">
             <div>
-              <div className="flex items-center justify-between pb-3.5 mb-4 border-b-2 border-[#D8D1C4] dark:border-[#282836]">
+              <div className="flex items-center justify-between pb-3 mb-4">
                 <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] dark:text-[#EAB308] uppercase">
                   {exp?.card_market || 'Market'} →
                 </span>
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5]/40 dark:border-[#B8661B]/30">
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308]">
                   {exp?.badge_dex || 'DEX'}
                 </span>
               </div>
@@ -187,19 +187,19 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
               </div>
             </div>
 
-            <div className="mt-5 pt-3 border-t-2 border-[#D8D1C4] dark:border-[#282836] text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] text-right">
+            <div className="mt-5 pt-3 text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] text-right">
               {isLive ? (exp?.live_liquidity_pool || 'Live Liquidity Pool') : (exp?.awaiting_pair || 'Awaiting Pair Genesis')}
             </div>
           </div>
 
           {/* Card 2: Staking */}
-          <div className="rounded-[24px] bg-white dark:bg-[#13131A] border-2 border-[#D8D1C4] dark:border-[#282836] p-6 shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_30px_rgba(184,102,27,0.12)] transition-all">
+          <div className="rounded-[28px] bg-white/95 dark:bg-[#13131A]/95 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300">
             <div>
-              <div className="flex items-center justify-between pb-3.5 mb-4 border-b-2 border-[#D8D1C4] dark:border-[#282836]">
+              <div className="flex items-center justify-between pb-3 mb-4">
                 <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] dark:text-[#EAB308] uppercase">
                   {exp?.card_staking || 'Staking'} →
                 </span>
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5]/40 dark:border-[#B8661B]/30">
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308]">
                   {exp?.badge_escrow || 'ESCROW'}
                 </span>
               </div>
@@ -228,19 +228,19 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
               </div>
             </div>
 
-            <div className="mt-5 pt-3 border-t-2 border-[#D8D1C4] dark:border-[#282836] text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] text-right">
+            <div className="mt-5 pt-3 text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] text-right">
               {exp?.staking_verified || 'Streamflow Protocol Verified'}
             </div>
           </div>
 
-          {/* Card 3: Game (Placed above supply section, no game button) */}
-          <div className="rounded-[24px] bg-white dark:bg-[#13131A] border-2 border-[#D8D1C4] dark:border-[#282836] p-6 shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_30px_rgba(184,102,27,0.12)] transition-all">
+          {/* Card 3: Game */}
+          <div className="rounded-[28px] bg-white/95 dark:bg-[#13131A]/95 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300">
             <div>
-              <div className="flex items-center justify-between pb-3.5 mb-4 border-b-2 border-[#D8D1C4] dark:border-[#282836]">
+              <div className="flex items-center justify-between pb-3 mb-4">
                 <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] dark:text-[#EAB308] uppercase">
                   {exp?.card_game || 'Game'} →
                 </span>
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-400 border border-amber-500/25">
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-400">
                   {exp?.badge_coming_soon || 'COMING SOON'}
                 </span>
               </div>
@@ -269,19 +269,19 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
               </div>
             </div>
 
-            <div className="mt-5 pt-3 border-t-2 border-[#D8D1C4] dark:border-[#282836] text-[11px] font-mono text-[#B8661B] dark:text-[#EAB308] font-bold text-right">
+            <div className="mt-5 pt-3 text-[11px] font-mono text-[#B8661B] dark:text-[#EAB308] font-bold text-right">
               {exp?.coming_soon || 'Coming Soon'}
             </div>
           </div>
 
           {/* Card 4: Supply */}
-          <div className="rounded-[24px] bg-white dark:bg-[#13131A] border-2 border-[#D8D1C4] dark:border-[#282836] p-6 shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_30px_rgba(184,102,27,0.12)] transition-all">
+          <div className="rounded-[28px] bg-white/95 dark:bg-[#13131A]/95 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300">
             <div>
-              <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-[#F0ECE1] dark:border-[#22222E]">
+              <div className="flex items-center justify-between pb-3 mb-4">
                 <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] dark:text-[#EAB308] uppercase">
                   {exp?.card_supply || 'Supply'} →
                 </span>
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5]/40 dark:border-[#B8661B]/30">
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308]">
                   {exp?.badge_network || 'SOLANA'}
                 </span>
               </div>
@@ -317,7 +317,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
               </div>
             </div>
 
-            <div className="mt-5 pt-3 border-t-2 border-[#D8D1C4] dark:border-[#282836] text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] text-right">
+            <div className="mt-5 pt-3 text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] text-right">
               {exp?.zero_inflation || 'Zero Inflation / Immutable'}
             </div>
           </div>
@@ -354,7 +354,7 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             {onOpenExplore && (
               <button
                 onClick={onOpenExplore}
-                className="px-5 py-3 rounded-[14px] bg-white dark:bg-[#18181D] hover:bg-[#FAF5EF] text-[#080808] dark:text-white border border-[#EAE6DF] dark:border-[#B8661B]/30 font-bold font-mono text-xs transition-colors cursor-pointer flex items-center gap-1.5"
+                className="px-5 py-3 rounded-[14px] bg-white dark:bg-[#18181D] hover:bg-[#FAF5EF] text-[#080808] dark:text-white font-bold font-mono text-xs transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
               >
                 <Compass className="w-4 h-4 text-[#B8661B]" />
                 <span>{exp?.btn_explore_panel || 'EXPLORE PANEL'}</span>

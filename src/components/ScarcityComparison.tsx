@@ -7,7 +7,7 @@ export const ScarcityComparison: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-28 bg-white dark:bg-[#080808] scroll-mt-16 transition-colors border-t border-[#EAE6DF] dark:border-[#1E1E26]">
+    <section className="py-20 md:py-28 bg-white dark:bg-[#080808] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] dark:text-[#EAB308] mb-3.5 flex items-center justify-center gap-2.5">
@@ -26,7 +26,7 @@ export const ScarcityComparison: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center space-y-4">
             {/* Step 1: Bitcoin */}
-            <div className="w-full bg-white dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.4)] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+            <div className="w-full bg-[#FAF8F5]/90 dark:bg-[#121217]/90 rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               <div className="flex items-start gap-4">
                 <Realistic3DIcon type="bitcoin" size="md" className="mt-1" />
                 <div className="space-y-1.5">
@@ -53,12 +53,12 @@ export const ScarcityComparison: React.FC = () => {
 
             {/* Transition Arrow 1 */}
             <div className="flex flex-col items-center justify-center my-0.5 text-[#B8661B]">
-              <div className="w-0.5 h-6 bg-[#D8D1C4] dark:bg-[#2A2A36]" />
+              <div className="w-0.5 h-6 bg-[#B8661B]/20 dark:bg-[#F59E0B]/20" />
               <ArrowDown className="w-5 h-5 text-[#B8661B] dark:text-[#F59E0B] stroke-[2] -mt-1" />
             </div>
 
             {/* Step 2: Bitcoin Lite Edition (Marquee Hero Box in Burnt Copper) */}
-            <div className="w-full bg-[#FAF5EF] dark:bg-[#18130E] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border-2 border-[#B8661B] dark:border-[#F59E0B] shadow-[0_8px_32px_rgba(184,102,27,0.14)] dark:shadow-[0_8px_32px_rgba(245,158,11,0.2)] flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative overflow-hidden">
+            <div className="w-full bg-[#FAF5EF] dark:bg-[#18130E] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 shadow-[0_12px_40px_rgba(184,102,27,0.16)] dark:shadow-[0_12px_40px_rgba(245,158,11,0.25)] hover:shadow-[0_16px_50px_rgba(184,102,27,0.22)] transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative overflow-hidden">
               <div className="flex items-start gap-4 relative z-10">
                 <Realistic3DIcon type="blte" size="lg" className="mt-1" />
                 <div className="space-y-1.5">
@@ -87,12 +87,12 @@ export const ScarcityComparison: React.FC = () => {
 
             {/* Transition Arrow 2 */}
             <div className="flex flex-col items-center justify-center my-0.5 text-[#B8661B]">
-              <div className="w-0.5 h-6 bg-[#D8D1C4] dark:bg-[#2A2A36]" />
+              <div className="w-0.5 h-6 bg-[#B8661B]/20 dark:bg-[#F59E0B]/20" />
               <ArrowDown className="w-5 h-5 text-[#B8661B] dark:text-[#F59E0B] stroke-[2] -mt-1" />
             </div>
 
             {/* Step 3: Solana */}
-            <div className="w-full bg-white dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_6px_24px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.4)] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+            <div className="w-full bg-[#FAF8F5]/90 dark:bg-[#121217]/90 rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               <div className="flex items-start gap-4">
                 <Realistic3DIcon type="solana" size="md" className="mt-1" />
                 <div className="space-y-1.5">
@@ -122,8 +122,8 @@ export const ScarcityComparison: React.FC = () => {
           </div>
 
           {/* Side-by-Side Comparison Matrix: Rounded Editorial Card */}
-          <div className="mt-14 bg-white dark:bg-[#121217] rounded-[32px] sm:rounded-[38px] border-2 border-[#D8D1C4] dark:border-[#282836] shadow-[0_8px_32px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden">
-            <div className="p-7 sm:p-8 border-b-2 border-[#D8D1C4] dark:border-[#282836] bg-[#FAF8F5] dark:bg-[#15151B] flex items-center justify-between gap-4">
+          <div className="mt-14 bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[38px] shadow-[0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.45)] overflow-hidden backdrop-blur-sm">
+            <div className="p-7 sm:p-8 border-b border-black/[0.04] dark:border-white/[0.06] bg-[#FAF8F5]/80 dark:bg-[#15151B] flex items-center justify-between gap-4">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-[2.5px] text-[#B8661B] dark:text-[#EAB308]">
                   {t.scarcity.matrix_kicker}
@@ -138,13 +138,13 @@ export const ScarcityComparison: React.FC = () => {
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs sm:text-sm">
                 <thead>
-                  <tr className="matrix-header-row border-b-2 border-[#D8D1C4] dark:border-[#282836] text-[#080808] dark:text-white font-mono font-bold uppercase tracking-[1.5px]">
+                  <tr className="matrix-header-row border-b border-black/[0.04] dark:border-white/[0.06] text-[#080808] dark:text-white font-mono font-bold uppercase tracking-[1.5px]">
                     <th className="py-4 px-5 sm:px-8">{t.scarcity.col_parameter}</th>
                     <th className="py-4 px-5 sm:px-8">{t.scarcity.col_btc}</th>
                     <th className="py-4 px-5 sm:px-8 text-[#B8661B] dark:text-[#F59E0B]">{t.scarcity.col_ble}</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#D8D1C4] dark:divide-[#282836]">
+                <tbody className="divide-y divide-black/[0.04] dark:divide-white/[0.06]">
                   {t.scarcity.rows.map((row, idx) => (
                     <tr key={idx} className={idx % 2 === 1 ? 'matrix-row-alt' : 'matrix-row-default'}>
                       <td className="py-4 px-5 sm:px-8 font-bold text-[#080808] dark:text-white">

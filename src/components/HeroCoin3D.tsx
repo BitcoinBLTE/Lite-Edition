@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { BitcoinLiteCoinSvg } from './BitcoinLiteCoinSvg';
 import { getCoinFrontCanvas } from '../utils/coinCanvasGenerator';
 
 interface HeroCoin3DProps {
@@ -13,8 +12,6 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
   const isDraggingRef = useRef<boolean>(false);
   const startPointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const startRotationRef = useRef<{ y: number; x: number }>({ y: 0, x: 0 });
-  const [hintVisible, setHintVisible] = useState(true);
-  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -23,8 +20,8 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
     // 1. Scene, Camera, Renderer
     const scene = new THREE.Scene();
 
-    let width = container.clientWidth || 240;
-    let height = container.clientHeight || 240;
+    let width = container.clientWidth || 360;
+    let height = container.clientHeight || width;
 
     const camera = new THREE.PerspectiveCamera(36, width / height, 0.1, 100);
     camera.position.set(0, 0, 7.5);
@@ -39,6 +36,9 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
 
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
     container.appendChild(renderer.domElement);
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
@@ -496,10 +496,8 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
       animId = requestAnimationFrame(animate);
     };
 
-    // Immediate first render to ensure no blank frame or delay
+    // Immediate first render to ensure direct display on refresh
     renderer.render(scene, camera);
-    setIsReady(true);
-
     animId = requestAnimationFrame(animate);
 
     // 6. Pointer Drag Interaction
@@ -507,7 +505,6 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
       isDraggingRef.current = true;
       startPointerRef.current = { x: e.clientX, y: e.clientY };
       startRotationRef.current = { y: coinGroup.rotation.y, x: coinGroup.rotation.x };
-      setHintVisible(false);
       if (onInteract) onInteract();
     };
 
@@ -540,6 +537,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
       camera.aspect = newWidth / newHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(newWidth, newHeight);
+      renderer.render(scene, camera);
     });
 
     resizeObserver.observe(container);
@@ -583,26 +581,12 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
         aria-hidden="true"
       />
 
-      {/* Front-Side 3D Coin Synchronous Vector Display:
-          Instantly renders the exact minted front face of the rotating coin on page reload/refresh
-          so the coin never disappears or flashes empty before WebGL paints */}
-      <div
-        className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300 z-0 ${
-          isReady ? 'opacity-0' : 'opacity-100'
-        }`}
-        aria-hidden="true"
-      >
-        <div className="w-[93.5%] h-[93.5%] flex items-center justify-center drop-shadow-[0_16px_36px_rgba(245,158,11,0.22)]">
-          <BitcoinLiteCoinSvg size="100%" className="w-full h-full" />
-        </div>
-      </div>
-
       {/* 3D WebGL Canvas Container: Directly displays the 3D rotating coin on its front side */}
       <div
         ref={containerRef}
         className="w-full h-full cursor-grab active:cursor-grabbing touch-none flex items-center justify-center relative z-10"
         role="img"
-        aria-label="Interactive 3D minted coin of Bitcoin Lite Edition with continuous rotation around vertical Y axis, showing 2.1M fixed supply on reverse"
+        aria-label="Bitcoin Lite Edition 3D Coin"
       />
     </div>
   );

@@ -178,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#08080C]/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-colors border-b border-[#EAE6DF] dark:border-[#1E1E26]">
+    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#08080C]/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-3 sm:gap-4">
         {/* Zone 1: Brand Wordmark with Official Coin Logo */}
         <a

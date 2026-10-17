@@ -48,7 +48,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
   const isLive = marketData.status === 'LIVE' && marketData.priceUsd !== null;
 
   return (
-    <section id="market" className="py-20 md:py-28 bg-white dark:bg-[#080808] scroll-mt-16 transition-colors border-t border-[#EAE6DF] dark:border-[#1E1E26]">
+    <section id="market" className="py-20 md:py-28 bg-white dark:bg-[#080808] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
@@ -69,7 +69,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
             <button
               onClick={loadData}
               disabled={isRetrying}
-              className="px-4 py-2.5 text-xs font-mono font-bold text-[#080808] dark:text-white hover:text-black dark:hover:text-amber-400 bg-[#FCFCFC] dark:bg-[#16161D] hover:bg-[#F5F5F5] dark:hover:bg-[#1E1E28] border border-[#D9D9D9] dark:border-[#2A2A38] rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-2 cursor-pointer disabled:opacity-60"
+              className="px-4 py-2.5 text-xs font-mono font-bold text-[#080808] dark:text-white hover:text-black dark:hover:text-amber-400 bg-[#FCFCFC] dark:bg-[#16161D] hover:bg-[#F5F5F5] dark:hover:bg-[#1E1E28] rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-2 cursor-pointer disabled:opacity-60"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${isRetrying ? 'animate-spin text-[#B8661B]' : 'text-[#475569] dark:text-[#94A3B8]'}`} />
               <span>{isRetrying ? t.market.retry_connecting : t.market.retry}</span>
@@ -82,7 +82,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
           <div className="space-y-6">
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
               {/* Current Price */}
-              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.market.current_price}</span>
                 <span className="text-lg sm:text-xl font-mono font-[800] text-[#080808] dark:text-white mt-1.5 block tabular-nums">
                   ${marketData.priceUsd?.toFixed(4)}
@@ -93,7 +93,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
               </div>
 
               {/* 24h Change */}
-              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.market.change_24h}</span>
                 <span className={`text-lg sm:text-xl font-mono font-[800] mt-1.5 flex items-center gap-1 tabular-nums ${
                   (marketData.priceChange24h || 0) >= 0 ? 'text-[#16A34A] dark:text-[#4ADE80]' : 'text-[#E11D48] dark:text-[#FB7185]'
@@ -108,7 +108,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
               </div>
 
               {/* Market Cap */}
-              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.market.market_cap}</span>
                 <span className="text-lg sm:text-xl font-mono font-[800] text-[#080808] dark:text-white mt-1.5 block tabular-nums">
                   ${marketData.marketCapUsd?.toLocaleString()}
@@ -116,7 +116,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
               </div>
 
               {/* Liquidity */}
-              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.market.liquidity}</span>
                 <span className="text-lg sm:text-xl font-mono font-[800] text-[#080808] dark:text-white mt-1.5 block tabular-nums">
                   ${marketData.liquidityUsd?.toLocaleString()}
@@ -124,7 +124,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
               </div>
 
               {/* 24h Volume */}
-              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.market.volume_24h}</span>
                 <span className="text-lg sm:text-xl font-mono font-[800] text-[#080808] dark:text-white mt-1.5 block tabular-nums">
                   ${marketData.volume24h?.toLocaleString()}
@@ -132,7 +132,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
               </div>
 
               {/* Holders */}
-              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.market.holders}</span>
                 <span className="text-lg sm:text-xl font-mono font-[800] text-[#080808] dark:text-white mt-1.5 block tabular-nums">
                   {t.market.holders_val}
@@ -140,7 +140,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
               </div>
 
               {/* Venue */}
-              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+              <div className="bg-[#FCFCFC] dark:bg-[#121217] p-6 rounded-[22px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
                 <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider block">{t.market.dex_venue}</span>
                 <span className="text-lg sm:text-xl font-mono font-[800] text-[#080808] dark:text-white mt-1.5 block">
                   {marketData.dexName}
@@ -150,7 +150,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
 
             {/* Embedded Chart View */}
             {showChart && marketData.pairAddress && (
-              <div className="bg-[#FCFCFC] dark:bg-[#121217] rounded-[28px] border border-[#E5E5E5] dark:border-[#22222A] overflow-hidden h-[500px] shadow-[0_4px_24px_rgba(0,0,0,0.05)]">
+              <div className="bg-[#FCFCFC] dark:bg-[#121217] rounded-[28px] overflow-hidden h-[500px] shadow-[0_10px_35px_rgba(0,0,0,0.06)]">
                 <iframe
                   title="DexScreener Live Price Chart"
                   src={`https://dexscreener.com/solana/${marketData.pairAddress}?embed=1&theme=${isBlack ? 'dark' : 'light'}&trades=0&info=0`}
@@ -161,7 +161,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
           </div>
         ) : (
           /* TRUTHFUL ZERO-MOCK DATA STATE: Large Editorial Card */
-          <div className="bg-[#FCFCFC] dark:bg-[#121217] rounded-[32px] sm:rounded-[42px] border border-[#E5E5E5] dark:border-[#22222A] shadow-[0_4px_28px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_28px_rgba(0,0,0,0.4)] p-8 sm:p-14 text-center max-w-3xl mx-auto">
+          <div className="bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[42px] shadow-[0_12px_44px_rgba(0,0,0,0.04)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.45)] p-8 sm:p-14 text-center max-w-3xl mx-auto">
             <div className="flex justify-center mb-6">
               <Realistic3DIcon type="market" size="xl" />
             </div>
@@ -190,7 +190,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
 
               <button
                 onClick={() => setShowChart(!showChart)}
-                className="px-6 py-3.5 text-xs sm:text-sm font-semibold rounded-[16px] bg-white dark:bg-[#181820] hover:bg-[#F9F9F9] dark:hover:bg-[#22222A] text-[#222222] dark:text-white border border-[#D9D9D9] dark:border-[#333340] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3.5 text-xs sm:text-sm font-semibold rounded-[16px] bg-white dark:bg-[#181820] hover:bg-[#F9F9F9] dark:hover:bg-[#22222A] text-[#222222] dark:text-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all flex items-center gap-2 cursor-pointer"
               >
                 <BarChart3 className="w-4 h-4 text-[#B8661B] dark:text-[#F59E0B] stroke-[2]" />
                 <span>{t.market.btn_price_chart}</span>
@@ -198,7 +198,7 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
 
               <button
                 onClick={onOpenTradeModal}
-                className="px-6 py-3.5 text-xs sm:text-sm font-semibold rounded-[16px] bg-[#F5F5F5] dark:bg-[#181820] hover:bg-[#EAEAEA] dark:hover:bg-[#22222A] text-[#080808] dark:text-white border border-[#E5E5E5] dark:border-[#333340] transition-all flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3.5 text-xs sm:text-sm font-semibold rounded-[16px] bg-[#F5F5F5] dark:bg-[#181820] hover:bg-[#EAEAEA] dark:hover:bg-[#22222A] text-[#080808] dark:text-white transition-all flex items-center gap-2 cursor-pointer"
               >
                 <span>{t.market.btn_buy_trade}</span>
               </button>
