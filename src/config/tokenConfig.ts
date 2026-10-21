@@ -136,18 +136,26 @@ export const TOKEN_CONFIG: ProjectConfig = {
     {
       id: "fair-launch",
       category: "Fair Launch",
-      percentage: 70,
-      amount: 1470000,
+      percentage: 60,
+      amount: 1260000,
       description: "Direct community and public fair launch distribution on Solana with borderless access.",
-      color: "#D97706" // Warm amber/gold
+      color: "#F59E0B" // Warm solar amber/gold
     },
     {
       id: "liquidity-pool",
-      category: "Liquidity Pool",
+      category: "Liquidity",
       percentage: 30,
       amount: 630000,
       description: "Automated market maker (AMM) DEX liquidity pool deployment on Raydium.",
       color: "#22C55E" // Radiant light green
+    },
+    {
+      id: "staking-dev",
+      category: "Staking Rewards & Developer",
+      percentage: 10,
+      amount: 210000,
+      description: "On-chain staking reward incentives (11.61% APY) and core developer ecosystem fund.",
+      color: "#8B5CF6" // Electric violet/purple
     }
   ],
   roadmap: [
@@ -204,7 +212,7 @@ export const TOKEN_CONFIG: ProjectConfig = {
 export const validateTokenomicsIntegrity = (): boolean => {
   const sumPercentage = TOKEN_CONFIG.allocations.reduce((acc, a) => acc + a.percentage, 0);
   const sumAmount = TOKEN_CONFIG.allocations.reduce((acc, a) => acc + a.amount, 0);
-  return sumPercentage === 100 && (sumAmount === 1100000 || sumAmount === TOKEN_CONFIG.totalSupply);
+  return sumPercentage === 100 && sumAmount === TOKEN_CONFIG.totalSupply;
 };
 
 export const isRealGoogleDriveUrl = (url: string | null | undefined): boolean => {
@@ -273,6 +281,44 @@ export const getWhitepaperPdfUrl = (directDownload = false): string => {
   }
 
   return '/bitcoin-lite-edition-whitepaper.pdf';
+};
+
+/**
+ * Smoothly and reliably triggers the download of the official White Paper PDF.
+ * Uses an in-memory blob to guarantee the native browser file download dialog
+ * opens immediately on desktop and mobile without navigating away or failing in iframes.
+ */
+export const downloadWhitepaperPdf = async (
+  filename = 'bitcoin-lite-edition-whitepaper.pdf'
+): Promise<boolean> => {
+  const url = getWhitepaperPdfUrl(true);
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+    const blob = await res.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => window.URL.revokeObjectURL(blobUrl), 2000);
+    return true;
+  } catch {
+    // Robust fallback for cross-origin or constrained environments
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    return true;
+  }
 };
 
 

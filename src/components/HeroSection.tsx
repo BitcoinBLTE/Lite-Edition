@@ -70,12 +70,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <HeroCoin3D className="w-full h-full aspect-square" />
             </div>
 
-            {/* Supply label beneath coin */}
-            <div className="mt-3 sm:mt-4 flex flex-col items-center select-none text-center">
-              <span className="text-[11px] font-mono text-[#888888] dark:text-[#71717A]">
-                Fixed Supply: 2,100,000 BLTE minted on Solana Mainnet
-              </span>
-            </div>
           </div>
 
           {/* Item 3: Action Buttons (Explore, White Paper, Buy/Trade) */}

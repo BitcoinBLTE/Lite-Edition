@@ -15,7 +15,9 @@ import {
   ShieldCheck, 
   HelpCircle,
   Check,
-  PieChart
+  PieChart,
+  Download,
+  Wallet
 } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { LanguageDropdown } from './LanguageDropdown';
@@ -28,13 +30,15 @@ interface NavbarProps {
   onOpenWhitePaper: () => void;
   onOpenExplore: () => void;
   onOpenGame?: () => void;
+  onOpenWallet?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenTradeModal,
   onOpenWhitePaper,
   onOpenExplore,
-  onOpenGame
+  onOpenGame,
+  onOpenWallet
 }) => {
   const { t } = useLanguage();
   const { isBlack } = useTheme();
@@ -66,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     id: string;
     label: string;
     icon: React.ReactNode;
-    badge?: string;
+    badge?: React.ReactNode;
     action?: () => void;
     href?: string;
   }> = [
@@ -75,6 +79,20 @@ export const Navbar: React.FC<NavbarProps> = ({
       label: t.nav.explore || 'Explore',
       icon: <Compass className="w-5 h-5 shrink-0" />,
       action: () => onOpenExplore()
+    },
+    {
+      id: 'hamb-wallet',
+      label: t.nav.wallet || 'BLTE Wallet',
+      icon: <Download className="w-5 h-5 shrink-0" />,
+      badge: (
+        <span className="inline-flex items-center gap-1">
+          <Download className="w-[4.5px] h-[4.5px] stroke-[2] shrink-0" style={{ width: '4.5px', height: '4.5px' }} />
+          <span>{t.modals?.explore_modal?.coming_soon || 'Coming Soon'}</span>
+        </span>
+      ),
+      action: () => {
+        if (onOpenWallet) onOpenWallet();
+      }
     },
     {
       id: 'hamb-stake',

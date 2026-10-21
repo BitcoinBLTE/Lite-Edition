@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { RefreshCw, Activity, Coins, ArrowUpRight, Compass, ShieldCheck } from 'lucide-react';
+import { RefreshCw, Activity, Coins, ArrowUpRight, Compass, ShieldCheck, Wallet, Download } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { fetchLiveMarketData, fetchTokenHoldersCount, LiveMarketData } from '../services/marketDataService';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -7,14 +7,28 @@ import { useLanguage } from '../i18n/LanguageContext';
 interface ExploreSectionProps {
   onOpenExplore?: () => void;
   onOpenTradeModal?: () => void;
+  onOpenWallet?: () => void;
 }
 
 export const ExploreSection: React.FC<ExploreSectionProps> = ({
   onOpenExplore,
-  onOpenTradeModal
+  onOpenTradeModal,
+  onOpenWallet
 }) => {
-  const { t } = useLanguage();
+  const { currentLanguage, t } = useLanguage();
   const exp = t.modals?.explore_modal;
+
+  const walletCardLabels = {
+    title: t.nav?.wallet || 'BLTE Wallet',
+    badge: exp?.coming_soon?.toUpperCase() || 'COMING SOON',
+    type: currentLanguage === 'es' || currentLanguage === 'pt-PT' ? 'Tipo' : currentLanguage === 'fr' ? 'Type' : currentLanguage === 'de' ? 'Typ' : currentLanguage === 'ja' ? '種別' : currentLanguage?.startsWith('zh') ? '类型' : currentLanguage === 'th' ? 'ประเภท' : 'Type',
+    nonCustodial: currentLanguage === 'es' ? 'No custodial' : currentLanguage === 'pt-PT' ? 'Não Custodial' : currentLanguage === 'fr' ? 'Non-dépositaire' : currentLanguage === 'de' ? 'Non-Custodial' : currentLanguage === 'ja' ? '非カストディアル' : currentLanguage?.startsWith('zh') ? '自主非托管' : currentLanguage === 'no' ? 'Ikke-forvarende' : currentLanguage === 'th' ? 'ดูแลกุญแจด้วยตนเอง' : 'Non-Custodial',
+    network: currentLanguage === 'es' ? 'Red' : currentLanguage === 'pt-PT' ? 'Rede' : currentLanguage === 'fr' ? 'Réseau' : currentLanguage === 'de' ? 'Netzwerk' : currentLanguage === 'ja' ? 'ネットワーク' : currentLanguage?.startsWith('zh') ? '网络' : currentLanguage === 'no' ? 'Nettverk' : currentLanguage === 'th' ? 'เครือข่าย' : 'Network',
+    staking: currentLanguage === 'es' ? 'Staking nativo' : currentLanguage === 'pt-PT' ? 'Staking Nativo' : currentLanguage === 'fr' ? 'Staking natif' : currentLanguage === 'de' ? 'Natives Staking' : currentLanguage === 'ja' ? 'ネイティブステーキング' : currentLanguage?.startsWith('zh') ? '原生质押' : currentLanguage === 'no' ? 'Nativ Staking' : currentLanguage === 'th' ? 'สเตกกิ้งในตัว' : 'Native Staking',
+    platforms: currentLanguage === 'es' || currentLanguage === 'pt-PT' ? 'Plataformas' : currentLanguage === 'fr' ? 'Plateformes' : currentLanguage === 'de' ? 'Plattformen' : currentLanguage === 'ja' ? '対応端末' : currentLanguage?.startsWith('zh') ? '适配平台' : currentLanguage === 'no' ? 'Plattformer' : currentLanguage === 'th' ? 'แพลตฟอร์ม' : 'Platforms',
+    joinWaitlist: currentLanguage === 'es' ? 'Unirse a la lista' : currentLanguage === 'pt-PT' ? 'Lista de Espera' : currentLanguage === 'fr' ? 'Rejoindre la liste' : currentLanguage === 'de' ? 'Auf Warteliste' : currentLanguage === 'ja' ? 'ウェイティングリスト' : currentLanguage?.startsWith('zh') ? '加入候补名单' : currentLanguage === 'no' ? 'Bli med på ventelisten' : currentLanguage === 'th' ? 'เข้าร่วมรายชื่อรอ' : 'Join Waitlist',
+    beta: currentLanguage === 'ja' ? '先行ベータ' : currentLanguage?.startsWith('zh') ? '早期测试版' : currentLanguage === 'no' ? 'Tidlig Beta' : currentLanguage === 'th' ? 'เบต้าล่วงหน้า' : 'Early Beta'
+  };
 
   const [marketStats, setMarketStats] = useState({
     price: '$0.00',
@@ -141,8 +155,8 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
           </div>
         </div>
 
-        {/* 4 Protocol Metric Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        {/* 5 Protocol Metric Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-10">
           
           {/* Card 1: Market */}
           <div className="rounded-[28px] bg-white/95 dark:bg-[#13131A]/95 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300">
@@ -274,7 +288,68 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
             </div>
           </div>
 
-          {/* Card 4: Supply */}
+          {/* Card 4: BLTE Wallet (Placed above supply section) */}
+          <div 
+            onClick={() => {
+              if (onOpenWallet) onOpenWallet();
+            }}
+            className="rounded-[28px] bg-white/95 dark:bg-[#13131A]/95 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+          >
+            <div>
+              <div className="flex items-center justify-between pb-3 mb-4">
+                <div className="flex items-center gap-1.5">
+                  <Wallet className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] shrink-0" />
+                  <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] dark:text-[#EAB308] uppercase group-hover:text-[#964E10] dark:group-hover:text-[#FBBF24] transition-colors">
+                    {walletCardLabels.title} →
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-400 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                  <span>{walletCardLabels.badge}</span>
+                </span>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#52525B] dark:text-[#CBD5E1] font-medium">{walletCardLabels.type}</span>
+                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                    {walletCardLabels.nonCustodial}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#52525B] dark:text-[#CBD5E1] font-medium">{walletCardLabels.network}</span>
+                  <span className="text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                    Solana Mainnet
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#52525B] dark:text-[#CBD5E1] font-medium">{walletCardLabels.staking}</span>
+                  <span className="text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums">
+                    11.61% APY
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#52525B] dark:text-[#CBD5E1] font-medium">{walletCardLabels.platforms}</span>
+                  <span className="text-xs sm:text-sm font-mono font-bold text-[#080808] dark:text-white tabular-nums">
+                    iOS · Android · Web
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-5 pt-3 flex items-center justify-between text-[11px] font-mono">
+              <span className="text-[#64748B] dark:text-[#94A3B8]">{walletCardLabels.beta}</span>
+              <span className="text-[#B8661B] dark:text-[#EAB308] font-bold flex items-center gap-1 group-hover:underline">
+                <Download className="w-3.5 h-3.5" />
+                <span>{walletCardLabels.joinWaitlist}</span>
+              </span>
+            </div>
+          </div>
+
+          {/* Card 5: Supply */}
           <div className="rounded-[28px] bg-white/95 dark:bg-[#13131A]/95 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex flex-col justify-between hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300">
             <div>
               <div className="flex items-center justify-between pb-3 mb-4">

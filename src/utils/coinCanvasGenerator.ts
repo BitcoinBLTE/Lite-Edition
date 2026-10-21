@@ -3,326 +3,234 @@
  * Ensures 100% pixel-perfect visual parity between the 3D rotating coin and the stable coin display.
  */
 
-export function drawCoinFront(ctx: CanvasRenderingContext2D, size: number = 2048): void {
-  const scale = size / 2048;
-  const c = size / 2;
-  const outerR = 980 * scale;
-  const innerR = 770 * scale;
+export function drawCoinFront(e: CanvasRenderingContext2D, t: number = 2048): void {
+  const n = t / 2048;
+  const r = t / 2;
+  const i = 980 * n;
+  const a = 770 * n;
 
-  ctx.clearRect(0, 0, size, size);
+  e.clearRect(0, 0, t, t);
 
-  // --- Outer Milled Gold Edge Ring ---
-  const goldGrad = ctx.createRadialGradient(
-    c - 160 * scale,
-    c - 240 * scale,
-    100 * scale,
-    c,
-    c,
-    outerR
-  );
-  goldGrad.addColorStop(0, '#FFFBEB');
-  goldGrad.addColorStop(0.2, '#FDE047');
-  goldGrad.addColorStop(0.5, '#F59E0B');
-  goldGrad.addColorStop(0.8, '#D97706');
-  goldGrad.addColorStop(1, '#78350F');
+  const o = e.createRadialGradient(r - 160 * n, r - 240 * n, 100 * n, r, r, i);
+  o.addColorStop(0, '#FFFBEB');
+  o.addColorStop(0.2, '#FDE047');
+  o.addColorStop(0.5, '#F59E0B');
+  o.addColorStop(0.8, '#D97706');
+  o.addColorStop(1, '#78350F');
 
-  ctx.fillStyle = goldGrad;
-  ctx.beginPath();
-  ctx.arc(c, c, outerR, 0, Math.PI * 2);
-  ctx.fill();
+  e.fillStyle = o;
+  e.beginPath();
+  e.arc(r, r, i, 0, Math.PI * 2);
+  e.fill();
 
-  // Outer reeded fine tick ridges around rim (180 milled notches)
-  ctx.strokeStyle = '#78350F';
-  ctx.lineWidth = Math.max(1.5, 4 * scale);
-  for (let i = 0; i < 180; i++) {
-    const angle = (i * Math.PI * 2) / 180;
-    const x1 = c + Math.cos(angle) * (outerR - 26 * scale);
-    const y1 = c + Math.sin(angle) * (outerR - 26 * scale);
-    const x2 = c + Math.cos(angle) * outerR;
-    const y2 = c + Math.sin(angle) * outerR;
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
+  e.strokeStyle = '#78350F';
+  e.lineWidth = Math.max(1.5, 4 * n);
+  for (let t = 0; t < 180; t++) {
+    const a = (t * Math.PI * 2) / 180;
+    const o = r + Math.cos(a) * (i - 26 * n);
+    const s = r + Math.sin(a) * (i - 26 * n);
+    const c = r + Math.cos(a) * i;
+    const l = r + Math.sin(a) * i;
+    e.beginPath();
+    e.moveTo(o, s);
+    e.lineTo(c, l);
+    e.stroke();
   }
 
-  // Beveled Gold Outer Rings
-  ctx.strokeStyle = '#FEF3C7';
-  ctx.lineWidth = Math.max(2, 14 * scale);
-  ctx.beginPath();
-  ctx.arc(c, c, outerR - 35 * scale, 0, Math.PI * 2);
-  ctx.stroke();
+  e.strokeStyle = '#FEF3C7';
+  e.lineWidth = Math.max(2, 14 * n);
+  e.beginPath();
+  e.arc(r, r, i - 35 * n, 0, Math.PI * 2);
+  e.stroke();
 
-  ctx.strokeStyle = '#92400E';
-  ctx.lineWidth = Math.max(1.5, 10 * scale);
-  ctx.beginPath();
-  ctx.arc(c, c, outerR - 45 * scale, 0, Math.PI * 2);
-  ctx.stroke();
+  e.strokeStyle = '#92400E';
+  e.lineWidth = Math.max(1.5, 10 * n);
+  e.beginPath();
+  e.arc(r, r, i - 45 * n, 0, Math.PI * 2);
+  e.stroke();
 
-  // --- Dark Inner Circular Surface ---
-  const darkGrad = ctx.createRadialGradient(
-    c,
-    c - 120 * scale,
-    80 * scale,
-    c,
-    c,
-    innerR
-  );
-  darkGrad.addColorStop(0, '#1c1c20');
-  darkGrad.addColorStop(0.45, '#121215');
-  darkGrad.addColorStop(1, '#09090b');
+  const s = e.createRadialGradient(r, r - 120 * n, 80 * n, r, r, a);
+  s.addColorStop(0, '#1c1c20');
+  s.addColorStop(0.45, '#121215');
+  s.addColorStop(1, '#09090b');
 
-  ctx.fillStyle = darkGrad;
-  ctx.beginPath();
-  ctx.arc(c, c, innerR, 0, Math.PI * 2);
-  ctx.fill();
+  e.fillStyle = s;
+  e.beginPath();
+  e.arc(r, r, a, 0, Math.PI * 2);
+  e.fill();
 
-  // Inner gold bevel ring
-  const innerBevel = ctx.createLinearGradient(0, c - innerR, 0, c + innerR);
-  innerBevel.addColorStop(0, '#FDE68A');
-  innerBevel.addColorStop(0.5, '#D97706');
-  innerBevel.addColorStop(1, '#78350F');
-  ctx.strokeStyle = innerBevel;
-  ctx.lineWidth = Math.max(2, 16 * scale);
-  ctx.beginPath();
-  ctx.arc(c, c, innerR - 8 * scale, 0, Math.PI * 2);
-  ctx.stroke();
+  const c = e.createLinearGradient(0, r - a, 0, r + a);
+  c.addColorStop(0, '#FDE68A');
+  c.addColorStop(0.5, '#D97706');
+  c.addColorStop(1, '#78350F');
 
-  // Concentric minted micro-grooves
-  ctx.lineWidth = Math.max(0.5, 1 * scale);
-  for (let r = 240 * scale; r < innerR - 20 * scale; r += 24 * scale) {
-    ctx.strokeStyle = 'rgba(245, 158, 11, 0.04)';
-    ctx.beginPath();
-    ctx.arc(c, c, r, 0, Math.PI * 2);
-    ctx.stroke();
+  e.strokeStyle = c;
+  e.lineWidth = Math.max(2, 16 * n);
+  e.beginPath();
+  e.arc(r, r, a - 8 * n, 0, Math.PI * 2);
+  e.stroke();
+
+  e.lineWidth = Math.max(0.5, 1 * n);
+  for (let t = 240 * n; t < a - 20 * n; t += 24 * n) {
+    e.strokeStyle = 'rgba(245, 158, 11, 0.04)';
+    e.beginPath();
+    e.arc(r, r, t, 0, Math.PI * 2);
+    e.stroke();
   }
 
-  // --- Central Bitcoin ₿ Emblem ---
-  const symCx = c;
-  const symCy = c - 40 * scale;
+  const l = r;
+  const u = r - 40 * n;
+  const d = e.createLinearGradient(l - 200 * n, u - 350 * n, l + 200 * n, u + 350 * n);
+  d.addColorStop(0, '#FFFDF0');
+  d.addColorStop(0.2, '#FDE047');
+  d.addColorStop(0.5, '#F59E0B');
+  d.addColorStop(0.8, '#D97706');
+  d.addColorStop(1, '#92400E');
 
-  const symbolGrad = ctx.createLinearGradient(
-    symCx - 200 * scale,
-    symCy - 350 * scale,
-    symCx + 200 * scale,
-    symCy + 350 * scale
-  );
-  symbolGrad.addColorStop(0, '#FFFDF0');
-  symbolGrad.addColorStop(0.2, '#FDE047');
-  symbolGrad.addColorStop(0.5, '#F59E0B');
-  symbolGrad.addColorStop(0.8, '#D97706');
-  symbolGrad.addColorStop(1, '#92400E');
+  e.save();
+  e.shadowColor = 'rgba(0, 0, 0, 0.9)';
+  e.shadowBlur = 45 * n;
+  e.shadowOffsetY = 28 * n;
+  e.fillStyle = d;
 
-  ctx.save();
-  // Drop shadow for 3D minted relief
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-  ctx.shadowBlur = 45 * scale;
-  ctx.shadowOffsetY = 28 * scale;
+  const f = 42 * n;
+  const p = 85 * n;
+  e.fillRect(l - 55 * n, u - 370 * n, f, p);
+  e.fillRect(l + 45 * n, u - 370 * n, f, p);
+  e.fillRect(l - 55 * n, u + 290 * n, f, p);
+  e.fillRect(l + 45 * n, u + 290 * n, f, p);
+  e.fillRect(l - 170 * n, u - 300 * n, 110 * n, 600 * n);
 
-  // 1. Vector structural spine and ticks
-  ctx.fillStyle = symbolGrad;
-  const tickW = 42 * scale;
-  const tickH = 85 * scale;
-  // Top ticks
-  ctx.fillRect(symCx - 55 * scale, symCy - 370 * scale, tickW, tickH);
-  ctx.fillRect(symCx + 45 * scale, symCy - 370 * scale, tickW, tickH);
-  // Bottom ticks
-  ctx.fillRect(symCx - 55 * scale, symCy + 290 * scale, tickW, tickH);
-  ctx.fillRect(symCx + 45 * scale, symCy + 290 * scale, tickW, tickH);
-  // Main vertical spine
-  ctx.fillRect(symCx - 170 * scale, symCy - 300 * scale, 110 * scale, 600 * scale);
+  e.beginPath();
+  e.moveTo(l - 70 * n, u - 300 * n);
+  e.lineTo(l + 70 * n, u - 300 * n);
+  e.bezierCurveTo(l + 210 * n, u - 300 * n, l + 210 * n, u - 20 * n, l + 70 * n, u - 20 * n);
+  e.lineTo(l - 70 * n, u - 20 * n);
+  e.closePath();
+  e.fill();
 
-  // Upper lobe
-  ctx.beginPath();
-  ctx.moveTo(symCx - 70 * scale, symCy - 300 * scale);
-  ctx.lineTo(symCx + 70 * scale, symCy - 300 * scale);
-  ctx.bezierCurveTo(
-    symCx + 210 * scale,
-    symCy - 300 * scale,
-    symCx + 210 * scale,
-    symCy - 20 * scale,
-    symCx + 70 * scale,
-    symCy - 20 * scale
-  );
-  ctx.lineTo(symCx - 70 * scale, symCy - 20 * scale);
-  ctx.closePath();
-  ctx.fill();
+  e.beginPath();
+  e.moveTo(l - 70 * n, u - 20 * n);
+  e.lineTo(l + 95 * n, u - 20 * n);
+  e.bezierCurveTo(l + 250 * n, u - 20 * n, l + 250 * n, u + 300 * n, l + 95 * n, u + 300 * n);
+  e.lineTo(l - 70 * n, u + 300 * n);
+  e.closePath();
+  e.fill();
 
-  // Lower lobe (slightly wider)
-  ctx.beginPath();
-  ctx.moveTo(symCx - 70 * scale, symCy - 20 * scale);
-  ctx.lineTo(symCx + 95 * scale, symCy - 20 * scale);
-  ctx.bezierCurveTo(
-    symCx + 250 * scale,
-    symCy - 20 * scale,
-    symCx + 250 * scale,
-    symCy + 300 * scale,
-    symCx + 95 * scale,
-    symCy + 300 * scale
-  );
-  ctx.lineTo(symCx - 70 * scale, symCy + 300 * scale);
-  ctx.closePath();
-  ctx.fill();
+  e.fillStyle = '#121215';
+  e.beginPath();
+  e.moveTo(l - 60 * n, u - 215 * n);
+  e.lineTo(l + 55 * n, u - 215 * n);
+  e.bezierCurveTo(l + 125 * n, u - 215 * n, l + 125 * n, u - 105 * n, l + 55 * n, u - 105 * n);
+  e.lineTo(l - 60 * n, u - 105 * n);
+  e.closePath();
+  e.fill();
 
-  // Dark cutouts
-  ctx.fillStyle = '#121215';
-  // Upper cutout
-  ctx.beginPath();
-  ctx.moveTo(symCx - 60 * scale, symCy - 215 * scale);
-  ctx.lineTo(symCx + 55 * scale, symCy - 215 * scale);
-  ctx.bezierCurveTo(
-    symCx + 125 * scale,
-    symCy - 215 * scale,
-    symCx + 125 * scale,
-    symCy - 105 * scale,
-    symCx + 55 * scale,
-    symCy - 105 * scale
-  );
-  ctx.lineTo(symCx - 60 * scale, symCy - 105 * scale);
-  ctx.closePath();
-  ctx.fill();
+  e.beginPath();
+  e.moveTo(l - 60 * n, u + 75 * n);
+  e.lineTo(l + 75 * n, u + 75 * n);
+  e.bezierCurveTo(l + 155 * n, u + 75 * n, l + 155 * n, u + 205 * n, l + 75 * n, u + 205 * n);
+  e.lineTo(l - 60 * n, u + 205 * n);
+  e.closePath();
+  e.fill();
 
-  // Lower cutout
-  ctx.beginPath();
-  ctx.moveTo(symCx - 60 * scale, symCy + 75 * scale);
-  ctx.lineTo(symCx + 75 * scale, symCy + 75 * scale);
-  ctx.bezierCurveTo(
-    symCx + 155 * scale,
-    symCy + 75 * scale,
-    symCx + 155 * scale,
-    symCy + 205 * scale,
-    symCx + 75 * scale,
-    symCy + 205 * scale
-  );
-  ctx.lineTo(symCx - 60 * scale, symCy + 205 * scale);
-  ctx.closePath();
-  ctx.fill();
+  e.fillStyle = d;
+  e.textAlign = 'center';
+  e.textBaseline = 'middle';
+  e.font = `bold ${Math.round(800 * n)}px "Inter", "Cinzel", "Arial", "Segoe UI Symbol", sans-serif`;
+  e.fillText('₿', l, u);
+  e.restore();
 
-  // High-precision font overlay
-  ctx.fillStyle = symbolGrad;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.font = `bold ${Math.round(800 * scale)}px "Inter", "Cinzel", "Arial", "Segoe UI Symbol", sans-serif`;
-  ctx.fillText('₿', symCx, symCy);
-  ctx.restore();
+  e.strokeStyle = '#FEF9C3';
+  e.lineWidth = Math.max(1.5, 8 * n);
+  e.font = `bold ${Math.round(800 * n)}px "Inter", "Cinzel", "Arial", "Segoe UI Symbol", sans-serif`;
+  e.textAlign = 'center';
+  e.textBaseline = 'middle';
+  e.strokeText('₿', l - 3 * n, u - 3 * n);
 
-  // Embossed Bevel Highlight Stroke
-  ctx.strokeStyle = '#FEF9C3';
-  ctx.lineWidth = Math.max(1.5, 8 * scale);
-  ctx.font = `bold ${Math.round(800 * scale)}px "Inter", "Cinzel", "Arial", "Segoe UI Symbol", sans-serif`;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.strokeText('₿', symCx - 3 * scale, symCy - 3 * scale);
+  e.strokeStyle = '#78350F';
+  e.lineWidth = Math.max(2, 10 * n);
+  e.strokeText('₿', l + 3 * n, u + 3 * n);
 
-  ctx.strokeStyle = '#78350F';
-  ctx.lineWidth = Math.max(2, 10 * scale);
-  ctx.strokeText('₿', symCx + 3 * scale, symCy + 3 * scale);
+  const m = 880 * n;
+  const h = -Math.PI * 0.58;
+  const g = (-Math.PI * 0.42 - h) / 4;
 
-  // --- Top Curved Text: "$BLTE" ---
-  const topSymbolText = '$BLTE';
-  const topSymbolRadius = 880 * scale;
-  const topCharCount = topSymbolText.length;
-  const topSymbolStartAngle = -Math.PI * 0.58;
-  const topSymbolEndAngle = -Math.PI * 0.42;
-  const topSymbolAngleStep = (topSymbolEndAngle - topSymbolStartAngle) / (topCharCount - 1);
+  e.save();
+  e.font = `900 ${Math.round(110 * n)}px "Outfit", "Inter", "Arial Black", sans-serif`;
+  e.textAlign = 'center';
+  e.textBaseline = 'middle';
+  for (let t = 0; t < 5; t++) {
+    const i = '$BLTE'[t];
+    const a = h + t * g;
+    const o = r + Math.cos(a) * m;
+    const s = r + Math.sin(a) * m;
+    e.save();
+    e.translate(o, s);
+    e.rotate(a + Math.PI / 2);
+    e.shadowColor = 'rgba(0, 0, 0, 0.95)';
+    e.shadowBlur = 14 * n;
+    e.shadowOffsetY = 6 * n;
+    e.strokeStyle = '#180B02';
+    e.lineWidth = Math.max(2, 10 * n);
+    e.lineJoin = 'round';
+    e.strokeText(i, 0, 0);
 
-  ctx.save();
-  ctx.font = `900 ${Math.round(110 * scale)}px "Outfit", "Inter", "Arial Black", sans-serif`;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
+    const c = e.createLinearGradient(0, -55 * n, 0, 55 * n);
+    c.addColorStop(0, '#FFFFFF');
+    c.addColorStop(0.25, '#FEF9C3');
+    c.addColorStop(0.65, '#FDE047');
+    c.addColorStop(1, '#D97706');
+    e.fillStyle = c;
+    e.fillText(i, 0, 0);
 
-  for (let i = 0; i < topCharCount; i++) {
-    const char = topSymbolText[i];
-    const angle = topSymbolStartAngle + i * topSymbolAngleStep;
-    const x = c + Math.cos(angle) * topSymbolRadius;
-    const y = c + Math.sin(angle) * topSymbolRadius;
-
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(angle + Math.PI / 2);
-
-    // Deep drop shadow
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
-    ctx.shadowBlur = 14 * scale;
-    ctx.shadowOffsetY = 6 * scale;
-
-    // Dark defining bevel stroke
-    ctx.strokeStyle = '#180B02';
-    ctx.lineWidth = Math.max(2, 10 * scale);
-    ctx.lineJoin = 'round';
-    ctx.strokeText(char, 0, 0);
-
-    // Bright luminous gold-to-white gradient
-    const charGrad = ctx.createLinearGradient(0, -55 * scale, 0, 55 * scale);
-    charGrad.addColorStop(0, '#FFFFFF');
-    charGrad.addColorStop(0.25, '#FEF9C3');
-    charGrad.addColorStop(0.65, '#FDE047');
-    charGrad.addColorStop(1, '#D97706');
-    ctx.fillStyle = charGrad;
-    ctx.fillText(char, 0, 0);
-
-    // Crisp inner highlight stroke
-    ctx.shadowColor = 'transparent';
-    ctx.strokeStyle = '#FFFBEB';
-    ctx.lineWidth = Math.max(1, 2.5 * scale);
-    ctx.strokeText(char, 0, -1 * scale);
-
-    ctx.restore();
+    e.shadowColor = 'transparent';
+    e.strokeStyle = '#FFFBEB';
+    e.lineWidth = Math.max(1, 2.5 * n);
+    e.strokeText(i, 0, -1 * n);
+    e.restore();
   }
-  ctx.restore();
+  e.restore();
 
-  // --- Bottom Curved Text: "BITCOIN LITE EDITION" ---
-  const bottomText = 'BITCOIN LITE EDITION';
-  const textRadius = 880 * scale;
-  const charCount = bottomText.length;
-  const startAngle = Math.PI * 0.81;
-  const endAngle = Math.PI * 0.19;
-  const angleStep = (startAngle - endAngle) / (charCount - 1);
+  const _ = 880 * n;
+  const v = Math.PI * 0.81;
+  const y = (v - Math.PI * 0.19) / 19;
 
-  ctx.save();
-  ctx.font = `900 ${Math.round(92 * scale)}px "Inter", "Arial Black", "Cinzel", sans-serif`;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
+  e.save();
+  e.font = `900 ${Math.round(92 * n)}px "Inter", "Arial Black", "Cinzel", sans-serif`;
+  e.textAlign = 'center';
+  e.textBaseline = 'middle';
+  for (let t = 0; t < 20; t++) {
+    const i = 'BITCOIN LITE EDITION'[t];
+    const a = v - t * y;
+    const o = r + Math.cos(a) * _;
+    const s = r + Math.sin(a) * _;
+    e.save();
+    e.translate(o, s);
+    e.rotate(a - Math.PI / 2);
+    e.shadowColor = 'rgba(0, 0, 0, 0.95)';
+    e.shadowBlur = 12 * n;
+    e.shadowOffsetY = 6 * n;
+    e.strokeStyle = '#180B02';
+    e.lineWidth = Math.max(2, 10 * n);
+    e.lineJoin = 'round';
+    e.strokeText(i, 0, 0);
 
-  for (let i = 0; i < charCount; i++) {
-    const char = bottomText[i];
-    const angle = startAngle - i * angleStep;
-    const x = c + Math.cos(angle) * textRadius;
-    const y = c + Math.sin(angle) * textRadius;
+    const c = e.createLinearGradient(0, -46 * n, 0, 46 * n);
+    c.addColorStop(0, '#FFFFFF');
+    c.addColorStop(0.25, '#FEF9C3');
+    c.addColorStop(0.65, '#FDE047');
+    c.addColorStop(1, '#D97706');
+    e.fillStyle = c;
+    e.fillText(i, 0, 0);
 
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(angle - Math.PI / 2);
-
-    // Heavy dark under-shadow
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
-    ctx.shadowBlur = 12 * scale;
-    ctx.shadowOffsetY = 6 * scale;
-
-    // Dark defining bevel stroke
-    ctx.strokeStyle = '#180B02';
-    ctx.lineWidth = Math.max(2, 10 * scale);
-    ctx.lineJoin = 'round';
-    ctx.strokeText(char, 0, 0);
-
-    // Bright luminous gold-to-white gradient
-    const charGrad = ctx.createLinearGradient(0, -46 * scale, 0, 46 * scale);
-    charGrad.addColorStop(0, '#FFFFFF');
-    charGrad.addColorStop(0.25, '#FEF9C3');
-    charGrad.addColorStop(0.65, '#FDE047');
-    charGrad.addColorStop(1, '#D97706');
-    ctx.fillStyle = charGrad;
-    ctx.fillText(char, 0, 0);
-
-    // Crisp inner highlight stroke
-    ctx.shadowColor = 'transparent';
-    ctx.strokeStyle = '#FFFBEB';
-    ctx.lineWidth = Math.max(1, 2.5 * scale);
-    ctx.strokeText(char, 0, -1 * scale);
-
-    ctx.restore();
+    e.shadowColor = 'transparent';
+    e.strokeStyle = '#FFFBEB';
+    e.lineWidth = Math.max(1, 2.5 * n);
+    e.strokeText(i, 0, -1 * n);
+    e.restore();
   }
-  ctx.restore();
+  e.restore();
 }
 
 let cachedFrontCanvas: HTMLCanvasElement | null = null;
@@ -348,7 +256,6 @@ export function getCoinFrontCanvas(size: number = 2048): HTMLCanvasElement {
 export function getCoinFrontDataUrl(size: number = 1024): string {
   if (cachedDataUrl) return cachedDataUrl;
   if (typeof document === 'undefined') return '';
-  const canvas = getCoinFrontCanvas(size);
-  cachedDataUrl = canvas.toDataURL('image/png');
+  cachedDataUrl = getCoinFrontCanvas(size).toDataURL('image/png');
   return cachedDataUrl;
 }

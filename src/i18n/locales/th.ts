@@ -35,6 +35,7 @@ export const th: TranslationSchema = {
     explore: 'สำรวจ',
     stake_blte: 'สเตกกิ้ง BLTE',
     game: 'เกม',
+    wallet: 'กระเป๋าเงิน BLTE',
   },
   hero: {
     independent_asset: 'สินทรัพย์ดิจิทัลอิสระบน Solana',
@@ -812,7 +813,7 @@ export const th: TranslationSchema = {
           num: '7',
           title: 'Tokenomics และการจัดสรรทางคณิตศาสตร์',
           content: [
-            "การจัดสรรทางคณิตศาสตร์อย่างเข้มงวด (70% Fair Launch · 30% Liquidity Pool):\n• การเปิดตัวอย่างเป็นธรรม (Fair Launch): 70% (1,470,000 BLTE)\n• พูลสภาพคล่อง (Liquidity Pool): 30% (630,000 BLTE)",
+            "การจัดสรรทางคณิตศาสตร์อย่างเข้มงวดสามส่วน (60% Fair Launch · 30% สภาพคล่อง · 10% รางวัลการสเตกและนักพัฒนา):\n• การเปิดตัวอย่างเป็นธรรม (Fair Launch): 60% (1,260,000 BLTE)\n• สภาพคล่อง (Liquidity): 30% (630,000 BLTE)\n• รางวัลการสเตกและนักพัฒนา (Staking Rewards & Developer): 10% (210,000 BLTE)",
           ],
         },
         {

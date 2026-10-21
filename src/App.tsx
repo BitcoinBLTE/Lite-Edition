@@ -22,6 +22,7 @@ import { WhitePaperModal } from './components/WhitePaperModal';
 import { BitcoinEducationModal } from './components/BitcoinEducationModal';
 import { ExploreModal } from './components/ExploreModal';
 import { GameModal } from './components/GameModal';
+import { BlteWalletModal } from './components/BlteWalletModal';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { ThemeProvider } from './theme/ThemeContext';
 import { ThemeToggle } from './components/ThemeToggle';
@@ -34,6 +35,7 @@ export default function App() {
   const [educationModalOpen, setEducationModalOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
   const [gameModalOpen, setGameModalOpen] = useState(false);
+  const [walletModalOpen, setWalletModalOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'terms' | 'privacy' | null>(null);
 
   // Listen for hash URLs for direct navigation
@@ -48,6 +50,8 @@ export default function App() {
         setExploreOpen(true);
       } else if (hash === '#game') {
         setGameModalOpen(true);
+      } else if (hash === '#wallet' || hash === '#blte-wallet') {
+        setWalletModalOpen(true);
       }
     };
     handleHash();
@@ -76,6 +80,7 @@ export default function App() {
             onOpenWhitePaper={() => setWhitePaperOpen(true)}
             onOpenExplore={() => setExploreOpen(true)}
             onOpenGame={() => setGameModalOpen(true)}
+            onOpenWallet={() => setWalletModalOpen(true)}
           />
 
           {/* Main Content Sections - All Preserved & Enhanced */}
@@ -115,6 +120,7 @@ export default function App() {
           <ExploreSection
             onOpenExplore={() => setExploreOpen(true)}
             onOpenTradeModal={() => setTradeModalOpen(true)}
+            onOpenWallet={() => setWalletModalOpen(true)}
           />
 
           {/* 7-Step Acquisition Guide & Security Advisory */}
@@ -177,6 +183,10 @@ export default function App() {
           isOpen={exploreOpen}
           onClose={() => setExploreOpen(false)}
           onOpenTradeModal={() => setTradeModalOpen(true)}
+          onOpenWallet={() => {
+            setExploreOpen(false);
+            setWalletModalOpen(true);
+          }}
         />
 
         <GameModal
@@ -186,6 +196,12 @@ export default function App() {
             setGameModalOpen(false);
             setExploreOpen(true);
           }}
+        />
+
+        <BlteWalletModal
+          isOpen={walletModalOpen}
+          onClose={() => setWalletModalOpen(false)}
+          onOpenWhitePaper={() => setWhitePaperOpen(true)}
         />
 
         {/* Tiny clickable theme toggle icon at the bottom */}

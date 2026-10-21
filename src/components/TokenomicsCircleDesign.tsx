@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Coins, CheckCircle2, PieChart } from 'lucide-react';
+import { Coins, CheckCircle2 } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -8,6 +8,8 @@ interface TokenomicsCircleDesignProps {
   showTitle?: boolean;
 }
 
+type AllocationId = 'fair-launch' | 'liquidity-pool' | 'staking-dev';
+
 export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
   className = '',
   showTitle = true,
@@ -15,44 +17,59 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
   const { t } = useLanguage();
   const tok = t.tokenomics;
 
-  // Selected slice state for interactive exploration: 'fair-launch' | 'liquidity-pool' | null
-  const [selectedId, setSelectedId] = useState<'fair-launch' | 'liquidity-pool' | null>(null);
+  // Selected slice state for interactive exploration: 'fair-launch' | 'liquidity-pool' | 'staking-dev' | null
+  const [selectedId, setSelectedId] = useState<AllocationId | null>(null);
 
-  // Distinct High-Contrast Colors:
-  // Side 1 (Fair Launch): Radiant Sun Gold / Amber (#F59E0B)
-  // Side 2 (Liquidity Pool): Radiant Light Green / Mint (#22C55E)
+  // Exactly Three Distinct Sections as specified:
+  // Section 1: 1,260,000 Fair Launch (60%)
+  // Section 2: 630,000 Liquidity (30%)
+  // Section 3: 210,000 Staking Rewards & Developer (10%)
   const allocations = [
     {
       id: 'fair-launch' as const,
-      title: tok.allocations?.[0]?.category || 'Fair Launch',
-      amount: '1,470,000 BLTE',
-      desc: '',
-      tag: 'COMMUNITY LAUNCH',
+      title: 'Fair Launch',
+      amount: '1,260,000 BLTE',
+      percentage: '60%',
+      tag: 'COMMUNITY FAIR LAUNCH · 60%',
       color: '#F59E0B',
       lightColor: '#FCD34D',
       darkColor: '#D97706',
       gradientId: 'fairLaunchGradient',
       glowColor: 'rgba(245, 158, 11, 0.45)',
-      activeBorder: 'bg-[#F59E0B]/10 dark:bg-[#F59E0B]/15 shadow-[0_10px_32px_rgba(245,158,11,0.22)]',
+      activeBorder: 'bg-[#F59E0B]/10 dark:bg-[#F59E0B]/15 shadow-[0_10px_32px_rgba(245,158,11,0.22)] ring-2 ring-[#F59E0B]/40',
       badgeBg: 'bg-[#F59E0B]/15 text-[#D97706] dark:text-[#FBBF24]',
     },
     {
       id: 'liquidity-pool' as const,
-      title: tok.allocations?.[1]?.category || 'Liquidity Pool',
+      title: 'Liquidity',
       amount: '630,000 BLTE',
-      desc: '',
-      tag: 'RAYDIUM AMM DEX',
+      percentage: '30%',
+      tag: 'RAYDIUM AMM DEX POOL · 30%',
       color: '#22C55E',
       lightColor: '#86EFAC',
       darkColor: '#16A34A',
       gradientId: 'liquidityGradient',
       glowColor: 'rgba(34, 197, 94, 0.45)',
-      activeBorder: 'bg-[#22C55E]/10 dark:bg-[#22C55E]/15 shadow-[0_10px_32px_rgba(34,197,94,0.22)]',
+      activeBorder: 'bg-[#22C55E]/10 dark:bg-[#22C55E]/15 shadow-[0_10px_32px_rgba(34,197,94,0.22)] ring-2 ring-[#22C55E]/40',
       badgeBg: 'bg-[#22C55E]/15 text-[#16A34A] dark:text-[#4ADE80]',
+    },
+    {
+      id: 'staking-dev' as const,
+      title: 'Staking Rewards & Developer',
+      amount: '210,000 BLTE',
+      percentage: '10%',
+      tag: 'STAKING APY & CORE DEV · 10%',
+      color: '#8B5CF6',
+      lightColor: '#C4B5FD',
+      darkColor: '#7C3AED',
+      gradientId: 'stakingDevGradient',
+      glowColor: 'rgba(139, 92, 246, 0.45)',
+      activeBorder: 'bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/15 shadow-[0_10px_32px_rgba(139,92,246,0.22)] ring-2 ring-[#8B5CF6]/40',
+      badgeBg: 'bg-[#8B5CF6]/15 text-[#7C3AED] dark:text-[#A78BFA]',
     },
   ];
 
-  // SVG Donut Calculations (Larger geometry)
+  // SVG Donut Calculations for 3 sections
   // ViewBox: 320 x 320, Center: 160, 160
   // Radius: 114, Base Stroke: 44, Active Stroke: 56
   // Circumference = 2 * PI * 114 = 716.283
@@ -63,18 +80,28 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
   
   // Separation gap between segments for architectural precision
   const gap = 8;
-  const fairLaunchLength = (70 / 100) * circumference; // 501.40
-  const fairLaunchDash = fairLaunchLength - gap; // 493.40
-  const fairLaunchGap = circumference - fairLaunchDash;
 
-  const liquidityLength = (30 / 100) * circumference; // 214.88
-  const liquidityDash = liquidityLength - gap; // 206.88
+  // Segment 1: Fair Launch (60%)
+  const fairLaunchLength = (60 / 100) * circumference;
+  const fairLaunchDash = fairLaunchLength - gap;
+  const fairLaunchGap = circumference - fairLaunchDash;
+  const fairLaunchOffset = 0;
+
+  // Segment 2: Liquidity (30%)
+  const liquidityLength = (30 / 100) * circumference;
+  const liquidityDash = liquidityLength - gap;
   const liquidityGap = circumference - liquidityDash;
   const liquidityOffset = -fairLaunchLength;
 
+  // Segment 3: Staking Rewards & Developer (10%)
+  const stakingDevLength = (10 / 100) * circumference;
+  const stakingDevDash = stakingDevLength - gap;
+  const stakingDevGap = circumference - stakingDevDash;
+  const stakingDevOffset = -(fairLaunchLength + liquidityLength);
+
   const selectedItem = allocations.find((a) => a.id === selectedId);
 
-  const toggleSelect = (id: 'fair-launch' | 'liquidity-pool') => {
+  const toggleSelect = (id: AllocationId) => {
     setSelectedId((prev) => (prev === id ? null : id));
   };
 
@@ -94,54 +121,16 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
         </div>
       )}
 
-      {/* Interactive Quick-Selection Control Pill Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 bg-white dark:bg-[#181820] p-2 sm:p-2.5 rounded-[18px] sm:rounded-[20px] shadow-xs">
+      {/* Circulatory Indicator Badge */}
+      <div className="flex items-center justify-between">
         <button
           type="button"
           onClick={() => setSelectedId(null)}
-          className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[11px] sm:text-xs font-mono font-bold shadow-2xs hover:bg-emerald-500/20 transition-colors cursor-pointer"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[11px] sm:text-xs font-mono font-bold shadow-2xs hover:bg-emerald-500/20 transition-colors cursor-pointer"
         >
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-          <span>100% circulatory</span>
+          <span>100% Circulatory</span>
         </button>
-
-        <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-          <button
-            onClick={() => setSelectedId(null)}
-            className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
-              selectedId === null
-                ? 'bg-[#111111] text-white dark:bg-[#252532] dark:text-white shadow-xs'
-                : 'text-[#555555] dark:text-[#D4D4D8] hover:bg-[#FAF8F5] dark:hover:bg-[#202028] dark:hover:text-white'
-            }`}
-          >
-            <PieChart className={`w-3.5 h-3.5 shrink-0 ${selectedId === null ? 'text-amber-400 dark:text-amber-300' : 'text-[#888888] dark:text-[#D4D4D8]'}`} />
-            <span>Overview (2.1M)</span>
-          </button>
-
-          <button
-            onClick={() => toggleSelect('fair-launch')}
-            className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
-              selectedId === 'fair-launch'
-                ? 'bg-[#F59E0B] text-white shadow-[0_2px_12px_rgba(245,158,11,0.4)] ring-2 ring-[#F59E0B]/40'
-                : 'text-[#B8661B] dark:text-[#FBBF24] bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20'
-            }`}
-          >
-            <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
-            <span>Fair Launch · 1.47M</span>
-          </button>
-
-          <button
-            onClick={() => toggleSelect('liquidity-pool')}
-            className={`px-3 sm:px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
-              selectedId === 'liquidity-pool'
-                ? 'bg-[#22C55E] text-white shadow-[0_2px_12px_rgba(34,197,94,0.4)] ring-2 ring-[#22C55E]/40'
-                : 'text-[#16A34A] dark:text-[#4ADE80] bg-[#22C55E]/10 hover:bg-[#22C55E]/20'
-            }`}
-          >
-            <span className="w-2.5 h-2.5 rounded-full bg-[#22C55E]" />
-            <span>Liquidity Pool · 630K</span>
-          </button>
-        </div>
       </div>
 
       {/* Main Container: Expanded Selectable Donut Chart on Left, Interactive Cards on Right */}
@@ -160,7 +149,9 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                   ? 'radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, transparent 70%)'
                   : selectedId === 'liquidity-pool'
                   ? 'radial-gradient(circle, rgba(34, 197, 94, 0.4) 0%, transparent 70%)'
-                  : 'radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(34, 197, 94, 0.22) 55%, transparent 70%)',
+                  : selectedId === 'staking-dev'
+                  ? 'radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%)'
+                  : 'radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, rgba(34, 197, 94, 0.2) 40%, rgba(139, 92, 246, 0.2) 70%, transparent 80%)',
               }}
             />
 
@@ -169,18 +160,25 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
               viewBox="0 0 320 320"
             >
               <defs>
-                {/* Side 1 Gradient: Warm Solar Amber */}
+                {/* Segment 1 Gradient: Warm Solar Amber (60%) */}
                 <linearGradient id="fairLaunchGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#FDE047" />
                   <stop offset="50%" stopColor="#F59E0B" />
                   <stop offset="100%" stopColor="#D97706" />
                 </linearGradient>
 
-                {/* Side 2 Gradient: Radiant Light Green */}
+                {/* Segment 2 Gradient: Radiant Light Green (30%) */}
                 <linearGradient id="liquidityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#86EFAC" />
                   <stop offset="50%" stopColor="#22C55E" />
                   <stop offset="100%" stopColor="#16A34A" />
+                </linearGradient>
+
+                {/* Segment 3 Gradient: Electric Violet / Purple (10%) */}
+                <linearGradient id="stakingDevGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#C4B5FD" />
+                  <stop offset="50%" stopColor="#8B5CF6" />
+                  <stop offset="100%" stopColor="#7C3AED" />
                 </linearGradient>
 
                 {/* Shadow Filters for Selection Pop */}
@@ -189,6 +187,9 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                 </filter>
                 <filter id="liquidityShadow" x="-20%" y="-20%" width="140%" height="140%">
                   <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#22C55E" floodOpacity="0.7" />
+                </filter>
+                <filter id="stakingDevShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#8B5CF6" floodOpacity="0.7" />
                 </filter>
               </defs>
 
@@ -203,7 +204,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                 className="opacity-25 dark:opacity-10"
               />
 
-              {/* Side 1: Fair Launch Segment (Warm Solar Gold / Amber) */}
+              {/* Segment 1: Fair Launch (60% · 1,260,000 BLTE) */}
               <circle
                 cx="160"
                 cy="160"
@@ -211,7 +212,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                 stroke="url(#fairLaunchGradient)"
                 strokeWidth={selectedId === 'fair-launch' ? activeStrokeWidth : strokeWidth}
                 strokeDasharray={`${fairLaunchDash} ${fairLaunchGap}`}
-                strokeDashoffset={0}
+                strokeDashoffset={fairLaunchOffset}
                 strokeLinecap="round"
                 fill="none"
                 onClick={() => toggleSelect('fair-launch')}
@@ -223,18 +224,18 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     toggleSelect('fair-launch');
                   }
                 }}
-                aria-label="Select Fair Launch allocation"
+                aria-label="Select Fair Launch allocation (1,260,000 BLTE · 60%)"
                 filter={selectedId === 'fair-launch' ? 'url(#fairLaunchShadow)' : undefined}
                 className={`transition-all duration-300 cursor-pointer outline-hidden ${
                   selectedId === 'fair-launch'
                     ? 'opacity-100'
-                    : selectedId === 'liquidity-pool'
+                    : selectedId !== null
                     ? 'opacity-30 hover:opacity-75'
                     : 'opacity-100 hover:opacity-90'
                 }`}
               />
 
-              {/* Side 2: Liquidity Pool Segment (Radiant Light Green) */}
+              {/* Segment 2: Liquidity (30% · 630,000 BLTE) */}
               <circle
                 cx="160"
                 cy="160"
@@ -254,12 +255,43 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     toggleSelect('liquidity-pool');
                   }
                 }}
-                aria-label="Select Liquidity Pool allocation"
+                aria-label="Select Liquidity allocation (630,000 BLTE · 30%)"
                 filter={selectedId === 'liquidity-pool' ? 'url(#liquidityShadow)' : undefined}
                 className={`transition-all duration-300 cursor-pointer outline-hidden ${
                   selectedId === 'liquidity-pool'
                     ? 'opacity-100'
-                    : selectedId === 'fair-launch'
+                    : selectedId !== null
+                    ? 'opacity-30 hover:opacity-75'
+                    : 'opacity-100 hover:opacity-90'
+                }`}
+              />
+
+              {/* Segment 3: Staking Rewards & Developer (10% · 210,000 BLTE) */}
+              <circle
+                cx="160"
+                cy="160"
+                r={radius}
+                stroke="url(#stakingDevGradient)"
+                strokeWidth={selectedId === 'staking-dev' ? activeStrokeWidth : strokeWidth}
+                strokeDasharray={`${stakingDevDash} ${stakingDevGap}`}
+                strokeDashoffset={stakingDevOffset}
+                strokeLinecap="round"
+                fill="none"
+                onClick={() => toggleSelect('staking-dev')}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleSelect('staking-dev');
+                  }
+                }}
+                aria-label="Select Staking Rewards & Developer allocation (210,000 BLTE · 10%)"
+                filter={selectedId === 'staking-dev' ? 'url(#stakingDevShadow)' : undefined}
+                className={`transition-all duration-300 cursor-pointer outline-hidden ${
+                  selectedId === 'staking-dev'
+                    ? 'opacity-100'
+                    : selectedId !== null
                     ? 'opacity-30 hover:opacity-75'
                     : 'opacity-100 hover:opacity-90'
                 }`}
@@ -278,7 +310,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     className="inline-block w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full mb-0.5 sm:mb-1 shadow-xs"
                     style={{ backgroundColor: selectedItem.color }}
                   />
-                  <div className="font-display font-[900] text-lg sm:text-2xl text-[#080808] dark:text-white tracking-tight leading-tight">
+                  <div className="font-display font-[900] text-base sm:text-xl text-[#080808] dark:text-white tracking-tight leading-tight px-2">
                     {selectedItem.title}
                   </div>
                   <div
@@ -288,7 +320,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     {selectedItem.amount}
                   </div>
                   <div className="text-[9px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#111111]/5 dark:bg-white/10 text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider inline-block">
-                    ACTIVE ALLOCATION
+                    {selectedItem.percentage} OF SUPPLY
                   </div>
                 </div>
               ) : (
@@ -300,7 +332,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     BLTE
                   </span>
                   <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#64748B] dark:text-[#94A3B8] font-bold block pt-0.5 sm:pt-1">
-                    {tok.fixed_cap || 'HARD CAP'}
+                    {tok.fixed_cap || 'HARD CAP · 3 SECTIONS'}
                   </span>
                 </div>
               )}
@@ -308,7 +340,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
           </div>
         </div>
 
-        {/* Right: Selectable Breakdown Cards with Color Distinction */}
+        {/* Right: Exactly 3 Selectable Breakdown Cards with Color Distinction */}
         <div className="lg:col-span-6 space-y-3.5 sm:space-y-4">
           {allocations.map((item) => {
             const isSelected = selectedId === item.id;

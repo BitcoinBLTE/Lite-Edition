@@ -35,6 +35,7 @@ export const es: TranslationSchema = {
     explore: 'Explorar',
     stake_blte: 'Hacer staking de BLTE',
     game: 'Juego',
+    wallet: 'Billetera BLTE',
   },
   hero: {
     independent_asset: 'Activo independiente en Solana',
@@ -812,7 +813,7 @@ export const es: TranslationSchema = {
           num: '7',
           title: 'Tokenomics y asignación matemática',
           content: [
-            "Asignación matemática estricta (70% Lanzamiento justo · 30% Pool de liquidez):\n• Lanzamiento justo: 70% (1.470.000 BLTE)\n• Pool de liquidez: 30% (630.000 BLTE)",
+            "Asignación matemática estricta a través de tres secciones (60% Lanzamiento justo · 30% Liquidez · 10% Recompensas de staking y desarrollador):\n• Lanzamiento justo: 60% (1.260.000 BLTE)\n• Liquidez: 30% (630.000 BLTE)\n• Recompensas de staking y desarrollador: 10% (210.000 BLTE)",
           ],
         },
         {

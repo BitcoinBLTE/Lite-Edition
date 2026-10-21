@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { RefreshCw, ExternalLink, Activity, Coins } from 'lucide-react';
+import { RefreshCw, ExternalLink, Activity, Coins, Wallet, Download } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { fetchLiveMarketData, fetchTokenHoldersCount, LiveMarketData } from '../services/marketDataService';
@@ -10,16 +10,30 @@ interface ExploreModalProps {
   isOpen: boolean;
   onClose: () => void;
   onOpenTradeModal?: () => void;
+  onOpenWallet?: () => void;
 }
 
 export const ExploreModal: React.FC<ExploreModalProps> = ({
   isOpen,
   onClose,
-  onOpenTradeModal
+  onOpenTradeModal,
+  onOpenWallet
 }) => {
-  const { t } = useLanguage();
+  const { currentLanguage, t } = useLanguage();
   const { isBlack } = useTheme();
   const exp = t.modals?.explore_modal;
+
+  const walletCardLabels = {
+    title: t.nav?.wallet || 'BLTE Wallet',
+    badge: exp?.coming_soon?.toUpperCase() || 'COMING SOON',
+    type: currentLanguage === 'es' || currentLanguage === 'pt-PT' ? 'Tipo' : currentLanguage === 'fr' ? 'Type' : currentLanguage === 'de' ? 'Typ' : currentLanguage === 'ja' ? '種別' : currentLanguage?.startsWith('zh') ? '类型' : currentLanguage === 'th' ? 'ประเภท' : 'Type',
+    nonCustodial: currentLanguage === 'es' ? 'No custodial' : currentLanguage === 'pt-PT' ? 'Não Custodial' : currentLanguage === 'fr' ? 'Non-dépositaire' : currentLanguage === 'de' ? 'Non-Custodial' : currentLanguage === 'ja' ? '非カストディアル' : currentLanguage?.startsWith('zh') ? '自主非托管' : currentLanguage === 'no' ? 'Ikke-forvarende' : currentLanguage === 'th' ? 'ดูแลกุญแจด้วยตนเอง' : 'Non-Custodial',
+    network: currentLanguage === 'es' ? 'Red' : currentLanguage === 'pt-PT' ? 'Rede' : currentLanguage === 'fr' ? 'Réseau' : currentLanguage === 'de' ? 'Netzwerk' : currentLanguage === 'ja' ? 'ネットワーク' : currentLanguage?.startsWith('zh') ? '网络' : currentLanguage === 'no' ? 'Nettverk' : currentLanguage === 'th' ? 'เครือข่าย' : 'Network',
+    staking: currentLanguage === 'es' ? 'Staking nativo' : currentLanguage === 'pt-PT' ? 'Staking Nativo' : currentLanguage === 'fr' ? 'Staking natif' : currentLanguage === 'de' ? 'Natives Staking' : currentLanguage === 'ja' ? 'ネイティブステーキング' : currentLanguage?.startsWith('zh') ? '原生质押' : currentLanguage === 'no' ? 'Nativ Staking' : currentLanguage === 'th' ? 'สเตกกิ้งในตัว' : 'Native Staking',
+    platforms: currentLanguage === 'es' || currentLanguage === 'pt-PT' ? 'Plataformas' : currentLanguage === 'fr' ? 'Plateformes' : currentLanguage === 'de' ? 'Plattformen' : currentLanguage === 'ja' ? '対応端末' : currentLanguage?.startsWith('zh') ? '适配平台' : currentLanguage === 'no' ? 'Plattformer' : currentLanguage === 'th' ? 'แพลตฟอร์ม' : 'Platforms',
+    joinWaitlist: currentLanguage === 'es' ? 'Unirse a la lista' : currentLanguage === 'pt-PT' ? 'Lista de Espera' : currentLanguage === 'fr' ? 'Rejoindre la liste' : currentLanguage === 'de' ? 'Auf Warteliste' : currentLanguage === 'ja' ? 'ウェイティングリスト' : currentLanguage?.startsWith('zh') ? '加入候补名单' : currentLanguage === 'no' ? 'Bli med på ventelisten' : currentLanguage === 'th' ? 'เข้าร่วมรายชื่อรอ' : 'Join Waitlist',
+    beta: currentLanguage === 'ja' ? '先行ベータ' : currentLanguage?.startsWith('zh') ? '早期测试版' : currentLanguage === 'no' ? 'Tidlig Beta' : currentLanguage === 'th' ? 'เบต้าล่วงหน้า' : 'Early Beta'
+  };
 
   // Baseline protocol values requested by specification
   const [marketStats, setMarketStats] = useState({
@@ -132,7 +146,7 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
         </div>
       }
       subtitle={exp?.subtitle || 'Review protocol stats and activity.'}
-      maxWidthClass="max-w-4xl w-full"
+      maxWidthClass="max-w-5xl w-full"
       ariaLabelledBy="explore-panel-title"
       headerActions={
         <button
@@ -201,8 +215,8 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
           </button>
         </div>
 
-        {/* 4 Dedicated Protocol Stat Sections */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+        {/* 5 Dedicated Protocol Stat Sections */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4">
           
           {/* Section 1: Market */}
           <div className="rounded-[20px] sm:rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/15 p-4 sm:p-5 shadow-xs flex flex-col justify-between">
@@ -340,7 +354,71 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
             </div>
           </div>
 
-          {/* Section 4: Supply */}
+          {/* Section 4: BLTE Wallet (Placed above supply section) */}
+          <div 
+            onClick={() => {
+              if (onOpenWallet) {
+                onClose();
+                onOpenWallet();
+              }
+            }}
+            className="rounded-[20px] sm:rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/15 p-4 sm:p-5 shadow-xs flex flex-col justify-between hover:border-[#B8661B]/40 hover:shadow-md transition-all cursor-pointer group"
+          >
+            <div>
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
+                <div className="flex items-center gap-1.5">
+                  <Wallet className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] shrink-0" />
+                  <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase group-hover:text-[#964E10] dark:group-hover:text-[#FBBF24] transition-colors">
+                    {walletCardLabels.title} →
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                  <span>{walletCardLabels.badge}</span>
+                </span>
+              </div>
+
+              <div className="space-y-3 sm:space-y-3.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{walletCardLabels.type}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
+                    {walletCardLabels.nonCustodial}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{walletCardLabels.network}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
+                    Solana Mainnet
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{walletCardLabels.staking}</span>
+                  <span className="text-sm sm:text-base font-mono font-bold text-[#B8661B] dark:text-[#EAB308] tabular-nums truncate text-right">
+                    11.61% APY
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#666666] dark:text-[#A1A1AA] font-medium shrink-0">{walletCardLabels.platforms}</span>
+                  <span className="text-xs sm:text-sm font-mono font-bold text-[#080808] dark:text-white tabular-nums truncate text-right">
+                    iOS · Android · Web
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-[#EAB308]/10 flex items-center justify-between text-[10px] font-mono">
+              <span className="text-[#888888] dark:text-[#71717A]">{walletCardLabels.beta}</span>
+              <span className="text-[#B8661B] dark:text-[#EAB308] font-bold flex items-center gap-1 group-hover:underline">
+                <Download className="w-3 h-3" />
+                <span>{walletCardLabels.joinWaitlist}</span>
+              </span>
+            </div>
+          </div>
+
+          {/* Section 5: Supply */}
           <div className="rounded-[20px] sm:rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/15 p-4 sm:p-5 shadow-xs flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">

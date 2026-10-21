@@ -34,6 +34,7 @@ export interface TranslationSchema {
     explore?: string;
     stake_blte?: string;
     game?: string;
+    wallet?: string;
   };
   hero: {
     independent_asset: string;

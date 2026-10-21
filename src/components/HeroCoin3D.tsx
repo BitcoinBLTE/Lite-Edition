@@ -378,6 +378,7 @@ export const HeroCoin3D: React.FC<HeroCoin3DProps> = ({ onInteract, className })
     frontTexture.colorSpace = THREE.SRGBColorSpace;
     frontTexture.needsUpdate = true;
 
+
     const backTexture = new THREE.CanvasTexture(backCanvas);
     backTexture.colorSpace = THREE.SRGBColorSpace;
     backTexture.needsUpdate = true;

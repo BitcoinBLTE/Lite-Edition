@@ -17,7 +17,7 @@ import {
   FileText,
   Download
 } from 'lucide-react';
-import { TOKEN_CONFIG, getWhitepaperPdfUrl } from '../config/tokenConfig';
+import { TOKEN_CONFIG, getWhitepaperPdfUrl, downloadWhitepaperPdf } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
 
@@ -330,16 +330,15 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                     <span>{t.education.tab4.btn_whitepaper}</span>
                   </button>
 
-                  <a
-                    href={getWhitepaperPdfUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => downloadWhitepaperPdf()}
                     className="p-3 text-[#4A4A4A] dark:text-[#A1A1AA] hover:text-[#B8661B] dark:hover:text-[#F59E0B] hover:bg-[#FAF5EF] dark:hover:bg-[#1C1712] bg-white dark:bg-[#18181D] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer flex items-center justify-center group"
-                    title="White Paper Specification (PDF)"
+                    title="Download White Paper PDF"
                     aria-label="Download White Paper PDF"
                   >
                     <Download className="w-4 h-4 text-[#B8661B] group-hover:scale-110 transition-transform" />
-                  </a>
+                  </button>
 
                   {onOpenEducationModal && (
                     <button

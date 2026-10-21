@@ -16,8 +16,8 @@ export function useRotatingFavicon() {
       link.rel = 'icon';
       document.head.appendChild(link);
     }
-    link.type = 'image/svg+xml';
-    link.href = '/favicon.svg';
+    link.type = 'image/jpeg';
+    link.href = '/assets/aistudio/IMG-20261020-WA0000_b0a88430.jpg';
   }, []);
 }
 

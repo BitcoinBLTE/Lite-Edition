@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Copy, Check, ShieldCheck, BookOpen, Mail, Download } from 'lucide-react';
-import { TOKEN_CONFIG, getWhitepaperPdfUrl } from '../config/tokenConfig';
+import { TOKEN_CONFIG, getWhitepaperPdfUrl, downloadWhitepaperPdf } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { RotatingCoinLogo } from './RotatingCoinLogo';
 import { 
@@ -119,16 +119,15 @@ export const Footer: React.FC<FooterProps> = ({
                 </button>
               </li>
               <li>
-                <a
-                  href={getWhitepaperPdfUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#475569] dark:text-[#A1A1AA] hover:text-[#B8661B] dark:hover:text-[#EAB308] transition-colors py-0.5 inline-flex items-center gap-1.5"
+                <button
+                  type="button"
+                  onClick={() => downloadWhitepaperPdf()}
+                  className="text-[#475569] dark:text-[#A1A1AA] hover:text-[#B8661B] dark:hover:text-[#EAB308] transition-colors py-0.5 inline-flex items-center gap-1.5 cursor-pointer text-left"
                   title="White Paper Specification (PDF)"
                 >
                   <Download className="w-3.5 h-3.5 text-[#B8661B] dark:text-[#EAB308]" />
                   <span>White Paper (PDF)</span>
-                </a>
+                </button>
               </li>
               <li>
                 <a

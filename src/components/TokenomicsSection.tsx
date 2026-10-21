@@ -18,7 +18,7 @@ export const TokenomicsSection: React.FC = () => {
             {tok.title || '2.1M TOTAL SUPPLY'}
           </h2>
           <p className="mt-3.5 text-base sm:text-lg text-[#475569] dark:text-[#CBD5E1] font-[450] leading-[1.75]">
-            {tok.subtitle || 'A strictly capped token distribution configured across two strategic allocations only. No minting backdoor, zero hidden inflation.'}
+            {tok.subtitle || 'A strictly capped token distribution configured across three strategic allocations only: 1,260,000 Fair Launch, 630,000 Liquidity, and 210,000 Staking Rewards & Developer. No minting backdoor, zero hidden inflation.'}
           </p>
         </div>
 

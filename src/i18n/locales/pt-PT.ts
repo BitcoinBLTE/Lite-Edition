@@ -35,6 +35,7 @@ export const ptPT: TranslationSchema = {
     explore: 'Explorar',
     stake_blte: 'Fazer Staking de BLTE',
     game: 'Jogo',
+    wallet: 'Carteira BLTE',
   },
   hero: {
     independent_asset: 'Ativo Solana Independente',
@@ -797,7 +798,7 @@ export const ptPT: TranslationSchema = {
           num: '7',
           title: 'Tokenomics e Alocação Matemática',
           content: [
-            "Alocação matemática estrita (70% Lançamento Justo · 30% Pool de Liquidez):\n• Lançamento Justo: 70% (1.470.000 BLTE)\n• Pool de Liquidez: 30% (630.000 BLTE)",
+            "Alocação matemática estrita através de três secções (60% Lançamento Justo · 30% Liquidez · 10% Recompensas de Staking e Desenvolvedor):\n• Lançamento Justo: 60% (1.260.000 BLTE)\n• Liquidez: 30% (630.000 BLTE)\n• Recompensas de Staking e Desenvolvedor: 10% (210.000 BLTE)",
           ],
         },
         {

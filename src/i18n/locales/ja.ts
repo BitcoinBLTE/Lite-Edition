@@ -35,6 +35,7 @@ export const ja: TranslationSchema = {
     explore: '探索',
     stake_blte: 'BLTEをステーキング',
     game: 'ゲーム',
+    wallet: 'BLTE ウォレット',
   },
   hero: {
     independent_asset: 'Solana 独立型デジタル資産',
@@ -797,7 +798,7 @@ export const ja: TranslationSchema = {
           num: '7',
           title: 'トークノミクスと数学的配分',
           content: [
-            "厳格な数学的配分（70% フェアローンチ · 30% 流動性プール）：\n• フェアローンチ：70% (1,470,000 BLTE)\n• 流動性プール：30% (630,000 BLTE)",
+            "厳格な数学的配分（60% フェアローンチ · 30% 流動性 · 10% ステーキング報酬＆開発者）：\n• フェアローンチ：60% (1,260,000 BLTE)\n• 流動性：30% (630,000 BLTE)\n• ステーキング報酬＆開発者：10% (210,000 BLTE)",
           ],
         },
         {

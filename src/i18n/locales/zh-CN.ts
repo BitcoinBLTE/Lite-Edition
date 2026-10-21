@@ -35,6 +35,7 @@ export const zhCN: TranslationSchema = {
     explore: '探索',
     stake_blte: '质押 BLTE',
     game: '游戏',
+    wallet: 'BLTE 钱包',
   },
   hero: {
     independent_asset: 'Solana 独立数字资产',
@@ -797,7 +798,7 @@ export const zhCN: TranslationSchema = {
           num: '7',
           title: '代币经济学分配（两大核心板块）',
           content: [
-            "严苛数学硬约束分配（70% 公平启动 · 30% 流动性资金池）：\n• 公平启动 (Fair Launch)：70% (1,470,000 BLTE)\n• 流动性资金池 (Liquidity Pool)：30% (630,000 BLTE)",
+            "严苛数学硬约束分配（60% 公平启动 · 30% 流动性 · 10% 质押奖励与开发者）：\n• 公平启动 (Fair Launch)：60% (1,260,000 BLTE)\n• 流动性 (Liquidity)：30% (630,000 BLTE)\n• 质押奖励与开发者 (Staking Rewards & Developer)：10% (210,000 BLTE)",
           ],
         },
         {

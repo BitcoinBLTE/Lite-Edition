@@ -35,6 +35,7 @@ export const no: TranslationSchema = {
     explore: 'Utforsk',
     stake_blte: 'Stake BLTE',
     game: 'Spill',
+    wallet: 'BLTE Lommebok',
   },
   hero: {
     independent_asset: 'Uavhengig Solana-ressurs',
@@ -812,7 +813,7 @@ export const no: TranslationSchema = {
           num: '7',
           title: 'Tokenomics og matematisk allokering',
           content: [
-            "Streng matematisk allokering (70 % Rettferdig lansering · 30 % Likviditetsbasseng):\n• Rettferdig lansering: 70 % (1 470 000 BLTE)\n• Likviditetsbasseng: 30 % (630 000 BLTE)",
+            "Streng matematisk allokering i tre seksjoner (60 % Rettferdig lansering · 30 % Likviditet · 10 % Staking-belønninger & Utvikler):\n• Rettferdig lansering: 60 % (1 260 000 BLTE)\n• Likviditet: 30 % (630 000 BLTE)\n• Staking-belønninger & Utvikler: 10 % (210 000 BLTE)",
           ],
         },
         {

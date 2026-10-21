@@ -35,6 +35,7 @@ export const de: TranslationSchema = {
     explore: 'Erkunden',
     stake_blte: 'BLTE staken',
     game: 'Spiel',
+    wallet: 'BLTE Wallet',
   },
   hero: {
     independent_asset: 'Unabhängiges Solana-Asset',
@@ -797,7 +798,7 @@ export const de: TranslationSchema = {
           num: '7',
           title: 'Tokenomics & Mathematische Allokation',
           content: [
-            "Strikte mathematische Allokation (70% Fairer Start · 30% Liquiditätspool):\n• Fairer Start: 70% (1.470.000 BLTE)\n• Liquiditätspool: 30% (630.000 BLTE)",
+            "Strikte mathematische Allokation über drei Abschnitte (60% Fairer Start · 30% Liquidität · 10% Staking-Belohnungen & Entwickler):\n• Fairer Start: 60% (1.260.000 BLTE)\n• Liquidität: 30% (630.000 BLTE)\n• Staking-Belohnungen & Entwickler: 10% (210.000 BLTE)",
           ],
         },
         {
