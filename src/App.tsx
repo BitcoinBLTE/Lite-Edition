@@ -126,6 +126,7 @@ export default function App() {
           {/* 7-Step Acquisition Guide & Security Advisory */}
           <HowToBuySection
             onOpenTradeModal={() => setTradeModalOpen(true)}
+            onOpenWallet={() => setWalletModalOpen(true)}
           />
 
           {/* Market Section (Zero-Mock Policy) */}

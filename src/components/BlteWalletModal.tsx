@@ -605,18 +605,19 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
       isOpen={isOpen}
       onClose={onClose}
       title={w.modalTitle}
-      maxWidthClass="max-w-xl w-full"
-      maxHeightClass="max-h-[92vh] sm:max-h-[88vh]"
+      subtitle="Bitcoin Lite Edition Native Wallet · Movable Panel"
+      maxWidthClass="max-w-4xl lg:max-w-5xl w-full"
+      maxHeightClass="max-h-[92vh] sm:max-h-[88vh] lg:max-h-[86vh]"
       ariaLabelledBy="blte-wallet-modal-title"
       footer={
-        <div className="px-4 sm:px-5 py-3 sm:py-3.5 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] dark:border-[#222228] flex flex-wrap items-center justify-between gap-3">
+        <div className="px-5 sm:px-7 py-3 sm:py-3.5 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] dark:border-[#222228] flex items-center justify-between gap-3">
           {onOpenWhitePaper && (
             <button
               onClick={() => {
                 onClose();
                 onOpenWhitePaper();
               }}
-              className="text-xs font-bold text-[#B8661B] hover:text-[#964E10] dark:text-[#EAB308] flex items-center gap-1.5 cursor-pointer py-1"
+              className="text-xs sm:text-sm font-bold text-[#B8661B] hover:text-[#964E10] dark:text-[#EAB308] flex items-center gap-1.5 cursor-pointer py-1"
             >
               <Sparkles className="w-3.5 h-3.5 shrink-0" />
               <span>{w.readWhitepaper}</span>
@@ -625,272 +626,280 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
 
           <button
             onClick={onClose}
-            className="px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[12px] sm:rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer ml-auto"
+            className="px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[12px] sm:rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer ml-auto"
           >
             {w.close || t.common?.close || 'Close'}
           </button>
         </div>
       }
     >
-      <div className="p-4 sm:p-6 lg:p-7 space-y-4 sm:space-y-6">
-        {/* Top Header & Official Coming Soon Announcement */}
-        <div className="text-center space-y-2.5 sm:space-y-3">
-          {/* Prominent Coming Soon Pulse Badge */}
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-amber-500/15 text-[#B8661B] dark:text-[#EAB308] border border-[#B8661B]/30 dark:border-[#EAB308]/30 text-[10px] sm:text-xs font-mono font-black uppercase tracking-wider sm:tracking-widest shadow-2xs">
-            <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-[#B8661B] dark:bg-[#EAB308]"></span>
-            </span>
-            <span>{w.badgeComingSoon}</span>
-          </div>
-
-          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-[18px] sm:rounded-[22px] bg-gradient-to-br from-[#FAF5EF] to-[#F3E7D3] dark:from-[#201810] dark:to-[#120E08] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center justify-center mx-auto text-[#B8661B] dark:text-[#EAB308] shadow-md">
-            <Wallet className="w-7 h-7 sm:w-8 sm:h-8 stroke-[2]" />
-            <div className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#B8661B] text-white flex items-center justify-center shadow-xs">
-              <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5]" />
+      <div className="p-4 sm:p-6 lg:p-7 space-y-5 lg:space-y-6">
+        {/* Top Header - Responsive: Centered on mobile, horizontal on md/lg */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left pb-4 md:pb-5 border-b border-[#F0ECE1] dark:border-[#202028]">
+          <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-[18px] sm:rounded-[22px] md:rounded-[24px] bg-gradient-to-br from-[#FAF5EF] to-[#F3E7D3] dark:from-[#201810] dark:to-[#120E08] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center justify-center shrink-0 text-[#B8661B] dark:text-[#EAB308] shadow-md">
+            <Wallet className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 stroke-[2]" />
+            <div className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full bg-[#B8661B] text-white flex items-center justify-center shadow-xs">
+              <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 stroke-[2.5]" />
             </div>
           </div>
 
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-[900] text-[#080808] dark:text-white font-display tracking-tight">
-            {w.heroTitle}
-          </h3>
-
-          <p className="text-xs sm:text-sm text-[#475569] dark:text-[#94A3B8] max-w-md mx-auto leading-relaxed px-1">
-            {w.heroDesc}
-          </p>
-        </div>
-
-        {/* Download Release Channels & Coming Soon Cards */}
-        <div className="space-y-2">
-          <div className="flex items-center justify-between text-xs font-mono font-bold uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8]">
-            <span className="flex items-center gap-1.5">
-              <Download className="w-3.5 h-3.5 text-[#B8661B] dark:text-[#EAB308]" />
-              <span>{w.targetPlatforms}</span>
-            </span>
-            <span className="text-[11px] text-[#B8661B] dark:text-[#EAB308]">{w.phaseBeta}</span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5">
-            {/* iOS */}
-            <div className="p-3 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
-              <div className="flex items-center justify-between mb-2">
-                <Smartphone className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
-                <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <Clock className="w-2.5 h-2.5" />
-                  <span>{w.soon}</span>
-                </span>
-              </div>
-              <div>
-                <div className="text-xs font-bold text-[#080808] dark:text-white">{w.iosApp}</div>
-                <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8]">{w.iosDesc}</div>
-              </div>
-              <div className="mt-3 pt-2.5 border-t border-[#F0ECE1] dark:border-[#202028] flex items-center gap-1 text-[11px] font-mono font-semibold text-[#B8661B] dark:text-[#EAB308]">
-                <Download className="w-3 h-3" />
-                <span>{w.downloadSoon}</span>
-              </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center justify-center md:justify-start gap-2.5 flex-wrap">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-[900] text-[#080808] dark:text-white font-display tracking-tight">
+                {w.heroTitle}
+              </h3>
+              <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40">
+                BITCOIN LITE EDITION NATIVE WALLET
+              </span>
             </div>
 
-            {/* Android */}
-            <div className="p-3 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
-              <div className="flex items-center justify-between mb-2">
-                <Smartphone className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
-                <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <Clock className="w-2.5 h-2.5" />
-                  <span>{w.soon}</span>
-                </span>
-              </div>
-              <div>
-                <div className="text-xs font-bold text-[#080808] dark:text-white">{w.androidApp}</div>
-                <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8]">{w.androidDesc}</div>
-              </div>
-              <div className="mt-3 pt-2.5 border-t border-[#F0ECE1] dark:border-[#202028] flex items-center gap-1 text-[11px] font-mono font-semibold text-[#B8661B] dark:text-[#EAB308]">
-                <Download className="w-3 h-3" />
-                <span>{w.downloadSoon}</span>
-              </div>
-            </div>
-
-            {/* Browser Extension */}
-            <div className="p-3 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
-              <div className="flex items-center justify-between mb-2">
-                <Globe className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
-                <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <Clock className="w-2.5 h-2.5" />
-                  <span>{w.soon}</span>
-                </span>
-              </div>
-              <div>
-                <div className="text-xs font-bold text-[#080808] dark:text-white">{w.browserExt}</div>
-                <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8]">{w.browserDesc}</div>
-              </div>
-              <div className="mt-3 pt-2.5 border-t border-[#F0ECE1] dark:border-[#202028] flex items-center gap-1 text-[11px] font-mono font-semibold text-[#B8661B] dark:text-[#EAB308]">
-                <Download className="w-3 h-3" />
-                <span>{w.downloadSoon}</span>
-              </div>
-            </div>
+            <p className="mt-1 sm:mt-1.5 text-xs sm:text-sm text-[#475569] dark:text-[#94A3B8] leading-relaxed max-w-2xl">
+              {w.heroDesc}
+            </p>
           </div>
         </div>
 
-        {/* Email Registration for Waitlist ("wait listening") */}
-        <div className="p-4 sm:p-6 rounded-[18px] sm:rounded-[22px] bg-gradient-to-br from-[#FAF5EF]/95 via-[#FFFDF9] to-[#F5EADB]/40 dark:from-[#18130E] dark:via-[#141419] dark:to-[#1C1712] border border-[#E9C9A5]/80 dark:border-[#B8661B]/40 shadow-xs space-y-3.5 sm:space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-wider">
-              <Bell className="w-4 h-4" />
-              <span>{w.waitlistTitle}</span>
+        {/* Main Content Layout: Single-column on mobile, 2-column (7:5) grid on desktop */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
+          {/* Left Column: Platforms & Architecture & Security */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5">
+            {/* Download Release Channels */}
+            <div className="space-y-2.5">
+              <div className="flex items-center justify-between text-xs font-mono font-bold uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8]">
+                <span className="flex items-center gap-1.5">
+                  <Download className="w-3.5 h-3.5 text-[#B8661B] dark:text-[#EAB308]" />
+                  <span>{w.targetPlatforms}</span>
+                </span>
+                <span className="text-[11px] text-[#B8661B] dark:text-[#EAB308]">{w.phaseBeta}</span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
+                {/* iOS */}
+                <div className="p-3.5 sm:p-4 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
+                  <div className="flex items-center justify-between mb-2">
+                    <Smartphone className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
+                    <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                      <Clock className="w-2.5 h-2.5" />
+                      <span>{w.soon}</span>
+                    </span>
+                  </div>
+                  <div>
+                    <div className="text-xs sm:text-sm font-bold text-[#080808] dark:text-white">{w.iosApp}</div>
+                    <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] mt-0.5">{w.iosDesc}</div>
+                  </div>
+                  <div className="mt-3 pt-2.5 border-t border-[#F0ECE1] dark:border-[#202028] flex items-center gap-1 text-[11px] font-mono font-semibold text-[#B8661B] dark:text-[#EAB308]">
+                    <Download className="w-3 h-3" />
+                    <span>{w.downloadSoon}</span>
+                  </div>
+                </div>
+
+                {/* Android */}
+                <div className="p-3.5 sm:p-4 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
+                  <div className="flex items-center justify-between mb-2">
+                    <Smartphone className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
+                    <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                      <Clock className="w-2.5 h-2.5" />
+                      <span>{w.soon}</span>
+                    </span>
+                  </div>
+                  <div>
+                    <div className="text-xs sm:text-sm font-bold text-[#080808] dark:text-white">{w.androidApp}</div>
+                    <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] mt-0.5">{w.androidDesc}</div>
+                  </div>
+                  <div className="mt-3 pt-2.5 border-t border-[#F0ECE1] dark:border-[#202028] flex items-center gap-1 text-[11px] font-mono font-semibold text-[#B8661B] dark:text-[#EAB308]">
+                    <Download className="w-3 h-3" />
+                    <span>{w.downloadSoon}</span>
+                  </div>
+                </div>
+
+                {/* Browser Extension */}
+                <div className="p-3.5 sm:p-4 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
+                  <div className="flex items-center justify-between mb-2">
+                    <Globe className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
+                    <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                      <Clock className="w-2.5 h-2.5" />
+                      <span>{w.soon}</span>
+                    </span>
+                  </div>
+                  <div>
+                    <div className="text-xs sm:text-sm font-bold text-[#080808] dark:text-white">{w.browserExt}</div>
+                    <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] mt-0.5">{w.browserDesc}</div>
+                  </div>
+                  <div className="mt-3 pt-2.5 border-t border-[#F0ECE1] dark:border-[#202028] flex items-center gap-1 text-[11px] font-mono font-semibold text-[#B8661B] dark:text-[#EAB308]">
+                    <Download className="w-3 h-3" />
+                    <span>{w.downloadSoon}</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase">
-              {w.earlyAccess}
-            </span>
+
+            {/* Core Architecture Highlights */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-left">
+              <div className="p-3 sm:p-3.5 rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
+                <Zap className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] mb-1.5" />
+                <div className="text-xs sm:text-sm font-bold text-[#080808] dark:text-white">{w.speedTitle}</div>
+                <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-1">
+                  {w.speedDesc}
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-3.5 rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
+                <Lock className="w-4 h-4 text-[#16A34A] dark:text-[#4ADE80] mb-1.5" />
+                <div className="text-xs sm:text-sm font-bold text-[#080808] dark:text-white">{w.custodyTitle}</div>
+                <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-1">
+                  {w.custodyDesc}
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-3.5 rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
+                <Layers className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] mb-1.5" />
+                <div className="text-xs sm:text-sm font-bold text-[#080808] dark:text-white">{w.stakingTitle}</div>
+                <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-1">
+                  {w.stakingDesc}
+                </div>
+              </div>
+            </div>
+
+            {/* Security & Official Advisory */}
+            <div className="p-3.5 sm:p-4 rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E] flex items-start gap-3 text-left">
+              <ShieldCheck className="w-4 h-4 text-[#16A34A] dark:text-[#4ADE80] shrink-0 mt-0.5" />
+              <div className="text-[11px] sm:text-xs text-[#475569] dark:text-[#94A3B8] leading-relaxed">
+                <strong className="text-[#080808] dark:text-white font-semibold">{w.securityTitle} </strong>
+                {w.securityDesc}
+              </div>
+            </div>
           </div>
 
-          {isSuccess ? (
-            <div className="p-4 sm:p-5 rounded-[18px] bg-[#ECFDF5] dark:bg-[#064E3B]/25 border border-[#10B981]/30 text-left space-y-2.5 animate-in fade-in zoom-in-95 duration-200">
-              <div className="flex items-center gap-2 text-sm sm:text-base font-bold text-[#047857] dark:text-[#34D399]">
-                <CheckCircle2 className="w-5 h-5 shrink-0" />
-                <span>{w.registeredSuccess}</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10B981]/15 text-[#047857] dark:text-[#34D399] font-mono text-xs font-bold">
-                <span>{w.waitlistPriority}: #{waitlistNumber}</span>
-                <span>·</span>
-                <span className="capitalize">{platform} {w.betaAccess}</span>
-              </div>
-              <p className="text-xs text-[#065F46] dark:text-[#A7F3D0] leading-relaxed">
-                {w.confirmedFor} <strong className="font-mono text-[#047857] dark:text-[#34D399]">{registeredEmail}</strong>. {w.bonusDesc}
-              </p>
-              <div className="pt-1">
-                <button
-                  type="button"
-                  onClick={() => setIsSuccess(false)}
-                  className="text-xs font-semibold text-[#047857] dark:text-[#34D399] underline underline-offset-2 hover:opacity-80 cursor-pointer"
-                >
-                  {w.registerAnother}
-                </button>
-              </div>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Right Column: Waitlist Email Registration Card */}
+          <div className="lg:col-span-5 h-full">
+            <div className="p-4 sm:p-6 lg:p-6 rounded-[20px] sm:rounded-[24px] bg-gradient-to-br from-[#FAF5EF]/95 via-[#FFFDF9] to-[#F5EADB]/40 dark:from-[#18130E] dark:via-[#141419] dark:to-[#1C1712] border border-[#E9C9A5]/80 dark:border-[#B8661B]/40 shadow-xs space-y-4 h-full flex flex-col justify-between">
               <div>
-                <p className="text-xs sm:text-sm text-[#475569] dark:text-[#CBD5E1] leading-relaxed">
-                  {w.waitlistFormDesc}
-                </p>
-              </div>
-
-              {/* Platform Selector Buttons */}
-              <div className="space-y-1.5">
-                <label className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8]">
-                  {w.selectDevice}
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setPlatform('ios')}
-                    className={`py-2 px-3 rounded-[12px] text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                      platform === 'ios'
-                        ? 'bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs'
-                        : 'bg-white dark:bg-[#121216] border border-[#E5E5E5] dark:border-[#262630] text-[#475569] dark:text-[#CBD5E1] hover:border-[#B8661B]/40'
-                    }`}
-                  >
-                    <Smartphone className="w-3.5 h-3.5" />
-                    <span>{w.ios}</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setPlatform('android')}
-                    className={`py-2 px-3 rounded-[12px] text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                      platform === 'android'
-                        ? 'bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs'
-                        : 'bg-white dark:bg-[#121216] border border-[#E5E5E5] dark:border-[#262630] text-[#475569] dark:text-[#CBD5E1] hover:border-[#B8661B]/40'
-                    }`}
-                  >
-                    <Smartphone className="w-3.5 h-3.5" />
-                    <span>{w.android}</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setPlatform('extension')}
-                    className={`py-2 px-3 rounded-[12px] text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                      platform === 'extension'
-                        ? 'bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs'
-                        : 'bg-white dark:bg-[#121216] border border-[#E5E5E5] dark:border-[#262630] text-[#475569] dark:text-[#CBD5E1] hover:border-[#B8661B]/40'
-                    }`}
-                  >
-                    <Globe className="w-3.5 h-3.5" />
-                    <span>{w.browser}</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Email Input Field & Submit Button */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
-                <div className="relative flex-1">
-                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder={w.emailPlaceholder}
-                    className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm rounded-[14px] bg-white dark:bg-[#101015] border border-[#D8D1C4] dark:border-[#2C2C36] focus:border-[#B8661B] dark:focus:border-[#EAB308] focus:outline-none text-[#080808] dark:text-white placeholder-[#94A3B8] transition-colors"
-                    required
-                  />
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-wider">
+                    <Bell className="w-4 h-4" />
+                    <span>{w.waitlistTitle}</span>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase">
+                    {w.earlyAccess}
+                  </span>
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-5 py-3 rounded-[14px] bg-[#111111] dark:bg-[#B8661B] hover:bg-[#B8661B] dark:hover:bg-[#964E10] text-white text-xs sm:text-sm font-bold shadow-xs transition-colors cursor-pointer flex items-center justify-center gap-2 shrink-0 disabled:opacity-50"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>{isSubmitting ? w.registering : w.joinWaitlist}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                {isSuccess ? (
+                  <div className="p-4 sm:p-5 rounded-[18px] bg-[#ECFDF5] dark:bg-[#064E3B]/25 border border-[#10B981]/30 text-left space-y-3 animate-in fade-in zoom-in-95 duration-200">
+                    <div className="flex items-center gap-2 text-sm sm:text-base font-bold text-[#047857] dark:text-[#34D399]">
+                      <CheckCircle2 className="w-5 h-5 shrink-0" />
+                      <span>{w.registeredSuccess}</span>
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10B981]/15 text-[#047857] dark:text-[#34D399] font-mono text-xs font-bold">
+                      <span>{w.waitlistPriority}: #{waitlistNumber}</span>
+                      <span>·</span>
+                      <span className="capitalize">{platform} {w.betaAccess}</span>
+                    </div>
+                    <p className="text-xs text-[#065F46] dark:text-[#A7F3D0] leading-relaxed">
+                      {w.confirmedFor} <strong className="font-mono text-[#047857] dark:text-[#34D399]">{registeredEmail}</strong>. {w.bonusDesc}
+                    </p>
+                    <div className="pt-1">
+                      <button
+                        type="button"
+                        onClick={() => setIsSuccess(false)}
+                        className="text-xs font-semibold text-[#047857] dark:text-[#34D399] underline underline-offset-2 hover:opacity-80 cursor-pointer"
+                      >
+                        {w.registerAnother}
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <p className="text-xs sm:text-sm text-[#475569] dark:text-[#CBD5E1] leading-relaxed">
+                        {w.waitlistFormDesc}
+                      </p>
+                    </div>
+
+                    {/* Platform Selector Buttons */}
+                    <div className="space-y-1.5">
+                      <label className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8]">
+                        {w.selectDevice}
+                      </label>
+                      <div className="grid grid-cols-3 gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setPlatform('ios')}
+                          className={`py-2 px-2.5 sm:px-3 rounded-[12px] text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                            platform === 'ios'
+                              ? 'bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs'
+                              : 'bg-white dark:bg-[#121216] border border-[#E5E5E5] dark:border-[#262630] text-[#475569] dark:text-[#CBD5E1] hover:border-[#B8661B]/40'
+                          }`}
+                        >
+                          <Smartphone className="w-3.5 h-3.5" />
+                          <span>{w.ios}</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setPlatform('android')}
+                          className={`py-2 px-2.5 sm:px-3 rounded-[12px] text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                            platform === 'android'
+                              ? 'bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs'
+                              : 'bg-white dark:bg-[#121216] border border-[#E5E5E5] dark:border-[#262630] text-[#475569] dark:text-[#CBD5E1] hover:border-[#B8661B]/40'
+                          }`}
+                        >
+                          <Smartphone className="w-3.5 h-3.5" />
+                          <span>{w.android}</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setPlatform('extension')}
+                          className={`py-2 px-2.5 sm:px-3 rounded-[12px] text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                            platform === 'extension'
+                              ? 'bg-[#B8661B] text-white dark:bg-[#EAB308] dark:text-[#080808] shadow-xs'
+                              : 'bg-white dark:bg-[#121216] border border-[#E5E5E5] dark:border-[#262630] text-[#475569] dark:text-[#CBD5E1] hover:border-[#B8661B]/40'
+                          }`}
+                        >
+                          <Globe className="w-3.5 h-3.5" />
+                          <span>{w.browser}</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Email Input Field & Submit Button */}
+                    <div className="space-y-2.5">
+                      <div className="relative">
+                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder={w.emailPlaceholder}
+                          className="w-full pl-10 pr-3.5 py-2.5 sm:py-3 text-xs sm:text-sm rounded-[14px] bg-white dark:bg-[#101015] border border-[#D8D1C4] dark:border-[#2C2C36] focus:border-[#B8661B] dark:focus:border-[#EAB308] focus:outline-none text-[#080808] dark:text-white placeholder-[#94A3B8] transition-colors"
+                          required
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-3 px-5 rounded-[14px] bg-[#111111] dark:bg-[#B8661B] hover:bg-[#B8661B] dark:hover:bg-[#964E10] text-white text-xs sm:text-sm font-bold shadow-xs transition-colors cursor-pointer flex items-center justify-center gap-2 shrink-0 disabled:opacity-50"
+                      >
+                        <Download className="w-4 h-4" />
+                        <span>{isSubmitting ? w.registering : w.joinWaitlist}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                    {errorMessage && (
+                      <p className="text-xs text-[#DC2626] dark:text-[#F87171]">{errorMessage}</p>
+                    )}
+                  </form>
+                )}
               </div>
 
-              {errorMessage && (
-                <p className="text-xs text-[#DC2626] dark:text-[#F87171]">{errorMessage}</p>
+              {registeredEmail && !isSuccess && (
+                <div className="text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] flex items-center justify-between pt-2 border-t border-[#F0ECE1] dark:border-[#202028]">
+                  <span>{w.prevRegistered}</span>
+                  <span className="text-[#B8661B] dark:text-[#EAB308] font-bold truncate max-w-[160px]">{registeredEmail}</span>
+                </div>
               )}
-            </form>
-          )}
-
-          {registeredEmail && !isSuccess && (
-            <div className="text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] flex items-center justify-between pt-1 border-t border-[#F0ECE1] dark:border-[#202028]">
-              <span>{w.prevRegistered}</span>
-              <span className="text-[#B8661B] dark:text-[#EAB308] font-bold">{registeredEmail}</span>
             </div>
-          )}
-        </div>
-
-        {/* Core Architecture Highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5 text-left">
-          <div className="p-2.5 sm:p-3 rounded-[14px] sm:rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
-            <Zap className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] mb-1.5" />
-            <div className="text-xs font-bold text-[#080808] dark:text-white">{w.speedTitle}</div>
-            <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-0.5">
-              {w.speedDesc}
-            </div>
-          </div>
-
-          <div className="p-2.5 sm:p-3 rounded-[14px] sm:rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
-            <Lock className="w-4 h-4 text-[#16A34A] dark:text-[#4ADE80] mb-1.5" />
-            <div className="text-xs font-bold text-[#080808] dark:text-white">{w.custodyTitle}</div>
-            <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-0.5">
-              {w.custodyDesc}
-            </div>
-          </div>
-
-          <div className="p-2.5 sm:p-3 rounded-[14px] sm:rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
-            <Layers className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] mb-1.5" />
-            <div className="text-xs font-bold text-[#080808] dark:text-white">{w.stakingTitle}</div>
-            <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-0.5">
-              {w.stakingDesc}
-            </div>
-          </div>
-        </div>
-
-        {/* Security & Official Advisory */}
-        <div className="p-3 sm:p-3.5 rounded-[14px] sm:rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E] flex items-start gap-2.5 sm:gap-3 text-left">
-          <ShieldCheck className="w-4 h-4 text-[#16A34A] dark:text-[#4ADE80] shrink-0 mt-0.5" />
-          <div className="text-[11px] text-[#475569] dark:text-[#94A3B8] leading-relaxed">
-            <strong className="text-[#080808] dark:text-white font-medium">{w.securityTitle} </strong>
-            {w.securityDesc}
           </div>
         </div>
       </div>

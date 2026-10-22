@@ -9,13 +9,15 @@ interface WalletConnectModalProps {
   onClose: () => void;
   walletState: WalletState;
   setWalletState: React.Dispatch<React.SetStateAction<WalletState>>;
+  onOpenWallet?: () => void;
 }
 
 export const WalletConnectModal: React.FC<WalletConnectModalProps> = ({
   isOpen,
   onClose,
   walletState,
-  setWalletState
+  setWalletState,
+  onOpenWallet
 }) => {
   const { t } = useLanguage();
   const [available, setAvailable] = useState<{ phantom: boolean; solflare: boolean }>({
@@ -190,6 +192,38 @@ export const WalletConnectModal: React.FC<WalletConnectModalProps> = ({
                 <span>{walletState.error}</span>
               </div>
             )}
+
+            {/* BLTE Wallet Button (Native) */}
+            <button
+              onClick={() => {
+                onClose();
+                if (onOpenWallet) onOpenWallet();
+              }}
+              className="w-full p-4 rounded-[20px] border-2 border-[#B8661B]/40 dark:border-[#EAB308]/50 bg-gradient-to-r from-[#FAF5EF] to-white dark:from-[#201812] dark:to-[#161622] hover:border-[#B8661B] dark:hover:border-[#EAB308] flex items-center justify-between transition-all text-left group cursor-pointer shadow-[0_4px_16px_rgba(184,102,27,0.12)] hover:shadow-[0_8px_24px_rgba(184,102,27,0.22)]"
+            >
+              <div className="flex items-center gap-3.5 min-w-0">
+                <div className="w-10 h-10 rounded-[12px] bg-[#B8661B]/15 dark:bg-[#EAB308]/20 flex items-center justify-center font-bold text-[#B8661B] dark:text-[#EAB308] shrink-0">
+                  <Wallet className="w-5 h-5 text-[#B8661B] dark:text-[#EAB308]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-sm font-[800] text-[#080808] dark:text-white block font-display">
+                      BLTE Wallet
+                    </span>
+                    <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#B8661B] text-white shrink-0">
+                      NATIVE WALLET
+                    </span>
+                  </div>
+                  <span className="text-xs text-[#64748B] dark:text-[#94A3B8] block truncate">
+                    Bitcoin Lite Edition native wallet
+                  </span>
+                </div>
+              </div>
+
+              <span className="text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] group-hover:translate-x-1 transition-transform shrink-0 ml-2">
+                Open →
+              </span>
+            </button>
 
             {/* Phantom Button */}
             <button

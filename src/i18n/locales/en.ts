@@ -109,7 +109,7 @@ export const en: TranslationSchema = {
         kicker: '05 · Decentralization',
         title: 'Non-Custodial P2P Architecture',
         summary: 'Permissionless peer-to-peer ownership.',
-        description: "Users retain complete, non-custodial ownership of their assets in self-custody Solana wallets. Transactions execute directly peer-to-peer across Solana's decentralized validator network without intermediaries.",
+        description: "Users retain complete, non-custodial ownership of their assets in self-custody wallets including BLTE Wallet (Bitcoin Lite Edition native wallet) or verified Solana clients. Transactions execute directly peer-to-peer across Solana's decentralized validator network without intermediaries.",
         highlight: 'Self-Custody',
         verified: 'Verified',
         network: '',
@@ -378,9 +378,9 @@ export const en: TranslationSchema = {
     steps: [
       {
         step: '01',
-        title: 'Set Up a Solana Wallet',
-        summary: 'Install a secure, non-custodial Solana wallet application.',
-        description: 'Download a verified Solana wallet extension or mobile application such as Phantom, Solflare, or Backpack. These wallets provide direct custody of your digital assets on the Solana blockchain.',
+        title: 'Set Up a Non-Custodial Wallet',
+        summary: 'Install BLTE Wallet (native client) or a verified Solana wallet.',
+        description: 'Use the official BLTE Wallet—Bitcoin Lite Edition native wallet engineered with biometric hardware security and 1-tap staking—or download verified Solana wallets such as Phantom, Solflare, or Backpack for sovereign asset control.',
       },
       {
         step: '02',
@@ -655,7 +655,7 @@ export const en: TranslationSchema = {
       },
       {
         question: 'Which crypto wallets can hold BLTE tokens?',
-        answer: 'Any non-custodial wallet supporting the Solana SPL / Token-2022 standard can hold Bitcoin Lite Edition. Recommended wallets include Phantom, Solflare, and Backpack. Always ensure you control your private seed phrase and never share it.',
+        answer: 'The official BLTE Wallet is Bitcoin Lite Edition native wallet, offering direct non-custodial custody, hardware-grade biometric keys, and 1-tap protocol staking. You can also use any non-custodial wallet supporting the Solana SPL / Token-2022 standard such as Phantom, Solflare, and Backpack.',
       },
       {
         question: 'How do I protect myself against counterfeit tokens and scams?',

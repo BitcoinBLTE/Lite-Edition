@@ -48,13 +48,35 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #080808;
+  color: #08080A;
+  letter-spacing: -0.025em;
+  text-rendering: optimizeLegibility;
 }
 
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
 [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6,
 .theme-black h1, .theme-black h2, .theme-black h3, .theme-black h4, .theme-black h5, .theme-black h6 {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.20) !important;
+  letter-spacing: -0.025em;
+}
+
+/* Polished metallic kicker styling */
+.tracking-\[2\.5px\],
+.tracking-\[3px\],
+.tracking-\[3\.5px\] {
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .tracking-\[2\.5px\],
+[data-theme="dark"] .tracking-\[3px\],
+[data-theme="dark"] .tracking-\[3\.5px\],
+.dark .tracking-\[2\.5px\],
+.dark .tracking-\[3px\],
+.dark .tracking-\[3\.5px\] {
+  text-shadow: 0 0 12px rgba(234, 179, 8, 0.40);
 }
 
 /* Subtle editorial card shadow */
@@ -163,78 +185,160 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 }
 
 /* Base Canvas & Section Overrides */
-[data-theme="dark"] .bg-white {
-  background-color: #080808 !important;
-}
-
-[data-theme="dark"] .bg-\[\#FCFCFC\] {
-  background-color: #121215 !important;
-}
-
-[data-theme="dark"] .bg-\[\#F5F5F5\] {
-  background-color: #18181C !important;
-}
-
-[data-theme="dark"] .bg-\[\#FAF5EF\] {
-  background-color: #1C150E !important;
-}
-
-[data-theme="dark"] .bg-\[\#FAF9F5\] {
-  background-color: #181410 !important;
-}
-
-[data-theme="dark"] .bg-\[\#FCFCFD\] {
-  background-color: #121215 !important;
-}
-
-[data-theme="dark"] .bg-\[\#F9F9F9\] {
-  background-color: #18181D !important;
-}
-
-[data-theme="dark"] .bg-\[\#F7F7F7\] {
-  background-color: #17171B !important;
-}
-
-[data-theme="dark"] .bg-\[\#F0F0F0\] {
-  background-color: #1E1E24 !important;
-}
-
-[data-theme="dark"] .bg-white\/95,
-[data-theme="dark"] .bg-white\/90,
-[data-theme="dark"] .bg-white\/80 {
-  background-color: rgba(8, 8, 8, 0.95) !important;
-}
-
-[data-theme="dark"] .bg-white\/70 {
-  background-color: rgba(18, 18, 21, 0.75) !important;
-}
-
-[data-theme="dark"] .bg-black\/50 {
-  background-color: rgba(0, 0, 0, 0.85) !important;
+[data-theme="dark"] body,
+.dark body {
+  background-color: #08080C !important;
 }
 
 /* ============================================================
-   PREMIUM POLISHED CONTAINER BACKGROUNDS (LIGHT THEME)
-   Gives cards, panels, and dialogs a pristine, crisp, luminous
-   surface with delicate warm elevation against the canvas
+   PREMIUM POLISHED CONTAINER BACKGROUNDS
+   Gives cards, panels, and dialogs an unmistakably distinct,
+   elevated, specular surface distinct from the canvas
    ============================================================ */
-.bg-\[\#FCFCFC\],
-.bg-\[\#FCFCFD\] {
+.rounded-\[18px\],
+.rounded-\[20px\],
+.rounded-\[22px\],
+.rounded-\[24px\],
+.rounded-\[26px\],
+.rounded-\[28px\],
+.rounded-\[30px\],
+.rounded-\[32px\],
+.rounded-\[36px\],
+.rounded-\[38px\],
+.rounded-\[40px\] {
+  box-shadow: 0 12px 36px -4px rgba(184, 102, 27, 0.10), 0 4px 12px -2px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(184, 102, 27, 0.06) !important;
+  border: 1px solid rgba(184, 102, 27, 0.26) !important;
+}
+
+[data-theme="dark"] .rounded-\[18px\],
+[data-theme="dark"] .rounded-\[20px\],
+[data-theme="dark"] .rounded-\[22px\],
+[data-theme="dark"] .rounded-\[24px\],
+[data-theme="dark"] .rounded-\[26px\],
+[data-theme="dark"] .rounded-\[28px\],
+[data-theme="dark"] .rounded-\[30px\],
+[data-theme="dark"] .rounded-\[32px\],
+[data-theme="dark"] .rounded-\[36px\],
+[data-theme="dark"] .rounded-\[38px\],
+[data-theme="dark"] .rounded-\[40px\],
+.dark .rounded-\[18px\],
+.dark .rounded-\[20px\],
+.dark .rounded-\[22px\],
+.dark .rounded-\[24px\],
+.dark .rounded-\[26px\],
+.dark .rounded-\[28px\],
+.dark .rounded-\[30px\],
+.dark .rounded-\[32px\],
+.dark .rounded-\[36px\],
+.dark .rounded-\[38px\],
+.dark .rounded-\[40px\] {
+  box-shadow: 0 18px 48px -4px rgba(0, 0, 0, 0.88), 0 4px 18px -2px rgba(234, 179, 8, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.22), inset 0 0 28px rgba(184, 102, 27, 0.06) !important;
+  border: 1px solid rgba(234, 179, 8, 0.36) !important;
+}
+
+.rounded-\[18px\]:hover,
+.rounded-\[20px\]:hover,
+.rounded-\[22px\]:hover,
+.rounded-\[24px\]:hover,
+.rounded-\[26px\]:hover,
+.rounded-\[28px\]:hover,
+.rounded-\[30px\]:hover,
+.rounded-\[32px\]:hover,
+.rounded-\[36px\]:hover,
+.rounded-\[38px\]:hover,
+.rounded-\[40px\]:hover {
+  box-shadow: 0 20px 52px -4px rgba(184, 102, 27, 0.20), 0 6px 20px -2px rgba(0, 0, 0, 0.08), inset 0 1px 1px #ffffff !important;
+  border-color: rgba(184, 102, 27, 0.52) !important;
+}
+
+[data-theme="dark"] .rounded-\[18px\]:hover,
+[data-theme="dark"] .rounded-\[20px\]:hover,
+[data-theme="dark"] .rounded-\[22px\]:hover,
+[data-theme="dark"] .rounded-\[24px\]:hover,
+[data-theme="dark"] .rounded-\[26px\]:hover,
+[data-theme="dark"] .rounded-\[28px\]:hover,
+[data-theme="dark"] .rounded-\[30px\]:hover,
+[data-theme="dark"] .rounded-\[32px\]:hover,
+[data-theme="dark"] .rounded-\[36px\]:hover,
+[data-theme="dark"] .rounded-\[38px\]:hover,
+[data-theme="dark"] .rounded-\[40px\]:hover,
+.dark .rounded-\[18px\]:hover,
+.dark .rounded-\[20px\]:hover,
+.dark .rounded-\[22px\]:hover,
+.dark .rounded-\[24px\]:hover,
+.dark .rounded-\[26px\]:hover,
+.dark .rounded-\[28px\]:hover,
+.dark .rounded-\[30px\]:hover,
+.dark .rounded-\[32px\]:hover,
+.dark .rounded-\[36px\]:hover,
+.dark .rounded-\[38px\]:hover,
+.dark .rounded-\[40px\]:hover {
+  box-shadow: 0 24px 64px -4px rgba(0, 0, 0, 0.95), 0 8px 26px -2px rgba(234, 179, 8, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 32px rgba(234, 179, 8, 0.12) !important;
+  border-color: rgba(234, 179, 8, 0.78) !important;
+}
+
+/* Distinct polished card surfaces: Luminous Pearl (Light) vs Elevated Obsidian (Dark) */
+.bg-white,
+.bg-white\/95,
+.bg-white\/90 {
   background-color: #FFFFFF !important;
+  background-image: linear-gradient(180deg, #FFFFFF 0%, #FDFCFB 45%, #F7F2E9 100%) !important;
 }
 
-.bg-\[\#F9F9F9\] {
-  background-color: #FAF8F5 !important;
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-white\/95,
+[data-theme="dark"] .bg-white\/90,
+[data-theme="dark"] .bg-white\/80,
+[data-theme="dark"] .bg-\[\#121217\],
+[data-theme="dark"] .bg-\[\#121217\]\/95,
+[data-theme="dark"] .bg-\[\#121218\],
+[data-theme="dark"] .bg-\[\#13131A\],
+[data-theme="dark"] .bg-\[\#13131A\]\/95,
+[data-theme="dark"] .bg-\[\#141419\],
+[data-theme="dark"] .bg-\[\#15151C\],
+.dark .bg-white,
+.dark .bg-white\/95,
+.dark .bg-white\/90,
+.dark .bg-white\/80,
+.dark .bg-\[\#121217\],
+.dark .bg-\[\#121217\]\/95,
+.dark .bg-\[\#121218\],
+.dark .bg-\[\#13131A\],
+.dark .bg-\[\#13131A\]\/95,
+.dark .bg-\[\#141419\],
+.dark .bg-\[\#15151C\] {
+  background-color: #14141E !important;
+  background-image: linear-gradient(180deg, #1A1A28 0%, #13131D 55%, #0E0E15 100%) !important;
 }
 
-.bg-\[\#F7F7F7\] {
-  background-color: #F8F6F2 !important;
+[data-theme="dark"] .bg-\[\#FCFCFC\],
+[data-theme="dark"] .bg-\[\#FCFCFD\] {
+  background-color: #161624 !important;
+  background-image: linear-gradient(180deg, #1C1C2A 0%, #151520 100%) !important;
+}
+
+[data-theme="dark"] .bg-\[\#F5F5F5\],
+[data-theme="dark"] .bg-\[\#F8F8F8\],
+[data-theme="dark"] .bg-\[\#F9F9F9\],
+[data-theme="dark"] .bg-\[\#FAFAFA\] {
+  background-color: #181826 !important;
+}
+
+[data-theme="dark"] .bg-\[\#FAF5EF\] {
+  background-color: #201710 !important;
+  background-image: linear-gradient(180deg, #281D12 0%, #1D140C 100%) !important;
+}
+
+[data-theme="dark"] .bg-\[\#FAF9F5\] {
+  background-color: #1A1512 !important;
+}
+
+[data-theme="dark"] .bg-black\/50 {
+  background-color: rgba(0, 0, 0, 0.88) !important;
 }
 
 /* ============================================================
    REFINED LUXURY HAIRLINE BORDERS & DIVIDERS
-   Card containers, section dividers, borders, dialogs, and panels
-   feature crisp, elegant, visible golden-copper hairline borders.
    ============================================================ */
 .border-\[\#E5E5E5\],
 .border-\[\#E5E5E5\]\/80,
@@ -250,7 +354,27 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .border-\[\#EAB308\]\/5,
 .border-\[\#F0F0F0\],
 .border-line {
-  border-color: rgba(184, 102, 27, 0.21) !important;
+  border-color: rgba(184, 102, 27, 0.24) !important;
+}
+
+[data-theme="dark"] .border-\[\#E5E5E5\],
+[data-theme="dark"] .border-\[\#E5E5E5\]\/80,
+[data-theme="dark"] .border-\[\#E5E5E5\]\/60,
+[data-theme="dark"] .border-\[\#D0D0D0\],
+[data-theme="dark"] .border-\[\#D9D9D9\],
+[data-theme="dark"] .border-\[\#DCDCDC\],
+[data-theme="dark"] .border-\[\#CCCCCC\],
+[data-theme="dark"] .border-\[\#E9C9A5\],
+[data-theme="dark"] .border-\[\#E9C9A5\]\/80,
+[data-theme="dark"] .border-\[\#EAB308\],
+[data-theme="dark"] .border-\[\#EAB308\]\/50,
+[data-theme="dark"] .border-\[\#EAB308\]\/5,
+[data-theme="dark"] .border-\[\#F0F0F0\],
+[data-theme="dark"] .border-line,
+.dark .border-\[\#E5E5E5\],
+.dark .border-\[\#E9C9A5\],
+.dark .border-\[\#EAB308\] {
+  border-color: rgba(234, 179, 8, 0.32) !important;
 }
 
 [data-theme="dark"] .border-\[\#E5E5E5\],

@@ -365,17 +365,19 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
             className="rounded-[20px] sm:rounded-[22px] bg-[#FCFCFC] dark:bg-[#15151A] border border-[#EAB308]/15 p-4 sm:p-5 shadow-xs flex flex-col justify-between hover:border-[#B8661B]/40 hover:shadow-md transition-all cursor-pointer group"
           >
             <div>
-              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAB308]/10">
+              <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#EAB308]/10">
                 <div className="flex items-center gap-1.5">
                   <Wallet className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] shrink-0" />
                   <span className="text-sm font-mono font-[900] tracking-wider text-[#B8661B] uppercase group-hover:text-[#964E10] dark:group-hover:text-[#FBBF24] transition-colors">
                     {walletCardLabels.title} →
                   </span>
                 </div>
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                  <span>{walletCardLabels.badge}</span>
+                <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center gap-1">
+                  <span>NATIVE WALLET</span>
                 </span>
+              </div>
+              <div className="text-[11px] text-[#B8661B] dark:text-[#FBBF24] font-semibold mb-2.5 tracking-tight">
+                Bitcoin Lite Edition native wallet
               </div>
 
               <div className="space-y-3 sm:space-y-3.5">

@@ -174,6 +174,18 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                     <p className="text-xs sm:text-sm text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.75]">
                       {mech.desc}
                     </p>
+                    {index === 5 && (
+                      <div className="pt-2">
+                        <div className="p-3 rounded-[16px] bg-[#FAF5EF] dark:bg-[#1C1712] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center gap-2.5 shadow-2xs">
+                          <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#B8661B] text-white shrink-0">
+                            NATIVE WALLET
+                          </span>
+                          <span className="text-[11px] font-semibold text-[#B8661B] dark:text-[#EAB308]">
+                            BLTE Wallet is Bitcoin Lite Edition native wallet
+                          </span>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
