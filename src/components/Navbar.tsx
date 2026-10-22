@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       icon: <Download className="w-5 h-5 shrink-0" />,
       badge: (
         <span className="inline-flex items-center gap-1">
-          <Download className="w-[4.5px] h-[4.5px] stroke-[2] shrink-0" style={{ width: '4.5px', height: '4.5px' }} />
+          <Download className="w-2.5 h-2.5 stroke-[2] shrink-0" />
           <span>{t.modals?.explore_modal?.coming_soon || 'Coming Soon'}</span>
         </span>
       ),
@@ -329,7 +329,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         
                         <div className="ml-auto flex items-center gap-2 shrink-0">
                           {item.badge && (
-                            <span className="text-xs sm:text-sm font-mono font-black px-3 py-1 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 shadow-xs tracking-tight">
+                            <span className="text-[10px] sm:text-[11px] font-mono font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 shadow-xs tracking-tight">
                               {item.badge}
                             </span>
                           )}

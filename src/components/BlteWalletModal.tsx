@@ -77,7 +77,7 @@ interface WalletModalTranslation {
 const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   en: {
     modalTitle: "BLTE WALLET",
-    modalSubtitle: "Official Non-Custodial Client · Coming Soon",
+    modalSubtitle: "",
     badgeComingSoon: "COMING SOON · OFFICIAL WALLET",
     heroTitle: "BLTE Wallet",
     heroDesc: "The dedicated, non-custodial decentralized client engineered exclusively for the Bitcoin Lite Edition ecosystem on Solana. Zero third-party custody, sub-second confirmations, and built-in staking telemetry.",
@@ -90,7 +90,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play & Direct APK",
     browserExt: "Browser Extension",
     browserDesc: "Chrome, Brave & Edge",
-    downloadSoon: "Download · Coming Soon",
+    downloadSoon: "Download",
     waitlistTitle: "Waitlist Email Registration",
     earlyAccess: "Early Access",
     registeredSuccess: "You're registered on the BLTE Wallet Waitlist!",
@@ -122,7 +122,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   es: {
     modalTitle: "BILLETERA BLTE",
-    modalSubtitle: "Cliente oficial no custodial · Próximamente",
+    modalSubtitle: "",
     badgeComingSoon: "PRÓXIMAMENTE · BILLETERA OFICIAL",
     heroTitle: "Billetera BLTE",
     heroDesc: "El cliente descentralizado y no custodial diseñado exclusivamente para el ecosistema Bitcoin Lite Edition en Solana. Cero custodia de terceros, confirmaciones en menos de un segundo y telemetría de staking integrada.",
@@ -135,7 +135,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play y APK directa",
     browserExt: "Extensión del navegador",
     browserDesc: "Chrome, Brave y Edge",
-    downloadSoon: "Descargar · Próximamente",
+    downloadSoon: "Descargar",
     waitlistTitle: "Registro en lista de espera por correo",
     earlyAccess: "Acceso temprano",
     registeredSuccess: "¡Estás registrado en la lista de espera de BLTE Wallet!",
@@ -167,7 +167,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   fr: {
     modalTitle: "PORTEFEUILLE BLTE",
-    modalSubtitle: "Client officiel non-dépositaire · Bientôt disponible",
+    modalSubtitle: "",
     badgeComingSoon: "BIENTÔT DISPONIBLE · PORTEFEUILLE OFFICIEL",
     heroTitle: "Portefeuille BLTE",
     heroDesc: "Le client décentralisé et non-dépositaire conçu exclusivement pour l'écosystème Bitcoin Lite Edition sur Solana. Zéro tiers de confiance, confirmations inférieures à la seconde et télémétrie de staking intégrée.",
@@ -180,7 +180,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play & APK direct",
     browserExt: "Extension de navigateur",
     browserDesc: "Chrome, Brave & Edge",
-    downloadSoon: "Télécharger · Bientôt disponible",
+    downloadSoon: "Télécharger",
     waitlistTitle: "Inscription sur liste d'attente par e-mail",
     earlyAccess: "Accès anticipé",
     registeredSuccess: "Vous êtes inscrit sur la liste d'attente du Portefeuille BLTE !",
@@ -212,7 +212,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   de: {
     modalTitle: "BLTE WALLET",
-    modalSubtitle: "Offizieller Non-Custodial Client · Demnächst verfügbar",
+    modalSubtitle: "",
     badgeComingSoon: "DEMNÄCHST · OFFIZIELLES WALLET",
     heroTitle: "BLTE Wallet",
     heroDesc: "Der dedizierte, dezentrale Non-Custodial-Client für das Bitcoin Lite Edition Ökosystem auf Solana. Keine Drittverwahrung, Bestätigungen unter einer Sekunde und integriertes Staking.",
@@ -225,7 +225,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play & Direkter APK-Download",
     browserExt: "Browser-Erweiterung",
     browserDesc: "Chrome, Brave & Edge",
-    downloadSoon: "Herunterladen · Demnächst",
+    downloadSoon: "Herunterladen",
     waitlistTitle: "Wartelisten-E-Mail-Registrierung",
     earlyAccess: "Frühzeitiger Zugang",
     registeredSuccess: "Sie sind auf der BLTE Wallet-Warteliste eingetragen!",
@@ -257,7 +257,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   ja: {
     modalTitle: "BLTE ウォレット",
-    modalSubtitle: "公式非カストディアルクライアント · 近日公開",
+    modalSubtitle: "",
     badgeComingSoon: "近日公開 · 公式ウォレット",
     heroTitle: "BLTE ウォレット",
     heroDesc: "Solana上のBitcoin Lite Editionエコシステム専用に設計された非カストディアル分散型クライアント。第三者預託ゼロ、1秒未満の高速承認、ウォレット内ステーキング機能。",
@@ -270,7 +270,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play & 直接ダウンロード",
     browserExt: "ブラウザ拡張機能",
     browserDesc: "Chrome, Brave & Edge",
-    downloadSoon: "ダウンロード · 近日公開",
+    downloadSoon: "ダウンロード",
     waitlistTitle: "ウェイティングリスト登録（メール）",
     earlyAccess: "先行アクセス",
     registeredSuccess: "BLTEウォレットのウェイティングリストに登録されました！",
@@ -302,7 +302,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   'zh-CN': {
     modalTitle: "BLTE 钱包",
-    modalSubtitle: "官方非托管客户端 · 即将推出",
+    modalSubtitle: "",
     badgeComingSoon: "即将推出 · 官方钱包",
     heroTitle: "BLTE 钱包",
     heroDesc: "专为 Solana 上的 Bitcoin Lite Edition 生态系统打造的非托管去中心化客户端。无第三方托管、亚秒级极速确认、内置质押收益。",
@@ -315,7 +315,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play 与直接安装包",
     browserExt: "浏览器扩展插件",
     browserDesc: "Chrome、Brave 与 Edge",
-    downloadSoon: "下载 · 即将推出",
+    downloadSoon: "下载",
     waitlistTitle: "候补名单邮箱登记",
     earlyAccess: "早期优先资格",
     registeredSuccess: "您已成功加入 BLTE 钱包候补名单！",
@@ -347,7 +347,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   'zh-TW': {
     modalTitle: "BLTE 錢包",
-    modalSubtitle: "官方非託管客戶端 · 即將推出",
+    modalSubtitle: "",
     badgeComingSoon: "即將推出 · 官方錢包",
     heroTitle: "BLTE 錢包",
     heroDesc: "專為 Solana 上的 Bitcoin Lite Edition 生態系統打造的非託管去中心化客戶端。無第三方託管、亞秒級極速確認、內建質押收益。",
@@ -360,7 +360,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play 與直接安裝檔",
     browserExt: "瀏覽器擴充功能",
     browserDesc: "Chrome、Brave 與 Edge",
-    downloadSoon: "下載 · 即將推出",
+    downloadSoon: "下載",
     waitlistTitle: "候補名單電子信箱登記",
     earlyAccess: "早期優先資格",
     registeredSuccess: "您已成功加入 BLTE 錢包候補名單！",
@@ -392,7 +392,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   'pt-PT': {
     modalTitle: "CARTEIRA BLTE",
-    modalSubtitle: "Cliente oficial não custodial · Em breve",
+    modalSubtitle: "",
     badgeComingSoon: "EM BREVE · CARTEIRA OFICIAL",
     heroTitle: "Carteira BLTE",
     heroDesc: "O cliente descentralizado e não custodial desenvolvido exclusivamente para o ecossistema Bitcoin Lite Edition em Solana. Zero custódia de terceiros, confirmações em menos de um segundo e telemetria de staking integrada.",
@@ -405,7 +405,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play & Download direto",
     browserExt: "Extensão de Navegador",
     browserDesc: "Chrome, Brave & Edge",
-    downloadSoon: "Transferir · Em breve",
+    downloadSoon: "Transferir",
     waitlistTitle: "Registo na Lista de Espera por Email",
     earlyAccess: "Acesso Antecipado",
     registeredSuccess: "Está registado na lista de espera da Carteira BLTE!",
@@ -437,7 +437,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   no: {
     modalTitle: "BLTE LOMMEBOK",
-    modalSubtitle: "Offisiell ikke-forvarende klient · Kommer snart",
+    modalSubtitle: "",
     badgeComingSoon: "KOMMER SNART · OFFISIELL LOMMEBOK",
     heroTitle: "BLTE Lommebok",
     heroDesc: "Den dedikerte, ikke-forvarende desentraliserte klienten utviklet eksklusivt for Bitcoin Lite Edition-økosystemet på Solana. Null tredjeparts forvaring, bekreftelser under sekundet og innebygd staking.",
@@ -450,7 +450,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play & Direkte APK",
     browserExt: "Nettleserutvidelse",
     browserDesc: "Chrome, Brave & Edge",
-    downloadSoon: "Last ned · Kommer snart",
+    downloadSoon: "Last ned",
     waitlistTitle: "E-postregistrering for venteliste",
     earlyAccess: "Tidlig tilgang",
     registeredSuccess: "Du er registrert på ventelisten for BLTE-lommeboken!",
@@ -482,7 +482,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
   },
   th: {
     modalTitle: "กระเป๋าเงิน BLTE",
-    modalSubtitle: "ไคลเอนต์แบบ Non-Custodial อย่างเป็นทางการ · เร็วๆ นี้",
+    modalSubtitle: "",
     badgeComingSoon: "เร็วๆ นี้ · กระเป๋าเงินอย่างเป็นทางการ",
     heroTitle: "กระเป๋าเงิน BLTE",
     heroDesc: "ไคลเอนต์แบบกระจายศูนย์ที่ปลอดภัยสำหรับระบบนิเวศ Bitcoin Lite Edition บน Solana ไม่มีการควบคุมโดยบุคคลที่สาม ยืนยันธุรกรรมในเสี้ยววินาที และมีระบบสเตกในตัว",
@@ -495,7 +495,7 @@ const WALLET_TRANSLATIONS: Record<string, WalletModalTranslation> = {
     androidDesc: "Google Play และดาวน์โหลด APK โดยตรง",
     browserExt: "ส่วนขยายเบราว์เซอร์",
     browserDesc: "Chrome, Brave & Edge",
-    downloadSoon: "ดาวน์โหลด · เร็วๆ นี้",
+    downloadSoon: "ดาวน์โหลด",
     waitlistTitle: "ลงทะเบียนอีเมลเพื่อรอคิว",
     earlyAccess: "สิทธิ์เข้าถึงก่อนใคร",
     registeredSuccess: "คุณได้ลงทะเบียนในรายชื่อรอรับกระเป๋าเงิน BLTE แล้ว!",
@@ -605,11 +605,11 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
       isOpen={isOpen}
       onClose={onClose}
       title={w.modalTitle}
-      subtitle={w.modalSubtitle}
       maxWidthClass="max-w-xl w-full"
+      maxHeightClass="max-h-[92vh] sm:max-h-[88vh]"
       ariaLabelledBy="blte-wallet-modal-title"
       footer={
-        <div className="px-5 py-3.5 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] dark:border-[#222228] flex flex-wrap items-center justify-between gap-3">
+        <div className="px-4 sm:px-5 py-3 sm:py-3.5 bg-[#FCFCFC] dark:bg-[#121215] border-t border-[#E5E5E5] dark:border-[#222228] flex flex-wrap items-center justify-between gap-3">
           {onOpenWhitePaper && (
             <button
               onClick={() => {
@@ -625,37 +625,37 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
 
           <button
             onClick={onClose}
-            className="px-5 py-2.5 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer ml-auto"
+            className="px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-bold text-white bg-[#111111] hover:bg-[#B8661B] rounded-[12px] sm:rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all cursor-pointer ml-auto"
           >
             {w.close || t.common?.close || 'Close'}
           </button>
         </div>
       }
     >
-      <div className="p-5 sm:p-7 space-y-6">
+      <div className="p-4 sm:p-6 lg:p-7 space-y-4 sm:space-y-6">
         {/* Top Header & Official Coming Soon Announcement */}
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-2.5 sm:space-y-3">
           {/* Prominent Coming Soon Pulse Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-amber-500/15 text-[#B8661B] dark:text-[#EAB308] border border-[#B8661B]/30 dark:border-[#EAB308]/30 text-xs font-mono font-black uppercase tracking-widest shadow-2xs">
-            <span className="relative flex h-2.5 w-2.5">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-amber-500/15 text-[#B8661B] dark:text-[#EAB308] border border-[#B8661B]/30 dark:border-[#EAB308]/30 text-[10px] sm:text-xs font-mono font-black uppercase tracking-wider sm:tracking-widest shadow-2xs">
+            <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#B8661B] dark:bg-[#EAB308]"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-[#B8661B] dark:bg-[#EAB308]"></span>
             </span>
             <span>{w.badgeComingSoon}</span>
           </div>
 
-          <div className="relative w-16 h-16 rounded-[22px] bg-gradient-to-br from-[#FAF5EF] to-[#F3E7D3] dark:from-[#201810] dark:to-[#120E08] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center justify-center mx-auto text-[#B8661B] dark:text-[#EAB308] shadow-md">
-            <Wallet className="w-8 h-8 stroke-[2]" />
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#B8661B] text-white flex items-center justify-center shadow-xs">
-              <Download className="w-3.5 h-3.5 stroke-[2.5]" />
+          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-[18px] sm:rounded-[22px] bg-gradient-to-br from-[#FAF5EF] to-[#F3E7D3] dark:from-[#201810] dark:to-[#120E08] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center justify-center mx-auto text-[#B8661B] dark:text-[#EAB308] shadow-md">
+            <Wallet className="w-7 h-7 sm:w-8 sm:h-8 stroke-[2]" />
+            <div className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#B8661B] text-white flex items-center justify-center shadow-xs">
+              <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5]" />
             </div>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-[900] text-[#080808] dark:text-white font-display tracking-tight">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-[900] text-[#080808] dark:text-white font-display tracking-tight">
             {w.heroTitle}
           </h3>
 
-          <p className="text-xs sm:text-sm text-[#475569] dark:text-[#94A3B8] max-w-md mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#475569] dark:text-[#94A3B8] max-w-md mx-auto leading-relaxed px-1">
             {w.heroDesc}
           </p>
         </div>
@@ -670,9 +670,9 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
             <span className="text-[11px] text-[#B8661B] dark:text-[#EAB308]">{w.phaseBeta}</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5">
             {/* iOS */}
-            <div className="p-3.5 rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
+            <div className="p-3 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <Smartphone className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
                 <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
@@ -691,7 +691,7 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
             </div>
 
             {/* Android */}
-            <div className="p-3.5 rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
+            <div className="p-3 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <Smartphone className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
                 <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
@@ -710,7 +710,7 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
             </div>
 
             {/* Browser Extension */}
-            <div className="p-3.5 rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
+            <div className="p-3 sm:p-3.5 rounded-[16px] sm:rounded-[18px] bg-[#FAF8F5] dark:bg-[#15151C] border border-[#EAE6DF] dark:border-[#22222E] flex flex-col justify-between text-left group hover:border-[#B8661B]/40 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <Globe className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308]" />
                 <span className="text-[10px] font-mono font-bold uppercase text-[#B8661B] dark:text-[#EAB308] bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
@@ -731,7 +731,7 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
         </div>
 
         {/* Email Registration for Waitlist ("wait listening") */}
-        <div className="p-5 sm:p-6 rounded-[22px] bg-gradient-to-br from-[#FAF5EF]/95 via-[#FFFDF9] to-[#F5EADB]/40 dark:from-[#18130E] dark:via-[#141419] dark:to-[#1C1712] border border-[#E9C9A5]/80 dark:border-[#B8661B]/40 shadow-xs space-y-4">
+        <div className="p-4 sm:p-6 rounded-[18px] sm:rounded-[22px] bg-gradient-to-br from-[#FAF5EF]/95 via-[#FFFDF9] to-[#F5EADB]/40 dark:from-[#18130E] dark:via-[#141419] dark:to-[#1C1712] border border-[#E9C9A5]/80 dark:border-[#B8661B]/40 shadow-xs space-y-3.5 sm:space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] uppercase tracking-wider">
               <Bell className="w-4 h-4" />
@@ -859,8 +859,8 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
         </div>
 
         {/* Core Architecture Highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-left">
-          <div className="p-3 rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5 text-left">
+          <div className="p-2.5 sm:p-3 rounded-[14px] sm:rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
             <Zap className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] mb-1.5" />
             <div className="text-xs font-bold text-[#080808] dark:text-white">{w.speedTitle}</div>
             <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-0.5">
@@ -868,7 +868,7 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
             </div>
           </div>
 
-          <div className="p-3 rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
+          <div className="p-2.5 sm:p-3 rounded-[14px] sm:rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
             <Lock className="w-4 h-4 text-[#16A34A] dark:text-[#4ADE80] mb-1.5" />
             <div className="text-xs font-bold text-[#080808] dark:text-white">{w.custodyTitle}</div>
             <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-0.5">
@@ -876,7 +876,7 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
             </div>
           </div>
 
-          <div className="p-3 rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
+          <div className="p-2.5 sm:p-3 rounded-[14px] sm:rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E]">
             <Layers className="w-4 h-4 text-[#B8661B] dark:text-[#EAB308] mb-1.5" />
             <div className="text-xs font-bold text-[#080808] dark:text-white">{w.stakingTitle}</div>
             <div className="text-[11px] text-[#64748B] dark:text-[#94A3B8] leading-tight mt-0.5">
@@ -886,7 +886,7 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
         </div>
 
         {/* Security & Official Advisory */}
-        <div className="p-3.5 rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E] flex items-start gap-3 text-left">
+        <div className="p-3 sm:p-3.5 rounded-[14px] sm:rounded-[16px] bg-[#FAF8F5] dark:bg-[#14141A] border border-[#EAE6DF] dark:border-[#22222E] flex items-start gap-2.5 sm:gap-3 text-left">
           <ShieldCheck className="w-4 h-4 text-[#16A34A] dark:text-[#4ADE80] shrink-0 mt-0.5" />
           <div className="text-[11px] text-[#475569] dark:text-[#94A3B8] leading-relaxed">
             <strong className="text-[#080808] dark:text-white font-medium">{w.securityTitle} </strong>
