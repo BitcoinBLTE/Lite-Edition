@@ -59,9 +59,20 @@ export const BitcoinIntroSection: React.FC<BitcoinIntroSectionProps> = ({
               </div>
             </div>
 
-            {/* Right Column (Contextual Body with Vertical Accent Bar) */}
-            <div className="lg:col-span-7">
-              <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-[#475569] dark:text-[#CBD5E1] font-[450] leading-[1.8] sm:leading-[1.85] font-sans border-l-2 border-[#B8661B]/60 pl-6 sm:pl-8">
+            {/* Right Column (Infographic Image moved directly above the text) */}
+            <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+              {/* Infographic Photo moved above this text */}
+              <div className="relative rounded-[20px] sm:rounded-[28px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_8px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.45)]">
+                <img
+                  src="/assets/aistudio/Btc_explain_de14705e.jpg"
+                  alt="From Bitcoin to a Bigger Vision"
+                  className="w-full h-auto object-contain rounded-[20px] sm:rounded-[28px] mx-auto"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* The Text */}
+              <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-[#475569] dark:text-[#CBD5E1] font-[450] leading-[1.8] sm:leading-[1.85] font-sans">
                 <p>{t.intro.p1}</p>
                 <p>{t.intro.p2}</p>
                 <p>{t.intro.p3}</p>

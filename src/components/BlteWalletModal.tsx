@@ -605,7 +605,7 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
       isOpen={isOpen}
       onClose={onClose}
       title={w.modalTitle}
-      subtitle="Bitcoin Lite Edition Native Wallet · Movable Panel"
+      subtitle="Bitcoin Lite Edition Wallet · Movable Panel"
       maxWidthClass="max-w-4xl lg:max-w-5xl w-full"
       maxHeightClass="max-h-[92vh] sm:max-h-[88vh] lg:max-h-[86vh]"
       ariaLabelledBy="blte-wallet-modal-title"
@@ -635,7 +635,7 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
     >
       <div className="p-4 sm:p-6 lg:p-7 space-y-5 lg:space-y-6">
         {/* Top Header - Responsive: Centered on mobile, horizontal on md/lg */}
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left pb-4 md:pb-5 border-b border-[#F0ECE1] dark:border-[#202028]">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-5 text-center md:text-left pb-4 md:pb-5 border-b border-[#F0ECE1] dark:border-[#202028]">
           <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-[18px] sm:rounded-[22px] md:rounded-[24px] bg-gradient-to-br from-[#FAF5EF] to-[#F3E7D3] dark:from-[#201810] dark:to-[#120E08] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center justify-center shrink-0 text-[#B8661B] dark:text-[#EAB308] shadow-md">
             <Wallet className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 stroke-[2]" />
             <div className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full bg-[#B8661B] text-white flex items-center justify-center shadow-xs">
@@ -644,18 +644,9 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
           </div>
 
           <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-center md:justify-start gap-2.5 flex-wrap">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-[900] text-[#080808] dark:text-white font-display tracking-tight">
-                {w.heroTitle}
-              </h3>
-              <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40">
-                BITCOIN LITE EDITION NATIVE WALLET
-              </span>
-            </div>
-
-            <p className="mt-1 sm:mt-1.5 text-xs sm:text-sm text-[#475569] dark:text-[#94A3B8] leading-relaxed max-w-2xl">
-              {w.heroDesc}
-            </p>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-[900] text-[#080808] dark:text-white font-display tracking-tight">
+              {w.heroTitle}
+            </h3>
           </div>
         </div>
 

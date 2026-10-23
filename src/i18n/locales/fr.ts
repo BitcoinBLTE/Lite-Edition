@@ -798,7 +798,7 @@ export const fr: TranslationSchema = {
           num: '7',
           title: 'Tokenomics et allocation mathématique',
           content: [
-            "Allocation mathématique stricte en trois sections (60 % Lancement équitable · 30 % Liquidité · 10 % Récompenses de staking & Développeur) :\n• Lancement équitable : 60 % (1 260 000 BLTE)\n• Liquidité : 30 % (630 000 BLTE)\n• Récompenses de staking & Développeur : 10 % (210 000 BLTE)",
+            "Allocation mathématique stricte en quatre sections :\n• Lancement équitable : 55 % (1 155 000 BLTE)\n• Pool de liquidité : 27,5 % (577 500 BLTE)\n• Staking / Récompenses : 10 % (210 000 BLTE)\n• Développement / Cotation DEX & Marketing : 7,5 % (157 500 BLTE)",
           ],
         },
         {

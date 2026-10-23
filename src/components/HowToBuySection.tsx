@@ -54,7 +54,7 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
     let action: (() => void) | null = null;
 
     if (index === 0) {
-      actionLabel = "BLTE Native Wallet";
+      actionLabel = "BLTE Wallet";
       action = onOpenWallet || null;
     } else if (index === 3) {
       actionLabel = t.how_to_buy.venue_action;
@@ -127,14 +127,14 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
                     {st.description}
                   </p>
 
-                  {/* Featured BLTE Native Wallet Highlight on Step 1 */}
+                  {/* Featured BLTE Wallet Highlight on Step 1 */}
                   {index === 0 && (
                     <div 
                       onClick={(e) => {
                         e.stopPropagation();
                         if (onOpenWallet) onOpenWallet();
                       }}
-                      className="mt-4 p-3.5 rounded-[20px] bg-gradient-to-br from-[#FAF5EF] to-white dark:from-[#201812] dark:to-[#161622] border-2 border-[#B8661B]/40 dark:border-[#EAB308]/50 flex items-center justify-between gap-3 shadow-[0_4px_16px_rgba(184,102,27,0.10)] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_24px_rgba(184,102,27,0.20)] transition-all cursor-pointer group/native"
+                      className="mt-4 p-3.5 rounded-[20px] bg-gradient-to-br from-[#FAF5EF] to-white dark:from-[#201812] dark:to-[#161622] border-2 border-[#B8661B]/40 dark:border-[#EAB308]/50 flex items-center justify-between gap-3 shadow-[0_4px_16px_rgba(184,102,27,0.10)] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_24px_rgba(184,102,27,0.20)] transition-all cursor-pointer group/wallet"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
                         <Realistic3DIcon type="wallet" size="sm" className="shrink-0" />
@@ -143,16 +143,16 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
                             <span className="text-xs font-mono font-black text-[#B8661B] dark:text-[#EAB308] uppercase tracking-wide truncate">
                               BLTE Wallet
                             </span>
-                            <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-[#B8661B] text-white shrink-0">
-                              NATIVE WALLET
+                            <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1E1610] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 shrink-0">
+                              OFFICIAL WALLET
                             </span>
                           </div>
                           <span className="text-[11px] text-[#475569] dark:text-[#CBD5E1] font-semibold block leading-tight mt-0.5">
-                            Bitcoin Lite Edition native wallet
+                            Bitcoin Lite Edition client
                           </span>
                         </div>
                       </div>
-                      <span className="text-[11px] font-mono font-bold text-[#B8661B] dark:text-[#FBBF24] shrink-0 group-hover/native:translate-x-1 transition-transform flex items-center gap-0.5">
+                      <span className="text-[11px] font-mono font-bold text-[#B8661B] dark:text-[#FBBF24] shrink-0 group-hover/wallet:translate-x-1 transition-transform flex items-center gap-0.5">
                         Open →
                       </span>
                     </div>

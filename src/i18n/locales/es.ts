@@ -356,10 +356,10 @@ export const es: TranslationSchema = {
   tokenomics: {
     kicker: 'Estructura de distribución · Escasez matemática',
     title: '2.1M SUMINISTRO TOTAL',
-    subtitle: 'Una distribución de tokens estrictamente limitada configurada a través de dos asignaciones estratégicas: lanzamiento justo y pool de liquidez. Cero puertas traseras de emisión, cero inflación oculta.',
+    subtitle: 'Una distribución de tokens estrictamente limitada configurada en cuatro asignaciones estratégicas: 1.155.000 Lanzamiento justo, 577.500 Pool de liquidez, 210.000 Staking / Recompensas y 157.500 Desarrollo / Listado DEX y marketing. Cero puertas traseras de emisión, cero inflación oculta.',
     fixed_cap: 'LÍMITE FIJO',
     total_supply: 'SUMINISTRO TOTAL',
-    verified_alloc: 'Asignación verificada del 100% matemática · Lanzamiento justo & Pool de liquidez',
+    verified_alloc: 'Asignación verificada del 100% matemática · 4 asignaciones estratégicas',
     allocations: [
       {
         id: "fair-launch",
@@ -370,6 +370,16 @@ export const es: TranslationSchema = {
         id: "liquidity-pool",
         category: "Pool de liquidez",
         description: "Despliegue de pool de liquidez AMM DEX en Raydium."
+      },
+      {
+        id: "staking-rewards",
+        category: "Staking / Recompensas",
+        description: "Incentivos de recompensas de staking en cadena (11,61% APY) mediante custodia inteligente no custodial."
+      },
+      {
+        id: "development-marketing",
+        category: "Desarrollo / Listado DEX y marketing",
+        description: "Reserva estratégica para desarrollo del protocolo, liquidez de listado DEX de primer nivel y marketing del ecosistema."
       }
     ],
     data_source: 'Fuente de datos: Modelo de configuración central único. 100% = 2.100.000 BLTE (2.1M).',
@@ -813,7 +823,7 @@ export const es: TranslationSchema = {
           num: '7',
           title: 'Tokenomics y asignación matemática',
           content: [
-            "Asignación matemática estricta a través de tres secciones (60% Lanzamiento justo · 30% Liquidez · 10% Recompensas de staking y desarrollador):\n• Lanzamiento justo: 60% (1.260.000 BLTE)\n• Liquidez: 30% (630.000 BLTE)\n• Recompensas de staking y desarrollador: 10% (210.000 BLTE)",
+            "Asignación matemática estricta a través de cuatro secciones:\n• Lanzamiento justo: 55% (1.155.000 BLTE)\n• Pool de liquidez: 27,5% (577.500 BLTE)\n• Staking / Recompensas: 10% (210.000 BLTE)\n• Desarrollo / Listado DEX y marketing: 7,5% (157.500 BLTE)",
           ],
         },
         {

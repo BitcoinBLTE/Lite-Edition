@@ -796,9 +796,9 @@ export const zhCN: TranslationSchema = {
         {
           id: 'tokenomics',
           num: '7',
-          title: '代币经济学分配（两大核心板块）',
+          title: '代币经济学与数学分配（四大板块）',
           content: [
-            "严苛数学硬约束分配（60% 公平启动 · 30% 流动性 · 10% 质押奖励与开发者）：\n• 公平启动 (Fair Launch)：60% (1,260,000 BLTE)\n• 流动性 (Liquidity)：30% (630,000 BLTE)\n• 质押奖励与开发者 (Staking Rewards & Developer)：10% (210,000 BLTE)",
+            "严苛数学硬约束分配（四大板块）：\n• 公平启动 (Fair Launch)：55% (1,155,000 BLTE)\n• 流动性池 (Liquidity Pool)：27.5% (577,500 BLTE)\n• 质押 / 奖励 (Staking / Rewards)：10% (210,000 BLTE)\n• 开发 / DEX 上线与市场拓展：7.5% (157,500 BLTE)",
           ],
         },
         {

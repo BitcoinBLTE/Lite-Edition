@@ -109,7 +109,7 @@ export const en: TranslationSchema = {
         kicker: '05 · Decentralization',
         title: 'Non-Custodial P2P Architecture',
         summary: 'Permissionless peer-to-peer ownership.',
-        description: "Users retain complete, non-custodial ownership of their assets in self-custody wallets including BLTE Wallet (Bitcoin Lite Edition native wallet) or verified Solana clients. Transactions execute directly peer-to-peer across Solana's decentralized validator network without intermediaries.",
+        description: "Users retain complete, non-custodial ownership of their assets in self-custody wallets including BLTE Wallet (Bitcoin Lite Edition official wallet) or verified Solana clients. Transactions execute directly peer-to-peer across Solana's decentralized validator network without intermediaries.",
         highlight: 'Self-Custody',
         verified: 'Verified',
         network: '',
@@ -353,10 +353,10 @@ export const en: TranslationSchema = {
   tokenomics: {
     kicker: 'Distribution Structure · Mathematical Scarcity',
     title: '2.1M TOTAL SUPPLY',
-    subtitle: 'A strictly capped token distribution configured across two strategic allocations only. No minting backdoor, zero hidden inflation.',
+    subtitle: 'A strictly capped token distribution configured across four strategic allocations: 1,155,000 Fair Launch, 577,500 Liquidity Pool, 210,000 Staking / Rewards, and 157,500 Development / DEX Listing & Marketing. No minting backdoor, zero hidden inflation.',
     fixed_cap: 'FIXED CAP',
     total_supply: 'TOTAL SUPPLY',
-    verified_alloc: 'Verified 100% Mathematical Allocation · Fair Launch & Liquidity Pool',
+    verified_alloc: 'Verified 100% Mathematical Allocation · 4 Strategic Allocations',
     allocations: [
       {
         id: 'fair-launch',
@@ -367,6 +367,16 @@ export const en: TranslationSchema = {
         id: 'liquidity-pool',
         category: 'Liquidity Pool',
         description: 'Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
+      },
+      {
+        id: 'staking-rewards',
+        category: 'Staking / Rewards',
+        description: 'On-chain staking reward incentives (11.61% APY) distributed via non-custodial smart escrow.',
+      },
+      {
+        id: 'development-marketing',
+        category: 'Development / DEX Listing & Marketing',
+        description: 'Strategic reserve for core protocol development, tier-1 DEX listing liquidity, and ecosystem marketing.',
       },
     ],
     data_source: 'Data source: Single central configuration model. 100% = 2,100,000 BLTE (2.1M).',
@@ -379,8 +389,8 @@ export const en: TranslationSchema = {
       {
         step: '01',
         title: 'Set Up a Non-Custodial Wallet',
-        summary: 'Install BLTE Wallet (native client) or a verified Solana wallet.',
-        description: 'Use the official BLTE Wallet—Bitcoin Lite Edition native wallet engineered with biometric hardware security and 1-tap staking—or download verified Solana wallets such as Phantom, Solflare, or Backpack for sovereign asset control.',
+        summary: 'Install BLTE Wallet or a verified Solana wallet.',
+        description: 'Use the official BLTE Wallet—Bitcoin Lite Edition wallet client engineered with biometric hardware security and 1-tap staking—or download verified Solana wallets such as Phantom, Solflare, or Backpack for sovereign asset control.',
       },
       {
         step: '02',
@@ -655,7 +665,7 @@ export const en: TranslationSchema = {
       },
       {
         question: 'Which crypto wallets can hold BLTE tokens?',
-        answer: 'The official BLTE Wallet is Bitcoin Lite Edition native wallet, offering direct non-custodial custody, hardware-grade biometric keys, and 1-tap protocol staking. You can also use any non-custodial wallet supporting the Solana SPL / Token-2022 standard such as Phantom, Solflare, and Backpack.',
+        answer: 'The official BLTE Wallet is Bitcoin Lite Edition client, offering direct non-custodial custody, hardware-grade biometric keys, and 1-tap protocol staking. You can also use any non-custodial wallet supporting the Solana SPL / Token-2022 standard such as Phantom, Solflare, and Backpack.',
       },
       {
         question: 'How do I protect myself against counterfeit tokens and scams?',
@@ -805,7 +815,7 @@ export const en: TranslationSchema = {
           num: '7',
           title: 'Tokenomics & Mathematical Allocation',
           content: [
-            'Strict Mathematical Allocation across Three Sections (60% Fair Launch · 30% Liquidity · 10% Staking Rewards & Developer):\n• Fair Launch: 60% (1,260,000 BLTE)\n• Liquidity: 30% (630,000 BLTE)\n• Staking Rewards & Developer: 10% (210,000 BLTE)',
+            'Strict Mathematical Allocation across Four Sections:\n• Fair Launch: 55% (1,155,000 BLTE)\n• Liquidity Pool: 27.5% (577,500 BLTE)\n• Staking / Rewards: 10% (210,000 BLTE)\n• Development / DEX Listing & Marketing: 7.5% (157,500 BLTE)',
           ],
         },
         {

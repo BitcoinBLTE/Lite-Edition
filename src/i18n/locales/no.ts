@@ -813,7 +813,7 @@ export const no: TranslationSchema = {
           num: '7',
           title: 'Tokenomics og matematisk allokering',
           content: [
-            "Streng matematisk allokering i tre seksjoner (60 % Rettferdig lansering · 30 % Likviditet · 10 % Staking-belønninger & Utvikler):\n• Rettferdig lansering: 60 % (1 260 000 BLTE)\n• Likviditet: 30 % (630 000 BLTE)\n• Staking-belønninger & Utvikler: 10 % (210 000 BLTE)",
+            "Streng matematisk allokering i fire seksjoner:\n• Rettferdig lansering: 55 % (1 155 000 BLTE)\n• Likviditetspool: 27,5 % (577 500 BLTE)\n• Staking / Belønninger: 10 % (210 000 BLTE)\n• Utvikling / DEX-notering og markedsføring: 7,5 % (157 500 BLTE)",
           ],
         },
         {

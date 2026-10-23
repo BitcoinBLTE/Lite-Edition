@@ -193,13 +193,75 @@ export const WalletConnectModal: React.FC<WalletConnectModalProps> = ({
               </div>
             )}
 
-            {/* BLTE Wallet Button (Native) */}
+            {/* Solflare Button */}
+            <button
+              onClick={connectSolflare}
+              disabled={connectingWallet !== null}
+              className="w-full p-4 rounded-[18px] border border-[#E5E5E5] dark:border-[#262630] hover:border-[#D0D0D0] dark:hover:border-[#383844] bg-[#FCFCFC] dark:bg-[#14141A] hover:bg-white dark:hover:bg-[#181820] flex items-center justify-between transition-all text-left group cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
+            >
+              <div className="flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-[12px] bg-[#FC7226]/20 flex items-center justify-center font-bold text-[#FC7226] text-lg">
+                  ☀️
+                </div>
+                <div>
+                  <span className="text-sm font-[800] text-[#080808] dark:text-white block font-display">
+                    {solflareLabel}
+                  </span>
+                  <span className="text-xs text-[#888888] dark:text-[#94A3B8] block">
+                    {available.solflare ? detectedLabel : installSolflareLabel}
+                  </span>
+                </div>
+              </div>
+
+              {connectingWallet === 'Solflare' ? (
+                <RefreshCw className="w-4 h-4 animate-spin text-[#B8661B]" />
+              ) : available.solflare ? (
+                <span className="text-xs font-mono text-[#166534] dark:text-[#4ADE80] bg-[#F0FDF4] dark:bg-[#142A1E] border border-[#BBF7D0] dark:border-[#166534] px-2.5 py-1 rounded-[8px] font-bold">
+                  {readyLabel}
+                </span>
+              ) : (
+                <ExternalLink className="w-4 h-4 text-[#888888] group-hover:text-[#080808] dark:group-hover:text-white stroke-[2]" />
+              )}
+            </button>
+
+            {/* Phantom Button */}
+            <button
+              onClick={connectPhantom}
+              disabled={connectingWallet !== null}
+              className="w-full p-4 rounded-[18px] border border-[#E5E5E5] dark:border-[#262630] hover:border-[#D0D0D0] dark:hover:border-[#383844] bg-[#FCFCFC] dark:bg-[#14141A] hover:bg-white dark:hover:bg-[#181820] flex items-center justify-between transition-all text-left group cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
+            >
+              <div className="flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-[12px] bg-[#AB9FF2]/20 flex items-center justify-center font-bold text-[#5340C6] text-lg">
+                  👻
+                </div>
+                <div>
+                  <span className="text-sm font-[800] text-[#080808] dark:text-white block font-display">
+                    {phantomLabel}
+                  </span>
+                  <span className="text-xs text-[#888888] dark:text-[#94A3B8] block">
+                    {available.phantom ? detectedLabel : installPhantomLabel}
+                  </span>
+                </div>
+              </div>
+
+              {connectingWallet === 'Phantom' ? (
+                <RefreshCw className="w-4 h-4 animate-spin text-[#B8661B]" />
+              ) : available.phantom ? (
+                <span className="text-xs font-mono text-[#166534] dark:text-[#4ADE80] bg-[#F0FDF4] dark:bg-[#142A1E] border border-[#BBF7D0] dark:border-[#166534] px-2.5 py-1 rounded-[8px] font-bold">
+                  {readyLabel}
+                </span>
+              ) : (
+                <ExternalLink className="w-4 h-4 text-[#888888] group-hover:text-[#080808] dark:group-hover:text-white stroke-[2]" />
+              )}
+            </button>
+
+            {/* BLTE Wallet Button (Official Client, Placed after Solflare and Phantom, without Native text) */}
             <button
               onClick={() => {
                 onClose();
                 if (onOpenWallet) onOpenWallet();
               }}
-              className="w-full p-4 rounded-[20px] border-2 border-[#B8661B]/40 dark:border-[#EAB308]/50 bg-gradient-to-r from-[#FAF5EF] to-white dark:from-[#201812] dark:to-[#161622] hover:border-[#B8661B] dark:hover:border-[#EAB308] flex items-center justify-between transition-all text-left group cursor-pointer shadow-[0_4px_16px_rgba(184,102,27,0.12)] hover:shadow-[0_8px_24px_rgba(184,102,27,0.22)]"
+              className="w-full p-4 rounded-[18px] border-2 border-[#B8661B]/35 dark:border-[#EAB308]/40 bg-gradient-to-r from-[#FAF5EF] to-white dark:from-[#201812] dark:to-[#161622] hover:border-[#B8661B] dark:hover:border-[#EAB308] flex items-center justify-between transition-all text-left group cursor-pointer shadow-[0_4px_16px_rgba(184,102,27,0.10)] hover:shadow-[0_8px_24px_rgba(184,102,27,0.18)]"
             >
               <div className="flex items-center gap-3.5 min-w-0">
                 <div className="w-10 h-10 rounded-[12px] bg-[#B8661B]/15 dark:bg-[#EAB308]/20 flex items-center justify-center font-bold text-[#B8661B] dark:text-[#EAB308] shrink-0">
@@ -210,12 +272,12 @@ export const WalletConnectModal: React.FC<WalletConnectModalProps> = ({
                     <span className="text-sm font-[800] text-[#080808] dark:text-white block font-display">
                       BLTE Wallet
                     </span>
-                    <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#B8661B] text-white shrink-0">
-                      NATIVE WALLET
+                    <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1E1610] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 shrink-0">
+                      OFFICIAL WALLET
                     </span>
                   </div>
                   <span className="text-xs text-[#64748B] dark:text-[#94A3B8] block truncate">
-                    Bitcoin Lite Edition native wallet
+                    Bitcoin Lite Edition official client
                   </span>
                 </div>
               </div>
@@ -223,68 +285,6 @@ export const WalletConnectModal: React.FC<WalletConnectModalProps> = ({
               <span className="text-xs font-mono font-bold text-[#B8661B] dark:text-[#EAB308] group-hover:translate-x-1 transition-transform shrink-0 ml-2">
                 Open →
               </span>
-            </button>
-
-            {/* Phantom Button */}
-            <button
-              onClick={connectPhantom}
-              disabled={connectingWallet !== null}
-              className="w-full p-4 rounded-[18px] border border-[#E5E5E5] hover:border-[#D0D0D0] bg-[#FCFCFC] hover:bg-white flex items-center justify-between transition-all text-left group cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
-            >
-              <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-[12px] bg-[#AB9FF2]/20 flex items-center justify-center font-bold text-[#5340C6] text-lg">
-                  👻
-                </div>
-                <div>
-                  <span className="text-sm font-[800] text-[#080808] block font-display">
-                    {phantomLabel}
-                  </span>
-                  <span className="text-xs text-[#888888] block">
-                    {available.phantom ? detectedLabel : installPhantomLabel}
-                  </span>
-                </div>
-              </div>
-
-              {connectingWallet === 'Phantom' ? (
-                <RefreshCw className="w-4 h-4 animate-spin text-[#B8661B]" />
-              ) : available.phantom ? (
-                <span className="text-xs font-mono text-[#166534] bg-[#F0FDF4] border border-[#BBF7D0] px-2.5 py-1 rounded-[8px] font-bold">
-                  {readyLabel}
-                </span>
-              ) : (
-                <ExternalLink className="w-4 h-4 text-[#888888] group-hover:text-[#080808] stroke-[2]" />
-              )}
-            </button>
-
-            {/* Solflare Button */}
-            <button
-              onClick={connectSolflare}
-              disabled={connectingWallet !== null}
-              className="w-full p-4 rounded-[18px] border border-[#E5E5E5] hover:border-[#D0D0D0] bg-[#FCFCFC] hover:bg-white flex items-center justify-between transition-all text-left group cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
-            >
-              <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-[12px] bg-[#FC7226]/20 flex items-center justify-center font-bold text-[#FC7226] text-lg">
-                  ☀️
-                </div>
-                <div>
-                  <span className="text-sm font-[800] text-[#080808] block font-display">
-                    {solflareLabel}
-                  </span>
-                  <span className="text-xs text-[#888888] block">
-                    {available.solflare ? detectedLabel : installSolflareLabel}
-                  </span>
-                </div>
-              </div>
-
-              {connectingWallet === 'Solflare' ? (
-                <RefreshCw className="w-4 h-4 animate-spin text-[#B8661B]" />
-              ) : available.solflare ? (
-                <span className="text-xs font-mono text-[#166534] bg-[#F0FDF4] border border-[#BBF7D0] px-2.5 py-1 rounded-[8px] font-bold">
-                  {readyLabel}
-                </span>
-              ) : (
-                <ExternalLink className="w-4 h-4 text-[#888888] group-hover:text-[#080808] stroke-[2]" />
-              )}
             </button>
           </div>
         )}

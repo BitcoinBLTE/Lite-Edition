@@ -19,7 +19,7 @@ export const AboutSection: React.FC = () => {
     <section id="about" className="py-20 md:py-28 bg-[#FAF8F5] dark:bg-[#08080C] scroll-mt-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-4xl mb-14 sm:mb-16">
           <div className="text-xs font-mono font-bold tracking-[3.5px] uppercase text-[#B8661B] dark:text-[#EAB308] mb-3.5 flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B8661B] shrink-0" aria-hidden="true" />
             <span>{t.about.kicker}</span>
@@ -27,6 +27,17 @@ export const AboutSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-[900] text-[#080808] dark:text-white font-display tracking-tight text-balance leading-[1.15]">
             {t.about.title}
           </h2>
+
+          {/* Infographic Photo: What is Bitcoin Lite Edition? */}
+          <div className="my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)]">
+            <img
+              src="/assets/aistudio/BLTE_explain_e0101186.jpg"
+              alt="What is Bitcoin Lite Edition? Ultra-scarce supply, sub-second speed, negligible fees, and radical transparency on Solana."
+              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto"
+              loading="lazy"
+            />
+          </div>
+
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.about.description}
           </p>

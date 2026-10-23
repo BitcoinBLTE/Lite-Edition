@@ -373,11 +373,11 @@ export const ExploreModal: React.FC<ExploreModalProps> = ({
                   </span>
                 </div>
                 <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center gap-1">
-                  <span>NATIVE WALLET</span>
+                  <span>OFFICIAL WALLET</span>
                 </span>
               </div>
               <div className="text-[11px] text-[#B8661B] dark:text-[#FBBF24] font-semibold mb-2.5 tracking-tight">
-                Bitcoin Lite Edition native wallet
+                Bitcoin Lite Edition client
               </div>
 
               <div className="space-y-3 sm:space-y-3.5">

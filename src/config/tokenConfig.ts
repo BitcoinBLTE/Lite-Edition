@@ -136,26 +136,34 @@ export const TOKEN_CONFIG: ProjectConfig = {
     {
       id: "fair-launch",
       category: "Fair Launch",
-      percentage: 60,
-      amount: 1260000,
+      percentage: 55,
+      amount: 1155000,
       description: "Direct community and public fair launch distribution on Solana with borderless access.",
       color: "#F59E0B" // Warm solar amber/gold
     },
     {
       id: "liquidity-pool",
-      category: "Liquidity",
-      percentage: 30,
-      amount: 630000,
+      category: "Liquidity Pool",
+      percentage: 27.5,
+      amount: 577500,
       description: "Automated market maker (AMM) DEX liquidity pool deployment on Raydium.",
-      color: "#22C55E" // Radiant light green
+      color: "#10B981" // Radiant emerald green
     },
     {
-      id: "staking-dev",
-      category: "Staking Rewards & Developer",
+      id: "staking-rewards",
+      category: "Staking / Rewards",
       percentage: 10,
       amount: 210000,
-      description: "On-chain staking reward incentives (11.61% APY) and core developer ecosystem fund.",
+      description: "On-chain staking reward incentives (11.61% APY) distributed via non-custodial smart escrow.",
       color: "#8B5CF6" // Electric violet/purple
+    },
+    {
+      id: "development-marketing",
+      category: "Development / DEX Listing & Marketing",
+      percentage: 7.5,
+      amount: 157500,
+      description: "Strategic reserve for core protocol development, tier-1 DEX listing liquidity, and ecosystem marketing.",
+      color: "#3B82F6" // Electric blue
     }
   ],
   roadmap: [

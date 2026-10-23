@@ -123,7 +123,7 @@ export const WhitePaperExploreMetrics: React.FC = () => {
         <ul className="list-disc pl-5 space-y-1">
           <li><strong>Zero Additional Minting:</strong> Mint authority was irrevocably revoked upon SPL genesis. No entity can create additional BLTE tokens.</li>
           <li><strong>Streamflow Staking Escrow:</strong> Staking rewards are locked within non-custodial smart contracts and distributed according to fixed APY schedules.</li>
-          <li><strong>Mathematical Allocation:</strong> Fair Launch (1,260,000 BLTE · 60%), Liquidity (630,000 BLTE · 30%), and Staking Rewards & Developer (210,000 BLTE · 10%) with 2,100,000 hard cap.</li>
+          <li><strong>Mathematical Allocation:</strong> Fair Launch (1,155,000 BLTE · 55%), Liquidity Pool (577,500 BLTE · 27.5%), Staking / Rewards (210,000 BLTE · 10%), and Development / DEX Listing & Marketing (157,500 BLTE · 7.5%) with 2,100,000 hard cap.</li>
           <li><strong>Public Transparency:</strong> All circulating tokens and contracts are verifiable via public Solana block explorers.</li>
         </ul>
       </div>

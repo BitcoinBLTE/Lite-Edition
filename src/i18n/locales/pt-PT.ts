@@ -798,7 +798,7 @@ export const ptPT: TranslationSchema = {
           num: '7',
           title: 'Tokenomics e Alocação Matemática',
           content: [
-            "Alocação matemática estrita através de três secções (60% Lançamento Justo · 30% Liquidez · 10% Recompensas de Staking e Desenvolvedor):\n• Lançamento Justo: 60% (1.260.000 BLTE)\n• Liquidez: 30% (630.000 BLTE)\n• Recompensas de Staking e Desenvolvedor: 10% (210.000 BLTE)",
+            "Alocação matemática estrita através de quatro secções:\n• Lançamento Justo: 55% (1.155.000 BLTE)\n• Pool de Liquidez: 27,5% (577.500 BLTE)\n• Staking / Recompensas: 10% (210.000 BLTE)\n• Desenvolvimento / Listagem DEX e Marketing: 7,5% (157.500 BLTE)",
           ],
         },
         {

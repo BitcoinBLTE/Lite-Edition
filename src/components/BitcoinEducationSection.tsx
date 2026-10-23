@@ -177,11 +177,11 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                     {index === 5 && (
                       <div className="pt-2">
                         <div className="p-3 rounded-[16px] bg-[#FAF5EF] dark:bg-[#1C1712] border border-[#E9C9A5] dark:border-[#B8661B]/40 flex items-center gap-2.5 shadow-2xs">
-                          <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#B8661B] text-white shrink-0">
-                            NATIVE WALLET
+                          <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#FAF5EF] dark:bg-[#221A12] text-[#B8661B] dark:text-[#EAB308] border border-[#E9C9A5] dark:border-[#B8661B]/40 shrink-0">
+                            OFFICIAL WALLET
                           </span>
                           <span className="text-[11px] font-semibold text-[#B8661B] dark:text-[#EAB308]">
-                            BLTE Wallet is Bitcoin Lite Edition native wallet
+                            BLTE Wallet client for Bitcoin Lite Edition
                           </span>
                         </div>
                       </div>
@@ -305,6 +305,18 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                 <p>
                   {t.education.tab4.conclusion}
                 </p>
+              </div>
+
+              {/* Infographic Photo: Genesis & Technical Architecture */}
+              <div className="pt-2">
+                <div className="rounded-[22px] sm:rounded-[30px] overflow-hidden border border-[#E9C9A5]/60 dark:border-[#B8661B]/35 shadow-[0_8px_30px_rgba(184,102,27,0.08)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)] bg-white dark:bg-[#0A0A0E]">
+                  <img
+                    src="/assets/aistudio/Btc_explain_de14705e.jpg"
+                    alt="Genesis & Technical Architecture: From Bitcoin to a Bigger Vision, One Idea. A Global Movement."
+                    className="w-full h-auto object-contain mx-auto"
+                    loading="lazy"
+                  />
+                </div>
               </div>
 
               {/* Core Invariants of Genesis */}

@@ -202,12 +202,19 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .rounded-\[26px\],
 .rounded-\[28px\],
 .rounded-\[30px\],
+.rounded-\[22px\],
+.rounded-\[24px\],
+.rounded-\[26px\],
+.rounded-\[28px\],
+.rounded-\[30px\],
 .rounded-\[32px\],
 .rounded-\[36px\],
 .rounded-\[38px\],
-.rounded-\[40px\] {
-  box-shadow: 0 12px 36px -4px rgba(184, 102, 27, 0.10), 0 4px 12px -2px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(184, 102, 27, 0.06) !important;
-  border: 1px solid rgba(184, 102, 27, 0.26) !important;
+.rounded-\[40px\],
+.rounded-\[42px\],
+.rounded-\[48px\] {
+  box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.02) !important;
+  border-color: transparent !important;
 }
 
 [data-theme="dark"] .rounded-\[18px\],
@@ -221,6 +228,8 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 [data-theme="dark"] .rounded-\[36px\],
 [data-theme="dark"] .rounded-\[38px\],
 [data-theme="dark"] .rounded-\[40px\],
+[data-theme="dark"] .rounded-\[42px\],
+[data-theme="dark"] .rounded-\[48px\],
 .dark .rounded-\[18px\],
 .dark .rounded-\[20px\],
 .dark .rounded-\[22px\],
@@ -231,9 +240,11 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .dark .rounded-\[32px\],
 .dark .rounded-\[36px\],
 .dark .rounded-\[38px\],
-.dark .rounded-\[40px\] {
-  box-shadow: 0 18px 48px -4px rgba(0, 0, 0, 0.88), 0 4px 18px -2px rgba(234, 179, 8, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.22), inset 0 0 28px rgba(184, 102, 27, 0.06) !important;
-  border: 1px solid rgba(234, 179, 8, 0.36) !important;
+.dark .rounded-\[40px\],
+.dark .rounded-\[42px\],
+.dark .rounded-\[48px\] {
+  box-shadow: 0 16px 44px -4px rgba(0, 0, 0, 0.85), 0 4px 16px -2px rgba(0, 0, 0, 0.5) !important;
+  border-color: transparent !important;
 }
 
 .rounded-\[18px\]:hover,
@@ -246,9 +257,11 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .rounded-\[32px\]:hover,
 .rounded-\[36px\]:hover,
 .rounded-\[38px\]:hover,
-.rounded-\[40px\]:hover {
-  box-shadow: 0 20px 52px -4px rgba(184, 102, 27, 0.20), 0 6px 20px -2px rgba(0, 0, 0, 0.08), inset 0 1px 1px #ffffff !important;
-  border-color: rgba(184, 102, 27, 0.52) !important;
+.rounded-\[40px\]:hover,
+.rounded-\[42px\]:hover,
+.rounded-\[48px\]:hover {
+  box-shadow: 0 16px 44px -4px rgba(184, 102, 27, 0.10), 0 6px 18px -2px rgba(0, 0, 0, 0.04) !important;
+  border-color: transparent !important;
 }
 
 [data-theme="dark"] .rounded-\[18px\]:hover,
@@ -262,6 +275,8 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 [data-theme="dark"] .rounded-\[36px\]:hover,
 [data-theme="dark"] .rounded-\[38px\]:hover,
 [data-theme="dark"] .rounded-\[40px\]:hover,
+[data-theme="dark"] .rounded-\[42px\]:hover,
+[data-theme="dark"] .rounded-\[48px\]:hover,
 .dark .rounded-\[18px\]:hover,
 .dark .rounded-\[20px\]:hover,
 .dark .rounded-\[22px\]:hover,
@@ -272,9 +287,11 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .dark .rounded-\[32px\]:hover,
 .dark .rounded-\[36px\]:hover,
 .dark .rounded-\[38px\]:hover,
-.dark .rounded-\[40px\]:hover {
-  box-shadow: 0 24px 64px -4px rgba(0, 0, 0, 0.95), 0 8px 26px -2px rgba(234, 179, 8, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 32px rgba(234, 179, 8, 0.12) !important;
-  border-color: rgba(234, 179, 8, 0.78) !important;
+.dark .rounded-\[40px\]:hover,
+.dark .rounded-\[42px\]:hover,
+.dark .rounded-\[48px\]:hover {
+  box-shadow: 0 20px 52px -4px rgba(0, 0, 0, 0.95), 0 8px 24px -2px rgba(234, 179, 8, 0.12) !important;
+  border-color: transparent !important;
 }
 
 /* Distinct polished card surfaces: Luminous Pearl (Light) vs Elevated Obsidian (Dark) */
@@ -338,7 +355,8 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 }
 
 /* ============================================================
-   REFINED LUXURY HAIRLINE BORDERS & DIVIDERS
+   CONTAINER LINES INVISIBLE
+   Make every container line, border, and divider invisible
    ============================================================ */
 .border-\[\#E5E5E5\],
 .border-\[\#E5E5E5\]\/80,
@@ -349,14 +367,30 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .border-\[\#CCCCCC\],
 .border-\[\#E9C9A5\],
 .border-\[\#E9C9A5\]\/80,
+.border-\[\#E9C9A5\]\/70,
+.border-\[\#E9C9A5\]\/60,
+.border-\[\#E9C9A5\]\/40,
 .border-\[\#EAB308\],
 .border-\[\#EAB308\]\/50,
+.border-\[\#EAB308\]\/40,
+.border-\[\#EAB308\]\/30,
+.border-\[\#EAB308\]\/20,
+.border-\[\#EAB308\]\/15,
+.border-\[\#EAB308\]\/10,
 .border-\[\#EAB308\]\/5,
+.border-\[\#B8661B\]\/40,
+.border-\[\#B8661B\]\/35,
+.border-\[\#B8661B\]\/30,
+.border-\[\#B8661B\]\/25,
+.border-\[\#B8661B\]\/20,
 .border-\[\#F0F0F0\],
-.border-line {
-  border-color: rgba(184, 102, 27, 0.24) !important;
-}
-
+.border-\[\#F0ECE1\],
+.border-\[\#EAE6DF\],
+.border-\[\#202028\],
+.border-\[\#22222E\],
+.border-\[\#22222C\],
+.border-\[\#262630\],
+.border-line,
 [data-theme="dark"] .border-\[\#E5E5E5\],
 [data-theme="dark"] .border-\[\#E5E5E5\]\/80,
 [data-theme="dark"] .border-\[\#E5E5E5\]\/60,
@@ -370,37 +404,27 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 [data-theme="dark"] .border-\[\#EAB308\]\/50,
 [data-theme="dark"] .border-\[\#EAB308\]\/5,
 [data-theme="dark"] .border-\[\#F0F0F0\],
+[data-theme="dark"] .border-\[\#F0ECE1\],
+[data-theme="dark"] .border-\[\#EAE6DF\],
+[data-theme="dark"] .border-\[\#202028\],
+[data-theme="dark"] .border-\[\#22222E\],
+[data-theme="dark"] .border-\[\#22222C\],
+[data-theme="dark"] .border-\[\#262630\],
 [data-theme="dark"] .border-line,
 .dark .border-\[\#E5E5E5\],
 .dark .border-\[\#E9C9A5\],
-.dark .border-\[\#EAB308\] {
-  border-color: rgba(234, 179, 8, 0.32) !important;
-}
-
-[data-theme="dark"] .border-\[\#E5E5E5\],
-[data-theme="dark"] .border-\[\#E5E5E5\]\/80,
-[data-theme="dark"] .border-\[\#E5E5E5\]\/60,
-[data-theme="dark"] .border-\[\#D0D0D0\],
-[data-theme="dark"] .border-\[\#D9D9D9\],
-[data-theme="dark"] .border-\[\#DCDCDC\],
-[data-theme="dark"] .border-\[\#CCCCCC\],
-[data-theme="dark"] .border-\[\#E9C9A5\],
-[data-theme="dark"] .border-\[\#E9C9A5\]\/80,
-[data-theme="dark"] .border-\[\#EAB308\],
-[data-theme="dark"] .border-\[\#EAB308\]\/50,
-[data-theme="dark"] .border-\[\#EAB308\]\/5,
-[data-theme="dark"] .border-\[\#F0F0F0\],
-[data-theme="dark"] .border-line {
-  border-color: rgba(234, 179, 8, 0.25) !important;
+.dark .border-\[\#EAB308\],
+.dark .border-\[\#202028\],
+.dark .border-\[\#22222E\],
+.dark .border-\[\#22222C\],
+.dark .border-\[\#262630\] {
+  border-color: transparent !important;
 }
 
 /* Grid & List Dividers */
-.divide-\[\#E5E5E5\] > * + * {
-  border-color: rgba(184, 102, 27, 0.19) !important;
-}
-
+.divide-\[\#E5E5E5\] > * + *,
 [data-theme="dark"] .divide-\[\#E5E5E5\] > * + * {
-  border-color: rgba(234, 179, 8, 0.23) !important;
+  border-color: transparent !important;
 }
 
 /* SVG Donut and Track Overrides */
@@ -540,41 +564,41 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
 .pillar-distinction-card {
   background-color: #FFFFFF;
   background-image: linear-gradient(135deg, #FFFFFF 0%, #FAF5EE 50%, #F5EADB 100%);
-  border: 1px solid rgba(184, 102, 27, 0.25) !important;
-  box-shadow: 0 10px 32px -4px rgba(184, 102, 27, 0.10) !important;
+  border-color: transparent !important;
+  box-shadow: 0 10px 32px -4px rgba(184, 102, 27, 0.08) !important;
 }
 
 [data-theme="dark"] .pillar-distinction-card {
   background-color: #141419 !important;
   background-image: linear-gradient(135deg, #161720 0%, #1A1410 50%, #24180D 100%) !important;
-  border: 1px solid rgba(234, 179, 8, 0.30) !important;
+  border-color: transparent !important;
   box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.6) !important;
 }
 
 .card-last-step {
   background-color: #FFFFFF;
   background-image: linear-gradient(135deg, #FFFFFF 0%, #FAF5EE 50%, #F5EADB 100%);
-  border: 1px solid rgba(184, 102, 27, 0.25) !important;
-  box-shadow: 0 10px 32px -4px rgba(184, 102, 27, 0.10) !important;
+  border-color: transparent !important;
+  box-shadow: 0 10px 32px -4px rgba(184, 102, 27, 0.08) !important;
 }
 
 [data-theme="dark"] .card-last-step {
   background-color: #141419 !important;
   background-image: linear-gradient(135deg, #161720 0%, #1A1410 50%, #24180D 100%) !important;
-  border: 1px solid rgba(234, 179, 8, 0.30) !important;
+  border-color: transparent !important;
   box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Detailed Comparative Matrix Table */
 .matrix-header-row {
   background-color: #F8F6F1;
-  border-color: rgba(184, 102, 27, 0.21) !important;
+  border-color: transparent !important;
 }
 
 [data-theme="dark"] .matrix-header-row {
   background-color: #181822 !important;
   color: #FFFFFF !important;
-  border-color: rgba(234, 179, 8, 0.25) !important;
+  border-color: transparent !important;
 }
 
 .matrix-row-default {

@@ -796,9 +796,9 @@ export const zhTW: TranslationSchema = {
         {
           id: 'tokenomics',
           num: '7',
-          title: '代幣經濟學分配（兩大核心板塊）',
+          title: '代幣經濟學與數學分配（四大板塊）',
           content: [
-            "嚴苛數學硬約束分配（60% 公平啟動 · 30% 流動性 · 10% 質押獎勵與開發者）：\n• 公平啟動 (Fair Launch)：60% (1,260,000 BLTE)\n• 流動性 (Liquidity)：30% (630,000 BLTE)\n• 質押獎勵與開發者 (Staking Rewards & Developer)：10% (210,000 BLTE)",
+            "嚴苛數學硬約束分配（四大板塊）：\n• 公平啟動 (Fair Launch)：55% (1,155,000 BLTE)\n• 流動性池 (Liquidity Pool)：27.5% (577,500 BLTE)\n• 質押 / 獎勵 (Staking / Rewards)：10% (210,000 BLTE)\n• 開發 / DEX 上線與市場拓展：7.5% (157,500 BLTE)",
           ],
         },
         {
