@@ -27,14 +27,25 @@ export const WhySolanaSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 4 Feature Cards */}
+        {/* 4 Feature Cards with High-Throughput Speed Animation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((item) => {
+          {features.map((item, idx) => {
             return (
               <div
                 key={item.title}
-                className="bg-[#FCFCFC] dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                className="relative overflow-hidden bg-[#FCFCFC] dark:bg-[#121217] rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
               >
+                {/* Topic Animation: High-Throughput Speed Beam (400ms Sub-Second Finality) */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 pointer-events-none overflow-hidden"
+                >
+                  <div
+                    className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-[#10B981]/15 dark:via-[#10B981]/25 to-transparent animate-speed-sweep"
+                    style={{ animationDelay: `${idx * 0.8}s` }}
+                  />
+                </div>
+
                 <div>
                   <Realistic3DIcon type={item.iconType} size="lg" className="mb-6" />
 

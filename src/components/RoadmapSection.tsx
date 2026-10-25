@@ -59,17 +59,21 @@ export const RoadmapSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 4-Stage Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4-Stage Grid with Topic Progression Animation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {phases.map((phase, idx) => (
             <div
               key={phase.title}
-              className={`rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 ${
+              className={`relative overflow-hidden rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 ${
                 phase.status === 'IN_PROGRESS'
-                  ? 'bg-[#FAF5EF] dark:bg-[#1A1510] shadow-[0_12px_36px_rgba(184,102,27,0.14)] dark:shadow-[0_12px_36px_rgba(245,158,11,0.22)]'
+                  ? 'bg-[#FAF5EF] dark:bg-[#1A1510] shadow-[0_12px_36px_rgba(184,102,27,0.14)] dark:shadow-[0_12px_36px_rgba(245,158,11,0.22)] animate-scarcity-glow'
                   : 'bg-white/95 dark:bg-[#121217]/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_36px_rgba(184,102,27,0.08)]'
               }`}
             >
+              {/* Topic Animation: Sequential Pipeline Beam on In-Progress Phase */}
+              {phase.status === 'IN_PROGRESS' && (
+                <div aria-hidden="true" className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#B8661B] via-[#EAB308] to-[#B8661B] animate-pipeline-flow" />
+              )}
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">

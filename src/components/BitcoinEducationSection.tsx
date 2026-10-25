@@ -50,13 +50,24 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
           </h2>
 
           {/* Infographic Photo: Learn More About Bitcoin & The Genesis of Lite Edition */}
-          <div className="my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)]">
+          <div className="relative my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)] group/eduInfo">
             <img
               src="/assets/aistudio/Learn_more_d3ca6810.jpg"
               alt="Learn More About Bitcoin & The Genesis of Lite Edition - Distributed Ledgers, Solana, and BLTE"
-              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto"
+              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto transition-transform duration-700 group-hover/eduInfo:scale-[1.01]"
               loading="lazy"
             />
+            {/* Topic Animation: Bitcoin: The Breakthrough & Flowing Digital Transactions */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 pointer-events-none overflow-hidden rounded-[20px] sm:rounded-[30px]"
+            >
+              <div className="absolute inset-y-0 w-36 bg-gradient-to-r from-transparent via-[#F59E0B]/15 dark:via-[#F59E0B]/25 to-transparent animate-speed-sweep" />
+              {/* Flowing transaction pathway nodes */}
+              <div className="absolute top-[22%] left-[16%] w-2.5 h-2.5 rounded-full bg-[#B8661B] animate-node-pulse-a shadow-[0_0_10px_rgba(184,102,27,0.9)]" />
+              <div className="absolute top-[48%] left-[50%] w-2.5 h-2.5 rounded-full bg-[#10B981] animate-node-pulse-b shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
+              <div className="absolute top-[32%] right-[18%] w-2.5 h-2.5 rounded-full bg-[#8B5CF6] animate-node-pulse-a shadow-[0_0_10px_rgba(139,92,246,0.9)]" />
+            </div>
           </div>
 
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
@@ -178,7 +189,13 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {t.education.tab2.mechanisms.map((mech, index) => {
                 return (
-                  <div key={index} className="bg-white/95 dark:bg-[#121217]/95 rounded-[28px] p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 space-y-3">
+                  <div key={index} className="relative overflow-hidden bg-white/95 dark:bg-[#121217]/95 rounded-[28px] p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 space-y-3 group/mech">
+                    {/* Subtle circuit line indicator on hover */}
+                    <div aria-hidden="true" className="absolute top-0 right-0 w-24 h-24 pointer-events-none opacity-0 group-hover/mech:opacity-20 transition-opacity">
+                      <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#B8661B]">
+                        <path d="M100,20 L60,20 L40,60 L0,60" fill="none" strokeWidth="1.5" strokeDasharray="4 2" className="animate-circuit-pulse" />
+                      </svg>
+                    </div>
                     <Realistic3DIcon type={mechanism3DIcons[index] || 'ledger'} size="md" />
                     <div className="text-xs font-mono text-[#B8661B] dark:text-[#EAB308] uppercase font-bold tracking-[2px]">{mech.num}</div>
                     <h4 className="text-lg font-[800] text-[#080808] dark:text-white font-display tracking-tight">{mech.title}</h4>

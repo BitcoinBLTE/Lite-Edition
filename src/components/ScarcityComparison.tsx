@@ -19,13 +19,24 @@ export const ScarcityComparison: React.FC = () => {
           </h2>
 
           {/* Infographic Photo: A Different Expression of Digital Scarcity */}
-          <div className="my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)]">
+          <div className="relative my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)] group/scarcityInfo">
             <img
               src="/assets/aistudio/Scarcity_record_8c445a2d.jpg"
               alt="A Different Expression of Digital Scarcity - Bitcoin, Bitcoin Lite Edition, and Solana"
-              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto"
+              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto transition-transform duration-700 group-hover/scarcityInfo:scale-[1.01]"
               loading="lazy"
             />
+            {/* Topic Animation: Scarcity Ratio Scanning Beam */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 pointer-events-none overflow-hidden rounded-[20px] sm:rounded-[30px]"
+            >
+              <div className="absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-[#B8661B]/20 dark:via-[#F59E0B]/25 to-transparent animate-timeline-scan" />
+              {/* Ratio anchor pings */}
+              <div className="absolute top-[35%] left-[24%] w-2 h-2 rounded-full bg-[#B8661B] animate-node-pulse-a shadow-[0_0_8px_rgba(184,102,27,0.8)]" />
+              <div className="absolute top-[35%] left-[50%] w-2.5 h-2.5 rounded-full bg-[#EAB308] animate-node-pulse-b shadow-[0_0_10px_rgba(234,179,8,0.9)]" />
+              <div className="absolute top-[35%] right-[24%] w-2 h-2 rounded-full bg-[#10B981] animate-node-pulse-a shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+            </div>
           </div>
 
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
@@ -62,14 +73,16 @@ export const ScarcityComparison: React.FC = () => {
               </div>
             </div>
 
-            {/* Transition Arrow 1 */}
-            <div className="flex flex-col items-center justify-center my-0.5 text-[#B8661B]">
-              <div className="w-0.5 h-6 bg-[#B8661B]/20 dark:bg-[#F59E0B]/20" />
+            {/* Transition Arrow 1 with Flowing Data Beam */}
+            <div className="flex flex-col items-center justify-center my-0.5 text-[#B8661B] relative">
+              <div className="w-0.5 h-6 bg-[#B8661B]/20 dark:bg-[#F59E0B]/20 relative overflow-hidden">
+                <div className="w-full h-3 bg-[#B8661B] dark:bg-[#F59E0B] animate-data-beam-down shadow-[0_0_6px_rgba(184,102,27,0.8)]" />
+              </div>
               <ArrowDown className="w-5 h-5 text-[#B8661B] dark:text-[#F59E0B] stroke-[2] -mt-1" />
             </div>
 
-            {/* Step 2: Bitcoin Lite Edition (Marquee Hero Box in Burnt Copper) */}
-            <div className="w-full bg-[#FAF5EF] dark:bg-[#18130E] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 shadow-[0_12px_40px_rgba(184,102,27,0.16)] dark:shadow-[0_12px_40px_rgba(245,158,11,0.25)] hover:shadow-[0_16px_50px_rgba(184,102,27,0.22)] transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative overflow-hidden">
+            {/* Step 2: Bitcoin Lite Edition (Marquee Hero Box in Burnt Copper with Scarcity Orbit Glow) */}
+            <div className="w-full bg-[#FAF5EF] dark:bg-[#18130E] rounded-[28px] sm:rounded-[36px] p-7 sm:p-9 shadow-[0_12px_40px_rgba(184,102,27,0.16)] dark:shadow-[0_12px_40px_rgba(245,158,11,0.25)] hover:shadow-[0_16px_50px_rgba(184,102,27,0.22)] transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative overflow-hidden animate-scarcity-glow">
               <div className="flex items-start gap-4 relative z-10">
                 <Realistic3DIcon type="blte" size="lg" className="mt-1" />
                 <div className="space-y-1.5">
@@ -87,7 +100,7 @@ export const ScarcityComparison: React.FC = () => {
               </div>
 
               <div className="text-left sm:text-right shrink-0 relative z-10">
-                <div className="text-3xl sm:text-4xl font-mono font-[900] text-[#B8661B] dark:text-[#F59E0B] tabular-nums">
+                <div className="text-3xl sm:text-4xl font-mono font-[900] text-[#B8661B] dark:text-[#F59E0B] tabular-nums drop-shadow-[0_0_12px_rgba(184,102,27,0.3)]">
                   2.1M
                 </div>
                 <div className="text-xs font-mono text-[#64748B] dark:text-[#94A3B8] uppercase font-bold tracking-wider">
@@ -96,9 +109,11 @@ export const ScarcityComparison: React.FC = () => {
               </div>
             </div>
 
-            {/* Transition Arrow 2 */}
-            <div className="flex flex-col items-center justify-center my-0.5 text-[#B8661B]">
-              <div className="w-0.5 h-6 bg-[#B8661B]/20 dark:bg-[#F59E0B]/20" />
+            {/* Transition Arrow 2 with Flowing Data Beam */}
+            <div className="flex flex-col items-center justify-center my-0.5 text-[#B8661B] relative">
+              <div className="w-0.5 h-6 bg-[#B8661B]/20 dark:bg-[#F59E0B]/20 relative overflow-hidden">
+                <div className="w-full h-3 bg-[#B8661B] dark:bg-[#F59E0B] animate-data-beam-down shadow-[0_0_6px_rgba(184,102,27,0.8)]" />
+              </div>
               <ArrowDown className="w-5 h-5 text-[#B8661B] dark:text-[#F59E0B] stroke-[2] -mt-1" />
             </div>
 

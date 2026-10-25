@@ -673,9 +673,233 @@ html.dark, body.dark, [data-theme="dark"], .theme-black {
   animation: icon3dGleam 7s ease-in-out infinite;
 }
 
+/* ============================================================
+   TOPIC-SPECIFIC SECTION ANIMATIONS
+   GPU-accelerated, elegant, non-intrusive, and accessible
+   ============================================================ */
+
+/* 1. Timeline & Historical Progression Shimmer (Bitcoin Intro & Evolution) */
+@keyframes timelineProgressScan {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(220%);
+    opacity: 0;
+  }
+}
+
+.animate-timeline-scan {
+  animation: timelineProgressScan 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* 2. Cryptographic Circuit & Transaction Pathway Flow (How It Works & Tech) */
+@keyframes circuitPulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.02);
+  }
+}
+
+.animate-circuit-pulse {
+  animation: circuitPulse 3.5s ease-in-out infinite;
+}
+
+/* 3. Decentralized Node Constellation Shimmer (Peer-to-Peer without central hub) */
+@keyframes nodePulseA {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes nodePulseB {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+}
+
+.animate-node-pulse-a {
+  animation: nodePulseA 2.8s ease-in-out infinite;
+}
+
+.animate-node-pulse-b {
+  animation: nodePulseB 3.4s ease-in-out infinite;
+}
+
+/* 4. Scarcity Orbit & Glow Shimmer (Scarcity Comparison & 2.1M Hard Cap) */
+@keyframes scarcityGlowOrbit {
+  0% {
+    box-shadow: 0 0 25px rgba(184, 102, 27, 0.15), inset 0 0 15px rgba(245, 158, 11, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(184, 102, 27, 0.32), inset 0 0 25px rgba(245, 158, 11, 0.20);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(184, 102, 27, 0.15), inset 0 0 15px rgba(245, 158, 11, 0.08);
+  }
+}
+
+.animate-scarcity-glow {
+  animation: scarcityGlowOrbit 4s ease-in-out infinite;
+}
+
+/* 5. Downward Data Transmission Beam (Scarcity Step Transitions) */
+@keyframes dataBeamDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.animate-data-beam-down {
+  animation: dataBeamDown 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* 6. High-Throughput Speed Sweep (Solana Ecosystem & Finality) */
+@keyframes solanaSpeedSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.6;
+  }
+  65% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-speed-sweep {
+  animation: solanaSpeedSweep 4.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* 7. Tokenomics Orbiting Ring Pulse */
+@keyframes tokenomicsOrbitSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-tokenomics-orbit {
+  animation: tokenomicsOrbitSpin 32s linear infinite;
+  transform-origin: 160px 160px;
+}
+
+@keyframes tokenomicsCoreBreathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+.animate-core-breathe {
+  animation: tokenomicsCoreBreathe 4s ease-in-out infinite;
+}
+
+/* 8. Cryptographic Scanner & Radar Beacon (Transparency & On-Chain Verification) */
+@keyframes radarSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 10s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes verificationPulse {
+  0%, 100% {
+    opacity: 0.4;
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 6px rgba(22, 163, 74, 0);
+  }
+}
+
+.animate-verification-pulse {
+  animation: verificationPulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 9. Sequential Pipeline Flow (Roadmap & Acquisition Milestones) */
+@keyframes roadmapPipelineFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-pipeline-flow {
+  background-size: 200% 100%;
+  animation: roadmapPipelineFlow 4s linear infinite;
+}
+
+/* 10. Global Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   .animate-3d-float,
-  .animate-3d-gleam {
+  .animate-3d-gleam,
+  .animate-timeline-scan,
+  .animate-circuit-pulse,
+  .animate-node-pulse-a,
+  .animate-node-pulse-b,
+  .animate-scarcity-glow,
+  .animate-data-beam-down,
+  .animate-speed-sweep,
+  .animate-tokenomics-orbit,
+  .animate-core-breathe,
+  .animate-radar-sweep,
+  .animate-verification-pulse,
+  .animate-pipeline-flow {
     animation: none !important;
     transform: none !important;
   }

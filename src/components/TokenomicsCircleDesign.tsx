@@ -359,13 +359,19 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     ? 'opacity-30 hover:opacity-75'
                     : 'opacity-100 hover:opacity-90'
                 }`}
-              />
+              {/* Topic Animation: Orbiting Network Tokenomics Flow Particles */}
+              <g className="animate-tokenomics-orbit pointer-events-none">
+                <circle cx="160" cy="46" r="3" fill="#F59E0B" opacity="0.9" filter="url(#fairLaunchShadow)" />
+                <circle cx="274" cy="160" r="2.5" fill="#10B981" opacity="0.9" filter="url(#liquidityShadow)" />
+                <circle cx="160" cy="274" r="2.5" fill="#8B5CF6" opacity="0.9" filter="url(#stakingRewardsShadow)" />
+                <circle cx="46" cy="160" r="2" fill="#3B82F6" opacity="0.9" filter="url(#developmentMarketingShadow)" />
+              </g>
             </svg>
 
             {/* Center Disc: Interactive with Dynamic Inspection & Tap to Reset */}
             <div
               onClick={() => setSelectedId(null)}
-              className="absolute inset-0 m-auto w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-white dark:bg-[#121217] shadow-[0_12px_36px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center p-3 sm:p-4 cursor-pointer transition-all hover:scale-[1.02]"
+              className="absolute inset-0 m-auto w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-white dark:bg-[#121217] shadow-[0_12px_36px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.6)] flex flex-col items-center justify-center text-center p-3 sm:p-4 cursor-pointer transition-all hover:scale-[1.02] animate-core-breathe"
               title={selectedId ? "Click to reset view" : "2.1M BLTE Hard Cap"}
             >
               {selectedItem ? (
