@@ -21,9 +21,10 @@ export const RotatingCoinLogo: React.FC<RotatingCoinLogoProps> = ({
   const [errorStep, setErrorStep] = useState(0);
 
   const fallbackSources = [
+    '/falcon-circle.png',
     '/assets/aistudio/IMG-20261020-WA0000_b0a88430.jpg',
+    '/falcon-logo.png',
     '/bitcoin-lite-logo.png',
-    '/bitcoin-lite-logo.jpg',
     '/favicon.svg',
   ];
 

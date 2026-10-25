@@ -8,8 +8,7 @@
  * - Roadmap statuses strictly reflect verified milestones.
  */
 
-// Centralized Project & Token Configuration
-const bitcoinLiteLogo = '/bitcoin-lite-logo.jpg';
+const bitcoinLiteLogo = '/falcon-circle.png';
 
 export interface TokenAllocation {
   id: string;
