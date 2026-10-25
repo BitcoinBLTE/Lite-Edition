@@ -35,7 +35,6 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       title: 'Fair Launch',
       amount: '1,155,000 BLTE',
       percentage: '55%',
-      tag: 'COMMUNITY FAIR LAUNCH · 1,155,000 BLTE',
       color: '#F59E0B',
       lightColor: '#FCD34D',
       darkColor: '#D97706',
@@ -49,7 +48,6 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       title: 'Liquidity Pool',
       amount: '577,500 BLTE',
       percentage: '27.5%',
-      tag: 'RAYDIUM AMM DEX POOL · 577,500 BLTE',
       color: '#10B981',
       lightColor: '#6EE7B7',
       darkColor: '#059669',
@@ -63,7 +61,6 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       title: 'Staking / Rewards',
       amount: '210,000 BLTE',
       percentage: '10%',
-      tag: 'ON-CHAIN STAKING & REWARDS · 210,000 BLTE',
       color: '#8B5CF6',
       lightColor: '#C4B5FD',
       darkColor: '#7C3AED',
@@ -77,7 +74,6 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       title: 'Development / DEX Listing & Marketing',
       amount: '157,500 BLTE',
       percentage: '7.5%',
-      tag: 'CORE PROTOCOL & DEX LISTING · 157,500 BLTE',
       color: '#3B82F6',
       lightColor: '#93C5FD',
       darkColor: '#2563EB',
@@ -434,9 +430,6 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     <div className="min-w-0">
                       <div className="text-sm sm:text-lg font-bold text-[#080808] dark:text-white font-display truncate">
                         {item.title}
-                      </div>
-                      <div className="text-[10px] sm:text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] tracking-wider font-semibold">
-                        {item.tag}
                       </div>
                     </div>
                   </div>
