@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, BookOpen } from 'lucide-react';
-import { HeroCoin3D } from './HeroCoin3D';
+import { LivingBlockchainNetwork } from './LivingBlockchainNetwork';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useTheme } from '../theme/ThemeContext';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
@@ -29,13 +29,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ROW 1: 2-Column Responsive Hero Showcase with Single Persistent 3D Coin */}
+        {/* ROW 1: 2-Column Responsive Hero Showcase with Animated Living Blockchain Network (No Container) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-14 items-center">
           
           {/* Item 1: Heading & Introductory Prose */}
           <div className="lg:col-span-7 lg:row-start-1 flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Gold brand eyebrow with polished soft background */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF5EF] dark:bg-[#1C150E] text-[#B8661B] dark:text-[#EAB308] text-xs font-mono font-bold tracking-[2.5px] uppercase mb-4 sm:mb-5 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#EAB308] animate-pulse" />
               <span>{t.hero.eyebrow || 'BITCOIN LITE EDITION · BLTE'}</span>
             </div>
 
@@ -52,22 +53,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
           </div>
 
-          {/* Item 2: Single Persistent 3D Rotating Coin Showcase (Always active, zero static photo) */}
-          <div className="lg:col-span-5 lg:row-start-1 lg:row-span-2 lg:col-start-8 flex flex-col items-center justify-center relative my-4 lg:my-0">
-            {/* Ambient glow backdrop */}
+          {/* Item 2: Animated Living Blockchain Network (Seamless, NO CONTAINER, floating directly in hero space) */}
+          <div className="lg:col-span-5 lg:row-start-1 lg:row-span-2 lg:col-start-8 flex flex-col items-center justify-center relative my-4 lg:my-0 w-full">
+            {/* Ambient subtle warm copper & cyan lighting glow */}
             <div 
-              className="absolute w-[320px] sm:w-[420px] xl:w-[460px] h-[320px] sm:h-[420px] xl:h-[460px] rounded-full bg-gradient-to-tr from-amber-500/15 via-[#B8661B]/10 to-transparent blur-3xl pointer-events-none -z-10" 
-              aria-hidden="true"
-            />
-            <div 
-              className="absolute w-[260px] sm:w-[340px] xl:w-[380px] h-[260px] sm:h-[340px] xl:h-[380px] rounded-full border border-[#EAB308]/20 pointer-events-none -z-10 animate-spin" 
-              style={{ animationDuration: '60s' }}
+              className="absolute w-[320px] sm:w-[420px] xl:w-[480px] h-[320px] sm:h-[420px] xl:h-[480px] rounded-full bg-gradient-to-tr from-[#0284C7]/12 via-[#B8661B]/15 to-transparent blur-3xl pointer-events-none -z-10" 
               aria-hidden="true"
             />
 
-            {/* Hero Coin 3D Container - Always active in its section on initial load and refresh */}
-            <div className="w-full max-w-[240px] sm:max-w-[300px] lg:max-w-[360px] xl:max-w-[420px] aspect-square relative flex items-center justify-center">
-              <HeroCoin3D className="w-full h-full aspect-square" />
+            {/* Living Blockchain Network - Borderless, No Container */}
+            <div className="w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[420px] xl:max-w-[480px] aspect-square relative flex items-center justify-center">
+              <LivingBlockchainNetwork className="w-full h-full aspect-square" />
             </div>
 
           </div>

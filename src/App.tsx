@@ -85,7 +85,7 @@ export default function App() {
 
           {/* Main Content Sections - All Preserved & Enhanced */}
           <main className="flex-grow">
-            {/* Hero Section with Interactive Thin 3D Coin & Primary/Secondary CTAs */}
+            {/* Hero Section with Animated Living Blockchain Network & Primary/Secondary CTAs */}
             <HeroSection
               onOpenTradeModal={() => setTradeModalOpen(true)}
               onExploreToken={scrollToTokenOverview}
