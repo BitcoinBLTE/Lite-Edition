@@ -50,10 +50,6 @@ export const WhySolanaSection: React.FC = () => {
                     {item.detail}
                   </p>
                 </div>
-
-                <div className="mt-7 pt-3 text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-[2px]">
-                  {item.badge}
-                </div>
               </div>
             );
           })}

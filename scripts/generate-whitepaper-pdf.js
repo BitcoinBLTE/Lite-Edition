@@ -17,57 +17,71 @@ function hexToRgb(hex) {
 /**
  * Generate a clean, high-resolution PNG buffer of the website's circular tokenomics chart.
  * Replicates the exact geometry and styling from TokenomicsCircleDesign.tsx:
- * - 60% Fair Launch with warm solar amber gradient (#FDE047 -> #F59E0B -> #D97706)
- * - 30% Liquidity Pool with radiant light green gradient (#86EFAC -> #22C55E -> #16A34A)
- * - 10% Staking Rewards & Dev with electric violet gradient (#C4B5FD -> #8B5CF6 -> #7C3AED)
+ * - 55% Fair Launch with warm solar amber gradient (#FDE047 -> #F59E0B -> #D97706)
+ * - 27.5% Liquidity Pool with radiant emerald green gradient (#6EE7B7 -> #10B981 -> #059669)
+ * - 10% Staking / Rewards with electric violet gradient (#C4B5FD -> #8B5CF6 -> #7C3AED)
+ * - 7.5% Development / DEX Listing & Marketing with electric blue gradient (#93C5FD -> #3B82F6 -> #2563EB)
  * - Smooth rounded stroke caps and precision separation gap
  * - Central disc cleanly displaying "2.1M BLTE 100% CIRCULATORY"
  */
 function renderCircularChartPng() {
   const r = 120;
   const circumference = 2 * Math.PI * r; // ~753.9822
-  const gap = 10;
+  const gap = 8;
 
-  // Exactly Three Distinct Sections matching the website (TokenomicsCircleDesign.tsx):
-  // Section 1: 60% Fair Launch (1,260,000 BLTE)
-  const fairLaunchLen = (60 / 100) * circumference;
+  // Exactly Four Distinct Sections matching the website (TokenomicsCircleDesign.tsx):
+  // Section 1: 55% Fair Launch (1,155,000 BLTE)
+  const fairLaunchLen = (55 / 100) * circumference;
   const fairLaunchDash = fairLaunchLen - gap;
   const fairLaunchGap = circumference - fairLaunchDash;
   const fairLaunchOffset = 0;
 
-  // Section 2: 30% Liquidity (630,000 BLTE)
-  const liquidityLen = (30 / 100) * circumference;
+  // Section 2: 27.5% Liquidity Pool (577,500 BLTE)
+  const liquidityLen = (27.5 / 100) * circumference;
   const liquidityDash = liquidityLen - gap;
   const liquidityGap = circumference - liquidityDash;
   const liquidityOffset = -fairLaunchLen;
 
-  // Section 3: 10% Staking Rewards & Developer (210,000 BLTE)
-  const stakingDevLen = (10 / 100) * circumference;
-  const stakingDevDash = stakingDevLen - gap;
-  const stakingDevGap = circumference - stakingDevDash;
-  const stakingDevOffset = -(fairLaunchLen + liquidityLen);
+  // Section 3: 10% Staking / Rewards (210,000 BLTE)
+  const stakingLen = (10 / 100) * circumference;
+  const stakingDash = stakingLen - gap;
+  const stakingGap = circumference - stakingDash;
+  const stakingOffset = -(fairLaunchLen + liquidityLen);
+
+  // Section 4: 7.5% Development / DEX Listing & Marketing (157,500 BLTE)
+  const devMarketingLen = (7.5 / 100) * circumference;
+  const devMarketingDash = devMarketingLen - gap;
+  const devMarketingGap = circumference - devMarketingDash;
+  const devMarketingOffset = -(fairLaunchLen + liquidityLen + stakingLen);
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 360 360">
     <defs>
-      <!-- Fair Launch Gradient: Warm Solar Amber (60%) -->
+      <!-- Fair Launch Gradient: Warm Solar Amber (55%) -->
       <linearGradient id="fairLaunchGradient" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stop-color="#FDE047" />
         <stop offset="50%" stop-color="#F59E0B" />
         <stop offset="100%" stop-color="#D97706" />
       </linearGradient>
 
-      <!-- Liquidity Pool Gradient: Radiant Light Green (30%) -->
+      <!-- Liquidity Pool Gradient: Radiant Emerald Green (27.5%) -->
       <linearGradient id="liquidityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#86EFAC" />
-        <stop offset="50%" stop-color="#22C55E" />
-        <stop offset="100%" stop-color="#16A34A" />
+        <stop offset="0%" stop-color="#6EE7B7" />
+        <stop offset="50%" stop-color="#10B981" />
+        <stop offset="100%" stop-color="#059669" />
       </linearGradient>
 
-      <!-- Staking Rewards & Developer Gradient: Electric Violet / Purple (10%) -->
-      <linearGradient id="stakingDevGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <!-- Staking / Rewards Gradient: Electric Violet / Purple (10%) -->
+      <linearGradient id="stakingRewardsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stop-color="#C4B5FD" />
         <stop offset="50%" stop-color="#8B5CF6" />
         <stop offset="100%" stop-color="#7C3AED" />
+      </linearGradient>
+
+      <!-- Development / DEX Listing & Marketing Gradient: Electric Blue (7.5%) -->
+      <linearGradient id="devMarketingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#93C5FD" />
+        <stop offset="50%" stop-color="#3B82F6" />
+        <stop offset="100%" stop-color="#2563EB" />
       </linearGradient>
 
       <!-- Subtle Ambient Shadow Filter for Center Disc -->
@@ -81,7 +95,7 @@ function renderCircularChartPng() {
 
     <!-- Donut Segments Group (rotated -90deg so sequence begins at 12 o'clock) -->
     <g transform="rotate(-90 180 180)">
-      <!-- Fair Launch Segment (60% · 1,260,000 BLTE) -->
+      <!-- Fair Launch Segment (55% · 1,155,000 BLTE) -->
       <circle
         cx="180" cy="180" r="120"
         stroke="url(#fairLaunchGradient)"
@@ -92,7 +106,7 @@ function renderCircularChartPng() {
         fill="none"
       />
 
-      <!-- Liquidity Pool Segment (30% · 630,000 BLTE) -->
+      <!-- Liquidity Pool Segment (27.5% · 577,500 BLTE) -->
       <circle
         cx="180" cy="180" r="120"
         stroke="url(#liquidityGradient)"
@@ -103,13 +117,24 @@ function renderCircularChartPng() {
         fill="none"
       />
 
-      <!-- Staking Rewards & Developer Segment (10% · 210,000 BLTE) -->
+      <!-- Staking / Rewards Segment (10% · 210,000 BLTE) -->
       <circle
         cx="180" cy="180" r="120"
-        stroke="url(#stakingDevGradient)"
+        stroke="url(#stakingRewardsGradient)"
         stroke-width="40"
-        stroke-dasharray="${stakingDevDash.toFixed(2)} ${stakingDevGap.toFixed(2)}"
-        stroke-dashoffset="${stakingDevOffset.toFixed(2)}"
+        stroke-dasharray="${stakingDash.toFixed(2)} ${stakingGap.toFixed(2)}"
+        stroke-dashoffset="${stakingOffset.toFixed(2)}"
+        stroke-linecap="round"
+        fill="none"
+      />
+
+      <!-- Development / DEX Listing & Marketing Segment (7.5% · 157,500 BLTE) -->
+      <circle
+        cx="180" cy="180" r="120"
+        stroke="url(#devMarketingGradient)"
+        stroke-width="40"
+        stroke-dasharray="${devMarketingDash.toFixed(2)} ${devMarketingGap.toFixed(2)}"
+        stroke-dashoffset="${devMarketingOffset.toFixed(2)}"
         stroke-linecap="round"
         fill="none"
       />
@@ -160,6 +185,7 @@ async function generateWhitepaperPdf() {
   const darkGreen = rgb(0.09, 0.52, 0.24);       // #16A34A Verified Forest Green
   const amberColor = rgb(0.96, 0.62, 0.04);      // #F59E0B Warm Solar Gold
   const purpleColor = rgb(0.55, 0.36, 0.96);     // #8B5CF6 Electric Violet / Purple
+  const blueColor = rgb(0.23, 0.51, 0.96);       // #3B82F6 Electric Blue
 
   const PAGE_WIDTH = 595.28;   // A4 Standard
   const PAGE_HEIGHT = 841.89;  // A4 Standard
@@ -170,34 +196,43 @@ async function generateWhitepaperPdf() {
   const MARGIN_BOTTOM = 46;
   const TOTAL_PAGES = 4;
 
-  // Single Source of Truth from TOKEN_CONFIG (Exact 3 Strategic Allocations):
+  // Single Source of Truth from TOKEN_CONFIG (Exact 4 Strategic Allocations):
   const fairLaunchAlloc = TOKEN_CONFIG.allocations.find(a => a.id === 'fair-launch') || {
     category: 'Fair Launch',
-    percentage: 60,
-    amount: 1260000,
+    percentage: 55,
+    amount: 1155000,
     description: 'Direct community and public fair launch distribution on Solana with borderless access.',
     color: '#F59E0B'
   };
 
   const liquidityAlloc = TOKEN_CONFIG.allocations.find(a => a.id === 'liquidity-pool') || {
-    category: 'Liquidity',
-    percentage: 30,
-    amount: 630000,
+    category: 'Liquidity Pool',
+    percentage: 27.5,
+    amount: 577500,
     description: 'Automated market maker (AMM) DEX liquidity pool deployment on Raydium.',
-    color: '#22C55E'
+    color: '#10B981'
   };
 
-  const stakingDevAlloc = TOKEN_CONFIG.allocations.find(a => a.id === 'staking-dev') || {
-    category: 'Staking Rewards & Developer',
+  const stakingAlloc = TOKEN_CONFIG.allocations.find(a => a.id === 'staking-rewards') || {
+    category: 'Staking / Rewards',
     percentage: 10,
     amount: 210000,
-    description: 'On-chain staking reward incentives (11.61% APY) and core developer ecosystem fund.',
+    description: 'On-chain staking reward incentives (11.61% APY) distributed via non-custodial smart escrow.',
     color: '#8B5CF6'
   };
 
+  const devMarketingAlloc = TOKEN_CONFIG.allocations.find(a => a.id === 'development-marketing') || {
+    category: 'Development / DEX Listing & Marketing',
+    percentage: 7.5,
+    amount: 157500,
+    description: 'Strategic reserve for core protocol development, tier-1 DEX listings, and marketing.',
+    color: '#3B82F6'
+  };
+
   const fairLaunchRgb = hexToRgb(fairLaunchAlloc.color || '#F59E0B');
-  const liquidityRgb = hexToRgb(liquidityAlloc.color || '#22C55E');
-  const stakingDevRgb = hexToRgb(stakingDevAlloc.color || '#8B5CF6');
+  const liquidityRgb = hexToRgb(liquidityAlloc.color || '#10B981');
+  const stakingRgb = hexToRgb(stakingAlloc.color || '#8B5CF6');
+  const devMarketingRgb = hexToRgb(devMarketingAlloc.color || '#3B82F6');
 
   function wrapText(text, maxWidth, font, fontSize) {
     const words = text.split(' ');
@@ -676,193 +711,255 @@ async function generateWhitepaperPdf() {
 
   y3 = chartY - 28;
 
-  // 2. THREE STRATEGIC ALLOCATIONS DIRECTLY UNDERNEATH THE CHART
-  // Clean 3-column architecture matching TokenomicsCircleDesign.tsx
-  const allocGap = 12;
-  const allocColW = (CONTENT_WIDTH - 2 * allocGap) / 3; // ~157.09 pt
+  // 2. FOUR STRATEGIC ALLOCATIONS DIRECTLY UNDERNEATH THE CHART
+  // Clean 4-column architecture matching TokenomicsCircleDesign.tsx
+  const allocGap = 8;
+  const allocColW = (CONTENT_WIDTH - 3 * allocGap) / 4; // ~117.82 pt
   const col1Left = MARGIN_LEFT;
   const col2Left = MARGIN_LEFT + allocColW + allocGap;
   const col3Left = MARGIN_LEFT + (allocColW + allocGap) * 2;
+  const col4Left = MARGIN_LEFT + (allocColW + allocGap) * 3;
 
-  // Column 1: FAIR LAUNCH (60% · 1,260,000 BLTE)
+  // Column 1: FAIR LAUNCH (55% · 1,155,000 BLTE)
   page3.drawCircle({
-    x: col1Left + 4,
+    x: col1Left + 3,
     y: y3 - 3,
-    size: 4,
+    size: 3.5,
     color: fairLaunchRgb,
   });
 
   page3.drawText('FAIR LAUNCH', {
-    x: col1Left + 14,
+    x: col1Left + 11,
     y: y3 - 6,
-    size: 9.5,
+    size: 8,
     font: fontMonoBold,
     color: titleColor,
   });
 
-  page3.drawText('60%', {
+  page3.drawText('55%', {
     x: col1Left + 2,
-    y: y3 - 30,
-    size: 22,
+    y: y3 - 28,
+    size: 19,
     font: fontBold,
     color: amberColor,
   });
 
-  page3.drawText('1,260,000 BLTE', {
-    x: col1Left + 54,
-    y: y3 - 26,
-    size: 10,
+  page3.drawText('1,155,000', {
+    x: col1Left + 48,
+    y: y3 - 24,
+    size: 8.5,
     font: fontMonoBold,
     color: titleColor,
   });
 
   page3.drawLine({
-    start: { x: col1Left + 2, y: y3 - 36 },
-    end: { x: col1Left + allocColW - 4, y: y3 - 36 },
+    start: { x: col1Left + 2, y: y3 - 34 },
+    end: { x: col1Left + allocColW - 4, y: y3 - 34 },
     thickness: 0.5,
     color: lightGray,
   });
 
-  const fairDesc = 'Direct community fair launch distribution on Solana with borderless access.';
-  const fairLines = wrapText(fairDesc, allocColW - 6, fontRegular, 8);
-  let flY = y3 - 48;
+  const fairDesc = 'Direct community fair launch distribution on Solana.';
+  const fairLines = wrapText(fairDesc, allocColW - 6, fontRegular, 7.5);
+  let flY = y3 - 45;
   for (const line of fairLines) {
     page3.drawText(line, {
       x: col1Left + 2,
       y: flY,
-      size: 8,
+      size: 7.5,
       font: fontRegular,
       color: bodyColor,
     });
-    flY -= 11;
+    flY -= 10;
   }
 
-  page3.drawText('1,260,000 BLTE · 100% Unlocked', {
+  page3.drawText('1,155,000 BLTE · Unlocked', {
     x: col1Left + 2,
     y: flY - 2,
-    size: 6.8,
+    size: 6.5,
     font: fontMono,
     color: grayColor,
   });
 
-  // Column 2: LIQUIDITY (30% · 630,000 BLTE)
+  // Column 2: LIQUIDITY POOL (27.5% · 577,500 BLTE)
   page3.drawCircle({
-    x: col2Left + 4,
+    x: col2Left + 3,
     y: y3 - 3,
-    size: 4,
+    size: 3.5,
     color: liquidityRgb,
   });
 
-  page3.drawText('LIQUIDITY', {
-    x: col2Left + 14,
+  page3.drawText('LIQUIDITY POOL', {
+    x: col2Left + 11,
     y: y3 - 6,
-    size: 9.5,
+    size: 8,
     font: fontMonoBold,
     color: titleColor,
   });
 
-  page3.drawText('30%', {
+  page3.drawText('27.5%', {
     x: col2Left + 2,
-    y: y3 - 30,
-    size: 22,
+    y: y3 - 28,
+    size: 19,
     font: fontBold,
     color: darkGreen,
   });
 
-  page3.drawText('630,000 BLTE', {
-    x: col2Left + 54,
-    y: y3 - 26,
-    size: 10,
+  page3.drawText('577,500', {
+    x: col2Left + 60,
+    y: y3 - 24,
+    size: 8.5,
     font: fontMonoBold,
     color: titleColor,
   });
 
   page3.drawLine({
-    start: { x: col2Left + 2, y: y3 - 36 },
-    end: { x: col2Left + allocColW - 4, y: y3 - 36 },
+    start: { x: col2Left + 2, y: y3 - 34 },
+    end: { x: col2Left + allocColW - 4, y: y3 - 34 },
     thickness: 0.5,
     color: lightGray,
   });
 
-  const liqDesc = 'Automated market maker DEX pool deployment on Raydium with locked LP.';
-  const liqLines = wrapText(liqDesc, allocColW - 6, fontRegular, 8);
-  let llY = y3 - 48;
+  const liqDesc = 'Automated market maker DEX liquidity on Raydium.';
+  const liqLines = wrapText(liqDesc, allocColW - 6, fontRegular, 7.5);
+  let llY = y3 - 45;
   for (const line of liqLines) {
     page3.drawText(line, {
       x: col2Left + 2,
       y: llY,
-      size: 8,
+      size: 7.5,
       font: fontRegular,
       color: bodyColor,
     });
-    llY -= 11;
+    llY -= 10;
   }
 
-  page3.drawText('630,000 BLTE · Raydium AMM', {
+  page3.drawText('577,500 BLTE · Raydium', {
     x: col2Left + 2,
     y: llY - 2,
-    size: 6.8,
+    size: 6.5,
     font: fontMono,
     color: grayColor,
   });
 
-  // Column 3: STAKING & DEV (10% · 210,000 BLTE)
+  // Column 3: STAKING / REWARDS (10% · 210,000 BLTE)
   page3.drawCircle({
-    x: col3Left + 4,
+    x: col3Left + 3,
     y: y3 - 3,
-    size: 4,
-    color: stakingDevRgb,
+    size: 3.5,
+    color: stakingRgb,
   });
 
-  page3.drawText('STAKING & DEV', {
-    x: col3Left + 14,
+  page3.drawText('STAKING / REWARDS', {
+    x: col3Left + 11,
     y: y3 - 6,
-    size: 9.5,
+    size: 8,
     font: fontMonoBold,
     color: titleColor,
   });
 
   page3.drawText('10%', {
     x: col3Left + 2,
-    y: y3 - 30,
-    size: 22,
+    y: y3 - 28,
+    size: 19,
     font: fontBold,
     color: purpleColor,
   });
 
-  page3.drawText('210,000 BLTE', {
-    x: col3Left + 54,
-    y: y3 - 26,
-    size: 10,
+  page3.drawText('210,000', {
+    x: col3Left + 48,
+    y: y3 - 24,
+    size: 8.5,
     font: fontMonoBold,
     color: titleColor,
   });
 
   page3.drawLine({
-    start: { x: col3Left + 2, y: y3 - 36 },
-    end: { x: col3Left + allocColW - 4, y: y3 - 36 },
+    start: { x: col3Left + 2, y: y3 - 34 },
+    end: { x: col3Left + allocColW - 4, y: y3 - 34 },
     thickness: 0.5,
     color: lightGray,
   });
 
-  const stkDesc = 'On-chain staking reward incentives (11.61% APY) & core developer fund.';
-  const stkLines = wrapText(stkDesc, allocColW - 6, fontRegular, 8);
-  let stkY = y3 - 48;
+  const stkDesc = 'On-chain staking incentives (11.61% APY) via escrow.';
+  const stkLines = wrapText(stkDesc, allocColW - 6, fontRegular, 7.5);
+  let stkY = y3 - 45;
   for (const line of stkLines) {
     page3.drawText(line, {
       x: col3Left + 2,
       y: stkY,
-      size: 8,
+      size: 7.5,
       font: fontRegular,
       color: bodyColor,
     });
-    stkY -= 11;
+    stkY -= 10;
   }
 
-  page3.drawText('210,000 BLTE · 11.61% Escrow', {
+  page3.drawText('210,000 BLTE · 11.61% APY', {
     x: col3Left + 2,
     y: stkY - 2,
-    size: 6.8,
+    size: 6.5,
+    font: fontMono,
+    color: grayColor,
+  });
+
+  // Column 4: DEV & MARKETING (7.5% · 157,500 BLTE)
+  page3.drawCircle({
+    x: col4Left + 3,
+    y: y3 - 3,
+    size: 3.5,
+    color: devMarketingRgb,
+  });
+
+  page3.drawText('DEV & MARKETING', {
+    x: col4Left + 11,
+    y: y3 - 6,
+    size: 8,
+    font: fontMonoBold,
+    color: titleColor,
+  });
+
+  page3.drawText('7.5%', {
+    x: col4Left + 2,
+    y: y3 - 28,
+    size: 19,
+    font: fontBold,
+    color: blueColor,
+  });
+
+  page3.drawText('157,500', {
+    x: col4Left + 48,
+    y: y3 - 24,
+    size: 8.5,
+    font: fontMonoBold,
+    color: titleColor,
+  });
+
+  page3.drawLine({
+    start: { x: col4Left + 2, y: y3 - 34 },
+    end: { x: col4Left + allocColW - 4, y: y3 - 34 },
+    thickness: 0.5,
+    color: lightGray,
+  });
+
+  const devDesc = 'Protocol development, DEX listings & marketing fund.';
+  const devLines = wrapText(devDesc, allocColW - 6, fontRegular, 7.5);
+  let devY = y3 - 45;
+  for (const line of devLines) {
+    page3.drawText(line, {
+      x: col4Left + 2,
+      y: devY,
+      size: 7.5,
+      font: fontRegular,
+      color: bodyColor,
+    });
+    devY -= 10;
+  }
+
+  page3.drawText('157,500 BLTE · Ecosystem', {
+    x: col4Left + 2,
+    y: devY - 2,
+    size: 6.5,
     font: fontMono,
     color: grayColor,
   });
@@ -882,10 +979,17 @@ async function generateWhitepaperPdf() {
     color: lightGray,
   });
 
-  y3 -= 92;
+  page3.drawLine({
+    start: { x: col4Left - allocGap / 2, y: y3 },
+    end: { x: col4Left - allocGap / 2, y: y3 - 78 },
+    thickness: 0.5,
+    color: lightGray,
+  });
 
-  // 3. MINIMALIST ALLOCATION LEDGER TABLE (4 ROWS)
-  const table3H = 78;
+  y3 -= 88;
+
+  // 3. MINIMALIST ALLOCATION LEDGER TABLE (5 ROWS: 4 ALLOCATIONS + TOTAL CAP)
+  const table3H = 88;
   page3.drawRectangle({
     x: MARGIN_LEFT,
     y: y3 - table3H,
@@ -896,7 +1000,7 @@ async function generateWhitepaperPdf() {
     borderWidth: 0.6,
   });
 
-  const tHeaderY = y3 - 12;
+  const tHeaderY = y3 - 11;
   page3.drawText('ALLOCATION CATEGORY', { x: MARGIN_LEFT + 14, y: tHeaderY, size: 7, font: fontMonoBold, color: grayColor });
   page3.drawText('SHARE %', { x: MARGIN_LEFT + 148, y: tHeaderY, size: 7, font: fontMonoBold, color: grayColor });
   page3.drawText('BLTE AMOUNT', { x: MARGIN_LEFT + 208, y: tHeaderY, size: 7, font: fontMonoBold, color: grayColor });
@@ -904,29 +1008,30 @@ async function generateWhitepaperPdf() {
   page3.drawText('ON-CHAIN STATUS', { x: MARGIN_LEFT + 400, y: tHeaderY, size: 7, font: fontMonoBold, color: grayColor });
 
   page3.drawLine({
-    start: { x: MARGIN_LEFT + 12, y: y3 - 17 },
-    end: { x: MARGIN_LEFT + CONTENT_WIDTH - 12, y: y3 - 17 },
+    start: { x: MARGIN_LEFT + 12, y: y3 - 15 },
+    end: { x: MARGIN_LEFT + CONTENT_WIDTH - 12, y: y3 - 15 },
     thickness: 0.5,
     color: lightGray,
   });
 
   const table3Rows = [
-    { cat: 'Fair Launch Distribution', pct: '60.0%', amt: '1,260,000 BLTE', vest: '100% Genesis Unlocked', stat: 'Public Solana Access', col: amberColor },
-    { cat: 'Liquidity Pool (Raydium)', pct: '30.0%', amt: '630,000 BLTE', vest: '100% Genesis Unlocked', stat: 'AMM DEX Initialized', col: darkGreen },
-    { cat: 'Staking Rewards & Developer', pct: '10.0%', amt: '210,000 BLTE', vest: '100% Genesis Unlocked', stat: 'Streamflow Escrow APY', col: purpleColor },
+    { cat: 'Fair Launch Distribution', pct: '55.0%', amt: '1,155,000 BLTE', vest: '100% Genesis Unlocked', stat: 'Public Solana Access', col: amberColor },
+    { cat: 'Liquidity Pool (Raydium)', pct: '27.5%', amt: '577,500 BLTE', vest: '100% Genesis Unlocked', stat: 'AMM DEX Initialized', col: darkGreen },
+    { cat: 'Staking / Rewards (Escrow)', pct: '10.0%', amt: '210,000 BLTE', vest: '100% Genesis Unlocked', stat: 'Streamflow Escrow APY', col: purpleColor },
+    { cat: 'Development & DEX Marketing', pct: '7.5%', amt: '157,500 BLTE', vest: '100% Genesis Unlocked', stat: 'Core Protocol Reserve', col: blueColor },
     { cat: 'Total Inviolable Cap', pct: '100.0%', amt: '2,100,000 BLTE', vest: '100% Circulatory', stat: 'Mathematically Sealed', col: goldColor },
   ];
 
   table3Rows.forEach((row, i) => {
-    const rowY = y3 - 28 - i * 12.5;
-    page3.drawText(row.cat, { x: MARGIN_LEFT + 14, y: rowY, size: 7.5, font: fontBold, color: titleColor });
-    page3.drawText(row.pct, { x: MARGIN_LEFT + 148, y: rowY, size: 7.5, font: fontMonoBold, color: row.col });
-    page3.drawText(row.amt, { x: MARGIN_LEFT + 208, y: rowY, size: 7.5, font: fontMonoBold, color: titleColor });
-    page3.drawText(row.vest, { x: MARGIN_LEFT + 295, y: rowY, size: 7.5, font: fontRegular, color: bodyColor });
-    page3.drawText(row.stat, { x: MARGIN_LEFT + 400, y: rowY, size: 7.5, font: fontBold, color: row.col });
+    const rowY = y3 - 25 - i * 12.2;
+    page3.drawText(row.cat, { x: MARGIN_LEFT + 14, y: rowY, size: 7.2, font: fontBold, color: titleColor });
+    page3.drawText(row.pct, { x: MARGIN_LEFT + 148, y: rowY, size: 7.2, font: fontMonoBold, color: row.col });
+    page3.drawText(row.amt, { x: MARGIN_LEFT + 208, y: rowY, size: 7.2, font: fontMonoBold, color: titleColor });
+    page3.drawText(row.vest, { x: MARGIN_LEFT + 295, y: rowY, size: 7.2, font: fontRegular, color: bodyColor });
+    page3.drawText(row.stat, { x: MARGIN_LEFT + 400, y: rowY, size: 7.2, font: fontBold, color: row.col });
   });
 
-  y3 -= (table3H + 14);
+  y3 -= (table3H + 12);
 
   // 4. COMPACT VERIFICATION STATEMENT AT THE BOTTOM OF THE TOKENOMICS SECTION
   const bannerH = 74;

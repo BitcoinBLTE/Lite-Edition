@@ -17,9 +17,6 @@ export const TokenomicsSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] text-[#080808] dark:text-white font-display tracking-tight leading-[1.15]">
             {tok.title || '2.1M TOTAL SUPPLY'}
           </h2>
-          <p className="mt-3.5 text-base sm:text-lg text-[#475569] dark:text-[#CBD5E1] font-[450] leading-[1.75]">
-            {tok.subtitle || 'A strictly capped token distribution configured across four strategic allocations: 1,155,000 Fair Launch, 577,500 Liquidity Pool, 210,000 Staking / Rewards, and 157,500 Development / DEX Listing & Marketing. No minting backdoor, zero hidden inflation.'}
-          </p>
         </div>
 
         {/* Circular Tokenomic Architecture Design */}

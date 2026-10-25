@@ -104,11 +104,6 @@ export const RoadmapSection: React.FC = () => {
                   ))}
                 </ul>
               </div>
-
-              <div className="mt-8 pt-3 flex items-center justify-between text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8]">
-                <span>{t.roadmap.verified_milestones}</span>
-                <span>{phase.items.length} {t.roadmap.items_suffix}</span>
-              </div>
             </div>
           ))}
         </div>

@@ -35,7 +35,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       title: 'Fair Launch',
       amount: '1,155,000 BLTE',
       percentage: '55%',
-      tag: 'COMMUNITY FAIR LAUNCH · 55%',
+      tag: 'COMMUNITY FAIR LAUNCH · 1,155,000 BLTE',
       color: '#F59E0B',
       lightColor: '#FCD34D',
       darkColor: '#D97706',
@@ -49,7 +49,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       title: 'Liquidity Pool',
       amount: '577,500 BLTE',
       percentage: '27.5%',
-      tag: 'RAYDIUM AMM DEX POOL · 27.5%',
+      tag: 'RAYDIUM AMM DEX POOL · 577,500 BLTE',
       color: '#10B981',
       lightColor: '#6EE7B7',
       darkColor: '#059669',
@@ -63,7 +63,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       title: 'Staking / Rewards',
       amount: '210,000 BLTE',
       percentage: '10%',
-      tag: 'ON-CHAIN STAKING & REWARDS · 10%',
+      tag: 'ON-CHAIN STAKING & REWARDS · 210,000 BLTE',
       color: '#8B5CF6',
       lightColor: '#C4B5FD',
       darkColor: '#7C3AED',
@@ -77,7 +77,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
       title: 'Development / DEX Listing & Marketing',
       amount: '157,500 BLTE',
       percentage: '7.5%',
-      tag: 'CORE PROTOCOL & DEX LISTING · 7.5%',
+      tag: 'CORE PROTOCOL & DEX LISTING · 157,500 BLTE',
       color: '#3B82F6',
       lightColor: '#93C5FD',
       darkColor: '#2563EB',
@@ -154,7 +154,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
           className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[12px] sm:rounded-[14px] bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[11px] sm:text-xs font-mono font-bold shadow-2xs hover:bg-emerald-500/20 transition-colors cursor-pointer"
         >
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-          <span>100% Circulatory · 4 Distinct Allocations</span>
+          <span>100% Circulatory</span>
         </button>
       </div>
 
@@ -382,13 +382,13 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     {selectedItem.title}
                   </div>
                   <div
-                    className="font-mono text-base sm:text-xl font-black tracking-tight"
+                    className="font-mono text-2xl sm:text-3xl font-black tracking-tight"
                     style={{ color: selectedItem.color }}
                   >
-                    {selectedItem.amount}
+                    {selectedItem.percentage}
                   </div>
-                  <div className="text-[9px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#111111]/5 dark:bg-white/10 text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider inline-block">
-                    {selectedItem.percentage} OF SUPPLY
+                  <div className="text-[10px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#111111]/5 dark:bg-white/10 text-[#64748B] dark:text-[#94A3B8] uppercase tracking-wider inline-block">
+                    {selectedItem.amount}
                   </div>
                 </div>
               ) : (
@@ -408,7 +408,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
           </div>
         </div>
 
-        {/* Right: Exactly 4 Selectable Breakdown Cards with Color Distinction */}
+        {/* Right: Exactly 4 Selectable Breakdown Cards with Color Distinction (Displaying Percentages) */}
         <div className="lg:col-span-6 space-y-3 sm:space-y-3.5">
           {allocations.map((item) => {
             const isSelected = selectedId === item.id;
@@ -443,10 +443,10 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
 
                   <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                     <span
-                      className="text-sm sm:text-base font-mono font-black"
+                      className="text-lg sm:text-2xl font-mono font-black"
                       style={{ color: item.color }}
                     >
-                      {item.amount}
+                      {item.percentage}
                     </span>
                     {isSelected && (
                       <span className="p-0.5 sm:p-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">

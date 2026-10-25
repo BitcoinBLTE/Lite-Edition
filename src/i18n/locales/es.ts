@@ -356,7 +356,7 @@ export const es: TranslationSchema = {
   tokenomics: {
     kicker: 'Estructura de distribución · Escasez matemática',
     title: '2.1M SUMINISTRO TOTAL',
-    subtitle: 'Una distribución de tokens estrictamente limitada configurada en cuatro asignaciones estratégicas: 1.155.000 Lanzamiento justo, 577.500 Pool de liquidez, 210.000 Staking / Recompensas y 157.500 Desarrollo / Listado DEX y marketing. Cero puertas traseras de emisión, cero inflación oculta.',
+    subtitle: '',
     fixed_cap: 'LÍMITE FIJO',
     total_supply: 'SUMINISTRO TOTAL',
     verified_alloc: 'Asignación verificada del 100% matemática · 4 asignaciones estratégicas',
