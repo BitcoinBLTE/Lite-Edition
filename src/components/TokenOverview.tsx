@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
+import { ProtocolStats3DVisual } from './3d/ProtocolStats3DVisual';
 
 export const TokenOverview: React.FC = () => {
   const { t } = useLanguage();
@@ -44,25 +45,9 @@ export const TokenOverview: React.FC = () => {
             {t.token_overview.title}
           </h2>
 
-          {/* Infographic Photo: Architectural Overview & Token Specifications */}
-          <div className="relative my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)] group/archInfo">
-            <img
-              src="/assets/aistudio/Learn_more_e8898747.jpg"
-              alt="Architectural Overview & Token Specifications - Built on Solana, 2.1M Tokens"
-              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto transition-transform duration-700 group-hover/archInfo:scale-[1.01]"
-              loading="lazy"
-            />
-            {/* Topic Animation: Project Architecture & Connected Systems Movement */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none overflow-hidden rounded-[20px] sm:rounded-[30px]"
-            >
-              <div className="absolute inset-y-0 w-36 bg-gradient-to-r from-transparent via-[#EAB308]/15 dark:via-[#EAB308]/20 to-transparent animate-speed-sweep" />
-              {/* Architecture cross-section nodes */}
-              <div className="absolute top-[30%] left-[25%] w-2 h-2 rounded-full bg-[#B8661B] animate-node-pulse-a shadow-[0_0_8px_rgba(184,102,27,0.8)]" />
-              <div className="absolute top-[30%] left-[50%] w-2.5 h-2.5 rounded-full bg-[#10B981] animate-node-pulse-b shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
-              <div className="absolute top-[30%] right-[25%] w-2 h-2 rounded-full bg-[#3B82F6] animate-node-pulse-a shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
-            </div>
+          {/* Unique Topic-Specific 3D Visual: Protocol Telemetry & On-Chain Architecture (Borderless, No Container) */}
+          <div className="relative my-6 sm:my-8 w-full">
+            <ProtocolStats3DVisual />
           </div>
 
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">

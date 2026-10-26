@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Wallet3DVisual } from './3d/Wallet3DVisual';
 
 interface BlteWalletModalProps {
   isOpen: boolean;
@@ -648,6 +649,11 @@ export const BlteWalletModal: React.FC<BlteWalletModalProps> = ({
               {w.heroTitle}
             </h3>
           </div>
+        </div>
+
+        {/* 3D Hardware Vault Interactive Showcase (Borderless, No Container) */}
+        <div className="w-full h-44 sm:h-52 relative">
+          <Wallet3DVisual className="w-full h-full" />
         </div>
 
         {/* Main Content Layout: Single-column on mobile, 2-column (7:5) grid on desktop */}

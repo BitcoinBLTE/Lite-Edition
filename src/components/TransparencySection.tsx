@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
+import { Security3DVisual } from './3d/Security3DVisual';
 
 export const TransparencySection: React.FC = () => {
   const { t } = useLanguage();
@@ -51,14 +52,24 @@ export const TransparencySection: React.FC = () => {
           </p>
         </div>
 
+        {/* 3D Cryptographic Shield & Verification Vault Showcase (Borderless, No Container) */}
+        <div className="w-full h-[300px] sm:h-[360px] lg:h-[400px] mb-12 relative">
+          <Security3DVisual className="w-full h-full" />
+        </div>
+
         {/* 6 Transparency Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card) => {
             return (
               <div
                 key={card.title}
-                className="bg-white/95 dark:bg-[#121217]/95 rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                className="relative overflow-hidden bg-white/95 dark:bg-[#121217]/95 rounded-[28px] sm:rounded-[36px] p-7 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_40px_rgba(184,102,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
               >
+                {/* Topic Animation: Cryptographic Transparency & Data Pathway Sweep */}
+                <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
+                  <div className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-emerald-500/10 dark:via-emerald-400/15 to-transparent -translate-x-full group-hover:translate-x-[400%] transition-transform duration-1000 ease-in-out" />
+                </div>
+
                 <div>
                   <div className="flex items-center justify-between mb-5">
                     <span className="text-[10px] font-mono font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-[2px]">

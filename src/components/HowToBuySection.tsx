@@ -18,6 +18,7 @@ import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { RaydiumIcon } from './PlatformIcons';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
+import { BuyTrade3DVisual } from './3d/BuyTrade3DVisual';
 
 interface HowToBuySectionProps {
   onOpenTradeModal: () => void;
@@ -92,6 +93,11 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
           </p>
         </div>
 
+        {/* 3D Dual AMM Liquidity Gateway & Swap Portal (Borderless, No Container) */}
+        <div className="w-full h-[300px] sm:h-[360px] lg:h-[400px] mb-12 relative">
+          <BuyTrade3DVisual className="w-full h-full" />
+        </div>
+
         {/* 7-Step Editorial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
           {steps.map((st, index) => {
@@ -134,7 +140,7 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
                         e.stopPropagation();
                         if (onOpenWallet) onOpenWallet();
                       }}
-                      className="mt-4 p-3.5 rounded-[20px] bg-gradient-to-br from-[#FAF5EF] to-white dark:from-[#201812] dark:to-[#161622] border-2 border-[#B8661B]/40 dark:border-[#EAB308]/50 flex items-center justify-between gap-3 shadow-[0_4px_16px_rgba(184,102,27,0.10)] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_24px_rgba(184,102,27,0.20)] transition-all cursor-pointer group/wallet"
+                      className="mt-4 p-3.5 rounded-[20px] bg-gradient-to-br from-[#FAF5EF] to-white dark:from-[#201812] dark:to-[#161622] border-2 border-[#B8661B]/40 dark:border-[#EAB308]/50 flex items-center justify-between gap-3 shadow-[0_4px_16px_rgba(184,102,27,0.10)] hover:border-[#B8661B] dark:hover:border-[#EAB308] hover:shadow-[0_8px_24px_rgba(184,102,27,0.20)] transition-all cursor-pointer group/wallet animate-subtle-pulse"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
                         <Realistic3DIcon type="wallet" size="sm" className="shrink-0" />

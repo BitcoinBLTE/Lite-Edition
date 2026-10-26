@@ -20,6 +20,7 @@ import {
 import { TOKEN_CONFIG, getWhitepaperPdfUrl, downloadWhitepaperPdf } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
+import { Genesis3DVisual } from './3d/Genesis3DVisual';
 
 interface BitcoinEducationSectionProps {
   onOpenWhitePaper: () => void;
@@ -49,25 +50,9 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
             {t.education.title}
           </h2>
 
-          {/* Infographic Photo: Learn More About Bitcoin & The Genesis of Lite Edition */}
-          <div className="relative my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)] group/eduInfo">
-            <img
-              src="/assets/aistudio/Learn_more_d3ca6810.jpg"
-              alt="Learn More About Bitcoin & The Genesis of Lite Edition - Distributed Ledgers, Solana, and BLTE"
-              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto transition-transform duration-700 group-hover/eduInfo:scale-[1.01]"
-              loading="lazy"
-            />
-            {/* Topic Animation: Bitcoin: The Breakthrough & Flowing Digital Transactions */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none overflow-hidden rounded-[20px] sm:rounded-[30px]"
-            >
-              <div className="absolute inset-y-0 w-36 bg-gradient-to-r from-transparent via-[#F59E0B]/15 dark:via-[#F59E0B]/25 to-transparent animate-speed-sweep" />
-              {/* Flowing transaction pathway nodes */}
-              <div className="absolute top-[22%] left-[16%] w-2.5 h-2.5 rounded-full bg-[#B8661B] animate-node-pulse-a shadow-[0_0_10px_rgba(184,102,27,0.9)]" />
-              <div className="absolute top-[48%] left-[50%] w-2.5 h-2.5 rounded-full bg-[#10B981] animate-node-pulse-b shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
-              <div className="absolute top-[32%] right-[18%] w-2.5 h-2.5 rounded-full bg-[#8B5CF6] animate-node-pulse-a shadow-[0_0_10px_rgba(139,92,246,0.9)]" />
-            </div>
+          {/* Unique Topic-Specific 3D Visual: Cryptographic Genesis Ledger Block & Chained Sequence (Borderless, No Container) */}
+          <div className="relative my-6 sm:my-8 w-full">
+            <Genesis3DVisual />
           </div>
 
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
@@ -335,15 +320,10 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                 </p>
               </div>
 
-              {/* Infographic Photo: Genesis & Technical Architecture */}
+              {/* 3D Visual: Genesis & Technical Architecture */}
               <div className="pt-2">
-                <div className="rounded-[22px] sm:rounded-[30px] overflow-hidden border border-[#E9C9A5]/60 dark:border-[#B8661B]/35 shadow-[0_8px_30px_rgba(184,102,27,0.08)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)] bg-white dark:bg-[#0A0A0E]">
-                  <img
-                    src="/assets/aistudio/Btc_explain_de14705e.jpg"
-                    alt="Genesis & Technical Architecture: From Bitcoin to a Bigger Vision, One Idea. A Global Movement."
-                    className="w-full h-auto object-contain mx-auto"
-                    loading="lazy"
-                  />
+                <div className="rounded-[22px] sm:rounded-[30px] overflow-hidden shadow-[0_8px_30px_rgba(184,102,27,0.08)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)] bg-gradient-to-b from-[#161622] to-[#0A0A0E]">
+                  <Genesis3DVisual />
                 </div>
               </div>
 

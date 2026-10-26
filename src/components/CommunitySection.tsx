@@ -8,6 +8,7 @@ import {
   GithubIcon, 
   DiscordIcon 
 } from './PlatformIcons';
+import { Community3DVisual } from './3d/Community3DVisual';
 
 export const CommunitySection: React.FC = () => {
   const { t } = useLanguage();
@@ -28,6 +29,11 @@ export const CommunitySection: React.FC = () => {
           <p className="mt-3 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.community.subtitle}
           </p>
+        </div>
+
+        {/* 3D Global Peer-to-Peer Node Constellation (Borderless, No Container) */}
+        <div className="w-full h-[260px] sm:h-[320px] lg:h-[360px] mb-10 relative">
+          <Community3DVisual className="w-full h-full" />
         </div>
 
         {/* Clean Socials Display: Icon Logo then Name, No Container, No Extra Explanation */}

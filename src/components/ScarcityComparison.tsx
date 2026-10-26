@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon } from './Realistic3DIcon';
+import { Scarcity3DVisual } from './3d/Scarcity3DVisual';
 
 export const ScarcityComparison: React.FC = () => {
   const { t } = useLanguage();
@@ -18,25 +19,9 @@ export const ScarcityComparison: React.FC = () => {
             {t.scarcity.title}
           </h2>
 
-          {/* Infographic Photo: A Different Expression of Digital Scarcity */}
-          <div className="relative my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)] group/scarcityInfo">
-            <img
-              src="/assets/aistudio/Scarcity_record_8c445a2d.jpg"
-              alt="A Different Expression of Digital Scarcity - Bitcoin, Bitcoin Lite Edition, and Solana"
-              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto transition-transform duration-700 group-hover/scarcityInfo:scale-[1.01]"
-              loading="lazy"
-            />
-            {/* Topic Animation: Scarcity Ratio Scanning Beam */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none overflow-hidden rounded-[20px] sm:rounded-[30px]"
-            >
-              <div className="absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-[#B8661B]/20 dark:via-[#F59E0B]/25 to-transparent animate-timeline-scan" />
-              {/* Ratio anchor pings */}
-              <div className="absolute top-[35%] left-[24%] w-2 h-2 rounded-full bg-[#B8661B] animate-node-pulse-a shadow-[0_0_8px_rgba(184,102,27,0.8)]" />
-              <div className="absolute top-[35%] left-[50%] w-2.5 h-2.5 rounded-full bg-[#EAB308] animate-node-pulse-b shadow-[0_0_10px_rgba(234,179,8,0.9)]" />
-              <div className="absolute top-[35%] right-[24%] w-2 h-2 rounded-full bg-[#10B981] animate-node-pulse-a shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
-            </div>
+          {/* Unique Topic-Specific 3D Visual: Mathematical Scarcity Vault & 10:1 Comparison Rings (Borderless, No Container) */}
+          <div className="relative my-6 sm:my-8 w-full">
+            <Scarcity3DVisual />
           </div>
 
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">

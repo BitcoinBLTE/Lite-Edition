@@ -3,6 +3,7 @@ import { RefreshCw, Activity, Coins, ArrowUpRight, Compass, ShieldCheck, Wallet,
 import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { fetchLiveMarketData, fetchTokenHoldersCount, LiveMarketData } from '../services/marketDataService';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Ecosystem3DVisual } from './3d/Ecosystem3DVisual';
 
 interface ExploreSectionProps {
   onOpenExplore?: () => void;
@@ -153,6 +154,11 @@ export const ExploreSection: React.FC<ExploreSectionProps> = ({
               <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin text-[#B8661B]' : ''}`} />
             </button>
           </div>
+        </div>
+
+        {/* 3D Living Ecosystem Interactive Architecture (Borderless, No Container) */}
+        <div className="w-full h-[320px] sm:h-[380px] lg:h-[420px] mb-10 relative">
+          <Ecosystem3DVisual className="w-full h-full" />
         </div>
 
         {/* 5 Protocol Metric Cards */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Coins, CheckCircle2 } from 'lucide-react';
+import { Coins, CheckCircle2, Box } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Tokenomics3DVisual } from './3d/Tokenomics3DVisual';
 
 interface TokenomicsCircleDesignProps {
   className?: string;
@@ -22,6 +23,7 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
 
   // Selected slice state for interactive exploration
   const [selectedId, setSelectedId] = useState<AllocationId | null>(null);
+  const [viewMode, setViewMode] = useState<'3d' | '2d'>('3d');
 
   // Exactly Four Distinct Sections as specified:
   // Part 1: 1,155,000 Fair Launch (55.0%)
@@ -142,8 +144,8 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
         </div>
       )}
 
-      {/* Circulatory Indicator Badge */}
-      <div className="flex items-center justify-between">
+      {/* Circulatory Indicator Badge & 3D / 2D View Switcher */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <button
           type="button"
           onClick={() => setSelectedId(null)}
@@ -152,17 +154,45 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
           <span>100% Circulatory</span>
         </button>
+
+        <div className="flex items-center gap-1 p-1 rounded-xl bg-white/80 dark:bg-[#181822] shadow-2xs">
+          <button
+            type="button"
+            onClick={() => setViewMode('3d')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+              viewMode === '3d'
+                ? 'bg-[#B8661B] text-white shadow-xs'
+                : 'text-[#64748B] hover:text-[#080808] dark:text-[#94A3B8] dark:hover:text-white'
+            }`}
+          >
+            <Box className="w-3.5 h-3.5" />
+            <span>3D Coin Model</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode('2d')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
+              viewMode === '2d'
+                ? 'bg-[#B8661B] text-white shadow-xs'
+                : 'text-[#64748B] hover:text-[#080808] dark:text-[#94A3B8] dark:hover:text-white'
+            }`}
+          >
+            <span>2D Donut</span>
+          </button>
+        </div>
       </div>
 
-      {/* Main Container: Expanded Selectable Donut Chart on Left, Interactive Cards on Right */}
+      {/* Main Container: 3D/2D Distribution on Left, Interactive Cards on Right */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-        {/* Left: Expanded, Selectable Donut Chart */}
+        {/* Left Column: 3D Model or 2D Donut */}
         <div className="lg:col-span-6 flex flex-col items-center justify-center relative select-none py-2 min-w-0">
-          
-          {/* Expanded Donut Graphic Container */}
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[440px] lg:h-[440px] max-w-full flex items-center justify-center aspect-square">
-            
-            {/* Dynamic ambient background glow tuned to active selection */}
+          {viewMode === '3d' ? (
+            <div className="w-full">
+              <Tokenomics3DVisual />
+            </div>
+          ) : (
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[440px] lg:h-[440px] max-w-full flex items-center justify-center aspect-square">
+              {/* Dynamic ambient background glow tuned to active selection */}
             <div
               className="absolute inset-4 rounded-full blur-3xl transition-all duration-500 -z-10"
               style={{
@@ -359,6 +389,8 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
                     ? 'opacity-30 hover:opacity-75'
                     : 'opacity-100 hover:opacity-90'
                 }`}
+              />
+
               {/* Topic Animation: Orbiting Network Tokenomics Flow Particles */}
               <g className="animate-tokenomics-orbit pointer-events-none">
                 <circle cx="160" cy="46" r="3" fill="#F59E0B" opacity="0.9" filter="url(#fairLaunchShadow)" />
@@ -408,7 +440,8 @@ export const TokenomicsCircleDesign: React.FC<TokenomicsCircleDesignProps> = ({
               )}
             </div>
           </div>
-        </div>
+        )}
+      </div>
 
         {/* Right: Exactly 4 Selectable Breakdown Cards with Color Distinction (Displaying Percentages) */}
         <div className="lg:col-span-6 space-y-3 sm:space-y-3.5">

@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
+import { Pillars3DVisual } from './3d/Pillars3DVisual';
 
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
@@ -28,26 +29,9 @@ export const AboutSection: React.FC = () => {
             {t.about.title}
           </h2>
 
-          {/* Infographic Photo: What is Bitcoin Lite Edition? */}
-          <div className="relative my-6 sm:my-8 rounded-[20px] sm:rounded-[30px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_10px_35px_rgba(0,0,0,0.05)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.5)] group/aboutInfo">
-            <img
-              src="/assets/aistudio/BLTE_explain_e0101186.jpg"
-              alt="What is Bitcoin Lite Edition? Ultra-scarce supply, sub-second speed, negligible fees, and radical transparency on Solana."
-              className="w-full h-auto object-contain rounded-[20px] sm:rounded-[30px] mx-auto transition-transform duration-700 group-hover/aboutInfo:scale-[1.01]"
-              loading="lazy"
-            />
-            {/* Topic Animation: Ongoing Innovation & Connected Systems Data Wave */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none overflow-hidden rounded-[20px] sm:rounded-[30px]"
-            >
-              <div className="absolute inset-y-0 w-40 bg-gradient-to-r from-transparent via-[#EAB308]/15 dark:via-[#EAB308]/20 to-transparent animate-speed-sweep" />
-              {/* Interconnected circuit beacons */}
-              <div className="absolute top-[28%] left-[20%] w-2 h-2 rounded-full bg-[#B8661B] animate-node-pulse-a shadow-[0_0_8px_rgba(184,102,27,0.8)]" />
-              <div className="absolute top-[28%] left-[42%] w-2 h-2 rounded-full bg-[#10B981] animate-node-pulse-b shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
-              <div className="absolute top-[28%] left-[64%] w-2 h-2 rounded-full bg-[#3B82F6] animate-node-pulse-a shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
-              <div className="absolute top-[28%] left-[84%] w-2 h-2 rounded-full bg-[#8B5CF6] animate-node-pulse-b shadow-[0_0_8px_rgba(139,92,246,0.8)]" />
-            </div>
+          {/* Unique Topic-Specific 3D Visual: Animated Blockchain Networks & Connected Nodes (Borderless, No Container) */}
+          <div className="relative my-6 sm:my-8 w-full">
+            <Pillars3DVisual />
           </div>
 
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">

@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon } from './Realistic3DIcon';
+import { Intro3DVisual } from './3d/Intro3DVisual';
 
 interface BitcoinIntroSectionProps {
   onLearnMore: () => void;
@@ -59,30 +60,11 @@ export const BitcoinIntroSection: React.FC<BitcoinIntroSectionProps> = ({
               </div>
             </div>
 
-            {/* Right Column (Infographic Image moved directly above the text) */}
+            {/* Right Column (High-Quality 3D Animated Bitcoin & BLTE Digital Environment Visual) */}
             <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-              {/* Infographic Photo moved above this text */}
-              <div className="relative rounded-[20px] sm:rounded-[28px] overflow-hidden bg-white dark:bg-[#0A0A0E] shadow-[0_8px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.45)] group/info">
-                <img
-                  src="/assets/aistudio/Btc_explain_de14705e.jpg"
-                  alt="From Bitcoin to a Bigger Vision"
-                  className="w-full h-auto object-contain rounded-[20px] sm:rounded-[28px] mx-auto transition-transform duration-700 group-hover/info:scale-[1.01]"
-                  loading="lazy"
-                />
-
-                {/* Topic Animation: Historical Precedent & Architectural Evolution Shimmer */}
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 pointer-events-none overflow-hidden rounded-[20px] sm:rounded-[28px]"
-                >
-                  {/* Luminous timeline progression beam traveling from 2008 to present */}
-                  <div className="absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-[#F59E0B]/15 dark:via-[#F59E0B]/25 to-transparent animate-timeline-scan" />
-                  
-                  {/* Subtle pulsing historical milestone beacons */}
-                  <div className="absolute top-[18%] left-[12%] w-2 h-2 rounded-full bg-[#B8661B] dark:bg-[#EAB308] animate-node-pulse-a shadow-[0_0_8px_rgba(184,102,27,0.8)]" />
-                  <div className="absolute top-[32%] left-[48%] w-2 h-2 rounded-full bg-[#10B981] animate-node-pulse-b shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
-                  <div className="absolute top-[22%] right-[16%] w-2 h-2 rounded-full bg-[#3B82F6] animate-node-pulse-a shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
-                </div>
+              {/* Unique Topic-Specific 3D Visual: Bitcoin & BLTE Coins in Futuristic Digital Matrix (Borderless, No Container) */}
+              <div className="relative w-full">
+                <Intro3DVisual />
               </div>
 
               {/* The Text */}
