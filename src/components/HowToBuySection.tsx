@@ -18,7 +18,6 @@ import { TOKEN_CONFIG } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { RaydiumIcon } from './PlatformIcons';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
-import { BuyTrade3DVisual } from './3d/BuyTrade3DVisual';
 
 interface HowToBuySectionProps {
   onOpenTradeModal: () => void;
@@ -91,11 +90,6 @@ export const HowToBuySection: React.FC<HowToBuySectionProps> = ({
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.how_to_buy.subtitle}
           </p>
-        </div>
-
-        {/* 3D Dual AMM Liquidity Gateway & Swap Portal (Borderless, No Container) */}
-        <div className="w-full h-[300px] sm:h-[360px] lg:h-[400px] mb-12 relative">
-          <BuyTrade3DVisual className="w-full h-full" />
         </div>
 
         {/* 7-Step Editorial Grid */}

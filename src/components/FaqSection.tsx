@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon } from './Realistic3DIcon';
-import { Knowledge3DVisual } from './3d/Knowledge3DVisual';
 
 export const FaqSection: React.FC = () => {
   const { t } = useLanguage();
@@ -26,11 +25,6 @@ export const FaqSection: React.FC = () => {
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.faq.subtitle}
           </p>
-        </div>
-
-        {/* 3D Holographic Knowledge Prism (Borderless, No Container) */}
-        <div className="w-full h-[260px] sm:h-[320px] lg:h-[360px] mb-10 relative">
-          <Knowledge3DVisual className="w-full h-full" />
         </div>
 
         {/* Accordion List: Clean Editorial Cards */}

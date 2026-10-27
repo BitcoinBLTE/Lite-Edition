@@ -1,55 +1,47 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 interface LivingBlockchainNetworkProps {
   className?: string;
 }
 
-interface NetworkNode {
-  position: THREE.Vector3;
-  baseScale: number;
-  type: 'hub' | 'validator' | 'relay';
-  color: THREE.Color;
-  emissiveColor: THREE.Color;
-  pulsePhase: number;
-  pulseSpeed: number;
-  glowSize: number;
-  connections: number[];
+interface NodeData {
+  id: number;
+  // 3D coordinates based on the reference layout with subtle depth
+  x: number;
+  y: number;
+  z: number;
+  scale: number;
+  strokeWidth: number;
+  color1: string;
+  color2: string;
+  hasGradient: boolean;
+  threeColor: number;
 }
 
-interface DataPacket {
-  fromNode: number;
-  toNode: number;
+interface EdgePacket {
+  edgeIndex: number;
   progress: number;
   speed: number;
   color: THREE.Color;
-  size: number;
 }
 
 export const LivingBlockchainNetwork: React.FC<LivingBlockchainNetworkProps> = ({ className = '' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [webGlSupported, setWebGlSupported] = useState<boolean>(true);
-  const [isInteracting, setIsInteracting] = useState<boolean>(false);
 
-  // References for animation and event management
+  // References for animation and interactive dragging
   const animFrameIdRef = useRef<number>(0);
   const isDraggingRef = useRef<boolean>(false);
   const lastPointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-  const rotationVelocityRef = useRef<{ x: number; y: number }>({ x: 0, y: 0.002 });
-  const targetRotationRef = useRef<{ x: number; y: number }>({ x: 0.15, y: 0 });
-  const currentRotationRef = useRef<{ x: number; y: number }>({ x: 0.15, y: 0 });
-  const prefersReducedMotionRef = useRef<boolean>(false);
+  const rotationOffsetRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const rotationVelocityRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Check reduced motion preference
-    if (typeof window !== 'undefined' && window.matchMedia) {
-      prefersReducedMotionRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    }
-
     const container = containerRef.current;
     if (!container) return;
 
-    // Probe WebGL support
+    // Check WebGL availability
     try {
       const probeCanvas = document.createElement('canvas');
       const gl = probeCanvas.getContext('webgl2') || probeCanvas.getContext('webgl');
@@ -62,14 +54,14 @@ export const LivingBlockchainNetwork: React.FC<LivingBlockchainNetworkProps> = (
       return;
     }
 
-    // --- THREE.JS SETUP ---
+    // --- THREE.JS SCENE SETUP ---
     const scene = new THREE.Scene();
 
     let width = container.clientWidth || 420;
     let height = container.clientHeight || 420;
 
-    const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
-    camera.position.set(0, 0, 7.8);
+    const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
+    camera.position.set(0, 0, 6.2);
 
     let renderer: THREE.WebGLRenderer;
     try {
@@ -85,10 +77,7 @@ export const LivingBlockchainNetwork: React.FC<LivingBlockchainNetworkProps> = (
 
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.25;
 
-    // Clear previous children
     while (container.firstChild) {
       container.removeChild(container.firstChild);
     }
@@ -98,545 +87,566 @@ export const LivingBlockchainNetwork: React.FC<LivingBlockchainNetworkProps> = (
     renderer.domElement.style.display = 'block';
     renderer.domElement.style.touchAction = 'none';
 
-    // --- PROCEDURAL GLOW TEXTURE GENERATOR (Zero external assets) ---
-    const createGlowTexture = (innerColor: string, outerColor: string): THREE.Texture => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 128;
-      canvas.height = 128;
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        const gradient = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
-        gradient.addColorStop(0, innerColor);
-        gradient.addColorStop(0.3, outerColor);
-        gradient.addColorStop(0.7, 'rgba(0,0,0,0.15)');
-        gradient.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, 128, 128);
-      }
-      const texture = new THREE.CanvasTexture(canvas);
-      texture.needsUpdate = true;
-      return texture;
-    };
-
-    const goldGlowTex = createGlowTexture('rgba(255, 235, 170, 0.95)', 'rgba(217, 119, 6, 0.55)');
-    const blueGlowTex = createGlowTexture('rgba(210, 245, 255, 0.95)', 'rgba(2, 132, 199, 0.6)');
-
-    // --- HIERARCHICAL THREE.GROUP FOR THE LIVING NETWORK ---
+    // Root Group for the Interconnected Bitcoin Network
     const networkGroup = new THREE.Group();
     scene.add(networkGroup);
 
-    // --- PROCEDURAL DECENTRALIZED TOPOLOGY GENERATION ---
-    // Defined cluster centers representing high-throughput distributed validators & scarcity hubs
-    const clusterCenters = [
-      new THREE.Vector3(0.0, 0.45, 0.2),      // Alpha Consensus Core (Center-Top)
-      new THREE.Vector3(-1.4, -0.6, 0.5),     // Beta Throughput Engine (Bottom-Left)
-      new THREE.Vector3(1.35, -0.5, -0.4),    // Gamma Scarcity Vault (Bottom-Right)
-      new THREE.Vector3(0.1, -1.2, 0.1),      // Delta Settlement Bridge (Deep Bottom)
-      new THREE.Vector3(-0.8, 1.1, -0.6),     // Epsilon Peer Gateway (Top-Left)
-      new THREE.Vector3(1.0, 1.0, 0.6),       // Zeta Relay Cluster (Top-Right)
+    // --- 13 NODES PRECISELY POSITIONED MATCHING REFERENCE IMAGE ---
+    // Colors: cyan, teal, blue, purple, and subtle pink gradients
+    const nodesConfig: NodeData[] = [
+      {
+        id: 0, // Central Master Node (Largest)
+        x: 0.10,
+        y: 0.65,
+        z: 0.32,
+        scale: 0.95,
+        strokeWidth: 20,
+        color1: '#581C87', // Deep purple
+        color2: '#2563EB', // Royal blue
+        hasGradient: true,
+        threeColor: 0x581C87,
+      },
+      {
+        id: 1, // Lower Center-Left Node (Second Largest)
+        x: -0.38,
+        y: -0.18,
+        z: 0.24,
+        scale: 0.72,
+        strokeWidth: 18,
+        color1: '#1D4ED8', // Royal blue
+        color2: '#2563EB',
+        hasGradient: false,
+        threeColor: 0x1D4ED8,
+      },
+      {
+        id: 2, // Upper-Left Emerald Node (Third Largest)
+        x: -1.35,
+        y: 0.75,
+        z: -0.05,
+        scale: 0.68,
+        strokeWidth: 17,
+        color1: '#00B894', // Emerald teal
+        color2: '#00B894',
+        hasGradient: false,
+        threeColor: 0x00B894,
+      },
+      {
+        id: 3, // Top-Left Mint Teal Node (Small)
+        x: -0.68,
+        y: 1.40,
+        z: -0.18,
+        scale: 0.40,
+        strokeWidth: 14,
+        color1: '#00C9A7', // Mint green/teal
+        color2: '#00C9A7',
+        hasGradient: false,
+        threeColor: 0x00C9A7,
+      },
+      {
+        id: 4, // Top-Center Purple Node (Medium-Small)
+        x: 0.22,
+        y: 1.34,
+        z: -0.14,
+        scale: 0.44,
+        strokeWidth: 15,
+        color1: '#7C3AED', // Purple/violet
+        color2: '#7C3AED',
+        hasGradient: false,
+        threeColor: 0x7C3AED,
+      },
+      {
+        id: 5, // Top-Right Rose/Purple Node (Medium-Small)
+        x: 1.25,
+        y: 0.82,
+        z: -0.22,
+        scale: 0.42,
+        strokeWidth: 14,
+        color1: '#9333EA', // Purple with rose tint
+        color2: '#C026D3',
+        hasGradient: true,
+        threeColor: 0x9333EA,
+      },
+      {
+        id: 6, // Middle-Left Cyan-Blue Node (Medium-Small)
+        x: -1.42,
+        y: -0.02,
+        z: 0.10,
+        scale: 0.50,
+        strokeWidth: 15,
+        color1: '#0284C7', // Electric cyan-blue
+        color2: '#0284C7',
+        hasGradient: false,
+        threeColor: 0x0284C7,
+      },
+      {
+        id: 7, // Middle-Right Steel Blue Node (Medium-Small)
+        x: 0.88,
+        y: -0.10,
+        z: 0.06,
+        scale: 0.42,
+        strokeWidth: 14,
+        color1: '#2563EB', // Steel ocean blue
+        color2: '#2563EB',
+        hasGradient: false,
+        threeColor: 0x2563EB,
+      },
+      {
+        id: 8, // Lower-Center Purple Node (Medium)
+        x: 0.25,
+        y: -0.74,
+        z: 0.18,
+        scale: 0.55,
+        strokeWidth: 16,
+        color1: '#6B21A8', // Violet purple
+        color2: '#7C3AED',
+        hasGradient: false,
+        threeColor: 0x6B21A8,
+      },
+      {
+        id: 9, // Bottom-Left Royal Indigo Node (Medium-Small)
+        x: -0.86,
+        y: -1.14,
+        z: -0.10,
+        scale: 0.44,
+        strokeWidth: 14,
+        color1: '#3B82F6', // Royal indigo
+        color2: '#3B82F6',
+        hasGradient: false,
+        threeColor: 0x3B82F6,
+      },
+      {
+        id: 10, // Bottom-Middle Vibrant Pink/Magenta Node (Medium)
+        x: -0.26,
+        y: -1.48,
+        z: -0.15,
+        scale: 0.55,
+        strokeWidth: 16,
+        color1: '#D946EF', // Magenta/pink
+        color2: '#EC4899',
+        hasGradient: true,
+        threeColor: 0xD946EF,
+      },
+      {
+        id: 11, // Far-Right Mint Cyan-Teal Node (Smallest)
+        x: 1.40,
+        y: -0.62,
+        z: -0.18,
+        scale: 0.32,
+        strokeWidth: 13,
+        color1: '#00D2B4', // Mint cyan-teal
+        color2: '#00D2B4',
+        hasGradient: false,
+        threeColor: 0x00D2B4,
+      },
+      {
+        id: 12, // Bottom-Right Sage Teal Node (Medium-Small)
+        x: 0.86,
+        y: -1.36,
+        z: -0.24,
+        scale: 0.39,
+        strokeWidth: 14,
+        color1: '#14B8A6', // Sage teal-green
+        color2: '#14B8A6',
+        hasGradient: false,
+        threeColor: 0x14B8A6,
+      },
     ];
 
-    const nodes: NetworkNode[] = [];
-    const GOLD_PALETTE = [
-      new THREE.Color(0xF5C451), // Bright 24k Gold
-      new THREE.Color(0xEAB308), // Rich Solana Amber
-      new THREE.Color(0xD97706), // Deep Burnished Gold
-      new THREE.Color(0xFDE68A), // Radiant Champagne Gold
-    ];
-    const BLUE_PALETTE = [
-      new THREE.Color(0x38BDF8), // Electric Cyan Blue
-      new THREE.Color(0x60A5FA), // Azure Sky
-      new THREE.Color(0xE0F2FE), // Ice White-Blue
+    // --- EXACT 24 CONNECTING EDGES MATCHING REFERENCE TOPOLOGY ---
+    const edgePairs: [number, number][] = [
+      [3, 2],
+      [3, 4],
+      [3, 0],
+      [4, 0],
+      [4, 5],
+      [2, 6],
+      [2, 1],
+      [2, 0],
+      [0, 1],
+      [0, 8],
+      [0, 7],
+      [0, 5],
+      [5, 7],
+      [5, 11],
+      [6, 1],
+      [6, 9],
+      [1, 8],
+      [1, 9],
+      [7, 8],
+      [7, 11],
+      [7, 12],
+      [11, 12],
+      [8, 9],
+      [8, 10],
+      [8, 12],
+      [9, 10],
+      [10, 12],
     ];
 
-    // 1. Hub Nodes (The major anchors of the network)
-    clusterCenters.forEach((center, idx) => {
-      const isAlpha = idx === 0;
-      nodes.push({
-        position: center.clone(),
-        baseScale: isAlpha ? 0.21 : 0.16,
-        type: 'hub',
-        color: isAlpha ? new THREE.Color(0xFFEAA7) : GOLD_PALETTE[idx % GOLD_PALETTE.length],
-        emissiveColor: isAlpha ? new THREE.Color(0xD97706) : new THREE.Color(0x92400E),
-        pulsePhase: idx * 1.2,
-        pulseSpeed: 1.5 + idx * 0.2,
-        glowSize: isAlpha ? 1.6 : 1.2,
-        connections: [],
-      });
-    });
+    // Helper: Draw crisp, high-res 256x256 circular Bitcoin badge texture
+    const createdTextures: THREE.Texture[] = [];
+    const createBitcoinBadgeTexture = (node: NodeData): THREE.Texture => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return new THREE.Texture();
 
-    // 2. Validator & Relay Nodes distributed around clusters
-    const pseudoRandom = (seed: number) => {
-      const x = Math.sin(seed * 9999) * 10000;
-      return x - Math.floor(x);
+      const cx = 128;
+      const cy = 128;
+      const radius = 108;
+
+      // 1. Soft anti-aliased backdrop circle
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fill();
+
+      // 2. Colored Outer Ring
+      let strokeStyle: string | CanvasGradient = node.color1;
+      if (node.hasGradient) {
+        const grad = ctx.createLinearGradient(40, 40, 216, 216);
+        grad.addColorStop(0, node.color1);
+        grad.addColorStop(1, node.color2);
+        strokeStyle = grad;
+      }
+      ctx.lineWidth = node.strokeWidth;
+      ctx.strokeStyle = strokeStyle;
+      ctx.stroke();
+
+      // 3. Central Bitcoin Glyph '₿'
+      let fillStyle: string | CanvasGradient = node.color1;
+      if (node.hasGradient) {
+        const grad = ctx.createLinearGradient(60, 50, 200, 210);
+        grad.addColorStop(0, node.color1);
+        grad.addColorStop(1, node.color2);
+        fillStyle = grad;
+      }
+      ctx.fillStyle = fillStyle;
+
+      // Primary: standard Unicode ₿ with bold font stack
+      ctx.font = '900 134px "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      // Check font metric support
+      const metrics = ctx.measureText('₿');
+      if (metrics.width > 20) {
+        // Render crisp official Bitcoin glyph
+        ctx.fillText('₿', cx, cy + 4);
+      } else {
+        // Geometric fallback if font does not provide ₿ glyph
+        ctx.font = '900 114px sans-serif';
+        ctx.fillText('B', cx, cy + 2);
+        // Draw the 2 classic top & bottom vertical bars of the Bitcoin logo
+        ctx.lineWidth = 9;
+        ctx.strokeStyle = fillStyle;
+        ctx.beginPath();
+        // Top 2 bars
+        ctx.moveTo(cx - 16, cy - 64);
+        ctx.lineTo(cx - 16, cy - 44);
+        ctx.moveTo(cx + 10, cy - 64);
+        ctx.lineTo(cx + 10, cy - 44);
+        // Bottom 2 bars
+        ctx.moveTo(cx - 16, cy + 44);
+        ctx.lineTo(cx - 16, cy + 64);
+        ctx.moveTo(cx + 10, cy + 44);
+        ctx.lineTo(cx + 10, cy + 64);
+        ctx.stroke();
+      }
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.minFilter = THREE.LinearMipmapLinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.generateMipmaps = true;
+      texture.needsUpdate = true;
+      createdTextures.push(texture);
+      return texture;
     };
 
-    let seedCounter = 1;
-    clusterCenters.forEach((center, cIdx) => {
-      const countAround = 5 + (cIdx % 3);
-      for (let i = 0; i < countAround; i++) {
-        seedCounter++;
-        const u = pseudoRandom(seedCounter++);
-        const v = pseudoRandom(seedCounter++);
-        const w = pseudoRandom(seedCounter++);
-
-        const theta = u * Math.PI * 2;
-        const phi = Math.acos(2 * v - 1);
-        const radius = 0.55 + w * 0.95;
-
-        const offset = new THREE.Vector3(
-          radius * Math.sin(phi) * Math.cos(theta),
-          radius * Math.sin(phi) * Math.sin(theta) * 0.8,
-          radius * Math.cos(phi)
-        );
-
-        const pos = center.clone().add(offset);
-        const isBlueHighlight = (cIdx + i) % 4 === 0;
-        const isValidator = i < 3;
-
-        nodes.push({
-          position: pos,
-          baseScale: isValidator ? 0.12 : 0.085,
-          type: isValidator ? 'validator' : 'relay',
-          color: isBlueHighlight
-            ? BLUE_PALETTE[i % BLUE_PALETTE.length]
-            : GOLD_PALETTE[i % GOLD_PALETTE.length],
-          emissiveColor: isBlueHighlight
-            ? new THREE.Color(0x0284C7)
-            : new THREE.Color(0x78350F),
-          pulsePhase: (cIdx * countAround + i) * 0.7,
-          pulseSpeed: 1.8 + pseudoRandom(seedCounter++) * 1.5,
-          glowSize: isValidator ? 0.9 : 0.6,
-          connections: [],
-        });
-      }
-    });
-
-    // 3. Connect nodes into a cohesive decentralized mesh
-    const edgePairs: [number, number][] = [];
-    const MAX_DISTANCE = 1.65;
-
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dist = nodes[i].position.distanceTo(nodes[j].position);
-        // Direct link condition
-        const shouldConnect =
-          (nodes[i].type === 'hub' && dist < 2.3) ||
-          (nodes[j].type === 'hub' && dist < 2.3) ||
-          dist < MAX_DISTANCE;
-
-        if (shouldConnect && nodes[i].connections.length < 5 && nodes[j].connections.length < 5) {
-          nodes[i].connections.push(j);
-          nodes[j].connections.push(i);
-          edgePairs.push([i, j]);
-        }
-      }
-    }
-
-    // Ensure all hubs are interconnected to form the backbone highway
-    for (let h = 0; h < clusterCenters.length; h++) {
-      for (let k = h + 1; k < clusterCenters.length; k++) {
-        if (!nodes[h].connections.includes(k)) {
-          nodes[h].connections.push(k);
-          nodes[k].connections.push(h);
-          edgePairs.push([h, k]);
-        }
-      }
-    }
-
-    // --- INSTANCED MESH FOR NETWORK NODES (High 60fps Performance) ---
-    const sphereGeo = new THREE.SphereGeometry(1, 28, 28);
-    const nodeMat = new THREE.MeshStandardMaterial({
-      metalness: 0.88,
-      roughness: 0.18,
-      color: 0xFFFFFF, // tinted per-instance
-    });
-
-    const instancedNodes = new THREE.InstancedMesh(sphereGeo, nodeMat, nodes.length);
-    instancedNodes.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-    networkGroup.add(instancedNodes);
-
-    // Set initial instance colors and matrices
-    const dummyObj = new THREE.Object3D();
-    nodes.forEach((node, idx) => {
-      dummyObj.position.copy(node.position);
-      dummyObj.scale.setScalar(node.baseScale);
-      dummyObj.updateMatrix();
-      instancedNodes.setMatrixAt(idx, dummyObj.matrix);
-      instancedNodes.setColorAt(idx, node.color);
-    });
-    if (instancedNodes.instanceColor) {
-      instancedNodes.instanceColor.needsUpdate = true;
-    }
-    instancedNodes.instanceMatrix.needsUpdate = true;
-
-    // --- GLOW SPRITES AROUND NODES (Atmospheric luminous aura) ---
-    const spriteGroup = new THREE.Group();
-    networkGroup.add(spriteGroup);
-
-    const glowSprites: { sprite: THREE.Sprite; nodeIdx: number; baseScale: number }[] = [];
-    nodes.forEach((node, idx) => {
-      const isBlue = node.type === 'relay' && node.color.b > 0.7;
-      const mat = new THREE.SpriteMaterial({
-        map: isBlue ? blueGlowTex : goldGlowTex,
+    // --- CREATE 13 BILLBOARD SPRITES ---
+    // Billboards face camera directly so the Bitcoin symbols are always legible, horizontal & crisp
+    // while their 3D positions rotate with genuine parallax and depth!
+    const sprites: THREE.Sprite[] = [];
+    nodesConfig.forEach((cfg) => {
+      const tex = createBitcoinBadgeTexture(cfg);
+      const spriteMat = new THREE.SpriteMaterial({
+        map: tex,
         transparent: true,
-        opacity: node.type === 'hub' ? 0.75 : 0.45,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
+        depthTest: false,
       });
-      const sprite = new THREE.Sprite(mat);
-      sprite.position.copy(node.position);
-      const spriteScale = node.baseScale * (node.type === 'hub' ? 5.2 : 4.0);
-      sprite.scale.set(spriteScale, spriteScale, 1);
-      spriteGroup.add(sprite);
-      glowSprites.push({ sprite, nodeIdx: idx, baseScale: spriteScale });
+      const sprite = new THREE.Sprite(spriteMat);
+      sprite.position.set(cfg.x, cfg.y, cfg.z);
+      sprite.scale.set(cfg.scale, cfg.scale, 1);
+      networkGroup.add(sprite);
+      sprites.push(sprite);
     });
 
-    // --- LUMINOUS NETWORK CONNECTION LINES ---
+    // --- CREATE CONNECTING LINES WITH SMOOTH GRADIENT TRANSITIONS ---
+    // Using LineSegments with per-vertex colors for seamless color blends along edges
     const linePositions: number[] = [];
     const lineColors: number[] = [];
 
     edgePairs.forEach(([i, j]) => {
-      const p1 = nodes[i].position;
-      const p2 = nodes[j].position;
-      linePositions.push(p1.x, p1.y, p1.z);
-      linePositions.push(p2.x, p2.y, p2.z);
+      const nA = nodesConfig[i];
+      const nB = nodesConfig[j];
+      const cA = new THREE.Color(nA.threeColor);
+      const cB = new THREE.Color(nB.threeColor);
 
-      const c1 = nodes[i].color;
-      const c2 = nodes[j].color;
-      lineColors.push(c1.r * 0.8, c1.g * 0.8, c1.b * 0.8);
-      lineColors.push(c2.r * 0.8, c2.g * 0.8, c2.b * 0.8);
+      // Node A vertex
+      linePositions.push(nA.x, nA.y, nA.z);
+      lineColors.push(cA.r, cA.g, cA.b);
+
+      // Node B vertex
+      linePositions.push(nB.x, nB.y, nB.z);
+      lineColors.push(cB.r, cB.g, cB.b);
     });
 
-    const lineGeo = new THREE.BufferGeometry();
-    lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-    lineGeo.setAttribute('color', new THREE.Float32BufferAttribute(lineColors, 3));
+    const linesGeometry = new THREE.BufferGeometry();
+    linesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+    linesGeometry.setAttribute('color', new THREE.Float32BufferAttribute(lineColors, 3));
 
-    const lineMat = new THREE.LineBasicMaterial({
+    const linesMaterial = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.42,
-      blending: THREE.AdditiveBlending,
-      linewidth: 1,
+      opacity: 0.85,
+      linewidth: 1.5,
     });
 
-    const networkLines = new THREE.LineSegments(lineGeo, lineMat);
-    networkGroup.add(networkLines);
+    const lineSegments = new THREE.LineSegments(linesGeometry, linesMaterial);
+    networkGroup.add(lineSegments);
 
-    // --- TRAVELING DATA PACKETS (Luminous transaction particles) ---
-    const packetCount = 28;
-    const packets: DataPacket[] = [];
-    for (let p = 0; p < packetCount; p++) {
-      const randomEdge = edgePairs[Math.floor(pseudoRandom(p * 17 + 1) * edgePairs.length)];
-      const isCyan = p % 3 === 0;
-      const isWhite = p % 5 === 0;
+    // --- ANIMATED ENERGY FLOW PACKETS (Alive, Futuristic Network) ---
+    // Micro glowing pulses flowing between connected Bitcoin nodes
+    const packetCount = 8;
+    const packets: EdgePacket[] = [];
+    for (let k = 0; k < packetCount; k++) {
+      const edgeIdx = Math.floor(Math.random() * edgePairs.length);
+      const nA = nodesConfig[edgePairs[edgeIdx][0]];
       packets.push({
-        fromNode: randomEdge[0],
-        toNode: randomEdge[1],
-        progress: pseudoRandom(p * 31 + 5),
-        speed: 0.005 + pseudoRandom(p * 7 + 9) * 0.009,
-        color: isWhite
-          ? new THREE.Color(0xFFFFFF)
-          : isCyan
-          ? new THREE.Color(0x38BDF8)
-          : new THREE.Color(0xF59E0B),
-        size: isWhite ? 0.055 : 0.045,
+        edgeIndex: edgeIdx,
+        progress: (k / packetCount),
+        speed: 0.25 + Math.random() * 0.2,
+        color: new THREE.Color(nA.threeColor),
       });
     }
 
-    const packetGeo = new THREE.SphereGeometry(1, 14, 14);
-    const packetMat = new THREE.MeshBasicMaterial({
-      color: 0xFFFFFF,
-      blending: THREE.AdditiveBlending,
-    });
-    const instancedPackets = new THREE.InstancedMesh(packetGeo, packetMat, packetCount);
-    instancedPackets.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-    networkGroup.add(instancedPackets);
+    const packetPositions = new Float32Array(packetCount * 3);
+    const packetColors = new Float32Array(packetCount * 3);
+    const packetsGeometry = new THREE.BufferGeometry();
+    packetsGeometry.setAttribute('position', new THREE.BufferAttribute(packetPositions, 3));
+    packetsGeometry.setAttribute('color', new THREE.BufferAttribute(packetColors, 3));
 
-    // Set initial packet colors
-    packets.forEach((pkt, idx) => {
-      instancedPackets.setColorAt(idx, pkt.color);
-    });
-    if (instancedPackets.instanceColor) {
-      instancedPackets.instanceColor.needsUpdate = true;
+    // Glow dot texture for packets
+    const packetCanvas = document.createElement('canvas');
+    packetCanvas.width = 64;
+    packetCanvas.height = 64;
+    const pctx = packetCanvas.getContext('2d');
+    if (pctx) {
+      const pGrad = pctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      pGrad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+      pGrad.addColorStop(0.3, 'rgba(0, 210, 180, 0.9)');
+      pGrad.addColorStop(0.7, 'rgba(124, 58, 237, 0.4)');
+      pGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      pctx.fillStyle = pGrad;
+      pctx.fillRect(0, 0, 64, 64);
     }
+    const packetTex = new THREE.CanvasTexture(packetCanvas);
+    createdTextures.push(packetTex);
 
-    // --- SCARCITY MICRO-PARTICLE DUST (Ambient 2.1M token atmosphere) ---
-    const dustCount = 140;
-    const dustPositions = new Float32Array(dustCount * 3);
-    const dustColors = new Float32Array(dustCount * 3);
-
-    for (let d = 0; d < dustCount; d++) {
-      const u = pseudoRandom(d * 13 + 3);
-      const v = pseudoRandom(d * 29 + 7);
-      const w = pseudoRandom(d * 41 + 11);
-
-      const r = 1.4 + w * 2.2;
-      const theta = u * Math.PI * 2;
-      const phi = Math.acos(2 * v - 1);
-
-      dustPositions[d * 3] = r * Math.sin(phi) * Math.cos(theta);
-      dustPositions[d * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-      dustPositions[d * 3 + 2] = r * Math.cos(phi);
-
-      const isGold = d % 3 !== 0;
-      dustColors[d * 3] = isGold ? 0.95 : 0.35;
-      dustColors[d * 3 + 1] = isGold ? 0.75 : 0.75;
-      dustColors[d * 3 + 2] = isGold ? 0.3 : 1.0;
-    }
-
-    const dustGeo = new THREE.BufferGeometry();
-    dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPositions, 3));
-    dustGeo.setAttribute('color', new THREE.BufferAttribute(dustColors, 3));
-
-    const dustMat = new THREE.PointsMaterial({
-      size: 0.035,
-      vertexColors: true,
+    const packetsMaterial = new THREE.PointsMaterial({
+      size: 0.16,
+      map: packetTex,
       transparent: true,
-      opacity: 0.6,
       blending: THREE.AdditiveBlending,
+      vertexColors: true,
       depthWrite: false,
     });
-    const dustPoints = new THREE.Points(dustGeo, dustMat);
-    networkGroup.add(dustPoints);
 
-    // --- SOPHISTICATED STUDIO LIGHTING ---
-    const ambientLight = new THREE.AmbientLight(0x181510, 2.2);
-    scene.add(ambientLight);
+    const packetsMesh = new THREE.Points(packetsGeometry, packetsMaterial);
+    networkGroup.add(packetsMesh);
 
-    // 1. Primary Warm Gold Key Light
-    const keyGoldLight = new THREE.PointLight(0xF59E0B, 4.5, 14);
-    keyGoldLight.position.set(3.5, 3.5, 4.0);
-    scene.add(keyGoldLight);
+    // Subtle ambient background glow ring
+    const glowRingGeo = new THREE.RingGeometry(1.6, 2.1, 48);
+    const glowRingMat = new THREE.MeshBasicMaterial({
+      color: 0x38BDF8,
+      transparent: true,
+      opacity: 0.08,
+      side: THREE.DoubleSide,
+    });
+    const glowRing = new THREE.Mesh(glowRingGeo, glowRingMat);
+    glowRing.position.set(0, 0, -0.4);
+    networkGroup.add(glowRing);
 
-    // 2. Secondary Electric Cyan Accent Light (Depth and contrast)
-    const cyanRimLight = new THREE.PointLight(0x0284C7, 3.8, 12);
-    cyanRimLight.position.set(-3.5, -2.5, 3.0);
-    scene.add(cyanRimLight);
-
-    // 3. Crisp Top Fill Light
-    const whiteTopLight = new THREE.DirectionalLight(0xFFFFFF, 1.4);
-    whiteTopLight.position.set(0, 5, 2);
-    scene.add(whiteTopLight);
-
-    // --- INTERACTIVE POINTER CONTROLS ---
-    const handlePointerDown = (e: MouseEvent | TouchEvent) => {
+    // --- INTERACTIVE DRAG TO ROTATE & TOUCH EVENT HANDLERS ---
+    const handlePointerDown = (e: PointerEvent) => {
       isDraggingRef.current = true;
-      setIsInteracting(true);
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-      lastPointerRef.current = { x: clientX, y: clientY };
+      lastPointerRef.current = { x: e.clientX, y: e.clientY };
     };
 
-    const handlePointerMove = (e: MouseEvent | TouchEvent) => {
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    const handlePointerMove = (e: PointerEvent) => {
+      if (!isDraggingRef.current) return;
+      const dx = e.clientX - lastPointerRef.current.x;
+      const dy = e.clientY - lastPointerRef.current.y;
+      lastPointerRef.current = { x: e.clientX, y: e.clientY };
 
-      if (isDraggingRef.current) {
-        const deltaX = clientX - lastPointerRef.current.x;
-        const deltaY = clientY - lastPointerRef.current.y;
-
-        targetRotationRef.current.y += deltaX * 0.007;
-        targetRotationRef.current.x += deltaY * 0.007;
-
-        // Clamp vertical tilt to avoid flipping
-        targetRotationRef.current.x = Math.max(-0.6, Math.min(0.6, targetRotationRef.current.x));
-
-        lastPointerRef.current = { x: clientX, y: clientY };
-      } else {
-        // Subtle hover parallax
-        const rect = container.getBoundingClientRect();
-        const normX = ((clientX - rect.left) / rect.width) * 2 - 1;
-        const normY = -(((clientY - rect.top) / rect.height) * 2 - 1);
-        targetRotationRef.current.y += normX * 0.0006;
-        targetRotationRef.current.x += -normY * 0.0006;
-      }
+      rotationVelocityRef.current = {
+        x: dy * 0.005,
+        y: dx * 0.005,
+      };
+      rotationOffsetRef.current.x += dy * 0.005;
+      rotationOffsetRef.current.y += dx * 0.005;
     };
 
     const handlePointerUp = () => {
       isDraggingRef.current = false;
-      setIsInteracting(false);
     };
 
-    const domElem = renderer.domElement;
-    domElem.addEventListener('mousedown', handlePointerDown);
-    window.addEventListener('mousemove', handlePointerMove);
-    window.addEventListener('mouseup', handlePointerUp);
+    container.addEventListener('pointerdown', handlePointerDown);
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerup', handlePointerUp);
 
-    domElem.addEventListener('touchstart', handlePointerDown, { passive: true });
-    window.addEventListener('touchmove', handlePointerMove, { passive: true });
-    window.addEventListener('touchend', handlePointerUp);
-
-    // --- RESIZE HANDLER ---
+    // --- RESPONSIVE RESIZE HANDLER ---
     const handleResize = () => {
       if (!container) return;
       width = container.clientWidth || 420;
       height = container.clientHeight || 420;
       camera.aspect = width / height;
+      // Adjust camera distance dynamically to prevent clipping on mobile
+      if (width < 340) {
+        camera.position.z = 7.0;
+      } else if (width < 420) {
+        camera.position.z = 6.6;
+      } else {
+        camera.position.z = 6.2;
+      }
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
     };
-    window.addEventListener('resize', handleResize);
 
-    // --- CONTINUOUS ANIMATION LOOP ---
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    // --- ANIMATION LOOP ---
     let clock = new THREE.Clock();
-    const packetObj = new THREE.Object3D();
 
     const animate = () => {
-      const elapsedTime = clock.getElapsedTime();
-      const delta = clock.getDelta();
+      animFrameIdRef.current = requestAnimationFrame(animate);
 
-      // 1. Smooth rotation interpolation
-      if (!isDraggingRef.current && !prefersReducedMotionRef.current) {
-        targetRotationRef.current.y += 0.0028; // Constant gentle drift
+      const delta = clock.getDelta();
+      const elapsed = clock.getElapsedTime();
+
+      // Inertia damping for interactive drag
+      if (!isDraggingRef.current) {
+        rotationVelocityRef.current.x *= 0.94;
+        rotationVelocityRef.current.y *= 0.94;
+        rotationOffsetRef.current.x += rotationVelocityRef.current.x;
+        rotationOffsetRef.current.y += rotationVelocityRef.current.y;
+
+        // Return gently toward center if dragged far
+        rotationOffsetRef.current.x *= 0.985;
+        rotationOffsetRef.current.y *= 0.985;
       }
 
-      currentRotationRef.current.x += (targetRotationRef.current.x - currentRotationRef.current.x) * 0.08;
-      currentRotationRef.current.y += (targetRotationRef.current.y - currentRotationRef.current.y) * 0.08;
+      // Subtle, smooth 3D floating & undulation
+      // Keeps the Bitcoin symbols upright, clean, and recognizable
+      const floatPitch = Math.sin(elapsed * 0.45) * 0.10 + rotationOffsetRef.current.x;
+      const floatYaw = Math.cos(elapsed * 0.55) * 0.16 + rotationOffsetRef.current.y;
+      const floatRoll = Math.sin(elapsed * 0.3) * 0.03;
+      const floatY = Math.sin(elapsed * 0.8) * 0.07;
 
-      networkGroup.rotation.x = currentRotationRef.current.x + Math.sin(elapsedTime * 0.35) * 0.04;
-      networkGroup.rotation.y = currentRotationRef.current.y;
-      networkGroup.rotation.z = Math.cos(elapsedTime * 0.28) * 0.03;
+      networkGroup.rotation.x = floatPitch;
+      networkGroup.rotation.y = floatYaw;
+      networkGroup.rotation.z = floatRoll;
+      networkGroup.position.y = floatY;
 
-      // 2. Pulse nodes with gentle, organic breathing waves
-      nodes.forEach((node, idx) => {
-        const pulse = Math.sin(elapsedTime * node.pulseSpeed + node.pulsePhase);
-        const dynamicScale = node.baseScale * (1 + pulse * 0.16);
+      // Update animated energy packets along network edges
+      const posAttr = packetsGeometry.attributes.position as THREE.BufferAttribute;
+      const colAttr = packetsGeometry.attributes.color as THREE.BufferAttribute;
 
-        dummyObj.position.copy(node.position);
-        dummyObj.scale.setScalar(dynamicScale);
-        dummyObj.updateMatrix();
-        instancedNodes.setMatrixAt(idx, dummyObj.matrix);
-
-        // Synchronize halo sprites
-        const halo = glowSprites[idx];
-        if (halo) {
-          const spriteScale = halo.baseScale * (1 + pulse * 0.22);
-          halo.sprite.scale.set(spriteScale, spriteScale, 1);
-          halo.sprite.material.opacity = (node.type === 'hub' ? 0.75 : 0.45) * (1 + pulse * 0.25);
-        }
-      });
-      instancedNodes.instanceMatrix.needsUpdate = true;
-
-      // 3. Travel data packets along network paths
-      packets.forEach((pkt, pIdx) => {
-        if (!prefersReducedMotionRef.current) {
-          pkt.progress += pkt.speed;
+      for (let k = 0; k < packetCount; k++) {
+        const p = packets[k];
+        p.progress += p.speed * delta;
+        if (p.progress >= 1) {
+          p.progress = 0;
+          p.edgeIndex = Math.floor(Math.random() * edgePairs.length);
+          const nStart = nodesConfig[edgePairs[p.edgeIndex][0]];
+          p.color.setHex(nStart.threeColor);
         }
 
-        if (pkt.progress >= 1.0) {
-          // Packet reached destination node: pick a new connection
-          pkt.progress = 0;
-          const currentDest = pkt.toNode;
-          const availableConns = nodes[currentDest].connections;
-          pkt.fromNode = currentDest;
-          if (availableConns.length > 0) {
-            const nextIdx = Math.floor(Math.random() * availableConns.length);
-            pkt.toNode = availableConns[nextIdx];
-          } else {
-            // Pick a random hub
-            pkt.toNode = Math.floor(Math.random() * clusterCenters.length);
-          }
-        }
+        const [startIdx, endIdx] = edgePairs[p.edgeIndex];
+        const nA = nodesConfig[startIdx];
+        const nB = nodesConfig[endIdx];
 
-        const pStart = nodes[pkt.fromNode].position;
-        const pEnd = nodes[pkt.toNode].position;
-        const currentPos = new THREE.Vector3().lerpVectors(pStart, pEnd, pkt.progress);
+        const px = THREE.MathUtils.lerp(nA.x, nB.x, p.progress);
+        const py = THREE.MathUtils.lerp(nA.y, nB.y, p.progress);
+        const pz = THREE.MathUtils.lerp(nA.z, nB.z, p.progress);
 
-        // Add subtle arc
-        const midArc = Math.sin(pkt.progress * Math.PI) * 0.04;
-        currentPos.y += midArc;
+        posAttr.setXYZ(k, px, py, pz);
+        colAttr.setXYZ(k, p.color.r, p.color.g, p.color.b);
+      }
+      posAttr.needsUpdate = true;
+      colAttr.needsUpdate = true;
 
-        packetObj.position.copy(currentPos);
-        packetObj.scale.setScalar(pkt.size);
-        packetObj.updateMatrix();
-        instancedPackets.setMatrixAt(pIdx, packetObj.matrix);
-      });
-      instancedPackets.instanceMatrix.needsUpdate = true;
-
-      // 4. Subtle rotation for ambient dust
-      dustPoints.rotation.y = elapsedTime * 0.015;
-      dustPoints.rotation.x = Math.sin(elapsedTime * 0.1) * 0.05;
+      // Gentle pulsation of glow ring
+      glowRing.scale.setScalar(1 + Math.sin(elapsed * 1.2) * 0.05);
 
       renderer.render(scene, camera);
-      animFrameIdRef.current = requestAnimationFrame(animate);
     };
 
-    animFrameIdRef.current = requestAnimationFrame(animate);
+    animate();
 
     // --- CLEANUP ---
     return () => {
       cancelAnimationFrame(animFrameIdRef.current);
+      container.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handlePointerMove);
-      window.removeEventListener('mouseup', handlePointerUp);
-      window.removeEventListener('touchmove', handlePointerMove);
-      window.removeEventListener('touchend', handlePointerUp);
 
-      domElem.removeEventListener('mousedown', handlePointerDown);
-      domElem.removeEventListener('touchstart', handlePointerDown);
-
-      // Dispose Three.js resources
-      sphereGeo.dispose();
-      nodeMat.dispose();
-      goldGlowTex.dispose();
-      blueGlowTex.dispose();
-      lineGeo.dispose();
-      lineMat.dispose();
-      packetGeo.dispose();
-      packetMat.dispose();
-      dustGeo.dispose();
-      dustMat.dispose();
-      renderer.dispose();
-
-      while (container.firstChild) {
-        container.removeChild(container.firstChild);
+      if (container.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
       }
+
+      // Dispose resources cleanly
+      linesGeometry.dispose();
+      linesMaterial.dispose();
+      packetsGeometry.dispose();
+      packetsMaterial.dispose();
+      glowRingGeo.dispose();
+      glowRingMat.dispose();
+
+      sprites.forEach((s) => {
+        s.material.dispose();
+      });
+
+      createdTextures.forEach((tex) => {
+        tex.dispose();
+      });
+
+      renderer.dispose();
     };
   }, []);
+
+  // Graceful fallback if WebGL is unavailable
+  if (!webGlSupported) {
+    return (
+      <div className={`relative flex items-center justify-center select-none ${className}`}>
+        <img
+          src="/assets/aistudio/bit_network_transparent.png"
+          alt="Bitcoin Interconnected Network Constellation"
+          className="w-full h-auto max-w-[420px] object-contain drop-shadow-xl animate-float-slow"
+        />
+      </div>
+    );
+  }
 
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full flex items-center justify-center select-none cursor-grab active:cursor-grabbing ${className}`}
-      style={{ minHeight: '340px' }}
+      className={`relative w-full h-full cursor-grab active:cursor-grabbing select-none ${className}`}
+      aria-label="3D Interconnected Bitcoin Network Visual"
       role="img"
-      aria-label="Animated 3D Living Blockchain Network with glowing gold and electric-blue interconnected nodes"
-    >
-      {/* WebGL Fallback (Graceful SVG/Canvas fallback if WebGL fails) */}
-      {!webGlSupported && (
-        <svg
-          viewBox="0 0 400 400"
-          className="w-full h-full max-w-[380px] aspect-square animate-pulse"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#FFEAA7" stopOpacity="1" />
-              <stop offset="40%" stopColor="#F59E0B" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#B8661B" stopOpacity="0" />
-            </radialGradient>
-            <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#E0F2FE" stopOpacity="1" />
-              <stop offset="50%" stopColor="#0284C7" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#0369A1" stopOpacity="0" />
-            </radialGradient>
-          </defs>
-          <rect width="400" height="400" fill="#0A0A0E" rx="24" />
-          {/* Fallback lines */}
-          <line x1="200" y1="120" x2="110" y2="240" stroke="#F59E0B" strokeWidth="1.5" strokeOpacity="0.6" />
-          <line x1="200" y1="120" x2="290" y2="240" stroke="#F59E0B" strokeWidth="1.5" strokeOpacity="0.6" />
-          <line x1="110" y1="240" x2="290" y2="240" stroke="#38BDF8" strokeWidth="1.5" strokeOpacity="0.5" />
-          <line x1="200" y1="120" x2="200" y2="300" stroke="#F59E0B" strokeWidth="1.2" strokeOpacity="0.5" />
-          <line x1="110" y1="240" x2="200" y2="300" stroke="#F59E0B" strokeWidth="1.2" strokeOpacity="0.5" />
-          <line x1="290" y1="240" x2="200" y2="300" stroke="#38BDF8" strokeWidth="1.2" strokeOpacity="0.5" />
-          {/* Nodes */}
-          <circle cx="200" cy="120" r="18" fill="url(#hubGlow)" />
-          <circle cx="110" cy="240" r="14" fill="url(#hubGlow)" />
-          <circle cx="290" cy="240" r="14" fill="url(#blueGlow)" />
-          <circle cx="200" cy="300" r="12" fill="url(#hubGlow)" />
-        </svg>
-      )}
-    </div>
+    />
   );
 };

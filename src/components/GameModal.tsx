@@ -2,7 +2,6 @@ import React from 'react';
 import { Gamepad2, Clock, Trophy, Users, Coins, Sparkles } from 'lucide-react';
 import { DraggableModal } from './DraggableModal';
 import { useLanguage } from '../i18n/LanguageContext';
-import { Game3DVisual } from './3d/Game3DVisual';
 
 interface GameModalProps {
   isOpen: boolean;
@@ -51,11 +50,6 @@ export const GameModal: React.FC<GameModalProps> = ({
       }
     >
       <div className="p-4 sm:p-6 text-center space-y-5 sm:space-y-6">
-        {/* 3D Cyber-Arcade Console with Animated Flying Falcon (Borderless, No Container) */}
-        <div className="w-full h-44 sm:h-52 relative">
-          <Game3DVisual className="w-full h-full" />
-        </div>
-
         <div className="space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Clock className="w-3.5 h-3.5 animate-pulse text-[#B8661B]" />

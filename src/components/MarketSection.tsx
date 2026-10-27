@@ -5,7 +5,6 @@ import { fetchLiveMarketData, LiveMarketData } from '../services/marketDataServi
 import { useLanguage } from '../i18n/LanguageContext';
 import { useTheme } from '../theme/ThemeContext';
 import { Realistic3DIcon } from './Realistic3DIcon';
-import { Market3DVisual } from './3d/Market3DVisual';
 
 interface MarketSectionProps {
   onOpenTradeModal: () => void;
@@ -163,8 +162,8 @@ export const MarketSection: React.FC<MarketSectionProps> = ({ onOpenTradeModal }
         ) : (
           /* TRUTHFUL ZERO-MOCK DATA STATE: Large Editorial Card */
           <div className="bg-white/95 dark:bg-[#121217]/95 rounded-[32px] sm:rounded-[42px] shadow-[0_12px_44px_rgba(0,0,0,0.04)] dark:shadow-[0_12px_44px_rgba(0,0,0,0.45)] p-6 sm:p-10 text-center max-w-3xl mx-auto">
-            <div className="w-full h-52 sm:h-64 mb-6 relative">
-              <Market3DVisual className="w-full h-full" />
+            <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+              <Realistic3DIcon type="dex" size="lg" />
             </div>
 
             <div className="text-xs font-mono font-bold uppercase tracking-[3px] text-[#B8661B] dark:text-[#EAB308] mb-2.5">

@@ -20,7 +20,6 @@ import {
 import { TOKEN_CONFIG, getWhitepaperPdfUrl, downloadWhitepaperPdf } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
-import { Genesis3DVisual } from './3d/Genesis3DVisual';
 
 interface BitcoinEducationSectionProps {
   onOpenWhitePaper: () => void;
@@ -49,12 +48,6 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-[900] text-[#080808] dark:text-white font-display tracking-tight text-balance leading-[1.15]">
             {t.education.title}
           </h2>
-
-          {/* Unique Topic-Specific 3D Visual: Cryptographic Genesis Ledger Block & Chained Sequence (Borderless, No Container) */}
-          <div className="relative my-6 sm:my-8 w-full">
-            <Genesis3DVisual />
-          </div>
-
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.education.description}
           </p>
@@ -318,13 +311,6 @@ export const BitcoinEducationSection: React.FC<BitcoinEducationSectionProps> = (
                 <p>
                   {t.education.tab4.conclusion}
                 </p>
-              </div>
-
-              {/* 3D Visual: Genesis & Technical Architecture */}
-              <div className="pt-2">
-                <div className="rounded-[22px] sm:rounded-[30px] overflow-hidden shadow-[0_8px_30px_rgba(184,102,27,0.08)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)] bg-gradient-to-b from-[#161622] to-[#0A0A0E]">
-                  <Genesis3DVisual />
-                </div>
               </div>
 
               {/* Core Invariants of Genesis */}

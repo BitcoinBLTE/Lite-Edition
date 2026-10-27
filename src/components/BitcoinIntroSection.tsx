@@ -2,7 +2,6 @@ import React from 'react';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon } from './Realistic3DIcon';
-import { Intro3DVisual } from './3d/Intro3DVisual';
 
 interface BitcoinIntroSectionProps {
   onLearnMore: () => void;
@@ -60,19 +59,11 @@ export const BitcoinIntroSection: React.FC<BitcoinIntroSectionProps> = ({
               </div>
             </div>
 
-            {/* Right Column (High-Quality 3D Animated Bitcoin & BLTE Digital Environment Visual) */}
-            <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-              {/* Unique Topic-Specific 3D Visual: Bitcoin & BLTE Coins in Futuristic Digital Matrix (Borderless, No Container) */}
-              <div className="relative w-full">
-                <Intro3DVisual />
-              </div>
-
-              {/* The Text */}
-              <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-[#475569] dark:text-[#CBD5E1] font-[450] leading-[1.8] sm:leading-[1.85] font-sans">
-                <p>{t.intro.p1}</p>
-                <p>{t.intro.p2}</p>
-                <p>{t.intro.p3}</p>
-              </div>
+            {/* Right Column */}
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-base sm:text-lg text-[#475569] dark:text-[#CBD5E1] font-[450] leading-[1.8] sm:leading-[1.85] font-sans">
+              <p>{t.intro.p1}</p>
+              <p>{t.intro.p2}</p>
+              <p>{t.intro.p3}</p>
             </div>
 
           </div>

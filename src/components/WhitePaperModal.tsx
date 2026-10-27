@@ -12,7 +12,6 @@ import { TokenomicsCircleDesign } from './TokenomicsCircleDesign';
 import { useLanguage } from '../i18n/LanguageContext';
 import { downloadWhitepaperPdf } from '../config/tokenConfig';
 import { Realistic3DIcon } from './Realistic3DIcon';
-import { WhitePaper3DVisual } from './3d/WhitePaper3DVisual';
 
 interface WhitePaperModalProps {
   isOpen: boolean;
@@ -116,11 +115,8 @@ export const WhitePaperModal: React.FC<WhitePaperModalProps> = ({ isOpen, onClos
     >
       {/* Full Document View (Table of contents removed as requested) */}
       <div className="h-full overflow-y-auto p-4 sm:p-8 lg:p-12 space-y-8 sm:space-y-12 text-[#4A4A4A] font-sans leading-[1.8] bg-white min-w-0">
-        {/* Document Title Header with 3D Technical Blueprint */}
+        {/* Document Title Header */}
         <div className="border-b border-[#E5E5E5] pb-6 sm:pb-8 text-center sm:text-left">
-          <div className="w-full h-44 sm:h-52 mb-6 relative">
-            <WhitePaper3DVisual className="w-full h-full" />
-          </div>
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-4">
             <RotatingCoinLogo size={48} className="shrink-0 mt-1" />
             <div className="flex-1 min-w-0">

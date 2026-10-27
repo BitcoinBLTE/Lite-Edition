@@ -53,16 +53,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
           </div>
 
-          {/* Item 2: Animated Living Blockchain Network (Seamless, NO CONTAINER, floating directly in hero space) */}
+          {/* Item 2: Animated Interconnected Bitcoin Network Sphere (Seamless, NO CONTAINER, floating directly in hero space) */}
           <div className="lg:col-span-5 lg:row-start-1 lg:row-span-2 lg:col-start-8 flex flex-col items-center justify-center relative my-4 lg:my-0 w-full">
-            {/* Ambient subtle warm copper & cyan lighting glow */}
+            {/* Ambient subtle cyan, purple & blue lighting glow matching reference */}
             <div 
-              className="absolute w-[320px] sm:w-[420px] xl:w-[480px] h-[320px] sm:h-[420px] xl:h-[480px] rounded-full bg-gradient-to-tr from-[#0284C7]/12 via-[#B8661B]/15 to-transparent blur-3xl pointer-events-none -z-10" 
+              className="absolute w-[320px] sm:w-[420px] xl:w-[480px] h-[320px] sm:h-[420px] xl:h-[480px] rounded-full bg-gradient-to-tr from-[#00D2B4]/12 via-[#7C3AED]/12 to-[#3B82F6]/14 blur-3xl pointer-events-none -z-10" 
               aria-hidden="true"
             />
 
-            {/* Living Blockchain Network - Borderless, No Container */}
-            <div className="w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[420px] xl:max-w-[480px] aspect-square relative flex items-center justify-center">
+            {/* Interconnected Bitcoin Network - Borderless, Centered & Responsive */}
+            <div className="w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[440px] xl:max-w-[480px] aspect-square relative flex items-center justify-center">
               <LivingBlockchainNetwork className="w-full h-full aspect-square" />
             </div>
 

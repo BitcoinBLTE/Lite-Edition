@@ -3,7 +3,6 @@ import { CheckCircle2, Clock } from 'lucide-react';
 import { TOKEN_CONFIG, RoadmapMilestone } from '../config/tokenConfig';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
-import { Roadmap3DVisual } from './3d/Roadmap3DVisual';
 
 export const RoadmapSection: React.FC = () => {
   const { t } = useLanguage();
@@ -58,11 +57,6 @@ export const RoadmapSection: React.FC = () => {
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.roadmap.subtitle}
           </p>
-        </div>
-
-        {/* 3D Chronological Milestone Obelisks & Pipeline Pathway Showcase (Borderless, No Container) */}
-        <div className="w-full h-[300px] sm:h-[360px] lg:h-[400px] mb-12 relative">
-          <Roadmap3DVisual className="w-full h-full" />
         </div>
 
         {/* 4-Stage Grid with Topic Progression Animation */}

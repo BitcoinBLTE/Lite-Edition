@@ -2,7 +2,6 @@ import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Realistic3DIcon, Realistic3DIconType } from './Realistic3DIcon';
-import { Pillars3DVisual } from './3d/Pillars3DVisual';
 
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
@@ -28,12 +27,6 @@ export const AboutSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-[900] text-[#080808] dark:text-white font-display tracking-tight text-balance leading-[1.15]">
             {t.about.title}
           </h2>
-
-          {/* Unique Topic-Specific 3D Visual: Animated Blockchain Networks & Connected Nodes (Borderless, No Container) */}
-          <div className="relative my-6 sm:my-8 w-full">
-            <Pillars3DVisual />
-          </div>
-
           <p className="mt-4 text-base sm:text-lg text-[#475569] dark:text-[#94A3B8] font-[450] leading-[1.8] text-balance">
             {t.about.description}
           </p>
